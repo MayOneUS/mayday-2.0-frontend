@@ -1,0 +1,13 @@
+# Site settings
+title: MayDay 2.0
+email: admin@mayone.us
+description: > # this means to ignore newlines until "baseurl:"
+  This is the new jekyll site for MayDay 2.0
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: MAYDAYUS
+github_username:  MayOneUS
+
+
+# Build settings
+markdown: kramdown
