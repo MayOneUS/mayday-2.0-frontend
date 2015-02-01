@@ -12,10 +12,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-              <li><a href="/the_facts.html">The Facts</a></li>
-              <li><a href="/take_action.html">Take Action</a></li>
-              <li><a href="/donate.html">Donate</a></li>
-              <li><a href="/about_us.html">About Us</a></li>
+              {% for cat in site.pages %}
+              <li><a href="{{ cat.url }}">{{ cat.title }}</a></li>
+              {% endfor %}
           </ul>
         </div><!--/.nav-collapse -->
       </div>
