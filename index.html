@@ -26,22 +26,24 @@ hideFromNav: true
         <div id="join_the_party" class="col-xs-4">
             <h1>Join The Party</h1>
 
-            <form name="join-party">
+            <form id="join-party">
                 <div class="form-group">
                     <label for="join-party-name">Your name:</label>
-                    <input type="text" class="form-control" id="join-party-name" placeholder="Jane Doe">
+                    <input type="text" class="form-control" id="join-party-name" name="name" placeholder="Jane Doe">
                 </div>
                 <div class="form-group">
                     <label for="join-party-email">Your e-mail:</label>
-                    <input type="email" class="form-control" id="join-party-email" placeholder="janedoe@example.com">
+                    <input type="email" class="form-control" id="join-party-email" name="email"
+                           placeholder="janedoe@example.com">
                 </div>
-                <button type="submit" class="btn btn-default">Sign up!</button>
+                <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal">Sign up!</button>
             </form>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
             <h1>Mission Statement</h1>
+
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
                 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
                 ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
@@ -138,18 +140,58 @@ hideFromNav: true
         </div>
         <div class="col-xs-4">
             <h1>Join The Rebellion</h1>
-            <form name="join-rebellion">
+
+            <form id="join-rebellion">
                 <div class="form-group">
                     <label for="join-rebellion-name">Your name:</label>
-                    <input type="text" class="form-control" id="join-rebellion-name" placeholder="Jane Doe">
+                    <input type="text" class="form-control" id="join-rebellion-name" name="name" placeholder="Jane Doe">
                 </div>
                 <div class="form-group">
                     <label for="join-rebellion-email">Your e-mail:</label>
-                    <input type="email" class="form-control" id="join-rebellion-email" placeholder="janedoe@example.com">
+                    <input type="email" class="form-control" id="join-rebellion-email" name="email"
+                           placeholder="janedoe@example.com">
                 </div>
-                <button type="submit" class="btn btn-default">Sign up!</button>
+                <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal">Sign up!</button>
             </form>
         </div>
     </div>
 </div>
 
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Launch demo modal
+</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Mayday 2.0 Onboarding Flow Modal</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="onboarding-overlay" src="http://gabrielgrant.ca/consulting/mayday/onboarding/"
+                        frameborder="0" height="500px" width="99.6%"></iframe>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#join-party,#join-rebellion").submit(function (event) {
+        event.preventDefault();
+
+        $.post("http://www.example.com/submit/", $(this).serialize())
+                .done(function (data, textStatus, jqXHR) {
+                    console.log(data, textStatus);
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                });
+    });
+</script>
