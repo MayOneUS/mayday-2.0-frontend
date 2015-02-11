@@ -171,7 +171,7 @@ hideFromNav: true
                 <h4 class="modal-title" id="myModalLabel">Mayday 2.0 Onboarding Flow Modal</h4>
             </div>
             <div class="modal-body">
-                <iframe id="onboarding-overlay" src="http://gabrielgrant.ca/consulting/mayday/onboarding/"
+                <iframe id="onboarding-overlay" src=""
                         frameborder="0" height="500px" width="99.6%"></iframe>
             </div>
             <div class="modal-footer">
@@ -185,8 +185,14 @@ hideFromNav: true
 <script>
     $("#join-party,#join-rebellion").submit(function (event) {
         event.preventDefault();
+        var userName = $(this).find('input[name="name"]').val();
+        var userEmail = $(this).find('input[name="email"]').val();
+        var uri = "http://gabrielgrant.ca/consulting/mayday/onboarding/?name=" + encodeURIComponent(userName) + "&email=" + encodeURIComponent(userEmail);
 
         $.post("http://www.example.com/submit/", $(this).serialize())
+                .always(function() {
+                    $("#onboarding-overlay").attr("src", encodeURI(uri));
+                })
                 .done(function (data, textStatus, jqXHR) {
                     console.log(data, textStatus);
                 })
