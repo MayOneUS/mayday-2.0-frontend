@@ -12,6 +12,7 @@
         background-color: $navy-blue-color;
         height: 80px;
         .icon-bar-left {
+            margin-left: 8px;
             float: left;
             width: 30%;
             margin-top: 1.5em;
@@ -23,41 +24,75 @@
         }
 
         .center-ribbon {
-            width: 240px;
+            z-index: 99;
+            width: 296px;
             font-size: 38px;
-            margin-left: -120px;
+            margin-left: -148px;
             @media (min-width: 768px) {
-                width: 266px;
-                margin-left: -133px;
+                width: 322px;
+                margin-left: -161px;
                 font-size: 42px;
             }
             @media (min-width: 992px) {
-                width: 312px;
-                margin-left: -156px;
+                width: 368px;
+                margin-left: -184px;
                 font-size: 48px;
             }
             @media (min-width: 1200px) {
-                width: 368px;
-                margin-left: -184px;
+                width: 424px;
+                margin-left: -212px;
                 font-size: 55px;
             }
             display: inline-block;
             position: absolute;
             left: 50%;
             top: 0;
-            .ribbon-rectangle {
-                text-align: center;
-                color: white;
-                padding-top: 5%;
-                background-color: $dark-red-color;
-                width: 100%;
+            .trapezoid {
                 height: 96px;
+                overflow: hidden;
+                .left-triangle {
+                    float: left;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 28px 130px 0;
+                    border-color: transparent $navy-blue-mid-color transparent transparent;
+                }
+                .ribbon-rectangle {
+                    float: left;
+                    text-align: center;
+                    color: white;
+                    padding-top: 5%;
+                    background-color: $dark-red-color;
+                    height: 100%;
+                    width: 240px;
+                    @media (min-width: 768px) {
+                        width: 266px;
+                    }
+                    @media (min-width: 992px) {
+                        width: 312px;
+                    }
+                    @media (min-width: 1200px) {
+                        width: 368px;
+
+                    }
+                }
+                .right-triangle {
+                    float: right;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 130px 28px 0 0;
+                    border-color: $navy-blue-mid-color transparent transparent transparent;
+                }
+
             }
             .triangle-down {
                 width: 0;
                 height: 0;
                 border-style: solid;
                 border-width: 9px 120px 0 120px;
+                margin-left: 28px;
                 @media (min-width: 768px) {
                     border-width: 10px 133px 0 133px;
                 }
@@ -71,17 +106,23 @@
             }
         }
         .search-section-right {
+            z-index: 99;
+            position: relative;
             float: right;
             text-align: right;
             width: 30%;
             margin-top: 1.5em;
             form {
-                width: 250px;
+                width: 200px;
+                @media (min-width: 992px) {
+                    width: 250px;
+                }
                 display: inline-block;
                 input {
                     height: 2em;
                     margin: 0;
                     padding: 0;
+                    padding-left: 4px;
                     display: inline-block;
                     width: 75%;
                     float: left;
@@ -102,13 +143,31 @@
                 }
             }
         }
+        .fade-line {
+            position: absolute;
+            top: 35px;
+            width: 550px;
+            left: 50%;
+            margin-left: -275px;
+            display: block;
+            border: none;
+            color: white;
+            height: 2px;
+            background: black;
+            background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(white), to($navy-blue-color));
+        }
     }
 
     .sub-nav {
         height: 50px;
-        padding-top: 1em;
+        padding-top: 18px;
         background-color: $navy-blue-light-color;
-        font-size: 1.4em;
+        @media (min-width: 768px) {
+            font-size: 1.2em;
+        }
+        @media (min-width: 992px) {
+            font-size: 1.4em;
+        }
         a {
             color: rgb(228,228,228);
         }
