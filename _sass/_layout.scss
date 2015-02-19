@@ -110,11 +110,18 @@
       width: 30%;
       margin-top: 1.5em;
       form {
+        display: inline-block;
+
         width: 200px;
+        @include tablet {
+          width: 200px;
+        }
         @include small-desktop {
           width: 250px;
         }
-        display: inline-block;
+        @include large-desktop {
+          width: 250px;
+        }
         input {
           height: 2em;
           margin: 0;
@@ -163,6 +170,9 @@
       font-size: 1.2em;
     }
     @include small-desktop {
+      font-size: 1.4em;
+    }
+    @include large-desktop {
       font-size: 1.4em;
     }
     a {
