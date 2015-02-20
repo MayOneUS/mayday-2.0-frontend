@@ -3,7 +3,7 @@ Placeholder for 2015 front-end
 
 ## Getting started.
 
-This site is build with Jekyll, so you'll need that on your computer to hack on the code.  If you don't already have ruby installed, I recommend installing it with RVM.  Then install jekyll `game install jekyll`.
+This site is build with Jekyll, so you'll need that on your computer to hack on the code.  If you don't already have ruby installed, I recommend installing it with RVM.  Then install jekyll `gem install jekyll`.
 Finally, to run it locally just run `jekyll serve --watch`, it'll update when you change the code.
 
 
