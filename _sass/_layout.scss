@@ -239,7 +239,13 @@
   }
 }
 
+/**
+ * Globals
+ */
 
+a:link, a:visited, a:active {
+  color: #007acf;
+}
 
 /**
  * Site footer
@@ -444,5 +450,94 @@
     // @include media-query($on-laptop) {
     //   font-size: 18px;
     // }
+  }
+}
+
+.about_us {
+  h1 {
+    margin: 30px 0 15px 0;
+    font-weight: 300;
+    color: #0c3962;
+  }
+  
+  .aboutBlurb {
+    font-size: 160%;
+    margin-bottom: 50px;
+  }
+  
+  .icons {
+    display: block;
+    text-align: center;
+    
+    li {
+      display: inline-block;
+      list-style-type: none;
+      font-size: 200%;
+      font-weight: 500;
+      color: #0c3962;
+      text-align: center;
+      width: 155px;
+      height: 195px;
+      margin: 0 15px 50px 15px;
+      
+      border: 1px #f00 solid; /* todo: replace this with imgs */
+      .thePlan {
+        /* todo: icon */
+      }
+      .theFacts {
+        /* todo: icon */
+      }
+      .qa {
+        /* todo: icon */
+      }
+      .ourMedia {
+        /* todo: icon */
+      }
+      .ourTeam {
+        /* todo: icon */
+      }
+    }
+  }
+  
+  .contact {
+    display: block;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+      color: #0c3962;
+      vertical-align: top;
+      max-width: 165px;
+      margin: 0 25px 50px 0;
+
+      h3 {
+        font-size: 175%;
+        font-weight: 500;
+        text-align: left;
+      }
+
+      li {
+        font-size: 125%;
+        text-align: left;
+        list-style-type: disc;
+        display: list-item;
+        margin: 5px 0 0 20px;
+        
+        .reddit {
+          /* todo: bullet icon */
+        }
+        .facebook {
+          /* todo: bullet icon */
+        }
+        .twitter {
+          /* todo: bullet icon */
+        }
+      }
+      
+      address {
+        text-align: left;
+      }
+    }
   }
 }
