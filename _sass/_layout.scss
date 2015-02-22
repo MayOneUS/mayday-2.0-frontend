@@ -5,15 +5,17 @@
   .top-nav {
     background-color: $navy-blue-color;
     height: 80px;
+
     .icon-bar-left {
       margin-left: 8px;
       float: left;
       width: 30%;
-      margin-top: 1.5em;
-      height: 2em;
-      i {
+      margin-top: 26px;
+      height: 28px;
+      span {
+        font-size: 28px;
         color: white;
-        margin-right: 1em;
+        margin-right: 28px;
       }
     }
 
@@ -53,6 +55,10 @@
           border-style: solid;
           border-width: 0 28px 130px 0;
           border-color: transparent $navy-blue-mid-color transparent transparent;
+
+          overflow: hidden;
+          -webkit-filter: drop-shadow(0px 3px 2px #000);
+          filter: drop-shadow(0 1px 2px #000);
         }
         .ribbon-rectangle {
           float: left;
@@ -80,10 +86,17 @@
           border-style: solid;
           border-width: 130px 28px 0 0;
           border-color: $navy-blue-mid-color transparent transparent transparent;
+
+          overflow: hidden;
+          -webkit-filter: drop-shadow(0px 3px 2px #000);
+          filter: drop-shadow(0 1px 2px #000);
         }
 
       }
+
       .triangle-down {
+        z-index: -1;
+        overflow: hidden;
         width: 0;
         height: 0;
         border-style: solid;
@@ -100,6 +113,9 @@
         @include large-desktop {
           border-width: 12px 184px 0 184px;
         }
+
+        -webkit-filter: drop-shadow(0 1px 2px #000);
+        filter: drop-shadow(0 1px 2px #000);
       }
     }
     .search-section-right {
@@ -108,7 +124,7 @@
       float: right;
       text-align: right;
       width: 30%;
-      margin-top: 1.5em;
+      margin-top: 26px;
       form {
         display: inline-block;
 
@@ -123,7 +139,7 @@
           width: 250px;
         }
         input {
-          height: 2em;
+          height: 28px;
           margin: 0;
           padding: 0;
           padding-left: 4px;
@@ -140,7 +156,7 @@
           outline: none;
           border: 0;
           background-color: $dark-red-color;
-          i {
+          span {
             color: white;
             font-size: 1.5em;
           }
@@ -149,7 +165,7 @@
     }
     .fade-line {
       position: absolute;
-      top: 35px;
+      top: 39px;
       width: 550px;
       left: 50%;
       margin-left: -275px;
@@ -166,6 +182,12 @@
     height: 50px;
     padding-top: 18px;
     background-color: $navy-blue-light-color;
+    font-weight: 300;
+
+    -webkit-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.65);
+    -moz-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.65);
+    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.65);
+
     @include tablet {
       font-size: 1.2em;
     }
@@ -179,7 +201,7 @@
       color: rgb(228,228,228);
     }
     .middle-dot {
-      color: rgb(38,80,16);
+      color: rgba(255,255,255, .25);
       font-weight: bold;
       margin: 0 8px;
     }
@@ -247,7 +269,7 @@
     position: relative;
 
     .icon-line {
-      i {
+      span {
         margin: 0px 10px;
         font-size: 32px;
       }
@@ -293,7 +315,7 @@
         outline: none;
         border: 0;
         background-color: #ffffff;
-        i {
+        span {
           color: $navy-blue-light-color;
           font-size: 1.5em;
         }
