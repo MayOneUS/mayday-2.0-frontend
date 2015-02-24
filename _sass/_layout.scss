@@ -5,165 +5,96 @@
   .top-nav {
     background-color: $navy-blue-color;
     height: 80px;
-    .icon-bar-left {
-      margin-left: 8px;
-      float: left;
-      width: 30%;
-      margin-top: 1.5em;
-      height: 2em;
-      i {
-        color: white;
-        margin-right: 1em;
-      }
-    }
-
-    .center-ribbon {
-      z-index: 99;
-      display: inline-block;
-      position: absolute;
-      left: 50%;
-      top: 0;
-
-      width: 296px;
-      margin-left: -148px;
-      font-size: 38px;
-      @include tablet {
-        width: 322px;
-        margin-left: -161px;
-        font-size: 42px;
-      }
-      @include small-desktop {
-        width: 368px;
-        margin-left: -184px;
-        font-size: 48px;
-      }
-      @include large-desktop {
-        width: 424px;
-        margin-left: -212px;
-        font-size: 55px;
-      }
-
-      .trapezoid {
-        height: 96px;
-        overflow: hidden;
-        .left-triangle {
-          float: left;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 0 28px 130px 0;
-          border-color: transparent $navy-blue-mid-color transparent transparent;
-          -moz-transform: scale(.9999);
-        }
-        .ribbon-rectangle {
-          float: left;
-          text-align: center;
+    .container {
+      position: relative;
+      .icon-bar-left {
+        position: absolute;
+        left: 8px;
+        top: 21px;
+        width: 30%;
+        height: 2em;
+        i {
           color: white;
-          padding-top: 5%;
-          background-color: $dark-red-color;
-          height: 100%;
-          width: 240px;
+          margin-right: 1em;
+        }
+      }
 
+      .logo {
+        width: 280px;
+        @include tablet {
+          width: 380px;
+        }
+        @include small-desktop {
+          width: 434px;
+        }
+        @include large-desktop {
+          width: 434px;
+        }
+        margin: 0 auto;
+        img {
+          position: relative;
+          z-index: 99;
+        }
+      }
+      .search-section-right {
+        z-index: 99;
+        position: absolute;
+        top: 21px;
+        right: 0px;
+        text-align: right;
+        form {
+          display: inline-block;
+
+          width: 200px;
           @include tablet {
-            width: 266px;
+            width: 180px;
           }
           @include small-desktop {
-            width: 312px;
+            width: 230px;
           }
           @include large-desktop {
-            width: 368px;
+            width: 250px;
           }
-        }
-        .right-triangle {
-          float: right;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 130px 28px 0 0;
-          border-color: $navy-blue-mid-color transparent transparent transparent;
-          -moz-transform: scale(.9999);
-        }
-
-      }
-      .triangle-down {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        margin-left: 28px;
-        border-color: $dark-red-color transparent transparent transparent;
-
-        border-width: 9px 120px 0 120px;
-        @include tablet {
-          border-width: 10px 133px 0 133px;
-        }
-        @include small-desktop {
-          border-width: 11px 156px 0 156px;
-        }
-        @include large-desktop {
-          border-width: 12px 184px 0 184px;
-        }
-
-        -moz-transform: scale(.9999);
-      }
-    }
-    .search-section-right {
-      z-index: 99;
-      position: relative;
-      float: right;
-      text-align: right;
-      width: 30%;
-      margin-top: 1.5em;
-      form {
-        display: inline-block;
-
-        width: 200px;
-        @include tablet {
-          width: 200px;
-        }
-        @include small-desktop {
-          width: 250px;
-        }
-        @include large-desktop {
-          width: 250px;
-        }
-        input {
-          height: 2em;
-          margin: 0;
-          padding: 0;
-          padding-left: 4px;
-          display: inline-block;
-          width: 75%;
-          float: left;
-        }
-        button {
-          display: inline-block;
-          float: right;
-          width: 25%;
-          height: 2em;
-          margin: 0;
-          outline: none;
-          border: 0;
-          background-color: $dark-red-color;
-          i {
-            color: white;
-            font-size: 1.5em;
+          input {
+            height: 2em;
+            margin: 0;
+            padding: 0;
+            padding-left: 4px;
+            display: inline-block;
+            width: 75%;
+            float: left;
+          }
+          button {
+            display: inline-block;
+            float: right;
+            width: 25%;
+            height: 2em;
+            margin: 0;
+            outline: none;
+            border: 0;
+            background-color: $dark-red-color;
+            i {
+              color: white;
+              font-size: 1.5em;
+            }
           }
         }
       }
-    }
-    .fade-line {
-      position: absolute;
-      top: 35px;
-      width: 550px;
-      left: 50%;
-      margin-left: -275px;
-      display: block;
-      border: none;
-      color: white;
-      height: 2px;
-      background: black;
-      background: -webkit-radial-gradient(circle, #ffffff, $navy-blue-color);
-      background: radial-gradient(circle, #ffffff, $navy-blue-color);
+      .fade-line {
+        position: absolute;
+        top: 35px;
+        width: 550px;
+        left: 50%;
+        margin-left: -275px;
+        display: block;
+        border: none;
+        color: white;
+        height: 2px;
+        background: black;
+        background: -webkit-radial-gradient(circle, #ffffff, $navy-blue-color);
+        background: radial-gradient(circle, #ffffff, $navy-blue-color);
+        z-index: 0;
+      }
     }
   }
 
@@ -203,6 +134,7 @@
 
   .bottom-taper {
     position: relative;
+    overflow: hidden;
     width: 100%;
     height: 20px;
     text-align: center;
