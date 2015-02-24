@@ -4,7 +4,7 @@
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
-  margin: 0;
+  //margin: 0;
   padding: 0;
 }
 
@@ -17,17 +17,25 @@ $navy-blue-color: rgb(22,33,63);
 $navy-blue-mid-color: rgb(30,46,80);
 $navy-blue-light-color: rgb(13,56,96);
 $dark-red-color: #ad0a18;
+$grey-blue-color: rgb(118, 159, 189);
+$offwhite-color: rgb(228,228,228);
+
 $base-font-family: 'Lato';
-$base-font-size: 16;
+$base-font-size: 16px;
 $small-font-size: 8;
+
 $background-color: #ffffff;
 $brand-color: #0d3960;
 $grey-color: #808080;
 $grey-color-light: #cccccc;
-$text-color: #000000;
+$text-color: #5C5C5C;
+
 $spacing-unit: 1;
-$base-line-height: 1;
+$base-line-height: 1.5;
 $content-width: 1280;
+$bottom-spacing: 15px;
+$top-spacing: 15px;
+
 
 $tablet-min-width: 768px;
 $small-desktop-min-width: 992px;
@@ -59,7 +67,7 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
-  font-weight: 300;
+  font-weight: 350;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
@@ -74,6 +82,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
+  margin-top: $top-spacing;
   margin-bottom: $spacing-unit / 2;
 }
 
@@ -123,8 +132,22 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
+  color: $navy-blue-light-color;
 }
 
+p.subheader {
+  color: $navy-blue-light-color;
+  font-weight: 300;
+}
+
+
+
+/**
+ * Paragraph 
+ */
+p {
+  margin-bottom: $bottom-spacing;
+}
 
 
 /**
