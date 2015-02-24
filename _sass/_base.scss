@@ -4,7 +4,7 @@
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
-  margin: 0;
+  //margin: 0;
   padding: 0;
 }
 
@@ -140,8 +140,22 @@ h1, h2, h3, h4, h5, h6 {
 p.subheader {
   color: $navy-blue-light-color;
   font-weight: 300;
+  color: $navy-blue-light-color;
 }
 
+p.subheader {
+  color: $navy-blue-light-color;
+  font-weight: 300;
+}
+
+
+
+/**
+ * Paragraph 
+ */
+p {
+  margin-bottom: $bottom-spacing;
+}
 
 
 /**
