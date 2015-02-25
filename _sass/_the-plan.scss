@@ -24,9 +24,23 @@
 
   .mayday-profile {
     padding-left: 0px;
+    margin-bottom: $bottom-spacing;
+    
+    .headshot {
+      padding-right: 10px;;
+    }
+
+    .headshot > img {
+    }
+
+    .derp {
+      padding-left: 0px;
+    }
+
     h4 {
       margin-top: 0px;
     }
+    
     h6 {
       margin-top: 2px;
     }
