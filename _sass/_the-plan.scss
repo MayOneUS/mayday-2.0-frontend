@@ -1,0 +1,73 @@
+/** 
+ * Mayday Panel
+ */
+
+ $panel-mayday-title-size: 20px;
+
+.panel-mayday {
+  margin-top: $top-spacing;
+  border-radius: 0px;
+  border: 1px $navy-blue-light-color solid;
+
+  .panel-heading {
+    background-color: $navy-blue-light-color;
+    border: 1px $navy-blue-light-color solid;
+    color: $offwhite-color;
+    border-bottom: 8px $navy-blue-color solid;
+    border-radius: 0px;
+
+    .panel-title {
+      font-size: $panel-mayday-title-size;
+      color: $offwhite-color;
+    }
+  }
+
+  .mayday-profile {
+    padding-left: 0px;
+    margin-bottom: $bottom-spacing;
+    
+    .headshot {
+      padding-right: 10px;;
+    }
+
+    .headshot > img {
+    }
+
+    .derp {
+      padding-left: 0px;
+    }
+
+    h4 {
+      margin-top: 0px;
+    }
+    
+    h6 {
+      margin-top: 2px;
+    }
+  }
+
+
+}
+
+/** 
+ * Mayday Button
+ */
+
+a.btn-mayday {
+  background-color: $grey-blue-color;
+  border-color: $grey-blue-color;
+  text-transform: uppercase;
+  color: $offwhite-color;
+  font-weight: 100;
+  padding: 4px 8px;
+  font-size: 12px;
+
+  &:visited {
+
+  }
+
+  &:hover {
+    background-color: $grey-color-light;
+    border-color: $grey-color-light;
+  }
+}
