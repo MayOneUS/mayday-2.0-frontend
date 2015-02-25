@@ -31,11 +31,13 @@ $grey-color-light: #cccccc;
 $text-color: #5C5C5C;
 
 $spacing-unit: 1;
-$base-line-height: 1.5;
+$base-line-height: 1.0em;
+$page-content-line-height: 1.5em;
 $content-width: 1280;
 $bottom-spacing: 15px;
 $top-spacing: 15px;
 
+$header-weight: 100;
 
 $tablet-min-width: 768px;
 $small-desktop-min-width: 992px;
@@ -131,7 +133,7 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
+  font-weight: $header-weight;
   color: $navy-blue-light-color;
 }
 

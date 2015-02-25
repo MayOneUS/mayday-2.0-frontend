@@ -299,6 +299,7 @@ a:link, a:visited, a:active {
  */
 .page-content {
   padding: $spacing-unit 0;
+  line-height: $page-content-line-height;
 }
 
 .page-heading {
