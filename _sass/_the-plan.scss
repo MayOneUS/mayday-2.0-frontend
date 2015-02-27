@@ -1,6 +1,8 @@
 /** 
- * Mayday Panel
+ * Mayday Panel Styles
  */
+
+ //@mixin mayday-panel($panel-name, $header-color, )
 
  $panel-mayday-title-size: 20px;
 
@@ -53,7 +55,7 @@
  * Mayday Button
  */
 
-a.btn-mayday {
+ a.btn-targets {
   background-color: $grey-blue-color;
   border-color: $grey-blue-color;
   text-transform: uppercase;
@@ -62,12 +64,153 @@ a.btn-mayday {
   padding: 4px 8px;
   font-size: 12px;
 
-  &:visited {
-
-  }
-
   &:hover {
     background-color: $grey-color-light;
     border-color: $grey-color-light;
   }
 }
+
+/**
+ * Grid of Panels
+ */
+.panels-grid .panel {
+  min-height: 300px;
+}
+
+/**
+ * Mixins for Panels and Buttons
+ */
+
+ $facebook-color: rgb(59, 89, 151);
+ $twitter-color: rgb(64, 153, 255);
+ $youtube-color: rgb(117, 117, 117);
+ $reddit-color: rgb(31, 89, 111);
+ $join-mayday-color: rgb(19, 83, 145);
+ $volunteer-color: rgb(80, 107, 134);
+ $orientation-color: rgb(76, 43, 98);
+
+@mixin wide-button($bg-color) {
+  color: white;
+  background-color: $bg-color;
+  border: 1px solid $bg-color;
+  margin-bottom: 10px;
+  width: 100%;
+
+  text-transform: uppercase;
+  font-weight: 100;
+  
+
+  &:hover {
+    color: white;
+    background-color: lighten( $bg-color, 5% );
+    border: 1px solid lighten( $bg-color, 5% );
+  }
+}
+
+@mixin share-button {
+
+  text-align: left;
+
+  .fa {
+    float: left;
+    font-size: 1.5em;
+    position: absolute;
+  }
+
+  .text {
+    float: left;
+    text-align: left;
+
+    @include large-desktop {
+      margin-left: 45px;
+    }
+    
+    @include small-desktop {  
+      margin-left: 35px;
+      font-size: 16px;
+    }
+  }   
+}
+
+@mixin panel($color, $bg-color, $bg-image) {
+
+  @if $bg-color { border: 1px solid $bg-color; }
+  //@if $bg-image { background: url(#{$bg-image}) no-repeat;}
+
+  .panel-heading {
+    @if $color { color: $color; }
+    @if $bg-color { 
+      background-color: $bg-color;
+      border-bottom: 8px solid lighten( $bg-color, 10%); 
+    }
+    text-align: center;
+
+    .panel-title {
+      font-size: 22px;
+    }
+
+    .panel-subtitle {
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+  }
+
+  .panel-body {
+    padding-top: 0px;
+  }
+}
+
+.panel-join-mayday {
+  @include panel(null, $join-mayday-color, null);
+  .btn {
+    @include wide-button($join-mayday-color);  
+  }
+}
+
+.panel-orientation {
+  @include panel(null, $orientation-color, null);
+  .btn {
+    margin-top: 49px;
+    @include wide-button($orientation-color);  
+  }
+}
+
+.panel-reddit {
+  @include panel(null, $reddit-color, null);
+  .btn {
+    margin-top: 175px;
+    @include wide-button($reddit-color);
+  }
+}
+
+.panel-donor-strike {
+
+}
+
+.panel-volunteer {
+  @include panel($join-mayday-color, null, null);
+  .btn {
+    @include wide-button($volunteer-color);  
+  }
+}
+
+.panel-share {
+  @include panel($join-mayday-color, null, null);
+
+  .btn-facebook {
+    margin-top: 99px;
+    @include wide-button($facebook-color);
+    @include share-button;
+  }
+  
+  .btn-twitter {
+    @include wide-button($twitter-color);
+    @include share-button;
+  }
+  
+  .btn-youtube {
+    @include wide-button($youtube-color);
+    @include share-button;  
+  }
+}
+
