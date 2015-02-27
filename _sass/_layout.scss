@@ -119,7 +119,8 @@
       font-size: 1.4em;
     }
     a {
-      color: rgb(228,228,228);
+      color: $offwhite-color;
+      line-height: 1.0;
     }
     .middle-dot {
       color: rgba(255,255,255, .25);
@@ -305,6 +306,7 @@ a:link, a:visited, a:active {
  */
 .page-content {
   padding: $spacing-unit 0;
+  line-height: $page-content-line-height;
 }
 
 .page-heading {
