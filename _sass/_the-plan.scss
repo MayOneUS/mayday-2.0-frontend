@@ -22,6 +22,11 @@
     }
   }
 
+  .mayday-profile.active > .headshot > img {
+    border: 3px solid $navy-blue-light-color;
+    opacity: 1.0;
+  }
+
   .mayday-profile {
     padding-left: 0px;
     margin-bottom: $bottom-spacing;
@@ -31,19 +36,49 @@
     }
 
     .headshot > img {
+      border: 3px solid transparent;
+      opacity: 0.8;
+      width: 100%;
     }
 
-    .derp {
-      padding-left: 0px;
-    }
 
     h4 {
-      margin-top: 0px;
+      margin: 0px;
     }
     
     h6 {
-      margin-top: 2px;
+      margin: 3px 0px;
     }
+    
+    @include tablet {
+      h4 {
+        margin: inherit;
+        font-size: 1.6em;  
+      }
+
+      h6 {
+        margin: 8px 0px;
+        font-size: 1.2em;  
+      }
+      
+    }
+
+    @include phone {
+      h4 {
+        font-size: 1.2em;  
+      }
+
+      h6 {
+        margin: 8px 0px;
+        font-size: 0.8em;  
+      }
+    }
+
+    
+  }
+
+  .mayday-profile:first-child .headshot > img {
+    
   }
 
 
@@ -57,10 +92,28 @@
   background-color: $grey-blue-color;
   border-color: $grey-blue-color;
   text-transform: uppercase;
-  color: $offwhite-color;
+  color: white;
   font-weight: 100;
-  padding: 4px 8px;
-  font-size: 12px;
+
+  @include large-desktop {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  @include small-desktop {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  @include tablet {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+
+  @include phone {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
 
   &:hover {
     background-color: $grey-color-light;
