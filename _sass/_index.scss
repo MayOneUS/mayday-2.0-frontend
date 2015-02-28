@@ -6,19 +6,86 @@
       font-size: 34px;
     }
     .row {
-      height: 400px;
+      height: 430px;
       margin: 40px 0px;
+      div[class*='col-'] {
+        margin: 0;
+        height: 100%;
+        padding-right:0;
+        padding-left:0;
+      }
+      @include tablet {
+        >div:first-of-type {
+          padding-right: 1.5%;
+        }
+        >div:nth-of-type(2) {
+          padding-left: 1.5%;
+        }
+      }
+      @include small-desktop {
+        >div:first-of-type {
+          padding-right: 1.5%;
+        }
+        >div:nth-of-type(2) {
+          padding-left: 1.5%;
+        }
+      }
+      @include large-desktop {
+        >div:first-of-type {
+          padding-right: 1.5%;
+        }
+        >div:nth-of-type(2) {
+          padding-left: 1.5%;
+        }
+      }
       .box-inner {
-        background-color: rgba(0,0,0,0.4);
         height: 100%;
-      }
-      div:first-of-type {
-        padding-right: 2.5%;
-        height: 100%;
-      }
-      div:nth-of-type(2) {
-        padding-left: 2.5%;
-        height: 100%;
+        position: relative;
+        border: 1px solid $navy-blue-color;
+        &.top-left-box {
+        }
+        &.top-right-box {
+          border: 1px solid $navy-blue-color;
+          .box-title {
+            height: 18%;
+            text-align: center;
+            padding-top: 20px;
+            color: #ffffff;
+            background-color: $navy-blue-color;
+            font-size: 27px;
+            border-bottom: 10px solid $navy-blue-light-color;
+          }
+          .rally {
+            margin-top: 15px;
+            font-size: 23px;
+            line-height: 32px;
+            padding: 0px 22px;
+          }
+          form {
+            margin: 25px 15px 0px 15px;
+            font-size: 22px;
+            input {
+              width: 100%;
+              border: 2px solid $navy-blue-color;
+              padding: 8px 0px 8px 12px;
+              border-radius: 4px;
+              margin-bottom: 20px;
+            }
+            button {
+              width: 100%;
+              color: #ffffff;
+              font-size: 28px;
+              padding: 20px 0px;
+              border: none;
+              border-radius: 5px;
+              background-color: $dark-red-color;
+            }
+          }
+        }
+        &.top-left-box {
+        }
+        &.top-left-box {
+        }
       }
     }
   }
@@ -204,7 +271,7 @@
   }
 
   .panel-five {
-    height: 1000px;
+    height: 950px;
     position: relative;
     overflow: hidden;
     .bg-star:first-of-type {
@@ -216,6 +283,7 @@
       -ms-transform: rotate(-10deg);
       -webkit-transform: rotate(-10deg);
       transform: rotate(-10deg);
+      z-index: 0;
     }
     .bg-star:nth-of-type(2) {
       position: absolute;
@@ -226,6 +294,8 @@
       -ms-transform: rotate(-20deg);
       -webkit-transform: rotate(-20deg);
       transform: rotate(-20deg);
+            z-index: 0;
+
     }
     .bg-star:nth-of-type(3) {
       position: absolute;
@@ -236,13 +306,59 @@
       -ms-transform: rotate(20deg);
       -webkit-transform: rotate(20deg);
       transform: rotate(20deg);
+            z-index: 0;
+
     }
-    .join-form-bar {
-      background-color: rgba(0,0,0,.4);
-      position: absolute;
-      height: 200px;
-      width: 100%;
-      bottom: 50px;
+    .bottom-join-form {
+      position: relative;
+      background-color: #ffffff;
+      display: block;
+      height: 300px;
+      width: 600px;
+      margin: 80px auto;
+      z-index: 999;
+
+      border: 1px solid $navy-blue-color;
+      .box-title {
+        height: 70px;
+        padding: 18px 0px 0px 30px;
+        color: #ffffff;
+        background-color: $navy-blue-light-color;
+        font-size: 27px;
+        border-bottom: 10px solid $navy-blue-color;
+      }
+      .rally {
+        margin-top: 12px;
+        font-size: 20px;
+        line-height: 24px;
+        padding: 0px 22px;
+      }
+      form {
+        margin: 15px 20px 0px 20px;
+        font-size: 22px;
+        input {
+          border: 2px solid $navy-blue-color;
+          padding: 8px 0px 8px 12px;
+          border-radius: 4px;
+          margin-bottom: 15px;
+          &[name="email"] {
+            width: 62%;
+            margin-right: 5px;
+          }
+          &[name="zip"] {
+            width: 36%;
+          }
+        }
+        button {
+          width: 100%;
+          color: #ffffff;
+          font-size: 28px;
+          padding: 20px 0px;
+          border: none;
+          border-radius: 5px;
+          background-color: $dark-red-color;
+        }
+      }
     }
   }
 }
