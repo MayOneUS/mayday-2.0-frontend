@@ -271,7 +271,7 @@
   }
 
   .panel-five {
-    height: 1000px;
+    height: 950px;
     position: relative;
     overflow: hidden;
     .bg-star:first-of-type {
@@ -283,6 +283,7 @@
       -ms-transform: rotate(-10deg);
       -webkit-transform: rotate(-10deg);
       transform: rotate(-10deg);
+      z-index: 0;
     }
     .bg-star:nth-of-type(2) {
       position: absolute;
@@ -293,6 +294,8 @@
       -ms-transform: rotate(-20deg);
       -webkit-transform: rotate(-20deg);
       transform: rotate(-20deg);
+            z-index: 0;
+
     }
     .bg-star:nth-of-type(3) {
       position: absolute;
@@ -303,25 +306,26 @@
       -ms-transform: rotate(20deg);
       -webkit-transform: rotate(20deg);
       transform: rotate(20deg);
+            z-index: 0;
+
     }
     .bottom-join-form {
+      position: relative;
       background-color: #ffffff;
-      position: absolute;
+      display: block;
       height: 300px;
       width: 600px;
-      bottom: 50px;
-      left: 50%;
-      margin-left: -300px;
+      margin: 80px auto;
+      z-index: 999;
 
       border: 1px solid $navy-blue-color;
       .box-title {
-        height: 80px;
-        text-align: center;
-        padding-top: 20px;
+        height: 70px;
+        padding: 18px 0px 0px 30px;
         color: #ffffff;
-        background-color: $navy-blue-color;
+        background-color: $navy-blue-light-color;
         font-size: 27px;
-        border-bottom: 10px solid $navy-blue-light-color;
+        border-bottom: 10px solid $navy-blue-color;
       }
       .rally {
         margin-top: 12px;
