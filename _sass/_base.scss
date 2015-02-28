@@ -16,7 +16,7 @@ dl, dd, ol, ul, figure {
 $navy-blue-color: rgb(22,33,63);
 $navy-blue-mid-color: rgb(30,46,80);
 $navy-blue-light-color: rgb(13,56,96);
-$dark-red-color: #ad0a18;
+$dark-red-color: #b0010e;
 $grey-blue-color: rgb(118, 159, 189);
 $offwhite-color: rgb(228,228,228);
 
@@ -65,7 +65,8 @@ $large-desktop-min-width: 1200px;
 /**
  * Basic styling
  */
-body {
+html, body {
+  height: 100%;
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
