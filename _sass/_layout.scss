@@ -5,12 +5,14 @@
   .top-nav {
     background-color: $navy-blue-color;
     height: 80px;
+    position: relative;
     .container {
+      height: 100%;
       position: relative;
       .icon-bar-left {
         position: absolute;
         left: 8px;
-        top: 21px;
+        top: 29px;
         width: 30%;
         height: 2em;
         span {
@@ -40,50 +42,51 @@
       .search-section-right {
         z-index: 99;
         position: absolute;
-        top: 21px;
+        top: 26px;
         right: 0px;
         text-align: right;
         form {
           display: inline-block;
 
-          width: 200px;
+          width: 180px;
           @include tablet {
             width: 180px;
           }
           @include small-desktop {
-            width: 230px;
+            width: 210px;
           }
           @include large-desktop {
-            width: 250px;
+            width: 210px;
           }
           input {
-            height: 2em;
+            height: 28px;
             margin: 0;
             padding: 0;
-            padding-left: 4px;
+            padding-left: 8px;
             display: inline-block;
-            width: 75%;
+            width: 78%;
             float: left;
+            border: none;
           }
           button {
             display: inline-block;
             float: right;
-            width: 25%;
-            height: 2em;
+            width: 22%;
+            height: 28px;
             margin: 0;
             outline: none;
             border: 0;
             background-color: $dark-red-color;
             span {
               color: white;
-              font-size: 1.5em;
+              font-size: 1.2em;
             }
           }
         }
       }
       .fade-line {
         position: absolute;
-        top: 35px;
+        top: 39px;
         width: 550px;
         left: 50%;
         margin-left: -275px;
@@ -119,13 +122,13 @@
       font-size: 1.4em;
     }
     a {
+      padding: 10px 6px;
       color: $offwhite-color;
       line-height: 1.0;
     }
     .middle-dot {
       color: rgba(255,255,255, .25);
       font-weight: bold;
-      margin: 0 8px;
     }
     .left-links {
       float: left;
@@ -176,6 +179,7 @@ a:link, a:visited, a:active {
  */
 .site-footer {
   height: 300px;
+  clear: both;
   background-color: $navy-blue-light-color;
   padding-top: 60px;
   color: #ffffff;
@@ -211,6 +215,7 @@ a:link, a:visited, a:active {
       width: 65%;
       display: inline-block;
       font-size: 16px;
+      color: $navy-blue-light-color;
       ::-webkit-input-placeholder { /* WebKit browsers */
         color: $navy-blue-light-color;
         font-weight: bold;
@@ -243,6 +248,7 @@ a:link, a:visited, a:active {
         width: 25%;
         height: 2.5em;
         margin: 0;
+        padding-top: 6px;
         outline: none;
         border: 0;
         background-color: #ffffff;
@@ -283,8 +289,12 @@ a:link, a:visited, a:active {
     position: relative;
     font-size: 18px;
     div {
-      margin: 0 0 14px 30%;
+      margin-left: 30%;
+      position: relative;
       a {
+        display: inline-block;
+        padding: 10px;
+        height: 30px;
         color: #e6e6e6;
       }
     }
@@ -293,8 +303,7 @@ a:link, a:visited, a:active {
       height: 1px;
       width: 100px;
       opacity: .3;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin: 18px 0 8px 32%;
     }
   }
 }
@@ -307,6 +316,14 @@ a:link, a:visited, a:active {
 .page-content {
   padding: $spacing-unit 0;
   line-height: $page-content-line-height;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -300px;
+  .footer-push {
+    height: 300px;
+    clear: both;
+  }
 }
 
 .page-heading {
