@@ -15,6 +15,9 @@
         top: 29px;
         width: 30%;
         height: 2em;
+        a {
+          text-decoration: none;
+        }
         span {
           font-size: 28px;
           color: white;
@@ -183,7 +186,10 @@ a:link, a:visited, a:active {
   background-color: $navy-blue-light-color;
   padding-top: 60px;
   color: #ffffff;
-  a {color: #ffffff;}
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
 
   .vertical-fade-line {
     position: absolute;
