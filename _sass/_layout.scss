@@ -17,11 +17,12 @@
         height: 2em;
         a {
           text-decoration: none;
+          padding: 8px;
         }
         span {
           font-size: 28px;
           color: white;
-          margin-right: 1em;
+          margin-right: 8px;
         }
       }
 
@@ -210,9 +211,12 @@ a:link, a:visited, a:active {
     position: relative;
 
     .icon-line {
-      span {
-        margin: 0px 10px;
-        font-size: 32px;
+      a {
+        padding: 8px;
+        span {
+          margin: 0px 2px;
+          font-size: 32px;
+        }
       }
     }
 
