@@ -26,6 +26,7 @@ $small-font-size: 8;
 
 $background-color: #ffffff;
 $brand-color: #0d3960;
+$dark-grey-color: rgb(50, 50, 50);
 $grey-color: #808080;
 $grey-color-light: #cccccc;
 $text-color: #5C5C5C;
@@ -42,6 +43,12 @@ $header-weight: 100;
 $tablet-min-width: 768px;
 $small-desktop-min-width: 992px;
 $large-desktop-min-width: 1200px;
+
+@mixin phone {
+  @media (max-width: #{$tablet-min-width - 1px}) {
+    @content;
+  }
+}
 
 @mixin tablet {
   @media (min-width: #{$tablet-min-width}) and (max-width: #{$small-desktop-min-width - 1px}) {
@@ -133,7 +140,7 @@ li {
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-weight: $header-weight;
   color: $navy-blue-light-color;
 }
@@ -143,6 +150,14 @@ p.subheader {
   font-weight: 300;
 }
 
+
+
+/**
+ * Paragraph 
+ */
+p {
+  margin-bottom: $bottom-spacing;
+}
 
 
 /**
