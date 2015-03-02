@@ -1,13 +1,21 @@
 #index {
+  font-weight: 300;
+
   .top-panel {
-    padding: 20px 0px;
+    padding: 40px 0 70px 0;
     .page-title {
       color: $navy-blue-color;
       font-size: 34px;
     }
+    .first-row {
+      height: 450px;
+      margin-top: 40px;
+    }
+    .second-row {
+      height: 350px;
+      margin-top: 60px;
+    }
     .row {
-      height: 430px;
-      margin: 40px 0px;
       div[class*='col-'] {
         margin: 0;
         height: 100%;
@@ -41,8 +49,8 @@
       .box-inner {
         height: 100%;
         position: relative;
-        border: 1px solid $navy-blue-color;
         &.top-left-box {
+          background-color: rgba(0,0,0,.1);
         }
         &.top-right-box {
           border: 1px solid $navy-blue-color;
@@ -82,9 +90,10 @@
             }
           }
         }
-        &.top-left-box {
+        &.bottom-left-box {
+          background-color: rgba(0,0,0,.1);
         }
-        &.top-left-box {
+        &.bottom-right-box {
         }
       }
     }
