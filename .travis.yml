@@ -1,6 +1,9 @@
 language: ruby
 rvm:
 - 2.2.0
+branches:
+  only:
+    - master
 env:
   global:
   - S3_BUCKET=mayday-frontend-staging
@@ -12,3 +15,6 @@ script: echo "No tests - proceeding to deployment"
 after_success:
 - jekyll build
 - s3_website push
+notifications:
+  slack:
+    secure: NgPwE/VQxoOVvlsyZUaAz2q6XOwRNlWg2+L1OwYSChlcAbLF2lUFuNra4ucoYcCXXkaHaRKc4w+IYMT5uw62RktPqKqMBC7MqR3n7iQakMu9J982QL7CiAbpwvvJ3k5eqms/ZIAwZTO0t1meZHbaDZEUYbS1pZJ1AJ+zXbzIYt4=
