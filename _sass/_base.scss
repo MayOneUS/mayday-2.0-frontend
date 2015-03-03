@@ -37,6 +37,7 @@ $page-content-line-height: 1.5em;
 $content-width: 1280;
 $bottom-spacing: 15px;
 $top-spacing: 15px;
+$left-margin-spacing: 1.5em;
 
 $header-weight: 100;
 
@@ -125,7 +126,7 @@ figcaption {
  * Lists
  */
 ul, ol {
-  margin-left: $spacing-unit;
+  margin-left: $left-margin-spacing;
 }
 
 li {

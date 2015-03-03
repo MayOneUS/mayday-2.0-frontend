@@ -218,6 +218,9 @@ a:link, a:visited, a:active {
 
     form {
       margin-top: 40px;
+
+      
+
       width: 65%;
       display: inline-block;
       font-size: 16px;
@@ -237,6 +240,12 @@ a:link, a:visited, a:active {
       :-ms-input-placeholder { /* Internet Explorer 10+ */
         color: $navy-blue-light-color;
       }
+      
+      @include phone {
+        width: 100%;
+        margin: 20px 0px;
+      }
+
       input {
         height: 2.5em;
         margin: 0;
