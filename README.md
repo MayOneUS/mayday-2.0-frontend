@@ -24,7 +24,7 @@ Goal: Ensure at least two parties have reviewed any code commited for "productio
 
 We use Amazon's Simple Storage Service (S3) to host this site. Here are the URLs:
 
-- **Staging:** http://mayday-frontend-staging.s3-website-us-east-1.amazonaws.com/
+- **Staging:** http://frontend-staging.mayday.us/
 - **Production:** TBD
 
 We use the [s3_website](https://github.com/laurilehmijoki/s3_website) project to deploy this site. [Travis CI](https://travis-ci.org/) will automatically deploy all code in the master branch to the staging site.
