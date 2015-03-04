@@ -101,6 +101,12 @@
       background-size: 100% 100%;
       background-position: center;
     }
+
+    @include small-desktop {
+      background-position: center;
+      background-size: 100% 100%;
+    }
+
     background-position: bottom;
     background-size: 100%;
   }
@@ -229,12 +235,13 @@
 
 .panel-share {
   @include panel($dark-grey-color, null, $share-bg-img);
+  
   .panel-body {
-    padding-top: 13px;  
-  }
-
-  .btn {
+    padding-top: 13px;
     
+    @include small-desktop {
+      padding-top: 20px;
+    }
   }
 
   .btn-facebook {

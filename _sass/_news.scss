@@ -1,0 +1,97 @@
+/**
+ * Mayday News Icons
+ */
+@mixin icon($img-url) {
+  background-image: url(#{$img-url});
+  background-size: 100% auto;
+  background-repeat: none;
+  background-position: bottom;
+}
+
+.md {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  margin-bottom: -8px;
+  border-bottom-width: 15px;
+
+}
+
+.md-envelope {
+  @include icon('../images/envelope.svg');
+  margin-bottom: -12px;
+}
+
+.md-newspaper {
+  @include icon('../images/newspaper.svg');
+}
+
+.md-microphone {
+  @include icon('../images/microphone.svg');
+  margin-bottom: -10px;
+}
+
+.md-download {
+  @include icon('../images/download.svg');
+  margin-bottom: -9px;
+}
+
+.md-shield {
+  @include icon('../images/shield.svg');
+}
+
+/**
+ * Mayday News Panels
+ **/
+
+@mixin news-panel {
+
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  h3 {
+    margin-top: 0px;
+  }
+
+  hr {
+    height: 1px;
+    background-color: $grey-color;
+  }
+
+  .panel-body {
+    padding-top: 0px;
+    font-size: 14px;
+
+    li {
+      margin-top: 10px;
+    }
+
+    .press-date {
+      display: inline-block;
+    }
+
+    .press-link {
+      display: inline-block;
+      vertical-align: top;
+      width: 70%;
+    }
+
+    .more-link {
+      margin-top: 10px;
+      font-weight: 600;
+      float: right;
+    }
+  }
+}
+
+.panel-news {
+  @include news-panel;
+}
+
+.panel-news-border {
+  border: 2px solid $light-grey-color;
+  @include news-panel;
+}
+
+
+
