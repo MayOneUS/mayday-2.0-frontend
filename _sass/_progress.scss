@@ -1,0 +1,124 @@
+.progress-include {
+  .background-image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin-top: -140px;
+    z-index: 0;
+  }
+  background-color: rgb(228,229,233);
+  overflow: hidden;
+  font-weight: 400;
+  position: relative;
+  border-radius: 4px;
+  height: 100%;
+  .headline {
+    color: $navy-blue-color;
+    font-size: 30px;
+    padding: 20px 3.5% 0px 3.5%;
+    position: relative;
+    z-index: 99;
+  }
+  .sub-headline {
+    font-size: 22px;
+    span {
+      font-size: 24px;
+    }
+    line-height: 28px;
+    margin-top: 14px;
+    padding: 14px 3.5% 0px 3.5%;
+    position: relative;
+    z-index: 99;
+  }
+  .legend {
+    color: $dark-red-color;
+    text-align: right;
+    font-size: 27px;
+    margin: 15px 5% 8px 0;
+    i {
+      font-size: 20px;
+    }
+    position: relative;
+    z-index: 99;
+  }
+  .bar-line {
+    height: 60px;
+    position: relative;
+    margin-bottom: 25px;
+    .label {
+      display: inline-block;
+      width: 14%;
+      padding: 12px 0 0 3.5%;
+      height: 100%;
+      font-size: 34px;
+      font-weight: 300;
+      color: $navy-blue-color;
+    }
+    .bar {
+      float: right;
+      margin-right: 5%;
+      height: 100%;
+      width: 75%;
+      border: 2px solid #ffffff;
+      display: inline-block;
+      position: relative;
+      .progress-section {
+        display: inline-block;
+        height: 100%;
+        float: left;
+        background-color: rgba(68, 147, 84, .9);
+        .count {
+          float: right;
+          color: white;
+          font-weight: 600;
+          font-size: 45px;
+          margin: 14px 8px 0 0;
+        }
+      }
+      .togo-section {
+        display: inline-block;
+        float: right;
+        height: 100%;
+        background-color: rgba(123, 123, 123, .9)
+      }
+      .out-of {
+        text-align: center;
+        width: 50px;
+        color: white;
+        position: absolute;
+        right: -25px;
+        top: 6px;
+        .rectangle {
+          background-color: $dark-red-color;
+          height: 30px;
+          font-size: 20px;
+          padding-top: 6px;
+        }
+        .triangle {
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 15px 25px 0 25px;
+          border-color: $dark-red-color transparent transparent transparent;
+        }
+      }
+    }
+  }
+  .senate {
+    .progress-section {
+      width: 45%;
+    }
+    .togo-section {
+      width: 55%
+    }
+  }
+  .house {
+    .progress-section {
+      width: 87%;
+    }
+    .togo-section {
+      width: 13%;
+    }
+  }
+}

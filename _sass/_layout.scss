@@ -17,11 +17,12 @@
         height: 2em;
         a {
           text-decoration: none;
+          padding: 8px;
         }
         span {
           font-size: 28px;
           color: white;
-          margin-right: 1em;
+          margin-right: 8px;
         }
       }
 
@@ -210,20 +211,42 @@ a:link, a:visited, a:active {
     position: relative;
 
     .icon-line {
-      span {
-        margin: 0px 10px;
-        font-size: 32px;
+      a {
+        padding: 8px;
+        span {
+          margin: 0px 2px;
+          font-size: 26px;
+          @include tablet {
+            font-size: 26px;
+          }
+          @include small-desktop {
+            font-size: 32px;
+
+          }
+          @include large-desktop {
+            font-size: 32px;
+          }
+        }
       }
     }
 
     form {
       margin-top: 40px;
-
-      
-
-      width: 65%;
       display: inline-block;
       font-size: 16px;
+      width: 80%;
+
+      @include tablet {
+        width: 80%;
+      }
+      
+      @include small-desktop {
+        width: 65%;
+      }
+      
+      @include large-desktop {
+        width: 65%;
+      }
       color: $navy-blue-light-color;
       ::-webkit-input-placeholder { /* WebKit browsers */
         color: $navy-blue-light-color;
