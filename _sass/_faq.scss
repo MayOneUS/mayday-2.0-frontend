@@ -14,17 +14,61 @@
   display: inline-block;
   float: left;
   padding-right: 1rem;
+
+  @include small-desktop {
+    width: 10%
+
+  }
+  
+  @include tablet {
+    width: 10%
+
+  }
+
+  @include phone {
+    width: 10%;
+
+  }
 }
 .faq-content{
   width: 87.5%;
   display: inline-block;
   float: left;
+
+
+  @include small-desktop {
+    width: 85%
+
+  }
+  
+  @include tablet {
+    width: 85%
+
+  }
+
+  @include phone {
+    width: 80%
+
+  }
 }
 .faq-content p {
   padding-top: .6rem;
+
+  @include small-desktop {
+
+  }
+  
+  @include tablet {
+
+  }
+
+  @include phone {
+
+  }
 }
 .faq-letter{
   color: $dark-red-color;
+  font-weight: 700;
 }
 
 /** 
@@ -45,36 +89,4 @@
     border-color: $grey-color-light;
   }
 }
-/*
- a.btn-targets {
-  background-color: $dark-red-color;
-  border-color: $grey-blue-color;
-  text-transform: uppercase;
-  color: white;
-  font-weight: 100;
 
-  @include large-desktop {
-    padding: 4px 8px;
-    font-size: 12px;
-  }
-
-  @include small-desktop {
-    padding: 4px 8px;
-    font-size: 12px;
-  }
-  
-  @include tablet {
-    padding: 6px 16px;
-    font-size: 14px;
-  }
-
-  @include phone {
-    padding: 6px 16px;
-    font-size: 14px;
-  }
-
-  &:hover {
-    background-color: $grey-color-light;
-    border-color: $grey-color-light;
-  }
-}*/
