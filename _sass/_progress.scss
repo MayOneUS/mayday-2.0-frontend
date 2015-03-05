@@ -1,3 +1,28 @@
+$progress-breakpoint-large:1200px;
+$progress-breakpoint-medium:968px;
+$progress-breakpoint-small:715px;
+
+@mixin breakpoint-small {
+  @media (max-width: #{$progress-breakpoint-small - 1px}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-medium {
+   @media (min-width: #{$progress-breakpoint-medium}) and (max-width: #{$progress-breakpoint-medium - 1px}) {
+     @content;
+   }
+}
+
+@mixin breakpoint-large {
+  @media (min-width: #{$progress-breakpoint-medium}) and (max-width: #{$progress-breakpoint-large - 1px}) {
+    @content;
+  }
+}
+
+
+
+
 .progress-include {
   background: #e4e5e9 url(/images/capitol_building.png) 0 bottom;
   overflow: hidden;
@@ -5,6 +30,7 @@
   position: relative;
   border-radius: 4px;
   height: 100%;
+
   .headline {
     color: $navy-blue-light-color;
     font-size: 34px;
@@ -13,6 +39,7 @@
     z-index: 99;
     margin:0;
     font-weight: normal;
+
   }
   .sub-headline {
     font-size: 22px;
@@ -36,6 +63,24 @@
     position: relative;
     z-index: 99;
   }
+  .lengend-shift{
+    @include breakpoint-large{
+      width: 50%;
+      float: right;
+    }
+
+    @include breakpoint-medium {
+      width: 100%;
+      float: right;
+
+    }
+
+    @include breakpoint-small {
+      width: 50%;
+      float: right;
+    }
+
+  }
   .bar-line {
     height: 60px;
     position: relative;
@@ -55,6 +100,7 @@
       height: 100%;
       width: 75%;
       border: 2px solid #ffffff;
+      border-radius: 5px;
       display: inline-block;
       position: relative;
       .progress-section {
@@ -74,7 +120,9 @@
         display: inline-block;
         float: right;
         height: 100%;
-        background-color: rgba(123, 123, 123, .9)
+        background-color: rgba(123, 123, 123, .9);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
       }
       .out-of {
         text-align: center;
@@ -99,9 +147,53 @@
       }
     }
   }
+  .mobile-break{
+    display: none;
+
+    @include breakpoint-large{
+      display: inline-block;
+    }
+
+    @include breakpoint-medium {
+      display: none;
+
+    }
+
+    @include breakpoint-small {
+      display: inline-block;
+    }
+
+
+  }
+  .expanded{
+
+    @include breakpoint-large{
+      width: 87%;
+      margin-right: 10%;
+    }
+
+    @include breakpoint-medium {
+
+    }
+
+    @include breakpoint-small {
+      width: 87%;
+      margin-right: 10%;
+    }
+
+
+
+  }
   .senate {
     .progress-section {
       width: 45%;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+
+      //@include small-breakpoint {
+        //margin-right: 10%;
+        //width: 87%;
+      //}
     }
     .togo-section {
       width: 55%
@@ -110,9 +202,12 @@
   .house {
     .progress-section {
       width: 87%;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
     }
     .togo-section {
       width: 13%;
     }
   }
 }
+// what is needed 

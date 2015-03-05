@@ -1,4 +1,23 @@
 /** 
+ * Mayday Page Styles
+ */
+#top-space-h1 {
+  margin-bottom: .415em;
+}
+.small-break p{
+  margin-top: 0em;
+  margin-bottom: 1.15em;
+}
+#plan-byline{
+  margin-bottom: .7em;
+}
+#progress-clearance{
+  margin:0 0 2em 0;
+}
+.small-break h2, .small-break h3{
+  margin: 1em 0 .65em 0;
+}
+/** 
  * Mayday Panel Styles
  */
 
@@ -32,9 +51,15 @@
   .mayday-profile {
     padding-left: 0px;
     margin-bottom: $bottom-spacing;
+    margin-left: 2px;
     
     .headshot {
       padding-right: 10px;;
+    }
+
+    .push-left{
+      margin-left: 0;
+      padding-left: 0;
     }
 
     .headshot > img {
