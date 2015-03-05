@@ -1,13 +1,5 @@
 .progress-include {
-  .background-image {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    margin-top: -140px;
-    z-index: 0;
-  }
-  background-color: rgb(228,229,233);
+  background: #e4e5e9 url(http://localhost:4000/images/capitol_building.png) 0 bottom;
   overflow: hidden;
   font-weight: 400;
   position: relative;
