@@ -11,7 +11,15 @@ hideFromNav: true
         <div class="box-inner top-left-box"></div>
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        {% include signup-md-4.html %}
+        <div class="box-inner top-right-box">
+          <div class="box-title">Ready to <strong>End Corruption?</strong></div>
+          <div class="rally">Join the Mayday team of Citizen Lobbyists fighting together for fundamental reform.</div>
+          <form class="join">
+            <input type="email" name="email" placeholder="Email Address"/>
+            <input type="zip" pattern="\d{5,5}(-\d{4,4})?" name="zip" placeholder="Zip Code"/>
+            <button type="submit" data-toggle="modal" data-target="#onboarding-modal">JOIN MAYDAY</button>
+          </form>
+        </div>
       </div>
     </div>
     <div class="row second-row">
@@ -106,10 +114,10 @@ hideFromNav: true
     <div class="bottom-join-form">
       <div class="box-title">Ready to <strong>End Corruption?</strong></div>
         <div class="rally">Join the Mayday team of Citizen Lobbyists fighting together for fundamental reform.</div>
-        <form>
+        <form class="join">
           <input type="email" name="email" placeholder="Email Address"/>
           <input type="zip" pattern="\d{5,5}(-\d{4,4})?" name="zip" placeholder="Zip Code"/>
-          <button type="submit">JOIN MAYDAY</button>
+          <button type="submit" data-toggle="modal" data-target="#onboarding-modal">JOIN MAYDAY</button>
         </form>
       </div>
     </div>
@@ -122,12 +130,12 @@ hideFromNav: true
 </button>-->
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="onboarding-modal-label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Mayday 2.0 Onboarding Flow Modal</h4>
+        <h4 class="modal-title" id="onboarding-modal-label">Mayday 2.0 Onboarding Flow Modal</h4>
       </div>
       <div class="modal-body">
         <iframe id="onboarding-overlay" src=""
@@ -142,15 +150,17 @@ hideFromNav: true
 </div>
 
 <script>
-  $(".js-join-party").submit(function (event) {
+  $("form.join").submit(function (event) {
     event.preventDefault();
-    var userName = $(this).find('input[name="name"]').val();
+    var userZip = $(this).find('input[name="zip"]').val();
     var userEmail = $(this).find('input[name="email"]').val();
-    var uri = "http://gabrielgrant.ca/consulting/mayday/onboarding/?name=" + encodeURIComponent(userName) + "&email=" + encodeURIComponent(userEmail);
+    var queryString = 'zip=' + encodeURIComponent(userZip) + '&email=' + encodeURIComponent(userEmail);
+    var baseURI = 'http://onboarding-staging.mayday.us'
+    var iframeURI = baseURI + '?' + queryString;
 
-    $.post("http://www.example.com/submit/", $(this).serialize())
+    $.post(baseURI + '/people.json', $(this).serialize())
         .always(function() {
-          $("#onboarding-overlay").attr("src", encodeURI(uri));
+          $("#onboarding-overlay").attr("src", iframeURI);
         })
         .done(function (data, textStatus, jqXHR) {
           console.log(data, textStatus);
