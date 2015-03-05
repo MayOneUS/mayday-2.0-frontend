@@ -2,7 +2,7 @@
  * Mayday Panel Styles
  */
 
- $panel-mayday-title-size: 20px;
+ $panel-mayday-title-size: 27px;
 
 .panel-mayday {
   margin-top: $top-spacing;
@@ -19,7 +19,8 @@
 
     .panel-title {
       font-size: $panel-mayday-title-size;
-      color: $offwhite-color;
+      color: #fff;
+      font-weight: 700;
     }
   }
 

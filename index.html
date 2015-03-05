@@ -142,7 +142,7 @@ hideFromNav: true
 </div>
 
 <script>
-  $("#join-party,#join-rebellion").submit(function (event) {
+  $(".js-join-party").submit(function (event) {
     event.preventDefault();
     var userName = $(this).find('input[name="name"]').val();
     var userEmail = $(this).find('input[name="email"]').val();

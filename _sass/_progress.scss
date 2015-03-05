@@ -14,11 +14,13 @@
   border-radius: 4px;
   height: 100%;
   .headline {
-    color: $navy-blue-color;
-    font-size: 30px;
+    color: $navy-blue-light-color;
+    font-size: 34px;
     padding: 20px 3.5% 0px 3.5%;
     position: relative;
     z-index: 99;
+    margin:0;
+    font-weight: normal;
   }
   .sub-headline {
     font-size: 22px;
