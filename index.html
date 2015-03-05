@@ -155,10 +155,11 @@ hideFromNav: true
     var userZip = $(this).find('input[name="zip"]').val();
     var userEmail = $(this).find('input[name="email"]').val();
     var queryString = 'zip=' + encodeURIComponent(userZip) + '&email=' + encodeURIComponent(userEmail);
-    var baseURI = 'http://onboarding-staging.mayday.us'
+    var baseURI = 'http://onboarding-staging.mayday.us';
     var iframeURI = baseURI + '?' + queryString;
 
-    $.post(baseURI + '/people.json', $(this).serialize())
+    var saveURI = 'http://mayone-staging.herokuapp.com/people.json';
+    $.post(saveURI, $(this).serialize())
         .always(function() {
           $("#onboarding-overlay").attr("src", iframeURI);
         })
