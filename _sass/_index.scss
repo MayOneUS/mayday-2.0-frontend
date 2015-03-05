@@ -321,7 +321,33 @@
     }
   }
 }
-.modal-content {
-  background-color: #E0E1E3;
-}
 
+#onboarding-modal {
+  .modal-body {
+    padding: 0;
+  }
+
+  .modal-dialog {
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .modal-content {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    height: 100%;
+  }
+
+  .modal-body {
+    height: 100%;
+  }
+
+  #onboarding-overlay {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
