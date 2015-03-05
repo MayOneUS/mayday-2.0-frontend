@@ -9,6 +9,7 @@
   border-radius: 0px;
   border: 1px $navy-blue-light-color solid;
 
+
   .panel-heading {
     background-color: $navy-blue-light-color;
     border: 1px $navy-blue-light-color solid;
@@ -60,7 +61,7 @@
         margin: 8px 0px;
         font-size: 1.2em;  
       }
-      
+
     }
 
     @include phone {
