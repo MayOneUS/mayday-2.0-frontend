@@ -440,16 +440,16 @@ a:link, a:visited, a:active {
     font-weight: 300;
     color: #0c3962;
   }
-  
+
   .aboutBlurb {
     font-size: 160%;
     margin-bottom: 50px;
   }
-  
+
   .icons {
     display: block;
     text-align: center;
-    
+
     li {
       display: inline-block;
       list-style-type: none;
@@ -460,7 +460,7 @@ a:link, a:visited, a:active {
       width: 155px;
       height: 195px;
       margin: 0 15px 50px 15px;
-      
+
       border: 1px #f00 solid; /* todo: replace this with imgs */
       .thePlan {
         /* todo: icon */
@@ -479,7 +479,7 @@ a:link, a:visited, a:active {
       }
     }
   }
-  
+
   .contact {
     display: block;
     text-align: center;
@@ -504,7 +504,7 @@ a:link, a:visited, a:active {
         list-style-type: disc;
         display: list-item;
         margin: 5px 0 0 20px;
-        
+
         .reddit {
           /* todo: bullet icon */
         }
@@ -515,7 +515,7 @@ a:link, a:visited, a:active {
           /* todo: bullet icon */
         }
       }
-      
+
       address {
         text-align: left;
       }
