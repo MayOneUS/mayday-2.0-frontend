@@ -68,35 +68,15 @@
     height: 400px;
     background: $navy-blue-light-color;
     color: #ffffff;
-    padding-bottom: 30px;
     position: relative;
-
-    .triangle-down {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      margin: 0 auto 30px auto;
-      border-color: #ffffff transparent transparent transparent;
-
-      border-width: 36px 120px 0 120px;
-      @include tablet {
-        border-width: 40px 133px 0 133px;
-      }
-      @include small-desktop {
-        border-width: 44px 156px 0 156px;
-      }
-      @include large-desktop {
-        border-width: 48px 184px 0 184px;
-      }
-    }
   }
 
   .light-panel {
     height: 400px;
-    padding: 30px 0px;
   }
 
   .panel-two {
+    padding-top: 130px;
     overflow: hidden;
     position: relative;
     .bg-star:first-of-type {
@@ -202,9 +182,11 @@
   }
 
   .panel-three {
+    padding-top: 115px;
   }
 
   .panel-four {
+    padding-top: 115px;
     position: relative;
     overflow: hidden;
     .bg-star:first-of-type {
@@ -230,7 +212,8 @@
   }
 
   .panel-five {
-    height: 950px;
+    padding-top: 115px;
+    height: 1000px;
     position: relative;
     overflow: hidden;
     .bg-star:first-of-type {
@@ -321,7 +304,33 @@
     }
   }
 }
-.modal-content {
-  background-color: #E0E1E3;
-}
 
+#onboarding-modal {
+  .modal-body {
+    padding: 0;
+  }
+
+  .modal-dialog {
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .modal-content {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    height: 100%;
+  }
+
+  .modal-body {
+    height: 100%;
+  }
+
+  #onboarding-overlay {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
