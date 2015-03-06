@@ -184,7 +184,7 @@ a:link, a:visited, a:active {
 .site-footer {
   height: 300px;
   clear: both;
-  background-color: $navy-blue-light-color;
+  background-color: #0d3960;
   padding-top: 60px;
   color: #ffffff;
   a {
@@ -192,27 +192,28 @@ a:link, a:visited, a:active {
     text-decoration: none;
   }
 
-  .vertical-fade-line {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    height: 200px;
-    display: block;
-    border: none;
-    color:  #ffffff;
-    width: 1px;
-    background: #000000;
-    background: -webkit-radial-gradient(circle, rgba(255,255,255,.6), $navy-blue-mid-color);
-    background: radial-gradient(circle, rgba(255,255,255,.6), $navy-blue-mid-color);
-  }
-
   .left-col {
     text-align: center;
     position: relative;
+    padding-top: 4px;
+
+    .vertical-fade-line {
+      position: absolute;
+      top: 0px;
+      right: -21px;
+      height: 200px;
+      display: block;
+      border: none;
+      color:  #ffffff;
+      width: 1px;
+      background: #000000;
+      background: -webkit-radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
+      background: radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
+    }
 
     .icon-line {
       a {
-        padding: 8px;
+        padding: 10px;
         span {
           margin: 0px 2px;
           font-size: 26px;
@@ -234,18 +235,18 @@ a:link, a:visited, a:active {
       margin-top: 40px;
       display: inline-block;
       font-size: 16px;
-      width: 80%;
+      width: 180px;
 
       @include tablet {
-        width: 80%;
+        width: 200px;
       }
 
       @include small-desktop {
-        width: 65%;
+        width: 230px;
       }
 
       @include large-desktop {
-        width: 65%;
+        width: 230px;
       }
       color: $navy-blue-light-color;
       ::-webkit-input-placeholder { /* WebKit browsers */
@@ -300,6 +301,19 @@ a:link, a:visited, a:active {
   .center-col {
     text-align: center;
     position: relative;
+    .vertical-fade-line {
+      position: absolute;
+      top: 0px;
+      right: 21px;
+      height: 200px;
+      display: block;
+      border: none;
+      color:  #ffffff;
+      width: 1px;
+      background: #000000;
+      background: -webkit-radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
+      background: radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
+    }
     .name {
       font-weight: bold;
       font-size: 38px;
@@ -307,9 +321,9 @@ a:link, a:visited, a:active {
     .disclaimer-box {
       color: $grey-color-light;
       display: inline-block;
-      font-size: 12px;
+      font-size: 15px;
       line-height: 16px;
-      padding: 6px;
+      padding: 8px;
       margin-top: 15px;
       width: 80%;
       border: 1px solid #e6e6e6;
@@ -317,7 +331,7 @@ a:link, a:visited, a:active {
     .copyright {
       margin-top: 15px;
       color: #e6e6e6;
-      font-size: 12px;
+      font-size: 15px;
     }
     .creative-commons {
       margin-top: 15px;
@@ -325,9 +339,11 @@ a:link, a:visited, a:active {
   }
   .right-col {
     position: relative;
-    font-size: 18px;
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: -16px;
     div {
-      margin-left: 30%;
+      margin-left: 8px;
       position: relative;
       a {
         display: inline-block;
@@ -341,7 +357,7 @@ a:link, a:visited, a:active {
       height: 1px;
       width: 100px;
       opacity: .3;
-      margin: 18px 0 8px 32%;
+      margin: 18px 0 8px 15px;
     }
   }
 }
