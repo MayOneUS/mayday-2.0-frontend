@@ -1,17 +1,26 @@
 /** 
  * Mayday Page Styles
  */
-#top-space-h1 {
-  margin-bottom: .415em;
+.mayday-headline{
+  font-size: 60px;
+  margin-bottom: .315em;
+  @include small-desktop {
+    margin-bottom: .215em;
+  }
 }
 
 #plan-byline{//the plan-byline and progress-clearance are just to make sure the typography remains correct
-  margin-bottom: .7em;
+  margin-bottom: .8em;
+  font-size: 25px;
+  @include small-desktop {
+    margin-bottom: .7em;
+  }
 }
 #progress-clearance{
-  margin:0 0 2em 0;
+  margin:0 0 1.8em 0;
 }
 .small-break p{
+  line-height: 1.7;
   margin-top: 0em;
   margin-bottom: 1.15em;
 
@@ -21,7 +30,8 @@
 }
 
 .small-break h2, .small-break h3{
-  margin: 1em 0 .65em 0;
+  font-weight: 400;
+  margin: 1.2em 0 .65em 0;
 }
 
 /** 
@@ -34,8 +44,6 @@
   margin-top: $top-spacing;
   border-radius: 0px;
   border: 1px $navy-blue-light-color solid;
-
-
   .panel-heading {
     background-color: $navy-blue-light-color;
     border: 1px $navy-blue-light-color solid;
@@ -43,54 +51,47 @@
     border-bottom: 8px $navy-blue-color solid;
     border-radius: 0px;
   }
-
   .panel-title {
     font-size: $panel-mayday-title-size;
     color: #fff;
     font-weight: 700;
+    padding: 17px 0 17px 17px;
+    @include small-desktop {
+      font-size: 21px;
+    }
   }
-
-
   .mayday-profile.active > .headshot > img {
     border: 3px solid $navy-blue-light-color;
     opacity: 1.0;
   }
-
   .mayday-profile {
     padding-left: 0px;
     margin-bottom: $bottom-spacing;
     margin-left: 2px;
-    
     .headshot {
       padding-right: 10px;;
     }
-
     .push-left{
       margin-left: 0;
       padding-left: 0;
     }
-
     .headshot > img {
       border: 3px solid transparent;
       opacity: 0.8;
       width: 100%;
     }
-
-
     h4 {
       margin: 0px;
     }
-    
     h6 {
       margin: 3px 0px;
     }
-    
+
     @include tablet {
       h4 {
         margin: inherit;
         font-size: 1.6em;  
       }
-
       h6 {
         margin: 8px 0px;
         font-size: 1.2em;  
@@ -102,14 +103,12 @@
       h4 {
         font-size: 1.2em;  
       }
-
       h6 {
         margin: 8px 0px;
         font-size: 0.8em;  
       }
-    }
 
-    
+    }
   }
 
   .mayday-profile:first-child .headshot > img {

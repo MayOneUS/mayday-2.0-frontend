@@ -1,0 +1,71 @@
+/** 
+ * Mayday Content
+ */
+.video-group{
+  display: inline-block;
+  float: left;
+  .video-box{
+    width:100%;
+    height:0;
+    padding-bottom:56.25%;
+    overflow:hidden;
+    position:relative
+  }
+  .video-box img{ //temp till there are videos
+    position: absolute;
+    left: 10%;
+    top:10%;
+  }
+  .share-buttons{
+    display: inline-block;
+    float: left;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    .fb{
+      display: inline-block;
+      width: 49%;
+      height: 100%;
+      background-color: $facebook-color;
+      color: white;
+    }
+    .tw{
+      display: inline-block;
+      width: 49%;
+      height: 100%;
+      background-color: $twitter-color;
+      color: white;
+    }
+  }
+  .button-row{
+    border-radius: 4px;
+  }
+}
+.share-button span{
+  padding: 0 10%;
+  text-transform: uppercase;
+  i {
+    margin-right: 9px;
+  }
+  
+}
+
+.top-signup {
+  float: right;
+  @include tablet{
+    display: none;
+  }
+  @include phone{
+    display: none;
+  }
+}
+
+.bottom-signup{
+  display: none;
+  @include tablet{
+    display: inline-block;
+  }
+  @include phone{
+    display: inline-block;
+  }
+}
