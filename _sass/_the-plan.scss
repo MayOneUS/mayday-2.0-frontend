@@ -1,28 +1,38 @@
 /** 
  * Mayday Page Styles
  */
-#top-space-h1 {
-  margin-bottom: .415em;
+.headline-plan{
+  font-size: 60px;
+  margin-bottom: .315em;
+  @include small-desktop {
+    margin-bottom: .215em;
+  }
 }
 
 #plan-byline{//the plan-byline and progress-clearance are just to make sure the typography remains correct
-  margin-bottom: .7em;
+  margin-bottom: .8em;
+  font-size: 25px;
+  @include small-desktop {
+    margin-bottom: .7em;
+  }
 }
 #progress-clearance{
-  margin:0 0 2em 0;
+  margin:0 0 1.8em 0;
 }
 .small-break p{
+  line-height: 1.7;
   margin-top: 0em;
   margin-bottom: 1.15em;
 
   @include phone {
     width: 100%
   }
-  
+
 }
 
 .small-break h2, .small-break h3{
-  margin: 1em 0 .65em 0;
+  font-weight: 400;
+  margin: 1.2em 0 .65em 0;
 }
 
 /** 
@@ -46,6 +56,10 @@
     font-size: $panel-mayday-title-size;
     color: #fff;
     font-weight: 700;
+    padding: 17px 0 17px 17px;
+    @include small-desktop {
+      font-size: 21px;
+    }
   }
   .mayday-profile.active > .headshot > img {
     border: 3px solid $navy-blue-light-color;
