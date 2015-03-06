@@ -1,7 +1,7 @@
 /** 
  * Mayday Page Styles
  */
-.headline-plan{
+.mayday-headline{
   font-size: 60px;
   margin-bottom: .315em;
   @include small-desktop {
@@ -27,7 +27,6 @@
   @include phone {
     width: 100%
   }
-
 }
 
 .small-break h2, .small-break h3{
