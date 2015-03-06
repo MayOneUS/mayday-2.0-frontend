@@ -239,11 +239,11 @@ a:link, a:visited, a:active {
       @include tablet {
         width: 80%;
       }
-      
+
       @include small-desktop {
         width: 65%;
       }
-      
+
       @include large-desktop {
         width: 65%;
       }
@@ -263,7 +263,7 @@ a:link, a:visited, a:active {
       :-ms-input-placeholder { /* Internet Explorer 10+ */
         color: $navy-blue-light-color;
       }
-      
+
       @include phone {
         width: 100%;
         margin: 20px 0px;
