@@ -18,6 +18,7 @@
   @include phone {
     width: 100%
   }
+  
 }
 
 .small-break h2, .small-break h3{
@@ -34,8 +35,6 @@
   margin-top: $top-spacing;
   border-radius: 0px;
   border: 1px $navy-blue-light-color solid;
-
-
   .panel-heading {
     background-color: $navy-blue-light-color;
     border: 1px $navy-blue-light-color solid;
@@ -43,54 +42,43 @@
     border-bottom: 8px $navy-blue-color solid;
     border-radius: 0px;
   }
-
   .panel-title {
     font-size: $panel-mayday-title-size;
     color: #fff;
     font-weight: 700;
   }
-
-
   .mayday-profile.active > .headshot > img {
     border: 3px solid $navy-blue-light-color;
     opacity: 1.0;
   }
-
   .mayday-profile {
     padding-left: 0px;
     margin-bottom: $bottom-spacing;
     margin-left: 2px;
-    
     .headshot {
       padding-right: 10px;;
     }
-
     .push-left{
       margin-left: 0;
       padding-left: 0;
     }
-
     .headshot > img {
       border: 3px solid transparent;
       opacity: 0.8;
       width: 100%;
     }
-
-
     h4 {
       margin: 0px;
     }
-    
     h6 {
       margin: 3px 0px;
     }
-    
+
     @include tablet {
       h4 {
         margin: inherit;
         font-size: 1.6em;  
       }
-
       h6 {
         margin: 8px 0px;
         font-size: 1.2em;  
@@ -102,14 +90,12 @@
       h4 {
         font-size: 1.2em;  
       }
-
       h6 {
         margin: 8px 0px;
         font-size: 0.8em;  
       }
-    }
 
-    
+    }
   }
 
   .mayday-profile:first-child .headshot > img {

@@ -1,3 +1,6 @@
+/**
+ * Variables
+ */
 $progress-breakpoint-large:1200px;
 $progress-breakpoint-medium:968px;
 $progress-breakpoint-small:715px;
@@ -21,8 +24,6 @@ $progress-breakpoint-small:715px;
 }
 
 
-
-
 .progress-include {
   background: #e4e5e9 url(/images/capitol_building.png) 0 bottom;
   overflow: hidden;
@@ -30,7 +31,6 @@ $progress-breakpoint-small:715px;
   position: relative;
   border-radius: 4px;
   height: 100%;
-
   .headline {
     color: $navy-blue-light-color;
     font-size: 34px;
@@ -39,7 +39,6 @@ $progress-breakpoint-small:715px;
     z-index: 99;
     margin:0;
     font-weight: normal;
-
   }
   .sub-headline {
     font-size: 22px;
@@ -84,7 +83,6 @@ $progress-breakpoint-small:715px;
     @include breakpoint-medium {
       width: 100%;
       float: right;
-
     }
 
     @include breakpoint-small {
@@ -182,13 +180,11 @@ $progress-breakpoint-small:715px;
 
     @include breakpoint-medium {
       display: none;
-
     }
 
     @include breakpoint-small {
       display: inline-block;
     }
-
 
   }
 
@@ -197,11 +193,6 @@ $progress-breakpoint-small:715px;
       width: 45%;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
-
-      //@include small-breakpoint {
-        //margin-right: 10%;
-        //width: 87%;
-      //}
     }
     .togo-section {
       width: 55%
@@ -218,4 +209,4 @@ $progress-breakpoint-small:715px;
     }
   }
 }
-// what is needed 
+
