@@ -68,16 +68,15 @@
     height: 400px;
     background: $navy-blue-light-color;
     color: #ffffff;
-    padding: 30px 0px;
     position: relative;
   }
 
   .light-panel {
     height: 400px;
-    padding: 30px 0px;
   }
 
   .panel-two {
+    padding-top: 130px;
     overflow: hidden;
     position: relative;
     .bg-star:first-of-type {
@@ -183,9 +182,11 @@
   }
 
   .panel-three {
+    padding-top: 115px;
   }
 
   .panel-four {
+    padding-top: 115px;
     position: relative;
     overflow: hidden;
     .bg-star:first-of-type {
@@ -211,7 +212,8 @@
   }
 
   .panel-five {
-    height: 950px;
+    padding-top: 115px;
+    height: 1000px;
     position: relative;
     overflow: hidden;
     .bg-star:first-of-type {
