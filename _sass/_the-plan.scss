@@ -4,19 +4,26 @@
 #top-space-h1 {
   margin-bottom: .415em;
 }
-.small-break p{
-  margin-top: 0em;
-  margin-bottom: 1.15em;
-}
-#plan-byline{
+
+#plan-byline{//the plan-byline and progress-clearance are just to make sure the typography remains correct
   margin-bottom: .7em;
 }
 #progress-clearance{
   margin:0 0 2em 0;
 }
+.small-break p{
+  margin-top: 0em;
+  margin-bottom: 1.15em;
+
+  @include phone {
+    width: 100%
+  }
+}
+
 .small-break h2, .small-break h3{
   margin: 1em 0 .65em 0;
 }
+
 /** 
  * Mayday Panel Styles
  */
@@ -35,13 +42,14 @@
     color: $offwhite-color;
     border-bottom: 8px $navy-blue-color solid;
     border-radius: 0px;
-
-    .panel-title {
-      font-size: $panel-mayday-title-size;
-      color: #fff;
-      font-weight: 700;
-    }
   }
+
+  .panel-title {
+    font-size: $panel-mayday-title-size;
+    color: #fff;
+    font-weight: 700;
+  }
+
 
   .mayday-profile.active > .headshot > img {
     border: 3px solid $navy-blue-light-color;
