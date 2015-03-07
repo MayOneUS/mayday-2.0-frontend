@@ -8,28 +8,12 @@
  * Mayday Content
  */
 .faq-qa{
-  width: 6.5%;
   display: inline-block;
   float: left;
   padding-right: 1rem;
-
-  @include small-desktop {
-    width: 10%
-
-  }
-  
-  @include tablet {
-    width: 10%
-
-  }
-
-  @include phone {
-    width: 10%;
-
-  }
 }
 .faq-content{
-  width: 87.5%;
+ 
   display: inline-block;
   float: left;
 
@@ -50,7 +34,7 @@
   }
 }
 .faq-content p {
-  padding-top: .6rem;
+  padding-top: .5rem;
 
   @include small-desktop {
 
