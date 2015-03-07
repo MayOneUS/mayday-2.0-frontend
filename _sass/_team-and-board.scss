@@ -1,11 +1,28 @@
 /** 
  * Mayday Content
  */
+
+.mayday-headline-smaller{
+  font-weight: 400;
+  font-size: 40px;
+}
+.team_and_board_fonts h2, .team_and_board_fonts h3{
+  font-weight: 400;
+}
+.team_and_board_fonts h3{
+  color: #333;
+}
 .tb-content, .tb-content h3{
   margin-top: 0px;
 
 }
 .tb-profile{
-  margin-top: 15px;
+  margin-top: 30px;
+  @include phone{
+    margin-top: 35px;
+  }
+}
+.img-bottom{
+  margin-bottom: 15px;
 }
 
