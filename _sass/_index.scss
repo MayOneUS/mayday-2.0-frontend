@@ -14,6 +14,15 @@
     .second-row {
       height: 350px;
       margin-top: 60px;
+      @include phone{
+        height: 155%
+      }
+      @include tablet {
+        height: 120%;
+      }
+      @include small-desktop{
+        height: 120%;
+      }
     }
     .row {
       div[class*='col-'] {
