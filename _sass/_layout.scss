@@ -11,7 +11,7 @@
       position: relative;
       .icon-bar-left {
         position: absolute;
-        left: 8px;
+        left: -11px;
         top: 29px;
         width: 30%;
         height: 2em;
@@ -20,8 +20,13 @@
           padding: 8px;
           -webkit-font-smoothing: antialiased;
         }
+        .facebook, .twitter {
+          font-size: 26px;
+        }
+        .reddit {
+          font-size: 31px;
+        }
         span {
-          font-size: 28px;
           color: white;
           margin-right: 8px;
         }
@@ -47,44 +52,71 @@
       .search-section-right {
         z-index: 99;
         position: absolute;
-        top: 26px;
-        right: 0px;
+        top: 20px;
+        right: 3px;
         text-align: right;
+        font-size: 16px;
         form {
           display: inline-block;
+          color: $navy-blue-light-color;
+          ::-webkit-input-placeholder { /* WebKit browsers */
+            color: $navy-blue-light-color;
+            font-weight: bold;
+          }
+          :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: $navy-blue-light-color;
+            opacity: 1;
+          }
+          ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: $navy-blue-light-color;
+            opacity:  1;
+          }
+          :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color: $navy-blue-light-color;
+          }
 
           width: 180px;
           @include tablet {
             width: 180px;
           }
           @include small-desktop {
-            width: 210px;
+            width: 220px;
           }
           @include large-desktop {
-            width: 210px;
+            width: 230px;
           }
           input {
-            height: 28px;
+            height: 40px;
             margin: 0;
             padding: 0;
-            padding-left: 8px;
+            padding-left: 14px;
             display: inline-block;
-            width: 78%;
+            width: 75%;
             float: left;
             border: none;
           }
           button {
             display: inline-block;
             float: right;
-            width: 22%;
-            height: 28px;
+            width: 25%;
+            height: 40px;
             margin: 0;
+            padding-top: 7px;
             outline: none;
             border: 0;
-            background-color: $dark-red-color;
+            background-color: #ffffff;
+            position: relative;
+            .divide-line {
+              position: absolute;
+              left: 0px;
+              top: 8px;
+              height: 25px;
+              width: 1px;
+              background-color: rgb(196,202,225);
+            }
             span {
-              color: white;
-              font-size: 1.2em;
+              color: $navy-blue-light-color;
+              font-size: 24px;
             }
           }
         }
@@ -92,9 +124,9 @@
       .fade-line {
         position: absolute;
         top: 39px;
-        width: 550px;
+        width: 650px;
         left: 50%;
-        margin-left: -275px;
+        margin-left: -325px;
         display: block;
         border: none;
         color: white;
@@ -108,41 +140,48 @@
   }
 
   .sub-nav {
-    height: 50px;
+    height: 55px;
     padding-top: 18px;
     background-color: $navy-blue-light-color;
-    font-weight: 300;
 
-    -webkit-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.65);
-    -moz-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.65);
-    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.65);
+    -webkit-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
+    -moz-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
+    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
 
+    font-size: 16px;
     @include tablet {
-      font-size: 1.2em;
+      font-size: 20px;
     }
     @include small-desktop {
-      font-size: 1.4em;
+      font-size: 24px;
     }
     @include large-desktop {
-      font-size: 1.4em;
+      font-size: 24px;
     }
     a {
-      padding: 10px 6px;
+      padding: 3px 10px;
       color: $offwhite-color;
       line-height: 1.0;
     }
     .middle-dot {
       color: rgba(255,255,255, .25);
+      padding: 4px;
       font-weight: bold;
     }
     .left-links {
       float: left;
       display: inline-block;
+      margin-left: -10px;
       width: 40%;
+      a {
+        border: 1px solid rgb(91,121,150);
+        border-radius: 5px;
+      }
     }
     .right-links {
       float: right;
       text-align: right;
+      margin-right: -20px;
       display: inline-block;
       width: 40%;
     }
@@ -281,7 +320,6 @@ a:link, a:visited, a:active {
         width: 75%;
         float: left;
         border: none;
-
       }
       button {
         display: inline-block;
@@ -340,26 +378,28 @@ a:link, a:visited, a:active {
     }
   }
   .right-col {
+    text-align: center;
     position: relative;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
-    margin-top: -16px;
+    margin-top: -10px;
     div {
-      margin-left: 8px;
-      position: relative;
+      margin-top: 10px;
       a {
-        display: inline-block;
         padding: 10px;
         height: 30px;
         color: #e6e6e6;
       }
     }
-    .hr {
-      background-color: #ffffff;
-      height: 1px;
-      width: 100px;
-      opacity: .3;
-      margin: 18px 0 8px 15px;
+    .donate-link {
+      margin-top: 20px;
+
+      a {
+        font-size: 20px;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        padding: 6px 20px;
+      }
     }
   }
 }
