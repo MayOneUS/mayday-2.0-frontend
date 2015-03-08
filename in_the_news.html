@@ -3,7 +3,7 @@ layout: default
 title: Mayday In The News
 permalink: /in-the-news/
 ---
-<div class="container">
+<div class="container news-content">
   <div class="row">
     <div class="col-xs-11 col-sm-8">
       <div class="row">
@@ -70,11 +70,7 @@ permalink: /in-the-news/
             </div>
             <div class="panel-body">
               <hr />
-              <ul>
-                <li><a href="#">Blog Title here: This is the most recent entry that is posted.</a></li>
-                <li><a href="#">Blog Title here: This is the most recent entry that is posted.</a></li>
-                <li><a href="#">Blog Title here: This is the most recent entry that is posted.</a></li>
-                <li><a href="#">Blog Title here: This is the most recent entry that is posted.</a></li>
+              <ul id="tumblr-posts">
               </ul>
               <a class="more-link" href="#">&gt; Visit the Mayday Blog</a>
             </div>
@@ -84,3 +80,26 @@ permalink: /in-the-news/
     </div>
   </div>
 </div>
+
+<!-- JavaScript to Pull in last 5 Tumblr Posts -->
+<script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/icanhazjs.min.js' | prepend: site.baseurl }}"></script>
+<script id="post" type="text/html">
+    {% raw %}<li><a href="{{ short_url }}">{{ title }}</a></li>{% endraw %}
+</script>
+<script type="text/javascript">
+  
+  $.getJSON("http://api.tumblr.com/v2/blog/playtestplay.tumblr.com/posts?limit=5&api_key=phzFQ2Zknq0Itb86tEqJ0o2Z2wqgObHLrOx6wUXGobPgSz7vL7&callback=?", function (data) {
+      var posts = data.response.posts;
+      console.log(posts);
+
+      var $posts = $('#tumblr-posts');
+      
+      posts.forEach(function(post) {
+        console.log( ich.post(post) );
+        $posts.append( ich.post(post) );
+      });
+      
+    });
+</script>
+<!-- end JavaScript -->
