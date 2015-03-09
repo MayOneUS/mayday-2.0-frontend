@@ -1,54 +1,67 @@
 /** 
+ * responsive margins
+ */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @include phone {
+    padding-right: 5px;
+    padding-left: 5px;
+
+  }
+}
+.no-gutter-phone  > [class*='col-'] {
+  @include phone {
+    padding-right:0;
+    padding-left:0;
+  }
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+/** 
  * Mayday Content
  */
+
 .video-group{
   display: inline-block;
   float: left;
+  padding-top: 15px;
+  padding-bottom: 20px;
   .video-box{
-    width:100%;
     height:0;
     padding-bottom:56.25%;
     overflow:hidden;
-    position:relative
+    position: relative;
   }
-  .video-box img{ //temp till there are videos
-    position: absolute;
-    left: 10%;
-    top:10%;
-  }
-  .share-buttons{
-    display: inline-block;
-    float: left;
-    text-align: center;
-    height: 50px;
-    width: 100%;
-    .fb{
-      display: inline-block;
-      width: 49%;
-      height: 100%;
-      background-color: $facebook-color;
-      color: white;
-    }
-    .tw{
-      display: inline-block;
-      width: 49%;
-      height: 100%;
-      background-color: $twitter-color;
-      color: white;
-    }
+    .video-box iframe,.video-box object, .video-box embed {
+      width: 100%!important;
+      height: 100%!important;
+      position: absolute;
+      top: 0;
+      left: 0;
   }
   .button-row{
     border-radius: 4px;
   }
-}
-.share-button span{
-  padding: 0 10%;
-  text-transform: uppercase;
-  i {
-    margin-right: 9px;
+  .fb{
+    text-transform: uppercase;
+    background-color: $facebook-color;
+    color: white;
   }
-  
+  .tw{
+    text-transform: uppercase;
+    background-color: $twitter-color;
+    color: white;
+    padding-left: 0;
+  }
 }
+
 
 .top-signup {
   float: right;
