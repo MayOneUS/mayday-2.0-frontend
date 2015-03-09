@@ -29,7 +29,7 @@ permalink: /in-the-news/
           <ul>
             <li>[Huffington Post: Mayday II](http://www.huffingtonpost.com/jay-mandle/mayday-ii_b_6212492.html)</li>
           </ul>
-          
+
         </div>
       </div>
     </div>
@@ -46,11 +46,7 @@ permalink: /in-the-news/
             </div>
             <div class="panel-body">
               <hr />
-              <ul>
-                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
-                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
-                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
-                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
+              <ul id="tumblr-press-releases">
               </ul>
               <a class="more-link" href="/press-releases/">&gt; View our Press Release Library</a>
             </div>
@@ -82,29 +78,39 @@ permalink: /in-the-news/
 </div>
 
 <!-- JavaScript to Pull in last 5 Tumblr Posts -->
-<script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
-<script src="{{ '/js/icanhazjs.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/lib/ICanHaz.min.js' | prepend: site.baseurl }}"></script>
 <script id="post" type="text/html">
-    {% raw %}<li><a href="{{ url }}">{{ regular_title }}</a></li>{% endraw %}
+    {% raw %}<li><a href="{{ url }}">{{ regular-title }}</a></li>{% endraw %}
+</script>
+<script id="press_release" type="text/html">
+    {% raw %}<li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="{{ url }}">{{ regular-title }}</a></div></li>{% endraw %}
 </script>
 <script type="text/javascript">
   ;(function($, ich) {
-    var blog = 'playtestplay.tumblr.com'; // Change this to blog.mayday.us
-    var url = 'http://' + blog + '/api/read/json?callback=?';
+    var url = 'http://blog.mayday.us/api/read/json?num=5&callback=?';
 
     $.getJSON(url, function (data) {
-        var posts = data.posts;
-        //console.log(posts);
+      var posts = data.posts;
+      var $posts = $('#tumblr-posts');
 
-        var $posts = $('#tumblr-posts');
-        
-        posts.forEach(function(post) {
-          console.log( ich.post(post) );
-          $posts.append( ich.post(post) );
-        });
-        
-      });  
+      posts.forEach(function(post, index) {
+        $posts.append( ich.post(post) );
+      });
+    });
+
+    var url = 'http://blog.mayday.us/api/read/json?tagged=press%20release&num=5&callback=?';
+
+    $.getJSON(url, function (data) {
+      var releasePosts = data.posts;
+      var $releasesContainer = $('#tumblr-press-releases');
+
+      releasePosts.forEach(function(post, index) {
+        post['regular-title'] = post['regular-title'].replace('PRESS RELEASE - ','')
+        $releasesContainer.append( ich.press_release(post) );
+      });
+    });
   })(jQuery, ich);
-  
+
 </script>
 <!-- end JavaScript -->
+
