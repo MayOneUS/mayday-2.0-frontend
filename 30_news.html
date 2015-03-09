@@ -121,22 +121,26 @@ permalink: /news/
 <script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/js/icanhazjs.min.js' | prepend: site.baseurl }}"></script>
 <script id="post" type="text/html">
-    {% raw %}<li><a href="{{ short_url }}">{{ title }}</a></li>{% endraw %}
+    {% raw %}<li><a href="{{ url }}">{{ regular_title }}</a></li>{% endraw %}
 </script>
 <script type="text/javascript">
-  
-  $.getJSON("http://api.tumblr.com/v2/blog/playtestplay.tumblr.com/posts?limit=5&api_key=phzFQ2Zknq0Itb86tEqJ0o2Z2wqgObHLrOx6wUXGobPgSz7vL7&callback=?", function (data) {
-      var posts = data.response.posts;
-      console.log(posts);
+  ;(function($, ich) {
+    var blog = 'playtestplay.tumblr.com'; // Change this to blog.mayday.us
+    var url = 'http://' + blog + '/api/read/json?callback=?';
 
-      var $posts = $('#tumblr-posts');
-      
-      posts.forEach(function(post) {
-        console.log( ich.post(post) );
-        $posts.append( ich.post(post) );
-      });
-      
-    });
+    $.getJSON(url, function (data) {
+        var posts = data.posts;
+        //console.log(posts);
+
+        var $posts = $('#tumblr-posts');
+        
+        posts.forEach(function(post) {
+          console.log( ich.post(post) );
+          $posts.append( ich.post(post) );
+        });
+        
+      });  
+  })(jQuery, ich);
 </script>
 <!-- end JavaScript -->
 
