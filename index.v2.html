@@ -1,36 +1,14 @@
 ---
 layout: default
-title: Mayday 1.9
+title: Mayday 2.0
 hideFromNav: true
 ---
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
 <div id="index">
   <div class="container top-panel">
     <div class="page-title"><strong>Help Us</strong> Save Our Democracy</div>
     <div class="row first-row">
       <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-        <div class="box-inner top-left-box">
-          <div class="container">
-            <form id="js-nomination-form" action="http://mayone-staging.herokuapp.com/people" method="post" accept-charset="utf-8">
-              <div class="btn-group bootstrap-select">
-                <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" data-id="nominee" title="Loading..."><span class="filter-option pull-left">Loading...</span>&nbsp;<span class="caret"></span></button>
-                <div class="dropdown-menu open">
-                  <div class="bs-searchbox">
-                    <input type="text" class="input-block-level form-control" autocomplete="off">
-                  </div>
-                  <ul class="dropdown-menu inner selectpicker" role="menu">
-                    <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Loading...</span>"><span class="text">Loading...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                  </ul>
-                </div>
-              </div>
-              <select id="nominee" class="hidden" data-show-subtext="true" data-live-search="true" name="nominee">
-                <option></option>
-              </select>
-            </form>
-          </div>
-        </div>
-
+        <div class="box-inner top-left-box"></div>
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="box-inner top-right-box">
@@ -131,6 +109,16 @@ hideFromNav: true
         Our plan’s success relies on the support of our community. We are counting on you to be part of the movement to restore the principles our republic was founded on and end the systemic corruption in Washington, D.C.
       </p>
     </div>
+    <div class="bottom-join-form">
+      <div class="box-title">Ready to <strong>End Corruption?</strong></div>
+        <div class="rally">Join the Mayday team of Citizen Lobbyists fighting together for fundamental reform.</div>
+        <form class="join">
+          <input type="email" name="email" placeholder="Email Address"/>
+          <input type="zip" pattern="\d{5,5}(-\d{4,4})?" name="zip" placeholder="Zip Code"/>
+          <button type="submit" data-toggle="modal" data-target="#onboarding-modal">JOIN MAYDAY</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -150,33 +138,7 @@ hideFromNav: true
   </div>
 </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 <script>
-
-function fetch_legislator_info() {
-  var $nomineSelect = $('#nominee')
-  $.ajax({
-    beforeSend: function(request) {
-      request.setRequestHeader("X-Mashape-Key", 'key_here');
-    },
-    dataType: "json",
-    url: 'http://mayone-staging.herokuapp.com/legislators',
-    success: function(legislators) {
-      legislators.map(function(legislator){
-        $nomineSelect.append(
-          '<option data-subtext="'+legislator.title+' '+legislator.state_name+'">'+legislator.name+'</option>'
-        );
-      });
-      $('.btn-group.bootstrap-select').hide()
-      $nomineSelect.removeClass('hidden').selectpicker();
-    }
-  });
-}
-
-
-$(document).ready(function(){
-  fetch_legislator_info()
-
   $("form.join").submit(function (event) {
     event.preventDefault();
     var userZip = $(this).find('input[name="zip"]').val();
@@ -187,15 +149,14 @@ $(document).ready(function(){
 
     var saveURI = 'http://mayone-staging.herokuapp.com/people.json';
     $.post(saveURI, $(this).serialize())
-      .always(function() {
-        $("#onboarding-overlay").attr("src", iframeURI);
-      })
-      .done(function (data, textStatus, jqXHR) {
-        console.log(data, textStatus);
-      })
-      .fail(function (jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-      });
+        .always(function() {
+          $("#onboarding-overlay").attr("src", iframeURI);
+        })
+        .done(function (data, textStatus, jqXHR) {
+          console.log(data, textStatus);
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        });
   });
-});
 </script>
