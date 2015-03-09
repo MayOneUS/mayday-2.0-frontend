@@ -420,3 +420,28 @@ pre {
 .socicon {
     font-family: 'socicon' !important;
 }
+
+/** 
+ * responsive margins
+ */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @include phone {
+    padding-right: 5px;
+    padding-left: 5px;
+
+  }
+}
+.no-gutter-phone  > [class*='col-'] {
+  @include phone {
+    padding-right:0;
+    padding-left:0;
+  }
+}
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}

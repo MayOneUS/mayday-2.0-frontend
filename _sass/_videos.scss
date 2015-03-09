@@ -1,32 +1,8 @@
 /** 
- * responsive margins
- */
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  @include phone {
-    padding-right: 5px;
-    padding-left: 5px;
-
-  }
-}
-.no-gutter-phone  > [class*='col-'] {
-  @include phone {
-    padding-right:0;
-    padding-left:0;
-  }
-}
-
-.no-gutter > [class*='col-'] {
-    padding-right:0;
-    padding-left:0;
-}
-
-/** 
  * Mayday Content
  */
+
+
 
 .video-group{
   display: inline-block;
@@ -53,11 +29,19 @@
     text-transform: uppercase;
     background-color: $facebook-color;
     color: white;
+    width: 99%;
+    margin-left: 1.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
   .tw{
     text-transform: uppercase;
     background-color: $twitter-color;
     color: white;
+    width: 99%;
+    margin-right: 1%;
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
 }
 
