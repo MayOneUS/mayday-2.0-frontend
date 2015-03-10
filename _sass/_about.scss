@@ -4,15 +4,12 @@
 li {
   list-style-type: none;
 }
-.has-list-style {
-  list-style-type: bullet;
-}
 .no-gutter > [class*='col-'] {
   padding-right:0;
   padding-left:0;
 }
 .smaller-layout{
-  max-width: 850px;
+  max-width: 775px;
 }
 .placed-center{
   text-align: center;
