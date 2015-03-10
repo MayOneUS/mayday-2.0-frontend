@@ -205,7 +205,12 @@
       margin-left: -1000px;
       border-width: 0 1000px 20px 1000px;
       border-color: transparent transparent white transparent;
+      /* force anti-aliasing */
       -moz-transform: scale(.9999);
+      -webkit-transform: scale(.9999);
+      -ms-transform: scale(.9999);
+      -o-transform: scale(.9999);
+      transform: scale(.9999);
     }
   }
 }
