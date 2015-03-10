@@ -168,6 +168,12 @@ $progress-breakpoint-small:715px;
         border-style: solid;
         border-width: 15px 25px 0 25px;
         border-color: $dark-red-color transparent transparent transparent;
+        /* force anti-aliasing */
+        -moz-transform: scale(.9999);
+        -webkit-transform: scale(.9999);
+        -ms-transform: scale(.9999);
+        -o-transform: scale(.9999);
+        transform: scale(.9999);
       }
     }
   }
