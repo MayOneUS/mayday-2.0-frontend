@@ -271,6 +271,9 @@ a:link, a:visited, a:active {
   background-color: #0d3960;
   padding-top: 60px;
   color: #ffffff;
+  @include phone{
+    height: 400px;
+  }
   a {
     color: #ffffff;
     text-decoration: none;
@@ -463,6 +466,14 @@ a:link, a:visited, a:active {
   .footer-push {
     height: 300px;
     clear: both;
+  }
+  @include phone{
+    line-height: 1.7em;
+  }
+}
+.page-content p{
+  @include phone{
+    padding-bottom: 18px;
   }
 }
 
