@@ -214,6 +214,45 @@
     }
   }
 }
+// customize bootstrap navbar
+/* navbar */
+.navbar-default {
+    background-color: $navy-blue-light-color;
+    border-color: $navy-blue-color;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #e4e4e4;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #007acf;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #e4e4e4;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #007acf;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #e4e4e4;
+    border-bottom-color: #e4e4e4;
+}
 
 /**
  * Globals
