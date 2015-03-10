@@ -296,7 +296,10 @@
 
     .col-md-6.center-block{
       float:none;
-      background:#fff;
+
+      .box-inner.top-right-box{
+        background:#fff;
+      }
 
       h2{
         font-size:36px;
