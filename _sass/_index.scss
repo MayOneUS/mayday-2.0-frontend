@@ -24,7 +24,7 @@
         height: 120%;
       }
     }
-    .row {
+/*    .row {
       div[class*='col-'] {
         margin: 0;
         height: 100%;
@@ -55,7 +55,7 @@
           padding-left: 1.5%;
         }
       }
-    }
+    }*/
   }
 
   .panel-headline-large {
@@ -73,21 +73,22 @@
     line-height: 40px;
   }
 
-  .dark-panel {
+  .homepage-panel{
+    padding-top: 115px;
     height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dark-panel {
     background: $navy-blue-light-color;
     color: #ffffff;
-    position: relative;
   }
 
   .light-panel {
-    height: 400px;
   }
 
-  .panel-two {
-    padding-top: 130px;
-    overflow: hidden;
-    position: relative;
+  .panel-ten-star {
     .bg-star:first-of-type {
       position: absolute;
       left: -400px;
@@ -190,14 +191,10 @@
     }
   }
 
-  .panel-three {
-    padding-top: 115px;
+  .panel-starless{
   }
 
-  .panel-four {
-    padding-top: 115px;
-    position: relative;
-    overflow: hidden;
+  .panel-two-star {
     .bg-star:first-of-type {
       position: absolute;
       left: -35%;
@@ -220,11 +217,7 @@
     }
   }
 
-  .panel-five {
-    padding-top: 115px;
-    height: 1000px;
-    position: relative;
-    overflow: hidden;
+  .panel-three-star {
     .bg-star:first-of-type {
       position: absolute;
       left: -35%;
@@ -260,56 +253,57 @@
             z-index: 0;
 
     }
-    .bottom-join-form {
-      position: relative;
-      background-color: #ffffff;
-      display: block;
-      height: 300px;
-      width: 600px;
-      margin: 80px auto;
-      z-index: 999;
+  }
+}
 
-      border: 1px solid $navy-blue-color;
-      .box-title {
-        height: 70px;
-        padding: 18px 0px 0px 30px;
-        color: #ffffff;
-        background-color: $navy-blue-light-color;
-        font-size: 27px;
-        border-bottom: 10px solid $navy-blue-color;
+.bottom-join-form {
+  position: relative;
+  background-color: #ffffff;
+  display: block;
+  height: 300px;
+  width: 600px;
+  margin: 80px auto;
+  z-index: 999;
+
+  border: 1px solid $navy-blue-color;
+  .box-title {
+    height: 70px;
+    padding: 18px 0px 0px 30px;
+    color: #ffffff;
+    background-color: $navy-blue-light-color;
+    font-size: 27px;
+    border-bottom: 10px solid $navy-blue-color;
+  }
+  .rally {
+    margin-top: 12px;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 0px 22px;
+  }
+  form {
+    margin: 15px 20px 0px 20px;
+    font-size: 22px;
+    input {
+      border: 2px solid $navy-blue-color;
+      padding: 8px 0px 8px 12px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      &[name="email"] {
+        width: 62%;
+        margin-right: 5px;
       }
-      .rally {
-        margin-top: 12px;
-        font-size: 20px;
-        line-height: 24px;
-        padding: 0px 22px;
+      &[name="zip"] {
+        width: 36%;
       }
-      form {
-        margin: 15px 20px 0px 20px;
-        font-size: 22px;
-        input {
-          border: 2px solid $navy-blue-color;
-          padding: 8px 0px 8px 12px;
-          border-radius: 4px;
-          margin-bottom: 15px;
-          &[name="email"] {
-            width: 62%;
-            margin-right: 5px;
-          }
-          &[name="zip"] {
-            width: 36%;
-          }
-        }
-        button {
-          width: 100%;
-          color: #ffffff;
-          font-size: 28px;
-          padding: 20px 0px;
-          border: none;
-          border-radius: 5px;
-          background-color: $dark-red-color;
-        }
-      }
+    }
+    button {
+      width: 100%;
+      color: #ffffff;
+      font-size: 28px;
+      padding: 20px 0px;
+      border: none;
+      border-radius: 5px;
+      background-color: $dark-red-color;
     }
   }
 }
