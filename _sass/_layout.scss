@@ -271,6 +271,9 @@ a:link, a:visited, a:active {
   background-color: #0d3960;
   padding-top: 60px;
   color: #ffffff;
+  @include tablet{
+    height: 400px;
+  }
   @include phone{
     height: 400px;
   }
@@ -303,7 +306,7 @@ a:link, a:visited, a:active {
         -webkit-font-smoothing: antialiased;
         padding: 10px;
         span {
-          margin: 0px 2px;
+          margin: 2px 2px;
           font-size: 26px;
           @include tablet {
             font-size: 26px;
@@ -325,9 +328,9 @@ a:link, a:visited, a:active {
       font-size: 16px;
       width: 180px;
 
-      @include tablet {
-        width: 200px;
-      }
+      // @include tablet {
+      //   width: 200px;
+      // }
 
       @include small-desktop {
         width: 230px;
@@ -353,6 +356,10 @@ a:link, a:visited, a:active {
         color: $navy-blue-light-color;
       }
 
+      @include tablet {
+        width: 100%;
+        margin: 20px 0px;
+      }
       @include phone {
         width: 100%;
         margin: 20px 0px;
@@ -450,6 +457,7 @@ a:link, a:visited, a:active {
     }
   }
 }
+
 
 
 
