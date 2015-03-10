@@ -50,7 +50,9 @@
   }
 }
 .faq-content p {
-  padding-top: .5rem;
+  padding-top: 7px;
+  padding-bottom: 0;
+  margin-bottom: 7px;
 
   @include small-desktop {
 
@@ -61,6 +63,7 @@
   }
 
   @include phone {
+    padding-top: 1rem;
 
   }
 }
