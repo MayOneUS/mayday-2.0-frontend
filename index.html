@@ -6,27 +6,34 @@ hideFromNav: true
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
 <div id="index">
-  <div class="container top-panel">
-    <div class="page-title"><strong>Help Us</strong> Save Our Democracy</div>
-    <div class="row first-row">
-      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-        <div class="box-inner top-left-box">
-          VIDEO
-        </div>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="page-title">We tried. We learned. We’re trying again.</h1>
       </div>
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="box-inner top-right-box">
-          <div class="box-title">Ready to <strong>End Corruption?</strong></div>
-          <div class="rally">Join the Mayday team of Citizen Lobbyists fighting together for fundamental reform.</div>
-          <form class="join">
-            <button type="submit" data-toggle="modal" data-target="#submit-candidate-modal">Take Action</button>
-          </form>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+          <div class="box-inner top-left-box">
+            VIDEO
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <div class="box-inner top-right-box">
+            <h2 class="box-title">Help Us With <strong>This First Step</strong></h2>
+            <p class="rally">We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
+            <form class="join">
+              <button type="submit" data-toggle="modal" data-target="#submit-candidate-modal">Take Action</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="dark-panel homepage-panel panel-ten-star">
+
+
+  <div class="row homepage-panel dark ten-star">
     <img class="bg-star" src="/images/star_white.svg">
     <img class="bg-star" src="/images/star_white.svg">
     <img class="bg-star" src="/images/star_white.svg">
@@ -38,42 +45,42 @@ hideFromNav: true
     <img class="bg-star" src="/images/star_white.svg">
     <img class="bg-star" src="/images/star_white.svg">
     <div class="container">
-      <div class="panel-headline-large">
+      <h2>
         We're going to end corruption, and we need your help.
-      </div>
+      </h2>
       <p>Over 90% of Americans agree that big money in politics has broken our government. Over two hundred Members of Congress are already committed to reform. It’s time for us to finish the job.</p>
     </div>
   </div>
-  <div class="light-panel homepage-panel panel-starless">
+  <div class="row homepage-panel light starless">
     <div class="container">
-      <div class="panel-headline-large">
+      <h2>
         We will pass reform by winning votes one-by-one.
-      </div>
+      </h2>
       <p>
         We have strategically chosen a select number of representatives to focus on, and will run highly targeted campaigns in their districts urging them to join us. When we win them over, we will move on to others. Slowly but surely, we will tip the scales and pass reform to take back our democracy.
       </p>
     </div>
   </div>
-  <div class="dark-panel homepage-panel panel-two-star">
+  <div class="row homepage-panel dark two-star">
     <img class="bg-star" src="/images/star_white.svg">
     <img class="bg-star" src="/images/star_white.svg">
     <div class="container">
-      <div class="panel-headline-large">
+      <h2>
         Our techniques are experimental
-      </div>
+      </h2>
       <p>
         As our campaign evolves, we’ll measure how representatives respond. We’ll double-down on what works, and let go of what doesn’t. We’ll get smarter as we go. Our data-driven campaign has no place for ideological blinders. Mayday is in it to win it.
       </p>
     </div>
   </div>
-  <div class="light-panel homepage-panel panel-three-star">
+  <div class="row homepage-panel light three-star">
     <img class="bg-star" src="/images/star.svg">
     <img class="bg-star" src="/images/star.svg">
     <img class="bg-star" src="/images/star.svg">
     <div class="container">
-      <div class="panel-headline-large">
+      <h2>
         We can’t do this without you
-      </div>
+      </h2>
       <p>
         Our plan’s success relies on the support of our community. We are counting on you to be part of the movement to restore the principles our republic was founded on and end the systemic corruption in Washington, D.C.
       </p>
@@ -121,7 +128,7 @@ function fetch_legislator_info() {
   var $nomineSelect = $('#nominee')
   $.ajax({
     beforeSend: function(request) {
-      request.setRequestHeader("X-Mashape-Key", 'key_here');
+      request.setRequestHeader('Accept-Encoding', 'deflate');
     },
     dataType: "json",
     url: 'http://mayone-staging.herokuapp.com/legislators',
