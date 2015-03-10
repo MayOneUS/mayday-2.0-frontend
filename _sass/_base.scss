@@ -204,12 +204,13 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  // color: $grey-color;
+  color: $text-color;
+  // border-left: 4px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
   font-size: 18px;
   letter-spacing: -1px;
-  font-style: italic;
+  // font-style: italic;
 
   > :last-child {
     margin-bottom: 0;
@@ -451,7 +452,9 @@ pre {
   font-weight: 400;
   font-size: 40px;
 }
-
+.lead-font-size{
+  font-size: 21px;
+}
 
 /* helper classes */
 
