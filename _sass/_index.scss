@@ -1,72 +1,103 @@
 #index {
   font-weight: 300;
 
-/*  .top-panel {
-    padding: 40px 0 70px 0;
-    .page-title {
+  h1{
+    margin-bottom:10px;
+  }
+
+  .action-panel{
+    text-align:center;
+    border-radius:5px;
+    border: 1px solid $navy-blue-color;
+    border-top: 6px solid $navy-blue-color;
+    padding:0;
+
+    .panel-icon{
+      padding:0;
+      background: $navy-blue-color;
+      border-bottom:5px solid $navy-blue-light-color;
+      text-align:center;
+      height:20px;
+
+      .img-responsive{
+        position:absolute;
+        top:-12px;
+        height:45px;
+        left:50%;
+        margin-left:-20px;
+        z-index:100;
+      }
+      .fade-line{
+        position: absolute;
+        top: 6px;
+        width: 100px;
+        left: 50%;
+        margin-left: -50px;
+        display: block;
+        border: none;
+        color: white;
+        height: 2px;
+        color: white;
+        height: 2px;
+        background: black;
+        background: -webkit-radial-gradient(circle, #ffffff, $navy-blue-color);
+        background: radial-gradient(circle, #ffffff, $navy-blue-color);
+      }
+    }
+
+
+    h2{
+      margin-top:0;
       color: $navy-blue-color;
-      font-size: 34px;
-    }
-    .first-row {
-      height: 450px;
-      margin-top: 40px;
-    }
-    .second-row {
-      height: 350px;
-      margin-top: 60px;
-      @include phone{
-        height: 155%
-      }
-      @include tablet {
-        height: 120%;
-      }
-      @include small-desktop{
-        height: 120%;
+      font-weight:400;
+      font-size:26px;
+
+      strong{
+        font-size:50px;
       }
     }
-    .row {
-      div[class*='col-'] {
-        margin: 0;
-        height: 100%;
-        padding-right:0;
-        padding-left:0;
-      }
-      @include tablet {
-        >div:first-of-type {
-          padding-right: 1.5%;
-        }
-        >div:nth-of-type(2) {
-          padding-left: 1.5%;
-        }
-      }
-      @include small-desktop {
-        >div:first-of-type {
-          padding-right: 1.5%;
-        }
-        >div:nth-of-type(2) {
-          padding-left: 1.5%;
-        }
-      }
-      @include large-desktop {
-        >div:first-of-type {
-          padding-right: 1.5%;
-        }
-        >div:nth-of-type(2) {
-          padding-left: 1.5%;
-        }
+
+    p{
+      font-size:18px;
+      font-weight:400;
+
+    }
+
+    .img-capitol{
+      width:50%;
+      margin:0 auto;
+    }
+
+    form{
+      button{
+        width: 100%;
+        color: #ffffff;
+        font-size: 30px;
+        font-weight:400;
+        padding: 20px 0px;
+        border: none;
+        border-radius: 5px;
+        background-color: #b0010e;
+        text-transform:uppercase;
       }
     }
   }
-*/
+
 
   .homepage-panel{
-    padding-top: 115px;
-    height: 400px;
     position: relative;
     overflow: hidden;
+    padding-top:50px;
+    padding-bottom:50px;
+
+    .container{
+      padding-top:0;
+      padding-bottom:0;
+    }
 
     h2 {
       font-size: 48px;
+      margin-top:0;
     }
 
     .panel-headline-small {
@@ -77,7 +108,7 @@
     p {
       margin-top: 30px;
       font-size: 24px;
-      line-height: 40px;
+      line-height:30px;
     }
 
     &.dark {
