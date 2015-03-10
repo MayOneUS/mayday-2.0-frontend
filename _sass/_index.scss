@@ -60,7 +60,6 @@
     p{
       font-size:18px;
       font-weight:400;
-
     }
 
     .img-capitol{
@@ -71,13 +70,13 @@
     form{
       button{
         width: 100%;
-        color: #ffffff;
+        color: $background-color;
         font-size: 30px;
         font-weight:400;
         padding: 20px 0px;
         border: none;
         border-radius: 5px;
-        background-color: #b0010e;
+        background-color: $dark-red-color;
         text-transform:uppercase;
       }
     }
@@ -290,8 +289,41 @@
       }
     }
   }
+
+  .bottom-form-wrap {
+    margin-top:40px;
+    margin-bottom:10px;
+
+    .col-md-6.center-block{
+      float:none;
+      background:#fff;
+
+      h2{
+        font-size:36px;
+        font-weight:400;
+      }
+
+      p{
+        font-size: 18px;
+
+        &.rally{
+          font-size:24px;
+        }
+      }
+
+      form{
+        padding-bottom:0;
+      }
+
+      button{
+        font-weight:400;
+        text-transform:uppercase;
+      }
+    }
+  }
 }
 
+/*
 .bottom-join-form {
   position: relative;
   background-color: #ffffff;
@@ -343,7 +375,7 @@
     }
   }
 }
-
+*/
 #onboarding-modal {
   .modal-body {
     padding: 0;
