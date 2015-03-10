@@ -147,6 +147,10 @@ h1, h2, h3 {
   color: $navy-blue-light-color;
 }
 
+h1{
+  font-size: 40px
+}
+
 p.subheader {
   color: $navy-blue-light-color;
   font-weight: 300;
@@ -355,22 +359,6 @@ pre {
 /**
  * Wrapper
  */
-// .wrapper {
-//   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-//   max-width:     calc(#{$content-width} - (#{$spacing-unit} * 2));
-//   margin-right: auto;
-//   margin-left: auto;
-//   padding-right: $spacing-unit;
-//   padding-left: $spacing-unit;
-//   @extend %clearfix;
-
-//   @include media-query($on-laptop) {
-//     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-//     max-width:     calc(#{$content-width} - (#{$spacing-unit}));
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
 
 
 
@@ -419,4 +407,29 @@ pre {
 
 .socicon {
     font-family: 'socicon' !important;
+}
+
+/**
+ * responsive margins
+ */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @include phone {
+    padding-right: 5px;
+    padding-left: 5px;
+
+  }
+}
+.no-gutter-phone  > [class*='col-'] {
+  @include phone {
+    padding-right:0;
+    padding-left:0;
+  }
+}
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
 }
