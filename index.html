@@ -11,24 +11,7 @@ hideFromNav: true
     <div class="row first-row">
       <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
         <div class="box-inner top-left-box">
-          <div class="container">
-            <form id="js-nomination-form" action="http://mayone-staging.herokuapp.com/people" method="post" accept-charset="utf-8">
-              <div class="btn-group bootstrap-select">
-                <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" data-id="nominee" title="Loading..."><span class="filter-option pull-left">Loading...</span>&nbsp;<span class="caret"></span></button>
-                <div class="dropdown-menu open">
-                  <div class="bs-searchbox">
-                    <input type="text" class="input-block-level form-control" autocomplete="off">
-                  </div>
-                  <ul class="dropdown-menu inner selectpicker" role="menu">
-                    <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Loading...</span>"><span class="text">Loading...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                  </ul>
-                </div>
-              </div>
-              <select id="nominee" class="hidden" data-show-subtext="true" data-live-search="true" name="nominee">
-                <option></option>
-              </select>
-            </form>
-          </div>
+          VIDEO
         </div>
 
       </div>
@@ -37,9 +20,7 @@ hideFromNav: true
           <div class="box-title">Ready to <strong>End Corruption?</strong></div>
           <div class="rally">Join the Mayday team of Citizen Lobbyists fighting together for fundamental reform.</div>
           <form class="join">
-            <input type="email" name="email" placeholder="Email Address"/>
-            <input type="zip" pattern="\d{5,5}(-\d{4,4})?" name="zip" placeholder="Zip Code"/>
-            <button type="submit" data-toggle="modal" data-target="#onboarding-modal">JOIN MAYDAY</button>
+            <button type="submit" data-toggle="modal" data-target="#submit-candidate-modal">Take Action</button>
           </form>
         </div>
       </div>
@@ -140,11 +121,28 @@ hideFromNav: true
 </button>-->
 
 <!-- Modal -->
-<div class="modal fade" id="onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="onboarding-modal-label" aria-hidden="true">
+<div class="modal fade" id="submit-candidate-modal" tabindex="-1" role="dialog" aria-labelledby="onboarding-modal-label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-        <iframe id="onboarding-overlay" src="" frameborder="0" frameborder="0" allowtransparency="true"></iframe>
+        <div class="container">
+            <form id="js-nomination-form" action="http://mayone-staging.herokuapp.com/people" method="post" accept-charset="utf-8">
+              <div class="btn-group bootstrap-select">
+                <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" data-id="nominee" title="Loading..."><span class="filter-option pull-left">Loading...</span>&nbsp;<span class="caret"></span></button>
+                <div class="dropdown-menu open">
+                  <div class="bs-searchbox">
+                    <input type="text" class="input-block-level form-control" autocomplete="off">
+                  </div>
+                  <ul class="dropdown-menu inner selectpicker" role="menu">
+                    <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Loading...</span>"><span class="text">Loading...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+              <select id="nominee" class="hidden" data-show-subtext="true" data-live-search="true" name="nominee">
+                <option></option>
+              </select>
+            </form>
+          </div><!-- end of .container -->
       </div>
     </div>
   </div>
