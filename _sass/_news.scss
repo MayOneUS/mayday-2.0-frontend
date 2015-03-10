@@ -24,24 +24,27 @@
 
 .md-newspaper {
   @include icon('../images/newspaper.svg');
+  margin-bottom: -12px;
 }
 
 .md-microphone {
   @include icon('../images/microphone.svg');
-  margin-bottom: -10px;
+  margin-bottom: -12px;
 }
 
 .md-download {
   @include icon('../images/download.svg');
-  margin-bottom: -9px;
+  margin-bottom: -10px;
 }
 
 .md-shield {
   @include icon('../images/shield.svg');
+  margin-bottom: -14px;
 }
 .kill-li-indent {
-    text-indent: -15px;
+  text-indent: -15px;
 }
+
 
 /**
  * Mayday News Panels
@@ -63,27 +66,30 @@
 
   .panel-body {
     padding-top: 0px;
-    font-size: 14px;
+    font-size: 18px;
 
     li {
       margin-top: 10px;
     }
-
     .press-date {
       display: inline-block;
+      font-weight: 400;
     }
-
     .press-link {
       display: inline-block;
       vertical-align: top;
       width: 70%;
     }
-
     .more-link {
       margin-top: 10px;
+      font-size: 14px;
       font-weight: 600;
       float: right;
     }
+  }
+  .panel-links {
+    font-weight: 100;
+    margin-left: -15px;
   }
 }
 
@@ -98,5 +104,10 @@
 
 .news-content {
   margin-bottom: 100px;
+}
+.contact-info p{
+  line-height: 1.5em;
+  margin-top: 0.18em;
+  margin-bottom: 0.18em;
 }
 
