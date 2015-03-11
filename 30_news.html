@@ -77,8 +77,7 @@ permalink: /news/
         <div class="panel panel-news-border">
           <div class="panel-heading">
             <h2>
-              <i class="md-icon md-newspaper"></i>
-              Mayday in the News
+              <a href="/in-the-news/"><i class="md-icon md-newspaper"></i> Mayday in the News</a>
             </h2>
           </div>
           <div class="panel-body panel-links">
@@ -103,12 +102,13 @@ permalink: /news/
     {% raw %}<li><a href="{{ url }}">{{ regular-title }}</a></li>{% endraw %}
 </script>
 <script id="press_release" type="text/html">
-    {% raw %}<li>
-              <p>
-                <time class="press-date">{{ date }}</time> -
-                <a class="press-link" href="{{ url }}">{{ regular-title }}</a>
-              </p>
-            </li>
+    {% raw %}
+      <li>
+        <p>
+          <time class="press-date">{{ date }}</time> -
+          <a class="press-link" href="{{ url }}">{{ regular-title }}</a>
+        </p>
+      </li>
     {% endraw %}
 </script>
 <script type="text/javascript">
