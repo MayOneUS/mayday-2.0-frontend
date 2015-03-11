@@ -25,31 +25,6 @@
   min-height: 330px;
 }
 
-/** 
- * Wide Button Mixin
- * @param {Color} $bg-color
- */
-@mixin wide-button($bg-color) {
-  color: white;
-  background-color: $bg-color;
-  border: 1px solid $bg-color;
-  margin-bottom: 10px;
-  width: 100%;
-
-  text-transform: uppercase;
-  font-weight: 100;
-
-  margin-top: 6px;
-  padding: 16px 16px;
-  
-
-  &:hover {
-    color: white;
-    background-color: lighten( $bg-color, 5% );
-    border: 1px solid lighten( $bg-color, 5% );
-  }
-}
-
 @mixin share-button {
   margin-top: 12px;
   text-align: left;
