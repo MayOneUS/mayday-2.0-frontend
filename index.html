@@ -13,20 +13,24 @@ hideFromNav: true
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
-        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-          <div class="box-inner top-left-box">
-            VIDEO
-          </div>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="box-inner top-left-box">
+          VIDEO
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <div class="box-inner top-right-box">
-            <h2 class="box-title">Help Us With <strong>This First Step</strong></h2>
-            <p class="rally">We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
-            <form class="join">
-              <button type="submit" data-toggle="modal" data-target="#submit-candidate-modal">Take Action</button>
-            </form>
-          </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 panel action-panel">
+        <div class="panel-icon">
+          <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
+          <div class="fade-line hidden-xs hidden-sm"></div>
+        </div>
+        <div class="panel-body">
+          <h2>Help Us with v2 <br /> <strong>Step One</strong></h2>
+          <img src="/images/capitol_building_box_icon.svg" class="img-responsive img-capitol" alt="">
+          <p class="rally">We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
+          <form class="join">
+            <button type="submit" data-toggle="modal" data-target="#submit-candidate-modal">Take Action</button>
+          </form>
+          <p class="no-bottom-margin"><a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> </p>
         </div>
       </div>
     </div>
@@ -45,32 +49,27 @@ hideFromNav: true
     <img class="bg-star" src="/images/star_white.svg">
     <img class="bg-star" src="/images/star_white.svg">
     <div class="container">
-      <h2>
-        We're going to end corruption, and we need your help.
-      </h2>
-      <p>Over 90% of Americans agree that big money in politics has broken our government. Over two hundred Members of Congress are already committed to reform. It’s time for us to finish the job.</p>
+      <h2>Mayday Phase II Begins Now</h2>
+      <p>In 2014, we rallied more than 50,000 Americans to support a fight for fundamental reform in the way campaigns are funded &ndash; to reduce the influence of money in politics, by increasing the influence of people in politics.</p>
+      <p>But in the campaigns, we didn’t move the ball far enough.</p>
+      <p>So in 2015, we’re doing something different.</p>
     </div>
   </div>
   <div class="row homepage-panel light starless">
     <div class="container">
-      <h2>
-        We will pass reform by winning votes one-by-one.
-      </h2>
-      <p>
-        We have strategically chosen a select number of representatives to focus on, and will run highly targeted campaigns in their districts urging them to join us. When we win them over, we will move on to others. Slowly but surely, we will tip the scales and pass reform to take back our democracy.
-      </p>
+      <h2>Help us find allies in Congress</h2>
+      <p>We want to close the gap on a majority in Congress &ndash; both Republicans and Democrats &ndash; committed to fundamental reform.</p>
+      <p>We need you to help us identify who our allies should be.</p>
+      <p>Click here to tell us who you think we could persuade, and why.</p>
+      <p>We don’t just want the obvious. We want to identify members of Congress who could be leaders, and why. We’re not interested in dirt, or anything negative. We’re interested in who you believe could step up to be real leaders.</p>
     </div>
   </div>
   <div class="row homepage-panel dark two-star">
     <img class="bg-star" src="/images/star_white.svg">
     <img class="bg-star" src="/images/star_white.svg">
     <div class="container">
-      <h2>
-        Our techniques are experimental
-      </h2>
-      <p>
-        As our campaign evolves, we’ll measure how representatives respond. We’ll double-down on what works, and let go of what doesn’t. We’ll get smarter as we go. Our data-driven campaign has no place for ideological blinders. Mayday is in it to win it.
-      </p>
+      <h2>The citizens’ lobby</h2>
+      <p>Then on May 1 &ndash; May Day &ndash; we will launch a major new platform to support the biggest citizen lobbying campaign that we possibly can &ndash; to recruit a majority of leaders to get us our democracy back. Sign up here to be reminded and recruited.</p>
     </div>
   </div>
   <div class="row homepage-panel light three-star">
@@ -85,6 +84,18 @@ hideFromNav: true
         Our plan’s success relies on the support of our community. We are counting on you to be part of the movement to restore the principles our republic was founded on and end the systemic corruption in Washington, D.C.
       </p>
     </div>
+    <div class="container text-center bottom-form-wrap">
+      <div class="col-md-6 center-block">
+        <div class="box-inner top-right-box">
+          <h2 class="box-title">Help us with v2</h2>
+          <p class="rally"><strong>Step One:</strong> We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
+          <form class="join">
+            <button type="submit" data-toggle="modal" data-target="#onboarding-modal">Take Action</button>
+          </form>
+          <p><a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -98,24 +109,53 @@ hideFromNav: true
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-        <div class="container">
-            <form id="js-nomination-form" action="http://mayone-staging.herokuapp.com/people" method="post" accept-charset="utf-8">
-              <div class="btn-group bootstrap-select">
-                <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" data-id="nominee" title="Loading..."><span class="filter-option pull-left">Loading...</span>&nbsp;<span class="caret"></span></button>
-                <div class="dropdown-menu open">
-                  <div class="bs-searchbox">
-                    <input type="text" class="input-block-level form-control" autocomplete="off">
+          <h2>Help us find Allies in Congress</h2>
+          <p>Choose the senator or representative you think would join us in the fight for fundamental reform, then tell us why you think they'd be a good fit.</p>
+          <form id="js-nomination-form">
+            <fieldset>
+
+              <div class="form-group">
+                <div class="btn-group bootstrap-select">
+                  <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" data-id="nominee" title="Loading..."><span class="filter-option pull-left">Loading...</span>&nbsp;<span class="caret"></span></button>
+                  <div class="dropdown-menu open">
+                    <div class="bs-searchbox">
+                      <input type="text" class="input-block-level form-control" autocomplete="off">
+                    </div>
+                    <ul class="dropdown-menu inner selectpicker" role="menu">
+                      <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Loading...</span>"><span class="text">Loading...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                    </ul>
                   </div>
-                  <ul class="dropdown-menu inner selectpicker" role="menu">
-                    <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Loading...</span>"><span class="text">Loading...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                  </ul>
+                </div>
+                <select id="nominee" class="hidden" data-show-subtext="true" data-live-search="true" name="legislator_id">
+                  <option></option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" id="why" name="selection_comment" placeholder="Tell us why they'd be a good fit" aria-describedby="why-nominate"></textarea>
+              </div>
+
+              <p>Are there any additional ways you'd like to be involved with Mayday's phase 2 plans?</p>
+
+              <div class="form-group">
+                <textarea class="form-control" id="skills" name="other_comment" placeholder="Tell us your ideas &amp; how you'd like to help" aria-describedby="skills"></textarea>
+              </div>
+
+              <div class="form-group">
+                <input id="email" name="email" type="email" placeholder="Email" aria-describedby="email" class="form-control input-md">
+              </div>
+
+              <div class="form-group">
+                <input id="zip" type="zip" pattern="\d{5,5}(-\d{4,4})?" name="zip" placeholder="ZIP Code" aria-describedby="Name" class="form-control input-md">
+              </div>
+
+              <div class="form-group">
+                  <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
                 </div>
               </div>
-              <select id="nominee" class="hidden" data-show-subtext="true" data-live-search="true" name="nominee">
-                <option></option>
-              </select>
-            </form>
-          </div><!-- end of .container -->
+
+            </fieldset>
+          </form>
       </div>
     </div>
   </div>
@@ -125,7 +165,7 @@ hideFromNav: true
 <script>
 
 function fetch_legislator_info() {
-  var $nomineSelect = $('#nominee')
+  var $nomineeSelect = $('#nominee')
   $.ajax({
     beforeSend: function(request) {
       request.setRequestHeader('Accept-Encoding', 'deflate');
@@ -134,12 +174,12 @@ function fetch_legislator_info() {
     url: 'http://mayone-staging.herokuapp.com/legislators',
     success: function(legislators) {
       legislators.map(function(legislator){
-        $nomineSelect.append(
-          '<option data-subtext="'+legislator.title+' '+legislator.state_name+'">'+legislator.name+'</option>'
+        $nomineeSelect.append(
+          '<option value="' + legislator.id + '" data-subtext="' + legislator.title + ' ' + legislator.state_name + '">' + legislator.name + '</option>'
         );
       });
       $('.btn-group.bootstrap-select').hide()
-      $nomineSelect.removeClass('hidden').selectpicker();
+      $nomineeSelect.removeClass('hidden').selectpicker();
     }
   });
 }
@@ -147,6 +187,14 @@ function fetch_legislator_info() {
 
 $(document).ready(function(){
   fetch_legislator_info()
+
+  $("#js-nomination-form").submit(function (event) {
+    event.preventDefault();
+    var saveURI = 'http://mayone-staging.herokuapp.com/nominations';
+    $.post(saveURI, $(this).serialize());
+    $('#submit-candidate-modal').modal('hide');
+    $('#js-nomination-form').trigger("reset");
+  });
 
   $("form.join").submit(function (event) {
     event.preventDefault();
