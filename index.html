@@ -28,7 +28,7 @@ hideFromNav: true
           <img src="/images/capitol_building_box_icon.svg" class="img-responsive img-capitol" alt="">
           <p class="rally">We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
           <form class="join">
-            <button type="submit" data-toggle="modal" data-target="#submit-candidate-modal">Take Action</button>
+            <button type="submit" data-toggle="modal" data-target="#submit-candidate-modal" class="btn btn-mayday">Take Action</button>
           </form>
           <p class="no-bottom-margin"><a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> </p>
         </div>
@@ -55,7 +55,7 @@ hideFromNav: true
       <p>So in 2015, we’re doing something different.</p>
     </div>
   </div>
-  <div class="row homepage-panel light starless">
+  <div class="row homepage-panel light capitol-building">
     <div class="container">
       <h2>Help us find allies in Congress</h2>
       <p>We want to close the gap on a majority in Congress &ndash; both Republicans and Democrats &ndash; committed to fundamental reform.</p>
@@ -90,7 +90,7 @@ hideFromNav: true
           <h2 class="box-title">Help us with v2</h2>
           <p class="rally"><strong>Step One:</strong> We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
           <form class="join">
-            <button type="submit" data-toggle="modal" data-target="#onboarding-modal">Take Action</button>
+            <button type="submit" data-toggle="modal" data-target="#onboarding-modal" class="btn btn-mayday">Take Action</button>
           </form>
           <p><a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> </p>
         </div>
@@ -109,53 +109,57 @@ hideFromNav: true
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-          <h2>Help us find Allies in Congress</h2>
-          <p>Choose the senator or representative you think would join us in the fight for fundamental reform, then tell us why you think they'd be a good fit.</p>
-          <form id="js-nomination-form" action="http://mayone-staging.herokuapp.com/people" method="post" accept-charset="utf-8">
-            <fieldset>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Help us find Allies in Congress</h2>
+        <p>Choose the senator or representative you think would join us in the fight for fundamental reform, then tell us why you think they'd be a good fit.</p>
+        <form id="js-nomination-form" action="http://mayone-staging.herokuapp.com/people" method="post" accept-charset="utf-8">
+          <fieldset>
 
-              <div class="form-group">
-                <div class="btn-group bootstrap-select">
-                  <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" data-id="nominee" title="Loading..."><span class="filter-option pull-left">Loading...</span>&nbsp;<span class="caret"></span></button>
-                  <div class="dropdown-menu open">
-                    <div class="bs-searchbox">
-                      <input type="text" class="input-block-level form-control" autocomplete="off">
-                    </div>
-                    <ul class="dropdown-menu inner selectpicker" role="menu">
-                      <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Loading...</span>"><span class="text">Loading...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                    </ul>
+            <div class="form-group">
+              <div class="btn-group bootstrap-select">
+                <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" data-id="nominee" title="Loading..."><span class="filter-option pull-left">Loading...</span>&nbsp;<span class="caret"></span></button>
+                <div class="dropdown-menu open">
+                  <div class="bs-searchbox">
+                    <input type="text" class="input-block-level form-control" autocomplete="off">
                   </div>
-                </div>
-                <select id="nominee" class="hidden" data-show-subtext="true" data-live-search="true" name="nominee">
-                  <option></option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <textarea class="form-control" id="why" name="why" placeholder="Tell us" aria-describedby="why-nominate">Tell Us</textarea>
-              </div>
-
-              <p>Are there any additional ways you'd like to be involved with Mayday's phase 2 plans?</p>
-
-              <div class="form-group">
-                <textarea class="form-control" id="skills" name="skills" placeholder="Tell us" aria-describedby="skills"></textarea>
-              </div>
-
-              <div class="form-group">
-                <input id="name" name="name" type="text" placeholder="Name" aria-describedby="Name" class="form-control input-md">
-              </div>
-
-              <div class="form-group">
-                <input id="email" name="email" type="email" placeholder="email" aria-describedby="email" class="form-control input-md">
-              </div>
-
-              <div class="form-group">
-                  <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                  <ul class="dropdown-menu inner selectpicker" role="menu">
+                    <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Loading...</span>"><span class="text">Loading...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                  </ul>
                 </div>
               </div>
+              <select id="nominee" class="hidden" data-show-subtext="true" data-live-search="true" name="nominee">
+                <option></option>
+              </select>
+            </div>
 
-            </fieldset>
-          </form>
+            <div class="form-group">
+              <textarea class="form-control" id="why" name="why" placeholder="Tell us" aria-describedby="why-nominate">Tell us why they'd be a good fit.</textarea>
+            </div>
+
+            <h2>Other ways to help</h2>
+
+            <p>Are there any additional ways you'd like to be involved with Mayday's phase 2 plans?</p>
+
+            <div class="form-group">
+              <textarea class="form-control" id="skills" name="skills" placeholder="Tell us" aria-describedby="skills">Tell us your ideas or how you'd like to contribute. </textarea>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input id="email" name="email" type="email" placeholder="Email" aria-describedby="email" class="form-control input-md">
+              </div>
+              <div class="form-group col-md-6">
+                <input id="name" name="zip" type="text" placeholder="ZIP code" aria-describedby="ZIP Code" class="form-control input-md">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button id="singlebutton" name="singlebutton" class="btn btn-mayday">Submit</button>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
       </div>
     </div>
   </div>
@@ -190,23 +194,8 @@ $(document).ready(function(){
 
   $("form.join").submit(function (event) {
     event.preventDefault();
-    var userZip = $(this).find('input[name="zip"]').val();
-    var userEmail = $(this).find('input[name="email"]').val();
-    var queryString = 'zip=' + encodeURIComponent(userZip) + '&email=' + encodeURIComponent(userEmail);
     var baseURI = 'http://onboarding-staging.mayday.us';
-    var iframeURI = baseURI + '?' + queryString;
-
-    var saveURI = 'http://mayone-staging.herokuapp.com/people.json';
-    $.post(saveURI, $(this).serialize())
-      .always(function() {
-        $("#onboarding-overlay").attr("src", iframeURI);
-      })
-      .done(function (data, textStatus, jqXHR) {
-        console.log(data, textStatus);
-      })
-      .fail(function (jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-      });
+    var iframeURI = baseURI;
   });
 });
 </script>

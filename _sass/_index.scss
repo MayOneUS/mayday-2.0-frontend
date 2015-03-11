@@ -70,15 +70,7 @@
 
     form{
       button{
-        width: 100%;
         color: $background-color;
-        font-size: 30px;
-        font-weight:400;
-        padding: 20px 0px;
-        border: none;
-        border-radius: 5px;
-        background-color: $dark-red-color;
-        text-transform:uppercase;
       }
     }
   }
@@ -289,6 +281,10 @@
 
       }
     }
+
+    &.capitol-building{
+      background: #fff url(/images/capitol_building.png) right bottom no-repeat;
+    }
   }
 
   .bottom-form-wrap {
@@ -319,10 +315,6 @@
         padding-bottom:0;
       }
 
-      button{
-        font-weight:400;
-        text-transform:uppercase;
-      }
     }
   }
 }
@@ -368,37 +360,68 @@
         width: 36%;
       }
     }
-    button {
-      width: 100%;
-      color: #ffffff;
-      font-size: 28px;
-      padding: 20px 0px;
-      border: none;
-      border-radius: 5px;
-      background-color: $dark-red-color;
-    }
+
   }
 }
 */
-#onboarding-modal {
-  .modal-body {
-    padding: 0;
-  }
+#submit-candidate-modal {
 
   .modal-dialog {
     height: 100%;
-    margin: 0 auto;
+    // margin: 0 auto;
+    max-width:440px;
   }
 
   .modal-content {
-    background-color: transparent;
-    box-shadow: none;
     border: none;
-    height: 100%;
   }
 
   .modal-body {
-    height: 100%;
+    .close{
+      margin-top:-14px;
+      margin-right:-8px;
+    }
+
+    h2{
+      font-weight:500;
+      font-size:28px;
+    }
+
+    h2:first-of-type{
+      margin-top:0;
+    }
+    p{
+      color: $navy-blue-color;
+      line-height: 20px;
+      font-size:16px;
+    }
+
+    .bootstrap-select{
+      &:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100%;
+      }
+      & > .btn{
+        border-color: $navy-blue-color;
+      }
+      &.btn-group .btn .filter-option{
+        color: $navy-blue-color;
+        font-weight: 500;
+        font-size:18px;
+      }
+      .text-muted{
+        color:$navy-blue-color;
+        font-weight:300;
+        padding-left:4px;
+      }
+    }
+
+    .form-control{
+      border-color: $navy-blue-color;
+    }
+
+    .form-group:last-child{
+      margin-bottom:0;
+    }
   }
 
   #onboarding-overlay {

@@ -42,8 +42,8 @@
     @include large-desktop {
       margin-left: 45px;
     }
-    
-    @include small-desktop {  
+
+    @include small-desktop {
       margin-left: 35px;
       font-size: 16px;
     }
@@ -56,20 +56,20 @@
       margin-left: 35px;
       font-size: 16px;
     }
-  }   
+  }
 }
 
-/** 
+/**
  * Panel Mixin
  * @param {Color} $color
  * @param {Color} $bg-color
  * @param {String} $bg-image
- **/ 
+ **/
 
 @mixin panel($heading-color, $bg-color, $bg-image) {
 
   @if $bg-color { border: 1px solid $bg-color; }
-  @if $bg-image { 
+  @if $bg-image {
     $url: "#{$bg-img-dir}#{$bg-image}";
     background: url($url) no-repeat;
     @include phone {
@@ -90,9 +90,9 @@
 
   .panel-heading {
     @if $heading-color { color: $heading-color; }
-    @if $bg-color { 
+    @if $bg-color {
       background-color: $bg-color;
-      border-bottom: 8px solid lighten( $bg-color, 10%); 
+      border-bottom: 8px solid lighten( $bg-color, 10%);
     }
     text-align: center;
 
@@ -125,14 +125,14 @@
       font-size: 1.4em;
       line-height: 1.4em;
     }
-    
+
     form {
 
       .form-control {
         height: 36px;
         font-size: 16px;
         border: 1px solid $navy-blue-mid-color;
-      } 
+      }
     }
   }
 }
@@ -141,7 +141,7 @@
   @include panel(null, $join-mayday-color, null);
   .btn {
 
-    @include wide-button($join-mayday-color);  
+    @include wide-button($join-mayday-color);
   }
 
   .panel-body .btn {
@@ -153,7 +153,7 @@
   @include panel(null, $orientation-color, $orientation-bg-img);
 
   .btn{
-    @include wide-button($orientation-color);  
+    @include wide-button($orientation-color);
   }
 
   .panel-body .btn {
@@ -204,35 +204,35 @@
 .panel-volunteer {
   @include panel($dark-grey-color, null, $volunteer-bg-img);
   .btn {
-    @include wide-button($volunteer-color);  
+    @include wide-button($volunteer-color);
   }
 }
 
 .panel-share {
   @include panel($dark-grey-color, null, $share-bg-img);
-  
+
   .panel-body {
     padding-top: 13px;
-    
+
     @include small-desktop {
       padding-top: 20px;
     }
   }
 
   .btn-facebook {
-    
+
 
     @include wide-button($facebook-color);
     @include share-button;
   }
-  
+
   .btn-twitter {
     @include wide-button($twitter-color);
     @include share-button;
   }
-  
+
   .btn-youtube {
     @include wide-button($youtube-color);
-    @include share-button;  
+    @include share-button;
   }
 }
