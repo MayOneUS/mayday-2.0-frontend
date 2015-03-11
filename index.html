@@ -111,7 +111,7 @@ hideFromNav: true
       <div class="modal-body">
           <h2>Help us find Allies in Congress</h2>
           <p>Choose the senator or representative you think would join us in the fight for fundamental reform, then tell us why you think they'd be a good fit.</p>
-          <form id="js-nomination-form" action="http://mayone-staging.herokuapp.com/people" method="post" accept-charset="utf-8">
+          <form id="js-nomination-form">
             <fieldset>
 
               <div class="form-group">
@@ -126,27 +126,27 @@ hideFromNav: true
                     </ul>
                   </div>
                 </div>
-                <select id="nominee" class="hidden" data-show-subtext="true" data-live-search="true" name="nominee">
+                <select id="nominee" class="hidden" data-show-subtext="true" data-live-search="true" name="legislator_id">
                   <option></option>
                 </select>
               </div>
 
               <div class="form-group">
-                <textarea class="form-control" id="why" name="why" placeholder="Tell us" aria-describedby="why-nominate">Tell Us</textarea>
+                <textarea class="form-control" id="why" name="selection_comment" placeholder="Tell us why they'd be a good fit" aria-describedby="why-nominate"></textarea>
               </div>
 
               <p>Are there any additional ways you'd like to be involved with Mayday's phase 2 plans?</p>
 
               <div class="form-group">
-                <textarea class="form-control" id="skills" name="skills" placeholder="Tell us" aria-describedby="skills"></textarea>
+                <textarea class="form-control" id="skills" name="other_comment" placeholder="Tell us your ideas &amp; how you'd like to help" aria-describedby="skills"></textarea>
               </div>
 
               <div class="form-group">
-                <input id="name" name="name" type="text" placeholder="Name" aria-describedby="Name" class="form-control input-md">
+                <input id="email" name="email" type="email" placeholder="Email" aria-describedby="email" class="form-control input-md">
               </div>
 
               <div class="form-group">
-                <input id="email" name="email" type="email" placeholder="email" aria-describedby="email" class="form-control input-md">
+                <input id="zip" type="zip" pattern="\d{5,5}(-\d{4,4})?" name="zip" placeholder="ZIP Code" aria-describedby="Name" class="form-control input-md">
               </div>
 
               <div class="form-group">
@@ -165,7 +165,7 @@ hideFromNav: true
 <script>
 
 function fetch_legislator_info() {
-  var $nomineSelect = $('#nominee')
+  var $nomineeSelect = $('#nominee')
   $.ajax({
     beforeSend: function(request) {
       request.setRequestHeader('Accept-Encoding', 'deflate');
@@ -174,12 +174,12 @@ function fetch_legislator_info() {
     url: 'http://mayone-staging.herokuapp.com/legislators',
     success: function(legislators) {
       legislators.map(function(legislator){
-        $nomineSelect.append(
-          '<option data-subtext="'+legislator.title+' '+legislator.state_name+'">'+legislator.name+'</option>'
+        $nomineeSelect.append(
+          '<option value="' + legislator.id + '" data-subtext="' + legislator.title + ' ' + legislator.state_name + '">' + legislator.name + '</option>'
         );
       });
       $('.btn-group.bootstrap-select').hide()
-      $nomineSelect.removeClass('hidden').selectpicker();
+      $nomineeSelect.removeClass('hidden').selectpicker();
     }
   });
 }
@@ -187,6 +187,14 @@ function fetch_legislator_info() {
 
 $(document).ready(function(){
   fetch_legislator_info()
+
+  $("#js-nomination-form").submit(function (event) {
+    event.preventDefault();
+    var saveURI = 'http://mayone-staging.herokuapp.com/nominations';
+    $.post(saveURI, $(this).serialize());
+    $('#submit-candidate-modal').modal('hide');
+    $('#js-nomination-form').trigger("reset");
+  });
 
   $("form.join").submit(function (event) {
     event.preventDefault();
