@@ -19,6 +19,23 @@ li {
 .about-icons{
   width: 62%;
   height: 62%;
+  @include phone{
+    width: 40%;
+    height: 40%;
+    min-width: 80px;
+    min-height: 80px;
+  }
+}
+.team-icon{
+  width: 90%;
+  height: 90%;
+  @include phone{
+    width: 70%;
+    height: 70%;
+    min-width: 120px;
+    min-height: 120px;
+    margin-top: -12px;
+  }
 }
 .bullet-color{
     color: $brand-color;
@@ -28,7 +45,4 @@ li {
 }
 .large-icons img{
   margin-bottom: 60px;
-}
-.contact-section {
-  max-width: 775px;
 }

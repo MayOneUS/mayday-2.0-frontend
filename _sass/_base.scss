@@ -452,7 +452,7 @@ pre {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  /* margin-bottom: 60px; */
+  // margin-bottom: 80px;
   @include phone {
     padding-right: 5px;
     padding-left: 5px;
@@ -491,4 +491,7 @@ pre {
 
 .no-bottom-margin{
   margin-bottom:0 !important;
+}
+.bottom-spacer{
+  margin-bottom: 80px;
 }
