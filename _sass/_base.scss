@@ -277,8 +277,8 @@ pre {
   @include wide-button($dark-red-color);
   font-size: 28px;
   padding: 12px 0px;
+  margin:0;
   border: none;
-  // border-radius: 5px;
   font-weight:400;
 }
 
