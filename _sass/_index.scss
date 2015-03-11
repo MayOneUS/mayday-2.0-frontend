@@ -417,13 +417,12 @@
     overflow: hidden;
   }
   
-  dt,
-  dd {
-    display: inline;
-  }
-  
   dt {
     display: none;
+  }
+
+  dd {
+    display: inline;
   }
   
   #firstname,
