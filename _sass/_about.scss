@@ -9,7 +9,7 @@ li {
   padding-left:0;
 }
 .smaller-layout{
-  max-width: 775px;
+  max-width: 835px;
 }
 .placed-center{
   text-align: center;
@@ -17,9 +17,18 @@ li {
   margin-right: auto;
 }
 .about-icons{
-  width: 75%;
-  height: 75%;
+  width: 62%;
+  height: 62%;
 }
 .bullet-color{
     color: $brand-color;
+}
+.info-height h3{
+  margin-bottom: 10px;
+}
+.large-icons img{
+  margin-bottom: 60px;
+}
+.contact-section {
+  max-width: 775px;
 }
