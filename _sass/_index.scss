@@ -364,11 +364,14 @@
   }
 }
 */
+
 #submit-candidate-modal {
+  .modal-body {
+    padding: 0;
+  }
 
   .modal-dialog {
     height: 100%;
-    // margin: 0 auto;
     max-width:440px;
   }
 
