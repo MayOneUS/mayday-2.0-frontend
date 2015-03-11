@@ -41,7 +41,7 @@
         @include phone {
           width: 73%;
           max-width: 300px;
-          margin: 0 3%;
+          margin: 0 2%;
         }
         @include tablet {
           width: 380px;
@@ -234,20 +234,28 @@
 .menu-li-center span{
   padding: 15px;
 }
+.gap-filler{
+  position: absolute
+  width: 100%
+  height: 40px;
+  z-index: 100;
+  background-color: $navy-blue-light-color;
+}
 // customize bootstrap navbar overriden bootstrap css
 /* navbar */
 .navbar {
   position: relative;
-  min-height: 40px;
+  min-height: 1px;//right
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
 .navbar-toggle {
+  font-size: 14px;
   position: relative;
   float: right;
-  padding: 4px 10px;
+  padding: 4px 8px;
   margin-top: -49px;
-  margin-right: 15px;
+  margin-right: 3.5%;
   margin-bottom: 8px;
   background-color: transparent;
   background-image: none;
