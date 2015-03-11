@@ -6,6 +6,9 @@
     background-color: $navy-blue-color;
     height: 80px;
     position: relative;
+    @include phone{
+      height: 55px;
+    }
     .container {
       height: 100%;
       position: relative;
@@ -34,6 +37,12 @@
 
       .logo {
         width: 280px;
+        margin: 0 auto;
+        @include phone {
+          width: 73%;
+          max-width: 300px;
+          margin: 0 3%;
+        }
         @include tablet {
           width: 380px;
         }
@@ -43,7 +52,6 @@
         @include large-desktop {
           width: 434px;
         }
-        margin: 0 auto;
         img {
           position: relative;
           z-index: 99;
@@ -173,10 +181,6 @@
       display: inline-block;
       margin-left: -10px;
       width: 40%;
-      a {
-        border: 1px solid rgb(91,121,150);
-        border-radius: 5px;
-      }
     }
     .right-links {
       float: right;
@@ -184,6 +188,10 @@
       margin-right: -20px;
       display: inline-block;
       width: 40%;
+      a {
+        border: 1px solid rgb(91,121,150);
+        border-radius: 5px;
+      }
     }
   }
 
@@ -214,11 +222,42 @@
     }
   }
 }
-// customize bootstrap navbar
+.menu-ul-center {
+  width:100%;
+  height:50px;
+  text-align:center;
+}
+.menu-li-center {
+  display:inline-block;
+  color:white;
+}
+.menu-li-center span{
+  padding: 15px;
+}
+// customize bootstrap navbar overriden bootstrap css
 /* navbar */
+.navbar {
+  position: relative;
+  min-height: 40px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+.navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 4px 10px;
+  margin-top: -49px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
 .navbar-default {
-    background-color: $navy-blue-light-color;
-    border-color: $navy-blue-color;
+  z-index: 50;
+  background-color: $navy-blue-light-color;
+  border-color: $navy-blue-color;
 }
 /* title */
 .navbar-default .navbar-brand {
@@ -228,7 +267,7 @@
 .navbar-default .navbar-brand:focus {
     color: #007acf;
 }
-/* link */
+/* link color-text*/
 .navbar-default .navbar-nav > li > a {
     color: #e4e4e4;
 }
@@ -250,9 +289,32 @@
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: #e4e4e4;
-    border-bottom-color: #e4e4e4;
+    border-top-color: $navy-blue-color;
+    border-bottom-color: $dark-red-color;
 }
+.navbar-default .navbar-nav>.disabled>a,.navbar-default .navbar-nav>.disabled>a:focus,.navbar-default .navbar-nav>.disabled>a:hover {
+    color: #ccc;
+    background-color: transparent
+}
+
+.navbar-default .navbar-toggle {
+    background-color: #ddd;
+    border-color: #ddd;
+}
+// .navbar-collapse {
+//     padding-right: 15px;
+//     padding-left: 15px;
+//     overflow-x: visible;
+//     -webkit-overflow-scrolling: touch;
+//     // border-top: 1px solid transparent;
+//     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+//     box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+// }
+// .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+//   z-index: -50;
+//   border-color: #16213f; 
+//   border-bottom: 1px solid red;
+// }
 
 /**
  * Globals
