@@ -276,6 +276,9 @@ a:link, a:visited, a:active {
       a {
         -webkit-font-smoothing: antialiased;
         padding: 10px;
+        @include small-desktop {
+          padding-right: 0;
+        }
         span {
           margin: 2px 2px;
           font-size: 26px;
@@ -304,7 +307,7 @@ a:link, a:visited, a:active {
       // }
 
       @include small-desktop {
-        width: 230px;
+        width: 100%;
       }
 
       @include large-desktop {
