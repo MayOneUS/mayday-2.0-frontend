@@ -25,6 +25,13 @@
   @include icon('../images/newspaper.svg');
 }
 
+.md-newspaper-large {
+  @include icon('../images/newspaper.svg');
+  background-position: -5px 3px;
+  width: 65px;
+  height: 65px;
+}
+
 .md-microphone {
   @include icon('../images/microphone.svg');
 }
@@ -46,6 +53,7 @@
   -webkit-box-shadow: none;
   box-shadow: none;
   position: relative;
+  padding-bottom:10px;
 
   hr {
     height: 1px;

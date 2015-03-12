@@ -9,7 +9,7 @@ permalink: /in-the-news/
     <div class="col-xs-11 col-sm-8">
       <div class="row no-gutter-phone">
         <div class="col-xs-12">
-          <h1><i class="md md-newspaper" style="width: 65px; height: 65px;"></i> Mayday In the <strong>News</strong></h1>
+          <h1><i class="md-icon md-newspaper-large"></i>Mayday In the <strong>News</strong></h1>
         </div>
       </div>
       <div class="row">
@@ -1904,12 +1904,11 @@ Ask us anything!
         <div class="col-xs-12">
           <div class="panel panel-news">
             <div class="panel-heading">
-              <div class="panel-title">
-                <h3><a href="/press-releases/"><i class="md md-microphone"></i>Press Releases</a></h3>
-              </div>
+              <h2>
+                <a href="/press-releases/"><i class="md-icon md-microphone"></i>Press Releases</a>
+              </h2>
             </div>
             <div class="panel-body">
-              <hr />
               <ul id="tumblr-press-releases">
               </ul>
               <a class="more-link" href="/press-releases/">&gt; View our Press Release Library</a>
@@ -1921,18 +1920,14 @@ Ask us anything!
         <div class="col-xs-12">
           <div class="panel panel-news">
             <div class="panel-heading">
-              <div class="panel-title">
-                <h3>
-                  <i class="md md-shield"></i>
-                  The Mayday Blog
-                </h3>
-              </div>
+                <h2>
+                  <a href="http://playtestplay.tumblr.com/"><i class="md-icon md-shield"></i> The Mayday Blog</a>
+                </h2>
             </div>
             <div class="panel-body">
-              <hr />
               <ul id="tumblr-posts">
               </ul>
-              <a href="http://playtestplay.tumblr.com/" target="_blank">&gt; The Mayday Blog</a>
+              <a class="more-link" href="http://playtestplay.tumblr.com/" target="_blank">&gt; The Mayday Blog</a>
             </div>
           </div>
         </div>
@@ -1948,7 +1943,14 @@ Ask us anything!
     {% raw %}<li><a href="{{ url }}">{{ regular-title }}</a></li>{% endraw %}
 </script>
 <script id="press_release" type="text/html">
-    {% raw %}<li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="{{ url }}">{{ regular-title }}</a></div></li>{% endraw %}
+    {% raw %}
+      <li>
+        <p>
+          <time class="press-date">{{ date }}</time> -
+          <a class="press-link" href="{{ url }}">{{ regular-title }}</a>
+        </p>
+      </li>
+    {% endraw %}
 </script>
 <script type="text/javascript">
   ;(function($, ich) {
@@ -1970,6 +1972,8 @@ Ask us anything!
       var $releasesContainer = $('#tumblr-press-releases');
 
       releasePosts.forEach(function(post, index) {
+        d = new Date(post['date']);
+        post['date'] = d.getMonth()+1 + "/" + d.getDate() + "/" + d.getFullYear();
         post['regular-title'] = post['regular-title'].replace('PRESS RELEASE - ','')
         $releasesContainer.append( ich.press_release(post) );
       });

@@ -33,6 +33,7 @@ $grey-color-light: #cccccc;
 $text-color: #5C5C5C;
 
 $spacing-unit: 1;
+$spacing-unit-half: 0.5em;
 $base-line-height: 1.0em;
 $page-content-line-height: 1.6em;
 $content-width: 1280;
@@ -205,9 +206,13 @@ a {
  */
 blockquote {
   color: $text-color;
-  padding-left: $spacing-unit / 2 em;
+  padding: 0 1em 0.5em;
+  display:inline-block;
+  margin-left:1em;
   font-size: 18px;
-  letter-spacing: -1px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  background: #FAFAFA;
 
   > :last-child {
     margin-bottom: 0;
