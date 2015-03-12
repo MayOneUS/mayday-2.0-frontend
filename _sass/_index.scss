@@ -80,7 +80,7 @@
     overflow: hidden;
     padding-top:50px;
     padding-bottom:50px;
-    font-weight: 100;
+    font-weight: 300;
 
     .container{
       padding-top:0;
@@ -382,7 +382,7 @@
     }
 
     h2{
-      font-weight:500;
+      font-weight:400;
       font-size:28px;
     }
 
@@ -404,7 +404,7 @@
       }
       &.btn-group .btn .filter-option{
         color: $navy-blue-color;
-        font-weight: 500;
+        font-weight: 400;
         font-size:18px;
       }
       .text-muted{

@@ -38,7 +38,7 @@ $progress-breakpoint-small:715px;
     position: relative;
     z-index: 99;
     margin:0;
-    font-weight: normal;
+    font-weight: 400;
   }
   .sub-headline {
     font-size: 22px;
@@ -137,7 +137,7 @@ $progress-breakpoint-small:715px;
     .count {
       float: right;
       color: white;
-      font-weight: 600;
+      font-weight: 400;
       font-size: 45px;
       margin: 14px 8px 0 0;
     }
