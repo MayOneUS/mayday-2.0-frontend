@@ -8,13 +8,17 @@
       </div>
       <div class="logo"><a href="/"><img src="/images/web_logo_2x.png"></a></div>
       <div class="search-section-right hidden-xs">
-        <form>
-          <input type="email" placeholder="Join our email list"/>
+        <form class="email-signup">
+          <input type="email" name="person[email]" placeholder="Join our email list"/>
+          <input type="hidden" name="person[remote_fields][tags][]" value="test_1_9">
           <button type="submit">
             <div class="divide-line"></div>
             <span class="socicon">@</span>
           </button>
         </form>
+        <div class="hidden">
+          <h1>Thank you!</h1>
+        </div>
       </div>
     <div class="fade-line hidden-xs hidden-sm"></div>
     </div>
@@ -50,13 +54,16 @@
           <li><a href="/news/">NEWS</a></li>
           <li><a href="/donate/"><i class="menu-stars fa fa-star"></i> DONATE <i class="menu-stars fa fa-star"></i></a></li>
           
-          <form class="menu-section-center">
-            <input type="email" placeholder="Join our email list"/>
+          <form class="email-signup menu-section-center">
+            <input type="email" name="person[email]" placeholder="Join our email list"/>
+            <input type="hidden" name="person[remote_fields][tags][]" value="test_1_9">
             <button type="submit">
               <span class="socicon">@</span>
             </button>
-          
           </form>
+          <div class="hidden">
+            <h1>Thank you!</h1>
+          </div>
           <p class="nav-spacer">x</p>
           <div class="menu-section-center">
             <div class="menu-div-center"><a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a></div>
