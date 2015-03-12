@@ -5,10 +5,10 @@
   background-image: url(#{$img-url});
   background-size: 100% auto;
   background-repeat: none;
-  background-position: bottom;
+  background-position: left bottom;
 }
 
-.md {
+.md-icon {
   height: 40px;
   width: 40px;
   display: inline-block;
@@ -19,32 +19,30 @@
 
 .md-envelope {
   @include icon('../images/envelope.svg');
-  margin-bottom: -12px;
 }
 
 .md-newspaper {
   @include icon('../images/newspaper.svg');
-  margin-bottom: -12px;
+}
+
+.md-newspaper-large {
+  @include icon('../images/newspaper.svg');
+  background-position: -5px 3px;
+  width: 65px;
+  height: 65px;
 }
 
 .md-microphone {
   @include icon('../images/microphone.svg');
-  margin-bottom: -12px;
 }
 
 .md-download {
   @include icon('../images/download.svg');
-  margin-bottom: -10px;
 }
 
 .md-shield {
   @include icon('../images/shield.svg');
-  margin-bottom: -14px;
 }
-.kill-li-indent {
-  text-indent: -15px;
-}
-
 
 /**
  * Mayday News Panels
@@ -54,14 +52,27 @@
 
   -webkit-box-shadow: none;
   box-shadow: none;
-
-  h3 {
-    margin-top: 0px;
-  }
+  position: relative;
+  padding-bottom:10px;
 
   hr {
     height: 1px;
     background-color: $grey-color;
+  }
+
+  .panel-heading{
+    margin-bottom:0;
+    h2, h2 a{
+      padding-bottom: 5px;
+      font-weight:400;
+      margin-top:0;
+      font-size: 28px;
+      line-height:30px;
+      color: $navy-blue-color;
+    }
+    h2{
+      border-bottom: 1px solid $navy-blue-color;
+    }
   }
 
   .panel-body {
@@ -69,27 +80,25 @@
     font-size: 18px;
 
     li {
-      margin-top: 10px;
+      margin-bottom:10px;
+      font-size:16px;
+      line-height:normal;
     }
     .press-date {
-      display: inline-block;
       font-weight: 400;
     }
     .press-link {
-      display: inline-block;
       vertical-align: top;
       width: 70%;
     }
     .more-link {
-      margin-top: 10px;
+      position: absolute;
+      bottom:0;
+      right:10px;
       font-size: 14px;
       font-weight: 600;
       float: right;
     }
-  }
-  .panel-links {
-    font-weight: 100;
-    margin-left: -15px;
   }
 }
 
