@@ -206,13 +206,18 @@ a {
  */
 blockquote {
   color: $text-color;
-  padding: 0 1em 0.5em;
+  padding: 0.5em 1em;
   display:inline-block;
   margin-left:1em;
   font-size: 18px;
   line-height: 120%;
   letter-spacing: -0.01em;
   background: #FAFAFA;
+
+  > :first-child{
+    margin-top:0;
+    padding-top:0;
+  }
 
   > :last-child {
     margin-bottom: 0;
