@@ -3,10 +3,21 @@
  */
 
 
-
+.all-videos {
+  margin-bottom: 40px;
+}
 .video-group{
   display: inline-block;
   float: left;
+  h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    @include large-desktop {
+      &.two-line-height-on-lg {
+        min-height: 48px;
+      }
+    }
+  }
   .video-box{
     padding-top: 15px;
     padding-bottom: 20px;
@@ -25,23 +36,30 @@
   .button-row{
     border-radius: 4px;
   }
-  .fb{
+  .fb, .tw {
     text-transform: uppercase;
-    background-color: $facebook-color;
     color: white;
-    width: 99%;
-    margin-left: 1.5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    font-weight: lighter;
+    width: 98%;
+    margin: 10px 0;
+    vertical-align: middle;
+    .fa {
+      font-size: 28px;
+      line-height: 1;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .share-button-text {
+      vertical-align: middle;
+    }
+  }
+  .fb {
+    background-color: $facebook-color;
+    float: left;
   }
   .tw{
-    text-transform: uppercase;
     background-color: $twitter-color;
-    color: white;
-    width: 99%;
-    margin-right: 1%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    float: right;
   }
 }
 
