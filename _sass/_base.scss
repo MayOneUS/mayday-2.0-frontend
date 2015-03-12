@@ -41,7 +41,7 @@ $bottom-spacing: 15px;
 $top-spacing: 15px;
 $left-margin-spacing: 1.3em;
 
-$header-weight: 100;
+$header-weight: 300;
 
 $tablet-min-width: 768px;
 $small-desktop-min-width: 992px;
@@ -80,7 +80,7 @@ html, body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
-  font-weight: 350;
+  font-weight: 400;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
@@ -268,7 +268,7 @@ pre {
   width: 100%;
 
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 300;
 
   margin-top: 6px;
   padding: 16px 16px;

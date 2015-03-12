@@ -69,7 +69,7 @@
           color: $navy-blue-light-color;
           ::-webkit-input-placeholder { /* WebKit browsers */
             color: $navy-blue-light-color;
-            font-weight: bold;
+            font-weight: 400;
           }
           :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
             color: $navy-blue-light-color;
@@ -174,7 +174,7 @@
     .middle-dot {
       color: rgba(255,255,255, .25);
       padding: 4px;
-      font-weight: bold;
+      font-weight: 400;
     }
     .left-links {
       float: left;
@@ -313,7 +313,7 @@ a:link, a:visited, a:active {
       color: $navy-blue-light-color;
       ::-webkit-input-placeholder { /* WebKit browsers */
         color: $navy-blue-light-color;
-        font-weight: bold;
+        font-weight: 400;
       }
       :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
         color: $navy-blue-light-color;
@@ -380,7 +380,7 @@ a:link, a:visited, a:active {
       background: radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
     }
     .name {
-      font-weight: bold;
+      font-weight: 400;
       font-size: 38px;
     }
     .disclaimer-box {
@@ -751,7 +751,7 @@ a:link, a:visited, a:active {
       display: inline-block;
       list-style-type: none;
       font-size: 200%;
-      font-weight: 500;
+      font-weight: 400;
       color: #0c3962;
       text-align: center;
       width: 155px;
@@ -791,7 +791,7 @@ a:link, a:visited, a:active {
 
       h3 {
         font-size: 175%;
-        font-weight: 500;
+        font-weight: 400;
         text-align: left;
       }
 
