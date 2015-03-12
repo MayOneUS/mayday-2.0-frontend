@@ -1,9 +1,15 @@
 #index {
   // font-weight: 300;
   // padding-bottom:290px;/* hack for now MARIO TODO*/
-
-  h1{
-    margin-bottom:10px;
+  .spacer-opening{
+    @include phone{
+      padding-top:30px;
+      padding-bottom:15px;
+    }
+    @include tablet{
+      padding-top:30px;
+      padding-bottom:15px;
+    }
   }
   .action-panel{
     text-align:center;
@@ -26,6 +32,12 @@
         left:50%;
         margin-left:-20px;
         z-index:100;
+        @include phone{
+          top:22px;
+        }
+        @include tablet{
+          top:22px;
+        }
       }
       .fade-line{
         position: absolute;
@@ -43,6 +55,10 @@
         background: -webkit-radial-gradient(circle, #ffffff, $navy-blue-color);
         background: radial-gradient(circle, #ffffff, $navy-blue-color);
       }
+    //   @include tablet{
+    //         margin-left: -15px;
+    // margin-right: -15px;
+    //   }
     }
 
 
@@ -284,7 +300,6 @@
 
     &.capitol-building{
       background: #fff url(/images/capitol_building.png) right bottom no-repeat;
-      margin: 0 auto;
     }
   }
 
@@ -317,6 +332,9 @@
       }
     }
   }
+}
+.round-it{
+  border-radius: 5px;
 }
 
 /*
@@ -370,8 +388,11 @@
     height: 100%;
     max-width:440px;
   }
-
+  .modal-thankyou{
+    max-width:340px;
+  }
   .modal-content {
+    background-color: #e4e4e4;
     border: none;
   }
 
@@ -387,7 +408,7 @@
     }
 
     h2:first-of-type{
-      margin-top:0;
+      margin-top:5px;
     }
     p{
       color: $navy-blue-color;

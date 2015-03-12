@@ -32,6 +32,8 @@ $light-grey-color: #cccccc;
 $grey-color-light: #cccccc;
 $text-color: #5C5C5C;
 
+
+
 $spacing-unit: 1;
 $spacing-unit-half: 0.5em;
 $base-line-height: 1.0em;
@@ -46,6 +48,25 @@ $header-weight: 300;
 $tablet-min-width: 768px;
 $small-desktop-min-width: 992px;
 $large-desktop-min-width: 1200px;
+
+/**
+ * Mixins for Panels and Buttons
+ */
+
+$facebook-color: rgb(59, 89, 151);
+$twitter-color: rgb(64, 153, 255);
+$youtube-color: rgb(117, 117, 117);
+$reddit-color: rgb(31, 89, 111);
+$join-mayday-color: rgb(19, 83, 145);
+$volunteer-color: rgb(80, 107, 134);
+$orientation-color: rgb(76, 43, 98);
+
+$bg-img-dir: '../images/action/';
+$orientation-bg-img: 'orientation-bg.jpg';
+$donor-strike-bg-img: 'donor-strike-bg.jpg';
+$reddit-bg-img: 'reddit-bg.jpg';
+$volunteer-bg-img: 'volunteer-bg.jpg';
+$share-bg-img: 'share-bg.jpg';
 
 @mixin phone {
   @media (max-width: #{$tablet-min-width - 1px}) {
@@ -84,6 +105,9 @@ html, body {
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
+  @include phone{
+    color: #333;
+  }
 }
 
 
@@ -281,13 +305,33 @@ pre {
   }
 }
 
-.btn.btn-mayday {
+.btn-mayday {
   @include wide-button($dark-red-color);
   font-size: 28px;
+  padding: 9px 0px;
+  margin:0;
+  border: none;
+  font-weight:300;
+  letter-spacing: 1px;
+}
+.btn-reddit {
+  @include wide-button($reddit-color);
+  font-size: 22px;
   padding: 12px 0px;
   margin:0;
   border: none;
-  font-weight:400;
+  font-weight:300;
+  letter-spacing: 1px;
+}
+.btn-suggestion {
+  @include wide-button($join-mayday-color);
+  text-transform: none;
+  font-size: 18px;
+  padding: 14px 0px;
+  margin:0;
+  border: none;
+  font-weight:300;
+  letter-spacing: 1px;
 }
 
 .box-inner {
@@ -453,6 +497,7 @@ pre {
 
 .socicon {
     font-family: 'socicon' !important;
+    -webkit-font-smoothing: antialiased;
 }
 
 /**
@@ -474,6 +519,26 @@ pre {
   @include phone {
     padding-right:0;
     padding-left:0;
+  }
+}
+.gutter-justphone  > [class*='col-'] {
+  @include tablet {
+    padding-right:0;
+    padding-left:0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  @include small-desktop {
+    padding-right:0;
+    padding-left:0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  @include large-desktop {
+    padding-right:0;
+    padding-left:0;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 .no-gutter > [class*='col-'] {
@@ -504,6 +569,10 @@ pre {
 .index-page-title{
   font-size: 34px;
   font-weight: 400;
+  margin: 25px 0px 50px;
+  @include phone{
+    margin: 25px 0px 25px;
+  }
 }
 .lead-font-size{
   font-size: 21px;
