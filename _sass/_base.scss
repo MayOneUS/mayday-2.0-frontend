@@ -33,6 +33,7 @@ $grey-color-light: #cccccc;
 $text-color: #5C5C5C;
 
 $spacing-unit: 1;
+$spacing-unit-half: 0.5em;
 $base-line-height: 1.0em;
 $page-content-line-height: 1.6em;
 $content-width: 1280;
@@ -148,7 +149,8 @@ h1, h2, h3 {
 }
 
 h1{
-  font-size: 40px
+  font-size: 40px;
+  margin: 0 0 20px;
 }
 
 p.subheader {
@@ -204,13 +206,19 @@ a {
  * Blockquotes
  */
 blockquote {
-  // color: $grey-color;
   color: $text-color;
-  // border-left: 4px solid $grey-color-light;
-  padding-left: $spacing-unit / 2;
+  padding: 0.5em 1em;
+  display:inline-block;
+  margin-left:1em;
   font-size: 18px;
-  letter-spacing: -1px;
-  // font-style: italic;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  background: #FAFAFA;
+
+  > :first-child{
+    margin-top:0;
+    padding-top:0;
+  }
 
   > :last-child {
     margin-bottom: 0;
@@ -489,6 +497,10 @@ pre {
 .mayday-headline-smaller{
   font-weight: 400;
   font-size: 40px;
+}
+.index-page-title{
+  font-size: 34px;
+  font-weight: 400;
 }
 .lead-font-size{
   font-size: 21px;

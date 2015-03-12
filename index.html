@@ -9,7 +9,7 @@ hideFromNav: true
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="page-title">We tried. We learned. We’re trying again.</h1>
+        <h1 class="index-page-title">We tried. We learned. We’re trying something new.</h1>
       </div>
     </div>
     <div class="row">
@@ -32,7 +32,7 @@ hideFromNav: true
           <img src="/images/capitol_building_box_icon.svg" class="img-responsive img-capitol" alt="">
           <p class="rally">We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
           <form class="join">
-            <button type="submit" data-toggle="modal" data-target="#submit-candidate-modal" class="btn btn-mayday">Take Action</button>
+            <button class="show-modal btn btn-mayday">Take Action</button>
           </form>
           <p class="no-bottom-margin">
             <a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> 
@@ -104,7 +104,7 @@ hideFromNav: true
           <h2 class="box-title">Help us with v2</h2>
           <p class="rally"><strong>Step One:</strong> We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
           <form class="join">
-            <button type="submit" data-toggle="modal" data-target="#onboarding-modal" class="btn btn-mayday">Take Action</button>
+            <button class="show-modal btn btn-mayday">Take Action</button>
           </form>
           <p><a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> </p>
         </div>
@@ -196,9 +196,6 @@ hideFromNav: true
 function fetch_legislator_info() {
   var $nomineeSelect = $('#nominee')
   $.ajax({
-    beforeSend: function(request) {
-      request.setRequestHeader('Accept-Encoding', 'deflate');
-    },
     dataType: "json",
     url: 'http://mayone-staging.herokuapp.com/legislators',
     success: function(legislators) {
@@ -217,7 +214,13 @@ function fetch_legislator_info() {
 $(document).ready(function(){
   fetch_legislator_info();
 
-  $("#nomination-page-2").hide();
+  $("button.show-modal").click(function() {
+    $('#js-nomination-form').trigger("reset");
+    $('#additional-fields').show();
+    $("#nomination-page-2").hide();
+    $("#nomination-page-1").show();
+    $('#submit-candidate-modal').modal('show');
+  });
 
   $("#submit-again").click(function() {
     $("#nomination-page-2").hide();

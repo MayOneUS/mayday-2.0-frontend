@@ -2,6 +2,45 @@ s3_id: <%= ENV['S3_ID'] %>
 s3_secret: <%= ENV['S3_SECRET'] %>
 s3_bucket: <%= ENV['S3_BUCKET'] %>
 
+redirects:
+  # Main page redirects
+  the-plan: 'about_us'
+  about: 'team_and_board'
+  media: 'in-the-news'
+  blog: 'http://blog.mayday.us/'
+
+  # Pledge pages
+  newpledge: 'donate'
+  pledge: 'donate'
+  pledge-independence: 'donate'
+  newpledge2: 'donate'
+  pledge-the-internets-superpac: 'donate'
+  vidpledge: 'donate'
+  newpledge-with-thanks: 'donate'
+
+  # Embed page and associated images
+  embed: 'https://v1.mayday.us/embed/'
+  images/ProfilePic.jpg: 'https://v1.mayday.us/images/ProfilePic.jpg'
+  images/Banner.jpg: 'https://v1.mayday.us/images/Banner.jpg'
+  images/superpacforinternet.jpg: 'https://v1.mayday.us/images/superpacforinternet.jpg'
+  images/appleerror.jpg: 'https://v1.mayday.us/images/appleerror.jpg'
+  images/criticalerror.jpg: 'https://v1.mayday.us/images/criticalerror.jpg'
+  images/winerror.jpg: 'https://v1.mayday.us/images/winerror.jpg'
+  images/mayday-genericshare.jpg: 'https://v1.mayday.us/images/mayday-genericshare.jpg'
+  images/mayday-goodfight-share.jpg: 'https://v1.mayday.us/images/mayday-goodfight-share.jpg'
+  images/superpacforinternet.jpg: 'https://v1.mayday.us/images/superpacforinternet.jpg'
+  images/corner-embed.png: 'https://v1.mayday.us/images/corner-embed.png'
+  images/halfpage.png: 'https://v1.mayday.us/images/halfpage.png'
+  images/inline-rectangle.png: 'https://v1.mayday.us/images/inline-rectangle.png'
+  images/small-square.png: 'https://v1.mayday.us/images/small-square.png'
+  images/small-rectangle.png: 'https://v1.mayday.us/images/small-rectangle.png'
+  images/skyscraper-wide.png: 'https://v1.mayday.us/images/skyscraper-wide.png'
+  images/skyscraper.png: 'https://v1.mayday.us/images/skyscraper.png'
+  images/mobile-leaderboard.png: 'https://v1.mayday.us/images/mobile-leaderboard.png'
+  images/large-leaderboard.png: 'https://v1.mayday.us/images/large-leaderboard.png'
+  images/leaderboard.png: 'https://v1.mayday.us/images/leaderboard.png'
+  images/banner.png: 'https://v1.mayday.us/images/banner.png'
+
 # Below are examples of all the available configurations.
 # See README for more detailed info on each of them.
 
