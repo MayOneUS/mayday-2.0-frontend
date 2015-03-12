@@ -182,9 +182,6 @@ hideFromNav: true
 function fetch_legislator_info() {
   var $nomineeSelect = $('#nominee')
   $.ajax({
-    beforeSend: function(request) {
-      request.setRequestHeader('Accept-Encoding', 'deflate');
-    },
     dataType: "json",
     url: 'http://mayone-staging.herokuapp.com/legislators',
     success: function(legislators) {
