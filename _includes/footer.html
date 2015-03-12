@@ -1,33 +1,46 @@
 <footer class="site-footer">
   <div class="container">
-  <div class="left-col col-xs-12 col-sm-3 col-md-3 col-lg-3">
-    <div class="icon-line">
-      <a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
-      <a href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
-      <a href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
-      <a href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ" target="_blank"><span class="socicon">r</span></a>
+    <div class="left-col col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <div class="icon-line added-margin">
+        <a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
+        <a href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
+        <a href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
+        <a href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ" target="_blank"><span class="socicon">r</span></a>
+      </div>
+      <form class="email-signup">
+        <input type="email" name="person[email]" placeholder="Join our email list"/>
+        <input type="hidden" name="person[remote_fields][tags][]" value="test_1_9">
+        <button type="submit">
+          <span class="socicon">@</span>
+        </button>
+      </form>
+      <div class="hidden">
+        <h1>Thank you!</h1>
+      </div>
+      <div class="vertical-fade-line hidden-xs hidden-sm"></div>
     </div>
-    <form>
-      <input type="email" placeholder="Join our email list"/>
-      <button type="submit">
-        <span class="socicon">@</span>
-      </button>
-    </form>
-    <div class="vertical-fade-line hidden-xs"></div>
-  </div>
-  <div class="center-col col-xs-12 col-sm-6 col-md-6 col-lg-6">
-    <a href="/" class="name">MAYDAY.US</a>
-    <div class="disclaimer-box">Paid for by Mayday PAC. Not authorized by any candidate or candidate's committee. MAYDAY.US</div>
-    <div class="copyright">©2015 Mayday PAC. Some rights reserved.</div>
-    <div class="creative-commons"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="http://i.creativecommons.org/l/by/3.0/80x15.png"/></a></div>
-    <div class="vertical-fade-line hidden-xs"></div>
-  </div>
-  <div class="right-col hidden-xs col-sm-3 col-md-3 col-lg-3">
-    <div><a href="/the_plan/">The Plan</a></div>
-    <div><a href="/take_action/">Take Action</a></div>
-    <div class="hr"></div>
-    <div><a href="/about_us/">About</a></div>
-    <div><a href="/news/">News</a></div>
-    <div><a href="/donate/">Donate</a></div>
+    <div class="center-col col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <a href="/" class="name">MAYDAY.US</a>
+      <div class="disclaimer-box">Paid for by Mayday PAC. Not authorized by any candidate or candidate's committee. MAYDAY.US</div>
+      <div class="copyright">©2015 Mayday PAC. Some rights reserved.</div>
+      <div class="creative-commons"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="http://i.creativecommons.org/l/by/3.0/80x15.png"/></a></div>
+      <div class="vertical-fade-line hidden-xs hidden-sm"></div>
+    </div>
+    <div class="right-col hidden-xs hidden-sm col-md-3 col-lg-3">
+      <div><a href="/about_us/">About</a></div>
+      <div><a href="/news/">News</a></div>
+      <div class="donate-link"><a href="/donate/">DONATE</a></div>
+    </div>
   </div>
 </footer>
+<script>
+$(document).ready(function(){
+  $("form.email-signup").submit(function (event) {
+    event.preventDefault();
+    var saveURI = 'http://mayone-staging.herokuapp.com/people';
+    $.post(saveURI, $(this).serialize());
+    $(this).hide();
+    $(this).next().removeClass('hidden');
+  });
+});
+</script>

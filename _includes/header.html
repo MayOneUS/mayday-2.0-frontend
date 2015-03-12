@@ -2,18 +2,23 @@
   <div class="top-nav">
     <div class="container">
       <div class="icon-bar-left hidden-xs">
-        <a href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
-        <a href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
-        <a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
+        <a class="facebook" href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
+        <a class="twitter" href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
+        <a class="reddit" href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
       </div>
       <div class="logo"><a href="/"><img src="/images/web_logo_2x.png"></a></div>
       <div class="search-section-right hidden-xs">
-        <form>
-          <input type="email" placeholder="Join our email list"/>
+        <form class="email-signup">
+          <input type="email" name="person[email]" placeholder="Join our email list"/>
+          <input type="hidden" name="person[remote_fields][tags][]" value="test_1_9">
           <button type="submit">
+            <div class="divide-line"></div>
             <span class="socicon">@</span>
           </button>
         </form>
+        <div class="hidden">
+          <h1>Thank you!</h1>
+        </div>
       </div>
     <div class="fade-line hidden-xs hidden-sm"></div>
     </div>
@@ -21,20 +26,57 @@
   <div class="sub-nav hidden-xs">
     <div class="container">
       <div class="left-links">
-        <a href="/the_plan/">THE PLAN</a>
-        <span class="middle-dot">·</span>
-        <a href="/take_action/">TAKE ACTION</a>
-      </div>
-      <div class="right-links">
         <a href="/about_us/">ABOUT</a>
         <span class="middle-dot">·</span>
         <a href="/news/">NEWS</a>
-        <span class="middle-dot">·</span>
-        <a href="/donate/">DONATE</a>
+      </div>
+      <div class="right-links">
+        <a class="donate-link" href="/donate/">DONATE</a>
       </div>
     </div>
   </div>
-  <div class="bottom-taper">
+
+  <div class="gap-filler hidden-sm hidden-md hidden-lg">
+  </div>
+
+
+  <nav class="navbar navbar-default hidden-sm hidden-md hidden-lg">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">MENU
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav nav-justified">
+          <li><a href="/about_us/">ABOUT</a></li>
+          <li><a href="/news/">NEWS</a></li>
+          <li><a href="/donate/"><i class="menu-stars fa fa-star"></i> DONATE <i class="menu-stars fa fa-star"></i></a></li>
+          
+          <form class="email-signup menu-section-center">
+            <input type="email" name="person[email]" placeholder="Join our email list"/>
+            <input type="hidden" name="person[remote_fields][tags][]" value="test_1_9">
+            <button type="submit">
+              <span class="socicon">@</span>
+            </button>
+          </form>
+          <div class="hidden">
+            <h1>Thank you!</h1>
+          </div>
+          <p class="nav-spacer">x</p>
+          <div class="menu-section-center">
+            <div class="menu-div-center"><a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a></div>
+            <div class="menu-div-center"><a href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a></div>
+            <div class="menu-div-center"><a href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a></div>
+          </div>
+        </ul>
+      </div>
+
+      <!-- </div> -->    <!-- /.navbar-collapse-->
+    </div>  <!-- /.container-fluid -->
+  </nav>
+  <div class="bottom-taper hidden-xs">
     <div class="triangle-up"></div>
   </div>
 </header>

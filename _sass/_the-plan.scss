@@ -1,14 +1,6 @@
 /** 
  * Mayday Page Styles
  */
-.mayday-headline{
-  font-size: 60px;
-  margin-bottom: .315em;
-  @include small-desktop {
-    margin-bottom: .215em;
-  }
-}
-
 #plan-byline{//the plan-byline and progress-clearance are just to make sure the typography remains correct
   margin-bottom: .8em;
   font-size: 25px;
@@ -54,7 +46,7 @@
   .panel-title {
     font-size: $panel-mayday-title-size;
     color: #fff;
-    font-weight: 700;
+    font-weight: 400;
     padding: 17px 0 17px 17px;
     @include small-desktop {
       font-size: 21px;
@@ -127,7 +119,7 @@
   border-color: $grey-blue-color;
   text-transform: uppercase;
   color: white;
-  font-weight: 100;
+  font-weight: 300;
 
   @include large-desktop {
     padding: 4px 8px;

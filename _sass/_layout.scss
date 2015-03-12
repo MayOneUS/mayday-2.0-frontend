@@ -6,21 +6,30 @@
     background-color: $navy-blue-color;
     height: 80px;
     position: relative;
+    @include phone{
+      height: 55px;
+    }
     .container {
       height: 100%;
       position: relative;
       .icon-bar-left {
         position: absolute;
-        left: 8px;
+        left: -11px;
         top: 29px;
         width: 30%;
         height: 2em;
         a {
           text-decoration: none;
           padding: 8px;
+          -webkit-font-smoothing: antialiased;
+        }
+        .facebook, .twitter {
+          font-size: 26px;
+        }
+        .reddit {
+          font-size: 31px;
         }
         span {
-          font-size: 28px;
           color: white;
           margin-right: 8px;
         }
@@ -28,6 +37,12 @@
 
       .logo {
         width: 280px;
+        margin: 0 auto;
+        @include phone {
+          width: 73%;
+          max-width: 300px;
+          margin: 0 2%;
+        }
         @include tablet {
           width: 380px;
         }
@@ -37,53 +52,79 @@
         @include large-desktop {
           width: 434px;
         }
-        margin: 0 auto;
         img {
           position: relative;
-          z-index: 99;
+          z-index: 200;
         }
       }
       .search-section-right {
         z-index: 99;
         position: absolute;
-        top: 26px;
-        right: 0px;
+        top: 20px;
+        right: 3px;
         text-align: right;
+        font-size: 16px;
         form {
           display: inline-block;
+          color: $navy-blue-light-color;
+          ::-webkit-input-placeholder { /* WebKit browsers */
+            color: $navy-blue-light-color;
+            font-weight: 400;
+          }
+          :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: $navy-blue-light-color;
+            opacity: 1;
+          }
+          ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: $navy-blue-light-color;
+            opacity:  1;
+          }
+          :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color: $navy-blue-light-color;
+          }
 
           width: 180px;
           @include tablet {
             width: 180px;
           }
           @include small-desktop {
-            width: 210px;
+            width: 220px;
           }
           @include large-desktop {
-            width: 210px;
+            width: 230px;
           }
           input {
-            height: 28px;
+            height: 40px;
             margin: 0;
             padding: 0;
-            padding-left: 8px;
+            padding-left: 14px;
             display: inline-block;
-            width: 78%;
+            width: 75%;
             float: left;
             border: none;
           }
           button {
             display: inline-block;
             float: right;
-            width: 22%;
-            height: 28px;
+            width: 25%;
+            height: 40px;
             margin: 0;
+            padding-top: 7px;
             outline: none;
             border: 0;
-            background-color: $dark-red-color;
+            background-color: #ffffff;
+            position: relative;
+            .divide-line {
+              position: absolute;
+              left: 0px;
+              top: 8px;
+              height: 25px;
+              width: 1px;
+              background-color: rgb(196,202,225);
+            }
             span {
-              color: white;
-              font-size: 1.2em;
+              color: $navy-blue-light-color;
+              font-size: 24px;
             }
           }
         }
@@ -91,9 +132,9 @@
       .fade-line {
         position: absolute;
         top: 39px;
-        width: 550px;
+        width: 650px;
         left: 50%;
-        margin-left: -275px;
+        margin-left: -325px;
         display: block;
         border: none;
         color: white;
@@ -107,43 +148,50 @@
   }
 
   .sub-nav {
-    height: 50px;
+    height: 55px;
     padding-top: 18px;
     background-color: $navy-blue-light-color;
-    font-weight: 300;
 
-    -webkit-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.65);
-    -moz-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.65);
-    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.65);
+    -webkit-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
+    -moz-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
+    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
 
+    font-size: 16px;
     @include tablet {
-      font-size: 1.2em;
+      font-size: 20px;
     }
     @include small-desktop {
-      font-size: 1.4em;
+      font-size: 24px;
     }
     @include large-desktop {
-      font-size: 1.4em;
+      font-size: 24px;
     }
     a {
-      padding: 10px 6px;
+      padding: 3px 10px;
       color: $offwhite-color;
       line-height: 1.0;
     }
     .middle-dot {
       color: rgba(255,255,255, .25);
-      font-weight: bold;
+      padding: 4px;
+      font-weight: 400;
     }
     .left-links {
       float: left;
       display: inline-block;
+      margin-left: -10px;
       width: 40%;
     }
     .right-links {
       float: right;
       text-align: right;
+      margin-right: -20px;
       display: inline-block;
       width: 40%;
+      a {
+        border: 1px solid rgb(91,121,150);
+        border-radius: 5px;
+      }
     }
   }
 
@@ -154,6 +202,7 @@
     height: 20px;
     text-align: center;
     background-color: $navy-blue-light-color;
+    margin-bottom:25px;
     .triangle-up {
       position: absolute;
       top: 0;
@@ -165,10 +214,16 @@
       margin-left: -1000px;
       border-width: 0 1000px 20px 1000px;
       border-color: transparent transparent white transparent;
+      /* force anti-aliasing */
       -moz-transform: scale(.9999);
+      -webkit-transform: scale(.9999);
+      -ms-transform: scale(.9999);
+      -o-transform: scale(.9999);
+      transform: scale(.9999);
     }
   }
 }
+
 
 /**
  * Globals
@@ -187,6 +242,12 @@ a:link, a:visited, a:active {
   background-color: #0d3960;
   padding-top: 60px;
   color: #ffffff;
+  @include tablet{
+    height: 400px;
+  }
+  @include phone{
+    height: 400px;
+  }
   a {
     color: #ffffff;
     text-decoration: none;
@@ -213,9 +274,10 @@ a:link, a:visited, a:active {
 
     .icon-line {
       a {
+        -webkit-font-smoothing: antialiased;
         padding: 10px;
         span {
-          margin: 0px 2px;
+          margin: 2px 2px;
           font-size: 26px;
           @include tablet {
             font-size: 26px;
@@ -237,9 +299,9 @@ a:link, a:visited, a:active {
       font-size: 16px;
       width: 180px;
 
-      @include tablet {
-        width: 200px;
-      }
+      // @include tablet {
+      //   width: 200px;
+      // }
 
       @include small-desktop {
         width: 230px;
@@ -251,7 +313,7 @@ a:link, a:visited, a:active {
       color: $navy-blue-light-color;
       ::-webkit-input-placeholder { /* WebKit browsers */
         color: $navy-blue-light-color;
-        font-weight: bold;
+        font-weight: 400;
       }
       :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
         color: $navy-blue-light-color;
@@ -265,6 +327,10 @@ a:link, a:visited, a:active {
         color: $navy-blue-light-color;
       }
 
+      @include tablet {
+        width: 100%;
+        margin: 20px 0px;
+      }
       @include phone {
         width: 100%;
         margin: 20px 0px;
@@ -279,7 +345,6 @@ a:link, a:visited, a:active {
         width: 75%;
         float: left;
         border: none;
-
       }
       button {
         display: inline-block;
@@ -315,7 +380,7 @@ a:link, a:visited, a:active {
       background: radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
     }
     .name {
-      font-weight: bold;
+      font-weight: 400;
       font-size: 38px;
     }
     .disclaimer-box {
@@ -338,30 +403,193 @@ a:link, a:visited, a:active {
     }
   }
   .right-col {
+    text-align: center;
     position: relative;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
-    margin-top: -16px;
+    margin-top: -10px;
     div {
-      margin-left: 8px;
-      position: relative;
+      margin-top: 10px;
       a {
-        display: inline-block;
         padding: 10px;
         height: 30px;
         color: #e6e6e6;
       }
     }
-    .hr {
-      background-color: #ffffff;
-      height: 1px;
-      width: 100px;
-      opacity: .3;
-      margin: 18px 0 8px 15px;
+    .donate-link {
+      margin-top: 20px;
+
+      a {
+        font-size: 20px;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        padding: 6px 20px;
+      }
     }
   }
 }
 
+
+
+/////////////////////////////////////////////////////////////////////////
+/**
+ * Mobile menu
+ */
+// customize bootstrap navbar overriden bootstrap css
+/* navbar */
+/////////////////////////////////////////////////////////////////////////
+.nav {
+    padding-left: 30px;
+    margin-bottom: 1px;
+    list-style: none;
+    font-weight: 400;
+    font-size: 20px;
+}
+///////////this one is important 
+.container-fluid>.navbar-collapse,.container-fluid>.navbar-header,.container>.navbar-collapse,.container>.navbar-header {
+    margin-right: -6%;
+    margin-left: -6%
+}
+.navbar-nav { //important to the placement of the nav
+    margin: 33.5px -15px
+}
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px
+}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0
+}
+.navbar-fixed-bottom .navbar-nav>li>.dropdown-menu {
+    margin-bottom: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0
+}
+.navbar-default .navbar-brand {
+    color: #777
+}
+.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover { //afects hover states
+    color: #333;
+    background-color: transparent
+}
+.navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover { // affects toggeld
+    background-color: #ddd
+}
+.navbar {
+  position: relative;
+  min-height: 10px;//right
+  margin-bottom: 20px;
+}
+.navbar-toggle {
+  font-size: 14px;
+  position: relative;
+  float: right;
+  padding: 4px 8px;
+  margin-top: -49px;
+  margin-right: 5%;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  z-index:100;
+}
+.navbar-default {
+  z-index: 50;
+  background-color: #e4e4e4;
+  border-style: none none solid none;
+  border-width:3px;
+  border-color:$dark-red-color;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #e4e4e4;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #007acf;
+}
+/* link color-text*/
+.navbar-default .navbar-nav > li > a {
+    color: $navy-blue-color;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #007acf;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #e4e4e4;
+    border-bottom-color: $dark-red-color;
+}
+.navbar-default .navbar-nav>.disabled>a,.navbar-default .navbar-nav>.disabled>a:focus,.navbar-default .navbar-nav>.disabled>a:hover {
+    color: #ccc;
+    background-color: transparent
+}
+
+.navbar-default .navbar-toggle {
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+
+.gap-filler {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  // margin-top: -px;
+  z-index: 51;
+  top:79;
+  background-color: $navy-blue-light-color;
+  border-bottom:2px solid;
+  border-color: rgb(247, 247, 247)
+}
+.menu-section-center {
+  font-size: 18px;
+  // width:80%;
+  height:50px;
+  text-align:center;
+  .menu-div-center {
+    font-size: 2.5rem;
+    display:inline-block;
+    color:white;
+    padding: 0 5vw;
+    a:link, a:visited, a:active{
+      color: $navy-blue-color;
+    }
+    a:hover {
+        color: #007acf;
+        text-decoration: none;
+    }
+  }
+}
+.menu-stars{
+  color: $dark-red-color;
+}
+.nav-spacer{
+  opacity: 0;
+  line-height: .1px;
+  margin:1px;
+  padding:0;
+
+}
 
 
 /**
@@ -371,12 +599,21 @@ a:link, a:visited, a:active {
   padding: $spacing-unit 0;
   line-height: $page-content-line-height;
   min-height: 100%;
+  letter-spacing: .1px;
   height: auto !important;
   height: 100%;
   margin: 0 auto -300px;
   .footer-push {
     height: 300px;
     clear: both;
+  }
+  @include phone{
+    line-height: 1.7em;
+  }
+}
+.page-content p{
+  @include phone{
+    padding-bottom: 18px;
   }
 }
 
@@ -404,6 +641,53 @@ a:link, a:visited, a:active {
 }
 
 
+/**
+ * Columns of same height styles
+ */
+
+.row-full-height {
+  height: 100%;
+}
+.col-full-height {
+  height: 100%;
+  vertical-align: top;
+
+  .panel{
+    height: 100%;
+    display: inline-block;
+  }
+}
+.row-same-height {
+  display: table;
+  width: 100%;
+  /* fix overflow */
+  table-layout: fixed;
+}
+.col-xs-height {
+  display: table-cell;
+  float: none !important;
+}
+
+@media (min-width: 768px) {
+  .col-sm-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+
+
 
 /**
  * Posts
@@ -417,9 +701,6 @@ a:link, a:visited, a:active {
   letter-spacing: -1px;
   line-height: 1;
 
-  // @include media-query($on-laptop) {
-  //   font-size: 36px;
-  // }
 }
 
 .post-content {
@@ -454,7 +735,7 @@ a:link, a:visited, a:active {
   h1 {
     margin: 30px 0 15px 0;
     font-weight: 300;
-    color: #0c3962;
+    color: $navy-blue-light-color;
   }
 
   .aboutBlurb {
@@ -470,7 +751,7 @@ a:link, a:visited, a:active {
       display: inline-block;
       list-style-type: none;
       font-size: 200%;
-      font-weight: 500;
+      font-weight: 400;
       color: #0c3962;
       text-align: center;
       width: 155px;
@@ -510,7 +791,7 @@ a:link, a:visited, a:active {
 
       h3 {
         font-size: 175%;
-        font-weight: 500;
+        font-weight: 400;
         text-align: left;
       }
 

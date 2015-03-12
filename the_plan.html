@@ -82,7 +82,6 @@ permalink: /the_plan/
     $.getJSON('http://mayone-staging.herokuapp.com/legislators/targeted.json', function(legislators){
       legislators.map(function(legislator_data, index){
         var rendered = ich.legislator(legislator_data);
-        console.log(legislator_data, rendered)
         $('#js-legislators').append(rendered);
       });
     });

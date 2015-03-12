@@ -1,0 +1,46 @@
+/** 
+ * Mayday Content
+ */
+
+.no-gutter > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
+.smaller-layout{
+  max-width: 835px;
+}
+.placed-center{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-icons{
+  width: 62%;
+  height: 62%;
+  @include phone{
+    width: 40%;
+    height: 40%;
+    min-width: 80px;
+    min-height: 80px;
+  }
+}
+.team-icon{
+  width: 90%;
+  height: 90%;
+  @include phone{
+    width: 70%;
+    height: 70%;
+    min-width: 120px;
+    min-height: 120px;
+    margin-top: -12px;
+  }
+}
+.bullet-color{
+    color: $brand-color;
+}
+.info-height h3{
+  margin-bottom: 10px;
+}
+.large-icons img{
+  margin-bottom: 60px;
+}
