@@ -7,12 +7,16 @@
         <a href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
         <a href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ" target="_blank"><span class="socicon">r</span></a>
       </div>
-      <form>
-        <input type="email" placeholder="Join our email list"/>
+      <form class="email-signup">
+        <input type="email" name="person[email]" placeholder="Join our email list"/>
+        <input type="hidden" name="person[remote_fields][tags][]" value="test_1_9">
         <button type="submit">
           <span class="socicon">@</span>
         </button>
       </form>
+      <div class="hidden">
+        <h1>Thank you!</h1>
+      </div>
       <div class="vertical-fade-line hidden-xs hidden-sm"></div>
     </div>
     <div class="center-col col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -29,3 +33,14 @@
     </div>
   </div>
 </footer>
+<script>
+$(document).ready(function(){
+  $("form.email-signup").submit(function (event) {
+    event.preventDefault();
+    var saveURI = 'http://mayone-staging.herokuapp.com/people';
+    $.post(saveURI, $(this).serialize());
+    $(this).hide();
+    $(this).next().removeClass('hidden');
+  });
+});
+</script>
