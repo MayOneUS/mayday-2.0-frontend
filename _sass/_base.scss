@@ -480,6 +480,10 @@ pre {
     padding-right:0;
     padding-left:0;
 }
+.no-gutter-top > [class*='col-'] {
+    padding-top:0;
+    margin-top: 0;
+}
 /**
  * page headlines
  */

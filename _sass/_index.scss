@@ -1,6 +1,6 @@
 #index {
-  font-weight: 300;
-  padding-bottom:290px;/* hack for now MARIO TODO*/
+  // font-weight: 300;
+  // padding-bottom:290px;/* hack for now MARIO TODO*/
 
   h1{
     margin-bottom:10px;
@@ -284,6 +284,7 @@
 
     &.capitol-building{
       background: #fff url(/images/capitol_building.png) right bottom no-repeat;
+      margin: 0 auto;
     }
   }
 
@@ -314,7 +315,6 @@
       form{
         padding-bottom:0;
       }
-
     }
   }
 }
