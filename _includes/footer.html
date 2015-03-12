@@ -39,7 +39,7 @@
 $(document).ready(function(){
   $("form.email-signup").submit(function (event) {
     event.preventDefault();
-    var saveURI = 'http://mayone-staging.herokuapp.com/people';
+    var saveURI = 'https://mayone-staging.herokuapp.com/people';
     $.post(saveURI, $(this).serialize());
     $(this).hide();
     $(this).next().removeClass('hidden');
