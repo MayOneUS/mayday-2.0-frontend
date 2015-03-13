@@ -33,7 +33,7 @@ hideFromNav: true
             <img src="/images/capitol_building_box_icon.svg" class="img-responsive img-capitol" alt="">
             <p class="rally">We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday v2.</p>
             <form class="join">
-              <button class="show-modal btn btn-mayday">Take Action</button>
+              <button class="show-nomination-modal btn btn-mayday">Take Action</button>
             </form>
             <p class="no-bottom-margin">
               <a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> 
@@ -69,7 +69,7 @@ hideFromNav: true
     <div class="container gutter-justphone">
       <div class="col-md-10 col-xs-12">
         <h2>Help us find allies in Congress</h2>
-        <p>We need you to help us identify who our allies should be. <a>Tell us who you think we could persuade, and why</a>.</p>
+        <p>We need you to help us identify who our allies should be. <a class="show-nomination-modal">Tell us who you think we could persuade, and why</a>.</p>
         <p>We don’t just want the obvious. We’re not interested in dirt, or anything negative. We’re interested in who you believe could become real leaders in the fight to get our democracy back.</p>
       </div>
     </div>
@@ -96,7 +96,7 @@ hideFromNav: true
         <p>
           On May 1 &ndash; May Day &ndash; we will launch a platform to support the biggest citizen lobbying campaign we possibly can. Together, we are strong enough to create the political incentive for our elected officials to do the right thing and support reform. Ending the systemic corruption in Washington, D.C. will create space for fair, honest, and productive debate on the issues that matter most.
         </p>
-        <p>We can only get our democracy back if we work together. As an early supporter of Mayday, you can help us make our launch the best it can be. <a>Let us know how you want to be involved and who you think we should target.</a></p>
+        <p>We can only get our democracy back if we work together. As an early supporter of Mayday, you can help us make our launch the best it can be. <a class="show-nomination-modal">Let us know how you want to be involved and who you think we should target.</a></p>
       </div>
     </div>
     <div class="container text-center bottom-form-wrap">
@@ -105,7 +105,7 @@ hideFromNav: true
           <h2 class="box-title">Help us with v2</h2>
           <p class="rally"><strong>Step One:</strong> We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
           <form class="join">
-            <button class="show-modal btn btn-mayday">Take Action</button>
+            <button class="show-nomination-modal btn btn-mayday">Take Action</button>
           </form>
           <p><a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> </p>
         </div>
@@ -155,7 +155,7 @@ hideFromNav: true
               <div id="additional-fields">
                 <h2>Other ways to help</h2>
 
-                <p>Are there any additional ways you'd like to be involved with Mayday's phase II plans?</p>
+                <p>Are there any additional ways you'd like to be involved with Mayday's v2 plans?</p>
 
                 <div class="form-group">
                   <textarea class="form-control" id="skills" name="other_comment" placeholder="Tell us your ideas or how you'd like to contribute." aria-describedby="skills"></textarea>
@@ -215,12 +215,13 @@ function fetch_legislator_info() {
 $(document).ready(function(){
   fetch_legislator_info();
 
-  $("button.show-modal").click(function() {
-    $('#js-nomination-form').trigger("reset");
-    $('#additional-fields').show();
+  $(".show-nomination-modal").click(function() {
+    $("#js-nomination-form").trigger("reset");
+    $("#additional-fields").show();
     $("#nomination-page-2").hide();
     $("#nomination-page-1").show();
-    $('#submit-candidate-modal').modal('show');
+    $("#submit-candidate-modal").modal("show");
+    $(".bootstrap-select .filter-option").text("Select legislator");
   });
 
   $("#submit-again").click(function() {
@@ -230,13 +231,20 @@ $(document).ready(function(){
 
   $("#js-nomination-form").submit(function (event) {
     event.preventDefault();
-    var saveURI = 'https://mayone-staging.herokuapp.com/nominations';
-    $.post(saveURI, $(this).serialize());
-    $('#nomination-page-1').hide();
-    $('#nomination-page-2').show();
-    $('#additional-fields').hide();
-    $('textarea[name=selection_comment]').val("");
-    $('textarea[name=other_comment]').val("");
+
+    if ($("select[name=legislator_id]").val() == "" && $("input[name=email]").val() == "") {
+      $("button.selectpicker").focus();
+    } else {
+      var saveURI = 'https://mayone-staging.herokuapp.com/nominations';
+      $.post(saveURI, $(this).serialize());
+      $("#nomination-page-1").hide();
+      $("#nomination-page-2").show();
+      $("#additional-fields").hide();
+      $("textarea[name=selection_comment]").val("");
+      $("textarea[name=other_comment]").val("");
+      $("select[name=legislator_id]").val("")
+      $(".bootstrap-select .filter-option").text("Select another legislator");
+    }
   });
 
   $("form.join").submit(function (event) {
