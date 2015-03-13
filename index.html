@@ -198,7 +198,7 @@ function fetch_legislator_info() {
   var $nomineeSelect = $('#nominee')
   $.ajax({
     dataType: "json",
-    url: 'http://mayone-staging.herokuapp.com/legislators',
+    url: 'https://mayone-staging.herokuapp.com/legislators',
     success: function(legislators) {
       legislators.map(function(legislator){
         $nomineeSelect.append(
@@ -230,7 +230,7 @@ $(document).ready(function(){
 
   $("#js-nomination-form").submit(function (event) {
     event.preventDefault();
-    var saveURI = 'http://mayone-staging.herokuapp.com/nominations';
+    var saveURI = 'https://mayone-staging.herokuapp.com/nominations';
     $.post(saveURI, $(this).serialize());
     $('#nomination-page-1').hide();
     $('#nomination-page-2').show();
@@ -241,7 +241,7 @@ $(document).ready(function(){
 
   $("form.join").submit(function (event) {
     event.preventDefault();
-    var baseURI = 'http://onboarding-staging.mayday.us';
+    var baseURI = '//onboarding-staging.mayday.us';
     var iframeURI = baseURI;
   });
 });
