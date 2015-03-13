@@ -1,0 +1,17 @@
+{% include head.html %}
+<body id="{{page.cssid}}" class="default-body">
+  <script type='text/javascript' src='https://ad.doubleclick.net/N6673/adj/resn.pixel;alias=mpac0814a0;sz=1x1;ord=1?'></script>
+
+  <div class="page-content">
+    {% include header.html %}
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">{{content | markdownify}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-push"></div>
+  </div>
+  {% include footer.html %}
+</body>

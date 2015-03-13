@@ -2,31 +2,41 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-
   <meta name="robots" content="noindex, nofollow">
-  <meta property="og:url" content="https://mayday.us/"/>
-  <meta property="og:image" content="https://mayday.us/images/mayday_og.jpg"/>
-  <meta property="og:title" content="MAYDAY: Democracy needs an upgrade. Act now."/>
-  <meta property="og:description" content="Money has corrupted politics. We’re a Crowdfunded SuperPAC to end all SuperPACs -- Join us!"/>
+
+  {% if page.offSite %}{% assign root_path = site.url %}{% endif %}
+  {% assign page_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
   <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="https://mayday.us/images/mayday_og.jpg" name="twitter:image:src"/>
+  <meta content="{{ root_path }}/images/mayday_og.jpg" name="twitter:image:src"/>
   <meta content='@mayday' name="twitter:site"/>
+  {% assign meta_content_size = meta_content | size %}
+  {% if meta_content_size < 2 %}
+    <meta property="og:url" content="{{ page_url }}"/>
+    <meta property="og:image" content="{{ root_path }}/images/mayday_og.jpg"/>
+    <meta property="og:title" content="MAYDAY: Democracy needs an upgrade. Act now."/>
+    <meta property="og:description" content="Money has corrupted politics. We’re a Crowdfunded SuperPAC to end all SuperPACs -- Join us!"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="{{ root_path }}/images/mayday_og.jpg" name="twitter:image:src"/>
+    <meta content='@mayday' name="twitter:site"/>
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="canonical" href="{{page_url}}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  {% else %}
+    {{ meta_content }}
+  {% endif %}
 
-  <link rel="stylesheet" href="{{ '/css/bootstrap.min.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ root_path }}{{ '/css/bootstrap.min.css' | prepend: site.baseurl }}">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
-
+  
 
   <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{ '/css/main.css' | sass_cache_bust  }}">
+  <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
-
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  {{ custom_css }}
 </head>
