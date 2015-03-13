@@ -232,7 +232,7 @@ $(document).ready(function(){
   $("#js-nomination-form").submit(function (event) {
     event.preventDefault();
 
-    if ($('select[name=legislator_id]').val() != "" || $('textarea[name=other_comment]').val() != "" || $('input[name=email]').val() != "") {
+    if ($('select[name=legislator_id]').val() != "" || $('input[name=email]').val() != "") {
       var saveURI = 'https://mayone-staging.herokuapp.com/nominations';
       $.post(saveURI, $(this).serialize());
       $('#nomination-page-1').hide();
