@@ -1,0 +1,558 @@
+---
+layout: default
+title: Tumblr Theme
+omit_title_suffix: true
+cssid: extern-tumblr-theme
+offSite: true
+---
+
+{% capture meta_content %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="google-site-verification" content="eotfmNVR-r4qTL0MAFLUR0XVumvKeC2i87xYg102u7I" />
+  <link rel="shortcut icon" href="//mayday.us/favicon.ico" />
+  
+    
+<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+<meta property="og:type" content="blog" />
+<meta property="og:url" codntent="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}">
+<title>{block:IndexPage}{Title}{/block:IndexPage}{block:SearchPage}Search results for: {SearchQuery}{/block:SearchPage}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+<meta property="og:site_name" content="{Title}" />
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+<!-- OPEN GRAPH INFO-->
+{block:PermalinkPage}{block:Posts}
+  {block:Photo}<meta property="og:image" content="{PhotoURL-500}" /> {/block:Photo}
+  {block:Answer}<meta property="og:image" content="{AskerPortraitURL-500}"/> {/block:Answer}
+  {block:Text}
+    <meta property="og:image" content="{PortraitURL-128}" />
+    <meta property="og:image:url" content="{PortraitURL-128}" />
+  {/block:Text}
+  {block:Photoset}
+    {block:Photos}
+      <meta property="og:image" content="{PhotoURL-500}" />
+    {/block:Photos}
+  {/block:Photoset}
+  {block:Quote}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Quote}
+  {block:Link}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Link}
+  {block:Chat}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Chat}
+  {block:Video}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Video}
+{/block:Posts}{/block:PermalinkPage}
+
+{block:IndexPage}
+  <meta property="og:title" content="{block:Description}{MetaDescription}{/block:Description}" />
+  <meta property="og:image" content="{PortraitURL-128}" />
+{/block:IndexPage}
+
+<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+
+<!-- DEFAULT VARIABLES -->
+<meta name="image:Header" content=""/>
+<meta name="if:Show About Widget" content="1"/>
+<meta name="if:Show Stuff I Like Widget" content="1"/>
+<meta name="if:Show Latest Tweets Widget" content="1"/>
+<meta name="if:Show People I Follow Widget" content="1"/>
+<meta name="text:Number of Tweets" content="3"/>
+<meta name="text:Disqus Shortname" content="maydaypacblog" />
+<meta name="text:TwitterUsername" content="MAYDAYUS" />
+<meta name="text:Flickr Username" content=""/>
+
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='//fonts.googleapis.com/css?family=Lato:200,300,400,500&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+
+<!-- TODO: Change the base URL for the external CSS stylesheet -->
+<link rel="stylesheet" type="text/css" href="http://frontend-staging.mayday.us/css/main.css">
+
+<style type="text/css" media="screen">
+/**
+ * Mayday News Panels
+ **/
+.panel.panel-news {
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  .panel-news hr {
+    
+    background-color: #808080; }
+  .panel-news .panel-body {
+    padding-top: 0px;
+    font-size: 14px; }
+    .panel-news .panel-body li {
+      margin-top: 10px; }
+    .panel-news .panel-body .press-date {
+      display: inline-block; }
+    .panel-news .panel-body .press-link {
+      display: inline-block;
+      vertical-align: top;
+      width: 70%; }
+    .panel-news .panel-body .more-link {
+      margin-top: 10px;
+      font-weight: 600;
+      float: right; }
+
+
+/**
+ * Posts
+ */
+ 
+.post-header {
+  margin-bottom: 1; }
+
+.post-title {
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1em; }
+  
+  .post-title a {
+      color: #0d3860;
+  }
+  
+  .post-title a:hover {
+      color: #0d3860;
+  }
+
+.post-content {
+  margin-bottom: 1; }
+  .post-content h2 {
+    font-size: 30px; }
+  .post-content h3 {
+    font-size: 26px; }
+  .post-content h4 {
+    font-size: 20px; }
+  .post-content p {
+    line-height: 1.5em; }
+    
+.post-meta {color: #555;overflow: hidden;}
+        .post-meta .type a {font-size:20px;color:#000;padding: 0 0 10px;text-decoration: none;}
+      .post-meta .date, .post-meta .comments, .post-meta .note-count {float: left;padding: 0 10px;}
+      .post-meta .date {
+          padding: 0px;
+      }
+    .post-content {padding: 30px 0px 60px;}
+    .post-content div:last-child, .post-content div:last-child p,
+    .post-content div:last-child ul, .post-content div:last-child ol,
+    .post-content div:last-child blockquote {margin-bottom: 0;}
+      .post-content h2 {font-weight:400;}
+      .post-content h3 {margin-bottom: 0px;padding-bottom:0.4em;}
+        .post-content h3 a, .post-content h3 a:visited {color: #003366;text-decoration: none;}
+        .post-content h3 a:focus, .post-content h3 a:hover, .post-content h3:active {color: #dd3333;}
+      .post-content img {margin-bottom: 20px;padding: 10px;}
+      .post-type-text .post-content ul {padding-left: 30px;font-size:16px;}
+        .post-type-text .post-content ul ul {margin-bottom: 0;}
+        .post-type-text .post-content ul li {list-style-type: disc;margin-bottom:3px;}
+          .post-type-text .post-content ul ul li {list-style-type: circle;}
+      .post-type-text .post-content ol {padding-left: 30px;}
+        .post-type-text .post-content ol ol {margin-bottom: 0;}
+        .post-type-text .post-content ol li {list-style-type: upper-latin;}
+          .post-type-text .post-content ol ol li {list-style-type: lower-latin;}
+      .post-type-photoset .post-content .html_photoset {background: #eee;margin-bottom: 20px;padding: 10px;}
+      .post-type-link .post-content .link-wrap {margin-bottom: 20px;}
+      .post-type-chat .post-content .label {color: #333;font-weight: bold;}
+      .post-type-video .post-content .video-wrap {background: #f0f0f0;margin-bottom: 20px;padding: 10px;}
+      .post-type-audio .post-content .caption {margin-top: 10px;}
+      .tags {font-size: 13px;}
+        .tags a {text-decoration: none; color: #9D9D9D;}
+          .tags a:after {content: ",";}
+          .tags a:last-child:after {content: "";}
+      .post-content ul.post_controls{border: 1px solid #e8e8e8; border-radius: 3px; float: right; list-style: none; padding:0; margin: 0; }
+          .post-content ul.post_controls li{list-style:none; padding:5px 5px 0;margin:0;display:inline-block;};
+              .post-content ul.post_controls li {list-style: none; padding: 5px 5px 0; margin: 0; display: inline-block;}
+    #disqus_thread {border-top: 1px solid #ccc;padding: 10px 30px 0;}
+      #disqus_thread h3 {color: #111;font: 18px Georgia,serif;margin: 20px 0 10px;}
+      #dsq-content .dsq-subscribe-menu {font-size: 12px;}
+    #post-notes {border-top: 1px solid #ccc;padding: 30px;}
+      #post-notes ol li {border-bottom: 1px dotted #ccc;padding: 10px 0;}
+        #post-notes ol li img {background: none;padding-right: 3px;vertical-align: middle;}
+    .pagination {border-top: 1px solid #ccc;overflow: hidden;padding: 20px 0;}
+      .pagination .previous-page {float: left;}
+      .pagination .next-page {float: right;margin-right: 30px;}
+        .pagination a {font: 20px Georgia,serif;text-decoration: none;}
+
+    .widget {border-bottom: 1px solid #ccc;color: #333;font-size: 13px;padding: 0 20px 20px 20px;}
+      .widget h3 {font: 20px Georgia,serif;margin-bottom: 20px;}
+        .widget h3 a, .widget h3 a:visited {color: #000;text-decoration: none;}
+        .widget h3 a:focus, .widget h3 a:hover, .widget h3 a:active {color: #dd3333;}
+      .widget img {padding: 5px;max-width: 250px;}
+      .widget p:last-child, .widget ul:last-child, .widget ol:last-child, .widget blockquote:last-child {margin-bottom: 0;}
+    #about {overflow: hidden;}
+      #about img {background: #fff;border: 1px solid #ccc;float: left;margin: 0 10px 0 0;padding: 3px;}
+    .like_post {border-bottom: 1px dotted #ccc;margin-bottom: 20px;padding-bottom: 20px;}
+    .like_post:last-child {border: none;margin: 0;padding: 0;}
+      .like_post ul {padding-left: 20px;}
+        .like_post ul ul {margin-bottom: 0;}
+        .like_post ul li {list-style-type: disc;}
+          .like_post ul ul li {list-style-type: circle;}
+      .like_post ol {padding-left: 20px;}
+        .like_post ol ol {margin-bottom: 0;}
+        .like_post ol li {list-style-type: upper-latin;}
+          .like_post ol ol li {list-style-type: lower-latin;}
+      .like_post p:last-child, .like_post ul:last-child, .like_post ol:last-child, .like_post blockquote:last-child {margin-bottom: 0;}
+    #tweets {margin-bottom: 10px;}
+      #tweets .content {margin-bottom: 10px;}
+        #tweets a {text-decoration: none;}
+    #following_container {overflow: hidden;padding-bottom: 20px;}
+      #following_container li {display: inline;padding: 0;margin: 0;}
+      
+.md-tags {
+    background-image: url('http://frontend-staging.mayday.us/images/tag.svg');
+    background-size: 100% auto;
+    background-repeat: none;
+    background-position: bottom;
+    margin-bottom: -14px;
+}
+{CustomCSS}
+{% endcapture %}
+
+
+{% capture content %}
+<!--TODO: figure out whether the <header> should be part of this template page or just have this as a separate include-->
+<body id="{{page.cssid}}" class="default-body">
+  <script type='text/javascript' src='https://ad.doubleclick.net/N6673/adj/resn.pixel;alias=mpac0814a0;sz=1x1;ord=1?'></script>
+  <header class="site-header">
+  <div class="top-nav">
+    <div class="container">
+      <div class="icon-bar-left hidden-xs">
+        <a href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
+        <a href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
+        <a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
+      </div>
+      <div class="logo"><a href="/"><img src="http://frontend-staging.mayday.us/images/web_logo_2x.png"></a></div>
+      <div class="search-section-right hidden-xs">
+        <form>
+          <input type="email" placeholder="Join our email list"/>
+          <button type="submit">
+            <span class="socicon">@</span>
+          </button>
+        </form>
+      </div>
+    <div class="fade-line hidden-xs hidden-sm"></div>
+    </div>
+  </div>
+  <div class="sub-nav hidden-xs">
+    <div class="container"> 
+      <div class="left-links">
+        <a href="{{ '/about_us/' | prepend: site.url }}">ABOUT</a>
+        <span class="middle-dot">·</span>
+        <a href="{{ '/news/' | prepend: site.url }}">NEWS</a>
+      </div>
+      <div class="right-links">
+        <a href="{{ '/donate/' | prepend: site.url }}">DONATE</a>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-taper">
+    <div class="triangle-up"></div>
+  </div>
+  </header>
+
+  <!-- TODO: In previous template, this body is handled with a main section/sidebar block. Need to identify whether we will keep up with that pattern -->
+  <div class="rally full-width">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8" id="container">
+          <div class="row">
+              <div class="col-xs-12">
+                <h1><i class="md-icon md-shield" style="width: 50px; height: 50px; margin-bottom: -11px"></i><strong>Mayday Blog</strong></h1>
+              </div>
+          </div>
+          <!-- TODO: possibly make this an include -->
+          <div class="row">
+              <div class="col-xs-12">
+                <p class="lead">As I’ve said from the very start, our aim is to win a Congress committed to fundamental reform in the way campaigns are funded. As a first step to that goal, we set out in this election cycle to run a series of campaigns to demonstrate that voters care about the corruption of their government, and would vote to change it.</p>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" id="container">
+            <!-- NOTE: Not much has been changed here since previous template other than adding the new Tags Icon -->
+              <div id="content">
+                {block:Posts}
+                  <article id="post-{PostID}" class="post {block:Text}post-type-text{/block:Text}{block:Photo}post-type-photo{/block:Photo}{block:Photoset}post-type-photoset{/block:Photoset}{block:Quote}post-type-quote{/block:Quote}{block:Link}post-type-link{/block:Link}{block:Chat}post-type-chat{/block:Chat}{block:Video}post-type-video{/block:Video}{block:Audio}post-type-audio{/block:Audio}">
+                    <div class="post-content">
+                    <div class="post-meta">
+                      <!--<div class="type">
+                        <a href="{Permalink}">
+            {block:Text}<i class="fa fa-newspaper-o"></i>{/block:Text}
+            {block:Photo}<i class="fa fa-camera"></i>{/block:Photo}
+            {block:Photoset}Photoset{/block:Photoset}
+            {block:Quote}<i class="fa fa-quote-left"></i>{/block:Quote}
+            {block:Link}<i class="fa fa-link"></i>{/block:Link}
+            {block:Chat}<i class="fa fa-wechat"></i>{/block:Chat}
+            {block:Video}<i class="fa fa-video-camera"></i>{/block:Video}
+            {block:Audio}<i class="fa fa-headphones"></i>{/block:Audio}</a>
+                      </div><!-- .type -->
+                    {block:Date}
+                      <div class="date">
+                      <strong>{Month} {DayOfMonthWithZero}, {Year}</strong>
+                      </div><!-- .date -->
+                    {/block:Date}
+                    {block:IfDisqusShortname}
+                      <div class="comments">
+                        <a href="{Permalink}#disqus_thread">0 comments</a>
+                      </div>
+                    {/block:IfDisqusShortname}
+                    {block:NoteCount}
+                      <div class="note-count">
+                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                      </div><!-- .note-count -->
+                    {/block:NoteCount}
+                  </div><!-- .post-meta -->
+                
+                {block:Text}
+                  {block:Title}<h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                  {Body}
+                {/block:Text}
+                {block:Photo}
+                  {LinkOpenTag}<img src="{PhotoURL-500}" class="photo" alt="{PhotoAlt}" />{LinkCloseTag}
+                  {block:HighRes}<a href="{PhotoURL-HighRes}" class="high-res" target="_blank"></a>{/block:HighRes}
+                  {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                {/block:Photo}
+                {block:Photoset}
+                  {Photoset-500}
+                  {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                {/block:Photoset}
+                {block:Quote}
+                  <div class="quote-content">"{Quote}"</div>
+                  {block:Source}<p class="quote-source">&mdash; {Source}</p>{/block:Source}
+                {/block:Quote}
+                {block:Link}
+                  <div class="link-wrap">&lt;a href="{URL}" {Target}&gt;{Name}</div>
+                  {block:Description}<div class="description">{Description}</div>{/block:Description}
+                {/block:Link}
+                {block:Chat}
+                  {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                  <ul class="chat-wrap">
+                  {block:Lines}
+                    <li class="{Alt} user_{UserNumber}">
+                      {block:Label}<span class="label">{Label}</span>{/block:Label}
+                      {Line}
+                    </li>
+                  {/block:Lines}
+                  </ul>
+                {/block:Chat}
+                {block:Video}
+                  <div class="video-wrap">{Video-500}</div>
+                  {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                {/block:Video}
+                {block:Audio}
+                  <div class="audio-wrap">{AudioPlayerGrey}</div>
+                  {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                {/block:Audio}
+                <ul class="post_controls group">
+                  <li>{ReblogButton size="21"}</li>
+                  <li>{LikeButton size="21"}</li>
+                </ul>
+                {block:HasTags}
+                  <div class="tags">
+                    <p><i class="md-icon md-tags"></i> {block:Tags}<a href="{TagURL}" class="single-tag">{Tag}</a> {/block:Tags}</p>
+                  </div>
+                {/block:HasTags}
+                </div><!-- post-content -->
+              </article><!-- .post -->
+              <!-- dis {text:Disqus Shortname} -->
+              {block:IfDisqusShortname}{block:Permalink}
+                <div id="disqus_thread"></div>
+                <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+                <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+              {/block:Permalink}{/block:IfDisqusShortname}
+              {block:PostNotes}<div id="post-notes">{PostNotes}</div>{/block:PostNotes}
+            {/block:Posts}
+            {block:Pagination}
+              <div class="pagination">
+                {block:PreviousPage}<span class="previous-page"><a href="{PreviousPage}">&#171; Previous</a></span>{/block:PreviousPage}
+                {block:NextPage}<span class="next-page"><a href="{NextPage}">Next &#187;</a></span>{/block:NextPage}
+              </div><!-- .pagination -->
+            {/block:Pagination}
+          </div><!-- #content -->
+          
+        </div><!-- col-xs-12 -->
+      </div>
+    </div><!-- #container -->
+
+    <!--TODO: Figure out whether we want Sidebar to be a separate include module -->
+    <div class="col-xs-12 col-md-4">
+      <div id="sidebar">
+        <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-news">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <h2><i class="md-icon md-newspaper"></i> Mayday in the News</h2>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul>
+                <li><a href="#">Huffington Post: Mayday II</a></li>
+                <li><a href="#">Forbes: Lawrence Lessig Shows That..(More)</a></li>
+                <li><a href="#">Democrats Vs. Republicans</a></li>
+                <li><a href="#">The Washington Post: The 'super PAC to... (More)</a></li>
+                <li><a href="#">New York Daily News: Hist mouth where (More)</a></li>
+              </ul>
+              <a class="more-link" href="/in-the-news/">&gt; Read more news about Mayday</a>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-news">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <h2>
+                  <i class="md-icon md-microphone"></i>Press Releases
+                </h2>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul>
+                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
+                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
+                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
+                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
+              </ul>
+              <a class="more-link" href="/press-releases/">&gt; View our Press Release Library</a>
+            </div>
+          </div>
+        </div>
+        </div>
+      {block:IfShowAboutWidget}
+        <h2>Our Blog</h2>
+        <div id="about" class="widget">
+          {block:Description}<div class="description"><p>{Description}</p></div>{/block:Description}
+        </div>
+      {/block:IfShowAboutWidget}
+      <!--{block:IndexPage}{block:IfShowStuffILikeWidget}{block:Likes}-->
+      <!--    <h3><a href="http://www.tumblr.com/liked/by/{Name}">Stuff I like</a></h3>-->
+      <!--    <div id="likes_container" class="widget">-->
+      <!--      {Likes limit="5" summarize="100" width="279"}-->
+      <!--    </div>-->
+      <!--  {/block:Likes}{/block:IfShowStuffILikeWidget}{/block:IndexPage}-->
+      {block:IndexPage}{block:IfShowLatestTweetsWidget}{block:Twitter}
+        <h3>Latest Tweets</h3>
+        <div id="twitter" class="widget">
+          <div id="tweets"></div> 
+          <p><a href="http://twitter.com/{TwitterUsername}">Follow MAYDAY</a></p> 
+        </div>
+    
+        <script type="text/javascript">
+          function recent_tweets(data) {
+            for (i=0; i<data.length; i++) {
+              if (i<{text:Number of Tweets}) {
+                document.getElementById("tweets").innerHTML = 
+                  document.getElementById("tweets").innerHTML + 
+                  '<a href="http://twitter.com/{TwitterUsername}/status/' + 
+                  data[i].id + '"><div class="content">' + data[i].text + 
+                  '</div></a>';
+              }
+            }
+            document.getElementById("twitter").style.display = 'block';
+          }
+        </script>
+      {/block:Twitter}{/block:IfShowLatestTweetsWidget}{/block:IndexPage}
+      {block:IfShowPeopleIFollowWidget}{block:Following}
+        <h3>People I follow</h3>
+        <div id="following_container" class="widget">
+          <ul>
+            {block:Followed}
+              <li><a href="{FollowedURL}"><img src="{FollowedPortraitURL-30}" alt="{FollowedName}" /></a></li>
+            {/block:Followed}
+          </ul>
+        </div>
+      {/block:Following}{/block:IfShowPeopleIFollowWidget}
+      <div class="donate-wrap-wp"><a class="ir" href="https://mayday.us/newpledge/" target="_parent">Donate to Mayday PAC</a>&nbsp;</div>
+      </div><!-- #sidebar -->
+    </div>
+    <!-- #end tublr html  -->
+
+    <p>{block:Twitter}<script type="text/javascript" src="/tweets.js"></script>{/block:Twitter}
+
+    {block:IfDisqusShortname}
+    {% raw %}
+      <script type="text/javascript">
+        //<![CDATA[
+        (function() {
+          var links = document.getElementsByTagName('a');
+          var query = '?';
+          for(var i = 0; i < links.length; i++) {
+            if(links[i].href.indexOf('#disqus_thread') >= 0) {
+              query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&amp;';
+            }
+          }
+          document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+        })();
+        //]]>;
+      </script>
+    {% endraw %}
+    {/block:IfDisqusShortname}</script></p>
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    (function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&"/cdn-cgi/l/email-protection"==a.substr(0 ,27)){s='';j=28;r=parseInt(a.substr(j,2),16);for(j+=2;a.length-j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+    /* ]]> */
+    </script>
+
+        </div><!-- row -->
+        
+      </div><!-- container -->
+    </div><!-- rally -->
+
+  <footer class="site-footer">
+    <div class="container">
+    <div class="left-col col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="icon-line">
+        <a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
+        <a href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
+        <a href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
+        <a href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ" target="_blank"><span class="socicon">r</span></a>
+      </div>
+      <form>
+        <input type="email" placeholder="Join our email list"/>
+        <button type="submit">
+          <span class="socicon">@</span>
+        </button>
+      </form>
+      <div class="vertical-fade-line hidden-xs"></div>
+    </div>
+    <div class="center-col col-xs-12 col-sm-5 col-md-5 col-lg-5">
+      <a href="/" class="name">MAYDAY.US</a>
+      <div class="disclaimer-box">Paid for by Mayday PAC. Not authorized by any candidate or candidate's committee. MAYDAY.US</div>
+      <div class="copyright">©2015 Mayday PAC. Some rights reserved.</div>
+      <div class="creative-commons"><img src="http://i.creativecommons.org/l/by/3.0/80x15.png"/></div>
+      <div class="vertical-fade-line hidden-xs"></div>
+    </div>
+    <div class="right-col hidden-xs col-sm-3 col-md-3 col-lg-3">
+      <div><a href="/the_plan/">The Plan</a></div>
+      <div><a href="/take_action/">Take Action</a></div>
+      <div class="hr"></div>
+      <div><a href="/about_us/">About</a></div>
+      <div><a href="/news/">News</a></div>
+      <div><a href="/donate/">Donate</a></div>
+    </div>
+  </footer>
+
+
+<div style="display: none">
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 968755289;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+  </script>
+
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+
+  <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/968755289/?value=0&amp;guid=ON&amp;script=0"/>
+  </noscript>
+</div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&"/cdn-cgi/l/email-protection"==a.substr(0 ,27)){s='';j=28;r=parseInt(a.substr(j,2),16);for(j+=2;a.length-j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+/* ]]> */
+</script>
+</body>
+{% endcapture %}
