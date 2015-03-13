@@ -155,7 +155,7 @@ hideFromNav: true
               <div id="additional-fields">
                 <h2>Other ways to help</h2>
 
-                <p>Are there any additional ways you'd like to be involved with Mayday's phase II plans?</p>
+                <p>Are there any additional ways you'd like to be involved with Mayday's v2 plans?</p>
 
                 <div class="form-group">
                   <textarea class="form-control" id="skills" name="other_comment" placeholder="Tell us your ideas or how you'd like to contribute." aria-describedby="skills"></textarea>
@@ -216,11 +216,12 @@ $(document).ready(function(){
   fetch_legislator_info();
 
   $(".show-nomination-modal").click(function() {
-    $('#js-nomination-form').trigger("reset");
-    $('#additional-fields').show();
+    $("#js-nomination-form").trigger("reset");
+    $("#additional-fields").show();
     $("#nomination-page-2").hide();
     $("#nomination-page-1").show();
-    $('#submit-candidate-modal').modal('show');
+    $("#submit-candidate-modal").modal("show");
+    $(".bootstrap-select .filter-option").text("Select legislator");
   });
 
   $("#submit-again").click(function() {
@@ -230,13 +231,20 @@ $(document).ready(function(){
 
   $("#js-nomination-form").submit(function (event) {
     event.preventDefault();
-    var saveURI = 'https://mayone-staging.herokuapp.com/nominations';
-    $.post(saveURI, $(this).serialize());
-    $('#nomination-page-1').hide();
-    $('#nomination-page-2').show();
-    $('#additional-fields').hide();
-    $('textarea[name=selection_comment]').val("");
-    $('textarea[name=other_comment]').val("");
+
+    if ($("select[name=legislator_id]").val() == "" && $("input[name=email]").val() == "") {
+      $("button.selectpicker").focus();
+    } else {
+      var saveURI = 'https://mayone-staging.herokuapp.com/nominations';
+      $.post(saveURI, $(this).serialize());
+      $("#nomination-page-1").hide();
+      $("#nomination-page-2").show();
+      $("#additional-fields").hide();
+      $("textarea[name=selection_comment]").val("");
+      $("textarea[name=other_comment]").val("");
+      $("select[name=legislator_id]").val("")
+      $(".bootstrap-select .filter-option").text("Select another legislator");
+    }
   });
 
   $("form.join").submit(function (event) {
