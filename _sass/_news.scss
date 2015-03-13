@@ -108,6 +108,7 @@
 
 .panel-news-border {
   border: 2px solid $light-grey-color;
+  width:100%;
   @include news-panel;
 }
 

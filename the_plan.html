@@ -79,7 +79,7 @@ permalink: /the_plan/
 {% endraw %}
 <script>
   $(document).ready(function(){
-    $.getJSON('http://mayone-staging.herokuapp.com/legislators/targeted.json', function(legislators){
+    $.getJSON('https://mayone-staging.herokuapp.com/legislators/targeted.json', function(legislators){
       legislators.map(function(legislator_data, index){
         var rendered = ich.legislator(legislator_data);
         $('#js-legislators').append(rendered);
