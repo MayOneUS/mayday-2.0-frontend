@@ -34,7 +34,6 @@
   </div>
   {{ sidebar_extras_end }}
 </div>
-<script src="{{ '/js/lib/ICanHaz.min.js' | prepend: site.baseurl }}"></script>
 <script id="post" type="text/html">
     {% raw %}<li><a href="{{ url }}">{{ regular-title }}</a></li>{% endraw %}
 </script>
@@ -49,7 +48,7 @@
     {% endraw %}
 </script>
 <script type="text/javascript">
-  ;(function($, ich) {
+  (function($, ich) {
     var url = 'http://blog.mayday.us/api/read/json?num=5&callback=?';
 
     $.getJSON(url, function (data) {

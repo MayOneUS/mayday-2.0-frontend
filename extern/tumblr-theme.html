@@ -57,31 +57,6 @@ offSite: true
 
 {% capture custom_css %}
 <style type="text/css" media="screen">
-  /**
-   * Mayday News Panels
-   **/
-  .panel.panel-news {
-    -webkit-box-shadow: none;
-    box-shadow: none; }
-    .panel-news hr {
-
-      background-color: #808080; }
-    .panel-news .panel-body {
-      padding-top: 0px;
-      font-size: 14px; }
-      .panel-news .panel-body li {
-        margin-top: 10px; }
-      .panel-news .panel-body .press-date {
-        display: inline-block; }
-      .panel-news .panel-body .press-link {
-        display: inline-block;
-        vertical-align: top;
-        width: 70%; }
-      .panel-news .panel-body .more-link {
-        margin-top: 10px;
-        font-weight: 600;
-        float: right; }
-
 
   /**
    * Posts
@@ -186,7 +161,7 @@ offSite: true
         #following_container li {display: inline;padding: 0;margin: 0;}
 
   .md-tags {
-    background-image: url('http://frontend-staging.mayday.us/images/tag.svg');
+    background-image: url('//frontend-staging.mayday.us/images/tag.svg');
     background-size: 100% auto;
     background-repeat: none;
     background-position: bottom;
@@ -223,14 +198,14 @@ offSite: true
                     <div class="post-meta">
                       <!--<div class="type">
                         <a href="{Permalink}">
-            {block:Text}<i class="fa fa-newspaper-o"></i>{/block:Text}
-            {block:Photo}<i class="fa fa-camera"></i>{/block:Photo}
-            {block:Photoset}Photoset{/block:Photoset}
-            {block:Quote}<i class="fa fa-quote-left"></i>{/block:Quote}
-            {block:Link}<i class="fa fa-link"></i>{/block:Link}
-            {block:Chat}<i class="fa fa-wechat"></i>{/block:Chat}
-            {block:Video}<i class="fa fa-video-camera"></i>{/block:Video}
-            {block:Audio}<i class="fa fa-headphones"></i>{/block:Audio}</a>
+                        {block:Text}<i class="fa fa-newspaper-o"></i>{/block:Text}
+                        {block:Photo}<i class="fa fa-camera"></i>{/block:Photo}
+                        {block:Photoset}Photoset{/block:Photoset}
+                        {block:Quote}<i class="fa fa-quote-left"></i>{/block:Quote}
+                        {block:Link}<i class="fa fa-link"></i>{/block:Link}
+                        {block:Chat}<i class="fa fa-wechat"></i>{/block:Chat}
+                        {block:Video}<i class="fa fa-video-camera"></i>{/block:Video}
+                        {block:Audio}<i class="fa fa-headphones"></i>{/block:Audio}</a>
                       </div><!-- .type -->
                     {block:Date}
                       <div class="date">
@@ -320,7 +295,7 @@ offSite: true
       </div>
     </div><!-- #container -->
 
-    {% include siebar_news.html%}
+    {% include sidebar_news.html %}
 
     <p>{block:Twitter}<script type="text/javascript" src="/tweets.js"></script>{/block:Twitter}
 
@@ -336,7 +311,7 @@ offSite: true
               query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&amp;';
             }
           }
-          document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+          document.write('<script charset="utf-8" type="text/javascript" src="//disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
         })();
         //]]>;
       </script>
@@ -367,6 +342,7 @@ offSite: true
 {% endcapture %}
 
 {% capture sidebar_extras_end %}
+
   <!--       {block:IfShowAboutWidget}
     <h2>Our Blog</h2>
     <div id="about" class="widget">
@@ -402,7 +378,7 @@ offSite: true
           if (i<{text:Number of Tweets}) {
             document.getElementById("tweets").innerHTML =
               document.getElementById("tweets").innerHTML +
-              '<a href="http://twitter.com/{TwitterUsername}/status/' +
+              '<a href="//twitter.com/{TwitterUsername}/status/' +
               data[i].id + '"><div class="content">' + data[i].text +
               '</div></a>';
           }
@@ -431,6 +407,7 @@ offSite: true
     </div>
   </div>
   {/block:Following}{/block:IfShowPeopleIFollowWidget}
+
 {% endcapture %}
 
 {% include sub_layouts/external.html %}
