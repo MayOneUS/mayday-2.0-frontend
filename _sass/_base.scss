@@ -563,6 +563,14 @@ pre {
   font-weight: 400;
   font-size: 40px;
 }
+.mayday-headline-smaller-inverse{
+  color: #fff;
+  font-weight: 400;
+  font-size: 40px;
+  @include tablet{
+    font-size: 30px;
+  }
+}
 .mayday-headline-smaller-thinner{
   font-weight: 300;
 }
@@ -585,4 +593,7 @@ pre {
 }
 .bottom-spacer{
   margin-bottom: 80px;
+}
+.bottom-thankyou-spacer{
+  margin-top: 20px;
 }
