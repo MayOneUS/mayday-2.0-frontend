@@ -304,6 +304,21 @@ pre {
     border-color: lighten( $bg-color, 5% );
   }
 }
+ /**
+ * Wide Button Mixin
+ * @param {Color} $dark-red-color
+ */
+@mixin tab-button($dark-red-color){
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: $dark-red-color;
+  font-size: 20px;
+  &:hover {
+    color: white;
+    background-color: lighten( $dark-red-color, 5% );
+    border-color: lighten( rgb(91,121,150), 5% );
+  }
+}
 
 .btn-mayday {
   @include wide-button($dark-red-color);
