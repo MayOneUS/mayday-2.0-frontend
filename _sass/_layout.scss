@@ -189,8 +189,9 @@
       display: inline-block;
       width: 40%;
       a {
+        @include tab-button($dark-red-color);
         border: 1px solid rgb(91,121,150);
-        border-radius: 5px;
+        padding: 6px 20px;
       }
     }
   }
@@ -423,9 +424,8 @@ a:link, a:visited, a:active {
       margin-top: 20px;
 
       a {
-        font-size: 20px;
-        border: 1px solid #e6e6e6;
-        border-radius: 5px;
+        @include tab-button($dark-red-color);
+        border: 1px solid rgb(91,121,150);
         padding: 6px 20px;
       }
     }
