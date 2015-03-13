@@ -37,7 +37,7 @@ $text-color: #5C5C5C;
 $spacing-unit: 1;
 $spacing-unit-half: 0.5em;
 $base-line-height: 1.0em;
-$page-content-line-height: 1.6em;
+$page-content-line-height: 1.4em;
 $content-width: 1280;
 $bottom-spacing: 15px;
 $top-spacing: 15px;
@@ -285,53 +285,51 @@ pre {
  * @param {Color} $bg-color
  */
 @mixin wide-button($bg-color) {
-  color: white;
+  color: #fff;
   background-color: $bg-color;
   border: 1px solid $bg-color;
   margin-bottom: 10px;
   width: 100%;
-
   text-transform: uppercase;
   font-weight: 300;
-
   margin-top: 6px;
   padding: 16px 16px;
 
-
   &:hover {
-    color: white;
+    color: #fff;
     background-color: lighten( $bg-color, 5% );
     border-color: lighten( $bg-color, 5% );
   }
+  &:visited{
+    color: #fff;
+  }
+}
+
+@mixin simple-button{
+  margin:0;
+  border: none;
+  font-weight:300;
+  letter-spacing: 1px;
 }
 
 .btn-mayday {
   @include wide-button($dark-red-color);
+  @include simple-button;
   font-size: 28px;
   padding: 9px 0px;
-  margin:0;
-  border: none;
-  font-weight:300;
-  letter-spacing: 1px;
 }
-.btn-reddit {
+.btn-reddit, a.btn-reddit:link {
   @include wide-button($reddit-color);
+  @include simple-button;
   font-size: 22px;
   padding: 12px 0px;
-  margin:0;
-  border: none;
-  font-weight:300;
-  letter-spacing: 1px;
 }
 .btn-suggestion {
   @include wide-button($join-mayday-color);
+  @include simple-button;
   text-transform: none;
   font-size: 18px;
   padding: 14px 0px;
-  margin:0;
-  border: none;
-  font-weight:300;
-  letter-spacing: 1px;
 }
 
 .box-inner {
@@ -418,7 +416,7 @@ pre {
         margin: 0 1.5px;
         padding-top: 28px;
         border-radius: 8px;
-        color: white;
+        color: #fff;
         display: inline-block;
         height: 100%;
         width: 56px;

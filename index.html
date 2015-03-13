@@ -14,13 +14,9 @@ hideFromNav: true
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 video-group no-gutter-top">
-        <!-- <div class="box-inner top-left-box"> -->
-          
-          <div class="video-box">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/i3X2eDCmPRY?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-
-        <!-- </div> -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/i3X2eDCmPRY?rel=0&showinfo=0" allowfullscreen></iframe>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 spacer-opening">
         <div class="panel action-panel">
@@ -30,13 +26,13 @@ hideFromNav: true
           </div>
           <div class="panel-body">
             <h2>Help Us with v2 <br /> <strong>Step One</strong></h2>
-            <img src="/images/capitol_building_box_icon.svg" class="img-responsive img-capitol" alt="">
+            <img src="/images/capitol_building_box_icon.svg" class="img-responsive img-capitol visible-lg-block" alt="">
             <p class="rally">We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday v2.</p>
             <form class="join">
               <button class="show-nomination-modal btn btn-mayday">Take Action</button>
             </form>
             <p class="no-bottom-margin">
-              <a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> 
+              <a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a>
             </p>
           </div>
         </div>
@@ -183,8 +179,9 @@ hideFromNav: true
         <div id="nomination-page-2">
           <h2>Thank you!</h2>
           <p>Join us on Reddit to discuss this and more.</p>
-          <button class="btn btn-reddit btn-block"><span class="socicon">C</span> Join Us on Reddit</button>
-          <button id="submit-again" class="btn btn-suggestion btn-block">Submit Another Suggestion</button>
+          <p><a class="btn btn-reddit" href="http://reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span> Join Us on Reddit</a></p>
+          <p class="no-bottom-margin"><a id="submit-again" class="btn btn-suggestion">Submit Another Suggestion</a></p>
+          </div>
         </div>
       </div>
     </div>
