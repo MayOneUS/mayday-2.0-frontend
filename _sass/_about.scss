@@ -35,6 +35,15 @@
     margin-top: -12px;
   }
 }
+.center-faq-icon1{
+  margin-left: -20%;
+}
+.center-faq-icon2{
+  margin-right: 70px;
+  @include tablet{
+    margin-right: 60px;
+  }
+}
 .bullet-color{
     color: $brand-color;
 }
