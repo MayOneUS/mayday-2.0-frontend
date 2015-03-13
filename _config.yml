@@ -5,9 +5,13 @@ description: > # this means to ignore newlines until "baseurl:"
   Mayday 2.0
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://frontend-staging.mayday.us" # the base hostname & protocol for your site
+services_url: https://mayone-staging.herokuapp.com
 twitter_username: MAYDAYUS
 github_username:  MayOneUS
-
+blog_root_url: http://playtestplay.tumblr.com
+blog_post_feed_url: http://blog.mayday.us/api/read/json?num=5&callback=?
+press_releases_feed_url: http://blog.mayday.us/api/read/json?tagged=press%20release&num=5&callback=?
+pledge_url: '//pledge.mayday.us'
 
 # Build settings
 markdown: kramdown

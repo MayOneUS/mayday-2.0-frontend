@@ -5,13 +5,13 @@
       <div class="panel panel-news">
         <div class="panel-heading">
           <h2>
-            <a href="http://blog.mayday.us/tagged/press-release"><i class="md-icon md-microphone"></i>Press Releases</a>
+            <a href="{{site.blog_root_url}}/tagged/press-release"><i class="md-icon md-microphone"></i>Press Releases</a>
           </h2>
         </div>
         <div class="panel-body">
           <ul id="tumblr-press-releases">
           </ul>
-          <a class="more-link" href="http://blog.mayday.us/tagged/press-release">&gt; View our Press Release Library</a>
+          <a class="more-link" href="{{site.blog_root_url}}/tagged/press-release">&gt; View our Press Release Library</a>
         </div>
       </div>
     </div>
@@ -21,13 +21,13 @@
       <div class="panel panel-news">
         <div class="panel-heading">
             <h2>
-              <a href="http://playtestplay.tumblr.com/"><i class="md-icon md-shield"></i> The Mayday Blog</a>
+              <a href="{{ blog_root_url }}"><i class="md-icon md-shield"></i> The Mayday Blog</a>
             </h2>
         </div>
         <div class="panel-body">
           <ul id="tumblr-posts">
           </ul>
-          <a class="more-link" href="http://playtestplay.tumblr.com/" target="_blank">&gt; The Mayday Blog</a>
+          <a class="more-link" href="{{ blog_root_url }}" target="_blank">&gt; The Mayday Blog</a>
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@
 </script>
 <script type="text/javascript">
   (function($, ich) {
-    var url = 'http://blog.mayday.us/api/read/json?num=5&callback=?';
+    var url = '{{site.blog_post_feed_url}}';
 
     $.getJSON(url, function (data) {
       var posts = data.posts;
@@ -60,7 +60,7 @@
       });
     });
 
-    var url = 'http://blog.mayday.us/api/read/json?tagged=press%20release&num=5&callback=?';
+    var url = '{{site.press_releases_feed_url}}';
 
     $.getJSON(url, function (data) {
       var releasePosts = data.posts;

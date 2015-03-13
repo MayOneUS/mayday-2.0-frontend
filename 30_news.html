@@ -51,25 +51,25 @@ permalink: /news/
         <div class="panel panel-news-border">
           <div class="panel-heading">
             <h2>
-              <a href="http://playtestplay.tumblr.com/" target="_blank"><i class="md-icon md-shield"></i> The Mayday Blog</a>
+              <a href="{{site.blog_root_url}}" target="_blank"><i class="md-icon md-shield"></i> The Mayday Blog</a>
             </h2>
           </div>
           <div class="panel-body panel-links">
             <ul id="tumblr-posts">
             </ul>
-            <a class="more-link" href="http://playtestplay.tumblr.com/">&gt; Visit the Mayday Blog</a>
+            <a class="more-link" href="{{site.blog_root_url}}">&gt; Visit the Mayday Blog</a>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-sm-height col-full-height">
         <div class="panel panel-news-border">
           <div class="panel-heading">
-            <h2><a href="http://blog.mayday.us/tagged/press-release"><i class="md-icon md-microphone"></i>Press Releases</a></h2>
+            <h2><a href="{{site.blog_root_url}}/tagged/press-release"><i class="md-icon md-microphone"></i>Press Releases</a></h2>
           </div>
           <div class="panel-body panel-links">
             <ul id="tumblr-press-releases">
             </ul>
-            <a class="more-link" href="http://blog.mayday.us/tagged/press-release">&gt; View our Press Release Library</a>
+            <a class="more-link" href="{{site.blog_root_url}}/tagged/press-release">&gt; View our Press Release Library</a>
           </div>
         </div>
       </div>
@@ -97,7 +97,6 @@ permalink: /news/
 </div>
 
 <!-- JavaScript to Pull in last 5 Tumblr Posts -->
-<script src="{{ '/js/lib/ICanHaz.min.js' | prepend: site.baseurl }}"></script>
 <script id="post" type="text/html">
     {% raw %}<li><a href="{{ url }}">{{ regular-title }}</a></li>{% endraw %}
 </script>
@@ -113,7 +112,7 @@ permalink: /news/
 </script>
 <script type="text/javascript">
   (function($, ich) {
-    var url = 'http://blog.mayday.us/api/read/json?num=5&callback=?';
+    var url = '{{site.blog_post_feed_url}}';
 
     $.getJSON(url, function (data) {
       var posts = data.posts;
@@ -124,7 +123,7 @@ permalink: /news/
       });
     });
 
-    var url = 'http://blog.mayday.us/api/read/json?tagged=press%20release&num=5&callback=?';
+    var url = '{{site.press_releases_feed_url}}';
 
     $.getJSON(url, function (data) {
       var releasePosts = data.posts;

@@ -6,6 +6,7 @@
 
   {% if page.offSite %}{% assign root_path = site.url %}{% endif %}
   {% assign page_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
+  <link rel="shortcut icon" href="{{ root_path }}/favicon.ico"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="{{ root_path }}/images/mayday_og.jpg" name="twitter:image:src"/>
   <meta content='@mayday' name="twitter:site"/>
