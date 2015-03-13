@@ -1,0 +1,186 @@
+/**
+ * Mayday Panel Styles
+ */
+
+.action-panel{
+  text-align:center;
+  border-radius:5px;
+  border: 1px solid $navy-blue-color;
+  // border-top: 6px solid $navy-blue-color;
+  padding:0;
+  background:#fff;
+  overflow:hidden;
+
+  .panel-heading{
+    padding-top:0;
+    padding-bottom:0;
+    background-color: $navy-blue-color;
+    border-bottom: 10px solid $navy-blue-light-color;
+  }
+
+  .panel-body{
+    padding-top: 0;
+
+    a.btn-mayday{
+      margin-bottom:15px;
+    }
+  }
+
+  &.with-shield{
+
+    .panel-icon{
+      padding:0;
+      background: $navy-blue-color;
+      border-bottom:5px solid $navy-blue-light-color;
+      text-align:center;
+      height:20px;
+
+      .img-responsive{
+        position:absolute;
+        top:-12px;
+        height:45px;
+        left:50%;
+        margin-left:-20px;
+        z-index:100;
+        @include phone{
+          top:22px;
+        }
+        @include tablet{
+          top:22px;
+        }
+      }
+      .fade-line{
+        position: absolute;
+        top: 6px;
+        width: 100px;
+        left: 50%;
+        margin-left: -50px;
+        display: block;
+        border: none;
+        color: white;
+        height: 2px;
+        color: white;
+        height: 2px;
+        background: black;
+        background: -webkit-radial-gradient(circle, #ffffff, $navy-blue-color);
+        background: radial-gradient(circle, #ffffff, $navy-blue-color);
+      }
+    }
+    h2{
+      color: $navy-blue-color;
+      font-weight:400;
+      font-size:26px;
+      background-color:transparent;
+
+      strong{
+        font-size:200%;
+      }
+    }
+  }
+
+
+
+  .img-capitol{
+    width:50%;
+    margin:0 auto;
+  }
+
+  p{
+    font-size: 23px;
+    font-weight:400;
+    line-height: 140%;
+
+    &.small{
+      font-size: 18px;
+      margin-bottom:0;
+      margin-top:0;
+    }
+  }
+
+  h2 {
+    margin-top:0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size:36px;
+    font-weight:400;
+    color: #ffffff;
+
+    &.small{
+      font-size: 26px;
+      color:#fff;
+    }
+
+  }
+
+  form {
+    margin: 25px 15px 0 15px;
+    padding-bottom: 15px;
+    input {
+      font-size: 22px;
+      width: 100%;
+      border: 2px solid $navy-blue-color;
+      padding: 8px 0px 8px 12px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.panel-mayday-counters {
+  height: 100%;
+  position: relative;
+  background-color: rgb(228,229,233);
+  border-radius: 4px;
+  text-align: center;
+  color: $navy-blue-light-color;
+  font-weight: 400;
+  padding-top: 22px;
+  .headline {
+    font-size: 34px;
+  }
+  .icon-line {
+    margin-top: 10px;
+    height: 20px;
+    text-align: center;
+    position: relative;
+    .half-hr {
+      display: inline-block;
+      width: 60px;
+      background-color: rgb(193,197,200);
+      height: 1px;
+      margin-bottom: 8px;
+    }
+    i {
+      font-size: 20px;
+      padding: 0 10px;
+    }
+  }
+  .counter-label {
+    font-size: 24px;
+  }
+  .counter-row {
+    margin-top: 6px;
+    height: 84px;
+    .tile {
+      margin: 0 1.5px;
+      padding-top: 28px;
+      border-radius: 8px;
+      color: #fff;
+      display: inline-block;
+      height: 100%;
+      width: 56px;
+      background-color: $navy-blue-light-color;
+      font-size: 76px;
+      position: relative;
+      .hr {
+        width: 100%;
+        position: absolute;
+        top: 42px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: rgb(0,0,0);
+      }
+    }
+  }
+}

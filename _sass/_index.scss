@@ -1,6 +1,5 @@
 #index {
-  // font-weight: 300;
-  // padding-bottom:290px;/* hack for now MARIO TODO*/
+  padding-bottom:290px;/* hack for now MARIO TODO*/
   .spacer-opening{
     @include phone{
       padding-top:30px;
@@ -11,85 +10,6 @@
       padding-bottom:15px;
     }
   }
-  .action-panel{
-    text-align:center;
-    border-radius:5px;
-    border: 1px solid $navy-blue-color;
-    border-top: 6px solid $navy-blue-color;
-    padding:0;
-
-    .panel-icon{
-      padding:0;
-      background: $navy-blue-color;
-      border-bottom:5px solid $navy-blue-light-color;
-      text-align:center;
-      height:20px;
-
-      .img-responsive{
-        position:absolute;
-        top:-12px;
-        height:45px;
-        left:50%;
-        margin-left:-20px;
-        z-index:100;
-        @include phone{
-          top:22px;
-        }
-        @include tablet{
-          top:22px;
-        }
-      }
-      .fade-line{
-        position: absolute;
-        top: 6px;
-        width: 100px;
-        left: 50%;
-        margin-left: -50px;
-        display: block;
-        border: none;
-        color: white;
-        height: 2px;
-        color: white;
-        height: 2px;
-        background: black;
-        background: -webkit-radial-gradient(circle, #ffffff, $navy-blue-color);
-        background: radial-gradient(circle, #ffffff, $navy-blue-color);
-      }
-    //   @include tablet{
-    //         margin-left: -15px;
-    // margin-right: -15px;
-    //   }
-    }
-
-
-    h2{
-      margin-top:0;
-      color: $navy-blue-color;
-      font-weight:400;
-      font-size:26px;
-
-      strong{
-        font-size:50px;
-      }
-    }
-
-    p{
-      font-size:18px;
-      font-weight:400;
-    }
-
-    .img-capitol{
-      width:50%;
-      margin:0 auto;
-    }
-
-    form{
-      button{
-        color: $background-color;
-      }
-    }
-  }
-
 
   .homepage-panel{
     position: relative;
@@ -309,23 +229,6 @@
 
     .col-md-6.center-block{
       float:none;
-
-      .box-inner.top-right-box{
-        background:#fff;
-      }
-
-      h2{
-        font-size:36px;
-        font-weight:400;
-      }
-
-      p{
-        font-size: 18px;
-
-        &.rally{
-          font-size:24px;
-        }
-      }
 
       form{
         padding-bottom:0;

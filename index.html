@@ -19,23 +19,7 @@ hideFromNav: true
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 spacer-opening">
-        <div class="panel action-panel">
-          <div class="panel-icon">
-            <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
-            <div class="fade-line hidden-xs hidden-sm"></div>
-          </div>
-          <div class="panel-body">
-            <h2>Help Us with v2 <br /> <strong>Step One</strong></h2>
-            <img src="/images/capitol_building_box_icon.svg" class="img-responsive img-capitol visible-lg-block" alt="">
-            <p class="rally">We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday v2.</p>
-            <form class="join">
-              <button class="show-nomination-modal btn btn-mayday">Take Action</button>
-            </form>
-            <p class="no-bottom-margin">
-              <a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a>
-            </p>
-          </div>
-        </div>
+        {% include panel_action_with_shield.html %}
       </div>
     </div>
   </div>
@@ -97,14 +81,7 @@ hideFromNav: true
     </div>
     <div class="container text-center bottom-form-wrap">
       <div class="col-md-6 center-block">
-        <div class="box-inner top-right-box round-it">
-          <h2 class="box-title">Help us with v2</h2>
-          <p class="rally"><strong>Step One:</strong> We’re crowdsourcing a list of potential allies in Congress. Tell who you think could be a candidate, or how else you'd like to be involved in Mayday Phase II.</p>
-          <form class="join">
-            <button class="show-nomination-modal btn btn-mayday">Take Action</button>
-          </form>
-          <p><a href="/sign-up" title="Sign Up">New to MAYDAY.US? Join us here.</a> </p>
-        </div>
+        {% include panel_action.html %}
       </div>
     </div>
   </div>
