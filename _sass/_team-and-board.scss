@@ -22,6 +22,10 @@
   p{
     font-size:16px;
     line-height:normal;
+    @include phone{
+      font-size:17px;
+      line-height:140%;
+    }
   }
 }
 .tb-profile{
@@ -32,5 +36,9 @@
 }
 .img-bottom{
   margin-bottom: 15px;
+}
+.contributors-format h5{
+  font-size: 18px;
+  line-height:1em;
 }
 
