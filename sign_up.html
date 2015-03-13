@@ -19,9 +19,9 @@ permalink: /sign-up/
           <dt><label for='lastname'>Last name</label></dt>
           <dd><input type='text' id='lastname' name="person[last_name]" placeholder='Last name'></dd>
           <dt><label for='email'>Email</label></dt>
-          <dd><input type='email' id='email' name="person[email]" placeholder='Email address'></dd>
+          <dd><input type='email' id='email' name="person[email]" placeholder='Email address' required></dd>
           <dt><label for='zipcode'>Zip code</label></dt>
-          <dd><input type='tel' id='zipcode' name="person[zip]" placeholder='ZIP code'></dd>
+          <dd><input type="text" pattern="\d{5,5}" id='zipcode' name="person[zip]" placeholder='ZIP code'></dd>
         </dl>
         <input type="hidden" name="person[remote_fields][tags][]" value="test_1_9">
         <input type="hidden" name="person[remote_fields][event_id]" value="24">
