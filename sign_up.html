@@ -10,21 +10,26 @@ permalink: /sign-up/
     </div>
   </div>
   <div class="row">
-    <form>
+    <form class="email-signup">
       <fieldset>
         <legend>Please take a moment to give us a little information about yourself.</legend>
         <dl>
           <dt><label for='firstname'>First name</label></dt>
-          <dd><input type='text' id='firstname' name='firstname' placeholder='First name'></dd>
+          <dd><input type='text' id='firstname' name="person[first_name]" placeholder='First name'></dd>
           <dt><label for='lastname'>Last name</label></dt>
-          <dd><input type='text' id='lastname' name='lastname' placeholder='Last name'></dd>
+          <dd><input type='text' id='lastname' name="person[last_name]" placeholder='Last name'></dd>
           <dt><label for='email'>Email</label></dt>
-          <dd><input type='email' id='email' name='email' placeholder='Email address'></dd>
-          <dt><label for='zipcode'>Zip Code</label></dt>
-          <dd><input type='tel' id='zipcode' name='zipcode' placeholder='ZIP Code'></dd>
+          <dd><input type='email' id='email' name="person[email]" placeholder='Email address' required></dd>
+          <dt><label for='zipcode'>Zip code</label></dt>
+          <dd><input type="text" pattern="\d{5,5}" id='zipcode' name="person[zip]" placeholder='ZIP code'></dd>
         </dl>
-        <button type='submit' name='submit' class='action-panel'>I'm in</button>
+        <input type="hidden" name="person[remote_fields][tags][]" value="test_1_9">
+        <input type="hidden" name="person[remote_fields][event_id]" value="24">
+        <button type='submit' class='action-panel'>I'm in</button>
       </fieldset>
     </form>
+    <div class="hidden">
+      <a href="/">Click here to take the next steps in our fight against corruption.</a>
+    </div>
   </div>
 </div>
