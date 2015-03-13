@@ -37,11 +37,18 @@
 }
 .center-faq-icon1{
   margin-left: -20%;
+  @include phone{
+    margin-left: none;
+  }
 }
 .center-faq-icon2{
   margin-right: 70px;
   @include tablet{
     margin-right: 60px;
+  }
+  @include phone{
+    margin-right: none;
+    margin-left: 1px;
   }
 }
 .bullet-color{
