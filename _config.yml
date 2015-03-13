@@ -4,7 +4,7 @@ email: info@mayday.us
 description: > # this means to ignore newlines until "baseurl:"
   Mayday 2.0
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://mayday.us" # the base hostname & protocol for your site
+url: "https://frontend-staging.mayday.us" # the base hostname & protocol for your site
 twitter_username: MAYDAYUS
 github_username:  MayOneUS
 
