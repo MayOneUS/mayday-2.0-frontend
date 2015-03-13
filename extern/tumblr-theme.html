@@ -160,10 +160,10 @@ offSite: true
         .pagination .next-page {float: right;margin-right: 30px;}
           .pagination a {font: 20px Georgia,serif;text-decoration: none;}
 
-      .widget {border-bottom: 1px solid #ccc;color: #333;font-size: 13px;padding: 0 20px 20px 20px;}
-        .widget h3 {font: 20px Georgia,serif;margin-bottom: 20px;}
-          .widget h3 a, .widget h3 a:visited {color: #000;text-decoration: none;}
-          .widget h3 a:focus, .widget h3 a:hover, .widget h3 a:active {color: #dd3333;}
+      .widget {color: #333;font-size: 18px;padding: 0 20px 20px 20px;}
+        .widget h3 {}
+          .widget h3 a, .widget h3 a:visited {text-decoration: none;}
+          .widget h3 a:focus, .widget h3 a:hover, .widget h3 a:active {}
         .widget img {padding: 5px;max-width: 250px;}
         .widget p:last-child, .widget ul:last-child, .widget ol:last-child, .widget blockquote:last-child {margin-bottom: 0;}
       #about {overflow: hidden;}
@@ -186,11 +186,11 @@ offSite: true
         #following_container li {display: inline;padding: 0;margin: 0;}
 
   .md-tags {
-      background-image: url('http://frontend-staging.mayday.us/images/tag.svg');
-      background-size: 100% auto;
-      background-repeat: none;
-      background-position: bottom;
-      margin-bottom: -14px;
+    background-image: url('http://frontend-staging.mayday.us/images/tag.svg');
+    background-size: 100% auto;
+    background-repeat: none;
+    background-position: bottom;
+    margin-bottom: -14px;
   }
   {CustomCSS}
 </style>
@@ -203,19 +203,19 @@ offSite: true
       <div class="row">
         <div class="col-xs-12 col-md-8" id="container">
           <div class="row">
-              <div class="col-xs-12">
-                <h1><i class="md-icon md-shield" style="width: 50px; height: 50px; margin-bottom: -11px"></i><strong>Mayday Blog</strong></h1>
-              </div>
+            <div class="col-xs-12">
+              <h1><i class="md-icon md-shield" style="width: 50px; height: 50px; margin-bottom: -11px"></i><strong>{Title}</strong></h1>
+            </div>
           </div>
-          <!-- TODO: possibly make this an include -->
+          {block:IndexPage}
           <div class="row">
-              <div class="col-xs-12">
-                <p class="lead">As I’ve said from the very start, our aim is to win a Congress committed to fundamental reform in the way campaigns are funded. As a first step to that goal, we set out in this election cycle to run a series of campaigns to demonstrate that voters care about the corruption of their government, and would vote to change it.</p>
-              </div>
+            <div class="col-xs-12">
+              <p class="lead">{Description}</p>
+            </div>
           </div>
+          {/block:IndexPage}
           <div class="row">
             <div class="col-xs-12" id="container">
-            <!-- NOTE: Not much has been changed here since previous template other than adding the new Tags Icon -->
               <div id="content">
                 {block:Posts}
                   <article id="post-{PostID}" class="post {block:Text}post-type-text{/block:Text}{block:Photo}post-type-photo{/block:Photo}{block:Photoset}post-type-photoset{/block:Photoset}{block:Quote}post-type-quote{/block:Quote}{block:Link}post-type-link{/block:Link}{block:Chat}post-type-chat{/block:Chat}{block:Video}post-type-video{/block:Video}{block:Audio}post-type-audio{/block:Audio}">
@@ -320,99 +320,7 @@ offSite: true
       </div>
     </div><!-- #container -->
 
-    <!--TODO: Figure out whether we want Sidebar to be a separate include module -->
-    <div class="col-xs-12 col-md-4">
-      <div id="sidebar">
-        <div class="row">
-        <div class="col-xs-12">
-          <div class="panel panel-news">
-            <div class="panel-heading">
-              <div class="panel-title">
-                <h2><i class="md-icon md-newspaper"></i> Mayday in the News</h2>
-              </div>
-            </div>
-            <div class="panel-body">
-              <ul>
-                <li><a href="#">Huffington Post: Mayday II</a></li>
-                <li><a href="#">Forbes: Lawrence Lessig Shows That..(More)</a></li>
-                <li><a href="#">Democrats Vs. Republicans</a></li>
-                <li><a href="#">The Washington Post: The 'super PAC to... (More)</a></li>
-                <li><a href="#">New York Daily News: Hist mouth where (More)</a></li>
-              </ul>
-              <a class="more-link" href="/in-the-news/">&gt; Read more news about Mayday</a>
-            </div>
-          </div>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col-xs-12">
-          <div class="panel panel-news">
-            <div class="panel-heading">
-              <div class="panel-title">
-                <h2>
-                  <i class="md-icon md-microphone"></i>Press Releases
-                </h2>
-              </div>
-            </div>
-            <div class="panel-body">
-              <ul>
-                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
-                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
-                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
-                <li><div class="press-date">3/3/2015</div> <div class="press-link"><a href="#">Blog Title here: This is the most recent entry that is posted.</a></div></li>
-              </ul>
-              <a class="more-link" href="/press-releases/">&gt; View our Press Release Library</a>
-            </div>
-          </div>
-        </div>
-        </div>
-      {block:IfShowAboutWidget}
-        <h2>Our Blog</h2>
-        <div id="about" class="widget">
-          {block:Description}<div class="description"><p>{Description}</p></div>{/block:Description}
-        </div>
-      {/block:IfShowAboutWidget}
-      <!--{block:IndexPage}{block:IfShowStuffILikeWidget}{block:Likes}-->
-      <!--    <h3><a href="http://www.tumblr.com/liked/by/{Name}">Stuff I like</a></h3>-->
-      <!--    <div id="likes_container" class="widget">-->
-      <!--      {Likes limit="5" summarize="100" width="279"}-->
-      <!--    </div>-->
-      <!--  {/block:Likes}{/block:IfShowStuffILikeWidget}{/block:IndexPage}-->
-      {block:IndexPage}{block:IfShowLatestTweetsWidget}{block:Twitter}
-        <h3>Latest Tweets</h3>
-        <div id="twitter" class="widget">
-          <div id="tweets"></div>
-          <p><a href="http://twitter.com/{TwitterUsername}">Follow MAYDAY</a></p>
-        </div>
-
-        <script type="text/javascript">
-          function recent_tweets(data) {
-            for (i=0; i<data.length; i++) {
-              if (i<{text:Number of Tweets}) {
-                document.getElementById("tweets").innerHTML =
-                  document.getElementById("tweets").innerHTML +
-                  '<a href="http://twitter.com/{TwitterUsername}/status/' +
-                  data[i].id + '"><div class="content">' + data[i].text +
-                  '</div></a>';
-              }
-            }
-            document.getElementById("twitter").style.display = 'block';
-          }
-        </script>
-      {/block:Twitter}{/block:IfShowLatestTweetsWidget}{/block:IndexPage}
-      {block:IfShowPeopleIFollowWidget}{block:Following}
-        <h3>People I follow</h3>
-        <div id="following_container" class="widget">
-          <ul>
-            {block:Followed}
-              <li><a href="{FollowedURL}"><img src="{FollowedPortraitURL-30}" alt="{FollowedName}" /></a></li>
-            {/block:Followed}
-          </ul>
-        </div>
-      {/block:Following}{/block:IfShowPeopleIFollowWidget}
-      </div><!-- #sidebar -->
-    </div>
-    <!-- #end tublr html  -->
+    {% include siebar_news.html%}
 
     <p>{block:Twitter}<script type="text/javascript" src="/tweets.js"></script>{/block:Twitter}
 
@@ -439,6 +347,90 @@ offSite: true
 
       </div><!-- container -->
     </div><!-- rally -->
+{% endcapture %}
+
+{% capture sidebar_extras_start %}
+  {block:PermalinkPage}{block:Posts}
+  <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-news">
+          <div class="panel-heading">
+            <h2>{title}</h2>
+          </div>
+          <div class="panel-body">
+            <p>{Description}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {/block:PermalinkPage}{/block:Posts}
+{% endcapture %}
+
+{% capture sidebar_extras_end %}
+  <!--       {block:IfShowAboutWidget}
+    <h2>Our Blog</h2>
+    <div id="about" class="widget">
+      {block:Description}<div class="description"><p>{Description}</p></div>{/block:Description}
+    </div>
+  {/block:IfShowAboutWidget} -->
+  <!--{block:IndexPage}{block:IfShowStuffILikeWidget}{block:Likes}-->
+  <!--    <h3><a href="http://www.tumblr.com/liked/by/{Name}">Stuff I like</a></h3>-->
+  <!--    <div id="likes_container" class="widget">-->
+  <!--      {Likes limit="5" summarize="100" width="279"}-->
+  <!--    </div>-->
+  <!--  {/block:Likes}{/block:IfShowStuffILikeWidget}{/block:IndexPage}-->
+  {block:IndexPage}{block:IfShowLatestTweetsWidget}{block:Twitter}
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-news">
+        <div class="panel-heading">
+          <h2>Latest Tweets</h2>
+        </div>
+        <div class="panel-body">
+          <div id="twitter" class="widget">
+            <div id="tweets"></div>
+            <p><a href="http://twitter.com/{TwitterUsername}">Follow MAYDAY</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript">
+      function recent_tweets(data) {
+        for (i=0; i<data.length; i++) {
+          if (i<{text:Number of Tweets}) {
+            document.getElementById("tweets").innerHTML =
+              document.getElementById("tweets").innerHTML +
+              '<a href="http://twitter.com/{TwitterUsername}/status/' +
+              data[i].id + '"><div class="content">' + data[i].text +
+              '</div></a>';
+          }
+        }
+        document.getElementById("twitter").style.display = 'block';
+      }
+    </script>
+  {/block:Twitter}{/block:IfShowLatestTweetsWidget}{/block:IndexPage}
+
+  {block:IfShowPeopleIFollowWidget}{block:Following}
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-news">
+        <div class="panel-heading">
+          <h3>People I follow</h3>
+        </div>
+        <div class="panel-body">
+         <div id="following_container" class="widget">
+           <ul>
+             {block:Followed}
+               <li><a href="{FollowedURL}"><img src="{FollowedPortraitURL-30}" alt="{FollowedName}" /></a></li>
+             {/block:Followed}
+           </ul>
+         </div>
+      </div>
+    </div>
+  </div>
+  {/block:Following}{/block:IfShowPeopleIFollowWidget}
 {% endcapture %}
 
 {% include sub_layouts/external.html %}
