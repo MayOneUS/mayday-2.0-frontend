@@ -82,8 +82,17 @@ function fetch_legislator_info() {
     url: 'https://mayone-staging.herokuapp.com/legislators',
     success: function(legislators) {
       legislators.map(function(legislator){
+        var field_value = ' value="' + legislator.id + '"';
+        var disqualifier = '';
+        if (legislator.with_us) {
+          var disqualifier = ' (already with us!)'
+        } else if (!legislator.eligible) {
+          var disqualifier = ' (not eligible)'
+        }
+        var subtext = ' data-subtext="' + legislator.title + ' ' + legislator.state_name + disqualifier + '"';
+        var disabled = (legislator.with_us || !legislator.eligible ? ' disabled="disabled"' : '');
         $nomineeSelect.append(
-          '<option value="' + legislator.id + '" data-subtext="' + legislator.title + ' ' + legislator.state_name + '">' + legislator.name + '</option>'
+          '<option' + field_value + subtext + disabled + '>' + legislator.name + '</option>'
         );
       });
       $('.btn-group.bootstrap-select').hide()
