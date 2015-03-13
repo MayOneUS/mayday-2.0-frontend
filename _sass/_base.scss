@@ -295,6 +295,7 @@ pre {
   margin-top: 6px;
   line-height: normal;
   padding: 16px 16px;
+  cursor: pointer;
 
   &:hover {
     color: #fff;
@@ -332,6 +333,7 @@ pre {
   @include wide-button($dark-red-color);
   @include simple-button;
   font-size: 28px;
+  font-weight: 400;
 }
 .btn-reddit, a.btn-reddit:link {
   @include wide-button($reddit-color);

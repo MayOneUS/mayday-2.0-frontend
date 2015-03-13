@@ -2,11 +2,10 @@
  * Mayday Panel Styles
  */
 
-.action-panel{
+.action-panel, .index .homepage-panel .action-panel{
   text-align:center;
   border-radius:5px;
   border: 1px solid $navy-blue-color;
-  // border-top: 6px solid $navy-blue-color;
   padding:0;
   background:#fff;
   overflow:hidden;
@@ -14,8 +13,8 @@
   .panel-heading{
     padding-top:0;
     padding-bottom:0;
-    background-color: $navy-blue-color;
-    border-bottom: 10px solid $navy-blue-light-color;
+    background-color: $navy-blue-light-color;
+    border-bottom: 10px solid  $navy-blue-color;
   }
 
   .panel-body{
@@ -51,19 +50,19 @@
       }
       .fade-line{
         position: absolute;
-        top: 6px;
+        top: 8px;
         width: 100px;
         left: 50%;
         margin-left: -50px;
         display: block;
         border: none;
         color: white;
-        height: 2px;
+        height: 1px;
         color: white;
         height: 2px;
         background: black;
-        background: -webkit-radial-gradient(circle, #ffffff, $navy-blue-color);
-        background: radial-gradient(circle, #ffffff, $navy-blue-color);
+        background: -webkit-radial-gradient(circle, rgba(255,255,255, 0.5), $navy-blue-color);
+        background: radial-gradient(circle, rgba(255,255,255, 0.5), $navy-blue-color);
       }
     }
     h2{
@@ -71,9 +70,10 @@
       font-weight:400;
       font-size:26px;
       background-color:transparent;
+      padding-bottom: 0;
 
       strong{
-        font-size:200%;
+        font-size:50px;
       }
     }
   }
@@ -86,12 +86,12 @@
   }
 
   p{
-    font-size: 23px;
+    font-size: 18px;
     font-weight:400;
     line-height: 140%;
 
     &.small{
-      font-size: 18px;
+      font-size: 16px;
       margin-bottom:0;
       margin-top:0;
     }
@@ -182,5 +182,75 @@
         background-color: rgb(0,0,0);
       }
     }
+  }
+}
+
+#submit-candidate-modal {
+  .modal-dialog {
+    height: 100%;
+    max-width:440px;
+  }
+  .modal-thankyou{
+    max-width:340px;
+  }
+  .modal-content {
+    background-color: #e4e4e4;
+    border: none;
+  }
+
+  .modal-body {
+    .close{
+      margin-top:-14px;
+      margin-right:-8px;
+    }
+
+    h2{
+      font-weight:400;
+      font-size:28px;
+    }
+
+    h2:first-of-type{
+      margin-top:5px;
+    }
+    p{
+      color: $navy-blue-color;
+      line-height: 20px;
+      font-size:16px;
+    }
+
+    .bootstrap-select{
+      &:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100%;
+      }
+      & > .btn{
+        border-color: $navy-blue-color;
+      }
+      &.btn-group .btn .filter-option{
+        color: $navy-blue-color;
+        font-weight: 400;
+        font-size:18px;
+      }
+      .text-muted{
+        color:$navy-blue-color;
+        font-weight:300;
+        padding-left:4px;
+      }
+    }
+
+    .form-control{
+      border-color: $navy-blue-color;
+    }
+
+    .form-group:last-child{
+      margin-bottom:0;
+    }
+  }
+
+  #onboarding-overlay {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
   }
 }

@@ -23,20 +23,23 @@
       padding-bottom:0;
     }
 
-    h2 {
-      font-size: 48px;
-      margin-top:0;
-    }
+    .homepage-panel-body{
 
-    .panel-headline-small {
-      margin-top: 30px;
-      font-size: 32px;
-    }
+      h2 {
+        font-size: 48px;
+        margin-top:0;
+      }
 
-    p {
-      margin-top: 30px;
-      font-size: 24px;
-      line-height:30px;
+      .panel-headline-small {
+        margin-top: 30px;
+        font-size: 32px;
+      }
+
+      p {
+        margin-top: 30px;
+        font-size: 24px;
+        line-height:30px;
+      }
     }
 
     &.dark {
@@ -234,124 +237,5 @@
         padding-bottom:0;
       }
     }
-  }
-}
-.round-it{
-  border-radius: 5px;
-}
-
-/*
-.bottom-join-form {
-  position: relative;
-  background-color: #ffffff;
-  display: block;
-  height: 300px;
-  width: 600px;
-  margin: 80px auto;
-  z-index: 999;
-
-  border: 1px solid $navy-blue-color;
-  .box-title {
-    height: 70px;
-    padding: 18px 0px 0px 30px;
-    color: #ffffff;
-    background-color: $navy-blue-light-color;
-    font-size: 27px;
-    border-bottom: 10px solid $navy-blue-color;
-  }
-  .rally {
-    margin-top: 12px;
-    font-size: 20px;
-    line-height: 24px;
-    padding: 0px 22px;
-  }
-  form {
-    margin: 15px 20px 0px 20px;
-    font-size: 22px;
-    input {
-      border: 2px solid $navy-blue-color;
-      padding: 8px 0px 8px 12px;
-      border-radius: 4px;
-      margin-bottom: 15px;
-      &[name="email"] {
-        width: 62%;
-        margin-right: 5px;
-      }
-      &[name="zip"] {
-        width: 36%;
-      }
-    }
-
-  }
-}
-*/
-
-#submit-candidate-modal {
-  .modal-dialog {
-    height: 100%;
-    max-width:440px;
-  }
-  .modal-thankyou{
-    max-width:340px;
-  }
-  .modal-content {
-    background-color: #e4e4e4;
-    border: none;
-  }
-
-  .modal-body {
-    .close{
-      margin-top:-14px;
-      margin-right:-8px;
-    }
-
-    h2{
-      font-weight:400;
-      font-size:28px;
-    }
-
-    h2:first-of-type{
-      margin-top:5px;
-    }
-    p{
-      color: $navy-blue-color;
-      line-height: 20px;
-      font-size:16px;
-    }
-
-    .bootstrap-select{
-      &:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-        width: 100%;
-      }
-      & > .btn{
-        border-color: $navy-blue-color;
-      }
-      &.btn-group .btn .filter-option{
-        color: $navy-blue-color;
-        font-weight: 400;
-        font-size:18px;
-      }
-      .text-muted{
-        color:$navy-blue-color;
-        font-weight:300;
-        padding-left:4px;
-      }
-    }
-
-    .form-control{
-      border-color: $navy-blue-color;
-    }
-
-    .form-group:last-child{
-      margin-bottom:0;
-    }
-  }
-
-  #onboarding-overlay {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    height: 100%;
-    width: 100%;
   }
 }
