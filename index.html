@@ -216,12 +216,12 @@ $(document).ready(function(){
   fetch_legislator_info();
 
   $(".show-nomination-modal").click(function() {
-    $('#js-nomination-form').trigger("reset");
-    $('#additional-fields').show();
+    $("#js-nomination-form").trigger("reset");
+    $("#additional-fields").show();
     $("#nomination-page-2").hide();
     $("#nomination-page-1").show();
-    $('#submit-candidate-modal').modal('show');
-    $('.bootstrap-select .filter-option').text("Select legislator");
+    $("#submit-candidate-modal").modal("show");
+    $(".bootstrap-select .filter-option").text("Select legislator");
   });
 
   $("#submit-again").click(function() {
@@ -232,16 +232,18 @@ $(document).ready(function(){
   $("#js-nomination-form").submit(function (event) {
     event.preventDefault();
 
-    if ($('select[name=legislator_id]').val() != "" || $('input[name=email]').val() != "") {
+    if ($("select[name=legislator_id]").val() == "" && $("input[name=email]").val() == "") {
+      $("button.selectpicker").focus();
+    } else {
       var saveURI = 'https://mayone-staging.herokuapp.com/nominations';
       $.post(saveURI, $(this).serialize());
-      $('#nomination-page-1').hide();
-      $('#nomination-page-2').show();
-      $('#additional-fields').hide();
-      $('textarea[name=selection_comment]').val("");
-      $('textarea[name=other_comment]').val("");
-      $('select[name=legislator_id]').val("")
-      $('.bootstrap-select .filter-option').text("Select another legislator");
+      $("#nomination-page-1").hide();
+      $("#nomination-page-2").show();
+      $("#additional-fields").hide();
+      $("textarea[name=selection_comment]").val("");
+      $("textarea[name=other_comment]").val("");
+      $("select[name=legislator_id]").val("")
+      $(".bootstrap-select .filter-option").text("Select another legislator");
     }
   });
 
