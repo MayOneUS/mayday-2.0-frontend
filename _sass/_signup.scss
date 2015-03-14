@@ -4,12 +4,12 @@
 
 .sign-up{
 
-  .panel-icon > img {
+  .action-panel.with-shield .panel-icon .img-responsive {
     @include tablet {
-      display: none;
+      top: -12px;
     }
     @include phone {
-      display: none;
+      top: -12px;
     }
   }
 
