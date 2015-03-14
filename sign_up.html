@@ -10,24 +10,49 @@ permalink: /sign-up/
     </div>
   </div>
   <div class="row">
-    <form class="email-signup">
-      <fieldset>
-        <legend>Please take a moment to give us a little information about yourself.</legend>
-        <dl>
-          <dt><label for='firstname'>First name</label></dt>
-          <dd><input type='text' id='firstname' name="person[first_name]" placeholder='First name'></dd>
-          <dt><label for='lastname'>Last name</label></dt>
-          <dd><input type='text' id='lastname' name="person[last_name]" placeholder='Last name'></dd>
-          <dt><label for='email'>Email</label></dt>
-          <dd><input type='email' id='email' name="person[email]" placeholder='Email address' required></dd>
-          <dt><label for='zipcode'>Zip code</label></dt>
-          <dd><input type="text" pattern="\d{5,5}" id='zipcode' name="person[zip]" placeholder='ZIP code'></dd>
-        </dl>
+    <form class="col-md-6 center-block no-gutter">
+      <fieldset class="col-md-12 center-block">
+
+      <legend>Please take a moment to give us a little information about yourself.</legend>
+
+      <div class="form-group col-md-6">
+        <label class="control-label sr-only" for="person[first_name]">First Name</label>
+        <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name" class="form-control input-md">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+        <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name" class="form-control input-md">
+      </div>
+
+      <div class="form-group col-md-9">
+        <label class="control-label sr-only" for="person[email]">Email Address</label>
+        <input id="person[email]" name="person[email]" type="text" placeholder="Email Address" class="form-control input-md" required="">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label class="control-label sr-only" for="person[zip]">Zip Code</label>
+        <input id="person[zip]" name="person[zip]" type="text" placeholder="Zip Code" class="form-control input-md">
+
+      </div>
+
+      <div class="form-group col-md-12">
+        <label class="control-label sr-only" for="person[is_volunteer]">Volunteer</label>
+          <label class="checkbox-inline" for="person[is_volunteer]-0">
+            <input type="checkbox" name="person[is_volunteer]" id="person[is_volunteer]-0" value="true"> Are you ready to volunteer?
+          </label>
+      </div>
+
+      <div class="form-group cold-md-12">
+        <label class="control-label sr-only" for="singlebutton">Submit</label>
         <input type="hidden" name="person[remote_fields][tags][]" value="test_1_9">
-        <input type="hidden" name="person[remote_fields][event_id]" value="25">
-        <button type='submit' class='action-panel'>I'm in</button>
+          <input type="hidden" name="person[remote_fields][event_id]" value="25">
+          <button type="submit" class="btn btn-mayday">I'm in</button>
+      </div>
+
       </fieldset>
     </form>
+
     <div class="hidden">
       <a href="/">Click here to take the next steps in our fight against corruption.</a>
     </div>

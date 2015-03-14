@@ -1,77 +1,40 @@
-.sign-up {
-  fieldset {
+
+.sign-up{
+
+  form {
     text-align: center;
-    max-width: 625px;
-    border: 1px #124b9a solid;
+    border: 2px $navy-blue-color solid;
     border-radius: 5px;
-    display: block;
-    margin: 35px auto;
-  }
+    float:none;
+    margin:25px auto;
 
-  legend {
-    float: left;
-    width: 100%;
-    border: 0;
-    text-align: center;
-    padding: 20px 30px;
-    margin: 0;
-    color: #3c3642;
-    font-weight: 300;
-    font-size: 150%;
-  }
+    fieldset {
+      border-radius: 5px;
+      display: block;
+      float:none;
+      margin: 10px auto 0;
+    }
 
-  input {
-    border: 1px #124b9a solid;
-    border-radius: 5px;
-    padding: 7px;
-    font-size: 125%;
-    font-weight: 300;
-  }
+    legend {
+      text-align: center;
+      border:none;
+      line-height:140%;
+      float:left;
+      padding:0 20px;
+    }
 
-  label {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+    input {
+      border: 2px $navy-blue-color solid;
+      border-radius: 5px;
+      padding: 20px 10px;
+      font-size: 120%;
+      font-weight: 300;
+      text-align: left;
+    }
 
-  dt {
-    display: none;
-  }
-
-  dd {
-    display: inline;
-  }
-
-  #firstname,
-  #lastname {
-    width: 40%;
-  }
-
-  #email {
-    width: 60%;
-  }
-
-  #zipcode {
-    width: 20%;
-  }
-
-  #firstname,
-  #lastname,
-  #email,
-  #zipcode {
-    margin: 10px 5px;
-  }
-
-  button {
-    margin: 10px 0 30px 0;
-    width: 82%;
-    color: #fff;
-    font-size: 30px;
-    font-weight: 400;
-    padding: 20px 0px;
-    border: none;
-    border-radius: 5px;
-    background-color: #b0010e;
-    text-transform: uppercase;
+    .checkbox-inline{
+      text-align: left;
+      width:100%;
+    }
   }
 }

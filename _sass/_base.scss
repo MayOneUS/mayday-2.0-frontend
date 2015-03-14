@@ -167,13 +167,18 @@ li {
 /**
  * Headings
  */
-h1, h2, h3 {
+h1, h2, h3, legend {
   font-weight: $header-weight;
   color: $navy-blue-light-color;
 }
 
 h1{
   font-size: 40px;
+  margin: 0 0 20px;
+}
+
+legend{
+  font-size: 24px;
   margin: 0 0 20px;
 }
 
