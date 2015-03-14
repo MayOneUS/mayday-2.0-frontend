@@ -609,6 +609,7 @@ a:link, a:visited, a:active {
   .footer-push {
     height: 300px;
     clear: both;
+    content: '';
   }
   @include phone{
     line-height: 1.7em;
