@@ -99,7 +99,7 @@ function fetch_legislator_info() {
         if (legislator.with_us) {
           var disqualifier = ' (already with us!)'
         } else if (!legislator.eligible) {
-          var disqualifier = ' (not eligible)'
+          var disqualifier = ' (no 2016 election)'
         }
         var subtext = ' data-subtext="' + legislator.title + ' ' + legislator.state_name + disqualifier + '"';
         var disabled = (legislator.with_us || !legislator.eligible ? ' disabled="disabled"' : '');

@@ -190,8 +190,12 @@
       width: 40%;
       a {
         @include tab-button($dark-red-color);
-        border: 1px solid rgb(91,121,150);
+        border: 2px solid darken(white, 10%);
         padding: 6px 20px;
+      }
+
+      a:hover {
+        border: 2px solid white;
       }
     }
   }
@@ -609,6 +613,7 @@ a:link, a:visited, a:active {
   .footer-push {
     height: 300px;
     clear: both;
+    content: '';
   }
   @include phone{
     line-height: 1.7em;
