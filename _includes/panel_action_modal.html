@@ -1,4 +1,3 @@
-
 <!-- Modal -->
 <div class="modal fade" id="submit-candidate-modal" tabindex="-1" role="dialog" aria-labelledby="onboarding-modal-label" aria-hidden="true">
   <div class="modal-dialog">
@@ -90,7 +89,8 @@ function fetch_legislator_info() {
   var $nomineeSelect = $('#nominee')
   $.ajax({
     dataType: "json",
-    url: '{{site.services_url}}/legislators',
+    // url: '{{site.services_url}}/legislators',
+    url: '/data/legislators.json',
     success: function(legislators) {
       legislators.map(function(legislator){
         var field_value = ' value="' + legislator.id + '"';
