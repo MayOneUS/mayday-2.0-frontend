@@ -80,6 +80,10 @@
       color: white;
       background-color: lighten( $twitter-color, 5% );
     }
+    @include phone{
+      margin-left: -6%;
+      width: 106.5%;
+    }
   }
   .fblg{
     text-transform: uppercase;
@@ -92,6 +96,9 @@
     &:hover {
       color: white;
       background-color: lighten( $facebook-color, 5% );
+    }
+    @include phone{
+      width: 106.5%;
     }
   }
   .no-underline{
