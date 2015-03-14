@@ -25,19 +25,6 @@
     }
   }
   .video-box{
-    padding-top: 15px;
-    padding-bottom: 20px;
-    height:0;
-    padding-bottom:56.25%;
-    overflow:hidden;
-    position: relative;
-  }
-  .video-box iframe,.video-box object, .video-box embed {
-    width: 100%!important;
-    height: 100%!important;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
   .button-row{
     border-radius: 4px;
