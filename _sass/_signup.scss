@@ -4,6 +4,11 @@
 
 .sign-up{
 
+  @include large-desktop {
+    h1{
+      margin-bottom: 50px;
+    }
+  }
   .action-panel.with-shield .panel-icon .img-responsive {
     @include tablet {
       top: -12px;
@@ -15,7 +20,6 @@
 
   form {
     text-align: center;
-    //border: 2px $navy-blue-color solid;
     border-radius: 5px;
     float:none;
     margin:25px auto 0px;
@@ -35,10 +39,10 @@
       padding:0 20px;
     }
 
-    input[type=text] {
+    input[type=text],  input[type=email]{
       border: 2px $navy-blue-color solid;
       border-radius: 5px;
-      //padding: 20px 10px;
+      margin-bottom: 0;
       height: 43px;
       font-size: 120%;
       font-weight: 300;
