@@ -7,8 +7,8 @@ url: "https://frontend-staging.mayday.us" # the base hostname & protocol for you
 baseurl: "" # the subpath of your site, e.g. /blog/
 services_url: //services.mayday.us
 blog_root_url: http://playtestplay.tumblr.com
-blog_post_feed_url: http://blog.mayday.us/api/read/json?num=5&callback=?
-press_releases_feed_url: http://blog.mayday.us/api/read/json?tagged=press%20release&num=5&callback=?
+blog_post_feed_url: //services.mayday.us/blog_posts
+press_releases_feed_url: //services.mayday.us/blog_posts/press_releases
 pledge_url: '//pledge.mayday.us'
 github_username:  MayOneUS
 twitter_username: MAYDAYUS
