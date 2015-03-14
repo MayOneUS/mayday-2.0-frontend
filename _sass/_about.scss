@@ -54,6 +54,11 @@
 .bullet-color{
     color: $brand-color;
 }
+@include tablet{
+  .info-height{
+    height:213px;
+  }
+}
 .info-height h3{
   margin-bottom: 10px;
 }
