@@ -5,6 +5,12 @@
 .all-videos {
   margin-bottom: 40px;
 }
+.video-lead-title{
+  margin-bottom: 10px;
+  @include phone{
+    margin-bottom: 0px;
+  }
+}
 .video-group{
   display: inline-block;
   float: left;
@@ -44,6 +50,10 @@
     margin-left: 2.5%;
     margin-top: 3%;
     margin-bottom: 2%;
+    &:hover {
+      color: white;
+      background-color: lighten( $twitter-color, 5% );
+    }
   }
   .fb{
     text-transform: uppercase;
@@ -53,6 +63,36 @@
     margin-right: 2%;
     margin-top: 3%;
     margin-bottom: 2%;
+    &:hover {
+      color: white;
+      background-color: lighten( $facebook-color, 5% );
+    }
+  }
+  .twlg{
+    text-transform: uppercase;
+    background-color: $twitter-color;
+    color: white;
+    width: 102.5%;
+    margin-left: -2%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    &:hover {
+      color: white;
+      background-color: lighten( $twitter-color, 5% );
+    }
+  }
+  .fblg{
+    text-transform: uppercase;
+    background-color: $facebook-color;
+    color: white;
+    width: 103%;
+    margin-right:-2%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    &:hover {
+      color: white;
+      background-color: lighten( $facebook-color, 5% );
+    }
   }
   .no-underline{
     text-decoration: none;
