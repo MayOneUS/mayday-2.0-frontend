@@ -39,7 +39,7 @@
 $(document).ready(function(){
   $("form.email-signup").submit(function (event) {
     event.preventDefault();
-    var saveURI = '{{ services_url }}/people';
+    var saveURI = '{{ site.services_url }}/people';
     $.post(saveURI, $(this).serialize());
     $(this).hide();
     $(this).next().removeClass('hidden');
