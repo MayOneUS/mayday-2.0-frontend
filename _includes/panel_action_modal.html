@@ -49,21 +49,20 @@
                     <input id="zip" name="zip" type="text" pattern="\d{5,5}(-\d{4,4})?" placeholder="ZIP code" aria-describedby="ZIP Code" class="form-control input-md">
                   </div>
                 </div>
-              </div>
-
-              <div class="form-group">
-                <div class="col-md-12">
-                  <label class="checkbox-inline" for="is_volunteer">
-                    <input type="checkbox" name="person[remote_fields][is_volunteer]" id="is_volunteer" value="true" checked />
-                    Would you like to volunteer?
-                  </label>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <label class="checkbox-inline" for="is_volunteer">
+                      <input type="checkbox" name="remote_fields[is_volunteer]" id="is_volunteer" value="true" checked />
+                      Would you like to volunteer?
+                    </label>
+                  </div>
                 </div>
+                <br />
               </div>
-              <br />
 
 
               <input type="hidden" name="remote_fields[tags][]" value="test_1_9">
-              <input type="hidden" name="person[remote_fields][event_id]" value="25">
+              <input type="hidden" name="remote_fields[event_id]" value="25">
 
               <div class="form-group">
                 <button id="singlebutton" name="singlebutton" class="btn btn-mayday">Submit</button>
