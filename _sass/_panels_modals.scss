@@ -113,7 +113,7 @@
   form {
     margin: 25px 15px 0 15px;
     padding-bottom: 15px;
-    input {
+    input[type=text] {
       font-size: 22px;
       width: 100%;
       border: 2px solid $navy-blue-color;
