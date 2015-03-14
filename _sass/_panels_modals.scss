@@ -233,6 +233,9 @@
         font-weight:300;
         padding-left:4px;
       }
+      .dropdown-menu li.active a small{
+        color:$light-grey-color;
+      }
     }
 
     .form-control{
