@@ -42,7 +42,7 @@
 
                 <div class="row">
                   <div class="form-group col-md-6">
-                    <input id="email" name="email" type="email" placeholder="Email" aria-describedby="email" class="form-control input-md">
+                    <input id="email" name="email" type="email" placeholder="Email" aria-describedby="email" class="form-control input-md" required>
                   </div>
                   <div class="form-group col-md-6">
                     <input id="zip" name="zip" type="text" pattern="\d{5,5}(-\d{4,4})?" placeholder="ZIP code" aria-describedby="ZIP Code" class="form-control input-md">
@@ -51,7 +51,7 @@
                 <div class="form-group">
                   <div class="col-md-12">
                     <label class="checkbox-inline" for="is_volunteer">
-                      <input type="checkbox" name="remote_fields[is_volunteer]" id="is_volunteer" value="true" checked />
+                      <input type="checkbox" name="remote_fields[is_volunteer]" id="is_volunteer" value="true"  />
                       Would you like to volunteer?
                     </label>
                   </div>
@@ -70,7 +70,7 @@
             </fieldset>
           </form>
         </div>
-        <div id="nomination-page-2">
+        <div id="nomination-page-thanks">
           <h2>Thank you!</h2>
           <p>Join us on Reddit to discuss this and more.</p>
           <p><a class="btn btn-reddit" href="http://reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span> Join Us on Reddit</a></p>
@@ -84,7 +84,6 @@
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 <script>
-
 function fetch_legislator_info() {
   var $nomineeSelect = $('#nominee')
   $.ajax({
@@ -106,46 +105,39 @@ function fetch_legislator_info() {
           '<option' + field_value + subtext + disabled + '>' + legislator.name + '</option>'
         );
       });
-      $('.btn-group.bootstrap-select').hide()
+      $('.btn-group.bootstrap-select').remove()
       $nomineeSelect.removeClass('hidden').selectpicker();
     }
   });
 }
 
-
 $(document).ready(function(){
   fetch_legislator_info();
 
-  $(".show-nomination-modal").click(function() {
-    $("#js-nomination-form").trigger("reset");
+  $(".show-nomination-modal").on("click", function() {
+    $("textarea, select").val(function() {
+        return this.defaultValue;
+    });
     $("#additional-fields").show();
-    $("#nomination-page-2").hide();
+    $("#nomination-page-thanks").hide();
     $("#nomination-page-1").show();
     $("#submit-candidate-modal").modal("show");
     $(".bootstrap-select .filter-option").text("Search by name or state");
   });
 
-  $("#submit-again").click(function() {
-    $("#nomination-page-2").hide();
+  $("#submit-again").on("click", function() {
+    $("#nomination-page-thanks").hide();
     $("#nomination-page-1").show();
   });
 
   $("#js-nomination-form").submit(function (event) {
     event.preventDefault();
-
-    if ($("select[name=legislator_id]").val() == "" && $("input[name=email]").val() == "") {
-      $("button.selectpicker").focus();
-    } else {
-      var saveURI = '{{site.services_url}}/nominations';
-      $.post(saveURI, $(this).serialize());
-      $("#nomination-page-1").hide();
-      $("#nomination-page-2").show();
-      $("#additional-fields").hide();
-      $("textarea[name=selection_comment]").val("");
-      $("textarea[name=other_comment]").val("");
-      $("select[name=legislator_id]").val("")
-      $(".bootstrap-select .filter-option").text("Select another legislator");
-    }
+    var saveURI = '{{site.services_url}}/nominations';
+    $.post(saveURI, $(this).serialize());
+    $("#nomination-page-1").hide();
+    $("#nomination-page-thanks").show();
+    $("#additional-fields").hide();
+    $(".bootstrap-select .filter-option").text("Select another legislator");
   });
 
   // $(".js-join-modal").on('click', function (event) {
