@@ -115,9 +115,6 @@ $(document).ready(function(){
   fetch_legislator_info();
 
   $(".show-nomination-modal").on("click", function() {
-    $("textarea, select").val(function() {
-        return this.defaultValue;
-    });
     $("#additional-fields").show();
     $("#nomination-page-thanks").hide();
     $("#nomination-page-1").show();
@@ -126,6 +123,7 @@ $(document).ready(function(){
   });
 
   $("#submit-again").on("click", function() {
+    $("textarea, select").val("");
     $("#nomination-page-thanks").hide();
     $("#nomination-page-1").show();
   });
