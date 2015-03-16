@@ -311,6 +311,35 @@ pre {
     color: #fff;
   }
 }
+@mixin temp-wide-button($bg-color) {
+  color: #fff;
+  background-color: $bg-color;
+  border: 1px solid $bg-color;
+  &:hover {
+    color: #fff;
+    background-color: lighten( $bg-color, 5% );
+    border-color: lighten( $bg-color, 5% );
+  }
+  &:visited{
+    color: #fff;
+  }
+}
+.wide-button{
+  margin-bottom: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 6px;
+  line-height: normal;
+  padding: 16px 16px;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+  &:visited{
+    color: #fff;
+  }
+}
  /**
  * Wide Button Mixin
  * @param {Color} $dark-red-color
@@ -354,7 +383,39 @@ pre {
   padding: 14px 0px;
 }
 
-
+.vid-share-button{
+  letter-spacing: 1px;
+  border-radius: 4px;
+  font-weight: 400;
+  padding: 10px 0px;
+}
+.tw-row{
+  @include temp-wide-button($twitter-color);
+  width: 98%;
+  margin: 3% 0 2% 2.5%;
+}
+.fb-row{
+  @include temp-wide-button($facebook-color);
+  width: 98%;
+  margin: 3% 2% 2% 0;
+}
+.twlg-row{
+  @include temp-wide-button($twitter-color);
+  width: 102.5%;
+  margin: 3% 0 2% -2%;
+  @include phone{
+    margin-left: -6%;
+    width: 106.5%;
+  }
+}
+.fblg-row{
+  @include temp-wide-button($facebook-color);
+  width: 103%;
+  margin: 3% -2% 2% 0;
+  @include phone{
+    width: 106.5%;
+  }
+}
 
 /**
  * Wrapper

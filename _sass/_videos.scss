@@ -1,95 +1,25 @@
 /** 
  * Mayday Content
  */
-
-.all-videos {
-  margin-bottom: 40px;
-}
 .video-lead-title{
   margin-bottom: 10px;
   @include phone{
     margin-bottom: 0px;
   }
 }
-.video-group{
-  display: inline-block;
-  float: left;
-  padding-bottom: 20px;
-  h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    @include large-desktop {
-      &.two-line-height-on-lg {
-        min-height: 48px;
+.all-videos {
+  margin-bottom: 40px;
+  .video-group{
+    padding-bottom: 20px;
+    h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      @include large-desktop {
+        &.two-line-height-on-lg {
+          min-height: 48px;
+        }
       }
     }
-  }
-  .video-box{
-  }
-  .button-row{
-    border-radius: 4px;
-  }
-  .tw{
-    text-transform: uppercase;
-    background-color: $twitter-color;
-    color: white;
-    width: 98%;
-    margin-left: 2.5%;
-    margin-top: 3%;
-    margin-bottom: 2%;
-    &:hover {
-      color: white;
-      background-color: lighten( $twitter-color, 5% );
-    }
-  }
-  .fb{
-    text-transform: uppercase;
-    background-color: $facebook-color;
-    color: white;
-    width: 98%;
-    margin-right: 2%;
-    margin-top: 3%;
-    margin-bottom: 2%;
-    &:hover {
-      color: white;
-      background-color: lighten( $facebook-color, 5% );
-    }
-  }
-  .twlg{
-    text-transform: uppercase;
-    background-color: $twitter-color;
-    color: white;
-    width: 102.5%;
-    margin-left: -2%;
-    margin-top: 3%;
-    margin-bottom: 2%;
-    &:hover {
-      color: white;
-      background-color: lighten( $twitter-color, 5% );
-    }
-    @include phone{
-      margin-left: -6%;
-      width: 106.5%;
-    }
-  }
-  .fblg{
-    text-transform: uppercase;
-    background-color: $facebook-color;
-    color: white;
-    width: 103%;
-    margin-right:-2%;
-    margin-top: 3%;
-    margin-bottom: 2%;
-    &:hover {
-      color: white;
-      background-color: lighten( $facebook-color, 5% );
-    }
-    @include phone{
-      width: 106.5%;
-    }
-  }
-  .no-underline{
-    text-decoration: none;
   }
 }
 .top-signup {
@@ -101,7 +31,6 @@
     display: none;
   }
 }
-
 .bottom-signup{
   display: none;
   @include tablet{
