@@ -48,8 +48,7 @@
  * Mayday News Panels
  **/
 
-@mixin news-panel {
-
+.panel-news {
   -webkit-box-shadow: none;
   box-shadow: none;
   position: relative;
@@ -102,18 +101,17 @@
   }
 }
 
-.panel-news {
-  @include news-panel;
-}
-
-.panel-news-border {
+.panel-news.with-border {
   border: 2px solid $light-grey-color;
   width:100%;
-  @include news-panel;
 }
 
 .news-content {
   margin-bottom: 100px;
+
+  .list-inline>li{
+    margin-bottom:30px;
+  }
 }
 .contact-info{
   h3{

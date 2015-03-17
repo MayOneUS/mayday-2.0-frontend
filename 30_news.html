@@ -7,7 +7,6 @@ permalink: /news/
   <div class="row">
     <div class="col-md-8 col-xs-12">
       <h1 class="mayday-headline-smaller">News</h1>
-      <!-- <p class="lead"></p> -->
     </div>
   </div>
   <div class="row no-gutter">
@@ -48,7 +47,7 @@ permalink: /news/
   <div class="row">
     <div class="row-same-height row-full-height">
       <div class="col-xs-12 col-sm-6 col-sm-height col-full-height">
-        <div class="panel panel-news-border">
+        <div class="panel panel-news with-border">
           <div class="panel-heading">
             <h2>
               <a href="{{site.blog_root_url}}" target="_blank"><i class="md-icon md-shield"></i> The Mayday Blog</a>
@@ -62,7 +61,7 @@ permalink: /news/
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-sm-height col-full-height">
-        <div class="panel panel-news-border">
+        <div class="panel panel-news with-border">
           <div class="panel-heading">
             <h2><a href="{{site.blog_root_url}}/tagged/press-release"><i class="md-icon md-microphone"></i>Press Releases</a></h2>
           </div>
@@ -74,7 +73,7 @@ permalink: /news/
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-sm-height col-full-height">
-        <div class="panel panel-news-border">
+        <div class="panel panel-news with-border">
           <div class="panel-heading">
             <h2>
               <a href="/in-the-news/"><i class="md-icon md-newspaper"></i> Mayday in the News</a>
@@ -82,23 +81,14 @@ permalink: /news/
           </div>
           <div class="panel-body panel-links">
             <ul>
+            {% for article in site.data.press_articles limit:5 %}
               <li>
-                <a href="/in-the-news/#huffington-post-mayday-iihttpwwwhuffingtonpostcomjay-mandlemayday-iib6212492html">Huffington Post: Mayday II</a>
+                <a href="/in-the-news/#{{article.link | slugify}}">{{ article.title }}</a>
               </li>
-              <li>
-                <a href="/in-the-news/#forbes-lawrence-lessig-shows-that-todays-political-struggle-has-nothing-to-do-with-democrats-vs-republicanshttpwwwforbescomsitesralphbenko20141124lawrence-lessig-shows-that-todays-political-struggle-has-nothing-to-do-with-democrats-vs-republicans">Forbes: Lawrence Lessig Shows That... (More)</a>
-              </li>
-              <li>
-                <a href="/in-the-news/#the-washington-post-the-super-pac-to-end-all-pacs-was-supposed-to-fix-money-in-politics-heres-what-went-wronghttpwwwwashingtonpostcomblogsthe-switchwp20141120the-super-pac-to-end-all-super-pacs-was-supposed-to-fix-money-in-politics-heres-what-went-wrong">The Washington Post: The 'super PAC to end all PACs'... (More)</a>
-              </li>
-              <li>
-                <a href="/in-the-news/#new-york-daily-news-his-mouth-where-his-money-ishttpwwwnydailynewscomopinionmouth-money-article-12011596">New York Daily News: His mouth where his money is</a>
-              </li>
-              <li>
-                <a href="/in-the-news/#huffington-post-watch-the-bare-knuckle-fight-against-money-in-politicshttpwwwhuffingtonpostcombill-moyerswatch-the-bare-knuckle-fib6172148html">Huffington Post: Watch: The Bare Knuckle Fight... (More)</a>
-              </li>
+            {% endfor %}
             </ul>
             <a class="more-link" href="/in-the-news/">&gt; Read more news about Mayday</a>
+
           </div>
         </div>
       </div>
