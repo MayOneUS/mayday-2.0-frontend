@@ -399,23 +399,6 @@ pre {
   width: 98%;
   margin: 3% 2% 2% 0;
 }
-.twlg-row{
-  @include temp-wide-button($twitter-color);
-  width: 102.5%;
-  margin: 3% 0 2% -2%;
-  @include phone{
-    margin-left: -6%;
-    width: 106.5%;
-  }
-}
-.fblg-row{
-  @include temp-wide-button($facebook-color);
-  width: 103%;
-  margin: 3% -2% 2% 0;
-  @include phone{
-    width: 106.5%;
-  }
-}
 
 /**
  * Wrapper
