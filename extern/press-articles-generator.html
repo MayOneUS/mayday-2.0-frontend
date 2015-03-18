@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <meta name="robots" content="noindex, nofollow">
+  </head>
+  <body>
+    <script type="text/x-handlebars" id="application">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>MAYDAY article formater</h1>
+          <hr/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <form class="form-horizontal">
+            <fieldset>
+              <legend><h2>Article code</h2></legend>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="title">Title</label>
+                <div class="col-md-8">
+                  {{input class="form-control" valueBinding=App.article.title}}
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="link">Link</label>
+                <div class="col-md-8">
+                  {{input class="form-control" valueBinding=App.article.link}}
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="date">Date</label>
+                <div class="col-md-8">
+                  {{input class="form-control" valueBinding=App.article.date placeholder="03/13/2015"}}
+                  <span class="help-block">Please use format MM/DD/YYYY</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="quote1">quote</label>
+                <div class="col-md-8">
+                  {{textarea class="form-control" valueBinding=App.article.quote1}}
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="quote2">quote</label>
+                <div class="col-md-8">
+                  {{textarea class="form-control" valueBinding=App.article.quote2}}
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="quote3">quote</label>
+                <div class="col-md-8">
+                  {{textarea class="form-control" valueBinding=App.article.quote3}}
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h2>Output</h2>
+          <pre><code><span>- title: </span><span>{{clean_quotes App.article.title}}</span>
+<span>  link: </span><span>{{clean_quotes App.article.link}}</span>
+<span>  date: </span><span>{{clean_quotes App.article.date}}</span>
+<span>  quotes: </span>
+<span>    - </span><span>{{clean_quotes App.article.quote1}}</span>
+<span>    - </span><span>{{clean_quotes App.article.quote2}}</span>
+<span>    - </span><span>{{clean_quotes App.article.quote3}}</span>
+</code></pre>
+        </div>
+      </div>
+    </div>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+    <script src="http://builds.emberjs.com/release/ember.min.js"></script>
+    <script src="http://builds.emberjs.com/beta/ember-template-compiler.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.15/ember-data.min.js"></script>
+    <script>
+    // create app (kind of namespace)
+    App = Em.Application.create();
+
+    // describe models
+    App.Article = Ember.Object.extend({
+      title: '',
+      link: '',
+      quote1: '',
+      quote2: '',
+      quote2: '',
+    });
+
+    // create models
+    App.article = App.Article.create({
+    });
+
+    Ember.Handlebars.helper('clean_quotes', function(target_string, options) {
+      target_string = target_string || '';
+      if (target_string.length > 1){
+        replacements = {
+          "\u2026" : '&hellip;', // …
+          "\u2018" : '&lsquo;',  // ‘
+          "\u2019" : '&rsquo;',  // ’
+          "\u201C" : '&ldquo;',  // “
+          "\u201D" : '&rdquo;',  // ”
+        }
+        target_string = target_string.replace(/(\w)'(\w)/g, "\$1&rsquo;$2"); //replace conjunction appostrophies
+        target_string = target_string.replace(/'(?=(([^']+'){2})*[^']*'[^']*$)/g, '&lsquo;').replace(/'/g, '&rsquo;'); //replace single quoted strings
+        $.each(replacements, function(target, replacement) {
+          var re = new RegExp(target,"g");
+          target_string = target_string.replace(re, replacement);
+        })
+        console.log(target_string)
+
+        return ('\'' + target_string + '\'');
+      }else{
+        return '';
+      }
+    });
+    </script>
+  </body>
+</html>
