@@ -170,6 +170,7 @@
       padding: 3px 10px;
       color: $offwhite-color;
       line-height: 1.0;
+      text-transform: uppercase;
     }
     .middle-dot {
       color: rgba(255,255,255, .25);
@@ -188,13 +189,13 @@
       margin-right: 0;
       display: inline-block;
       width: 40%;
-      a {
-        @include tab-button($dark-red-color);
-        border: 2px solid darken(white, 10%);
-        padding: 6px 20px;
-      }
+    }
+    a.donate-link{
+      @include tab-button($dark-red-color);
+      border: 2px solid darken(white, 10%);
+      padding: 6px 20px;
 
-      a:hover {
+      &:hover {
         border: 2px solid white;
       }
     }
@@ -742,7 +743,7 @@ a:link, a:visited, a:active {
   }
 }
 
-.about_us {
+.about-us {
   h1 {
     margin: 30px 0 15px 0;
     font-weight: 300;
