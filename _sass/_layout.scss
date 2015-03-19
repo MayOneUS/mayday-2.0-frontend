@@ -457,7 +457,7 @@ a:link, a:visited, a:active {
     font-weight: 400;
     font-size: 20px;
 }
-///////////this one is important 
+///////////this one is important
 .container-fluid>.navbar-collapse,.container-fluid>.navbar-header,.container>.navbar-collapse,.container>.navbar-header {
     margin-right: -6%;
     margin-left: -6%
@@ -520,53 +520,52 @@ a:link, a:visited, a:active {
 }
 /* title */
 .navbar-default .navbar-brand {
-    color: #e4e4e4;
+  color: #e4e4e4;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-    color: #007acf;
+  color: #007acf;
 }
 /* link color-text*/
 .navbar-default .navbar-nav > li > a {
-    color: $navy-blue-color;
+  color: $navy-blue-color;
+  text-transform: uppercase;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #007acf;
+  color: #007acf;
 }
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #555;
-    background-color: #E7E7E7;
+  color: #555;
+  background-color: #E7E7E7;
 }
-.navbar-default .navbar-nav > .open > a, 
-.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-    color: #555;
-    background-color: #D5D5D5;
+  color: #555;
+  background-color: #D5D5D5;
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: #e4e4e4;
-    border-bottom-color: $dark-red-color;
+  border-top-color: #e4e4e4;
+  border-bottom-color: $dark-red-color;
 }
 .navbar-default .navbar-nav>.disabled>a,.navbar-default .navbar-nav>.disabled>a:focus,.navbar-default .navbar-nav>.disabled>a:hover {
-    color: #ccc;
-    background-color: transparent
+  color: #ccc;
+  background-color: transparent
 }
 
 .navbar-default .navbar-toggle {
-    background-color: #ddd;
-    border-color: #ddd;
+  background-color: #ddd;
+  border-color: #ddd;
 }
-
 
 .gap-filler {
   width: 100%;
   height: 30px;
   position: absolute;
-  // margin-top: -px;
   z-index: 51;
   top:79;
   background-color: $navy-blue-light-color;
@@ -720,114 +719,13 @@ a:link, a:visited, a:active {
 
   h2 {
     font-size: 32px;
-
-    // @include media-query($on-laptop) {
-    //   font-size: 28px;
-    // }
   }
 
   h3 {
     font-size: 26px;
-
-    // @include media-query($on-laptop) {
-    //   font-size: 22px;
-    // }
   }
 
   h4 {
     font-size: 20px;
-
-    // @include media-query($on-laptop) {
-    //   font-size: 18px;
-    // }
-  }
-}
-
-.about-us {
-  h1 {
-    margin: 30px 0 15px 0;
-    font-weight: 300;
-    color: $navy-blue-light-color;
-  }
-
-  .aboutBlurb {
-    font-size: 160%;
-    margin-bottom: 50px;
-  }
-
-  .icons {
-    display: block;
-    text-align: center;
-
-    li {
-      display: inline-block;
-      list-style-type: none;
-      font-size: 200%;
-      font-weight: 400;
-      color: #0c3962;
-      text-align: center;
-      width: 155px;
-      height: 195px;
-      margin: 0 15px 50px 15px;
-
-      border: 1px #f00 solid; /* todo: replace this with imgs */
-      .thePlan {
-        /* todo: icon */
-      }
-      .theFacts {
-        /* todo: icon */
-      }
-      .qa {
-        /* todo: icon */
-      }
-      .ourMedia {
-        /* todo: icon */
-      }
-      .ourTeam {
-        /* todo: icon */
-      }
-    }
-  }
-
-  .contact {
-    display: block;
-    text-align: center;
-
-    li {
-      display: inline-block;
-      list-style-type: none;
-      color: #0c3962;
-      vertical-align: top;
-      max-width: 165px;
-      margin: 0 25px 50px 0;
-
-      h3 {
-        font-size: 175%;
-        font-weight: 400;
-        text-align: left;
-      }
-
-      li {
-        font-size: 125%;
-        text-align: left;
-        list-style-type: disc;
-        display: list-item;
-        margin: 5px 0 0 20px;
-
-        .reddit {
-          /* todo: bullet icon */
-        }
-        .facebook {
-          /* todo: bullet icon */
-        }
-        .twitter {
-          /* todo: bullet icon */
-        }
-      }
-
-      address {
-        text-align: left;
-      }
-    }
   }
 }
