@@ -373,21 +373,21 @@ pre {
   @include wide-button($reddit-color);
   @include simple-button;
   font-size: 22px;
-  padding: 12px 0px;
+  padding: 12px 0;
 }
 .btn-suggestion {
   @include wide-button($join-mayday-color);
   @include simple-button;
   text-transform: none;
   font-size: 18px;
-  padding: 14px 0px;
+  padding: 14px 0;
 }
 
 .vid-share-button{
   letter-spacing: 1px;
   border-radius: 4px;
   font-weight: 400;
-  padding: 10px 0px;
+  padding: 10px 0;
 }
 .tw-row{
   @include temp-wide-button($twitter-color);
@@ -538,11 +538,11 @@ pre {
 .index-page-title{
   font-size: 34px;
   font-weight: 400;
-  margin: 0px 0px 40px;
+  margin: 0 0 40px;
   text-align: center;
-  //text-align: center; margin-bottom: 40px; margin-top: 0px;
+  //text-align: center; margin-bottom: 40px; margin-top: 0;
   @include phone{
-    margin: 25px 0px 25px;
+    margin: 25px 0 25px;
   }
 }
 .lead-font-size{

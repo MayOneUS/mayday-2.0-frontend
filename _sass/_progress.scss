@@ -34,7 +34,7 @@ $progress-breakpoint-small:715px;
   .headline {
     color: $navy-blue-light-color;
     font-size: 34px;
-    padding: 20px 3.5% 0px 3.5%;
+    padding: 20px 3.5% 0 3.5%;
     position: relative;
     z-index: 99;
     margin:0;
@@ -47,7 +47,7 @@ $progress-breakpoint-small:715px;
     }
     line-height: 28px;
     margin-top: 14px;
-    padding: 14px 3.5% 0px 3.5%;
+    padding: 14px 3.5% 0 3.5%;
     position: relative;
     z-index: 99;
     @include breakpoint-large{

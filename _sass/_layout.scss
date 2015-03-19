@@ -14,7 +14,7 @@
       position: relative;
       .icon-bar-left {
         position: absolute;
-        left: 0px;
+        left: 0;
         top: 29px;
         width: 30%;
         height: 2em;
@@ -116,7 +116,7 @@
             position: relative;
             .divide-line {
               position: absolute;
-              left: 0px;
+              left: 0;
               top: 8px;
               height: 25px;
               width: 1px;
@@ -152,9 +152,9 @@
     padding-top: 18px;
     background-color: $navy-blue-light-color;
 
-    -webkit-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
-    -moz-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
-    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
+    -webkit-box-shadow: inset 0 2px 3px 0 rgba(0,0,0,.4);
+    -moz-box-shadow: inset 0 2px 3px 0 rgba(0,0,0,.4);
+    box-shadow: inset 0 2px 3px 0 rgba(0,0,0,.4);
 
     font-size: 16px;
     @include tablet {
@@ -266,7 +266,7 @@ a:link, a:visited, a:active {
 
     .vertical-fade-line {
       position: absolute;
-      top: 0px;
+      top: 0;
       right: -21px;
       height: 200px;
       display: block;
@@ -338,11 +338,11 @@ a:link, a:visited, a:active {
 
       @include tablet {
         width: 100%;
-        margin: 20px 0px;
+        margin: 20px 0;
       }
       @include phone {
         width: 100%;
-        margin: 20px 0px;
+        margin: 20px 0;
       }
 
       input {
@@ -377,7 +377,7 @@ a:link, a:visited, a:active {
     position: relative;
     .vertical-fade-line {
       position: absolute;
-      top: 0px;
+      top: 0;
       right: 21px;
       height: 200px;
       display: block;
