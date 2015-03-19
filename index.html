@@ -8,7 +8,7 @@ hideFromNav: true
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="index-page-title">We tried. We learned. <br class="hidden-md hidden-lg">We&rsquo;re trying <br class="visible-xs-block">something new.</h1>
+        <h1 class="index-page-title"<strong>Help Us</strong> Save Our Democracy</h1>
       </div>
     </div>
     <div class="row">
@@ -18,7 +18,41 @@ hideFromNav: true
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 spacer-opening">
-        {% include panel_action_with_shield.html %}
+        {% include panel_onboarding.html %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="panel-mayday-counters">
+          <div class="headline">The Mayday Pack</div>
+          <div class="icon-line">
+            <div class="half-hr"></div>
+            <i class="fa fa-users"></i>
+            <div class="half-hr"></div>
+          </div>
+          <div class="counter-label">Citizen Lobbyists</div>
+          <div class="counter-row">
+            <div class="tile">0<span class="hr"></span></div>
+            <div class="tile">2<span class="hr"></span></div>
+            <div class="tile">2<span class="hr"></span></div>
+            <div class="tile">0<span class="hr"></span></div>
+          </div>
+          <div class="icon-line">
+            <div class="half-hr"></div>
+            <i class="fa fa-phone"></i>
+            <div class="half-hr"></div>
+          </div>
+          <div class="counter-label">Phone Calls to Congress</div>
+          <div class="counter-row">
+            <div class="tile">0<span class="hr"></span></div>
+            <div class="tile">2<span class="hr"></span></div>
+            <div class="tile">2<span class="hr"></span></div>
+            <div class="tile">0<span class="hr"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="box-inner bottom-right-box">{% include progress.html %}</div>
       </div>
     </div>
   </div>
@@ -81,9 +115,41 @@ hideFromNav: true
     </div>
     <div class="container text-center bottom-form-wrap">
       <div class="col-md-6 center-block">
-        {% include panel_action.html %}
+        {% include panel_onboarding.html %}
       </div>
     </div>
   </div>
 </div>
-{% include panel_action_modal.html %}
+<!-- Modal -->
+<div class="modal fade" id="onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="onboarding-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="onboarding-overlay" src="" frameborder="0" frameborder="0" allowtransparency="true"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$("form.join").submit(function (event) {
+  event.preventDefault();
+  var userZip = $(this).find('input[name="person[zip]"]').val();
+  var userEmail = $(this).find('input[name="person[email]"]').val();
+  var queryString = 'zip=' + encodeURIComponent(userZip) + '&email=' + encodeURIComponent(userEmail);
+  var baseURI = 'http://onboarding-staging.mayday.us';
+  var iframeURI = baseURI + '?' + queryString;
+
+  var saveURI = '{{site.services_url}}/people.json';
+  $.post(saveURI, $(this).serialize())
+    .always(function() {
+      $("#onboarding-overlay").attr("src", iframeURI);
+    })
+    .done(function (data, textStatus, jqXHR) {
+      console.log(data, textStatus);
+    })
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
+    });
+});
+</script> 
