@@ -72,18 +72,9 @@
   @if $bg-image {
     $url: "#{$bg-img-dir}#{$bg-image}";
     background: url($url) no-repeat;
-    @include phone {
-      background-size: 100% 100%;
-      background-position: center;
-    }
 
-    @include small-desktop {
-      background-position: center;
-      background-size: 100% 100%;
-    }
-
-    background-position: bottom;
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
   }
 
   border-radius: 8px;
@@ -108,44 +99,41 @@
 
   .panel-body {
 
-    padding-top: 0px;
-    font-weight: 300;
+    padding-top: 0;
 
-    @include large-desktop {
-      font-size: 1.4em;
-      line-height: 1.4em;
-    }
+    // @include large-desktop {
+    //   font-size: 1.4em;
+    //   line-height: 1.4em;
+    // }
 
-    @include small-desktop {
-      font-size: 1.2em;
-      line-height: 1.2em;
-    }
+    // @include small-desktop {
+    //   font-size: 1.2em;
+    //   line-height: 1.2em;
+    // }
 
-    @include tablet {
-      font-size: 1.4em;
-      line-height: 1.4em;
-    }
+    // @include tablet {
+    //   font-size: 1.4em;
+    //   line-height: 1.4em;
+    // }
 
-    form {
-
-      .form-control {
-        height: 36px;
-        font-size: 16px;
-        border: 1px solid $navy-blue-mid-color;
-      }
+    .form-control {
+      height: 36px;
+      font-size: 16px;
+      border: 1px solid $navy-blue-mid-color;
     }
   }
 }
 
 .panel-join-mayday {
   @include panel(null, $join-mayday-color, null);
-  .btn {
 
+  .btn {
     @include wide-button($join-mayday-color);
   }
 
   .panel-body .btn {
-    margin-top: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -157,7 +145,8 @@
   }
 
   .panel-body .btn {
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 0;
   }
 }
 
@@ -170,6 +159,8 @@
 
   .mayday-reddit-snoo {
     padding: 15px;
+    max-height: 180px;
+    box-sizing: content-box;
 
     @include small-desktop {
       max-height: 205px;
