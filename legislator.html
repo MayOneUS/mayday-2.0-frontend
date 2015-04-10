@@ -1,0 +1,68 @@
+---
+layout: default
+title: Demo Scroecard
+permalink: /legislator/
+---
+<div class="container">
+  <div class="col-md-8 center-block" style="float:none">
+      <div class="panel-body" id="js-legislators">
+  </div>
+
+</div>
+
+<!-- <script src="/js/lib/ICanHaz.min.js" type="text/javascript" charset="utf-8"></script> -->
+{% raw %}
+<script id="legislator_template" type="text/html">
+  <div class="row mayday-profile active">
+    <div class="headshot col-lg-5 col-xs-5">
+        <a href=""><img src="{{ image_url }}" alt="${{ name }} Headshot">
+    </div>
+    <div class="derp col-lg-7 col-xs-7 push-left">
+      <h4>{{ name }} <i class="fa fa-thumbs-{{icon_status}}"></i></h4>
+      <h6>{{ title }} ({{ party }}-{{ state_abbrev }} {{display_district}})</h6>
+      <p>{{title}} {{name}} {{with_message}} campaign finance reform</p>
+      <div class="row">
+        <h3>{{share_message}} {{title}} {{name}}</h3>
+        <div class="col-md-6">
+        <a href="http://www.twitter.com/maydayus" class="btn btn-default btn-lg btn-twitter" title="Tweet {{title}} {{name}}">
+            <i class="fa fa-twitter"></i> 
+            <span class="text">Twitter</span>
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="https://www.facebook.com/groups/282646648577039/" class="btn btn-default btn-lg btn-facebook" title="Facebook {{title}} {{name}}">
+            <i class="fa fa-facebook"></i> 
+            <span class="text">Facebook</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+{% endraw %}
+<script>
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
+  $(document).ready(function(){
+    var bioguide_id = getParameterByName('bioguide_id');
+    $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, function(legislator_data){
+      if(legislator_data.with_us == true){
+        legislator_data.with_message = 'supports'
+        legislator_data.icon_status = 'up'
+        legislator_data.share_message = 'Thank'
+      }else{
+        legislator_data.with_message = 'doesn\'t support'
+        legislator_data.icon_status = 'down'
+        legislator_data.share_message = 'Demand Support From'
+      }
+      var rendered = ich.legislator_template(legislator_data);
+
+      $('#js-legislators').append(rendered);
+    });
+  })
+</script>
