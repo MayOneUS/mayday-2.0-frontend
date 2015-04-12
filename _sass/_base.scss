@@ -295,26 +295,25 @@ pre {
 }
 .btn-md-wide{
   @include button-colors($dark-red-color);
-  margin-bottom: 10px;
   width: 100%;
-  text-transform: uppercase;
-  font-weight: 300;
+  margin-bottom: 10px;
   margin-top: 6px;
-  line-height: normal;
   padding: 16px 16px;
+  font-size: 28px;
+  line-height: normal;
+  font-weight: 400;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
 @mixin simple-button{
   margin:0;
-  border: none;
+  // border: none;
   letter-spacing: 1px;
 }
 
 .btn-md-red, a.btn-md-red:link {
   @include simple-button;
-  font-size: 28px;
-  font-weight: 400;
 }
 .btn-reddit, a.btn-reddit:link {
   @include button-colors($reddit-color);

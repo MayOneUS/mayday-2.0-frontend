@@ -19,24 +19,30 @@ permalink: /take-action/
       </p>
     </div>
   </div> -->
-  
-  <div class="row">
-    <a href="#" class="btn btn-md-wide btn-md-red" title="Test yourself">Sign Up for Updates</a>
-    {% include panels/panel_action_w_signup.html hide_volunteer=true %}
-  </div>
-  <div class="row">
-    {% include panels/panel_action_w_get_educated.html %}
-  </div>
-  <div class="row">
-    {% include panels/panel_action_w_spread_the_word.html %}
-  </div>
-  <div class="row">
-    {% include panels/panel_action_w_call_congress.html %}
-  </div>
-  <div class="row">
-    {% include panels/panel_action_w_join_discussion.html %}
-  </div>
-  <div class="row">
-    {% include panels/panel_action_w_volunteer.html %}
-  </div>
+  <ul class="list-unstyled action-tree">
+    <li class="incomplete active">
+      <a href="#" class="btn btn-md-wide" title="Sign Up for Updates">Sign Up for Updates</a>
+      {% include panels/panel_action_w_signup.html hide_volunteer=true %}
+    </li>
+    <li class="incomplete">
+      <a href="#" class="btn btn-md-wide" title="Get Educated">Get Educated</a>
+      {% include panels/panel_action_w_get_educated.html %}
+    </li>
+    <li class="incomplete">
+      <a href="#" class="btn btn-md-wide" title="Spread the Word">Spread the Word</a>
+      {% include panels/panel_action_w_spread_the_word.html %}
+    </li>
+    <li class="incomplete">
+      <a href="#" class="btn btn-md-wide" title="Take Action: Call Congress">Take Action: Call Congress</a>
+      {% include panels/panel_action_w_call_congress.html %}
+    </li>
+    <li class="incomplete">
+      <a href="#" class="btn btn-md-wide" title="Join the Discussion">Join the Discussion</a>
+      {% include panels/panel_action_w_join_discussion.html %}
+    </li>
+    <li class="incomplete">
+      <a href="#" class="btn btn-md-wide" title="Volunteer">Volunteer</a>
+      {% include panels/panel_action_w_volunteer.html %}
+    </li>
+  </ul>
 </div>

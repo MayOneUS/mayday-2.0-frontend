@@ -10,3 +10,31 @@
   min-height: 330px;
 }
 
+.action-tree{
+
+  >li>.panel{display:none}
+
+  >li.active{
+    >.btn{display:none}
+    >.panel{display:block}
+  }
+
+  li:nth-child(1) > .btn-md-wide{
+  background:#094067;
+  }
+  li:nth-child(2) > .btn-md-wide{
+    background:#513c5f;
+  }
+  li:nth-child(3) > .btn-md-wide{
+    background:#5e8cac;
+  }
+  li:nth-child(4) > .btn-md-wide{
+    background:#759c64;
+  }
+  li:nth-child(5) > .btn-md-wide{
+    background:#eaa663;
+  }
+  li:nth-child(6) > .btn-md-wide{
+    background:#af010e;
+  }
+}
