@@ -8,7 +8,11 @@
   border: 1px solid $navy-blue-color;
   padding:0;
   background:#fff;
-  overflow:hidden;
+  // overflow:hidden;
+
+  .center-block{
+    float:none;
+  }
 
   .panel-heading{
     padding-top:0;
@@ -20,12 +24,13 @@
   .panel-body{
     padding-top: 0;
 
-    a.btn-mayday{
+    a.btn-md-red{
       margin-bottom:15px;
     }
   }
 
   &.with-shield{
+    position:relative;
 
     .panel-icon{
       padding:0;
@@ -113,7 +118,7 @@
   form {
     margin: 25px 15px 0 15px;
     padding-bottom: 15px;
-    input[type=text], input[type=email] {
+    input[type=text], input[type=email], input[type=tel], input[type=number] {
       font-size: 22px;
       width: 100%;
       border: 2px solid $navy-blue-color;

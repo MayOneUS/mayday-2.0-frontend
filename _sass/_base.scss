@@ -1,5 +1,5 @@
 /**
- * Reset some basic elements
+ * Reset some basic bootstrap elements
  */
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
@@ -203,15 +203,6 @@ p {
   margin-bottom: $bottom-spacing;
 }
 
-
-/**
- * Paragraph
- */
-p {
-  margin-bottom: $bottom-spacing;
-}
-
-
 /**
  * Links
  */
@@ -282,17 +273,28 @@ pre {
 }
 
 /**
- * signup form
+ * buttons
  */
 
  /**
  * Wide Button Mixin
  * @param {Color} $bg-color
  */
-@mixin wide-button($bg-color) {
-  color: #fff;
+@mixin button-colors($bg-color, $font-color: #fff) {
+  color: $font-color;
   background-color: $bg-color;
-  border: 1px solid $bg-color;
+  // border: 1px solid $bg-color;
+  &:hover {
+    color: $font-color;
+    background-color: lighten( $bg-color, 5% );
+    // border-color: lighten( $bg-color, 5% );
+  }
+  &:visited, &:link{
+    color: $font-color;
+  }
+}
+.btn-md-wide{
+  @include button-colors($dark-red-color);
   margin-bottom: 10px;
   width: 100%;
   text-transform: uppercase;
@@ -301,82 +303,27 @@ pre {
   line-height: normal;
   padding: 16px 16px;
   cursor: pointer;
-
-  &:hover {
-    color: #fff;
-    background-color: lighten( $bg-color, 5% );
-    border-color: lighten( $bg-color, 5% );
-  }
-  &:visited{
-    color: #fff;
-  }
-}
-@mixin temp-wide-button($bg-color) {
-  color: #fff;
-  background-color: $bg-color;
-  border: 1px solid $bg-color;
-  &:hover {
-    color: #fff;
-    background-color: lighten( $bg-color, 5% );
-    border-color: lighten( $bg-color, 5% );
-  }
-  &:visited{
-    color: #fff;
-  }
-}
-.wide-button{
-  margin-bottom: 10px;
-  width: 100%;
-  text-transform: uppercase;
-  font-weight: 300;
-  margin-top: 6px;
-  line-height: normal;
-  padding: 16px 16px;
-  cursor: pointer;
-  &:hover {
-    color: #fff;
-  }
-  &:visited{
-    color: #fff;
-  }
-}
- /**
- * Wide Button Mixin
- * @param {Color} $dark-red-color
- */
-@mixin tab-button($dark-red-color){
-  border-radius: 5px;
-  text-decoration: none;
-  background-color: $dark-red-color;
-  font-size: 20px;
-  &:hover {
-    color: white;
-    background-color: lighten( $dark-red-color, 5% );
-    border-color: lighten( rgb(91,121,150), 5% );
-  }
 }
 
 @mixin simple-button{
   margin:0;
   border: none;
-  font-weight:300;
   letter-spacing: 1px;
 }
 
-.btn-mayday, a.btn-mayday:link {
-  @include wide-button($dark-red-color);
+.btn-md-red, a.btn-md-red:link {
   @include simple-button;
   font-size: 28px;
   font-weight: 400;
 }
 .btn-reddit, a.btn-reddit:link {
-  @include wide-button($reddit-color);
+  @include button-colors($reddit-color);
   @include simple-button;
   font-size: 22px;
   padding: 12px 0;
 }
 .btn-suggestion {
-  @include wide-button($join-mayday-color);
+  @include button-colors($join-mayday-color);
   @include simple-button;
   text-transform: none;
   font-size: 18px;
@@ -390,35 +337,84 @@ pre {
   padding: 10px 0;
 }
 .tw-row{
-  @include temp-wide-button($twitter-color);
+  @include button-colors($twitter-color);
   width: 98%;
   margin: 3% 0 2% 2.5%;
 }
 .fb-row{
-  @include temp-wide-button($facebook-color);
+  @include button-colors($facebook-color);
   width: 98%;
   margin: 3% 2% 2% 0;
 }
 
-/**
- * Wrapper
- */
 
+.btn-share {
+  margin-top: 12px;
+  text-align: left;
+  font-size:20px;
+  font-weight: 400;
 
+  .fa {
+    float: left;
+    font-size: 1.5em;
+    position: absolute;
+  }
 
-/**
- * Clearfix
- */
-%clearfix {
+  .text {
+    float: left;
+    text-align: left;
+    font-weight: 400;
 
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
+    @include large-desktop {
+      margin-left: 45px;
+    }
+
+    @include small-desktop {
+      margin-left: 35px;
+      font-size: 16px;
+    }
+
+    @include tablet {
+      margin-left: 45px;
+    }
+
+    @include phone {
+      margin-left: 35px;
+      font-size: 16px;
+    }
+  }
+
+  &.facebook {
+    @include button-colors($facebook-color);
+  }
+  &.reddit {
+    @include button-colors($reddit-color);
+  }
+  &.twitter {
+    @include button-colors($twitter-color);
+  }
+  &.youtube {
+    @include button-colors($youtube-color);
   }
 }
 
-
+ /**
+ * Donate button Mixin
+ * @param {Color} $dark-red-color
+ */
+@mixin donate-button($dark-red-color){
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: $dark-red-color;
+  font-size: 20px;
+  border: 2px solid darken(white, 10%);
+  padding: 6px 20px;
+  &:hover {
+    color: #fff;
+    background-color: lighten( $dark-red-color, 5% );
+    border: 2px solid #fff;
+  }
+}
 
 /**
  * Icons

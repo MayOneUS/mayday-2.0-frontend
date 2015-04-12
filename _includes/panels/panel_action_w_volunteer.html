@@ -1,0 +1,50 @@
+<div class="panel action-panel with-shield">
+  <div class="panel-icon">
+    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
+    <div class="fade-line hidden-xs hidden-sm"></div>
+  </div>
+  <div class="panel-body">
+    <h2>Sign up for Updates</h2>
+    <p>Be part of the movement to restore our democracy. </p>
+    <form class="row email-signup">
+      <fieldset class="col-md-12">
+
+      <div class="form-group col-md-6">
+        <label class="control-label sr-only" for="person[first_name]">First Name</label>
+        <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+        <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+      </div>
+
+      <div class="form-group col-md-8">
+        <label class="control-label sr-only" for="person[email]">Email Address</label>
+        <input id="person[email]" name="person[email]" type="text" placeholder="Email Address" required="">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label class="control-label sr-only" for="person[zip]">ZIP Code</label>
+        <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP Code">
+      </div>
+
+      <div class="form-group col-md-7">
+        <label class="control-label sr-only" for="person[calltime]">Call time</label>
+        <select id="person[calltime]" name="person[calltime]" type="text" placeholder="Email Address" required="">
+          <option>Don't style me - let's ensure we're even doing event times</option>
+          <option></option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-5">
+        <label class="control-label sr-only" for="singlebutton">Submit</label>
+        <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
+        <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder -->
+        <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+      </div>
+
+      </fieldset>
+    </form>
+  </div>
+</div>
