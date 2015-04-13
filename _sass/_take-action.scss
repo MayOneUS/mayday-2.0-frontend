@@ -6,35 +6,74 @@
 /**
  * Grid of Panels
  */
-.panels-grid .panel {
-  min-height: 330px;
-}
 
 .action-tree{
+  float:none;
+  margin-bottom:40px;
 
-  >li>.panel{display:none}
+  >li{
+    padding:0 75px 15px;
+    position:relative;
 
-  >li.active{
-    >.btn{display:none}
-    >.panel{display:block}
-  }
+    >.panel{display:none}
 
-  li:nth-child(1) > .btn-md-wide{
-  background:#094067;
-  }
-  li:nth-child(2) > .btn-md-wide{
-    background:#513c5f;
-  }
-  li:nth-child(3) > .btn-md-wide{
-    background:#5e8cac;
-  }
-  li:nth-child(4) > .btn-md-wide{
-    background:#759c64;
-  }
-  li:nth-child(5) > .btn-md-wide{
-    background:#eaa663;
-  }
-  li:nth-child(6) > .btn-md-wide{
-    background:#af010e;
-  }
+    >small{
+      position:absolute;
+      top:1px;
+      left:0;
+      width:65px;
+      height:65px;
+      background:transparent url('/images/action/tmp-action-checkmark.jpg') center center no-repeat;
+    }
+
+    &.active{
+      >.btn{display:none}
+      >.panel{display:block}
+    }
+
+    >.btn-md-wide{
+      margin:0;
+      text-align:left;
+    }
+
+    &.incomplete{
+      background:transparent url('/images/action/tmp-vertical-dots.png') 32px 20px no-repeat;
+    }
+    &:last-child{
+      background:none;
+    }
+
+    &:nth-child(1) > .btn-md-wide{
+      background:#094067;
+    }
+    &:nth-child(2) > .btn-md-wide{
+      background:#513c5f;
+    }
+    &:nth-child(3) > .btn-md-wide{
+      background:#5e8cac;
+    }
+    &:nth-child(4) > .btn-md-wide{
+      background:#759c64;
+    }
+    &:nth-child(5) > .btn-md-wide{
+      background:#eaa663;
+    }
+    &:nth-child(6) > .btn-md-wide{
+      background:#af010e;
+    }
+
+    &.complete{
+      background:#eee;
+
+      > .btn-md-wide{
+        background:$color-grey;
+
+        strong{display:none;}
+
+        &::before{
+          content: "Completed: "
+        }
+      }
+    }
+  } // li
 }
