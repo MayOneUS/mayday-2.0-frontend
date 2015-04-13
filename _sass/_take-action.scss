@@ -23,12 +23,34 @@
       left:0;
       width:65px;
       height:65px;
-      background:transparent url('/images/action/tmp-action-checkmark.jpg') center center no-repeat;
+      background:#fff url('/images/action/check.svg') center center no-repeat;
+
+      &.icon-complete{
+        display:none;
+      }
+
+      &.icon-incomplete{
+        &.icon-sign-up{background-image: url('/images/action/sign_up_1_off.svg')}
+        &.icon-get-educated{background-image: url('/images/action/get_educated_2_off.svg')}
+        &.icon-spread-the-word{background-image: url('/images/action/spread_the_word_3_off.svg')}
+        &.icon-call-congress{background-image: url('/images/action/call_congress_4_off.svg')}
+        &.icon-join-discussion{background-image: url('/images/action/join_disscussion_5_off.svg')}
+        &.icon-volunteer{background-image: url('/images/action/volunteer_6_off.svg')}
+      }
     }
+
 
     &.active{
       >.btn{display:none}
       >.panel{display:block}
+      >small.icon-incomplete{
+        &.icon-sign-up{background-image: url('/images/action/sign_up_1_on.svg')}
+        &.icon-get-educated{background-image: url('/images/action/get_educated_2_on.svg')}
+        &.icon-spread-the-word{background-image: url('/images/action/spread_the_word_3_on.svg')}
+        &.icon-call-congress{background-image: url('/images/action/call_congress_4_on.svg')}
+        &.icon-join-discussion{background-image: url('/images/action/join_disscussion_5_on.svg')}
+        &.icon-volunteer{background-image: url('/images/action/volunteer_6_on.svg')}
+      }
     }
 
     >.btn-md-wide{
@@ -63,7 +85,16 @@
     }
 
     &.complete{
-      background:#eee;
+      .panel{background:#eee;}
+
+      small{
+        &.icon-complete{
+          display:block;
+        }
+        &.icon-incomplete{
+          display: none;
+        }
+      }
 
       > .btn-md-wide{
         background:$color-grey;
