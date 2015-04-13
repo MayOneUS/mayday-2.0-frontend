@@ -17,6 +17,18 @@
 
     >.panel{display:none}
 
+    >.btn-md-wide{
+      margin:0;
+      text-align:left;
+    }
+
+    &:nth-child(1) > .btn-md-wide{background:#094067}
+    &:nth-child(2) > .btn-md-wide{background:#513c5f}
+    &:nth-child(3) > .btn-md-wide{background:#5e8cac}
+    &:nth-child(4) > .btn-md-wide{background:#759c64}
+    &:nth-child(5) > .btn-md-wide{background:#eaa663}
+    &:nth-child(6) > .btn-md-wide{background:#af010e}
+
     >small{
       position:absolute;
       top:1px;
@@ -25,25 +37,19 @@
       height:65px;
       background:#fff url('/images/action/check.svg') center center no-repeat;
 
-      &.icon-complete{
-        display:none;
-      }
-
-      &.icon-incomplete{
-        &.icon-sign-up{background-image: url('/images/action/sign_up_1_off.svg')}
-        &.icon-get-educated{background-image: url('/images/action/get_educated_2_off.svg')}
-        &.icon-spread-the-word{background-image: url('/images/action/spread_the_word_3_off.svg')}
-        &.icon-call-congress{background-image: url('/images/action/call_congress_4_off.svg')}
-        &.icon-join-discussion{background-image: url('/images/action/join_disscussion_5_off.svg')}
-        &.icon-volunteer{background-image: url('/images/action/volunteer_6_off.svg')}
-      }
+      &.icon-sign-up{background-image: url('/images/action/sign_up_1_off.svg')}
+      &.icon-get-educated{background-image: url('/images/action/get_educated_2_off.svg')}
+      &.icon-spread-the-word{background-image: url('/images/action/spread_the_word_3_off.svg')}
+      &.icon-call-congress{background-image: url('/images/action/call_congress_4_off.svg')}
+      &.icon-join-discussion{background-image: url('/images/action/join_disscussion_5_off.svg')}
+      &.icon-volunteer{background-image: url('/images/action/volunteer_6_off.svg')}
     }
 
 
     &.active{
       >.btn{display:none}
       >.panel{display:block}
-      >small.icon-incomplete{
+      >small.show-incomplete{
         &.icon-sign-up{background-image: url('/images/action/sign_up_1_on.svg')}
         &.icon-get-educated{background-image: url('/images/action/get_educated_2_on.svg')}
         &.icon-spread-the-word{background-image: url('/images/action/spread_the_word_3_on.svg')}
@@ -53,58 +59,20 @@
       }
     }
 
-    >.btn-md-wide{
-      margin:0;
-      text-align:left;
-    }
-
     &.incomplete{
       background:transparent url('/images/action/tmp-vertical-dots.png') 32px 20px no-repeat;
-    }
-    &:last-child{
-      background:none;
-    }
 
-    &:nth-child(1) > .btn-md-wide{
-      background:#094067;
-    }
-    &:nth-child(2) > .btn-md-wide{
-      background:#513c5f;
-    }
-    &:nth-child(3) > .btn-md-wide{
-      background:#5e8cac;
-    }
-    &:nth-child(4) > .btn-md-wide{
-      background:#759c64;
-    }
-    &:nth-child(5) > .btn-md-wide{
-      background:#eaa663;
-    }
-    &:nth-child(6) > .btn-md-wide{
-      background:#af010e;
+      .show-complete{display:none;}
+      .show-incomplete{display:initial;}
     }
 
     &.complete{
+      .show-complete{display:initial;}
+      .show-incomplete{display:none;}
       .panel{background:#eee;}
-
-      small{
-        &.icon-complete{
-          display:block;
-        }
-        &.icon-incomplete{
-          display: none;
-        }
-      }
-
-      > .btn-md-wide{
-        background:$color-grey;
-
-        strong{display:none;}
-
-        &::before{
-          content: "Completed: "
-        }
-      }
+      >.btn-md-wide{background:$color-grey;}
     }
+
+    &:last-child{background:none;}
   } // li
 }
