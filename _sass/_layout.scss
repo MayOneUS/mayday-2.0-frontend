@@ -3,7 +3,7 @@
  */
 .site-header {
   .top-nav {
-    background-color: $navy-blue-color;
+    background-color: $color-navy-blue;
     height: 80px;
     position: relative;
     @include phone{
@@ -66,21 +66,21 @@
         font-size: 16px;
         form {
           display: inline-block;
-          color: $navy-blue-light-color;
+          color: $color-navy-blue-light;
           ::-webkit-input-placeholder { /* WebKit browsers */
-            color: $navy-blue-light-color;
+            color: $color-navy-blue-light;
             font-weight: 400;
           }
           :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-            color: $navy-blue-light-color;
+            color: $color-navy-blue-light;
             opacity: 1;
           }
           ::-moz-placeholder { /* Mozilla Firefox 19+ */
-            color: $navy-blue-light-color;
+            color: $color-navy-blue-light;
             opacity:  1;
           }
           :-ms-input-placeholder { /* Internet Explorer 10+ */
-            color: $navy-blue-light-color;
+            color: $color-navy-blue-light;
           }
 
           width: 180px;
@@ -123,7 +123,7 @@
               background-color: rgb(196,202,225);
             }
             span {
-              color: $navy-blue-light-color;
+              color: $color-navy-blue-light;
               font-size: 24px;
             }
           }
@@ -140,8 +140,8 @@
         color: white;
         height: 2px;
         background: black;
-        background: -webkit-radial-gradient(circle, #ffffff, $navy-blue-color);
-        background: radial-gradient(circle, #ffffff, $navy-blue-color);
+        background: -webkit-radial-gradient(circle, #ffffff, $color-navy-blue);
+        background: radial-gradient(circle, #ffffff, $color-navy-blue);
         z-index: 0;
       }
     }
@@ -150,7 +150,7 @@
   .sub-nav {
     height: 55px;
     padding-top: 18px;
-    background-color: $navy-blue-light-color;
+    background-color: $color-navy-blue-light;
 
     -webkit-box-shadow: inset 0 2px 3px 0 rgba(0,0,0,.4);
     -moz-box-shadow: inset 0 2px 3px 0 rgba(0,0,0,.4);
@@ -168,7 +168,7 @@
     }
     a {
       padding: 3px 10px;
-      color: $offwhite-color;
+      color: $color-offwhite;
       line-height: 1.0;
       text-transform: uppercase;
     }
@@ -191,7 +191,7 @@
       width: 40%;
     }
     a.donate-link{
-      @include donate-button($dark-red-color);
+      @include donate-button($color-dark-red);
     }
   }
 
@@ -201,7 +201,7 @@
     width: 100%;
     height: 20px;
     text-align: center;
-    background-color: $navy-blue-light-color;
+    background-color: $color-navy-blue-light;
     margin-bottom:25px;
     .triangle-up {
       position: absolute;
@@ -313,21 +313,21 @@ a:link, a:visited, a:active {
       @include large-desktop {
         width: 230px;
       }
-      color: $navy-blue-light-color;
+      color: $color-navy-blue-light;
       ::-webkit-input-placeholder { /* WebKit browsers */
-        color: $navy-blue-light-color;
+        color: $color-navy-blue-light;
         font-weight: 400;
       }
       :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: $navy-blue-light-color;
+        color: $color-navy-blue-light;
         opacity: 1;
       }
       ::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: $navy-blue-light-color;
+        color: $color-navy-blue-light;
         opacity:  1;
       }
       :-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: $navy-blue-light-color;
+        color: $color-navy-blue-light;
       }
 
       @include tablet {
@@ -360,7 +360,7 @@ a:link, a:visited, a:active {
         border: 0;
         background-color: #ffffff;
         span {
-          color: $navy-blue-light-color;
+          color: $color-navy-blue-light;
           font-size: 1.5em;
         }
       }
@@ -387,7 +387,7 @@ a:link, a:visited, a:active {
       font-size: 38px;
     }
     .disclaimer-box {
-      color: $grey-color-light;
+      color: $color-grey-light;
       display: inline-block;
       font-size: 15px;
       line-height: 16px;
@@ -423,7 +423,7 @@ a:link, a:visited, a:active {
       margin-top: 20px;
 
       a {
-        @include donate-button($dark-red-color);
+        @include donate-button($color-dark-red);
       }
     }
   }
@@ -504,7 +504,7 @@ a:link, a:visited, a:active {
   background-color: #e4e4e4;
   border-style: none none solid none;
   border-width:3px;
-  border-color:$dark-red-color;
+  border-color:$color-dark-red;
 }
 /* title */
 .navbar-default .navbar-brand {
@@ -516,7 +516,7 @@ a:link, a:visited, a:active {
 }
 /* link color-text*/
 .navbar-default .navbar-nav > li > a {
-  color: $navy-blue-color;
+  color: $color-navy-blue;
   text-transform: uppercase;
 }
 .navbar-default .navbar-nav > li > a:hover,
@@ -538,7 +538,7 @@ a:link, a:visited, a:active {
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
   border-top-color: #e4e4e4;
-  border-bottom-color: $dark-red-color;
+  border-bottom-color: $color-dark-red;
 }
 .navbar-default .navbar-nav>.disabled>a,.navbar-default .navbar-nav>.disabled>a:focus,.navbar-default .navbar-nav>.disabled>a:hover {
   color: #ccc;
@@ -556,7 +556,7 @@ a:link, a:visited, a:active {
   position: absolute;
   z-index: 51;
   top:79;
-  background-color: $navy-blue-light-color;
+  background-color: $color-navy-blue-light;
   border-bottom:2px solid;
   border-color: rgb(247, 247, 247)
 }
@@ -570,7 +570,7 @@ a:link, a:visited, a:active {
     color:white;
     padding: 0 5vw;
     a:link, a:visited, a:active{
-      color: $navy-blue-color;
+      color: $color-navy-blue;
     }
     a:hover {
         color: #007acf;
@@ -579,7 +579,7 @@ a:link, a:visited, a:active {
   }
 }
 .menu-stars{
-  color: $dark-red-color;
+  color: $color-dark-red;
 }
 .nav-spacer{
   opacity: 0;
@@ -631,7 +631,7 @@ a:link, a:visited, a:active {
 
 .post-meta {
   font-size: $small-font-size;
-  color: $grey-color;
+  color: $color-grey;
 }
 
 .post-link {

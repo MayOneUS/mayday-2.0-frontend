@@ -13,24 +13,23 @@ dl, dd, ol, ul, figure {
 /**
  * Variables
  */
-$navy-blue-color: #16213f;
-$navy-blue-mid-color: rgb(30,46,80);
-$navy-blue-light-color: #0d3960;
-$dark-red-color: #b0010e;
-$grey-blue-color: rgb(118, 159, 189);
-$offwhite-color: rgb(228,228,228);
+$color-navy-blue: #16213f;
+$color-navy-blue-mid: rgb(30,46,80);
+$color-navy-blue-light: #0d3960;
+$color-dark-red: #b0010e;
+$color-grey-blue: rgb(118, 159, 189);
+$color-offwhite: rgb(228,228,228);
 
 $base-font-family: 'Lato';
 $base-font-size: 18px;
 $small-font-size: 8;
 
-$background-color: #ffffff;
-$brand-color: #0d3960;
-$dark-grey-color: rgb(50, 50, 50);
-$grey-color: #808080;
-$light-grey-color: #cccccc;
-$grey-color-light: #cccccc;
-$text-color: #5C5C5C;
+$color-background: #ffffff;
+$color-brand: #0d3960;
+$color-dark-grey: rgb(50,50,50);
+$color-grey: #808080;
+$color-grey-light: #cccccc;
+$color-text: #5C5C5C;
 
 
 
@@ -53,13 +52,13 @@ $large-desktop-min-width: 1200px;
  * Mixins for Panels and Buttons
  */
 
-$facebook-color: rgb(59, 89, 151);
-$twitter-color: rgb(64, 153, 255);
-$youtube-color: rgb(117, 117, 117);
-$reddit-color: rgb(31, 89, 111);
-$join-mayday-color: rgb(19, 83, 145);
-$volunteer-color: rgb(80, 107, 134);
-$orientation-color: rgb(76, 43, 98);
+$color-facebook: rgb(59, 89, 151);
+$color-twitter: rgb(64, 153, 255);
+$color-youtube: rgb(117, 117, 117);
+$color-reddit: rgb(31, 89, 111);
+$color-join-mayday: rgb(19, 83, 145);
+$color-volunteer: rgb(80, 107, 134);
+$color-orientation: rgb(76, 43, 98);
 
 $bg-img-dir: '../images/action/';
 $orientation-bg-img: 'orientation-bg.jpg';
@@ -102,8 +101,8 @@ html, body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   font-weight: 400;
-  color: $text-color;
-  background-color: $background-color;
+  color: $color-text;
+  background-color: $color-background;
   -webkit-text-size-adjust: 100%;
   @include phone{
     color: #333;
@@ -169,7 +168,7 @@ li {
  */
 h1, h2, h3, legend {
   font-weight: $header-weight;
-  color: $navy-blue-light-color;
+  color: $color-navy-blue-light;
 }
 
 h1{
@@ -183,12 +182,12 @@ legend{
 }
 
 p.subheader {
-  color: $navy-blue-light-color;
+  color: $color-navy-blue-light;
   font-weight: 300;
 }
 
 p.byline{
-  color: $navy-blue-light-color;
+  color: $color-navy-blue-light;
   font-weight: 700;
   font-style: italic;
   font-size:21px
@@ -207,15 +206,15 @@ p {
  * Links
  */
 a {
-  color: $brand-color;
+  color: $color-brand;
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: darken($color-brand, 15%);
   }
 
   &:hover {
-    color: $text-color;
+    color: $color-text;
     text-decoration: underline;
   }
 }
@@ -226,7 +225,7 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $text-color;
+  color: $color-text;
   padding: 0.5em 1em;
   display:inline-block;
   margin-left:1em;
@@ -252,7 +251,7 @@ blockquote {
 pre,
 code {
   font-size: 15px;
-  border: 1px solid $grey-color-light;
+  border: 1px solid $color-grey-light;
   border-radius: 3px;
   background-color: #eef;
 }
@@ -278,23 +277,23 @@ pre {
 
  /**
  * Wide Button Mixin
- * @param {Color} $bg-color
+ * @param {Color} $color-bg
  */
-@mixin button-colors($bg-color, $font-color: #fff) {
-  color: $font-color;
-  background-color: $bg-color;
-  // border: 1px solid $bg-color;
+@mixin button-colors($color-bg, $color-font: #fff) {
+  color: $color-font;
+  background-color: $color-bg;
+  // border: 1px solid $color-bg;
   &:hover {
-    color: $font-color;
-    background-color: lighten( $bg-color, 5% );
-    // border-color: lighten( $bg-color, 5% );
+    color: $color-font;
+    background-color: lighten( $color-bg, 5% );
+    // border-color: lighten( $color-bg, 5% );
   }
   &:visited, &:link{
-    color: $font-color;
+    color: $color-font;
   }
 }
 .btn-md-wide{
-  @include button-colors($dark-red-color);
+  @include button-colors($color-dark-red);
   width: 100%;
   margin-bottom: 10px;
   margin-top: 6px;
@@ -316,13 +315,13 @@ pre {
   @include simple-button;
 }
 .btn-reddit, a.btn-reddit:link {
-  @include button-colors($reddit-color);
+  @include button-colors($color-reddit);
   @include simple-button;
   font-size: 22px;
   padding: 12px 0;
 }
 .btn-suggestion {
-  @include button-colors($join-mayday-color);
+  @include button-colors($color-join-mayday);
   @include simple-button;
   text-transform: none;
   font-size: 18px;
@@ -336,12 +335,12 @@ pre {
   padding: 10px 0;
 }
 .tw-row{
-  @include button-colors($twitter-color);
+  @include button-colors($color-twitter);
   width: 98%;
   margin: 3% 0 2% 2.5%;
 }
 .fb-row{
-  @include button-colors($facebook-color);
+  @include button-colors($color-facebook);
   width: 98%;
   margin: 3% 2% 2% 0;
 }
@@ -384,33 +383,33 @@ pre {
   }
 
   &.facebook {
-    @include button-colors($facebook-color);
+    @include button-colors($color-facebook);
   }
   &.reddit {
-    @include button-colors($reddit-color);
+    @include button-colors($color-reddit);
   }
   &.twitter {
-    @include button-colors($twitter-color);
+    @include button-colors($color-twitter);
   }
   &.youtube {
-    @include button-colors($youtube-color);
+    @include button-colors($color-youtube);
   }
 }
 
  /**
  * Donate button Mixin
- * @param {Color} $dark-red-color
+ * @param {Color} $color-dark-red
  */
-@mixin donate-button($dark-red-color){
+@mixin donate-button($color-dark-red){
   border-radius: 5px;
   text-decoration: none;
-  background-color: $dark-red-color;
+  background-color: $color-dark-red;
   font-size: 20px;
   border: 2px solid darken(white, 10%);
   padding: 6px 20px;
   &:hover {
     color: #fff;
-    background-color: lighten( $dark-red-color, 5% );
+    background-color: lighten( $color-dark-red, 5% );
     border: 2px solid #fff;
   }
 }
@@ -427,7 +426,7 @@ pre {
     vertical-align: middle;
 
     path {
-      fill: $grey-color;
+      fill: $color-grey;
     }
   }
 }

@@ -5,7 +5,7 @@
 .action-panel{
   text-align:center;
   border-radius:5px;
-  border: 1px solid $navy-blue-color;
+  border: 1px solid $color-navy-blue;
   padding:0;
   background:#fff;
   // overflow:hidden;
@@ -17,8 +17,8 @@
   .panel-heading{
     padding-top:0;
     padding-bottom:0;
-    background-color: $navy-blue-light-color;
-    border-bottom: 10px solid  $navy-blue-color;
+    background-color: $color-navy-blue-light;
+    border-bottom: 10px solid  $color-navy-blue;
   }
 
   .panel-body{
@@ -34,8 +34,8 @@
 
     .panel-icon{
       padding:0;
-      background: $navy-blue-color;
-      border-bottom:5px solid $navy-blue-light-color;
+      background: $color-navy-blue;
+      border-bottom:5px solid $color-navy-blue-light;
       text-align:center;
       height:20px;
 
@@ -66,12 +66,12 @@
         color: white;
         height: 2px;
         background: black;
-        background: -webkit-radial-gradient(circle, rgba(255,255,255, 0.5), $navy-blue-color);
-        background: radial-gradient(circle, rgba(255,255,255, 0.5), $navy-blue-color);
+        background: -webkit-radial-gradient(circle, rgba(255,255,255, 0.5), $color-navy-blue);
+        background: radial-gradient(circle, rgba(255,255,255, 0.5), $color-navy-blue);
       }
     }
     h2{
-      color: $navy-blue-color;
+      color: $color-navy-blue;
       font-weight:400;
       font-size:26px;
       background-color:transparent;
@@ -121,7 +121,7 @@
     input[type=text], input[type=email], input[type=tel], input[type=number] {
       font-size: 22px;
       width: 100%;
-      border: 2px solid $navy-blue-color;
+      border: 2px solid $color-navy-blue;
       padding: 8px 0 8px 12px;
       border-radius: 4px;
       margin-bottom: 15px;
@@ -135,7 +135,7 @@
   background-color: rgb(228,229,233);
   border-radius: 4px;
   text-align: center;
-  color: $navy-blue-light-color;
+  color: $color-navy-blue-light;
   font-weight: 400;
   padding-top: 22px;
   .headline {
@@ -172,7 +172,7 @@
       display: inline-block;
       height: 100%;
       width: 56px;
-      background-color: $navy-blue-light-color;
+      background-color: $color-navy-blue-light;
       font-size: 76px;
       position: relative;
       .hr {
@@ -212,7 +212,7 @@
       margin-top:5px;
     }
     p{
-      color: $navy-blue-color;
+      color: $color-navy-blue;
       line-height: 20px;
       font-size:16px;
     }
@@ -222,25 +222,25 @@
         width: 100%;
       }
       & > .btn{
-        border-color: $navy-blue-color;
+        border-color: $color-navy-blue;
       }
       &.btn-group .btn .filter-option{
-        color: $navy-blue-color;
+        color: $color-navy-blue;
         font-weight: 400;
         font-size:18px;
       }
       .text-muted{
-        color:$navy-blue-color;
+        color:$color-navy-blue;
         font-weight:300;
         padding-left:4px;
       }
       .dropdown-menu li.active a small{
-        color:$light-grey-color;
+        color:$color-grey-light;
       }
     }
 
     .form-control{
-      border-color: $navy-blue-color;
+      border-color: $color-navy-blue;
     }
 
     .checkbox-inline{
