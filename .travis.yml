@@ -4,10 +4,10 @@ rvm:
 - 2.2.0
 branches:
   only:
-    - master
+    - m2
 env:
   global:
-  - S3_BUCKET=frontend-staging.mayday.us
+  - S3_BUCKET=step-two.mayday.us
   - secure: RfgvRVzcCzI5DsyxQDRVvL95k6M2I9cR1G+Zfq/4EHY38IT92EaBH2tCFtODBgSNj4bNQWm7KRvntpgIN/ysIWXJhyBudm8W8jrzFWzHMTgv2d4qRKs7/+pEWoq8Y/WyXqGT1c/1rWai/N3dyblX3rA6GEEGzFsCILhuXn+0Ucs=
   - secure: ZyJtB4DFtIxjkQpKG41+99/ahAccscgKc99iIU4GA/ykxxJM24axCQwbaZzq7urxfbv1WmUPZr5xGk6tfxTPa7VfXdO/zkch+7yA0GEZcuwbmICmuNhqKDn7v3CE5LCNfOmVko2Fe5IC71qgsNmo9XT0vHVhv5s1LtmLG4c6IQI=
 install:

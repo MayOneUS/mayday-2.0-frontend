@@ -5,10 +5,10 @@ description: > # this means to ignore newlines until "baseurl:"
   Mayday 2.0
 url: "https://mayday.us" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
-services_url: //services.mayday.us
+services_url: //mayday-step-two.herokuapp.com
 blog_root_url: http://blog.mayday.us
-blog_post_feed_url: //services.mayday.us/blog_posts
-press_releases_feed_url: //services.mayday.us/blog_posts/press_releases
+blog_post_feed_url: //mayday-step-two.herokuapp.com/blog_posts
+press_releases_feed_url: //mayday-step-two.herokuapp.com/blog_posts/press_releases
 pledge_url: '//pledge.mayday.us'
 github_username:  MayOneUS
 twitter_username: MAYDAYUS

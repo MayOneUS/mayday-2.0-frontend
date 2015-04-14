@@ -32,11 +32,11 @@
 
 .panel-mayday {
   .mayday-profile {
-    padding-left: 0px;
+    padding-left: 0;
     margin-bottom: $bottom-spacing;
     margin-left: 2px;
     &:hover > .headshot > img {
-      border: 3px solid $navy-blue-light-color;
+      border: 3px solid $color-navy-blue-light;
       opacity: 1.0;
     }
     .headshot {
@@ -52,10 +52,10 @@
       width: 100%;
     }
     h4 {
-      margin: 0px;
+      margin: 0;
     }
     h6 {
-      margin: 3px 0px;
+      margin: 3px 0;
     }
 
     @include tablet {
@@ -64,7 +64,7 @@
         font-size: 1.6em;
       }
       h6 {
-        margin: 8px 0px;
+        margin: 8px 0;
         font-size: 1.2em;
       }
 
@@ -75,7 +75,7 @@
         font-size: 1.2em;
       }
       h6 {
-        margin: 8px 0px;
+        margin: 8px 0;
         font-size: 0.8em;
       }
 
@@ -88,8 +88,8 @@
  */
 
  a.btn-targets {
-  background-color: $grey-blue-color;
-  border-color: $grey-blue-color;
+  background-color: $color-grey-blue;
+  border-color: $color-grey-blue;
   text-transform: uppercase;
   color: white;
   font-weight: 300;
@@ -115,7 +115,7 @@
   }
 
   &:hover {
-    background-color: $grey-color-light;
-    border-color: $grey-color-light;
+    background-color: $color-grey-light;
+    border-color: $color-grey-light;
   }
 }

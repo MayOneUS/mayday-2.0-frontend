@@ -3,7 +3,7 @@
  */
 .site-header {
   .top-nav {
-    background-color: $navy-blue-color;
+    background-color: $color-navy-blue;
     height: 80px;
     position: relative;
     @include phone{
@@ -14,7 +14,7 @@
       position: relative;
       .icon-bar-left {
         position: absolute;
-        left: 0px;
+        left: 0;
         top: 29px;
         width: 30%;
         height: 2em;
@@ -66,21 +66,21 @@
         font-size: 16px;
         form {
           display: inline-block;
-          color: $navy-blue-light-color;
+          color: $color-navy-blue-light;
           ::-webkit-input-placeholder { /* WebKit browsers */
-            color: $navy-blue-light-color;
+            color: $color-navy-blue-light;
             font-weight: 400;
           }
           :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-            color: $navy-blue-light-color;
+            color: $color-navy-blue-light;
             opacity: 1;
           }
           ::-moz-placeholder { /* Mozilla Firefox 19+ */
-            color: $navy-blue-light-color;
+            color: $color-navy-blue-light;
             opacity:  1;
           }
           :-ms-input-placeholder { /* Internet Explorer 10+ */
-            color: $navy-blue-light-color;
+            color: $color-navy-blue-light;
           }
 
           width: 180px;
@@ -116,14 +116,14 @@
             position: relative;
             .divide-line {
               position: absolute;
-              left: 0px;
+              left: 0;
               top: 8px;
               height: 25px;
               width: 1px;
               background-color: rgb(196,202,225);
             }
             span {
-              color: $navy-blue-light-color;
+              color: $color-navy-blue-light;
               font-size: 24px;
             }
           }
@@ -140,8 +140,8 @@
         color: white;
         height: 2px;
         background: black;
-        background: -webkit-radial-gradient(circle, #ffffff, $navy-blue-color);
-        background: radial-gradient(circle, #ffffff, $navy-blue-color);
+        background: -webkit-radial-gradient(circle, #ffffff, $color-navy-blue);
+        background: radial-gradient(circle, #ffffff, $color-navy-blue);
         z-index: 0;
       }
     }
@@ -150,11 +150,11 @@
   .sub-nav {
     height: 55px;
     padding-top: 18px;
-    background-color: $navy-blue-light-color;
+    background-color: $color-navy-blue-light;
 
-    -webkit-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
-    -moz-box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
-    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,.4);
+    -webkit-box-shadow: inset 0 2px 3px 0 rgba(0,0,0,.4);
+    -moz-box-shadow: inset 0 2px 3px 0 rgba(0,0,0,.4);
+    box-shadow: inset 0 2px 3px 0 rgba(0,0,0,.4);
 
     font-size: 16px;
     @include tablet {
@@ -168,8 +168,9 @@
     }
     a {
       padding: 3px 10px;
-      color: $offwhite-color;
+      color: $color-offwhite;
       line-height: 1.0;
+      text-transform: uppercase;
     }
     .middle-dot {
       color: rgba(255,255,255, .25);
@@ -188,15 +189,9 @@
       margin-right: 0;
       display: inline-block;
       width: 40%;
-      a {
-        @include tab-button($dark-red-color);
-        border: 2px solid darken(white, 10%);
-        padding: 6px 20px;
-      }
-
-      a:hover {
-        border: 2px solid white;
-      }
+    }
+    a.donate-link{
+      @include donate-button($color-dark-red);
     }
   }
 
@@ -206,7 +201,7 @@
     width: 100%;
     height: 20px;
     text-align: center;
-    background-color: $navy-blue-light-color;
+    background-color: $color-navy-blue-light;
     margin-bottom:25px;
     .triangle-up {
       position: absolute;
@@ -265,7 +260,7 @@ a:link, a:visited, a:active {
 
     .vertical-fade-line {
       position: absolute;
-      top: 0px;
+      top: 0;
       right: -21px;
       height: 200px;
       display: block;
@@ -318,30 +313,30 @@ a:link, a:visited, a:active {
       @include large-desktop {
         width: 230px;
       }
-      color: $navy-blue-light-color;
+      color: $color-navy-blue-light;
       ::-webkit-input-placeholder { /* WebKit browsers */
-        color: $navy-blue-light-color;
+        color: $color-navy-blue-light;
         font-weight: 400;
       }
       :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: $navy-blue-light-color;
+        color: $color-navy-blue-light;
         opacity: 1;
       }
       ::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: $navy-blue-light-color;
+        color: $color-navy-blue-light;
         opacity:  1;
       }
       :-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: $navy-blue-light-color;
+        color: $color-navy-blue-light;
       }
 
       @include tablet {
         width: 100%;
-        margin: 20px 0px;
+        margin: 20px 0;
       }
       @include phone {
         width: 100%;
-        margin: 20px 0px;
+        margin: 20px 0;
       }
 
       input {
@@ -365,7 +360,7 @@ a:link, a:visited, a:active {
         border: 0;
         background-color: #ffffff;
         span {
-          color: $navy-blue-light-color;
+          color: $color-navy-blue-light;
           font-size: 1.5em;
         }
       }
@@ -376,7 +371,7 @@ a:link, a:visited, a:active {
     position: relative;
     .vertical-fade-line {
       position: absolute;
-      top: 0px;
+      top: 0;
       right: 21px;
       height: 200px;
       display: block;
@@ -392,7 +387,7 @@ a:link, a:visited, a:active {
       font-size: 38px;
     }
     .disclaimer-box {
-      color: $grey-color-light;
+      color: $color-grey-light;
       display: inline-block;
       font-size: 15px;
       line-height: 16px;
@@ -428,13 +423,7 @@ a:link, a:visited, a:active {
       margin-top: 20px;
 
       a {
-        @include tab-button($dark-red-color);
-        border: 2px solid darken(white, 10%);
-        padding: 6px 20px;
-      }
-
-      a:hover {
-        border: 2px solid white;
+        @include donate-button($color-dark-red);
       }
     }
   }
@@ -456,7 +445,7 @@ a:link, a:visited, a:active {
     font-weight: 400;
     font-size: 20px;
 }
-///////////this one is important 
+///////////this one is important
 .container-fluid>.navbar-collapse,.container-fluid>.navbar-header,.container>.navbar-collapse,.container>.navbar-header {
     margin-right: -6%;
     margin-left: -6%
@@ -515,60 +504,59 @@ a:link, a:visited, a:active {
   background-color: #e4e4e4;
   border-style: none none solid none;
   border-width:3px;
-  border-color:$dark-red-color;
+  border-color:$color-dark-red;
 }
 /* title */
 .navbar-default .navbar-brand {
-    color: #e4e4e4;
+  color: #e4e4e4;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-    color: #007acf;
+  color: #007acf;
 }
 /* link color-text*/
 .navbar-default .navbar-nav > li > a {
-    color: $navy-blue-color;
+  color: $color-navy-blue;
+  text-transform: uppercase;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #007acf;
+  color: #007acf;
 }
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #555;
-    background-color: #E7E7E7;
+  color: #555;
+  background-color: #E7E7E7;
 }
-.navbar-default .navbar-nav > .open > a, 
-.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-    color: #555;
-    background-color: #D5D5D5;
+  color: #555;
+  background-color: #D5D5D5;
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: #e4e4e4;
-    border-bottom-color: $dark-red-color;
+  border-top-color: #e4e4e4;
+  border-bottom-color: $color-dark-red;
 }
 .navbar-default .navbar-nav>.disabled>a,.navbar-default .navbar-nav>.disabled>a:focus,.navbar-default .navbar-nav>.disabled>a:hover {
-    color: #ccc;
-    background-color: transparent
+  color: #ccc;
+  background-color: transparent
 }
 
 .navbar-default .navbar-toggle {
-    background-color: #ddd;
-    border-color: #ddd;
+  background-color: #ddd;
+  border-color: #ddd;
 }
-
 
 .gap-filler {
   width: 100%;
   height: 30px;
   position: absolute;
-  // margin-top: -px;
   z-index: 51;
   top:79;
-  background-color: $navy-blue-light-color;
+  background-color: $color-navy-blue-light;
   border-bottom:2px solid;
   border-color: rgb(247, 247, 247)
 }
@@ -582,7 +570,7 @@ a:link, a:visited, a:active {
     color:white;
     padding: 0 5vw;
     a:link, a:visited, a:active{
-      color: $navy-blue-color;
+      color: $color-navy-blue;
     }
     a:hover {
         color: #007acf;
@@ -591,7 +579,7 @@ a:link, a:visited, a:active {
   }
 }
 .menu-stars{
-  color: $dark-red-color;
+  color: $color-dark-red;
 }
 .nav-spacer{
   opacity: 0;
@@ -643,7 +631,7 @@ a:link, a:visited, a:active {
 
 .post-meta {
   font-size: $small-font-size;
-  color: $grey-color;
+  color: $color-grey;
 }
 
 .post-link {
@@ -719,114 +707,13 @@ a:link, a:visited, a:active {
 
   h2 {
     font-size: 32px;
-
-    // @include media-query($on-laptop) {
-    //   font-size: 28px;
-    // }
   }
 
   h3 {
     font-size: 26px;
-
-    // @include media-query($on-laptop) {
-    //   font-size: 22px;
-    // }
   }
 
   h4 {
     font-size: 20px;
-
-    // @include media-query($on-laptop) {
-    //   font-size: 18px;
-    // }
-  }
-}
-
-.about_us {
-  h1 {
-    margin: 30px 0 15px 0;
-    font-weight: 300;
-    color: $navy-blue-light-color;
-  }
-
-  .aboutBlurb {
-    font-size: 160%;
-    margin-bottom: 50px;
-  }
-
-  .icons {
-    display: block;
-    text-align: center;
-
-    li {
-      display: inline-block;
-      list-style-type: none;
-      font-size: 200%;
-      font-weight: 400;
-      color: #0c3962;
-      text-align: center;
-      width: 155px;
-      height: 195px;
-      margin: 0 15px 50px 15px;
-
-      border: 1px #f00 solid; /* todo: replace this with imgs */
-      .thePlan {
-        /* todo: icon */
-      }
-      .theFacts {
-        /* todo: icon */
-      }
-      .qa {
-        /* todo: icon */
-      }
-      .ourMedia {
-        /* todo: icon */
-      }
-      .ourTeam {
-        /* todo: icon */
-      }
-    }
-  }
-
-  .contact {
-    display: block;
-    text-align: center;
-
-    li {
-      display: inline-block;
-      list-style-type: none;
-      color: #0c3962;
-      vertical-align: top;
-      max-width: 165px;
-      margin: 0 25px 50px 0;
-
-      h3 {
-        font-size: 175%;
-        font-weight: 400;
-        text-align: left;
-      }
-
-      li {
-        font-size: 125%;
-        text-align: left;
-        list-style-type: disc;
-        display: list-item;
-        margin: 5px 0 0 20px;
-
-        .reddit {
-          /* todo: bullet icon */
-        }
-        .facebook {
-          /* todo: bullet icon */
-        }
-        .twitter {
-          /* todo: bullet icon */
-        }
-      }
-
-      address {
-        text-align: left;
-      }
-    }
   }
 }

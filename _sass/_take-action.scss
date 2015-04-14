@@ -2,237 +2,77 @@
  * Mixins for Panels and Buttons
  */
 
- $facebook-color: rgb(59, 89, 151);
- $twitter-color: rgb(64, 153, 255);
- $youtube-color: rgb(117, 117, 117);
- $reddit-color: rgb(31, 89, 111);
- $join-mayday-color: rgb(19, 83, 145);
- $volunteer-color: rgb(80, 107, 134);
- $orientation-color: rgb(76, 43, 98);
-
- $bg-img-dir: '../images/action/';
- $orientation-bg-img: 'orientation-bg.jpg';
- $donor-strike-bg-img: 'donor-strike-bg.jpg';
- $reddit-bg-img: 'reddit-bg.jpg';
- $volunteer-bg-img: 'volunteer-bg.jpg';
- $share-bg-img: 'share-bg.jpg';
-
 
 /**
  * Grid of Panels
  */
-.panels-grid .panel {
-  min-height: 330px;
-}
 
-@mixin share-button {
-  margin-top: 12px;
-  text-align: left;
+.action-tree{
+  float:none;
+  margin-bottom:40px;
 
-  .fa {
-    float: left;
-    font-size: 1.5em;
-    position: absolute;
-  }
+  >li{
+    padding:0 75px 20px;
+    position:relative;
 
-  .text {
-    float: left;
-    text-align: left;
+    >.panel{display:none}
 
-    @include large-desktop {
-      margin-left: 45px;
+    >.btn-md-wide{
+      margin:0;
+      text-align:left;
     }
 
-    @include small-desktop {
-      margin-left: 35px;
-      font-size: 16px;
+    &:nth-child(1) > .btn-md-wide{background:#094067}
+    &:nth-child(2) > .btn-md-wide{background:#513c5f}
+    &:nth-child(3) > .btn-md-wide{background:#5e8cac}
+    &:nth-child(4) > .btn-md-wide{background:#759c64}
+    &:nth-child(5) > .btn-md-wide{background:#eaa663}
+    &:nth-child(6) > .btn-md-wide{background:#af010e}
+
+    >small{
+      position:absolute;
+      top:1px;
+      left:0;
+      width:65px;
+      height:65px;
+      background:#fff url('/images/action/check.svg') center center no-repeat;
+
+      &.icon-sign-up{background-image: url('/images/action/sign_up_1_off.svg')}
+      &.icon-get-educated{background-image: url('/images/action/get_educated_2_off.svg')}
+      &.icon-spread-the-word{background-image: url('/images/action/spread_the_word_3_off.svg')}
+      &.icon-call-congress{background-image: url('/images/action/call_congress_4_off.svg')}
+      &.icon-join-discussion{background-image: url('/images/action/join_disscussion_5_off.svg')}
+      &.icon-volunteer{background-image: url('/images/action/volunteer_6_off.svg')}
     }
 
-    @include tablet {
-      margin-left: 45px;
-    }
 
-    @include phone {
-      margin-left: 35px;
-      font-size: 16px;
-    }
-  }
-}
-
-/**
- * Panel Mixin
- * @param {Color} $color
- * @param {Color} $bg-color
- * @param {String} $bg-image
- **/
-
-@mixin panel($heading-color, $bg-color, $bg-image) {
-
-  @if $bg-color { border: 1px solid $bg-color; }
-  @if $bg-image {
-    $url: "#{$bg-img-dir}#{$bg-image}";
-    background: url($url) no-repeat;
-    @include phone {
-      background-size: 100% 100%;
-      background-position: center;
-    }
-
-    @include small-desktop {
-      background-position: center;
-      background-size: 100% 100%;
-    }
-
-    background-position: bottom;
-    background-size: 100%;
-  }
-
-  border-radius: 8px;
-
-  .panel-heading {
-    @if $heading-color { color: $heading-color; }
-    @if $bg-color {
-      background-color: $bg-color;
-      border-bottom: 8px solid lighten( $bg-color, 10%);
-    }
-    text-align: center;
-
-    .panel-title {
-      font-size: 22px;
-    }
-
-    .panel-subtitle {
-      font-size: 18px;
-      margin-bottom: 0px;
-    }
-  }
-
-  .panel-body {
-
-    padding-top: 0px;
-    font-weight: 300;
-
-    @include large-desktop {
-      font-size: 1.4em;
-      line-height: 1.4em;
-    }
-
-    @include small-desktop {
-      font-size: 1.2em;
-      line-height: 1.2em;
-    }
-
-    @include tablet {
-      font-size: 1.4em;
-      line-height: 1.4em;
-    }
-
-    form {
-
-      .form-control {
-        height: 36px;
-        font-size: 16px;
-        border: 1px solid $navy-blue-mid-color;
+    &.active{
+      >.btn{display:none}
+      >.panel{display:block}
+      >small.show-incomplete{
+        &.icon-sign-up{background-image: url('/images/action/sign_up_1_on.svg')}
+        &.icon-get-educated{background-image: url('/images/action/get_educated_2_on.svg')}
+        &.icon-spread-the-word{background-image: url('/images/action/spread_the_word_3_on.svg')}
+        &.icon-call-congress{background-image: url('/images/action/call_congress_4_on.svg')}
+        &.icon-join-discussion{background-image: url('/images/action/join_disscussion_5_on.svg')}
+        &.icon-volunteer{background-image: url('/images/action/volunteer_6_on.svg')}
       }
     }
-  }
-}
 
-.panel-join-mayday {
-  @include panel(null, $join-mayday-color, null);
-  .btn {
+    &.incomplete{
+      background:transparent url('/images/action/tmp-vertical-dots.png') 32px 20px no-repeat;
 
-    @include wide-button($join-mayday-color);
-  }
-
-  .panel-body .btn {
-    margin-top: 10px;
-  }
-}
-
-.panel-orientation {
-  @include panel(null, $orientation-color, $orientation-bg-img);
-
-  .btn{
-    @include wide-button($orientation-color);
-  }
-
-  .panel-body .btn {
-    margin-top: 20px;
-  }
-}
-
-.panel-reddit {
-  @include panel(null, $reddit-color, $reddit-bg-img);
-
-  .panel-body {
-    text-align: center;
-  }
-
-  .mayday-reddit-snoo {
-    padding: 15px;
-
-    @include small-desktop {
-      max-height: 205px;
+      .show-complete{display:none;}
+      .show-incomplete{display:initial;}
     }
 
-    @include tablet {
-      max-height: 207px;
+    &.complete{
+      .show-complete{display:initial;}
+      .show-incomplete{display:none;}
+      .panel{background:#eee;}
+      >.btn-md-wide{background:$color-grey;}
     }
-  }
 
-  .btn {
-    margin-top: 20px;
-    @include wide-button($reddit-color);
-  }
-}
-
-.panel-donor-strike {
-
-  height: 351px;
-  @include panel($join-mayday-color, null, $donor-strike-bg-img);
-
-
-  .panel-body {
-    vertical-align: center;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 120px;
-  }
-}
-
-.panel-volunteer {
-  @include panel($dark-grey-color, null, $volunteer-bg-img);
-  .btn {
-    @include wide-button($volunteer-color);
-  }
-}
-
-.panel-share {
-  @include panel($dark-grey-color, null, $share-bg-img);
-
-  .panel-body {
-    padding-top: 13px;
-
-    @include small-desktop {
-      padding-top: 20px;
-    }
-  }
-
-  .btn-facebook {
-
-
-    @include wide-button($facebook-color);
-    @include share-button;
-  }
-
-  .btn-twitter {
-    @include wide-button($twitter-color);
-    @include share-button;
-  }
-
-  .btn-youtube {
-    @include wide-button($youtube-color);
-    @include share-button;
-  }
+    &:last-child{background:none;}
+  } // li
 }

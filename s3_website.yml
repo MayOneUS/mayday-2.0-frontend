@@ -6,8 +6,8 @@ error_document: 404/index.html
 
 redirects:
   # Main page redirects
-  the-plan: 'about_us'
-  about: 'team_and_board'
+  # the-plan: 'about-us'
+  about: 'about-us'
   media: 'in-the-news'
   unsubscribe: 'http://act.mayday.us/unsubscribe'
   blog: 'http://blog.mayday.us/'
