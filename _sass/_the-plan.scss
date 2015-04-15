@@ -119,3 +119,16 @@
     border-color: $color-grey-light;
   }
 }
+/**
+ * sticky form
+ */
+.sticky{
+  position: fixed;
+  z-index: 10;
+  padding-left: 0;
+  width: 9%;
+  div{
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+}

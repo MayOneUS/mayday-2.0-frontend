@@ -1,4 +1,4 @@
-#index {
+// #index {
 
   .spacer-opening{
     @include phone{
@@ -50,7 +50,9 @@
         color:#fff
       }
     }
-
+    &.grey{
+      background-color: $color-grey-backgroud;
+    }
     &.light {
     }
 
@@ -229,13 +231,42 @@
   .bottom-form-wrap {
     margin-top:40px;
     margin-bottom:10px;
-
     .col-md-6.center-block{
       float:none;
-
       form{
         padding-bottom:0;
       }
     }
   }
+// }
+
+/**
+ * M2 styling
+ */
+
+.verticalLines{
+  border-left: 1px solid $color-grey-line;
+  border-right: 1px solid $color-grey-line;
+  height: 100%;
+  @include tablet{
+    border: none;
+  }
+  @include phone{
+    border: none;
+  }
+}
+.one-third{
+  font-size: 50px;
+  font-weight: 400;
+  color: $color-dark-red;
+  margin: 0 0 0 15px !important;
+  width: 23.333331%;
+  height: 50px;
+  display: inline-block;
+}
+.two-third{
+  margin: 0 15px 0 0;
+  width: 46.666662%;
+  display: inline-block;
+  float: right;
 }

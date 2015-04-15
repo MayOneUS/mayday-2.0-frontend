@@ -29,6 +29,8 @@ $color-brand: #0d3960;
 $color-dark-grey: rgb(50,50,50);
 $color-grey: #808080;
 $color-grey-light: #cccccc;
+$color-grey-backgroud: #f0f0f0;
+$color-grey-line: #b7b7b7;
 $color-text: #5C5C5C;
 
 
@@ -236,7 +238,7 @@ blockquote {
 
   > :first-child{
     margin-top:0;
-    padding-top:0;
+    no-margin-top:0;
   }
 
   > :last-child {
@@ -304,7 +306,11 @@ pre {
   text-transform: uppercase;
   cursor: pointer;
 }
-
+.btn-md-wide.story-grey{
+  background-color:$color-grey;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
 @mixin simple-button{
   margin:0;
   // border: none;
@@ -504,6 +510,9 @@ pre {
     padding-top:0;
     margin-top: 0;
 }
+// .col-md-3.center-block,.col-md-4.center-block,.col-md-5.center-block,.col-md-6.center-block{
+//   float: none;
+// }
 /**
  * page headlines
  */
@@ -544,6 +553,9 @@ pre {
 }
 
 /* helper classes */
+.no-top-margin{
+  margin-top:0 !important;
+}
 
 .no-bottom-margin{
   margin-bottom:0 !important;
