@@ -1,0 +1,47 @@
+
+<div class="row no-gutter">
+  <div id="js-legislators" class="js-legislators"></div>
+</div>
+
+<script id="legislator_template" type="text/html">
+{% raw %}
+  
+    <div class="col-md-4 col-sm-12">
+      <div class="col-md-4 remove-padding-photo">
+        <a href=""><img class="img-responsive" src="{{ image_url }}" alt="${{ name }} Headshot Responsive image"></a>
+      </div>
+      <div class="col-md-8 remove-padding-photo">
+        <h2 class="no-top-margin">{{ name }}</h2>
+        <h4>{{ title }} ({{ party }}-{{ state_abbrev }} {{display_district}})</h4>
+        <a class="btn btn-targets story-grey" href="#">Read More</a>
+      </div>
+    </div>
+  
+{% endraw %}
+</script>
+<script>
+  $(document).ready(function(){
+    "use strict";
+
+    var newAllieData = '{{site.services_url}}/legislators/targeted.json';
+
+    function renderAllies(legislator_data, index) {
+      var rendered = [];
+      //load only 3 on the page. 
+      if ( index < 3) {  
+        rendered = ich.legislator_template(legislator_data);
+        //adds verticallines the the middle article
+        if ( index === 1 ){ 
+          //note taht rendered["0"] represents an object key and not a number
+          $(rendered["0"]).addClass("verticalLines");
+        }
+        $('#js-legislators').append(rendered);
+      }
+    }
+    function callTemplate(legislators) {
+      legislators.map(renderAllies);
+    }
+    $.getJSON(newAllieData, callTemplate);
+
+  });
+</script>
