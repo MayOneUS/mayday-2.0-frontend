@@ -8,24 +8,34 @@ permalink: /the-plan/
 
     <div class="sticky hidden-xs">
       <div class="row sticky-grid">
-        <div class="star-logo active col-sm-1"></div>
-        <div class="col-sm-2 sticky-text active">The Challenge: Election Funding</div>
+        <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#challenge">
+          <div class="star-logo active col-sm-1"></div>
+          <div class="col-sm-2 sticky-text active">The Challenge: Election Funding</div>
+        </a>
       </div>
       <div class="row sticky-grid">
-        <div class="star-logo inactive col-sm-1"></div>
-        <div class="col-sm-2 sticky-text inactive">We Demand A Congress Commited to Reform</div>
+        <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#demand">
+          <div class="star-logo inactive col-sm-1"></div>
+          <div class="col-sm-2 sticky-text inactive">We Demand A Congress Commited to Reform</div>
+        </a>
       </div>
       <div class="row sticky-grid">
-        <div class="star-logo inactive col-sm-1"></div>
-        <div class="col-sm-2 sticky-text inactive">The State of Reform</div>
+        <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#state">
+          <div class="star-logo inactive col-sm-1"></div>
+          <div class="col-sm-2 sticky-text inactive">The State of Reform</div>
+        </a>
       </div>
       <div class="row sticky-grid">
-        <div class="star-logo inactive col-sm-1"></div>
-        <div class="col-sm-2 sticky-text inactive">The MAYDAY Labratory</div>
+        <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#labratory">
+          <div class="star-logo inactive col-sm-1"></div>
+          <div class="col-sm-2 sticky-text inactive">The MAYDAY Labratory</div>
+        </a>
       </div>
       <div class="row sticky-grid">
-        <div class="star-logo inactive col-sm-1"></div>
-        <div class="col-sm-2 sticky-text inactive">We Demand A Congress Commited to Reform</div>
+        <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#last">
+          <div class="star-logo inactive col-sm-1"></div>
+          <div class="col-sm-2 sticky-text inactive">We Demand A Congress Commited to Reform</div>
+        </a>
       </div>
     </div>
 
@@ -136,7 +146,16 @@ permalink: /the-plan/
     </div> 
   </div>
 </div> -->
-
+<script src="{{ root_path }}/js/lib/smooth-scroll.min.js"></script>
+    <script>
+      smoothScroll.init({
+        speed: 500,
+        offset: 0,
+        updateURL: false,
+        callbackBefore: function ( toggle, anchor ) {},
+        callbackAfter: function ( toggle, anchor ) {}
+      });
+    </script>
 <script id="legislator_template" type="text/html">
 // {% raw %}
 //   <div class="row mayday-profile active">
