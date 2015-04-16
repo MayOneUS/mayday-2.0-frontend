@@ -255,18 +255,49 @@
     border: none;
   }
 }
-.one-third{
+
+.call-box .col-sm-1{ 
   font-size: 50px;
+  line-height: 50px;
   font-weight: 400;
   color: $color-dark-red;
-  margin: 0 0 0 15px !important;
-  width: 23.333331%;
-  height: 50px;
-  display: inline-block;
+  width: 100px;
+
 }
-.two-third{
-  margin: 0 15px 0 0;
-  width: 46.666662%;
-  display: inline-block;
-  float: right;
+.call-box .col-sm-2{ 
+  width: 125px;
+  padding-right:0;
+}
+.call-box-thin{
+  font-size: 15px;
+  font-weight: 300;
+  @include small-desktop{
+    font-size:20px;
+  }
+}
+.call-box-thick{
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 14px;
+  @include small-desktop{
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+}
+
+.white-link{
+  color: #fff;
+  font-size: 12px;
+  text-decoration: underline;
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+  }
+}
+.remove-padding-photo{
+  padding: 0 !important;
+}
+.js-legislators{
+  padding-top:30px;
 }
