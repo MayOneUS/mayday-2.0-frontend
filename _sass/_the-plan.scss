@@ -1,148 +1,125 @@
 /**
  * Mayday Page Styles
  */
-#plan-byline{//the plan-byline and progress-clearance are just to make sure the typography remains correct
-  margin-bottom: .8em;
-  font-size: 25px;
-  @include small-desktop {
-    margin-bottom: .7em;
-  }
-}
-#progress-clearance{
-  margin:0 0 1.8em 0;
-}
-.small-break p{
-  line-height: 1.7;
-  margin-top: 0em;
-  margin-bottom: 1.15em;
+// #plan-byline{
+//   margin-bottom: .8em;
+//   font-size: 25px;
+//   @include small-desktop {
+//     margin-bottom: .7em;
+//   }
+// }
+// #progress-clearance{
+//   margin:0 0 1.8em 0;
+// }
+// .small-break p{
+//   line-height: 1.7;
+//   margin-top: 0em;
+//   margin-bottom: 1.15em;
 
-  @include phone {
-    width: 100%
-  }
-}
+//   @include phone {
+//     width: 100%
+//   }
+// }
 
-.small-break h2, .small-break h3{
-  font-weight: 400;
-  margin: 1.2em 0 .65em 0;
-}
+// .small-break h2, .small-break h3{
+//   font-weight: 400;
+//   margin: 1.2em 0 .65em 0;
+// }
 
 /**
  * Mayday Panel Styles
  */
 
-.panel-mayday {
-  .mayday-profile {
-    padding-left: 0;
-    margin-bottom: $bottom-spacing;
-    margin-left: 2px;
-    &:hover > .headshot > img {
-      border: 3px solid $color-navy-blue-light;
-      opacity: 1.0;
-    }
-    .headshot {
-      padding-right: 10px;;
-    }
-    .push-left{
-      margin-left: 0;
-      padding-left: 0;
-    }
-    .headshot > img {
-      border: 3px solid transparent;
-      opacity: 0.8;
-      width: 100%;
-    }
-    h4 {
-      margin: 0;
-    }
-    h6 {
-      margin: 3px 0;
-    }
+// .panel-mayday {
+//   .mayday-profile {
+//     padding-left: 0;
+//     margin-bottom: $bottom-spacing;
+//     margin-left: 2px;
+//     &:hover > .headshot > img {
+//       border: 3px solid $color-navy-blue-light;
+//       opacity: 1.0;
+//     }
+//     .headshot {
+//       padding-right: 10px;;
+//     }
+//     .push-left{
+//       margin-left: 0;
+//       padding-left: 0;
+//     }
+//     .headshot > img {
+//       border: 3px solid transparent;
+//       opacity: 0.8;
+//       width: 100%;
+//     }
+//     h4 {
+//       margin: 0;
+//     }
+//     h6 {
+//       margin: 3px 0;
+//     }
 
-    @include tablet {
-      h4 {
-        margin: inherit;
-        font-size: 1.6em;
-      }
-      h6 {
-        margin: 8px 0;
-        font-size: 1.2em;
-      }
+//     @include tablet {
+//       h4 {
+//         margin: inherit;
+//         font-size: 1.6em;
+//       }
+//       h6 {
+//         margin: 8px 0;
+//         font-size: 1.2em;
+//       }
 
-    }
+//     }
 
-    @include phone {
-      h4 {
-        font-size: 1.2em;
-      }
-      h6 {
-        margin: 8px 0;
-        font-size: 0.8em;
-      }
+//     @include phone {
+//       h4 {
+//         font-size: 1.2em;
+//       }
+//       h6 {
+//         margin: 8px 0;
+//         font-size: 0.8em;
+//       }
 
-    }
-  }
-}
+//     }
+//   }
+// }
 
-/**
- * Mayday Button
- */
 
- a.btn-targets {
-  background-color: $color-grey-blue;
-  border-color: $color-grey-blue;
-  text-transform: uppercase;
-  color: white;
-  font-weight: 300;
-
-  @include large-desktop {
-    padding: 4px 8px;
-    font-size: 12px;
-  }
-
-  @include small-desktop {
-    padding: 4px 8px;
-    font-size: 12px;
-  }
-
-  @include tablet {
-    padding: 6px 16px;
-    font-size: 14px;
-  }
-
-  @include phone {
-    padding: 6px 16px;
-    font-size: 14px;
-  }
-
-  &:hover {
-    background-color: $color-grey-light;
-    border-color: $color-grey-light;
-  }
-}
 .content-offset > [class*='col-'] {
   margin-left: 12.555555557%;
   @include phone {
     margin-left: 0;
   }
 }
-// .sticky-star {
-//   width: 16%;
-//   padding-left:0;
-//   padding-right:0;
-// }
-// .sticky-text > [class*='col-'] {
-//   width: 82%;
-//   padding-left:0;
-//   padding-right:0;
-// }
+.page-panel{
+  position: relative;
+  overflow: hidden;
+  padding-top:18px;
+  padding-bottom:22px;
+  font-weight: 400;
+  &.grey{
+    background-color: $color-grey-backgroud;
+  }
+  &.light{
+    background-color: #fff;
+  }
+  h2{
+    font-weight: 400;
+  }
+  p{
+    font-size: 17px;
+  }
+}
 /**
  * sticky form
  */
+.sticky-grid{
+  margin-top: 15px;
+}
 .sticky-grid .col-sm-1 { 
   width: 20px;
   padding-left:0;
   padding-right:5px;
-  margin-top: 5px;
+  margin-top: 2px;
 }
 .sticky-grid .col-sm-2 { 
   width: 125px;
@@ -169,6 +146,7 @@
     }
     .sticky-text{
       font-weight: 400;
+      line-height: 140%;
     }
     .sticky-text.inactive{
       color: $color-text;
@@ -178,4 +156,10 @@
     }
   }
 }
-
+.state .col-md-2 {
+  width: 20%;
+  font-size: 16px;
+}
+.first-line{
+  font-weight: 400;
+}
