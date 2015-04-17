@@ -1,4 +1,4 @@
-/**
+mayday-headline /**
  * Reset some basic bootstrap elements
  */
 body, h1, h2, h3, h4, h5, h6,
@@ -306,11 +306,7 @@ pre {
   text-transform: uppercase;
   cursor: pointer;
 }
-.btn-md-wide.story-grey{
-  background-color:$color-grey;
-  font-size: 16px;
-  letter-spacing: 2px;
-}
+
 @mixin simple-button{
   margin:0;
   // border: none;
@@ -401,6 +397,47 @@ pre {
     @include button-colors($color-youtube);
   }
 }
+/**
+ * Mayday Button Newest Allies
+ */
+
+a.btn-targets {
+  margin-top:8px;
+  background-color: #adabac;
+  border-color: #adabac;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 300;
+
+  @include large-desktop {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  // @include small-desktop {
+  //   padding: 8px 15px;
+  //   font-size: 12px;
+  // }
+
+  // @include tablet {
+  //   padding: 6px 16px;
+  //   font-size: 14px;
+  // }
+
+  // @include phone {
+  //   padding: 6px 16px;
+  //   font-size: 14px;
+  // }
+  &:visited {
+    color: #fff;
+    background-color: #adabac;
+    border-color: #adabac;
+  }
+  &:hover {
+    background-color: $color-grey-light;
+    border-color: $color-grey-light;
+  }
+}
 
  /**
  * Donate button Mixin
@@ -460,6 +497,9 @@ pre {
 /**
  * responsive margins
  */
+.col-centered{
+  margin: 0 auto;
+}
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -518,6 +558,13 @@ pre {
  */
 .mayday-headline{
   font-size: 60px;
+  margin-bottom: .315em;
+  @include small-desktop {
+    margin-bottom: .215em;
+  }
+}
+.mayday-headline-M2{
+  font-size: 55px;
   margin-bottom: .315em;
   @include small-desktop {
     margin-bottom: .215em;

@@ -2,15 +2,16 @@
 <div class="row no-gutter">
   <div id="js-legislators" class="js-legislators"></div>
 </div>
-
+<!-- <div class="background-sqaure"></div>
+<img class="img-responsive" src="{{ image_url }}" alt="${{ name }} Headshot Responsive image"> -->
 <script id="legislator_template" type="text/html">
 {% raw %}
   
     <div class="col-md-4 col-sm-12">
-      <div class="col-md-4 remove-padding-photo">
-        <a href=""><img class="img-responsive" src="{{ image_url }}" alt="${{ name }} Headshot Responsive image"></a>
+      <div class="col-md-4">
+        <a href=""><div class="background-sqaure"></div></a>
       </div>
-      <div class="col-md-8 remove-padding-photo">
+      <div class="col-md-8">
         <h2 class="no-top-margin">{{ name }}</h2>
         <h4>{{ title }} ({{ party }}-{{ state_abbrev }} {{display_district}})</h4>
         <a class="btn btn-targets story-grey" href="#">Read More</a>
@@ -25,11 +26,36 @@
 
     var newAllieData = '{{site.services_url}}/legislators/targeted.json';
 
+    function objectToNestArray( hash ) {
+
+      return Object.keys( hash ).map( function ( key ) {
+           return hash[ key ];
+      });
+
+    }
+
     function renderAllies(legislator_data, index) {
-      var rendered = [];
+      var rendered = [],
+          convertToArray = [],
+          imgUrls = [];
+
+      convertToArray = objectToNestArray( legislator_data );
+
+
+      for ( var i = 0; i < 3; i++){
+        var img_file = convertToArray.pop();
+        imgUrls.push(img_file);
+      }   
       //load only 3 on the page. 
+
+
       if ( index < 3) {  
         rendered = ich.legislator_template(legislator_data);
+        if ( index === 0 ){ 
+          //note taht rendered["0"] represents an object key and not a number
+          console.log(rendered["0"])
+          $(rendered["0"]).addClass("remove-padding-photo remove-padding-text");
+        }
         //adds verticallines the the middle article
         if ( index === 1 ){ 
           //note taht rendered["0"] represents an object key and not a number
