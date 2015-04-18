@@ -3,13 +3,12 @@ layout: default
 title: MAYDAY.US - We tried. We learned. We're trying something new.
 hideFromNav: true
 ---
-
 <div id="index">
   <div class="full-bg-imgage">
     <div class="container banner-image">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 spacer-opening">
-          <h1 class="index-page-title"<strong>Help Us</strong> Save Our Democracy</h1>
+          <h1 class="index-page-title"><strong><!-- Help Us</strong> Save Our Democracy --></h1>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 spacer-opening">
           {% include panels/panel_onboarding.html %}
@@ -100,16 +99,19 @@ hideFromNav: true
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum commodi ratione eaque, deleniti dignissimos, molestias corporis facere quis fuga magni blanditiis ullam accusantium? Vel sint, fugiat harum distinctio accusamus excepturi! Quod accusantium ab facilis ut, inventore facere cupiditate fugit molestias! Aut quasi, voluptatem molestias facilis, recusandae quaerat. At esse id tempore sit quam, itaque magnam numquam ut eligendi harum magni! Distinctio deleniti iure hic, incidunt aut quidem dignissimos odio architecto sunt facere nemo placeat, error perferendis sit officiis nostrum magnam, quisquam velit minima praesentium cumque ut. Architecto eius, dolorem dignissimos.</p>
       </div>
     </div>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
     <div class="row">
-      <div class="col-md-4 col-sm-6 col-xs-12">
+    <!-- <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div> -->
+      <div id="container" class="col-md-4 col-sm-6 col-xs-12">
         <h2 class="text-center">House Support</h2>
         <img src="/images/temp-img/donut-chart.png" alt="">
       </div>
-      <div class="col-md-4 col-sm-6 col-xs-12">
+      <div id="container2" class="col-md-4 col-sm-6 col-xs-12">
         <h2 class="text-center">Senate Support</h2>
         <img src="/images/temp-img/donut-chart.png" alt="">
       </div>
-      <div class="col-md-4 col-sm-6 col-xs-12">
+      <div id="container3" class="col-md-4 col-sm-6 col-xs-12">
         <h2 class="text-center">Calls Made</h2>
         <img src="/images/temp-img/donut-chart.png" alt="">
       </div>
@@ -146,18 +148,18 @@ hideFromNav: true
           <h2>Recent Coverage</h2>
         </div>
       </div>
-      <div class="row">
+      <div class="row mayday-quotes">
         <div class="col-md-4 col-sm-6 col-xs-12">
-          <p>"Lorem ipsum dignissimos nesciunt quia asperiores rerum id dicta quisquam necessitatibus, inventore non temporibus quam neque quidem voluptates aperiam, consectetur sapiente ad magnam."</p>
-          <img class="center-block" src="/images/news-logos/The-New-York-Times.jpg" alt="">
+          <p>"Lorem ipsum dignissimos nesciunt quia asperiores rerum id dicta quisquam necessitatibus, inventore non temporibus quam neque quidem voluptates aperiam, consectetur sapiente ad magnam neque quidem voluptates aperiam."</p>
+          <img class="center-block" src="/images/news-logos/The_New_York_Times_logo_white.png" alt="">
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12">
           <p>"Elit. Excepturi dignissimos nesciunt quia asperiores rerum id dicta quisquam necessitatibus, inventore non temporibus quam neque quidem voluptates aperiam, consectetur sapiente ad magnam."</p>
-          <img class="center-block" src="/images/news-logos/The-Atlantic.jpg" alt="">
+          <img class="center-block" src="/images/news-logos/logo-atlantic-white.png" alt="">
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12">
           <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi dignissimos nesciunt quia asperiores rerum id dicta quisquam necessitatibus."</p>
-          <img class="center-block" src="/images/news-logos/TIME.jpg" alt="">
+          <img class="center-block" src="/images/news-logos/2000px-Time_Magazine_logo-white.png" alt="">
         </div>
       </div>
       <div class="row">
@@ -222,3 +224,215 @@ $("form.join").submit(function (event) {
     });
 });
 </script> 
+<script type="text/javascript">
+
+
+
+  $(function() {
+      Highcharts.setOptions({
+          chart: {
+              style: {
+                  fontFamily: 'Lato'
+          },
+          plotOptions: {
+              pie: {
+                  shadow: false
+              }
+          }
+        }
+      });
+      var versionsData = [
+          {
+            "name": "Republicans",
+            "y": 3221,
+            "color": "#c03c2f"
+        },
+        {
+            "name": "Indpendents",
+            "y": 32,
+            "color": "#28dc4a"
+        },
+        {
+            "name": "Democrats",
+            "y": 1121,
+            "color": "#146897"
+        }
+      ];
+          // Create the chart
+      var chart1 = new Highcharts.Chart({
+          chart: {
+              renderTo: 'container',
+              type: 'pie',
+          },
+          title: {
+              text: 'House Support',
+              align: 'center',
+              verticalAlign: 'middle',
+              y: -150,
+              style: {
+                "fontSize": "30px",
+                "fontWeight":300,
+                "color":"#0d3960"
+              }
+          },
+          credits: {
+              enabled: false
+          },
+          exporting: { enabled: false },
+          tooltip: {
+              borderColor: 'black',
+              borderRadius: 10,
+              borderWidth: 1
+          },
+          series: [{
+              name: 'Support',
+              data: versionsData,
+              size: '60%',
+              innerSize: '50%',
+              style: {
+                  fontWeight: 300,
+                  fontFamily: 'Lato',
+                  fontWeight: 'bold',
+                  color: '#222'
+              },
+              showInLegend:false,
+              dataLabels: {
+                  enabled: true,
+                  distance: 20,
+                  style: {
+
+                  },
+                  formatter: function () {
+                      return this.point.name + ' ' + this.y;
+                  }
+              }
+          }]
+      });
+      var chart2 = new Highcharts.Chart({
+          chart: {
+              renderTo: 'container2',
+              type: 'pie'
+          },
+          title: {
+              text: 'Senate Support',
+              align: 'center',
+              verticalAlign: 'middle',
+              y: -150,
+              style: {
+                  "fontSize": "30px",
+                  "fontWeight":300,
+                  "color":"#0d3960"
+                }
+          },
+          credits: {
+              enabled: false
+          },
+          exporting: { enabled: false },
+          tooltip: {
+              borderColor: 'black',
+              borderRadius: 10,
+              borderWidth: 1
+          },
+          series: [{
+              name: 'Support',
+              data: versionsData,
+              size: '60%',
+              innerSize: '50%',
+              style: {
+                  fontWeight: 300,
+                  fontFamily: 'Lato',
+                  fontWeight: 'bold',
+                  color: '#222'
+              },
+              showInLegend:false,
+              dataLabels: {
+                  enabled: true,
+                  distance: 20,
+                  style: {
+
+                  },
+                  formatter: function () {
+                      return this.point.name + ' ' + this.y;
+                  }
+              }
+          }]
+      });
+      var chart3 = new Highcharts.Chart({
+          chart: {
+              renderTo: 'container3',
+              type: 'pie'
+          },
+          title: {
+              text: 'Calls Made',
+              align: 'center',
+              verticalAlign: 'middle',
+              y: -150,
+              style: {
+                "fontSize": "30px",
+                "fontWeight":300,
+                "color":"#0d3960"
+              }
+          },
+          plotOptions: {
+              pie: {
+                  shadow: false
+              }
+          },
+          credits: {
+              enabled: false
+          },
+          exporting: { enabled: false },
+          tooltip: {
+              borderColor: 'black',
+              borderRadius: 10,
+              borderWidth: 1
+          },
+          dataLabels: {
+              enabled: true,
+              distance: -50,
+              style: {
+                  fontWeight: 'bold',
+                  color: 'white',
+                  textShadow: '0px 1px 2px black'
+              }
+          },
+
+          series: [{
+              name: 'Calls',
+              data: versionsData,
+              size: '60%',
+              innerSize: '50%',
+              style: {
+                  fontWeight: 300,
+                  fontFamily: 'Lato',
+                  fontWeight: 'bold',
+                  color: '#222'
+              },
+              showInLegend:false,
+              dataLabels: {
+                  enabled: true,
+                  distance: 20,
+                  style: {
+
+                  },
+                  formatter: function () {
+                      return this.point.name;
+                  }
+              }
+          }]
+      });
+  });
+//   // create the chart
+//   var chart1Options = {
+//     chart: {
+//       renderTo: 'container'
+//     },
+//     series: [{
+//       data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+//       pointStart: Date.UTC(2010, 0, 1),
+//       pointInterval: 3600 * 1000 // one hour
+//     }]
+//   };
+//   chart1Options = jQuery.extend(true, {}, options, chart1Options);
+//   var chart1 = new Highcharts.Chart(chart1Options);
+</script>

@@ -1,4 +1,7 @@
+
 .spacer-opening{
+  padding-top:60px;
+  padding-bottom:30px;
   @include phone{
     padding-top:30px;
     padding-bottom:15px;
@@ -9,21 +12,24 @@
   }
 }
 .full-bg-imgage {
+  margin-top: -45px !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.89);
-  background-image: url("../images/temp-img/screenshot_04.jpg");
+  background-image: url("../images/temp-img/screenshot_04_flipped.jpg");
   background-repeat: no-repeat;
   background-size: 200%;
   overflow: hidden;
-  color: #DBDBDB;
 }
 .banner-image {
   background-color: rgba(0, 0, 0, 0.89);
-  background-image: url("../images/temp-img/screenshot_04.jpg");
+  padding-top:30px;
+  padding-bottom:15px;
+  background-image: url("../images/temp-img/screenshot_04_flipped.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   overflow: hidden;
-  color: #DBDBDB;
 }
 
 .mini-panel-text{
@@ -309,7 +315,7 @@
 
 .white-link{
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
   text-decoration: underline;
   &:visited {
     color: #fff;
@@ -320,19 +326,35 @@
 .remove-padding-photo{
   padding: 0 !important;
 }
-.remove-padding-text{
-  padding: 0 !important;
+.remove-padding-photo .remove-padding-text{
+  padding-left: 5px !important;
 }
-.js-legislators{
+.remove-padding-photo-small{
+  @include tablet{
+    padding: 0 !important;
+  }
+  @include phone{
+    padding: 0 !important;
+  }
+}
+
+.js-legislators{ 
   padding-top:45px;
   h2{
-    padding-top: 8px;
-    font-size: 20px;
+    padding-top: 4px;
+    font-size: 24px;
     font-weight: 400;
+    @include small-desktop{
+      font-size: 20px;
+    }
   }
   h4{
-    margin-top:4px;
-    font-size: 14px;
+    color: $color-brand;
+    margin-top:7px;
+    font-size: 17px;
+    @include small-desktop{
+      font-size: 14px;
+    }
   }
 }
 .background-sqaure{
@@ -343,4 +365,8 @@
   background-position: center;
   background-size: 100%;
   background-color:$color-grey;
+
+}
+.mayday-quotes p{
+  margin:45px 0 30px;
 }

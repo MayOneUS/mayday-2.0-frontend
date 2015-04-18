@@ -3,6 +3,7 @@
  */
 .site-header {
   .top-nav {
+    z-index: 1;
     background-color: $color-navy-blue;
     height: 80px;
     position: relative;
@@ -189,6 +190,9 @@
       margin-right: 0;
       display: inline-block;
       width: 40%;
+      @include small-desktop{
+        font-size: 18px;
+      }
     }
     a.donate-link{
       @include donate-button($color-dark-red);
@@ -196,12 +200,13 @@
   }
 
   .bottom-taper {
+    z-index: 1;
     position: relative;
     overflow: hidden;
     width: 100%;
     height: 20px;
     text-align: center;
-    background-color: $color-navy-blue-light;
+    background-color: transparent;
     margin-bottom:25px;
     .triangle-up {
       position: absolute;
@@ -213,7 +218,7 @@
       border-style: solid;
       margin-left: -1000px;
       border-width: 0 1000px 20px 1000px;
-      border-color: transparent transparent white transparent;
+      border-color: $color-navy-blue-light $color-navy-blue-light transparent $color-navy-blue-light;
       /* force anti-aliasing */
       -moz-transform: scale(.9999);
       -webkit-transform: scale(.9999);
