@@ -295,7 +295,6 @@
 		var documentHeight = getDocumentHeight();
 		var timeLapsed = 0;
 		var percentage, position;
-
 		// Update URL
 		updateUrl(anchor, settings.updateURL);
 

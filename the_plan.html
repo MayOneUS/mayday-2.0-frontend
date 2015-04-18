@@ -5,36 +5,36 @@ permalink: /the-plan/
 ---
 <div class="row page-panel light">
   <div class="container content-offset">
-
-    <div class="sticky hidden-xs">
+ 
+    <div class="sticky-tree hidden-xs">
       <div class="row sticky-grid">
         <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#challenge">
-          <div class="star-logo active col-sm-1"></div>
-          <div class="col-sm-2 sticky-text active">The Challenge: Election Funding</div>
+          <div class="sticky-star col-sm-1 active"></div>
+          <div class="sticky-text col-sm-2 active">The Challenge: Election Funding</div>
         </a>
       </div>
       <div class="row sticky-grid">
         <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#demand">
-          <div class="star-logo inactive col-sm-1"></div>
-          <div class="col-sm-2 sticky-text inactive">We Demand A Congress Commited to Reform</div>
+          <div class="sticky-star col-sm-1"></div>
+          <div class="sticky-text col-sm-2">We Demand A Congress Commited to Reform</div>
         </a>
       </div>
       <div class="row sticky-grid">
         <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#state">
-          <div class="star-logo inactive col-sm-1"></div>
-          <div class="col-sm-2 sticky-text inactive">The State of Reform</div>
+          <div class="sticky-star col-sm-1"></div>
+          <div class="sticky-text col-sm-2">The State of Reform</div>
         </a>
       </div>
       <div class="row sticky-grid">
         <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#labratory">
-          <div class="star-logo inactive col-sm-1"></div>
-          <div class="col-sm-2 sticky-text inactive">The MAYDAY Labratory</div>
+          <div class="sticky-star col-sm-1"></div>
+          <div class="sticky-text col-sm-2">The MAYDAY Labratory</div>
         </a>
       </div>
       <div class="row sticky-grid">
-        <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#last">
-          <div class="star-logo inactive col-sm-1"></div>
-          <div class="col-sm-2 sticky-text inactive">We Demand A Congress Commited to Reform</div>
+        <a data-scroll data-options='{ "easing": "easeInOutQuart", "offset": 290 }' href="#last">
+          <div class="sticky-star col-sm-1"></div>
+          <div class="sticky-text col-sm-2">We Demand A Congress Commited to Reform</div>
         </a>
       </div>
     </div>
@@ -91,7 +91,6 @@ permalink: /the-plan/
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eius unde facilis non cum ipsa, voluptatem quidem. Facilis dolores animi sit perspiciatis molestias, voluptatum, laborum fugiat, ullam ad aliquid voluptatibus.
       </p>
       <p>sit amet, consectetur adipisicing elit. Commodi eaque fuga aliquid nulla doloribus quaerat magnam odit quia accusamus ex molestias, maiores, expedita praesentium neque dolore facere! Vel, accusamus, voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta velit eaque voluptate eius aperiam iusto sunt explicabo at cumque cum assumenda, laudantium, debitis architecto expedita vero quae eligendi itaque dolores.</p>
-
     </div>
   </div>
 </div>
@@ -149,15 +148,36 @@ permalink: /the-plan/
   </div>
 </div> -->
 <script src="{{ root_path }}/js/lib/smooth-scroll.min.js"></script>
-    <script>
-      smoothScroll.init({
-        speed: 500,
-        offset: 0,
-        updateURL: false,
-        callbackBefore: function ( toggle, anchor ) {},
-        callbackAfter: function ( toggle, anchor ) {}
-      });
-    </script>
+<script>
+  smoothScroll.init({
+    speed: 500,
+    offset: 0,
+    updateURL: false,
+    callbackBefore: function ( toggle, anchor ) {},
+    callbackAfter: function ( toggle, anchor ) {}
+  });
+</script>
+<script>
+  $(document).ready(function(){
+    
+    function makeActive($target_el){
+      $( '.sticky-star' ).removeClass(' active' );
+      $( '.sticky-text' ).removeClass( 'active' );
+      $target_el.children( '.sticky-star').addClass( 'active' );
+      $target_el.children( '.sticky-text' ).addClass( 'active' );
+    }
+
+    $('div.sticky-tree>div>a').on('click', function(e){
+      e.preventDefault();
+      makeActive($( this ));
+    });
+  });
+</script>
+
+
+
+
+<!-- get rid of -->
 <script id="legislator_template" type="text/html">
 // {% raw %}
 //   <div class="row mayday-profile active">

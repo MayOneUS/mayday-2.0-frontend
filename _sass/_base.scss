@@ -402,15 +402,16 @@ pre {
  */
 
 a.btn-targets {
-  margin-top:8px;
-  background-color: #adabac;
-  border-color: #adabac;
+  margin-top:12px;
+  background-color: #b0aeaf;
+  border-color: #b0aeaf;
   text-transform: uppercase;
   color: #fff;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: 1px;
 
   @include large-desktop {
-    padding: 8px 15px;
+    padding: 6px 28px;
     font-size: 14px;
   }
 
