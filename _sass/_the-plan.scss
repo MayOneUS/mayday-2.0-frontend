@@ -163,6 +163,12 @@
       color: $color-brand;
     }
   }
+  @include small-desktop{
+    margin-left: -3%;
+  }
+  @include tablet{
+    margin-left: -7%;
+  }
 }
 .state .col-md-2 {
   width: 20%;

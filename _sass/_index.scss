@@ -2,6 +2,10 @@
 .spacer-opening{
   padding-top:60px;
   padding-bottom:30px;
+  @include small-desktop{
+    padding-top:20px;
+    padding-bottom:10px;
+  }
   @include phone{
     padding-top:30px;
     padding-bottom:15px;
@@ -11,25 +15,34 @@
     padding-bottom:15px;
   }
 }
+
+///////////////////////////////////////////////
+//
+// where spaceing for jumbotron is set for -45px
+// full-bg-imgage span the whole page
+// banner image is in the 1170 page margin
+
+.full-bg-imgage, .banner-image{
+  background-color: #818181;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
 .full-bg-imgage {
   margin-top: -45px !important;
   padding-top:0 !important;
   padding-bottom:0 !important;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.89);
   background-image: url("../images/temp-img/screenshot_04_flipped.jpg");
-  background-repeat: no-repeat;
   background-size: 200%;
-  overflow: hidden;
+  @include phone{
+    margin-top: -50px !important;
+  }
 }
 .banner-image {
-  background-color: rgba(0, 0, 0, 0.89);
   padding-top:30px;
   padding-bottom:15px;
   background-image: url("../images/temp-img/screenshot_04_flipped.jpg");
-  background-repeat: no-repeat;
   background-size: 100%;
-  overflow: hidden;
 }
 
 .mini-panel-text{
@@ -37,6 +50,9 @@
   letter-spacing: .2px;
   line-height: 22px;
   font-size: 16px;
+  @include tablet{
+    margin-top: 8px;
+  }
 }
 .homepage-panel{
   position: relative;
@@ -285,22 +301,27 @@
 }
 
 .call-box .col-sm-1{ 
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 45px;
+  line-height: 45px;
   font-weight: 400;
   color: $color-dark-red;
   width: 100px;
-
 }
 .call-box .col-sm-2{ 
   width: 125px;
   padding-right:0;
+  @include tablet{
+    width: 400px;
+  }
+  @include phone{
+    width: 125px;
+  }
 }
 .call-box-thin{
   font-size: 15px;
   font-weight: 300;
   @include small-desktop{
-    font-size:20px;
+    font-size:17px;
   }
 }
 .call-box-thick{
@@ -308,8 +329,9 @@
   font-weight: 400;
   line-height: 14px;
   @include small-desktop{
-    line-height: 20px;
-    margin-bottom: 5px;
+    line-height: 15px;
+    // margin-bottom: -15px;
+    font-size: 20px;
   }
 }
 

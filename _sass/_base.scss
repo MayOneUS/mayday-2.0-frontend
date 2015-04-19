@@ -406,7 +406,7 @@ a.btn-targets {
   background-color: #b0aeaf;
   border-color: #b0aeaf;
   text-transform: uppercase;
-  color: #fff;
+  color: #fff !important;
   font-weight: 400;
   letter-spacing: 1px;
 
@@ -430,11 +430,12 @@ a.btn-targets {
   //   font-size: 14px;
   // }
   &:visited {
-    color: #fff;
+    color: #fff !important;
     background-color: #adabac;
     border-color: #adabac;
   }
   &:hover {
+    color: #fff !important;
     background-color: $color-grey-light;
     border-color: $color-grey-light;
   }
