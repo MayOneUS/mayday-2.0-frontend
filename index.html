@@ -103,15 +103,15 @@ hideFromNav: true
     
     <div class="row">
 
-      <div id="container" class="col-md-4 col-sm-6 col-xs-12">
+      <div id="container1" class="chart-holder col-md-4 col-sm-6 col-xs-12">
 <!--         <h2 class="text-center">House Support</h2>
         <img src="/images/temp-img/donut-chart.png" alt=""> -->
       </div>
-      <div id="container2" class="col-md-4 col-sm-6 col-xs-12">
+      <div id="container2" class="chart-holder col-md-4 col-sm-6 col-xs-12">
 <!--         <h2 class="text-center">Senate Support</h2>
         <img src="/images/temp-img/donut-chart.png" alt=""> -->
       </div>
-      <div id="container3" class="col-md-4 col-sm-6 col-xs-12">
+      <div id="container3" class="chart-holder col-md-4 col-sm-6 col-xs-12">
 <!--         <h2 class="text-center">Calls Made</h2>
         <img src="/images/temp-img/donut-chart.png" alt=""> -->
       </div>
@@ -224,150 +224,4 @@ $("form.join").submit(function (event) {
     });
 });
 </script> 
-<script type="text/javascript">
-// high chart code
-  $(function() {
-
-      "use strict";
-
-      var versionsData, shared_Options, chart1_Options, chart1, chart2_Options, chart2,
-          chart3_Options, chart3;
-          // set basic options
-      Highcharts.setOptions({
-          chart: {
-              style: {
-                  fontFamily: 'Lato'
-          },
-          plotOptions: {
-              pie: {
-                  shadow: false
-              }
-          }
-        }
-      });
-
-      versionsData = [
-          {
-            "name": "Republicans",
-            "y": 3221,
-            "color": "#c03c2f"
-        },
-        {
-            "name": "Democrats",
-            "y": 1121,
-            "color": "#146897"
-        },
-        {
-            "name": "Indpendents",
-            "y": 32,
-            "color": "#28dc4a"
-        }
-      ];
-          // everything shared between the graphs
-      shared_Options = {
-            title: {
-              align: 'center',
-              verticalAlign: 'middle',
-              y: -150,
-              style: {
-                "fontSize": "30px",
-                "fontWeight":300,
-                "color":"#0d3960"
-              }
-          },
-          credits: {
-              enabled: false
-          },
-          exporting: { 
-            enabled: false 
-          },
-          tooltip: {
-              borderColor: 'black',
-              borderRadius: 10,
-              borderWidth: 1
-          },
-          series: [{
-              size: '60%',
-              innerSize: '50%',
-              style: {
-                  fontWeight: 300,
-                  fontFamily: 'Lato',
-                  fontWeight: 'bold',
-                  color: '#222'
-              },
-              showInLegend:false,
-              dataLabels: {
-                  enabled: true,
-                  distance: 10,
-                  style: {
-
-                  },
-                  formatter: function () {
-                      return this.point.name + '<br>' + this.y;
-                  }
-              }
-          }]
-      };
-        // individual chart code
-      chart1_Options = {
-          chart: {
-              renderTo: 'container',
-              type: 'pie',
-          },
-          title: {
-              text: 'House Support'
-          },
-          series: [{
-              name: 'Support',
-              data: versionsData // data point
-          }]
-      };
-
-      chart2_Options ={
-          chart: {
-              renderTo: 'container2',
-              type: 'pie'
-          },
-          title: {
-              text: 'Senate Support'
-          },
-          series: [{
-              name: 'Support',
-              data: versionsData // data point
-          }]
-      };
-
-      chart3_Options ={
-          chart: {
-              renderTo: 'container3',
-              type: 'pie'
-          },
-          title: {
-              text: 'Calls Made'
-          },
-          series: [{
-              name: 'Support',
-              data: versionsData // data point
-          }]
-      };
-
-          // Create chart 1
-      chart1_Options = jQuery.extend(true, {}, shared_Options, chart1_Options);
-
-      chart1 = new Highcharts.Chart(chart1_Options);
-      
-
-        // Create chart 2
-      chart2_Options = jQuery.extend(true, {}, shared_Options, chart2_Options);
-      
-      chart2 = new Highcharts.Chart(chart2_Options);
-
-
-        // Create chart 3
-      chart3_Options = jQuery.extend(true, {}, shared_Options, chart3_Options);
-      
-      chart3 = new Highcharts.Chart(chart3_Options);
-
-  });
-
-</script>
+<script src="{{ root_path }}/js/lib/homepage.js"></script>
