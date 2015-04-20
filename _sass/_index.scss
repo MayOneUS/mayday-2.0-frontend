@@ -44,7 +44,12 @@
   background-image: url("../images/temp-img/screenshot_04_flipped.jpg");
   background-size: 100%;
 }
-
+.index-logo-small{
+  @include phone{
+    height: 50px;
+    margin: 0 auto;
+  }
+}
 .mini-panel-text{
   padding-left:0 !important;
   letter-spacing: .2px;
@@ -202,6 +207,108 @@
       transform: rotate(-15deg);
     }
   }
+  &.dossier-star {
+    .bg-star:first-of-type {
+      position: absolute;
+      left: -400px;
+      top: -250px;
+      height: 650px;
+      opacity: .1;
+      -ms-transform: rotate(-30deg);
+      -webkit-transform: rotate(-30deg);
+      transform: rotate(-30deg);
+    }
+    .bg-star:nth-of-type(2) {
+      position: absolute;
+      left: -500px;
+      top: 80px;
+      height: 800px;
+      opacity: .1;
+      -ms-transform: rotate(-50deg);
+      -webkit-transform: rotate(-50deg);
+      transform: rotate(-50deg);
+    }
+    .bg-star:nth-of-type(3) {
+      position: absolute;
+      left: 10%;
+      top: -160px;
+      height: 265px;
+      opacity: .1;
+      -ms-transform: rotate(-50deg);
+      -webkit-transform: rotate(-50deg);
+      transform: rotate(-50deg);
+    }
+    .bg-star:nth-of-type(4) {
+      position: absolute;
+      left: 1%;
+      top: -70px;
+      width: 600px;
+      opacity: .1;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .bg-star:nth-of-type(5) {
+      position: absolute;
+      left: 25%;
+      top: -200px;
+      height: 350px;
+      opacity: .1;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .bg-star:nth-of-type(6) {
+      position: absolute;
+      left: 25%;
+      top: 260px;
+      height: 350px;
+      opacity: .1;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .bg-star:nth-of-type(7) {
+      position: absolute;
+      left: 35%;
+      top: 100px;
+      height: 200px;
+      opacity: .1;
+      -ms-transform: rotate(-50deg);
+      -webkit-transform: rotate(-50deg);
+      transform: rotate(-50deg);
+    }
+    .bg-star:nth-of-type(8) {
+      position: absolute;
+      left: 33%;
+      top: -180px;
+      height: 850px;
+      opacity: .1;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .bg-star:nth-of-type(9) {
+      position: absolute;
+      left: 76%;
+      top: -170px;
+      height: 600px;
+      opacity: .1;
+      -ms-transform: rotate(40deg);
+      -webkit-transform: rotate(40deg);
+      transform: rotate(40deg);
+    }
+    .bg-star:nth-of-type(10) {
+      position: absolute;
+      left: 82%;
+      top: 275px;
+      height: 200px;
+      opacity: .1;
+      -ms-transform: rotate(-15deg);
+      -webkit-transform: rotate(-15deg);
+      transform: rotate(-15deg);
+    }
+  }
 
   &.starless{
   }
@@ -299,7 +406,8 @@
     border: none;
   }
 }
-
+// call-box is where the number of calls is displayed
+// note line-height plays a part in creating their symmetry
 .call-box .col-sm-1{ 
   font-size: 45px;
   line-height: 45px;
@@ -334,7 +442,7 @@
     font-size: 20px;
   }
 }
-
+// only white link I know of consider moving
 .white-link{
   color: #fff;
   font-size: 15px;
@@ -369,6 +477,9 @@
     @include small-desktop{
       font-size: 20px;
     }
+    @include small-desktop{
+      font-size: 20px;
+    }
   }
   h4{
     color: $color-brand;
@@ -387,6 +498,10 @@
   background-position: center;
   background-size: 100%;
   background-color:$color-grey;
+  @include small-desktop{
+    height: 90px;
+    width: 90px;
+  }
 
 }
 .mayday-quotes p{

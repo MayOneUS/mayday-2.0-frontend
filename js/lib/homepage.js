@@ -128,7 +128,7 @@ $(function() {
             text: 'Calls Made'
         },
         series: [{
-            name: 'Support',
+            name: 'Calls',
             data: versionsData // data point
         }]
     };
@@ -151,7 +151,7 @@ $(function() {
         didScroll = true;
     });
 
-    setInterval(function() {// limits the positionCheck() to every 100 milli seconds
+    setInterval(function() {// limits the positionCheck() to every 150 milli seconds
         if(didScroll) {
             didScroll = false;
             animate.positionCheck();
@@ -183,13 +183,13 @@ $(function() {
             } else {
                 var scrolledTo = window.innerHeight + window.pageYOffset;
             }
-            if(animate.chart1Finished === false && $container1[0].offsetTop + 100 < scrolledTo) {
+            if(animate.chart1Finished === false && $container1[0].offsetTop + 150 < scrolledTo) {
                 animate.render1();
             }
-            if(animate.chart2Finished === false && $container2[0].offsetTop + 100 < scrolledTo) {
+            if(animate.chart2Finished === false && $container2[0].offsetTop + 150 < scrolledTo) {
                 animate.render2();
             }
-            if(animate.chart3Finished === false && $container3[0].offsetTop + 100 < scrolledTo) {
+            if(animate.chart3Finished === false && $container3[0].offsetTop + 150 < scrolledTo) {
                 animate.render3();
             }
         },

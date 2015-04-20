@@ -1,0 +1,36 @@
+.dossier-img{
+  width: 315px;
+  padding:2px;
+  border-radius:2px;
+  border:3px solid #1c7bab;
+}
+
+// #base {
+//   position:absolute;
+//   bottom: 0;
+//   background: #1c7bab;
+//   display: inline-block;
+//   height: 55px;
+//   margin-left: 20px;
+//   margin-top: 55px;
+//     position: relative;
+//     width: 315px;
+// }
+// #base:before {
+//   border-bottom: 35px solid #1c7bab;
+//   border-left: 50px solid transparent;
+//   border-right: 50px solid transparent;
+//   border-radius:2px;
+//   content: "";
+//   height: 0;
+//   left: 0;
+//   position: absolute;
+//   top: -34px;
+//   width: 0;
+// }
+.bottom-line{
+  height: 6px;
+}
+.bottom-line.dossier-blue{
+  background-color: #1c7bab;
+}
