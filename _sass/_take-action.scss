@@ -14,12 +14,18 @@
   >li{
     padding:0 75px 20px;
     position:relative;
+    @include phone{
+      padding:0 0 20px;
+    }
 
     >.panel{display:none}
 
     >.btn-md-wide{
       margin:0;
       text-align:left;
+      @include phone {
+        font-size: 16px;
+      }
     }
 
     &:nth-child(1) > .btn-md-wide{background:#094067}
@@ -43,6 +49,9 @@
       &.icon-call-congress{background-image: url('/images/action/call_congress_4_off.svg')}
       &.icon-join-discussion{background-image: url('/images/action/join_disscussion_5_off.svg')}
       &.icon-volunteer{background-image: url('/images/action/volunteer_6_off.svg')}
+      @include phone{
+        width: .01px; //hidden on phone
+      }
     }
 
 
@@ -61,9 +70,9 @@
 
     &.incomplete{
       background:transparent url('/images/action/tmp-vertical-dots.png') 32px 20px no-repeat;
-
-      .show-complete{display:none;}
+      .show-complete{display:none}
       .show-incomplete{display:initial;}
+      @include phone{background: none;} //hidden on phone
     }
 
     &.complete{

@@ -99,6 +99,7 @@ $share-bg-img: 'share-bg.jpg';
  */
 html, body {
   height: auto;
+  overflow-x: hidden;
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -415,10 +416,10 @@ a.btn-targets {
     font-size: 14px;
   }
 
-  // @include small-desktop {
-  //   padding: 8px 15px;
-  //   font-size: 12px;
-  // }
+  @include small-desktop {
+    // padding: 8px 15px;
+    font-size: 12px;
+  }
 
   // @include tablet {
   //   padding: 6px 16px;
