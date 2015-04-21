@@ -48,10 +48,10 @@
         margin-left:-20px;
         z-index:100;
         @include phone{
-          top:22px;
+          // top:22px;
         }
         @include tablet{
-          top:22px;
+          // top:22px;
         }
       }
       .fade-line{
@@ -126,6 +126,12 @@
       padding: 8px 0 8px 12px;
       border-radius: 4px;
       margin-bottom: 15px;
+    }
+    .smaller-form.form-group{
+      input[type=text], input[type=email], input[type=tel], input[type=number] {
+        font-size: 18px;
+        font-weight: 300;
+      }
     }
   }
 }

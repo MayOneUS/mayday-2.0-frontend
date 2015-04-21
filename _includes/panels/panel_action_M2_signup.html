@@ -1,0 +1,55 @@
+<div class="panel action-panel with-shield">
+  <div class="panel-icon">
+    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
+    <div class="fade-line hidden-xs hidden-sm"></div>
+  </div>
+  <div class="panel-body">
+    <h2>Ready to End Corruption</h2>
+    <p>Be part of the movement to restore our democracy. </p>
+    <form class="row no-gutter email-signup">
+      <fieldset class="col-md-12">
+
+      <div class="form-group smaller-form col-md-6 form-left">
+        <label class="control-label sr-only" for="person[first_name]">First Name</label>
+        <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+      </div>
+
+      <div class="form-group smaller-form col-md-6 form-right">
+        <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+        <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+      </div>
+
+      <div class="form-group smaller-form col-md-8 form-left">
+        <label class="control-label sr-only" for="person[email]">Email Address</label>
+        <input id="person[email]" name="person[email]" type="text" placeholder="Email Address" required="">
+      </div>
+
+      <div class="form-group smaller-form col-md-4 form-right">
+        <label class="control-label sr-only" for="person[zip]">ZIP Code</label>
+        <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP Code">
+
+      </div>
+
+      {% if !hide_volunteer %}
+      <div class="form-group smaller-form col-md-12">
+        <label class="control-label sr-only" for="person[is_volunteer]">Volunteer</label>
+          <label class="checkbox-inline" for="person[is_volunteer]-0">
+            <input type="checkbox" name="person[remote_fields][is_volunteer]" id="person[is_volunteer]-0" value="true"> Are you ready to volunteer?
+          </label>
+      </div>
+      {% endif %}
+
+      <div class="form-group cold-md-12">
+        <label class="control-label sr-only" for="singlebutton">Submit</label>
+        <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
+        <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder -->
+        <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+      </div>
+
+      </fieldset>
+    </form>
+    <div class="row skip-next">
+      <small><a href="#" title="Skip to Next Step">Skip to Next Step</a></small>
+    </div>
+  </div>
+</div>
