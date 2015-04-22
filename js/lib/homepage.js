@@ -3,7 +3,7 @@ $(function() {
 
     "use strict";
 
-    var versionsData, shared_Options, chart1_Options, chart1, chart2_Options, chart2,
+    var callsMade, houseS, senateS, shared_Options, chart1_Options, chart1, chart2_Options, chart2,
         chart3_Options, chart3,
 
         didScroll = false,
@@ -28,24 +28,59 @@ $(function() {
         }
       }
     });
-
-    versionsData = [
-        {
-            "name": "Republicans",
-            "y": 3221,
-            "color": "#c03c2f"
-        },
-        {
-            "name": "Democrats",
-            "y": 1121,
-            "color": "#146897"
-        },
-        {
-            "name": "Indpendents",
-            "y": 32,
-            "color": "#28dc4a"
-        }
-    ];
+    var data= {
+        houseS : [
+            {
+                "name": "Remaining <br>Non-Sponsors",
+                "y": 217,
+                "color": "#808080"
+            },
+            {
+                "name": "Current <br>Sponsors",
+                "y": 148,
+                "color": "#759c64"
+            },
+            {
+                "name": "Needed <br>Sponsors",
+                "y": 70,
+                "color": "#5e8cac"
+            }
+        ],
+        senateS : [
+            {
+                "name": "Remaining <br>Non-Sponsors",
+                "y": 40,
+                "color": "#808080"
+            },
+            {
+                "name": "Current <br>Sponsors",
+                "y": 0,
+                "color": "#759c64"
+            },
+            {
+                "name": "Needed <br>Sponsors",
+                "y": 60,
+                "color": "#5e8cac"
+            }
+        ],
+        callsMade : [
+            {
+                "name": "Republicans",
+                "y": 3221,
+                "color": "#c03c2f"
+            },
+            {
+                "name": "Democrats",
+                "y": 1121,
+                "color": "#146897"
+            },
+            {
+                "name": "Indpendents",
+                "y": 32,
+                "color": "#28dc4a"
+            }
+        ]
+    };
         // everything shared between the graphs
     shared_Options = {
         chart: {
@@ -68,9 +103,13 @@ $(function() {
           enabled: false 
         },
         tooltip: {
-            borderColor: 'black',
-            borderRadius: 10,
-            borderWidth: 1
+            backgroundColor: null,
+            borderWidth: 0,
+            shadow: false,
+            useHTML: true,
+            style: {
+                padding: 0
+            }
         },
         series: [{
             size: '60%',
@@ -101,9 +140,14 @@ $(function() {
         title: {
             text: 'House Support'
         },
+        tooltip: {
+            formatter: function() {
+                return 'Of 435 '+ this.series.name + '<br>' + 'Members, ' + '<br>' +  this.y + '<br>' + 'are ' + this.point.name;
+            }
+        },
         series: [{
-            name: 'Support',
-            data: versionsData // data point
+            name: 'House',
+            data: data.houseS // data point
         }]
     };
 
@@ -114,9 +158,14 @@ $(function() {
         title: {
             text: 'Senate Support'
         },
+        tooltip: {
+            formatter: function() {
+                return 'Of 100 '+ this.series.name + '<br>' + 'Members, ' + '<br>' +  this.y + '<br>' + 'are ' + this.point.name;
+            }
+        },
         series: [{
-            name: 'Support',
-            data: versionsData // data point
+            name: 'Senate',
+            data: data.senateS // data point
         }]
     };
 
@@ -129,7 +178,7 @@ $(function() {
         },
         series: [{
             name: 'Calls',
-            data: versionsData // data point
+            data: data.callsMade // data point
         }]
     };
 
@@ -165,16 +214,16 @@ $(function() {
         chart3Finished : false,
         // makes three donut charts
         render1 : function () {
-            chart1 = new Highcharts.Chart(chart1_Options);
             animate.chart1Finished = true;
+            chart1 = new Highcharts.Chart(chart1_Options);
         },
         render2 : function () {
-            chart2 = new Highcharts.Chart(chart2_Options);
             animate.chart2Finished = true;
+            chart2 = new Highcharts.Chart(chart2_Options);
         },
         render3 : function () {
-            chart3 = new Highcharts.Chart(chart3_Options);
             animate.chart3Finished = true;
+            chart3 = new Highcharts.Chart(chart3_Options);
         },
         // checks the current innerHeight of the page and renders charts when page reaches the location of the charts
         positionCheck: function () {
@@ -195,7 +244,8 @@ $(function() {
         },
         // runs charts on page load if they are in the view port currently
         pageLoad: function() {
-            var windowHeight = window.innerHeight;
+
+            var windowHeight = window.innerHeight + window.pageYOffset;
             if($container1[0].offsetTop + ($container1.height() / 2) < windowHeight) {
                 animate.render1();
             }
@@ -211,3 +261,11 @@ $(function() {
     }
 
 });
+
+// house: {total: 435, total_needed: 218, additional_needed: 70, current_cosponsors: 148}, senate: {total: 100, total_needed: 60, additional_needed: 60, current_cosponsors: 0}
+
+
+
+
+
+

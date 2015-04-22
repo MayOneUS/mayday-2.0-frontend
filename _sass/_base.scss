@@ -32,6 +32,7 @@ $color-grey-light: #cccccc;
 $color-grey-backgroud: #f0f0f0;
 $color-grey-line: #b7b7b7;
 $color-text: #5C5C5C;
+$color-dossier-blue: #1c7bab;
 
 
 
@@ -99,7 +100,7 @@ $share-bg-img: 'share-bg.jpg';
  */
 html, body {
   height: auto;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -397,6 +398,21 @@ pre {
   &.youtube {
     @include button-colors($color-youtube);
   }
+}
+.btn-mini-share {
+  &.facebook-small {
+    @include button-colors(#FFF);
+    border: solid 2px $color-facebook;
+    height: 65px;
+    width: 130px;
+  }
+  &.twitter-small {
+    @include button-colors(#FFF);
+    border: solid 2px $color-twitter;
+    height: 65px;
+    width: 130px;
+  }
+
 }
 /**
  * Mayday Button Newest Allies

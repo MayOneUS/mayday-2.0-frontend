@@ -234,7 +234,7 @@
       left: -500px;
       top: 80px;
       height: 800px;
-      opacity: .1;
+      opacity: 0;
       -ms-transform: rotate(-50deg);
       -webkit-transform: rotate(-50deg);
       transform: rotate(-50deg);
@@ -244,7 +244,7 @@
       left: 10%;
       top: -160px;
       height: 265px;
-      opacity: .1;
+      opacity: 0;
       -ms-transform: rotate(-50deg);
       -webkit-transform: rotate(-50deg);
       transform: rotate(-50deg);
@@ -254,7 +254,7 @@
       left: 1%;
       top: -70px;
       width: 600px;
-      opacity: .1;
+      opacity: 0;
       -ms-transform: rotate(35deg);
       -webkit-transform: rotate(35deg);
       transform: rotate(35deg);
@@ -264,7 +264,7 @@
       left: 25%;
       top: -200px;
       height: 350px;
-      opacity: .1;
+      opacity: 0;
       -ms-transform: rotate(35deg);
       -webkit-transform: rotate(35deg);
       transform: rotate(35deg);
@@ -274,7 +274,7 @@
       left: 25%;
       top: 260px;
       height: 350px;
-      opacity: .1;
+      opacity: .01;
       -ms-transform: rotate(35deg);
       -webkit-transform: rotate(35deg);
       transform: rotate(35deg);
@@ -304,7 +304,7 @@
       left: 76%;
       top: -170px;
       height: 600px;
-      opacity: .1;
+      opacity: 0;
       -ms-transform: rotate(40deg);
       -webkit-transform: rotate(40deg);
       transform: rotate(40deg);
@@ -542,4 +542,11 @@
 }
 .chart-holder {
   height: 400px;
+}
+.highcharts-tooltip>span {
+  background: rgb(255,255,255);
+  border: 1px solid silver;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #888;
+  padding: 15px;
 }
