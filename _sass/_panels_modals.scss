@@ -135,7 +135,11 @@
     }
   }
 }
-
+.fist-action .jubmbo{
+  input[type=text], input[type=email], input[type=tel], input[type=number] {
+    padding: 4px 0 4px 12px;
+  }
+}
 .panel-mayday-counters {
   height: 100%;
   position: relative;

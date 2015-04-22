@@ -141,7 +141,6 @@
   padding: 0px 15px 30px 25px;
   box-shadow: 1px 1px 2px #eee;
   display: block;
-  position: fixed;
   z-index: 10;
   color: $color-text;
   div{
@@ -151,7 +150,7 @@
       width: 15px;
       background:url('/images/plan_side_star_off.svg') center center no-repeat;
     }
-    .sticky-star.active{
+    .sticky-star.active, .sticky-star.bottom{
       background:url('/images/plan_side_star_on.svg') center center no-repeat;
     }
     .sticky-text{
@@ -159,7 +158,26 @@
       line-height: 140%;
       color: $color-text;
     }
-    .sticky-text.active{
+    // .sticky-text a {
+    //   font-weight: 400;
+    //   line-height: 140%;
+    //   color: $color-text;
+    //   text-decoration: none;
+
+    //   &:visited {
+    //     color: $color-text;
+    //   }
+
+    //   &:hover {
+    //     color: $color-text;
+    //     text-decoration: none;
+    //   }
+    //   &:active {
+    //     color: $color-text;
+    //     text-decoration: none;
+    //   }
+    // }
+    .sticky-text.active, .sticky-text.bottom{
       color: $color-brand;
     }
   }
@@ -169,6 +187,25 @@
   @include tablet{
     margin-left: -7%;
   }
+}
+.sticky-tree.stuck{
+  position: fixed;
+}
+.sticky-tree.unstuck{
+  position:absolute;
+  bottom:15px;
+}
+#stick-group{
+  visibility: visible;
+}
+#stick-group.hideIt{
+  visibility: hidden;
+}
+#free-group{
+  visibility: hidden;
+}
+#free-group.show {
+  visibility: visible;
 }
 .state .col-md-2 {
   width: 20%;
