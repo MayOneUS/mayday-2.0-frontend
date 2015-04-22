@@ -385,7 +385,7 @@ pre {
       font-size: 16px;
     }
   }
-
+  
   &.facebook {
     @include button-colors($color-facebook);
   }
@@ -400,6 +400,11 @@ pre {
   }
 }
 .btn-mini-share {
+  @include button-colors($color-dossier-blue);
+  &.make-call{
+    height: 65px;
+    width: 260px;
+  }
   &.facebook-small {
     @include button-colors(#FFF);
     border: solid 2px $color-facebook;
