@@ -1,4 +1,11 @@
+
 .spacer-opening{
+  padding-top:60px;
+  padding-bottom:30px;
+  @include small-desktop{
+    padding-top:20px;
+    padding-bottom:10px;
+  }
   @include phone{
     padding-top:30px;
     padding-bottom:15px;
@@ -8,29 +15,52 @@
     padding-bottom:15px;
   }
 }
-.full-bg-imgage {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.89);
-  background-image: url("../images/temp-img/screenshot_04.jpg");
+
+///////////////////////////////////////////////
+//
+// where spaceing for jumbotron is set for -45px
+// full-bg-imgage span the whole page
+// banner image is in the 1170 page margin
+
+.full-bg-imgage, .banner-image{
+  background-color: #818181;
   background-repeat: no-repeat;
-  background-size: 200%;
   overflow: hidden;
-  color: #DBDBDB;
+}
+.full-bg-imgage {
+  margin-top: -45px !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+  width: 100%;
+  background-image: url("../images/temp-img/screenshot_04_flipped.jpg");
+  background-size: 200%;
+  @include phone{
+    margin-top: -50px !important;
+  }
 }
 .banner-image {
-  background-color: rgba(0, 0, 0, 0.89);
-  background-image: url("../images/temp-img/screenshot_04.jpg");
-  background-repeat: no-repeat;
+  padding-top:30px;
+  padding-bottom:15px;
+  background-image: url("../images/temp-img/screenshot_04_flipped.jpg");
   background-size: 100%;
-  overflow: hidden;
-  color: #DBDBDB;
 }
-
+.index-logo-small{
+  @include phone{
+    height: 50px;
+    margin: 0 auto;
+  }
+}
 .mini-panel-text{
   padding-left:0 !important;
   letter-spacing: .2px;
   line-height: 22px;
   font-size: 16px;
+  @include tablet{
+    margin-top: 8px;
+  }
+  @include phone{
+    font-size: 18px;
+  }
 }
 .homepage-panel{
   position: relative;
@@ -42,6 +72,14 @@
   .container{
     padding-top:0;
     padding-bottom:0;
+  }
+  .logo-img-center{
+    @include phone{
+      height: 45px;
+      display:block;
+      margin:0 auto 4px;
+
+    }
   }
 
   .homepage-panel-body{
@@ -180,6 +218,108 @@
       transform: rotate(-15deg);
     }
   }
+  &.dossier-star {
+    .bg-star:first-of-type {
+      position: absolute;
+      left: -400px;
+      top: -250px;
+      height: 650px;
+      opacity: .1;
+      -ms-transform: rotate(-30deg);
+      -webkit-transform: rotate(-30deg);
+      transform: rotate(-30deg);
+    }
+    .bg-star:nth-of-type(2) {
+      position: absolute;
+      left: -500px;
+      top: 80px;
+      height: 800px;
+      opacity: 0;
+      -ms-transform: rotate(-50deg);
+      -webkit-transform: rotate(-50deg);
+      transform: rotate(-50deg);
+    }
+    .bg-star:nth-of-type(3) {
+      position: absolute;
+      left: 10%;
+      top: -160px;
+      height: 265px;
+      opacity: 0;
+      -ms-transform: rotate(-50deg);
+      -webkit-transform: rotate(-50deg);
+      transform: rotate(-50deg);
+    }
+    .bg-star:nth-of-type(4) {
+      position: absolute;
+      left: 1%;
+      top: -70px;
+      width: 600px;
+      opacity: 0;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .bg-star:nth-of-type(5) {
+      position: absolute;
+      left: 25%;
+      top: -200px;
+      height: 350px;
+      opacity: 0;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .bg-star:nth-of-type(6) {
+      position: absolute;
+      left: 25%;
+      top: 260px;
+      height: 350px;
+      opacity: .01;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .bg-star:nth-of-type(7) {
+      position: absolute;
+      left: 35%;
+      top: 100px;
+      height: 200px;
+      opacity: .1;
+      -ms-transform: rotate(-50deg);
+      -webkit-transform: rotate(-50deg);
+      transform: rotate(-50deg);
+    }
+    .bg-star:nth-of-type(8) {
+      position: absolute;
+      left: 33%;
+      top: -180px;
+      height: 850px;
+      opacity: .1;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .bg-star:nth-of-type(9) {
+      position: absolute;
+      left: 76%;
+      top: -170px;
+      height: 600px;
+      opacity: 0;
+      -ms-transform: rotate(40deg);
+      -webkit-transform: rotate(40deg);
+      transform: rotate(40deg);
+    }
+    .bg-star:nth-of-type(10) {
+      position: absolute;
+      left: 82%;
+      top: 275px;
+      height: 200px;
+      opacity: .1;
+      -ms-transform: rotate(-15deg);
+      -webkit-transform: rotate(-15deg);
+      transform: rotate(-15deg);
+    }
+  }
 
   &.starless{
   }
@@ -277,39 +417,51 @@
     border: none;
   }
 }
-
+// call-box is where the number of calls is displayed
+// note line-height plays a part in creating their symmetry
+.call-box{}
 .call-box .col-sm-1{ 
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 45px;
+  line-height: 45px;
   font-weight: 400;
   color: $color-dark-red;
   width: 100px;
-
 }
 .call-box .col-sm-2{ 
   width: 125px;
   padding-right:0;
+  @include tablet{
+    width: 400px;
+  }
 }
 .call-box-thin{
+  padding-left:0 !important;
   font-size: 15px;
   font-weight: 300;
   @include small-desktop{
-    font-size:20px;
+    font-size:17px;
+  }
+  @include phone{
+    font-size: 18px;
   }
 }
 .call-box-thick{
+  padding-left:0 !important;
   font-size: 25px;
   font-weight: 400;
   line-height: 14px;
   @include small-desktop{
-    line-height: 20px;
-    margin-bottom: 5px;
+    line-height: 15px;
+    font-size: 20px;
+  }
+  @include phone{
+    font-size: 20px;
   }
 }
-
+// only white link I know of consider moving
 .white-link{
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
   text-decoration: underline;
   &:visited {
     color: #fff;
@@ -320,20 +472,56 @@
 .remove-padding-photo{
   padding: 0 !important;
 }
-.remove-padding-text{
-  padding: 0 !important;
+.remove-padding-photo .remove-padding-text{
+  padding-left: 5px !important;
+  @include tablet{
+    padding-left: 15px !important;;
+  }
+  @include phone{
+    padding-left: 15px !important;;
+  }
 }
-.js-legislators{
+
+.remove-padding-photo-small{
+  @include tablet{
+    padding: 0 !important;
+  }
+  @include phone{
+    padding: 0 !important;
+  }
+}
+
+.js-legislators{ 
   padding-top:45px;
   h2{
-    padding-top: 8px;
-    font-size: 20px;
+    padding-top: 4px;
+    font-size: 24px;
     font-weight: 400;
+    @include small-desktop{
+      font-size: 20px;
+    }
+    @include small-desktop{
+      font-size: 20px;
+    }
+    @include phone{
+      padding-top: 8px;
+      font-size: 18px;
+    }
   }
   h4{
-    margin-top:4px;
-    font-size: 14px;
+    color: $color-brand;
+    margin-top:7px;
+    font-size: 17px;
+    @include small-desktop{
+      font-size: 14px;
+    }
+    @include phone{
+      font-size: 14px;
+    }
   }
+}
+.col-xs-12.bottom-margin{
+  margin-bottom:15px;
 }
 .background-sqaure{
   height: 100px;
@@ -343,4 +531,22 @@
   background-position: center;
   background-size: 100%;
   background-color:$color-grey;
+  @include small-desktop{
+    height: 90px;
+    width: 90px;
+  }
+
+}
+.mayday-quotes p{
+  margin:45px 0 30px;
+}
+.chart-holder {
+  height: 400px;
+}
+.highcharts-tooltip>span {
+  background: rgb(255,255,255);
+  border: 1px solid silver;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #888;
+  padding: 15px;
 }

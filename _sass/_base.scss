@@ -32,6 +32,7 @@ $color-grey-light: #cccccc;
 $color-grey-backgroud: #f0f0f0;
 $color-grey-line: #b7b7b7;
 $color-text: #5C5C5C;
+$color-dossier-blue: #1c7bab;
 
 
 
@@ -99,6 +100,7 @@ $share-bg-img: 'share-bg.jpg';
  */
 html, body {
   height: auto;
+  // overflow-x: hidden;
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -383,7 +385,7 @@ pre {
       font-size: 16px;
     }
   }
-
+  
   &.facebook {
     @include button-colors($color-facebook);
   }
@@ -397,27 +399,48 @@ pre {
     @include button-colors($color-youtube);
   }
 }
+.btn-mini-share {
+  @include button-colors($color-dossier-blue);
+  &.make-call{
+    height: 65px;
+    width: 260px;
+  }
+  &.facebook-small {
+    @include button-colors(#FFF);
+    border: solid 2px $color-facebook;
+    height: 65px;
+    width: 130px;
+  }
+  &.twitter-small {
+    @include button-colors(#FFF);
+    border: solid 2px $color-twitter;
+    height: 65px;
+    width: 130px;
+  }
+
+}
 /**
  * Mayday Button Newest Allies
  */
 
 a.btn-targets {
-  margin-top:8px;
-  background-color: #adabac;
-  border-color: #adabac;
+  margin-top:12px;
+  background-color: #b0aeaf;
+  border-color: #b0aeaf;
   text-transform: uppercase;
-  color: #fff;
-  font-weight: 300;
+  color: #fff !important;
+  font-weight: 400;
+  letter-spacing: 1px;
 
   @include large-desktop {
-    padding: 8px 15px;
+    padding: 6px 28px;
     font-size: 14px;
   }
 
-  // @include small-desktop {
-  //   padding: 8px 15px;
-  //   font-size: 12px;
-  // }
+  @include small-desktop {
+    // padding: 8px 15px;
+    font-size: 12px;
+  }
 
   // @include tablet {
   //   padding: 6px 16px;
@@ -429,11 +452,12 @@ a.btn-targets {
   //   font-size: 14px;
   // }
   &:visited {
-    color: #fff;
+    color: #fff !important;
     background-color: #adabac;
     border-color: #adabac;
   }
   &:hover {
+    color: #fff !important;
     background-color: $color-grey-light;
     border-color: $color-grey-light;
   }

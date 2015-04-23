@@ -1,0 +1,87 @@
+.dossier-img{
+  width: 315px;
+  padding:2px;
+  border-radius:2px;
+  border:3px solid $color-dossier-blue;
+}
+.dossier-page{
+  h2{
+    font-weight: 400;
+    color: $color-dossier-blue;
+    font-size: 34px;
+    letter-spacing: 1.5px;
+  }
+  p{
+    font-weight: 400;
+  }
+  .lead-title{
+    margin-top: 0;
+  }
+  .links{
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .page-content{
+    margin-top: 18px;
+    .election-info{
+      margin-top: 0;
+      color: #9b9c9e;
+      font-size: 14px;
+    }
+  }
+  .spacer{
+    padding-left: 15px;
+  }
+}
+
+// #base {
+//   position:absolute;
+//   bottom: 0;
+//   background: $color-dossier-blue;
+//   display: inline-block;
+//   height: 55px;
+//   margin-left: 20px;
+//   margin-top: 55px;
+//     position: relative;
+//     width: 315px;
+// }
+// #base:before {
+//   border-bottom: 35px solid $color-dossier-blue;
+//   border-left: 50px solid transparent;
+//   border-right: 50px solid transparent;
+//   border-radius:2px;
+//   content: "";
+//   height: 0;
+//   left: 0;
+//   position: absolute;
+//   top: -34px;
+//   width: 0;
+// }
+.bottom-line{
+  height: 6px;
+}
+.bottom-line.dossier-blue{
+  background-color: $color-dossier-blue;
+}
+.talley{
+  height: 45px;
+}
+.dossier-triangle-up {
+  position: absolute;
+  top:-40;
+  left: 50%;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-left: -1000px;
+  border-width: 0 1000px 20px 1000px;
+  border-color: $color-dossier-blue $color-dossier-blue transparent $color-dossier-blue;
+  /* force anti-aliasing */
+  -moz-transform: scale(.9999);
+  -webkit-transform: scale(.9999);
+  -ms-transform: scale(.9999);
+  -o-transform: scale(.9999);
+  transform: scale(.9999);
+}

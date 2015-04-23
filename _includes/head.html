@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% if page.offSite %}{% assign root_path = site.url %}{% endif %}
   {% assign page_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
@@ -36,5 +36,6 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <script src="{{ root_path }}/js/lib/ICanHaz.min.js"></script>
+  <script src="{{ root_path }}/js/lib/highcharts.js"></script>
   {{ custom_css }}
 </head>

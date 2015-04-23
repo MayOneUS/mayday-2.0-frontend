@@ -47,7 +47,7 @@
           width: 380px;
         }
         @include small-desktop {
-          width: 434px;
+          width: 389px;
         }
         @include large-desktop {
           width: 434px;
@@ -182,6 +182,9 @@
       display: inline-block;
       margin-left: -10px;
       width: 40%;
+      @include tablet{
+        width: 50%;
+      }
     }
     .right-links {
       float: right;
@@ -189,6 +192,13 @@
       margin-right: 0;
       display: inline-block;
       width: 40%;
+      @include small-desktop{
+        font-size: 18px;
+      }
+      @include tablet{
+        font-size: 18px;
+        width: 50%;
+      }
     }
     a.donate-link{
       @include donate-button($color-dark-red);
@@ -196,6 +206,7 @@
   }
 
   .bottom-taper {
+    z-index: 1;
     position: relative;
     overflow: hidden;
     width: 100%;

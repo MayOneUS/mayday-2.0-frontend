@@ -127,34 +127,85 @@
   padding-right:0;
   font-size: 12px;
 }
-.sticky{
-  margin-left: 15px;
+// .sticky-tree{
+//   ul {
+//     list-style-image:url('/images/plan_side_star_off.svg');
+//   }
+// }
+.sticky-tree ul>li.list-unstyled>a.star{background: transparent url('/images/plan_side_star_off.svg') 2px 2px no-repeat; padding-left:20px; background-size:20px 20px;}
+
+.sticky-tree{
+  margin-left: -10px;
+  background:#fff; 
+  border-radius:5px;
+  padding: 0px 15px 30px 25px;
+  box-shadow: 1px 1px 2px #eee;
   display: block;
-  position: fixed;
   z-index: 10;
+  color: $color-text;
   div{
     width: 145px;
-    .star-logo{
+    .sticky-star{
       height: 15px;
       width: 15px;
+      background:url('/images/plan_side_star_off.svg') center center no-repeat;
     }
-    .star-logo.inactive{
-      background:#fff url('/images/plan_side_star_off.svg') center center no-repeat;
-    }
-    .star-logo.active{
-      background:#fff url('/images/plan_side_star_on.svg') center center no-repeat;
+    .sticky-star.active, .sticky-star.bottom{
+      background:url('/images/plan_side_star_on.svg') center center no-repeat;
     }
     .sticky-text{
       font-weight: 400;
       line-height: 140%;
-    }
-    .sticky-text.inactive{
       color: $color-text;
     }
-    .sticky-text.active{
+    // .sticky-text a {
+    //   font-weight: 400;
+    //   line-height: 140%;
+    //   color: $color-text;
+    //   text-decoration: none;
+
+    //   &:visited {
+    //     color: $color-text;
+    //   }
+
+    //   &:hover {
+    //     color: $color-text;
+    //     text-decoration: none;
+    //   }
+    //   &:active {
+    //     color: $color-text;
+    //     text-decoration: none;
+    //   }
+    // }
+    .sticky-text.active, .sticky-text.bottom{
       color: $color-brand;
     }
   }
+  @include small-desktop{
+    margin-left: -3%;
+  }
+  @include tablet{
+    margin-left: -7%;
+  }
+}
+.sticky-tree.stuck{
+  position: fixed;
+}
+.sticky-tree.unstuck{
+  position:absolute;
+  bottom:15px;
+}
+#stick-group{
+  visibility: visible;
+}
+#stick-group.hideIt{
+  visibility: hidden;
+}
+#free-group{
+  visibility: hidden;
+}
+#free-group.show {
+  visibility: visible;
 }
 .state .col-md-2 {
   width: 20%;

@@ -48,10 +48,10 @@
         margin-left:-20px;
         z-index:100;
         @include phone{
-          top:22px;
+          // top:22px;
         }
         @include tablet{
-          top:22px;
+          // top:22px;
         }
       }
       .fade-line{
@@ -127,9 +127,19 @@
       border-radius: 4px;
       margin-bottom: 15px;
     }
+    .smaller-form.form-group{
+      input[type=text], input[type=email], input[type=tel], input[type=number] {
+        font-size: 18px;
+        font-weight: 300;
+      }
+    }
   }
 }
-
+.fist-action .jubmbo{
+  input[type=text], input[type=email], input[type=tel], input[type=number] {
+    padding: 4px 0 4px 12px;
+  }
+}
 .panel-mayday-counters {
   height: 100%;
   position: relative;
