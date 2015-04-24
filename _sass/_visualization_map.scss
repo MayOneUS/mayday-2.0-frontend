@@ -1,0 +1,333 @@
+
+.voxel-map * {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  -webkit-tap-highlight-color: transparent;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      box-sizing: border-box;
+}
+
+.voxel-map {
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.voxel-map .clear {
+  clear: both;
+}
+
+.voxel-map select {
+  font-size: 24px;
+  margin: 0 0 32px;
+}
+
+.voxel-map .voxels {
+  position: relative;
+  top: 12px;
+  left: 0;
+  height: 100px;
+}
+
+.voxel-map .voxels .label {
+  color: #fff;
+  letter-spacing: 0;
+  font-size: 15px;
+  line-height: 28px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+  width: 34px;
+}
+
+.voxel-map[size-modifier="0.75"] .voxels .label {
+  font-size: 14px;
+  line-height: 21px;
+  width: 26px;
+}
+
+.voxel-map[size-modifier="0.5"] .voxels .label {
+  font-size: 9px;
+  line-height: 16px;
+  width: 16px;
+}
+
+.voxel-map[size-modifier="0.25"] .voxels .label {
+  font-size: 5px;
+  line-height: 24px;
+  width: 7px;
+}
+
+.voxel-map .voxels .voxel {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+
+  animation: fadeInAndMoveUpdwards .4s forwards ease-in-out;
+  -webkit-animation: fadeInAndMoveUpdwards .4s forwards ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAndMoveUpdwards {
+  from {
+    opacity: 0;
+    transform: translate(0, 32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInAndMoveUpdwards {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(0, 32px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+.voxel-map .voxel svg {
+  height: 66px;
+  width: 66px;
+}
+
+.voxel-map .voxels .voxel svg polygon {
+  -webkit-transition: fill 0.4s;
+      transition: fill 0.4s;
+}
+
+.voxel-map .voxel[color=blue] svg polygon.front {
+  fill: #5e8cac;
+}
+
+.voxel-map .voxel[color=blue] svg polygon.left {
+  fill: #81aac1;
+}
+
+.voxel-map .voxel[color=blue] svg polygon.bottom {
+  fill: #385768;
+}
+
+.voxel-map .voxel[color=blue][dark] svg polygon.front {
+  fill: #385467;
+}
+
+.voxel-map .voxel[color=blue][dark] svg polygon.left {
+  fill: #4d6674;
+}
+
+.voxel-map .voxel[color=blue][dark] svg polygon.bottom {
+  fill: #22343e;
+}
+
+.voxel-map .voxel[color=green] svg polygon.front {
+  fill: #759c64;
+}
+
+.voxel-map .voxel[color=green] svg polygon.left {
+  fill: #96af8b;
+}
+
+.voxel-map .voxel[color=green] svg polygon.bottom {
+  fill: #355126;
+}
+
+.voxel-map .voxel[color=green][dark] svg polygon.front {
+  fill: #465e3c;
+}
+
+.voxel-map .voxel[color=green][dark] svg polygon.left {
+  fill: #5a6953;
+}
+
+.voxel-map .voxel[color=green][dark] svg polygon.bottom {
+  fill: #203117;
+}
+
+.voxel-map .voxel[color=gray] svg polygon.front {
+  fill: #ccc;
+}
+
+.voxel-map .voxel[color=gray] svg polygon.left {
+  fill: #ddd;
+}
+
+.voxel-map .voxel[color=gray] svg polygon.bottom {
+  fill: #bbb;
+}
+
+.voxel-map .voxel[color=gray][dark] svg polygon.front {
+  fill: #7a7a7a;
+}
+
+.voxel-map .voxel[color=gray][dark] svg polygon.left {
+  fill: #858585;
+}
+
+.voxel-map .voxel[color=gray][dark] svg polygon.bottom {
+  fill: #707070;
+}
+
+.voxel-map .voxel svg polygon.border-top,
+.voxel-map .voxel svg polygon.border-right,
+.voxel-map .voxel svg polygon.border-bottom,
+.voxel-map .voxel svg polygon.border-left {
+  display: none;
+  fill: #fff;
+}
+
+.voxel-map .voxel.has-border-top svg polygon.border-top,
+.voxel-map .voxel.has-border-right svg polygon.border-right,
+.voxel-map .voxel.has-border-bottom svg polygon.border-bottom,
+.voxel-map .voxel.has-border-left svg polygon.border-left {
+  display: block;
+}
+
+.voxel-map .key {
+  padding: 128px 0 64px;
+}
+
+.voxel-map .key .color {
+  color: #889;
+  float: left;
+  font-family: Verdana,sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 100;
+  text-align: center;
+  width: 176px;
+}
+
+.voxel-map .voxel-popover {
+  background-color: rgba(200, 200, 208, 0.84);
+  display: none;
+  font-family: Arial, sans-serif;
+  padding: 12px;
+  position: absolute;
+  width: 308px;
+  z-index: 9999999;
+
+  animation: fadeIn .4s forwards ease-in-out;
+  -webkit-animation: fadeIn .4s forwards ease-in-out;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      box-sizing: border-box;
+}
+
+.voxel-map .voxel-popover .left {
+  color: #39383d;
+  float: left;
+  width: 116px;
+}
+
+.voxel-map .voxel-popover .left .photo {
+  height: 120px;
+  opacity: 0;
+  padding: 0 0 6px;
+  width: 99px;
+
+  -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+}
+
+.voxel-map .voxel-popover .left .bubble {
+  float: left;
+  opacity: 0;
+  padding: 8px 8px 10px 4px;
+
+  -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+}
+
+.voxel-map .voxel-popover .left .title {
+}
+
+.voxel-map .voxel-popover .left .code {
+}
+
+.voxel-map .voxel-popover .right {
+  width: 168px;
+  float: right;
+}
+
+.voxel-map .voxel-popover .right .name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #51395f;
+}
+
+.voxel-map .voxel-popover .right .description {
+  color: #38373d;
+  font-size: 12px;
+  margin: 6px 0 0;
+}
+
+.voxel-map .voxel-popover .right .button {
+  background-color: #523d5e;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 0;
+  margin: 10px 0 0;
+  text-align: center;
+  width: 168px;
+}
+
+.voxel-map .voxel-popover .arrow {
+  background-image: url(/images/map/arrow-left.png);
+  background-repeat: no-repeat;
+  background-size: 42px 42px;
+  bottom: -42px;
+  height: 42px;
+  left: 0;
+  position: absolute;
+  width: 42px;
+  pointer-events: none;
+}
+
+.voxel-map .voxel-popover.right {
+  margin: 0 0 0 -307px;
+}
+
+.voxel-map .voxel-popover.right .arrow {
+  background-image: url(/images/map/arrow-right.png);
+  left: auto;
+  right: 0;
+}
+
+/* IE9 */
+.voxel-map.ie9 .voxels .voxel,
+.voxel-map.ie9 .voxels .voxel-popover .photo {
+  opacity: 1 !important;
+}
