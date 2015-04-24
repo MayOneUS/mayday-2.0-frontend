@@ -30,6 +30,9 @@
   top: 12px;
   left: 0;
   height: 100px;
+
+  -webkit-transition: opacity 0.9s;
+          transition: opacity 0.9s;
 }
 
 .voxel-map .voxels .label {
@@ -64,11 +67,7 @@
 
 .voxel-map .voxels .voxel {
   cursor: pointer;
-  opacity: 0;
   position: absolute;
-
-  animation: fadeInAndMoveUpdwards .4s forwards ease-in-out;
-  -webkit-animation: fadeInAndMoveUpdwards .4s forwards ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -88,30 +87,6 @@
 
   to {
     opacity: 1;
-  }
-}
-
-@keyframes fadeInAndMoveUpdwards {
-  from {
-    opacity: 0;
-    transform: translate(0, 32px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-
-@-webkit-keyframes fadeInAndMoveUpdwards {
-  from {
-    opacity: 0;
-    -webkit-transform: translate(0, 32px);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate(0, 0);
   }
 }
 
@@ -213,7 +188,16 @@
 }
 
 .voxel-map .key {
-  padding: 128px 0 64px;
+  overflow: hidden;
+  padding: 48px 0;
+
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+}
+
+.voxel-map .loading {
+  color: #0d3960;
+  font-size: 24px;
 }
 
 .voxel-map .key .color {
