@@ -1,6 +1,8 @@
 // voxel-map.js
 function VoxelMap(params) {
   this.$el = params.$el;
+  this.$key = this.$el.find('.key');
+  this.$loading = this.$el.find('.loading');
   this.$popover = this.$el.find('.voxel-popover');
   this.$select = this.$el.find('select');
   this.$voxels = this.$el.find('.voxels');
@@ -186,6 +188,16 @@ VoxelMap.prototype.sendRequest = function(url) {
         label: label,
       });
     }
+
+    this.$key.css({
+      opacity: 1
+    });
+
+    this.$loading.remove();
+
+    this.$voxels.css({
+      opacity: 1
+    });
   }.bind(this);
 };
 
