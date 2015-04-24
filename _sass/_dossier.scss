@@ -1,4 +1,6 @@
-
+.page-open{
+  padding-top:40px;
+}
 .dossier-page{
   margin-top: -45px;
   h2{
@@ -31,7 +33,9 @@
     }
   }
   .spacer{
-    padding-left: 15px;
+    padding: 0 0 15px 15px;
+    font-size: 22px;
+    font-weight: 400;
   }
   .bottom-line, .top-line-left{
     height: 6px;
@@ -41,7 +45,7 @@
   }
 }
 .dossier-page.with-us-true{
-  h2{
+  h2,.spacer{
     color: $color-dossier-blue;
   }
   .dossier-img{
@@ -52,7 +56,7 @@
   }
 }
 .dossier-page.with-us-false{
-  h2{
+  h2,.spacer{
     color: $color-dossier-red;
   }
   .dossier-img{
@@ -77,4 +81,10 @@
 }
 .talley{
   height: 45px;
+}
+.spacer .col-md-3,.spacer .col-md-9{
+  padding:0
+}
+.triangle-up .leg{
+  margin-top: 45px;
 }

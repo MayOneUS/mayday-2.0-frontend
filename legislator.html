@@ -10,6 +10,9 @@ permalink: /legislator/
 <script id="legislator_template" type="text/html">
 <div class="dossier-page">
   <div class="top-line-left"></div>
+  <div class="bottom-taper hidden-xs">
+    <div class="triangle-up leg"></div>
+  </div>
   <div class="homepage-panel dossier-star">
     <img class="bg-star" src={{ background_img }}>
     <img class="bg-star" src={{ background_img }}>
@@ -22,7 +25,7 @@ permalink: /legislator/
     <img class="bg-star" src={{ background_img }}>
     <img class="bg-star" src={{ background_img }}>
     <div class="container gutter-justphone">
-      <div class="row">
+      <div class="row page-open">
         <div class="col-md-4 col-sm-3 col-xs-12">
           <div>
             <img class="dossier-img" src="{{ image_url }}" alt="${{ name }} Headshot">
@@ -42,9 +45,19 @@ permalink: /legislator/
               <p class="election-info">First Elected: {{temp_date}} Next Election: {{temp_date}}</p>
               <p>{{ temp_message }}</p>
             </div>
-            <div class="col-md-5 col-xs-12 spacer">
-              <img class="talley"src="/images/action/check.svg" alt="">
-              <span>Political Money Reform Proposal</span>
+            <div class="col-md-5 col-xs-12 spacer ">
+              <img class="col-md-3 talley"src="{{ checked_box_img }}" alt="">
+              <span class="col-md-9">Political Money Reform Proposal</span>
+            </div>
+            <div class="col-md-5 col-xs-12 spacer ">
+              <div class="col-md-3 talley">
+                <img src="{{ l_d.checked_box_img2 }}" alt="">
+              </div>
+              <span class="col-md-9"></span>
+            </div>
+            <div class="col-md-5 col-xs-12 spacer ">
+              <img class="col-md-3 talley"src="{{ checked_box_img }}" alt="">
+              <span class="col-md-9">Political Money Reform Proposal</span>
             </div>
           </div>
 
@@ -87,6 +100,7 @@ permalink: /legislator/
     var bioguide_id = getParameterByName('bioguide_id'),
         status = '';
     $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, function(legislator_data){
+      console.log(legislator_data);
       var l_d = legislator_data;
       l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
       l_d.temp_message ='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi officia laboriosam impedit voluptate, voluptatibus tempora quod! Assumenda sint dolorem harum libero, nihil odit dignissimos accusamus sequi architecto obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis necessitatibus tenetur itaque praesentium voluptatibus voluptas nostrum expedita accusantium, rerum, suscipit qui vero cupiditate quidem dolorum ullam. Possimus voluptates quisquam quo!';
@@ -99,12 +113,15 @@ permalink: /legislator/
         l_d.icon_status = 'up';
         l_d.share_message = 'Thanks';
         l_d.tail_message = 'Say Thanks ' + l_d.title + ' ' + l_d.name +'!';
+        l_d.checked_box_img = '/images/call-page/checked_box.svg';
       }else{
         status = false;
         l_d.with_message = 'doesn\'t support';
         l_d.icon_status = 'down';
         l_d.share_message = 'Demand Support From';
         l_d.tail_message = 'Tell ' + l_d.short_title +' ' + l_d.name + ' to Support Reform!';
+        l_d.checked_box_img2 = false;
+        l_d.checked_box_img = '/images/call-page/red_box.svg';
       }
 
       console.log("test",l_d.test)
