@@ -7,7 +7,7 @@
     <h2>Take Action: Call Congress</h2>
     <div class="row">
       <p>Join the Mayday team of Citizen Lobbyists fighting together for fundamental reform.</p>
-      <form class="join">
+      <form class="join" id="js-form-call-congress">
         <div class="row">
           <div class="col-md-8">
             <div class="form-group"><input type="tel" name="person[phone]" placeholder="Phone Number" required/></div>
@@ -26,3 +26,15 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $('#js-form-call-congress').on('submit', function(e){
+      e.preventDefault();
+      $.post('{{site.services_url}}/calls', $(e.target).serialize(), function(data){
+        console.log('display targets from:',data);
+        $(e.target).find('button.btn').text('calling');
+      });
+    });
+  });
+</script>
