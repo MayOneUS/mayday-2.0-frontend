@@ -391,8 +391,6 @@ VoxelMap.prototype.addActionListeners = function() {
 
   this.$voxels.on('click', '.voxel-popover a', function(e) {
     e.stopPropagation();
-
-    console.log('a');
   }.bind(this));
 
   this.$voxels.on('click', function(e) {
