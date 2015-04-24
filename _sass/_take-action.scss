@@ -19,6 +19,7 @@
     }
 
     >.panel{display:none}
+    .thanks-message{display:none}
 
     >.btn-md-wide{
       margin:0;
@@ -80,8 +81,16 @@
       .show-incomplete{display:none;}
       .panel{background:#eee;}
       >.btn-md-wide{background:$color-grey;}
+      &.active.thanked{
+        .panel-body{display:none;}
+        .thanks-message{display:initial;overflow:hidden;}
+      }
     }
 
     &:last-child{background:none;}
   } // li
+}
+
+#js-targets{
+  text-align: left;
 }

@@ -6,7 +6,7 @@
   <div class="panel-body">
     <h2>Sign up for Updates</h2>
     <p>Be part of the movement to restore our democracy. </p>
-    <form class="row email-signup">
+    <form class="row" id="js-sign-up-form">
       <fieldset class="col-md-12">
 
       <div class="form-group col-md-6">
@@ -48,8 +48,29 @@
 
       </fieldset>
     </form>
+    {% if !hide_next %}
     <div class="row skip-next">
-      <small><a href="#" title="Skip to Next Step">Skip to Next Step</a></small>
+      <small><a href="#" title="Skip to Next Step" class="next">Skip to Next Step</a></small>
     </div>
+    {% endif %}
   </div>
 </div>
+
+<script>
+  $('#js-sign-up-form').on('submit', function(e){
+    e.preventDefault();
+    $form = $(e.target);
+    $.post('{{site.services_url}}/people', $(e.target).serialize(), function(data){
+      $form.find('button.btn').text('Loading..');
+    }).done(function(){
+      if(location.pathname == '/take-action/'){
+        $next = $form.parents('li').next();
+        $parent = $form.parents('li');
+        setAsComplete($parent);
+        makeActive($next);
+      }else{
+        location = '/take-action/#get-educated'
+      }
+    });
+  });
+</script>

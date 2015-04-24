@@ -22,19 +22,43 @@
       </form>
     </div>
     <div class="row skip-next">
-      <small><a href="#" title="Skip to Next Step">Skip to Next Step</a></small>
+      <small><a href="#" title="I completed this step" class="done">I Did This!</a> or <a href="#" class="next" title="Skip to Next Step">Skip to Next Step</a></small>
     </div>
   </div>
+  <div class="panel-body thanks-message">
+    <!-- <div class="row"> -->
+      <h2>Thanks for calling congress!</h2>
+      <p>You should receive a phone call to the number you shared momentarily.  You will be connected to the following representatives:</p>
+      <ul id="js-targets" class="col-md-10 center-block"></ul>
+    <!-- </div> -->
+  </div>
 </div>
+
+{% raw %}
+<script id="call_target_template" type="text/html">
+<li>
+  <a href="/legislators?bioguid_id={{ bioguid_id}}" title="">{{party}} {{title}} {{name}} {{party}}-{{state}} {{display_district}}</a>
+</li>
+</script>
+{% endraw %}
 
 <script>
   $(document).ready(function(){
     $('#js-form-call-congress').on('submit', function(e){
       e.preventDefault();
-      $.post('{{site.services_url}}/calls', $(e.target).serialize(), function(data){
+      $form = $(e.target);
+      $.post('{{site.services_url}}/calls', $form.serialize(), function(data){
         console.log('display targets from:',data);
-        $(e.target).find('button.btn').text('calling');
-      });
-    });
+        $form.find('button.btn').text('calling');
+      }).done(function(data){
+        $parent = $form.parents('li');
+        setAsComplete($parent);
+        $.each(data.targets, function(index, target_data){
+          console.log(target_data)
+          var rendered = ich.call_target_template(target_data);
+          $('#js-targets').append(rendered);
+        });
+      });//done
+    });//on submit
   });
 </script>

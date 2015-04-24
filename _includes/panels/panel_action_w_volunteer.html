@@ -4,9 +4,9 @@
     <div class="fade-line hidden-xs hidden-sm"></div>
   </div>
   <div class="panel-body">
-    <h2>Sign up for Updates</h2>
+    <h2>Volunteer</h2>
     <p>Be part of the movement to restore our democracy. </p>
-    <form class="row email-signup">
+    <form class="row" id="js-volunteer-form">
       <fieldset class="col-md-12">
 
       <div class="form-group col-md-6">
@@ -29,15 +29,15 @@
         <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP Code">
       </div>
 
-      <div class="form-group col-md-7">
+      <!--<div class="form-group col-md-7">
         <label class="control-label sr-only" for="person[calltime]">Call time</label>
         <select id="person[calltime]" name="person[calltime]" type="text" placeholder="Email Address" required="">
           <option>Don't style me - let's ensure we're even doing event times</option>
           <option></option>
         </select>
-      </div>
+      </div> -->
 
-      <div class="form-group col-md-5">
+      <div class="form-group col-md-5 center-block">
         <label class="control-label sr-only" for="singlebutton">Submit</label>
         <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
         <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder -->
@@ -47,4 +47,25 @@
       </fieldset>
     </form>
   </div>
+  <div class="panel-body thanks-message">
+    <h2>Thanks for volunteering!</h2>
+    <p>We'll be in touch soon.</p>
+  </div>
 </div>
+
+<script>
+  $('#js-volunteer-form').on('submit', function(e){
+    e.preventDefault();
+    $form = $(e.target);
+    $.post('{{site.services_url}}/people', $(e.target).serialize(), function(data){
+      $form.find('button.btn').text('Loading..');
+    }).done(function(){
+      if(location.pathname == '/take-action/'){
+        $parent = $form.parents('li');
+        setAsComplete($parent);
+      }else{
+        //shouldn't really be on another page.
+      }
+    });
+  });
+</script>

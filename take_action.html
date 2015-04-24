@@ -20,7 +20,7 @@ permalink: /take-action/
     </div>
   </div> -->
   <ul class="action-tree col-md-10 center-block list-unstyled">
-    <li class="complete" id="js-sign-up-for-updates">
+    <li class="incomplete active" id="js-sign-up">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-sign-up">Incomplete</small>
       <a href="#" class="btn btn-md-wide" title="Sign Up for Updates">
@@ -30,7 +30,7 @@ permalink: /take-action/
       </a>
       {% include panels/panel_action_w_signup.html hide_volunteer=true %}
     </li>
-    <li class="incomplete active" id="js-get-educated">
+    <li class="incomplete" id="js-get-educated">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-get-educated">Incomplete</small>
       <a href="#" class="btn btn-md-wide" title="Get Educated">
@@ -87,11 +87,18 @@ permalink: /take-action/
   function makeActive($target_li){
     $target_li.addClass('active').siblings().removeClass('active');
   }
+  function setAsComplete($target_li){
+    console.log('setAsComplete', $target_li)
+    $target_li.removeClass('incomplete');
+    $target_li.addClass('complete').addClass('thanked');
+  }
 
   function loadTargetedAction(){
     if(location.hash.length > 1){
-      hash_location = location.hash.replace(/^#/,'')
-      makeActive($('#js-'+hash_location));
+      hash_location = location.hash.replace(/^#/,'');
+      $targetAction = $('#js-'+hash_location);
+      makeActive($targetAction);
+      $("html, body").animate({ scrollTop: $targetAction.offset().top }, 100);
     }
   }
   $(document).ready(function(){
@@ -99,10 +106,18 @@ permalink: /take-action/
 
     $('.action-tree>li>.btn').on('click', function(e){
       e.preventDefault();
-      makeActive($(this).parents('li'));
+      $target = $(this).parents('li')
+      makeActive($target);
+      new_hash = $target.prop('id').replace('js-','')
+      location.hash = new_hash
     });
-    $('.skip-next a').on('click', function(e){
+    $('.skip-next a.next').on('click', function(e){
       e.preventDefault();
+      makeActive($(this).parents('li').next());
+    });
+    $('.skip-next a.done').on('click', function(e){
+      e.preventDefault();
+      setAsComplete($(this).parents('li'))
       makeActive($(this).parents('li').next());
     });
   });
