@@ -313,6 +313,8 @@ VoxelMap.prototype.addSelectListener = function() {
 
   this.$select.on('change', function(e) {
     var selectedBill = e.target.value;
+    var selectedChamber = this.$el.find('option[value="' + selectedBill + '"]').attr('chamber');
+
     this.$voxels.find('.voxel').each(function(i, voxel) {
       var $voxel = $(voxel);
       var legislator = $voxel.data('legislator').legislator;
@@ -338,6 +340,14 @@ VoxelMap.prototype.addSelectListener = function() {
             color = 'gray';
           }
         }
+      }
+
+      if (
+        selectedChamber !== 'both'
+        &&
+        selectedChamber !== legislator.chamber
+      ) {
+        color = 'white';
       }
 
       $voxel.attr('color', color);
