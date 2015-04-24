@@ -66,18 +66,39 @@
     background-color: $color-dossier-red;
   } 
 }
+.make-call>div>.fa-phone{
+  float: left;
+  margin-top: 15px;
+  font-size: 1.3em;
+  line-height: 0px;
+}
 .twitter-small{
-  margin-left: 10px !important;
+  margin-left: 20px !important;
+  @include tablet{
+    margin-left: 2% !important;
+  }
+  @include phone{
+    margin-left: 0 !important;
+  }
   >.fa-twitter{
     color: $color-twitter;
     font-size:1.5em;
     line-height: 50%;
   }
 }
-.facebook-small>.fa-facebook{
-  color: $color-facebook;
-  font-size:1.3em;
-  line-height: 50%;
+.facebook-small{
+  margin-left: 10px !important;
+  @include phone{
+    margin-left: 0 !important;
+  }
+  @include tablet{
+    margin-left: 1% !important;
+  }
+  >.fa-facebook{
+    color: $color-facebook;
+    font-size:1.3em;
+    line-height: 50%;
+  }
 }
 .talley{
   height: 45px;

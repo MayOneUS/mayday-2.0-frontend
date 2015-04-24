@@ -403,19 +403,43 @@ pre {
   @include button-colors($color-dossier-blue);
   &.make-call{
     height: 65px;
-    width: 260px;
+    width: 310px;
+    @include tablet{
+      width: 47%;
+    }
+    @include phone{
+      width: 100%;
+    }
   }
   &.facebook-small {
     @include button-colors(#FFF);
     border: solid 2px $color-facebook;
     height: 65px;
-    width: 130px;
+    width: 160px;
+    @include small-desktop{
+      width: 130px;
+    }
+    @include tablet{
+      width: 24%;
+    }
+    @include phone{
+      width: 49%;
+    }
   }
   &.twitter-small {
     @include button-colors(#FFF);
     border: solid 2px $color-twitter;
     height: 65px;
-    width: 130px;
+    width: 160px;
+    @include small-desktop{
+      width: 130px;      
+    }
+    @include tablet{
+      width: 24%;
+    }
+    @include phone{
+      width: 49%;
+    }
   }
 
 }

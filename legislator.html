@@ -69,7 +69,7 @@ permalink: /legislator/
         </div>
         <div class="col-md-8 col-xs-12">
           <a href="#" class="btn btn-md-wide btn-mini-share make-call">
-            <i class="fa fa-phone"></i>
+            <div><i class="fa fa-phone"></i></div>
             <span class="text">Make the Call</span>
           </a>
           <a class="btn btn-md-wide btn-mini-share twitter-small" href="http://www.twitter.com/maydayus" role="button">
@@ -88,25 +88,27 @@ permalink: /legislator/
 </script>
 {% endraw %}
 <script>
-  function getParameterByName(name) {
-    console.log(name);
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-      results = regex.exec(location.search);
-    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-  }
 
-  $(document).ready(function(){
+
+  $( document ).ready( function(){
+    "use strict";
     var bioguide_id = getParameterByName('bioguide_id'),
         status = '';
-    $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, function(legislator_data){
-      console.log(legislator_data);
-      var l_d = legislator_data;
-      l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
-      l_d.temp_message ='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi officia laboriosam impedit voluptate, voluptatibus tempora quod! Assumenda sint dolorem harum libero, nihil odit dignissimos accusamus sequi architecto obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis necessitatibus tenetur itaque praesentium voluptatibus voluptas nostrum expedita accusantium, rerum, suscipit qui vero cupiditate quidem dolorum ullam. Possimus voluptates quisquam quo!';
 
-      l_d.temp_date= 'undefined';
-      if(l_d.with_us == true){
+    function getParameterByName( name ) {
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+    }
+    function scorecard( legislator_data ){
+      
+      var l_d = legislator_data;
+
+      l_d.temp_date = 'undefined';
+      if ( l_d.with_us === true ){
         status = true;
         l_d.background_img = '/images/star_blue.svg'
         l_d.with_message = 'supports';
@@ -114,7 +116,7 @@ permalink: /legislator/
         l_d.share_message = 'Thanks';
         l_d.tail_message = 'Say Thanks ' + l_d.title + ' ' + l_d.name +'!';
         l_d.checked_box_img = '/images/call-page/checked_box.svg';
-      }else{
+      } else {
         status = false;
         l_d.with_message = 'doesn\'t support';
         l_d.icon_status = 'down';
@@ -124,14 +126,21 @@ permalink: /legislator/
         l_d.checked_box_img = '/images/call-page/red_box.svg';
       }
 
-      console.log("test",l_d.test)
+      l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
+      l_d.temp_date= 'undefined';
+      l_d.temp_message ='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi officia laboriosam impedit voluptate, voluptatibus tempora quod! Assumenda sint dolorem harum libero, nihil odit dignissimos accusamus sequi architecto obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis necessitatibus tenetur itaque praesentium voluptatibus voluptas nostrum expedita accusantium, rerum, suscipit qui vero cupiditate quidem dolorum ullam. Possimus voluptates quisquam quo!';
+
+      
       var rendered = ich.legislator_template(l_d);
+      
       if (status) {
         $(rendered["0"]).addClass("with-us-true");
       } else {
         $(rendered["0"]).addClass("with-us-false");
       }
       $('#js-legislators').append(rendered);
-    });
-  })
+    }
+
+    $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, scorecard);
+  });
 </script>
