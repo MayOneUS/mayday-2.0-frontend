@@ -313,6 +313,8 @@ VoxelMap.prototype.addSelectListener = function() {
 
   this.$select.on('change', function(e) {
     var selectedBill = e.target.value;
+    var selectedChamber = this.$el.find('option[value="' + selectedBill + '"]').attr('chamber');
+
     this.$voxels.find('.voxel').each(function(i, voxel) {
       var $voxel = $(voxel);
       var legislator = $voxel.data('legislator').legislator;
@@ -340,6 +342,14 @@ VoxelMap.prototype.addSelectListener = function() {
         }
       }
 
+      if (
+        selectedChamber !== 'both'
+        &&
+        selectedChamber !== legislator.chamber
+      ) {
+        color = 'white';
+      }
+
       $voxel.attr('color', color);
     }.bind(this));
   }.bind(this));
@@ -362,6 +372,7 @@ VoxelMap.prototype.addActionListeners = function() {
     this.$popover.find('.description').text(legislator.legislator.description);
     this.$popover.find('.code').text(legislator.map_key);
     this.$popover.find('.title').text(legislator.legislator.title);
+    this.$popover.find('.button').attr('href', '/legislator/?bioguide_id=' + legislator.legislator.biogudie_id);
 
     this.$voxels.prepend(this.$popover);
 
@@ -386,6 +397,10 @@ VoxelMap.prototype.addActionListeners = function() {
 
     // // Debug
     // console.log("'" + legislator.map_key.split('-')[0] + "': " + JSON.stringify(legislator.coordinates) + ',');
+  }.bind(this));
+
+  this.$voxels.on('click', '.voxel-popover a', function(e) {
+    e.stopPropagation();
   }.bind(this));
 
   this.$voxels.on('click', function(e) {

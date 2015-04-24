@@ -172,6 +172,30 @@
   fill: #707070;
 }
 
+.voxel-map .voxel[color=white] svg polygon.front {
+  fill: #eee;
+}
+
+.voxel-map .voxel[color=white] svg polygon.left {
+  fill: #f3f3f3;
+}
+
+.voxel-map .voxel[color=white] svg polygon.bottom {
+  fill: #e9e9e9;
+}
+
+.voxel-map .voxel[color=white][dark] svg polygon.front {
+  fill: #eee;
+}
+
+.voxel-map .voxel[color=white][dark] svg polygon.left {
+  fill: #f3f3f3;
+}
+
+.voxel-map .voxel[color=white][dark] svg polygon.bottom {
+  fill: #e9e9e9;
+}
+
 .voxel-map .voxel svg polygon.border-top,
 .voxel-map .voxel svg polygon.border-right,
 .voxel-map .voxel svg polygon.border-bottom,
@@ -281,10 +305,12 @@
   border-radius: 5px;
   cursor: pointer;
   color: #fff;
+  display: block;
   font-size: 16px;
   padding: 8px 0;
   margin: 10px 0 0;
   text-align: center;
+  text-decoration: none;
   width: 168px;
 }
 

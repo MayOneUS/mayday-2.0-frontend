@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Demo Scroecard
+title: Demo Scorecard
 permalink: /legislator/
 ---
 
@@ -31,9 +31,9 @@ permalink: /legislator/
             <img class="dossier-img" src="{{ image_url }}" alt="${{ name }} Headshot">
           </div>
           <div class="links">
-            <a href="#">Open Congress</a> | 
+            <a href="#">Open Congress</a> |
             <a href="#">Open Secrets</a><br>
-            <a href="#">Official Website</a> | 
+            <a href="#">Official Website</a> |
             <a href="#">Campaign Website</a>
           </div>
         </div>
@@ -104,7 +104,7 @@ permalink: /legislator/
 
     }
     function scorecard( legislator_data ){
-      
+
       var l_d = legislator_data;
 
       l_d.temp_date = 'undefined';
@@ -130,9 +130,9 @@ permalink: /legislator/
       l_d.temp_date= 'undefined';
       l_d.temp_message ='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi officia laboriosam impedit voluptate, voluptatibus tempora quod! Assumenda sint dolorem harum libero, nihil odit dignissimos accusamus sequi architecto obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis necessitatibus tenetur itaque praesentium voluptatibus voluptas nostrum expedita accusantium, rerum, suscipit qui vero cupiditate quidem dolorum ullam. Possimus voluptates quisquam quo!';
 
-      
+
       var rendered = ich.legislator_template(l_d);
-      
+
       if (status) {
         $(rendered["0"]).addClass("with-us-true");
       } else {
