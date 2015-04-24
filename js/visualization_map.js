@@ -372,7 +372,7 @@ VoxelMap.prototype.addActionListeners = function() {
     this.$popover.find('.description').text(legislator.legislator.description);
     this.$popover.find('.code').text(legislator.map_key);
     this.$popover.find('.title').text(legislator.legislator.title);
-    this.$popover.find('.button').attr('href', '/legislator/?bioguide_id=' + legislator.legislator.biogudie_id);
+    this.$popover.find('.button').attr('href', '/legislator/?bioguide_id=' + legislator.legislator.bioguide_id);
 
     this.$voxels.prepend(this.$popover);
 
