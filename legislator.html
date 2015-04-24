@@ -3,45 +3,80 @@ layout: default
 title: Demo Scroecard
 permalink: /legislator/
 ---
-<div class="container">
-  <div class="col-md-8 center-block" style="float:none">
-      <div class="panel-body" id="js-legislators">
-  </div>
 
-</div>
+<div id="js-legislators"></div>
 
-<!-- <script src="/js/lib/ICanHaz.min.js" type="text/javascript" charset="utf-8"></script> -->
 {% raw %}
 <script id="legislator_template" type="text/html">
-  <div class="row mayday-profile active">
-    <div class="headshot col-lg-5 col-xs-5">
-        <a href=""><img src="{{ image_url }}" alt="${{ name }} Headshot">
-    </div>
-    <div class="derp col-lg-7 col-xs-7 push-left">
-      <h4>{{ name }} <i class="fa fa-thumbs-{{icon_status}}"></i></h4>
-      <h6>{{ title }} ({{ party }}-{{ state_abbrev }} {{display_district}})</h6>
-      <p>{{title}} {{name}} {{with_message}} campaign finance reform</p>
+<div class="dossier-page">
+  <div class="top-line-left"></div>
+  <div class="homepage-panel dossier-star">
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <div class="container gutter-justphone">
       <div class="row">
-        <h3>{{share_message}} {{title}} {{name}}</h3>
-        <div class="col-md-6">
-        <a href="http://www.twitter.com/maydayus" class="btn btn-default btn-lg btn-twitter" title="Tweet {{title}} {{name}}">
-            <i class="fa fa-twitter"></i> 
-            <span class="text">Twitter</span>
-          </a>
+        <div class="col-md-4 col-sm-3 col-xs-12">
+          <div>
+            <img class="dossier-img" src="{{ image_url }}" alt="${{ name }} Headshot">
+          </div>
+          <div class="links">
+            <a href="#">Open Congress</a> | 
+            <a href="#">Open Secrets</a><br>
+            <a href="#">Official Website</a> | 
+            <a href="#">Campaign Website</a>
+          </div>
         </div>
-        <div class="col-md-6">
-          <a href="https://www.facebook.com/groups/282646648577039/" class="btn btn-default btn-lg btn-facebook" title="Facebook {{title}} {{name}}">
-            <i class="fa fa-facebook"></i> 
-            <span class="text">Facebook</span>
+        <div class="col-md-8 col-sm-9 col-xs-12">
+          <h2 class="lead-title">{{title}} {{ name }} {{with_message}} Campaign Finance Reform</h2>
+
+          <div class="no-gutter page-content">
+            <div class="col-md-7 col-xs-12">
+              <p class="election-info">First Elected: {{temp_date}} Next Election: {{temp_date}}</p>
+              <p>{{ temp_message }}</p>
+            </div>
+            <div class="col-md-5 col-xs-12 spacer">
+              <img class="talley"src="/images/action/check.svg" alt="">
+              <span>Political Money Reform Proposal</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <h2>{{ tail_message }}</h2>
+        </div>
+        <div class="col-md-8 col-xs-12">
+          <a href="#" class="btn btn-md-wide btn-mini-share make-call">
+            <i class="fa fa-phone"></i>
+            <span class="text">Make the Call</span>
+          </a>
+          <a class="btn btn-md-wide btn-mini-share twitter-small" href="http://www.twitter.com/maydayus" role="button">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a class="btn btn-md-wide btn-mini-share facebook-small" href="https://www.facebook.com/groups/282646648577039/" role="button">
+            <i class="fa fa-facebook"></i>
           </a>
         </div>
       </div>
     </div>
   </div>
+  <div class="bottom-line"></div>
+</div>
+
 </script>
 {% endraw %}
 <script>
   function getParameterByName(name) {
+    console.log(name);
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
       results = regex.exec(location.search);
@@ -49,19 +84,36 @@ permalink: /legislator/
   }
 
   $(document).ready(function(){
-    var bioguide_id = getParameterByName('bioguide_id');
+    var bioguide_id = getParameterByName('bioguide_id'),
+        status = '';
     $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, function(legislator_data){
-      if(legislator_data.with_us == true){
-        legislator_data.with_message = 'supports'
-        legislator_data.icon_status = 'up'
-        legislator_data.share_message = 'Thank'
-      }else{
-        legislator_data.with_message = 'doesn\'t support'
-        legislator_data.icon_status = 'down'
-        legislator_data.share_message = 'Demand Support From'
-      }
-      var rendered = ich.legislator_template(legislator_data);
+      var l_d = legislator_data;
+      l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
+      l_d.temp_message ='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi officia laboriosam impedit voluptate, voluptatibus tempora quod! Assumenda sint dolorem harum libero, nihil odit dignissimos accusamus sequi architecto obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis necessitatibus tenetur itaque praesentium voluptatibus voluptas nostrum expedita accusantium, rerum, suscipit qui vero cupiditate quidem dolorum ullam. Possimus voluptates quisquam quo!';
 
+      l_d.temp_date= 'undefined';
+      if(l_d.with_us == true){
+        status = true;
+        l_d.background_img = '/images/star_blue.svg'
+        l_d.with_message = 'supports';
+        l_d.icon_status = 'up';
+        l_d.share_message = 'Thanks';
+        l_d.tail_message = 'Say Thanks ' + l_d.title + ' ' + l_d.name +'!';
+      }else{
+        status = false;
+        l_d.with_message = 'doesn\'t support';
+        l_d.icon_status = 'down';
+        l_d.share_message = 'Demand Support From';
+        l_d.tail_message = 'Tell ' + l_d.short_title +' ' + l_d.name + ' to Support Reform!';
+      }
+
+      console.log("test",l_d.test)
+      var rendered = ich.legislator_template(l_d);
+      if (status) {
+        $(rendered["0"]).addClass("with-us-true");
+      } else {
+        $(rendered["0"]).addClass("with-us-false");
+      }
       $('#js-legislators').append(rendered);
     });
   })
