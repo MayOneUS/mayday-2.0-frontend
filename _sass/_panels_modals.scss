@@ -127,17 +127,29 @@
       border-radius: 4px;
       margin-bottom: 15px;
     }
-    .smaller-form.form-group{
-      input[type=text], input[type=email], input[type=tel], input[type=number] {
-        font-size: 18px;
-        font-weight: 300;
+    &.smaller-form{
+      padding-bottom: 0;
+      .form-group{
+        input[type=text], input[type=email], input[type=tel], input[type=number] {
+          margin-bottom: 4px;
+          font-size: 18px;
+          font-weight: 300;
+        }
       }
     }
   }
 }
-.fist-action .jubmbo{
-  input[type=text], input[type=email], input[type=tel], input[type=number] {
-    margin-bottom: 4px;
+.banner-image .action-panel{
+  .form-group{
+    margin-bottom:10px;
+    input[type=text], input[type=email], input[type=tel], input[type=number] {
+      margin-bottom: 0px;
+      font-size: 18px;
+      font-weight: 300;
+    }
+    .btn-md-wide{
+      margin-bottom: 0;
+    }
   }
 }
 .panel-mayday-counters {

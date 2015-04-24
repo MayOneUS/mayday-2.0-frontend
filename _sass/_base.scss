@@ -590,6 +590,10 @@ a.btn-targets {
     padding-right:0;
     padding-left:0;
 }
+form.no-gutter fieldset > [class*='col-'] {
+    padding-right:5px;
+    padding-left:5px;
+}
 .half-gutter > [class*='col-'] {
     padding-right:15px;
     padding-left:15px;
