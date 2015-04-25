@@ -117,8 +117,9 @@ permalink: /take-action/
     });
     $('.skip-next a.done').on('click', function(e){
       e.preventDefault();
-      setAsComplete($(this).parents('li'))
+      setAsComplete($(this).parents('li'));
       makeActive($(this).parents('li').next());
+      // makeActive($(this).parents('li').nextAll('li.incomplete'));
     });
   });
 </script>
