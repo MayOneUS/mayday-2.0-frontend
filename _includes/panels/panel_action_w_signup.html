@@ -7,6 +7,7 @@
     <h2>Sign up for Updates</h2>
     <p>Be part of the movement to restore our democracy. </p>
     <form class="row {{include.form_class}}" id="js-sign-up-form">
+
       <fieldset class="col-md-12">
 
       <div class="form-group col-md-6">
@@ -41,6 +42,7 @@
 
       <div class="form-group cold-md-12">
         <label class="control-label sr-only" for="singlebutton">Submit</label>
+        <input type="hidden" name="template_id" value="sign-up-form">
         <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
         <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder -->
         <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
@@ -60,7 +62,7 @@
   $('#js-sign-up-form').on('submit', function(e){
     e.preventDefault();
     $form = $(e.target);
-    $.post('{{site.services_url}}/people', $(e.target).serialize(), function(data){
+    $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
       $form.find('button.btn').text('Loading..');
     }).done(function(){
       if(location.pathname == '/take-action/'){
