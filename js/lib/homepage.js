@@ -31,7 +31,7 @@ $(function() {
     var data= {
         houseS : [
             {
-                "name": "Remaining <br>Non-Sponsors",
+                "name": "Remaining <br>not<br>Sponsors",
                 "y": 217,
                 "color": "#808080"
             },
@@ -48,7 +48,7 @@ $(function() {
         ],
         senateS : [
             {
-                "name": "Remaining <br>Non-Sponsors",
+                "name": "Remaining <br>not<br>Sponsors",
                 "y": 40,
                 "color": "#808080"
             },
@@ -63,23 +63,23 @@ $(function() {
                 "color": "#5e8cac"
             }
         ],
-        callsMade : [
-            {
-                "name": "Republicans",
-                "y": 3221,
-                "color": "#c03c2f"
-            },
-            {
-                "name": "Democrats",
-                "y": 1121,
-                "color": "#146897"
-            },
-            {
-                "name": "Indpendents",
-                "y": 32,
-                "color": "#28dc4a"
-            }
-        ]
+        // callsMade : [
+        //     {
+        //         "name": "Republicans",
+        //         "y": 3221,
+        //         "color": "#c03c2f"
+        //     },
+        //     {
+        //         "name": "Democrats",
+        //         "y": 1121,
+        //         "color": "#146897"
+        //     },
+        //     {
+        //         "name": "Indpendents",
+        //         "y": 32,
+        //         "color": "#28dc4a"
+        //     }
+        // ]
     };
         // everything shared between the graphs
     shared_Options = {
@@ -169,18 +169,18 @@ $(function() {
         }]
     };
 
-    chart3_Options ={
-        chart: {
-            renderTo: 'container3'
-        },
-        title: {
-            text: 'Calls Made'
-        },
-        series: [{
-            name: 'Calls',
-            data: data.callsMade // data point
-        }]
-    };
+    // chart3_Options ={
+    //     chart: {
+    //         renderTo: 'container3'
+    //     },
+    //     title: {
+    //         text: 'Calls Made'
+    //     },
+    //     series: [{
+    //         name: 'Calls',
+    //         data: data.callsMade // data point
+    //     }]
+    // };
 
         // load options for chart 1
     chart1_Options = jQuery.extend(true, {}, shared_Options, chart1_Options);
@@ -188,8 +188,8 @@ $(function() {
       // load options for chart 2
     chart2_Options = jQuery.extend(true, {}, shared_Options, chart2_Options);
 
-      // load options for chart 3
-    chart3_Options = jQuery.extend(true, {}, shared_Options, chart3_Options);
+    //   // load options for chart 3
+    // chart3_Options = jQuery.extend(true, {}, shared_Options, chart3_Options);
     
     // render charts onload or onsroll depending the the inner veiwport height
     $(window).load(function() {
@@ -238,9 +238,9 @@ $(function() {
             if(animate.chart2Finished === false && $container2[0].offsetTop + 150 < scrolledTo) {
                 animate.render2();
             }
-            if(animate.chart3Finished === false && $container3[0].offsetTop + 150 < scrolledTo) {
-                animate.render3();
-            }
+            // if(animate.chart3Finished === false && $container3[0].offsetTop + 150 < scrolledTo) {
+            //     animate.render3();
+            // }
         },
         // runs charts on page load if they are in the view port currently
         pageLoad: function() {
@@ -254,9 +254,9 @@ $(function() {
                 animate.render2();
             }
 
-            if($container3[0].offsetTop + ($container3.height() / 2) < windowHeight) { //1663 + (250/2) < current window height
-                animate.render3();
-            }
+            // if($container3[0].offsetTop + ($container3.height() / 2) < windowHeight) { //1663 + (250/2) < current window height
+            //     animate.render3();
+            // }
         }
     }
 
