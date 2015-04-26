@@ -317,6 +317,7 @@ pre {
 
 .btn-md-red, a.btn-md-red:link {
   @include simple-button;
+  font-weight: 300;
 }
 .btn-reddit, a.btn-reddit:link {
   @include button-colors($color-reddit);
@@ -601,6 +602,10 @@ form.no-gutter fieldset > [class*='col-'] {
 .no-gutter-top > [class*='col-'] {
     padding-top:0;
     margin-top: 0;
+}
+.wide-gutter > [class*='col-'] {
+  padding-left:30px;
+  padding-right:30px;
 }
 .center-block{
   float: none;
