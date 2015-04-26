@@ -7,8 +7,9 @@ $(function() {
         chart3_Options, chart3,
 
         didScroll = false,
-        ajax1 = 'http://mayday-step-two.herokuapp.com/bills/supporter_counts?bill_id=hr424-114',
-        ajax2 = 'http://mayday-step-two.herokuapp.com/bills/supporter_counts?bill_id=hr20-114',
+        api_endpoint = '/bills/supporter_counts?bill_id=',
+        bill_url_hr424 = root_services_url + api_endpoint + 'hr424-114',
+        bill_url_hr20 = root_services_url + api_endpoint + 'hr20-114',
 
         // dom objects to render to
         $container1 = $('#container1'),
@@ -17,7 +18,7 @@ $(function() {
 
         animate ={};
 
-        // set basic options
+    // set basic options
     Highcharts.setOptions({
         chart: {
             style: {
@@ -67,7 +68,7 @@ $(function() {
             }
         ]
     };
-        // everything shared between the graphs
+    // everything shared between the graphs
     shared_Options = {
         chart: {
               type: 'pie'
@@ -85,8 +86,8 @@ $(function() {
         credits: {
             enabled: false
         },
-        exporting: { 
-          enabled: false 
+        exporting: {
+          enabled: false
         },
         tooltip: {
             backgroundColor: null,
@@ -122,6 +123,24 @@ $(function() {
         $.getJSON( url, callback);
     }
 
+    function transformEndpointData(response){
+        var output = {};
+        output.name = response.name;
+        output.seriesData = [
+                {
+                    "name": "Needed <br>Sponsors",
+                    "y": response.needed_cosponsors,
+                    "color": "#5e8cac"
+                },
+                {
+                    "name": "Current <br>Sponsors",
+                    "y": response.current_cosponsors,
+                    "color": "#759c64"
+                }
+        ];
+        return output;
+    }
+
     // render charts onload or onsroll depending the the inner veiwport height
     $(window).load(function() {
         animate.pageLoad();
@@ -144,17 +163,17 @@ $(function() {
         chart2Finished : false,
         chart3Finished : false,
         // makes three donut charts
-        render1 : function () {
+        renderHouseSupport : function (chartData,target_container, finishingVar) {
 
-            animate.chart1Finished = true;
+            finishingVar = true;
 
                   // individual chart code
             chart1_Options = {
                 chart: {
-                    renderTo: 'container1'
+                    renderTo: target_container
                 },
                 title: {
-                    text: 'Empowering Citizens Act'
+                    text: chartData.name
                 },
                 tooltip: {
                     formatter: function() {
@@ -163,7 +182,7 @@ $(function() {
                 },
                 series: [{
                     name: 'House',
-                    data: data.chartData // data point
+                    data: chartData.seriesData // data point
                 }]
             };
                 // load options for chart 1
@@ -171,81 +190,43 @@ $(function() {
 
             chart1 = new Highcharts.Chart(chart1_Options);
         },
-        render2 : function () {
-
-            animate.chart2Finished = true;
-
-            chart2_Options ={
-                chart: {
-                    renderTo: 'container2'
-                },
-                title: {
-                    text: 'Senate Support'
-                },
-                tooltip: {
-                    formatter: function() {
-                        return 'Of 100 '+ this.series.name + '<br>' + 'Members, ' + '<br>' +  this.y + '<br>' + 'are ' + this.point.name;
-                    }
-                },
-                series: [{
-                    name: 'Senate',
-                    data: data.senateS // data point
-                }]
-            };
-
-                          // load options for chart 2
-            chart2_Options = jQuery.extend(true, {}, shared_Options, chart2_Options);
-
-            chart2 = new Highcharts.Chart(chart2_Options);
-        },
         // checks the current innerHeight of the page and renders charts when page reaches the location of the charts
+        windowHeight: function(){
+            return window.innerHeight + window.pageYOffset;
+        },
+        fetchAndRender: function(url, renderContainer, finishingVar){
+            $.getJSON( url, function(data){
+                var endpoint_data = transformEndpointData(data);
+                console.log(endpoint_data);
+                animate.renderHouseSupport(endpoint_data, renderContainer, finishingVar);
+            });
+        },
         positionCheck: function () {
-        
+
             if(window.scrollY) {
                 var scrolledTo = window.innerHeight + window.scrollY;
             } else {
-                var scrolledTo = window.innerHeight + window.pageYOffset;
+                var scrolledTo = animate.windowHeight();
             }
             if(animate.chart1Finished === false && $container1[0].offsetTop + 100 < scrolledTo) {
-                ajaxCall(ajax1, function (data){
-                    console.log(data);
-                    console.log("hope this works",true)
-                    animate.render1();
-                })
-    
+                animate.fetchAndRender(bill_url_hr20, 'container1', animate.chart1Finished);
             }
             if(animate.chart2Finished === false && $container2[0].offsetTop + 100 < scrolledTo) {
-                ajaxCall(ajax2, function (data){
-                    console.log(data);
-                    console.log("hope this works",true)
-                    animate.render2();
-                })
+                animate.fetchAndRender(bill_url_hr424, 'container2', animate.chart1Finished);
             }
         },
         // runs charts on page load if they are in the view port currently
         pageLoad: function() {
 
-            var windowHeight = window.innerHeight + window.pageYOffset;
+            var windowHeight = animate.windowHeight();
 
             if($container1[0].offsetTop + ($container1.height() / 2) < windowHeight) {
-
-                ajaxCall(ajax1, function (data){
-                    console.log(data);
-                    console.log("hope this works",true)
-                    animate.render1();
-                })
-
-            } 
+                animate.fetchAndRender(bill_url_hr20, 'container1');
+            }
 
             if($container2[0].offsetTop + ($container2.height() / 2) < windowHeight) {
-
-                ajaxCall(ajax2, function (data){
-                    console.log(data);
-                    console.log("hope this works",true)
-                    animate.render2();
-                })
-
-            } 
+                animate.fetchAndRender(bill_url_hr424, 'container2');
+            }
 
             // if($container3[0].offsetTop + ($container3.height() / 2) < windowHeight) { //1663 + (250/2) < current window height
             //     animate.render3();
