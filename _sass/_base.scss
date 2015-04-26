@@ -358,10 +358,10 @@ pre {
   font-weight: 400;
 
   .fa {
-    float: left;
+    // float: left;
     font-size: 1.5em;
-    position: absolute;
-  }
+    padding-right:5px;
+  } 
 
   .text {
     float: left;
@@ -369,23 +369,58 @@ pre {
     font-weight: 400;
 
     @include large-desktop {
-      margin-left: 45px;
+      // margin-left: 45px;
     }
 
     @include small-desktop {
-      margin-left: 35px;
+      // margin-left: 35px;
       font-size: 16px;
     }
 
     @include tablet {
-      margin-left: 45px;
+      // margin-left: 45px;
     }
 
     @include phone {
-      margin-left: 35px;
-      font-size: 16px;
+      // margin-left: 35px;
+      font-size: 14px;
     }
   }
+  .center-logo{
+    height: 50px;
+    text-align: center !important;
+  }
+  
+  &.facebook {
+    @include button-colors($color-facebook);
+  }
+  &.reddit {
+    @include button-colors($color-reddit);
+  }
+  &.twitter {
+    @include button-colors($color-twitter);
+  }
+  &.youtube {
+    @include button-colors($color-youtube);
+  }
+}
+.btn-share-center {
+  margin-top: 12px;
+  height: 50px;
+  text-align: center;
+  font-size:20px;
+  font-weight: 400;
+
+  .fa {
+    font-size: 1.5em;
+    line-height: 0;
+  } 
+
+  .text {
+    text-align: center;
+    font-weight: 400;
+  }
+
   
   &.facebook {
     @include button-colors($color-facebook);

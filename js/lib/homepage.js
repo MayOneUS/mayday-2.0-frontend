@@ -31,43 +31,7 @@ $(function() {
         }
       }
     });
-    var dataTest = {};
-    var data= {
-        chartData : [
-            {
-                "name": "Current <br>Supporters",
-                "y": 5,
-                "color": "#808080"
-            },
-            {
-                "name": "Current <br>Cosponsors",
-                "y": 4,
-                "color": "#759c64"
-            },
-            {
-                "name": "Needed <br>Cosponsors",
-                "y": 2,
-                "color": "#5e8cac"
-            }
-        ],
-        senateS : [
-            {
-                "name": "Non-<br>Sponsors",
-                "y": 40,
-                "color": "#808080"
-            },
-            {
-                "name": "Current <br>Sponsors",
-                "y": 0,
-                "color": "#759c64"
-            },
-            {
-                "name": "Needed <br>Sponsors",
-                "y": 60,
-                "color": "#5e8cac"
-            }
-        ]
-    };
+
     // everything shared between the graphs
     shared_Options = {
         chart: {
@@ -96,6 +60,21 @@ $(function() {
             useHTML: true,
             style: {
                 padding: 0
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    distance: -50,
+                    style: {
+                        fontWeight: 'bold',
+                        color: '#222'
+                    }
+                },
+                startAngle: -90,
+                endAngle: 270,
+                center: ['50%', '60%']
             }
         },
         series: [{
