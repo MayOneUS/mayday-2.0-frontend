@@ -165,9 +165,9 @@ $(function() {
         // makes three donut charts
         renderHouseSupport : function (chartData,target_container, finishingVar) {
 
-            finishingVar = true;
+            animate[finishingVar] = true;
 
-                  // individual chart code
+            // individual chart code
             chart1_Options = {
                 chart: {
                     renderTo: target_container
@@ -197,7 +197,6 @@ $(function() {
         fetchAndRender: function(url, renderContainer, finishingVar){
             $.getJSON( url, function(data){
                 var endpoint_data = transformEndpointData(data);
-                console.log(endpoint_data);
                 animate.renderHouseSupport(endpoint_data, renderContainer, finishingVar);
             });
         },
@@ -209,10 +208,10 @@ $(function() {
                 var scrolledTo = animate.windowHeight();
             }
             if(animate.chart1Finished === false && $container1[0].offsetTop + 100 < scrolledTo) {
-                animate.fetchAndRender(bill_url_hr20, 'container1', animate.chart1Finished);
+                animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Finished');
             }
             if(animate.chart2Finished === false && $container2[0].offsetTop + 100 < scrolledTo) {
-                animate.fetchAndRender(bill_url_hr424, 'container2', animate.chart1Finished);
+                animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Finished');
             }
         },
         // runs charts on page load if they are in the view port currently
@@ -221,11 +220,11 @@ $(function() {
             var windowHeight = animate.windowHeight();
 
             if($container1[0].offsetTop + ($container1.height() / 2) < windowHeight) {
-                animate.fetchAndRender(bill_url_hr20, 'container1');
+                animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Finished');
             }
 
             if($container2[0].offsetTop + ($container2.height() / 2) < windowHeight) {
-                animate.fetchAndRender(bill_url_hr424, 'container2');
+                animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Finished');
             }
 
             // if($container3[0].offsetTop + ($container3.height() / 2) < windowHeight) { //1663 + (250/2) < current window height
