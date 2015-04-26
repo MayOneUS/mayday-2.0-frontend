@@ -370,8 +370,9 @@ VoxelMap.prototype.addActionListeners = function() {
     var legislator = $voxel.data('legislator');
     this.$popover.find('.name').text(legislator.legislator.name);
     this.$popover.find('.description').text(legislator.legislator.description);
-    this.$popover.find('.code').text(legislator.map_key);
-    this.$popover.find('.title').text(legislator.legislator.title);
+    this.$popover.find('.stateface').text(legislator.map_key).prop('class', 'stateface stateface-replace stateface-'+legislator.map_key.substring(0,2).toLowerCase());
+    this.$popover.find('.code').text(legislator.map_key.replace(/SENIOR|JUNIOR/, 'SEN'));
+    this.$popover.find('.title').text(legislator.legislator.title.replace(/Senator/, 'Sen.'));
     this.$popover.find('.button').attr('href', '/legislator/?bioguide_id=' + legislator.legislator.bioguide_id);
 
     this.$voxels.prepend(this.$popover);

@@ -1,0 +1,47 @@
+<div class="panel-mayday-counters">
+  <h3 class="headline">Our Efforts</h3>
+  <div class="icon-line">
+    <div class="half-hr"></div>
+    <i class="fa fa-users"></i>
+    <div class="half-hr"></div>
+  </div>
+  <div class="counter-label">Citizen Lobbyists</div>
+  <div class="counter-row" id="js-lobbyists-counters">
+    <div class="tile">0<span class="hr"></span></div>
+    <div class="tile">2<span class="hr"></span></div>
+    <div class="tile">2<span class="hr"></span></div>
+    <div class="tile">0<span class="hr"></span></div>
+  </div>
+  <div class="icon-line">
+    <div class="half-hr"></div>
+    <i class="fa fa-phone"></i>
+    <div class="half-hr"></div>
+  </div>
+  <div class="counter-label">Phone Calls to Congress</div>
+  <div class="counter-row" id="js-calls-counters">
+    <div class="tile">0<span class="hr"></span></div>
+    <div class="tile">0<span class="hr"></span></div>
+    <div class="tile">0<span class="hr"></span></div>
+    <div class="tile">0<span class="hr"></span></div>
+  </div>
+</div>
+
+<script>
+  function panelCounter($targetHolder, count) {
+    count = count.toString()
+    var count = "0000" + count;
+    counts = count.substr(count.length-4).split('');
+    $.each(counts, function(i, count){
+      $targetHolder.append('<div class="tile">'+count+'<span class="hr"></span></div>');
+    })
+  }
+
+  $(document).ready(function(){
+    $.get('{{site.services_url}}/stats', function(data){
+      $('#js-lobbyists-counters').html('')
+      $('#js-calls-counters').html('')
+      panelCounter($('#js-lobbyists-counters'), data.volunteer_count);
+      panelCounter($('#js-calls-counters'), data.reps_calls_count);
+    });
+  });
+</script>

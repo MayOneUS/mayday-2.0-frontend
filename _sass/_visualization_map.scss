@@ -236,7 +236,7 @@
 }
 
 .voxel-map .voxel-popover {
-  background-color: rgba(200, 200, 208, 0.84);
+  background-color: rgba(240,240,240, 0.9);
   display: none;
   font-family: Arial, sans-serif;
   padding: 12px;
@@ -268,10 +268,13 @@
       transition: opacity 0.3s;
 }
 
-.voxel-map .voxel-popover .left .bubble {
+.voxel-map .voxel-popover .left .stateface {
   float: left;
-  opacity: 0;
-  padding: 8px 8px 10px 4px;
+  opacity: 1;
+  font-size: 20px;
+  padding: 0 0 10px 0;
+  max-width: 30px;
+  color:$color-navy-blue-light;
 
   -webkit-transition: opacity 0.3s;
       transition: opacity 0.3s;
@@ -288,20 +291,25 @@
   float: right;
 }
 
-.voxel-map .voxel-popover .right .name {
+.voxel-map .voxel-popover .name {
   font-size: 22px;
   font-weight: bold;
-  color: #51395f;
+  // color: #51395f;
 }
 
-.voxel-map .voxel-popover .right .description {
+.voxel-map .voxel-popover h3{
+  font-size: 22px;
+}
+
+.voxel-map .voxel-popover .description {
   color: #38373d;
   font-size: 12px;
   margin: 6px 0 0;
 }
 
-.voxel-map .voxel-popover .right .button {
-  background-color: #523d5e;
+.voxel-map .voxel-popover .button {
+  background-color: $color-navy-blue-light;
+  text-transform: uppercase;
   border-radius: 5px;
   cursor: pointer;
   color: #fff;
@@ -315,15 +323,16 @@
 }
 
 .voxel-map .voxel-popover .arrow {
-  background-image: url(/images/map/arrow-left.png);
-  background-repeat: no-repeat;
-  background-size: 42px 42px;
   bottom: -42px;
   height: 42px;
+  width: 42px;
   left: 0;
   position: absolute;
-  width: 42px;
   pointer-events: none;
+  overflow: hidden;
+  border: solid transparent 42px;
+  border-top: none;
+  border-left-color: rgba(240,240,240, 0.9);
 }
 
 .voxel-map .voxel-popover.right {
@@ -331,7 +340,9 @@
 }
 
 .voxel-map .voxel-popover.right .arrow {
-  background-image: url(/images/map/arrow-right.png);
+  border-top: none;
+  border-left: none;
+  border-right-color: rgba(240,240,240, 0.9);
   left: auto;
   right: 0;
 }

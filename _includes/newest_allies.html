@@ -5,7 +5,7 @@
 
 <script id="legislator_template" type="text/html">
 {% raw %}
-  
+
     <div class="col-md-4 col-sm-8 col-xs-12 bottom-margin">
       <div class="col-md-4 col-sm-3 col-xs-4">
         <a href=""><div class="background-sqaure"></div></a>
@@ -16,7 +16,7 @@
         <a class="btn btn-targets story-grey" href="#">Read More</a>
       </div>
     </div>
-  
+
 {% endraw %}
 </script>
 <script>
@@ -24,19 +24,19 @@
   $(document).ready(function(){
 
     "use strict";
-    
+
     var newAllieData = data;
     var outSide = {};
 
     function renderAllies(legislator_data, index) {
-      
+
       var rendered = [],
           bgIMG = 'url(' + legislator_data["image_url"] + ')';
 
       rendered = ich.legislator_template(legislator_data);
       $(rendered["0"]).find("div.background-sqaure").css("background-image", bgIMG);
 
-      if ( index === 0 ){ 
+      if ( index === 0 ){
         $(rendered["0"]).addClass("remove-padding-photo");
       } else if ( index === 1 ){ //adds verticallines the the middle article
         $(rendered["0"]).addClass("verticalLines");
@@ -51,7 +51,7 @@
 
     function callDataAndTemplate(legislators) {
       var allyObject = [];
- 
+
       legislators.forEach( function ( data, index ){ //gets three reps
         if (index < 3 ){
           allyObject.push( data );
@@ -61,10 +61,10 @@
     }
 
     $.getJSON(newAllieData, callDataAndTemplate);
-  
+
   });
 
-})( '{{site.services_url}}/legislators/targeted.json' );
+})( '{{site.services_url}}/legislators/newest_supporters.json' );
 
 
 

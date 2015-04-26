@@ -153,7 +153,7 @@
   }
 }
 .panel-mayday-counters {
-  height: 100%;
+  margin-bottom: 10px;
   position: relative;
   background-color: rgb(228,229,233);
   border-radius: 4px;
@@ -161,6 +161,8 @@
   color: $color-navy-blue-light;
   font-weight: 400;
   padding-top: 22px;
+  padding-bottom: 35px;
+
   .headline {
     font-size: 34px;
   }
