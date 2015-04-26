@@ -75,3 +75,23 @@
     padding-left:0px;
   }
 }
+.col-md-6.form-left-sm, .col-md-8.form-left-sm{
+  padding-left:30px;
+  padding-right:5px;
+  @include tablet{
+    padding-right:30px;
+  }
+  @include phone{
+    padding-right:30px;
+  }
+}
+.col-md-6.form-right-sm, .col-md-4.form-right-sm{
+  padding-right:30px;
+  padding-left:5px;
+  @include tablet{
+    padding-left:30px;
+  }
+  @include phone{
+    padding-left:30px;
+  }
+}
