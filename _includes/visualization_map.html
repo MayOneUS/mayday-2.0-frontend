@@ -8,7 +8,7 @@ This file includes:
   - Initializing VoxelMap
 -->
 
-<div id="voxel-map" class="voxel-map">
+<div id="voxel-map" class="voxel-map" style="{{include.styles}}">
 <select class="md-select">
   <option value="" chamber="both">All</option>
   <option value="hr20-114" chamber="house">H.R.20 - Government By the People Act of 2015</option>
@@ -68,31 +68,6 @@ This file includes:
   </div>
 
   <div class="color">
-    <div class="voxel" color="gray">
-      <svg viewBox="0 0 166 166">
-        <g>
-          <polygon
-            class="front"
-            points="166,0 166,158 22,158 22,0"
-          />
-
-          <polygon
-            class="left"
-            points="22.5,158 0,166 0,8 22.5,0"
-          />
-
-          <polygon
-            class="bottom"
-            points="166,157.5 144,166 0,166 22.5,157.5"
-          />
-        </g>
-      </svg>
-    </div>
-
-    <p>non-supporter</p>
-  </div>
-
-  <div class="color">
     <div class="voxel" color="green">
       <svg viewBox="0 0 166 166">
         <g>
@@ -116,6 +91,33 @@ This file includes:
 
     <p>Supporter</p>
   </div>
+
+  <div class="color">
+    <div class="voxel" color="gray">
+      <svg viewBox="0 0 166 166">
+        <g>
+          <polygon
+            class="front"
+            points="166,0 166,158 22,158 22,0"
+          />
+
+          <polygon
+            class="left"
+            points="22.5,158 0,166 0,8 22.5,0"
+          />
+
+          <polygon
+            class="bottom"
+            points="166,157.5 144,166 0,166 22.5,157.5"
+          />
+        </g>
+      </svg>
+    </div>
+
+    <p>Non-supporter</p>
+  </div>
+
+
 </div>
 
 </div>
@@ -143,17 +145,22 @@ This file includes:
 
     <polygon
       class="border-top"
-      points="2,0 25,0 25,1 0,1"
+      points="4,0 25,0 25,1 4,1"
     />
 
     <polygon
       class="border-left"
-      points="0,0 4,0 4,26 0,26"
+      points="4,1 5,1 5,23 4,23"
     />
 
     <polygon
       class="border-bottom"
-      points="0,23 25,23 25,26 0,26"
+      points="4,23 25,23 25,26 4,26"
+    />
+
+    <polygon
+      class="border-bottom-angled"
+      points="4.1,22.9 0,26 1,26 4.1,26"
     />
 
     <polygon

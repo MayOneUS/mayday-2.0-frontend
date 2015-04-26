@@ -44,7 +44,7 @@ permalink: /the-state-of-reform/
 </div>
 <div class="container">
   <div class="col-md-12">
-    {% include visualization_map.html %}
+    {% include visualization_map.html styles="min-height:820px" %}
   </div>
 </div>
 <div class="page-panel grey">
@@ -76,49 +76,17 @@ permalink: /the-state-of-reform/
 <div class="container">
   <div class="row page-panel light">
     <div class="col-md-10 container homepage-panel-body">
-<!--       <h2>Our Efforts</h2>
+     <h2>Our Efforts</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus laudantium, id, sapiente repudiandae exercitationem facere nisi laboriosam quo minima, earum asperiores harum incidunt! Molestiae nesciunt quae quos sed illo voluptates?</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus laudantium, id, sapiente repudiandae exercitationem facere nisi laboriosam quo minima, earum asperiores harum incidunt! Molestiae nesciunt quae quos sed illo voluptates?</p>
-    </div> -->
-
-    <div class="container text-center bottom-form-wrap">
-      <div class="col-md-6 center-block">
-        {% include panels/panel_onboarding.html %}
-      </div>
     </div>
+    
   </div>
-  </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="onboarding-modal-label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <iframe id="onboarding-overlay" src="" frameborder="0" frameborder="0" allowtransparency="true"></iframe>
+  <div class="row">
+    <div class="container">
+      <div class="col-md-8 center-block panel-wrapper">
+      {% include panels/panel_action_w_signup.html %}
       </div>
     </div>
   </div>
 </div>
-<script>
-$("form.join").submit(function (event) {
-  event.preventDefault();
-  var userZip = $(this).find('input[name="person[zip]"]').val();
-  var userEmail = $(this).find('input[name="person[email]"]').val();
-  var queryString = 'zip=' + encodeURIComponent(userZip) + '&email=' + encodeURIComponent(userEmail);
-  var baseURI = 'http://onboarding-staging.mayday.us';
-  var iframeURI = baseURI + '?' + queryString;
-
-  var saveURI = '{{site.services_url}}/people.json';
-  $.post(saveURI, $(this).serialize())
-    .always(function() {
-      $("#onboarding-overlay").attr("src", iframeURI);
-    })
-    .done(function (data, textStatus, jqXHR) {
-      console.log(data, textStatus);
-    })
-    .fail(function (jqXHR, textStatus, errorThrown) {
-      console.log(textStatus, errorThrown);
-    });
-});
-</script> 
