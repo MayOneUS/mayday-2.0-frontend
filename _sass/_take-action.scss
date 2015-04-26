@@ -23,6 +23,9 @@
 
     >.btn-md-wide{
       margin:0;
+      padding: 23px 16px;
+      font-weight: 300;
+      font-size: 22px;
       text-align:left;
       @include phone {
         font-size: 16px;
@@ -90,7 +93,11 @@
     &:last-child{background:none;}
   } // li
 }
-
+.btn-md-wide .tk-act{
+  padding: 23px 16px !important;
+  font-weight: 300 !important;
+  font-size: 22px !important;
+}
 #js-targets{
   text-align: left;
 }
