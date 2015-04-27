@@ -120,37 +120,47 @@
   padding-left:0;
   padding-right:5px;
   margin-top: 2px;
+  @include tablet{
+    width: 15px;
+  }
 }
 .sticky-grid .col-sm-2 { 
   width: 125px;
   padding-left:5px;
   padding-right:0;
   font-size: 12px;
+  @include tablet{
+    width: 115px;
+    font-size: 10px;
+  }
 }
-// .sticky-tree{
-//   ul {
-//     list-style-image:url('/images/plan_side_star_off.svg');
-//   }
-// }
-.sticky-tree ul>li.list-unstyled>a.star{background: transparent url('/images/plan_side_star_off.svg') 2px 2px no-repeat; padding-left:20px; background-size:20px 20px;}
-
 .sticky-tree{
-  margin-left: -10px;
   background:#fff; 
   border-radius:5px;
   padding: 0px 15px 30px 25px;
   box-shadow: 1px 1px 2px #eee;
   display: block;
+  position:fixed;
+  top: 198px;
+  left: 50%;
+  margin-left: -585px;
   z-index: 10;
   color: $color-text;
   div{
     width: 145px;
+    @include tablet{
+      width: 145px;
+    }
     .sticky-star{
       height: 15px;
       width: 15px;
       background:url('/images/plan_side_star_off.svg') center center no-repeat;
+      @include tablet{
+        height: 10px;
+        width: 10px;
+      }
     }
-    .sticky-star.active, .sticky-star.bottom{
+    .sticky-star.active{
       background:url('/images/plan_side_star_on.svg') center center no-repeat;
     }
     .sticky-text{
@@ -158,15 +168,16 @@
       line-height: 140%;
       color: $color-text;
     }
-    .sticky-text.active, .sticky-text.bottom{
+    .sticky-text.active{
       color: $color-brand;
     }
   }
   @include small-desktop{
-    margin-left: -3%;
+    margin-left: -495px;
   }
   @include tablet{
-    margin-left: -7%;
+    padding: 0px 0px 30px 25px;
+    margin-left: -395px;
   }
 }
 .sticky-tree.stuck{
@@ -175,23 +186,12 @@
   left: 5px;
   margin: 0 auto;
 }
+
 .sticky-tree.unstuck{
   position:absolute;
-  bottom:15px;
+  // top:2244px;
 }
-#stick-group{
-  visibility: visible;
-}
-.sticky-tree.hideIt{
-  position:absolute;
-  top:2244px;
-}
-#free-group{
-  visibility: hidden;
-}
-#free-group.show {
-  visibility: visible;
-}
+
 .state .col-md-2 {
   width: 20%;
   font-size: 16px;

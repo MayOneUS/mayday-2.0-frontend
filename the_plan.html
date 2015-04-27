@@ -4,11 +4,11 @@ title: The Plan
 permalink: /the-plan/
 ---
 <div>
-    <div id="stick-group" class="sticky-tree stuck hidden-xs">
+    <div id="stick-group" class="sticky-tree hidden-xs">
       <div class="row sticky-grid">
         <a id="link1" data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#problem">
-          <div class="sticky-star col-sm-1"></div>
-          <div class="sticky-text col-sm-2">The Problem: Election Funding</div>
+          <div class="sticky-star col-sm-1 active"></div>
+          <div class="sticky-text col-sm-2 active">The Problem: Election Funding</div>
         </a>
       </div>
       <div class="row sticky-grid">
@@ -24,7 +24,7 @@ permalink: /the-plan/
         </a>
       </div>
       <div class="row sticky-grid">
-        <a id="link4" data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#labratory">
+        <a id="link4" data-scroll data-options='{ "easing": "easeInOutQuart","offset": 217 }' href="#labratory">
           <div class="sticky-star col-sm-1"></div>
           <div class="sticky-text col-sm-2">The Mayday Lab: Getting a Congress committed to Reform</div>
         </a>
@@ -109,42 +109,74 @@ permalink: /the-plan/
 
     var didScroll = false,
 
-        // dom objects to render to
+        // capture links on the page
         $link1 = $('#link1'),
         $link2 = $('#link2'),
         $link3 = $('#link3'),
         $link4 = $('#link4'),
-        $link5 = $('#link5'),
-        $hiddenLink = $('#hidden-link'),
+        // capture capture the from the first link to reduce the number of dom objects to watch
+        // for a better frame rate
+        secondlinkOffset = $link2.offset().top - $link1.offset().top,
+        thridlinkOffset = $link3.offset().top - $link1.offset().top,
+        forthlinkOffset = $link4.offset().top - $link1.offset().top,
+        
+        // capture the whole fixed menu
+        $stickyLinks = $(".sticky-tree"),
 
-        // dom objects to trigger
+        // objects in the dom that need to be watched
         $container0 = $('#opening'),
         $container1 = $('#problem'),
         $container2 = $('#solution'),
         $container3 = $('#challenge'),
-        $container4 = $('#labratory'),
+        $container4 = $('#labratory');
 
-        treeBottom = $('.sticky-tree').offset().top + $('.sticky-tree').height(),
-        pageBottom = window.innerHeight + window.pageYOffset,
 
-        stickyLinks = $(".sticky-tree");
-        stickyheight = stickyLinks.height();
-        stickyposition = stickyLinks.offset();
+    animate = {
+      current : null,
+      lockInPalace : false,
 
-        var bottomRightY = stickyposition.top + stickyheight;
-        // console.log(bottomRightY);
+      positionCheck: function () {
+        var firstLink = $link1.offset().top,
+            lastContainer = $container4,
+            lastContainerTop = lastContainer.offset().top;
 
-    function makeActive($target_el, number){
-      if ( animate.current !== number) {
-        $( '.sticky-star' ).removeClass(' active' );
-        $( '.sticky-text' ).removeClass( 'active' );
-        $target_el.children( '.sticky-star').addClass( 'active' );
-        $target_el.children( '.sticky-text' ).addClass( 'active' );
-        animate.current = number;
+        if( lastContainerTop < firstLink + forthlinkOffset ) {
+          animate.toggle($link4, 4);
+        } else if ( $container3.offset().top < firstLink + thridlinkOffset ) {
+          animate.toggle($link3, 3);
+        } else if ( $container2.offset().top < firstLink + secondlinkOffset ) {
+          animate.toggle($link2, 2);
+        } else if ( $container1.offset().top < firstLink ) {
+          animate.toggle($link1, 1);
+        } else if ( $container0.offset().top < firstLink ) {
+          animate.toggle($link1, 1);
+        }
+
+        animate.menuLock(firstLink, lastContainer, lastContainerTop);
+      },
+      makeActive : function ($target_el, number){
+        if ( animate.current !== number) {
+          $( '.sticky-star' ).removeClass(' active' );
+          $( '.sticky-text' ).removeClass( 'active' );
+          $target_el.children( '.sticky-star').addClass( 'active' );
+          $target_el.children( '.sticky-text' ).addClass( 'active' );
+          animate.current = number;
+        }
+      },
+      menuLock : function (firstLink, lastContainer, lastContainerTop) {
+        if ( animate.lockInPalace === false && ( lastContainerTop < firstLink - 10 )){
+          animate.lockInPalace = true;
+          $stickyLinks.addClass('unstuck').css('top',lastContainerTop);
+          
+        } else if ( animate.lockInPalace === true && (window.scrollY +198 < lastContainerTop)) {
+          animate.lockInPalace = false;
+          $stickyLinks.removeClass('unstuck').css('top',198 + 'px');
+        }
+      },
+      toggle : function ($target_el, number){
+       animate.makeActive($target_el, number)
       }
     }
-
-
     $(window).load(function() {
         animate.positionCheck();
     });
@@ -159,57 +191,6 @@ permalink: /the-plan/
         animate.positionCheck();
       }
     }, 60);// important
-    animate = {
-      current : null,
-      menuHide : 0,
-      menuSwitch : function (first) {
-        var target = $link1
-        if ( animate.menuHide === 0 && ( $container4.offset().top < first )){
-            $('.sticky-tree').addClass('hideIt');
-            
-            animate.menuHide = 1;
-        } else if ( animate.menuHide === 1 ) {
-          var treeBottom = $('.sticky-tree').offset().top + $('.sticky-tree').height(),
-            pageBottom = window.innerHeight + window.pageYOffset;
-          if ( pageBottom - treeBottom < 199){
-            $('.sticky-tree').removeClass('hideIt');
-            animate.menuHide = 0;
-          }
-        }
-      },
-      positionCheck: function () {
-        var firstLink = $link1.offset().top;
-
-        if( $container4.offset().top < firstLink + 137 ) {
-          animate.toggle4();
-        } else if ( $container3.offset().top < firstLink + 110 ) {
-          animate.toggle3();
-        } else if ( $container2.offset().top < firstLink + 47 ) {
-          animate.toggle2();
-        } else if ( $container1.offset().top < firstLink ) {
-          animate.toggle1();
-        } else if ( $container0.offset().top < firstLink ) {
-          animate.toggle0();
-        }
-
-        animate.menuSwitch(firstLink);
-      },
-      toggle0 : function (){
-       makeActive($link1, 1)
-      },
-      toggle1 : function (){
-        makeActive($link1, 1);
-      },
-      toggle2 : function (){
-        makeActive($link2, 2)
-      },
-      toggle3 : function (){
-        makeActive($link3, 3);
-      },
-      toggle4 : function (){
-        makeActive($link4, 4);
-      }
-    }
   });
 </script>
 
