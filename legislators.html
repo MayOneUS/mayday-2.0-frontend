@@ -1,7 +1,18 @@
+---
+layout: default
+title: legislators
+permalink: /legislators/
+---
 
-<div class="row no-gutter">
-  <div id="js-legislators" class="js-legislators"></div>
+<div class="container homepage-panel light">
+    <div class="row homepage-panel-body">
+      <div class="col-xs-8"><h2>Legislators</h2></div>
+    </div>
+    <div class="row no-gutter">
+      <div id="js-legislators" class="js-legislators"></div>
+    </div>
 </div>
+
 
 <script id="legislator_template" type="text/html">
 {% raw %}
@@ -36,10 +47,10 @@
       rendered = ich.legislator_template(legislator_data);
       $(rendered["0"]).find("div.background-sqaure").css("background-image", bgIMG);
 
-      if ( index === 0 ){
+      if ( index % 3 === 0 ){
         $(rendered["0"]).addClass("remove-padding-photo");
       } else if ( index === 1 ){ //adds verticallines the the middle article
-        $(rendered["0"]).addClass("verticalLines");
+        // $(rendered["0"]).addClass("verticalLines");
         $(rendered["0"]).addClass("remove-padding-photo-small");
       } else {
         $(rendered["0"]).addClass("remove-padding-photo-small");
@@ -53,10 +64,8 @@
       var allyObject = [];
 
       legislators.forEach( function ( data, index ){ //gets three reps
-        if (index < 3 ){
           allyObject.push( data );
-        }
-      });
+        });
       allyObject.map(renderAllies);
     }
 
@@ -65,5 +74,20 @@
   });
 
 })( '{{site.services_url}}/legislators/newest_supporters.json' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
