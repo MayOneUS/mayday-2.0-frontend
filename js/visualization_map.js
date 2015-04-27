@@ -25,10 +25,10 @@ function VoxelMap(params) {
 }
 
 VoxelMap.prototype.sizes = {
-  width: 25,
-  height: 26,
-  left: 22,
-  top: 24,
+  width: 19,
+  height: 22,
+  left: 16,
+  top: 20,
   popoverVerticalOffset: 42 + 24,
   popoverWidth: 309,
 };
