@@ -243,7 +243,9 @@
 a:link, a:visited, a:active {
   color: #007acf;
 }
-
+.md-select-container{
+  padding-top:25px !important;
+}
 select.md-select {
   -moz-appearance: none;
   -webkit-appearance: none;

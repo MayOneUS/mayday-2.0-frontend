@@ -19,7 +19,7 @@ This file includes:
   </select>
 </div>
 
-<div class="loading">Please wait...</div>
+<div id="map-message" class="loading">Please wait...</div>
 
 <div class="voxels" style="opacity: 0">
   <div class="voxel-popover">
@@ -182,10 +182,15 @@ This file includes:
 <script src="/js/visualization_map.js"></script>
 <script>
 $(function() {
-  var voxelMap = new VoxelMap({
-    $el: $('#voxel-map'),
-    url: '{{site.services_url}}/legislators/supporters_map.json',
-  });
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+   $('#map-message').css('display','none');
+  }else{
+    var voxelMap = new VoxelMap({
+      $el: $('#voxel-map'),
+      url: '{{site.services_url}}/legislators/supporters_map.json',
+    });
+  }
+
 });
 </script>
 
