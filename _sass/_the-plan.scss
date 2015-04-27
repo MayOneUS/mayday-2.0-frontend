@@ -170,7 +170,10 @@
   }
 }
 .sticky-tree.stuck{
-  position: fixed;
+  position:fixed;
+  top: 198px;
+  left: 5px;
+  margin: 0 auto;
 }
 .sticky-tree.unstuck{
   position:absolute;
@@ -179,8 +182,9 @@
 #stick-group{
   visibility: visible;
 }
-#stick-group.hideIt{
-  visibility: hidden;
+.sticky-tree.hideIt{
+  position:absolute;
+  top:2244px;
 }
 #free-group{
   visibility: hidden;

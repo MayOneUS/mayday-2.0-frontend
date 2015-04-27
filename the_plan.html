@@ -3,9 +3,7 @@ layout: default
 title: The Plan
 permalink: /the-plan/
 ---
-<div class="row page-panel light">
-  <div class="container content-offset">
-
+<div>
     <div id="stick-group" class="sticky-tree stuck hidden-xs">
       <div class="row sticky-grid">
         <a id="link1" data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#problem">
@@ -32,6 +30,9 @@ permalink: /the-plan/
         </a>
       </div>
     </div>
+<div class="row page-panel light">
+  <div class="container content-offset">
+
 
     <div id="opening" class="col-md-9">
       <h1 class="mayday-headline-M2 top-space-h1">The Plan</h1>
@@ -87,7 +88,7 @@ permalink: /the-plan/
     </div>
 
 
-    <div id="free-group" class="unstuck sticky-tree hidden-xs">
+<!--     <div id="free-group" class="unstuck sticky-tree hidden-xs">
       <div class="row sticky-grid">
         <a id="hidden-link" data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#problem">
           <div class="sticky-star col-sm-1"></div>
@@ -114,9 +115,10 @@ permalink: /the-plan/
       </div>
     </div>
 
-  </div>
+  </div> -->
 </div>
 
+</div>
 </div>
 
 <script src="{{ root_path }}/js/lib/smooth-scroll.min.js"></script>
@@ -186,13 +188,15 @@ permalink: /the-plan/
       current : null,
       menuHide : 0,
       menuSwitch : function (first) {
-        if ( animate.menuHide === 0 && ( $hiddenLink.offset().top < first )){
-            $('#stick-group').addClass('hideIt');
-            $('#free-group').addClass('show');
+        console.log(( $container4.offset().top > $link1.offset().top ));
+        if ( animate.menuHide === 0 && ( $container4.offset().top < first )){
+            $('.sticky-tree').addClass('hideIt');
+            
             animate.menuHide = 1;
-        } else if ( animate.menuHide === 1 && ( $hiddenLink.offset().top > first )) {
-            $('#stick-group').removeClass('hideIt');
-            $('#free-group').removeClass('show');
+        } else if ( animate.menuHide === 1 && ( $container4.offset().top > $link1.offset().top )) {
+            console.log(true)
+            $('.sticky-tree').removeClass('hideIt');
+            
             animate.menuHide = 0;
         }
       },
