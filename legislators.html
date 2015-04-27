@@ -4,15 +4,18 @@ title: legislators
 permalink: /legislators/
 ---
 
-<div class="container homepage-panel light">
-    <div class="row homepage-panel-body">
-      <div class="col-xs-8"><h2>Legislators</h2></div>
+<div class="container">
+    <div class="row">
+      <h1>Legislators</h1>
+      <p>This is a functional demonstration. Goal is to make each legislator panel look like the tooltip on the map, with less copy. We'll also have buttons filter by Leader, potential leader and all reps</p>
+      <form method="get" accept-charset="utf-8" class="md-inputs">
+        <input id="search" class="form-control" name="search" placeholder="Search by name or state" type="text" data-list=".js-legislators">
+      </form>
     </div>
     <div class="row no-gutter">
       <div id="js-legislators" class="js-legislators"></div>
     </div>
 </div>
-
 
 <script id="legislator_template" type="text/html">
 {% raw %}
@@ -30,9 +33,11 @@ permalink: /legislators/
 
 {% endraw %}
 </script>
+<script src="/js/lib/jquery.hideseek.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
 (function ( data ){
   $(document).ready(function(){
+    $('#search').hideseek();
 
     "use strict";
 
@@ -73,7 +78,7 @@ permalink: /legislators/
 
   });
 
-})( '{{site.services_url}}/legislators/newest_supporters.json' );
+})( '{{site.services_url}}/legislators/newest_supporters.json?limit=1000' );
 
 
 
