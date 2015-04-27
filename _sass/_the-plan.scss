@@ -96,6 +96,12 @@
   padding-top:18px;
   padding-bottom:22px;
   font-weight: 400;
+
+  .panel-wrapper{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+
   &.grey{
     background-color: $color-grey-backgroud;
   }

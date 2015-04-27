@@ -1,7 +1,7 @@
 
 .spacer-opening{
-  padding-top:60px;
-  padding-bottom:30px;
+  padding-top:10px;
+  padding-bottom:10px;
   @include small-desktop{
     padding-top:20px;
     padding-bottom:10px;
@@ -24,7 +24,7 @@
 
 .full-bg-imgage, .banner-image{
   background-color: #818181;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
   overflow: hidden;
 }
 .full-bg-imgage {
@@ -32,8 +32,8 @@
   padding-top:0 !important;
   padding-bottom:0 !important;
   width: 100%;
-  background-image: url("../images/temp-img/screenshot_04_flipped.jpg");
-  background-size: 200%;
+  background-image: url("/images/campaigns/map_bg_grey.jpg");
+  // background-size: 200%;
   @include phone{
     margin-top: -50px !important;
   }
@@ -41,8 +41,8 @@
 .banner-image {
   padding-top:30px;
   padding-bottom:15px;
-  background-image: url("../images/temp-img/screenshot_04_flipped.jpg");
-  background-size: 100%;
+  background: url("/images/campaigns/map_bg.png") 0 20px no-repeat;
+  background-size: 60%;
 }
 .index-logo-small{
   @include phone{
