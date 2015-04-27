@@ -158,25 +158,6 @@
       line-height: 140%;
       color: $color-text;
     }
-    // .sticky-text a {
-    //   font-weight: 400;
-    //   line-height: 140%;
-    //   color: $color-text;
-    //   text-decoration: none;
-
-    //   &:visited {
-    //     color: $color-text;
-    //   }
-
-    //   &:hover {
-    //     color: $color-text;
-    //     text-decoration: none;
-    //   }
-    //   &:active {
-    //     color: $color-text;
-    //     text-decoration: none;
-    //   }
-    // }
     .sticky-text.active, .sticky-text.bottom{
       color: $color-brand;
     }
