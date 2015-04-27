@@ -92,7 +92,7 @@
 }
 .page-panel{
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   padding-top:18px;
   padding-bottom:22px;
   font-weight: 400;
@@ -127,11 +127,7 @@
   padding-right:0;
   font-size: 12px;
 }
-// .sticky-tree{
-//   ul {
-//     list-style-image:url('/images/plan_side_star_off.svg');
-//   }
-// }
+
 .sticky-tree ul>li.list-unstyled>a.star{background: transparent url('/images/plan_side_star_off.svg') 2px 2px no-repeat; padding-left:20px; background-size:20px 20px;}
 
 .sticky-tree{
