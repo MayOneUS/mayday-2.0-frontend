@@ -1,51 +1,56 @@
-
-.voxel-map * {
-  list-style: none;
-  position: relative;
-  margin: 0;
-  padding: 0;
-
-  -webkit-tap-highlight-color: transparent;
-
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-      box-sizing: border-box;
-}
-
 .voxel-map {
   line-height: 1;
   letter-spacing: 0;
-}
 
-.voxel-map .clear {
-  clear: both;
-}
+  * {
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
 
-.voxel-map select {
-  // font-size: 24px;
-  margin: 0 0 32px;
-}
+    -webkit-tap-highlight-color: transparent;
 
-.voxel-map .voxels {
-  position: relative;
-  top: 12px;
-  left: 0;
-  height: 100px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        box-sizing: border-box;
+  }
 
-  -webkit-transition: opacity 0.9s;
-          transition: opacity 0.9s;
-}
+  .clear {
+    clear: both;
+  }
 
-.voxel-map .voxels .label {
-  color: #fff;
-  letter-spacing: 0;
-  font-size: 15px;
-  line-height: 28px;
-  pointer-events: none;
-  position: absolute;
-  text-align: center;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
-  width: 34px;
+  select.md-select {
+    margin: 0 0 32px;
+    width: 50%;
+    min-width: 300px;
+    float:right;
+  }
+
+  h2{
+    float:left;
+  }
+
+  .voxels {
+    position: relative;
+    top: 12px;
+    left: 0;
+    height: 100px;
+
+    -webkit-transition: opacity 0.9s;
+            transition: opacity 0.9s;
+  }
+
+  .voxels .label {
+    color: #fff;
+    letter-spacing: 0;
+    font-size: 15px;
+    line-height: 28px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+    width: 34px;
+  }
 }
 
 .voxel-map[size-modifier="0.75"] .voxels .label {
@@ -104,9 +109,12 @@
 .voxel-map .voxel svg polygon.border-top,
 .voxel-map .voxel svg polygon.border-right,
 .voxel-map .voxel svg polygon.border-bottom,
+.voxel-map .voxel svg polygon.border-bottom-angled,
 .voxel-map .voxel svg polygon.border-left {
   display: none;
   fill: rgba(255,255,255,0.9);
+  // fill:#000;
+
 }
 
 .voxel-map .voxel[color=blue]{
@@ -115,7 +123,7 @@
   svg polygon.bottom {fill: #385768;}
   &[dark] svg polygon.front {fill: #385467;}
   &[dark] svg polygon.left {fill: #4d6674;}
-  &[dark] svg polygon.bottom {fill: #22343e;}
+  &[dark] svg polygon.bottom {fill: #507C94;}
   svg polygon.border-top,
   svg polygon.border-right,
   svg polygon.border-bottom,
@@ -123,6 +131,8 @@
   svg polygon.border-left {
     display: none;
     fill: rgba(56,87,104, 0.8);
+    // fill:#000;
+
   }
 }
 .voxel-map .voxel[color=green]{ 
@@ -139,6 +149,7 @@
   svg polygon.border-left {
     display: none;
     fill: rgba(91,115,79,1);
+    // fill:#000;
   }
 }
 .voxel-map .voxel[color=gray]{
@@ -155,6 +166,8 @@
   svg polygon.border-left {
     display: none;
     fill: rgba(0,0,0, 0.35);
+    // fill:#000;
+
   }
 }
 .voxel-map .voxel[color=white]{
@@ -170,7 +183,7 @@
 // .voxel-map .voxel.has-border-top svg polygon.border-top,
 .voxel-map .voxel.has-border-right svg polygon.border-right,
 .voxel-map .voxel.has-border-bottom svg polygon.border-bottom,
-.voxel-map .voxel.has-border-bottom svg polygon.border-bottom-angled,
+.voxel-map .voxel.has-border-bottom svg polygon.border-bottom-angled
 // .voxel-map .voxel.has-border-left svg polygon.border-left 
 {
   display: block;
