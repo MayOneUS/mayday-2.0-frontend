@@ -88,7 +88,7 @@ $(function() {
             showInLegend:false,
             dataLabels: {
                 enabled: true,
-                distance: 10,
+                distance: 8,
                 style: {
 
                 },
@@ -138,13 +138,12 @@ $(function() {
 
     animate = {
         // remains false until charts are rendered
-        chart1Finished : false,
-        chart2Finished : false,
-        chart3Finished : false,
+        chart1Fin : false,
+        chart2Fin : false,
+        chart3Fin : false,
         // makes three donut charts
         renderHouseSupport : function (chartData,target_container, finishingVar) {
 
-            animate[finishingVar] = true;
 
             // individual chart code
             chart1_Options = {
@@ -186,11 +185,17 @@ $(function() {
             } else {
                 var scrolledTo = animate.windowHeight();
             }
-            if(animate.chart1Finished === false && $container1[0].offsetTop + 100 < scrolledTo) {
-                animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Finished');
+            if(animate.chart1Fin === false && $container1[0].offsetTop + 100 < scrolledTo) {
+                animate.chart1Fin = true;
+                animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Fin');
+
             }
-            if(animate.chart2Finished === false && $container2[0].offsetTop + 100 < scrolledTo) {
-                animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Finished');
+            if(animate.chart2Fin === false && $container2[0].offsetTop + 100 < scrolledTo) {
+                animate.chart2Fin = true;
+                animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
+            }
+            if(animate.chart3Fin === false && $container2[0].offsetTop + 100 < scrolledTo) {
+                $container3.addClass('loaded');
             }
         },
         // runs charts on page load if they are in the view port currently
@@ -198,17 +203,21 @@ $(function() {
 
             var windowHeight = animate.windowHeight();
 
-            if($container1[0].offsetTop + ($container1.height() / 2) < windowHeight) {
-                animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Finished');
+            if(animate.chart1Fin === false && $container1[0].offsetTop + ($container1.height() / 2) < windowHeight) {
+                animate.chart1Fin = true;
+                animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Fin');
+
             }
 
-            if($container2[0].offsetTop + ($container2.height() / 2) < windowHeight) {
-                animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Finished');
+            if(animate.chart2Fin === false && $container2[0].offsetTop + ($container2.height() / 2) < windowHeight) {
+                animate.chart2Fin = true;
+                animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
             }
 
-            // if($container3[0].offsetTop + ($container3.height() / 2) < windowHeight) { //1663 + (250/2) < current window height
-            //     animate.render3();
-            // }
+            if(animate.chart3Fin === false && $container3[0].offsetTop + ($container3.height() / 2) < windowHeight) { //1663 + (250/2) < current window height
+                animate.chart3Fin = true;
+                $container3.addClass('loaded');
+            }
         }
     }
 
