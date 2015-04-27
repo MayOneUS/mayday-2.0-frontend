@@ -543,6 +543,9 @@
 .chart-holder {
   height: 400px;
   padding-right:0;
+  @include phone{
+    padding-right: 15px;
+  }
 }
 .highcharts-tooltip>span {
   background: rgb(255,255,255);
@@ -550,4 +553,14 @@
   border-radius: 3px;
   box-shadow: 1px 1px 2px #888;
   padding: 15px;
+}
+#container3{
+    opacity: 0;
+  -webkit-transition: opacity 450ms;
+  -moz-transition: opacity 450ms;
+  -ms-transition: opacity 450ms;
+  transition: opacity 450ms;
+}
+#container3.loaded{
+  opacity: 1;
 }
