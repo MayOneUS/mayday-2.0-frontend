@@ -88,34 +88,6 @@ permalink: /the-plan/
     </div>
 
 
-<!--     <div id="free-group" class="unstuck sticky-tree hidden-xs">
-      <div class="row sticky-grid">
-        <a id="hidden-link" data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#problem">
-          <div class="sticky-star col-sm-1"></div>
-          <div class="sticky-text col-sm-2">The Challenge: Election Funding</div>
-        </a>
-      </div>
-      <div class="row sticky-grid">
-        <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#solution">
-          <div class="sticky-star col-sm-1"></div>
-          <div class="sticky-text col-sm-2">The Solution: Different Election Funding</div>
-        </a>
-      </div>
-      <div class="row sticky-grid">
-        <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#challenge">
-          <div class="sticky-star col-sm-1"></div>
-          <div class="sticky-text col-sm-2">The Challenge: A Congress Committed to Reform</div>
-        </a>
-      </div>
-      <div class="row sticky-grid">
-        <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#labratory">
-          <div class="sticky-star col-sm-1 bottom"></div>
-          <div class="sticky-text col-sm-2 bottom">The Mayday Lab: Getting a Congress committed to Refor</div>
-        </a>
-      </div>
-    </div>
-
-  </div> -->
 </div>
 
 </div>
@@ -151,6 +123,9 @@ permalink: /the-plan/
         $container2 = $('#solution'),
         $container3 = $('#challenge'),
         $container4 = $('#labratory'),
+
+        treeBottom = $('.sticky-tree').offset().top + $('.sticky-tree').height(),
+        pageBottom = window.innerHeight + window.pageYOffset,
 
         stickyLinks = $(".sticky-tree");
         stickyheight = stickyLinks.height();
@@ -188,16 +163,18 @@ permalink: /the-plan/
       current : null,
       menuHide : 0,
       menuSwitch : function (first) {
-        console.log(( $container4.offset().top > $link1.offset().top ));
+        var target = $link1
         if ( animate.menuHide === 0 && ( $container4.offset().top < first )){
             $('.sticky-tree').addClass('hideIt');
             
             animate.menuHide = 1;
-        } else if ( animate.menuHide === 1 && ( $container4.offset().top > $link1.offset().top )) {
-            console.log(true)
+        } else if ( animate.menuHide === 1 ) {
+          var treeBottom = $('.sticky-tree').offset().top + $('.sticky-tree').height(),
+            pageBottom = window.innerHeight + window.pageYOffset;
+          if ( pageBottom - treeBottom < 199){
             $('.sticky-tree').removeClass('hideIt');
-            
             animate.menuHide = 0;
+          }
         }
       },
       positionCheck: function () {
