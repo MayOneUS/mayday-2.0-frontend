@@ -104,6 +104,7 @@ permalink: /legislator/
 
       var l_d = legislator_data;
       l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
+      l_d.bioguide_id = bioguide_id;
 
       if ( l_d.with_us === true ){
         status = true;
