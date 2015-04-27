@@ -194,7 +194,7 @@ $(function() {
                 animate.chart2Fin = true;
                 animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
             }
-            if(animate.chart3Fin === false && $container2[0].offsetTop + 100 < scrolledTo) {
+            if(animate.chart3Fin === false && $container2[0].offsetTop + 150 < scrolledTo) {
                 $container3.addClass('loaded');
             }
         },
