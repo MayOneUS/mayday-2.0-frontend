@@ -1,6 +1,7 @@
 
 .voxel-map * {
   list-style: none;
+  position: relative;
   margin: 0;
   padding: 0;
 
@@ -90,110 +91,14 @@
   }
 }
 
-.voxel-map .voxel svg {
-  height: 25px;
-  width: 25px;
-}
-
 .voxel-map .voxels .voxel svg polygon {
   -webkit-transition: fill 0.4s;
       transition: fill 0.4s;
 }
 
-.voxel-map .voxel[color=blue] svg polygon.front {
-  fill: #5e8cac;
-}
-
-.voxel-map .voxel[color=blue] svg polygon.left {
-  fill: #81aac1;
-}
-
-.voxel-map .voxel[color=blue] svg polygon.bottom {
-  fill: #385768;
-}
-
-.voxel-map .voxel[color=blue][dark] svg polygon.front {
-  fill: #385467;
-}
-
-.voxel-map .voxel[color=blue][dark] svg polygon.left {
-  fill: #4d6674;
-}
-
-.voxel-map .voxel[color=blue][dark] svg polygon.bottom {
-  fill: #22343e;
-}
-
-.voxel-map .voxel[color=green] svg polygon.front {
-  fill: #759c64;
-}
-
-.voxel-map .voxel[color=green] svg polygon.left {
-  fill: #96af8b;
-}
-
-.voxel-map .voxel[color=green] svg polygon.bottom {
-  fill: #355126;
-}
-
-.voxel-map .voxel[color=green][dark] svg polygon.front {
-  fill: #465e3c;
-}
-
-.voxel-map .voxel[color=green][dark] svg polygon.left {
-  fill: #5a6953;
-}
-
-.voxel-map .voxel[color=green][dark] svg polygon.bottom {
-  fill: #203117;
-}
-
-.voxel-map .voxel[color=gray] svg polygon.front {
-  fill: #ccc;
-}
-
-.voxel-map .voxel[color=gray] svg polygon.left {
-  fill: #ddd;
-}
-
-.voxel-map .voxel[color=gray] svg polygon.bottom {
-  fill: #bbb;
-}
-
-.voxel-map .voxel[color=gray][dark] svg polygon.front {
-  fill: #7a7a7a;
-}
-
-.voxel-map .voxel[color=gray][dark] svg polygon.left {
-  fill: #858585;
-}
-
-.voxel-map .voxel[color=gray][dark] svg polygon.bottom {
-  fill: #707070;
-}
-
-.voxel-map .voxel[color=white] svg polygon.front {
-  fill: #eee;
-}
-
-.voxel-map .voxel[color=white] svg polygon.left {
-  fill: #f3f3f3;
-}
-
-.voxel-map .voxel[color=white] svg polygon.bottom {
-  fill: #e9e9e9;
-}
-
-.voxel-map .voxel[color=white][dark] svg polygon.front {
-  fill: #eee;
-}
-
-.voxel-map .voxel[color=white][dark] svg polygon.left {
-  fill: #f3f3f3;
-}
-
-.voxel-map .voxel[color=white][dark] svg polygon.bottom {
-  fill: #e9e9e9;
+.voxel-map .voxel svg {
+  height: 25px;
+  width: 25px;
 }
 
 .voxel-map .voxel svg polygon.border-top,
@@ -201,22 +106,107 @@
 .voxel-map .voxel svg polygon.border-bottom,
 .voxel-map .voxel svg polygon.border-left {
   display: none;
-  fill: #fff;
+  fill: rgba(255,255,255,0.9);
 }
 
-.voxel-map .voxel.has-border-top svg polygon.border-top,
+.voxel-map .voxel[color=blue]{
+  svg polygon.front {fill: #5e8cac;}
+  svg polygon.left {fill: #81aac1;}
+  svg polygon.bottom {fill: #385768;}
+  &[dark] svg polygon.front {fill: #385467;}
+  &[dark] svg polygon.left {fill: #4d6674;}
+  &[dark] svg polygon.bottom {fill: #22343e;}
+  svg polygon.border-top,
+  svg polygon.border-right,
+  svg polygon.border-bottom,
+  svg polygon.border-bottom-angled,
+  svg polygon.border-left {
+    display: none;
+    fill: rgba(56,87,104, 0.8);
+  }
+}
+.voxel-map .voxel[color=green]{ 
+  svg polygon.front {fill: #759c64;}
+  svg polygon.left {fill: #96af8b;}
+  svg polygon.bottom {fill: #6C895E;}
+  &[dark] svg polygon.front {fill: #465e3c;}
+  &[dark] svg polygon.left {fill: #5a6953;}
+  &[dark] svg polygon.bottom {fill: #203117;}
+  svg polygon.border-top,
+  svg polygon.border-right,
+  svg polygon.border-bottom,
+  svg polygon.border-bottom-angled,
+  svg polygon.border-left {
+    display: none;
+    fill: rgba(91,115,79,1);
+  }
+}
+.voxel-map .voxel[color=gray]{
+  svg polygon.front {fill: #ccc;}
+  svg polygon.left {fill: #ddd;}
+  svg polygon.bottom {fill: #bbb;}
+  &[dark] svg polygon.front {fill: #7a7a7a;}
+  &[dark] svg polygon.left {fill: #858585;}
+  &[dark] svg polygon.bottom {fill: #707070;}
+  svg polygon.border-top,
+  svg polygon.border-right,
+  svg polygon.border-bottom,
+  svg polygon.border-bottom-angled,
+  svg polygon.border-left {
+    display: none;
+    fill: rgba(0,0,0, 0.35);
+  }
+}
+.voxel-map .voxel[color=white]{
+  svg polygon.front {fill: #eee;}
+  svg polygon.left {fill: #f3f3f3;}
+  svg polygon.bottom {fill: #e9e9e9;}
+  &[dark] svg polygon.front {fill: #eee;}
+  &[dark] svg polygon.left {fill: #f3f3f3;}
+  &[dark] svg polygon.bottom {fill: #e9e9e9;}
+}
+
+
+// .voxel-map .voxel.has-border-top svg polygon.border-top,
 .voxel-map .voxel.has-border-right svg polygon.border-right,
 .voxel-map .voxel.has-border-bottom svg polygon.border-bottom,
-.voxel-map .voxel.has-border-left svg polygon.border-left {
+.voxel-map .voxel.has-border-bottom svg polygon.border-bottom-angled,
+// .voxel-map .voxel.has-border-left svg polygon.border-left 
+{
   display: block;
 }
 
 .voxel-map .key {
   overflow: hidden;
+  position: absolute;
+  top:70%;
+  right:0;
   padding: 0;
+  width:150px;
 
   -webkit-transition: opacity 0.3s;
           transition: opacity 0.3s;
+  .color {
+    color: #889;
+    float: left;
+    font: italic 100 20px  Verdana,sans-serif;
+    margin-bottom: 5px;
+    width: 100%;
+    margin-right: 20px;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+    .voxel svg{
+      float:left;
+    }
+
+    p{
+      display:inline;
+      padding-left: 6px;
+    }
+  }
 }
 
 .voxel-map .loading {
@@ -224,21 +214,7 @@
   font-size: 24px;
 }
 
-.voxel-map .key .color {
-  color: #889;
-  float: left;
-  font-family: Verdana,sans-serif;
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 100;
-  text-align: center;
-  // width: 176px;
-  margin-right: 20px;
 
-  &:last-child{
-    margin-right: 0;
-  }
-}
 
 .voxel-map .voxel-popover {
   background-color: rgba(240,240,240, 0.9);

@@ -11,3 +11,36 @@
     </form>
   </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="onboarding-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="onboarding-overlay" src="" frameborder="0" frameborder="0" allowtransparency="true"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$("form.join").submit(function (event) {
+  event.preventDefault();
+  var userZip = $(this).find('input[name="person[zip]"]').val();
+  var userEmail = $(this).find('input[name="person[email]"]').val();
+  var queryString = 'zip=' + encodeURIComponent(userZip) + '&email=' + encodeURIComponent(userEmail);
+  var baseURI = 'http://onboarding-staging.mayday.us';
+  var iframeURI = baseURI + '?' + queryString;
+
+  var saveURI = '{{site.services_url}}/people.json';
+  $.post(saveURI, $(this).serialize())
+    .always(function() {
+      $("#onboarding-overlay").attr("src", iframeURI);
+    })
+    .done(function (data, textStatus, jqXHR) {
+      console.log(data, textStatus);
+    })
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
+    });
+});
+</script>
