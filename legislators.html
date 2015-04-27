@@ -3,3 +3,91 @@ layout: default
 title: legislators
 permalink: /legislators/
 ---
+
+<div class="container homepage-panel light">
+    <div class="row homepage-panel-body">
+      <div class="col-xs-8"><h2>Legislators</h2></div>
+    </div>
+    <div class="row no-gutter">
+      <div id="js-legislators" class="js-legislators"></div>
+    </div>
+</div>
+
+
+<script id="legislator_template" type="text/html">
+{% raw %}
+
+    <div class="col-md-4 col-sm-8 col-xs-12 bottom-margin">
+      <div class="col-md-4 col-sm-3 col-xs-4">
+        <a href="/legislator/?bioguide_id={{bioguide_id}}"><div class="background-sqaure"></div></a>
+      </div>
+      <div class="col-md-8 col-sm-6 col-xs-8 remove-padding-text">
+        <h2 class="no-top-margin">{{ name }}</h2>
+        <h4>{{ title }} ({{ party }}-{{ state_abbrev }} {{display_district}})</h4>
+        <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">Read More</a>
+      </div>
+    </div>
+
+{% endraw %}
+</script>
+<script>
+(function ( data ){
+  $(document).ready(function(){
+
+    "use strict";
+
+    var newAllieData = data;
+    var outSide = {};
+
+    function renderAllies(legislator_data, index) {
+
+      var rendered = [],
+          bgIMG = 'url(' + legislator_data["image_url"] + ')';
+
+      rendered = ich.legislator_template(legislator_data);
+      $(rendered["0"]).find("div.background-sqaure").css("background-image", bgIMG);
+
+      if ( index % 3 === 0 ){
+        $(rendered["0"]).addClass("remove-padding-photo");
+      } else if ( index === 1 ){ //adds verticallines the the middle article
+        // $(rendered["0"]).addClass("verticalLines");
+        $(rendered["0"]).addClass("remove-padding-photo-small");
+      } else {
+        $(rendered["0"]).addClass("remove-padding-photo-small");
+      }
+
+      $('#js-legislators').append(rendered);
+
+    }
+
+    function callDataAndTemplate(legislators) {
+      var allyObject = [];
+
+      legislators.forEach( function ( data, index ){ //gets three reps
+          allyObject.push( data );
+        });
+      allyObject.map(renderAllies);
+    }
+
+    $.getJSON(newAllieData, callDataAndTemplate);
+
+  });
+
+})( '{{site.services_url}}/legislators/newest_supporters.json' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
