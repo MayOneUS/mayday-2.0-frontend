@@ -85,11 +85,7 @@ permalink: /the-plan/
         <p>In 2015, Mayday will focus on generating support for reform within the Congress we already have. As the 2016 election approaches, we will explore the most effective means for Mayday to make a difference.</p>
         <p>We are counting on you to be a part of our efforts to get our democracy back. Please <a href="/take-action">sign-up to take action</a> and spread the word to your friends and family. Too much is at stake to sit on the sidelines.</p>
     </div>
-  </div>
-</div>
 
-<div class="row page-panel light">
-  <div class="container content-offset">
 
     <div id="free-group" class="unstuck sticky-tree hidden-xs">
       <div class="row sticky-grid">
@@ -112,8 +108,8 @@ permalink: /the-plan/
       </div>
       <div class="row sticky-grid">
         <a data-scroll data-options='{ "easing": "easeInOutQuart" }' href="#labratory">
-          <div class="sticky-star col-sm-1"></div>
-          <div class="sticky-text col-sm-2">The Mayday Lab: Getting a Congress committed to Refor</div>
+          <div class="sticky-star col-sm-1 bottom"></div>
+          <div class="sticky-text col-sm-2 bottom">The Mayday Lab: Getting a Congress committed to Refor</div>
         </a>
       </div>
     </div>
@@ -150,8 +146,8 @@ permalink: /the-plan/
         // dom objects to trigger
         $container0 = $('#opening'),
         $container1 = $('#problem'),
-        $container2 = $('#demand'),
-        $container3 = $('#state'),
+        $container2 = $('#solution'),
+        $container3 = $('#challenge'),
         $container4 = $('#labratory'),
 
         stickyLinks = $(".sticky-tree");
@@ -203,7 +199,7 @@ permalink: /the-plan/
       positionCheck: function () {
         var firstLink = $link1.offset().top;
 
-        if( $container4.offset().top < firstLink + 142 ) {
+        if( $container4.offset().top < firstLink + 137 ) {
           animate.toggle4();
         } else if ( $container3.offset().top < firstLink + 110 ) {
           animate.toggle3();
