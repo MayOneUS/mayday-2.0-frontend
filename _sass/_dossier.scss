@@ -12,13 +12,20 @@
     font-weight: 400;
   }
   .dossier-img{
-    width: 200px;
-    padding: 2px;
     margin: 0 auto 20px;
     border-radius: 5px;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 281px;
+    width: 231px;
+
+    &>div{
+      border:3px solid #fff;
+      border-radius: 5px;
+
+      height: 275px;
+      width: 225px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
   h1.lead-title{
     margin-top: 0;
@@ -63,6 +70,9 @@
   }
   .dossier-img{
     border:3px solid $color-dossier-blue;
+    &>div{
+      background-color: $color-dossier-blue;
+    }
   }
   .bottom-line, .make-call, .top-line-left{
     background-color: $color-dossier-blue;
@@ -85,6 +95,9 @@
   }
   .dossier-img{
     border:3px solid $color-dossier-red;
+    &>div{
+      background-color: $color-dossier-red;
+    }
   }
   .bottom-line, .make-call, .top-line-left{
     background-color: $color-dossier-red;
