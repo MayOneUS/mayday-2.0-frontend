@@ -103,7 +103,7 @@
   }
 
   &.grey{
-    background-color: $color-grey-backgroud;
+    background-color: $color-grey-background;
   }
   &.light{
     background-color: #fff;
@@ -121,30 +121,36 @@
 .sticky-grid{
   margin-top: 15px;
 }
-.sticky-grid .col-sm-1 { 
+.sticky-grid .col-sm-1 {
   width: 20px;
   padding-left:0;
   padding-right:5px;
   margin-top: 2px;
 }
-.sticky-grid .col-sm-2 { 
+.sticky-grid .col-sm-2 {
   width: 125px;
   padding-left:5px;
   padding-right:0;
   font-size: 12px;
 }
 
-.sticky-tree ul>li.list-unstyled>a.star{background: transparent url('/images/plan_side_star_off.svg') 2px 2px no-repeat; padding-left:20px; background-size:20px 20px;}
 
 .sticky-tree{
   margin-left: -10px;
-  background:#fff; 
+  background:#fff;
   border-radius:5px;
   padding: 0px 15px 30px 25px;
   box-shadow: 1px 1px 2px #eee;
   display: block;
   z-index: 10;
   color: $color-text;
+
+  ul>li.list-unstyled>a.star{
+    background: transparent url('/images/plan_side_star_off.svg') 2px 2px no-repeat;
+    padding-left:20px;
+    background-size:20px 20px;
+  }
+
   div{
     width: 145px;
     .sticky-star{

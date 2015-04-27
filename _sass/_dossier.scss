@@ -12,29 +12,16 @@
     font-weight: 400;
   }
   .dossier-img{
-    width: 315px;
-    padding:2px;
-    border-radius:2px;
+    width: 200px;
+    padding: 2px;
+    margin: 0 auto 20px;
+    border-radius: 5px;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  .lead-title{
+  h1.lead-title{
     margin-top: 0;
-  }
-  .links{
-    margin-top: 18px;
-    font-size: 16px;
-    font-weight: 400;
-  }
-  .page-content{
-    margin-top: 18px;
-    .election-info{
-      margin-top: 0;
-      color: #9b9c9e;
-      font-size: 14px;
-    }
-  }
-  .spacer{
-    padding: 0 0 15px 15px;
-    font-size: 22px;
     font-weight: 400;
   }
   .bottom-line, .top-line-left{
@@ -43,9 +30,35 @@
   .top-line-left{
     height: 20px;
   }
+  .tallies{
+    position:relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .talley{
+    font-size: 18px;
+    // padding-left: 50px;
+    text-align: left;
+    font-weight: 400;
+    line-height: 18px;
+    width:200px;
+    .fa{
+      font-size: 46px;
+      float: left;
+      margin-right: 5px;
+    }
+  }
+
+  .tail-message{
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+
+
 }
+
 .dossier-page.with-us-true{
-  h2,.spacer{
+  h2, h1, .talley{
     color: $color-dossier-blue;
   }
   .dossier-img{
@@ -54,9 +67,20 @@
   .bottom-line, .make-call, .top-line-left{
     background-color: $color-dossier-blue;
   }
+  .talley{
+  }
+  .leader-visible{
+    display: initial;
+  }
+  .leader-hidden{
+    display: none;
+  }
+  .bg-star{
+    background-image:url('/images/star_blue.svg') no-repeat;
+  }
 }
 .dossier-page.with-us-false{
-  h2,.spacer{
+  h2, h1, .talley{
     color: $color-dossier-red;
   }
   .dossier-img{
@@ -64,18 +88,30 @@
   }
   .bottom-line, .make-call, .top-line-left{
     background-color: $color-dossier-red;
-  } 
+  }
+  .talley .fa{
+      font-size: 38px;
+      margin-right: 8px;
+  }
+  .leader-visible{
+    display: none;
+  }
+  .leader-hidden{
+    display: initial;
+  }
+
+  .bg-star{
+    background-image:url('/images/money_sign.svg') no-repeat;
+  }
 }
-.make-call>div>.fa-phone{
-  float: left;
-  margin-top: 15px;
-  font-size: 1.3em;
-  line-height: 0px;
+
+.make-call>.fa-phone{
+  padding-right: 5px
 }
 .twitter-small{
-  margin-left: 20px !important;
+  margin-left: 10px !important;
   @include tablet{
-    margin-left: 2% !important;
+    margin-left: 1% !important;
   }
   @include phone{
     margin-left: 0 !important;
@@ -100,12 +136,130 @@
     line-height: 50%;
   }
 }
-.talley{
-  height: 45px;
-}
-.spacer .col-md-3,.spacer .col-md-9{
-  padding:0
-}
+
 .triangle-up .leg{
   margin-top: 45px;
+}
+
+/* CSS talk bubble */
+.talk-bubble {
+  margin: 30px auto 20px;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  background-color: $color-grey-background;
+  border: 8px solid $color-navy-blue;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  padding:15px 20px;
+
+  text-align: left;
+  line-height: 1.5em;
+  font-size: 1.1em;
+  color:$color-navy-blue;
+
+  &:before, &:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    left: 50%;
+    bottom: auto;
+  }
+
+  &:before {
+    margin-left:-36px;
+    top: -64px;
+    border: 32px solid;
+    border-color: transparent transparent $color-navy-blue transparent;
+  }
+  &:after{
+    margin-left:-24px;
+    top: -40px;
+    border: 20px solid;
+    border-color:  transparent transparent $color-grey-background transparent;
+  }
+
+  p {
+    margin:0 0 10px;
+  }
+}
+
+
+.dossier-star {
+  .bg-star{
+    position: absolute;
+  }
+  .bg-star:first-of-type {
+    left: -400px;
+    top: -250px;
+    height: 650px;
+    opacity: .1;
+    @include star-rotation(-30deg)
+  }
+  .bg-star:nth-of-type(2) {
+    left: -500px;
+    top: 280px;
+    height: 800px;
+    opacity: .1;
+    @include star-rotation(-50deg);
+  }
+  .bg-star:nth-of-type(3) {
+    left: 10%;
+    top: -160px;
+    height: 265px;
+    opacity: .1;
+    @include star-rotation(-50deg);
+  }
+  .bg-star:nth-of-type(4) {
+    left: 1%;
+    top: -70px;
+    width: 600px;
+    opacity: .1;
+    @include star-rotation(35deg);
+  }
+  .bg-star:nth-of-type(5) {
+    left: 25%;
+    top: -200px;
+    height: 350px;
+    opacity: .1;
+    @include star-rotation(35deg);
+  }
+  .bg-star:nth-of-type(6) {
+    left: 25%;
+    top: 260px;
+    height: 350px;
+    opacity: .1;
+    @include star-rotation(35deg);
+  }
+  .bg-star:nth-of-type(7) {
+    left: 35%;
+    top: 100px;
+    height: 200px;
+    opacity: .1;
+    @include star-rotation(-50deg);
+  }
+  .bg-star:nth-of-type(8) {
+    left: 47%;
+    top: -120px;
+    height: 850px;
+    opacity: .1;
+    @include star-rotation(35deg);
+  }
+  .bg-star:nth-of-type(9) {
+    left: 76%;
+    top: -170px;
+    height: 600px;
+    opacity: .1;
+    @include star-rotation(40deg);
+  }
+  .bg-star:nth-of-type(10) {
+    left: 82%;
+    top: 475px;
+    height: 200px;
+    opacity: .1;
+    @include star-rotation(-15deg);
+  }
 }

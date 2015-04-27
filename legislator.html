@@ -24,67 +24,62 @@ permalink: /legislator/
     <img class="bg-star" src={{ background_img }}>
     <img class="bg-star" src={{ background_img }}>
     <img class="bg-star" src={{ background_img }}>
-    <div class="container gutter-justphone">
-      <div class="row page-open">
-        <div class="col-md-4 col-sm-3 col-xs-12">
-          <div>
-            <img class="dossier-img" src="{{ image_url }}" alt="${{ name }} Headshot">
-          </div>
-          <div class="links">
-            <a href="#">Open Congress</a> |
-            <a href="#">Open Secrets</a><br>
-            <a href="#">Official Website</a> |
-            <a href="#">Campaign Website</a>
-          </div>
-        </div>
-        <div class="col-md-8 col-sm-9 col-xs-12">
-          <h2 class="lead-title">{{title}} {{ name }} {{with_message}} Campaign Finance Reform</h2>
-
-          <div class="no-gutter page-content">
-            <div class="col-md-7 col-xs-12">
-              <p class="election-info">First Elected: {{temp_date}} Next Election: {{temp_date}}</p>
-              <p>{{ temp_message }}</p>
-            </div>
-            <div class="col-md-5 col-xs-12 spacer ">
-              <img class="col-md-3 talley"src="{{ checked_box_img }}" alt="">
-              <span class="col-md-9">Political Money Reform Proposal</span>
-            </div>
-            <div class="col-md-5 col-xs-12 spacer ">
-              <div class="col-md-3 talley">
-                <img src="{{ l_d.checked_box_img2 }}" alt="">
-              </div>
-              <span class="col-md-9"></span>
-            </div>
-            <div class="col-md-5 col-xs-12 spacer ">
-              <img class="col-md-3 talley"src="{{ checked_box_img }}" alt="">
-              <span class="col-md-9">Political Money Reform Proposal</span>
-            </div>
-          </div>
-
+    <div class="container page-open">
+      <div class="row">
+        <div class="col-md-8 col-xs-12 center-block text-center">
+          <h1 class="lead-title">{{page_title}}</h1>
+          <div class="dossier-img"  alt="{{ name }} Headshot" style="background-image:url({{ image_url }})"></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-8 center-block tallies no-gutter">
+          <div class="col-md-6">
+            <div class="talley pull-right">
+            <i class="fa fa-check-square-o leader-visible"></i>
+            <i class="fa fa-ban leader-hidden"></i>
+            Political Money<br /> Reform Proposal
+          </div>
+          </div>
+          <div class="col-md-6">
+            <div class="talley pull-left">
+            <i class="fa fa-check-square-o leader-visible"></i>
+            <i class="fa fa-ban leader-hidden"></i>
+            Political Money<br /> Reform Proposal
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 col-xs-12 center-block text-center tail-message">
           <h2>{{ tail_message }}</h2>
         </div>
-        <div class="col-md-8 col-xs-12">
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-xs-12 center-block text-center">
           <a href="#" class="btn btn-md-wide btn-mini-share make-call">
-            <div><i class="fa fa-phone"></i></div>
-            <span class="text">Make the Call</span>
+            <i class="fa fa-phone"></i>
+            Make the Call
           </a>
-          <a class="btn btn-md-wide btn-mini-share twitter-small" href="http://www.twitter.com/maydayus" role="button">
+          <a class="btn btn-md-wide btn-mini-share twitter-small" href="" role="button">
             <i class="fa fa-twitter"></i>
           </a>
-          <a class="btn btn-md-wide btn-mini-share facebook-small" href="https://www.facebook.com/groups/282646648577039/" role="button">
+          <a class="btn btn-md-wide btn-mini-share facebook-small" href="" role="button">
             <i class="fa fa-facebook"></i>
           </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7 col-xs-12 center-block text-center">
+          <div class="talk-bubble">
+            <p><strong>You could say:</strong></p>
+            <p>{{ share_message }}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="bottom-line"></div>
 </div>
-
 </script>
 {% endraw %}
 <script>
@@ -106,29 +101,22 @@ permalink: /legislator/
     function scorecard( legislator_data ){
 
       var l_d = legislator_data;
+      l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
 
-      l_d.temp_date = 'undefined';
       if ( l_d.with_us === true ){
         status = true;
-        l_d.background_img = '/images/star_blue.svg'
-        l_d.with_message = 'supports';
-        l_d.icon_status = 'up';
-        l_d.share_message = 'Thanks';
-        l_d.tail_message = 'Say Thanks ' + l_d.title + ' ' + l_d.name +'!';
-        l_d.checked_box_img = '/images/call-page/checked_box.svg';
+        l_d.background_img = '/images/star_blue.svg';
+        l_d.page_title = [l_d.title, l_d.name,'is a leader supporting fundamental reform'].join(' ');
+        l_d.support_message = 'some bill.';
+        l_d.share_message = ['Hi. My name is _______. I\'m calling to thank',l_d.title,l_d.name,'for being a supporter of fundamental reform by supporting',l_d.support_message].join('');
+        l_d.tail_message = ['Say Thanks',l_d.short_title,l_d.name, '!'].join(' ');
       } else {
         status = false;
-        l_d.with_message = 'doesn\'t support';
-        l_d.icon_status = 'down';
-        l_d.share_message = 'Demand Support From';
-        l_d.tail_message = 'Tell ' + l_d.short_title +' ' + l_d.name + ' to Support Reform!';
-        l_d.checked_box_img2 = false;
-        l_d.checked_box_img = '/images/call-page/red_box.svg';
+        l_d.background_img = '/images/call-page/money_sign.svg';
+        l_d.page_title = [l_d.title, l_d.name,'is not a leader supporting fundamental reform'].join(' ');
+        l_d.share_message = ['Hi. My name is _______. I\'m calling to ask',l_d.title,l_d.name,'to be a leader in the fight to restore our democracy to us, the people, by cosponsoring legislation that would fundamentally change the way campaigns are funded. We are recommending five proposals that',l_d.title,l_d.name,'could support. Each of these bills would radically change the way representatives would raise the money they need to get elected. You can see those proposals at RepsWith.US. I would ask __________ to please consider supporting one of those bills.'].join(' ');
+        l_d.tail_message = ['Tell',l_d.short_title,l_d.name, 'to Support Reform!'].join(' '); // TODO: user short title
       }
-
-      l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
-      l_d.temp_date= 'undefined';
-      l_d.temp_message ='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi officia laboriosam impedit voluptate, voluptatibus tempora quod! Assumenda sint dolorem harum libero, nihil odit dignissimos accusamus sequi architecto obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis necessitatibus tenetur itaque praesentium voluptatibus voluptas nostrum expedita accusantium, rerum, suscipit qui vero cupiditate quidem dolorum ullam. Possimus voluptates quisquam quo!';
 
 
       var rendered = ich.legislator_template(l_d);
@@ -138,6 +126,7 @@ permalink: /legislator/
       } else {
         $(rendered["0"]).addClass("with-us-false");
       }
+       document.title = l_d.page_title
       $('#js-legislators').append(rendered);
     }
 

@@ -111,213 +111,85 @@
     }
   }
   &.grey{
-    background-color: $color-grey-backgroud;
+    background-color: $color-grey-background;
   }
   &.light {
   }
 
+  .bg-star{
+    position: absolute;
+  }
+
   &.ten-star {
     .bg-star:first-of-type {
-      position: absolute;
       left: -400px;
       top: -250px;
       height: 650px;
       opacity: .03;
-      -ms-transform: rotate(-30deg);
-      -webkit-transform: rotate(-30deg);
-      transform: rotate(-30deg);
+      @include star-rotation(-30deg);
     }
     .bg-star:nth-of-type(2) {
-      position: absolute;
       left: -500px;
       top: 80px;
       height: 800px;
       opacity: .03;
-      -ms-transform: rotate(-50deg);
-      -webkit-transform: rotate(-50deg);
-      transform: rotate(-50deg);
+      @include star-rotation(-50deg);
     }
     .bg-star:nth-of-type(3) {
-      position: absolute;
       left: 10%;
       top: -160px;
       height: 265px;
       opacity: .03;
-      -ms-transform: rotate(-50deg);
-      -webkit-transform: rotate(-50deg);
-      transform: rotate(-50deg);
+      @include star-rotation(-50deg);
     }
     .bg-star:nth-of-type(4) {
-      position: absolute;
       left: 1%;
       top: -70px;
       width: 600px;
       opacity: .015;
-      -ms-transform: rotate(35deg);
-      -webkit-transform: rotate(35deg);
-      transform: rotate(35deg);
+      @include star-rotation(35deg);
     }
     .bg-star:nth-of-type(5) {
-      position: absolute;
       left: 25%;
       top: -200px;
       height: 350px;
       opacity: .03;
-      -ms-transform: rotate(35deg);
-      -webkit-transform: rotate(35deg);
-      transform: rotate(35deg);
+      @include star-rotation(35deg);
     }
     .bg-star:nth-of-type(6) {
-      position: absolute;
       left: 25%;
       top: 260px;
       height: 350px;
       opacity: .02;
-      -ms-transform: rotate(35deg);
-      -webkit-transform: rotate(35deg);
-      transform: rotate(35deg);
+      @include star-rotation(35deg);
     }
     .bg-star:nth-of-type(7) {
-      position: absolute;
       left: 35%;
       top: 100px;
       height: 200px;
       opacity: .02;
-      -ms-transform: rotate(-50deg);
-      -webkit-transform: rotate(-50deg);
-      transform: rotate(-50deg);
+      @include star-rotation(-50deg);
     }
     .bg-star:nth-of-type(8) {
-      position: absolute;
       left: 33%;
       top: -180px;
       height: 850px;
       opacity: .03;
-      -ms-transform: rotate(35deg);
-      -webkit-transform: rotate(35deg);
-      transform: rotate(35deg);
+      @include star-rotation(35deg);
     }
     .bg-star:nth-of-type(9) {
-      position: absolute;
       left: 76%;
       top: -170px;
       height: 600px;
       opacity: .03;
-      -ms-transform: rotate(40deg);
-      -webkit-transform: rotate(40deg);
-      transform: rotate(40deg);
+      @include star-rotation(40deg);
     }
     .bg-star:nth-of-type(10) {
-      position: absolute;
       left: 82%;
       top: 275px;
       height: 200px;
       opacity: .04;
-      -ms-transform: rotate(-15deg);
-      -webkit-transform: rotate(-15deg);
-      transform: rotate(-15deg);
-    }
-  }
-  &.dossier-star {
-    .bg-star:first-of-type {
-      position: absolute;
-      left: -400px;
-      top: -250px;
-      height: 650px;
-      opacity: .1;
-      -ms-transform: rotate(-30deg);
-      -webkit-transform: rotate(-30deg);
-      transform: rotate(-30deg);
-    }
-    .bg-star:nth-of-type(2) {
-      position: absolute;
-      left: -500px;
-      top: 80px;
-      height: 800px;
-      opacity: 0;
-      -ms-transform: rotate(-50deg);
-      -webkit-transform: rotate(-50deg);
-      transform: rotate(-50deg);
-    }
-    .bg-star:nth-of-type(3) {
-      position: absolute;
-      left: 10%;
-      top: -160px;
-      height: 265px;
-      opacity: 0;
-      -ms-transform: rotate(-50deg);
-      -webkit-transform: rotate(-50deg);
-      transform: rotate(-50deg);
-    }
-    .bg-star:nth-of-type(4) {
-      position: absolute;
-      left: 1%;
-      top: -70px;
-      width: 600px;
-      opacity: 0;
-      -ms-transform: rotate(35deg);
-      -webkit-transform: rotate(35deg);
-      transform: rotate(35deg);
-    }
-    .bg-star:nth-of-type(5) {
-      position: absolute;
-      left: 25%;
-      top: -200px;
-      height: 350px;
-      opacity: 0;
-      -ms-transform: rotate(35deg);
-      -webkit-transform: rotate(35deg);
-      transform: rotate(35deg);
-    }
-    .bg-star:nth-of-type(6) {
-      position: absolute;
-      left: 25%;
-      top: 260px;
-      height: 350px;
-      opacity: .01;
-      -ms-transform: rotate(35deg);
-      -webkit-transform: rotate(35deg);
-      transform: rotate(35deg);
-    }
-    .bg-star:nth-of-type(7) {
-      position: absolute;
-      left: 35%;
-      top: 100px;
-      height: 200px;
-      opacity: .1;
-      -ms-transform: rotate(-50deg);
-      -webkit-transform: rotate(-50deg);
-      transform: rotate(-50deg);
-    }
-    .bg-star:nth-of-type(8) {
-      position: absolute;
-      left: 33%;
-      top: -180px;
-      height: 850px;
-      opacity: .1;
-      -ms-transform: rotate(35deg);
-      -webkit-transform: rotate(35deg);
-      transform: rotate(35deg);
-    }
-    .bg-star:nth-of-type(9) {
-      position: absolute;
-      left: 76%;
-      top: -170px;
-      height: 600px;
-      opacity: 0;
-      -ms-transform: rotate(40deg);
-      -webkit-transform: rotate(40deg);
-      transform: rotate(40deg);
-    }
-    .bg-star:nth-of-type(10) {
-      position: absolute;
-      left: 82%;
-      top: 275px;
-      height: 200px;
-      opacity: .1;
-      -ms-transform: rotate(-15deg);
-      -webkit-transform: rotate(-15deg);
-      transform: rotate(-15deg);
+      @include star-rotation(-15deg);
     }
   }
 
@@ -326,62 +198,45 @@
 
   &.two-star {
     .bg-star:first-of-type {
-      position: absolute;
       left: -35%;
       top: -450px;
       height: 1500px;
       opacity: .04;
-      -ms-transform: rotate(20deg);
-      -webkit-transform: rotate(20deg);
-      transform: rotate(20deg);
+      @include star-rotation(20deg);
     }
     .bg-star:nth-of-type(2) {
-      position: absolute;
       left: 35%;
       top: -750px;
       height: 1500px;
       opacity: .04;
-      -ms-transform: rotate(-10deg);
-      -webkit-transform: rotate(-10deg);
-      transform: rotate(-10deg);
+      @include star-rotation(-10deg);
     }
   }
 
   &.three-star {
     .bg-star:first-of-type {
-      position: absolute;
       left: -35%;
       top: -450px;
       height: 1500px;
       opacity: .04;
-      -ms-transform: rotate(-10deg);
-      -webkit-transform: rotate(-10deg);
-      transform: rotate(-10deg);
+      @include star-rotation(-10deg);
       z-index: 0;
     }
     .bg-star:nth-of-type(2) {
-      position: absolute;
       left: 40%;
       top: 200px;
       height: 1000px;
       opacity: .04;
-      -ms-transform: rotate(-20deg);
-      -webkit-transform: rotate(-20deg);
-      transform: rotate(-20deg);
-            z-index: 0;
-
+      @include star-rotation(-20deg);
+      z-index: 0;
     }
     .bg-star:nth-of-type(3) {
-      position: absolute;
       left: -40%;
       top: 400px;
       height: 1500px;
       opacity: .04;
-      -ms-transform: rotate(20deg);
-      -webkit-transform: rotate(20deg);
-      transform: rotate(20deg);
-            z-index: 0;
-
+      @include star-rotation(20deg);
+      z-index: 0;
     }
   }
 
