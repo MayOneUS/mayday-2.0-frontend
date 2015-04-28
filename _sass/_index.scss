@@ -258,8 +258,11 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
-  >div:first-child .mini-panel{
+  >div .mini-panel{
     padding-right:10px;
+  }
+  >div:last-child .mini-panel{
+    padding-right: 0
   }
 
 
@@ -281,10 +284,13 @@
 
   .mini-panel-text{
     // padding-left:30px;// !important;
-    background-image: url('/images/star_home.svg');
+    background-image: url('/images/home_icon_star.svg');
   }
   .mini-panel-call{
-    background-image: url('/images/phone_home.svg');
+    background-image: url('/images/home_icon_map.svg');
+  }
+  .mini-panel-state{
+    background-image: url('/images/home_icon_phone.svg');
   }
 
 
