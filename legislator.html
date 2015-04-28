@@ -102,7 +102,7 @@ permalink: /legislator/
 
       var l_d = legislator_data;
       l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
-      l_d.title_name = l_d.title,l_d.name;
+      l_d.title_name = [l_d.title,l_d.name].join(' ');
       l_d.bioguide_id = bioguide_id;
 
       if ( l_d.with_us === true ){
@@ -123,7 +123,7 @@ permalink: /legislator/
         l_d.page_title = [l_d.title_name,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
         l_d.support_message = 'some bill.';
         l_d.share_message = ['Hi. My name is _______. I\'m calling to thank',l_d.title_name,'for being a supporter of fundamental reform by supporting',l_d.support_message].join('');
-        l_d.tail_message = ['Say Thanks',l_d.short_title,l_d.name, '!'].join(' ');
+        l_d.tail_message = ['Say Thanks',l_d.short_title,l_d.name].join(' ') + '!';
       } else {
         status = false;
         l_d.background_img = '/images/call-page/money_sign.svg';

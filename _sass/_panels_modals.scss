@@ -139,6 +139,12 @@
     }
   }
 }
+form.md-inputs{
+  input[type=text], input[type=email], input[type=tel], input[type=number] {
+    padding:5px 10px;
+    height:auto;
+  }
+}
 .banner-image .action-panel{
   .form-group{
     margin-bottom:10px;
