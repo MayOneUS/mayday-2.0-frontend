@@ -12,7 +12,7 @@
     font-weight: 400;
   }
   .dossier-img{
-    margin: 0 auto 20px;
+    margin: 0 auto 0px;
     border-radius: 5px;
     height: 281px;
     width: 231px;
@@ -41,6 +41,10 @@
     position:relative;
     margin-bottom: 20px;
     overflow: hidden;
+
+    >.col-md-6 .talley:first-child{float:right}
+    >.col-md-6 .talley:last-child{float:left}
+    >.col-md-12 .talley{margin:0 auto;text-align:center;}
   }
   .talley{
     font-size: 18px;
@@ -48,11 +52,11 @@
     text-align: left;
     font-weight: 400;
     line-height: 18px;
-    width:200px;
+    width:180px;
     .fa{
       font-size: 46px;
       float: left;
-      margin-right: 5px;
+      // margin-right: 5px;
     }
   }
 

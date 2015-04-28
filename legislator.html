@@ -7,6 +7,14 @@ permalink: /legislator/
 <div id="js-legislators"></div>
 
 {% raw %}
+<script id="talley_template" type="text/html">
+<div class="col-md-{{ column_width }}">
+  <div class="talley">
+    <i class="fa fa-check-square-o"></i>
+    {{name}}
+  </div>
+</div>
+</script>
 <script id="legislator_template" type="text/html">
 <div class="dossier-page">
   <div class="top-line-left"></div>
@@ -33,22 +41,9 @@ permalink: /legislator/
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-8 center-block tallies no-gutter">
-          <div class="col-md-6">
-            <div class="talley pull-right">
-            <i class="fa fa-check-square-o leader-visible"></i>
-            <i class="fa fa-ban leader-hidden"></i>
-            Political Money<br /> Reform Proposal
-          </div>
-          </div>
-          <div class="col-md-6">
-            <div class="talley pull-left">
-            <i class="fa fa-check-square-o leader-visible"></i>
-            <i class="fa fa-ban leader-hidden"></i>
-            Political Money<br /> Reform Proposal
-          </div>
-          </div>
+      <div class="row leader-visible">
+        <div class="col-md-8 center-block tallies no-gutter" id="js-tallies">
+        {{ tallies_rendered }}
         </div>
       </div>
       <div class="row">
@@ -90,7 +85,9 @@ permalink: /legislator/
   $( document ).ready( function(){
     "use strict";
     var bioguide_id = getParameterByName('bioguide_id'),
-        status = '';
+        status = '',
+        tallies ='',
+        tallie_columns;
 
     function getParameterByName( name ) {
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -100,24 +97,38 @@ permalink: /legislator/
       return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 
     }
+
     function scorecard( legislator_data ){
 
       var l_d = legislator_data;
       l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
+      l_d.title_name = l_d.title,l_d.name;
       l_d.bioguide_id = bioguide_id;
 
       if ( l_d.with_us === true ){
+        l_d.tallies_rendered = ''
         status = true;
+
+        if(l_d.current_sponsorships.length == 1){
+          tallie_columns = '12'
+        }else{
+          tallie_columns = '6'
+
+        }
+        $.each(l_d.current_sponsorships, function(index, data){
+          data.column_width = tallie_columns;
+          tallies += ich.talley_template(data, true);
+        })
         l_d.background_img = '/images/star_blue.svg';
-        l_d.page_title = [l_d.title, l_d.name,'is a leader supporting fundamental reform'].join(' ');
+        l_d.page_title = [l_d.title_name,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
         l_d.support_message = 'some bill.';
-        l_d.share_message = ['Hi. My name is _______. I\'m calling to thank',l_d.title,l_d.name,'for being a supporter of fundamental reform by supporting',l_d.support_message].join('');
+        l_d.share_message = ['Hi. My name is _______. I\'m calling to thank',l_d.title_name,'for being a supporter of fundamental reform by supporting',l_d.support_message].join('');
         l_d.tail_message = ['Say Thanks',l_d.short_title,l_d.name, '!'].join(' ');
       } else {
         status = false;
         l_d.background_img = '/images/call-page/money_sign.svg';
-        l_d.page_title = [l_d.title, l_d.name,'is not a leader supporting fundamental reform'].join(' ');
-        l_d.share_message = ['Hi. My name is _______. I\'m calling to ask',l_d.title,l_d.name,'to be a leader in the fight to restore our democracy to us, the people, by cosponsoring legislation that would fundamentally change the way campaigns are funded. We are recommending five proposals that',l_d.title,l_d.name,'could support. Each of these bills would radically change the way representatives would raise the money they need to get elected. You can see those proposals at RepsWith.US. I would ask __________ to please consider supporting one of those bills.'].join(' ');
+        l_d.page_title = [l_d.title_name,'is not a leader supporting fundamental reform'].join(' ');
+        l_d.share_message = ['Ask',l_d.title_name,'to become a leader for fundamental reform'].join(' ');
         l_d.tail_message = ['Tell',l_d.short_title,l_d.name, 'to Support Reform!'].join(' '); // TODO: user short title
       }
 
@@ -131,6 +142,7 @@ permalink: /legislator/
       }
        document.title = l_d.page_title
       $('#js-legislators').append(rendered);
+      $('#js-tallies').append(tallies);
     }
 
     $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, scorecard);
