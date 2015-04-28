@@ -23,7 +23,7 @@
 // banner image is in the 1170 page margin
 
 .full-bg-imgage, .banner-image{
-  background-color: #818181;
+  background-color: #061C29;
   // background-repeat: no-repeat;
   overflow: hidden;
 }
@@ -32,7 +32,6 @@
   padding-top:0 !important;
   padding-bottom:0 !important;
   width: 100%;
-  background-image: url("/images/campaigns/map_bg_grey.jpg");
   // background-size: 200%;
   @include phone{
     margin-top: -50px !important;
@@ -41,7 +40,7 @@
 .banner-image {
   padding-top:30px;
   padding-bottom:15px;
-  background: url("/images/campaigns/map_bg.png") 0 20px no-repeat;
+  background: url("/images/campaigns/Sharegraphic_5_1.jpg") 0 40px no-repeat;
   background-size: 60%;
 }
 .index-logo-small{
