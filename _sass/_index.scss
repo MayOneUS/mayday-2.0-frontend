@@ -50,18 +50,7 @@
     margin: 0 auto;
   }
 }
-.mini-panel-text{
-  padding-left:0 !important;
-  letter-spacing: .2px;
-  line-height: 22px;
-  font-size: 16px;
-  @include tablet{
-    margin-top: 8px;
-  }
-  @include phone{
-    font-size: 18px;
-  }
-}
+
 .homepage-panel{
   position: relative;
   overflow: hidden;
@@ -72,14 +61,6 @@
   .container{
     padding-top:0;
     padding-bottom:0;
-  }
-  .logo-img-center{
-    @include phone{
-      height: 45px;
-      display:block;
-      margin:0 auto 4px;
-
-    }
   }
 
   .homepage-panel-body{
@@ -272,17 +253,56 @@
     border: none;
   }
 }
+
+.homepage-ribbon{
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  >div:first-child .mini-panel{
+    padding-right:10px;
+  }
+
+
+  .mini-panel{
+    padding-left:110px;
+    background:transparent url('') 5px 0 no-repeat;
+    letter-spacing: .2px;
+    line-height: 22px;
+    font-size: 16px;
+    background-size:90px 90px;
+
+    @include tablet{
+      margin-top: 8px;
+    }
+    @include phone{
+      font-size: 18px;
+    }
+  }
+
+  .mini-panel-text{
+    // padding-left:30px;// !important;
+    background-image: url('/images/star_home.svg');
+  }
+  .mini-panel-call{
+    background-image: url('/images/phone_home.svg');
+  }
+
+
+}
+
+
+
 // call-box is where the number of calls is displayed
 // note line-height plays a part in creating their symmetry
 .call-box{}
-.call-box .col-sm-1{ 
+.call-box .col-sm-1{
   font-size: 45px;
   line-height: 45px;
   font-weight: 400;
   color: $color-dark-red;
   width: 100px;
 }
-.call-box .col-sm-2{ 
+.call-box .col-sm-2{
   width: 125px;
   padding-right:0;
   @include tablet{
@@ -346,7 +366,7 @@
   }
 }
 
-.js-legislators{ 
+.js-legislators{
   padding-top:45px;
   h2{
     padding-top: 4px;
