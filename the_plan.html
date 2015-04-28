@@ -116,6 +116,7 @@ permalink: /the-plan/
 <script>
   $(document).ready(function(){
 
+
     var didScroll = false,
 
         // capture links on the page
@@ -137,7 +138,11 @@ permalink: /the-plan/
         $container1 = $('#problem'),
         $container2 = $('#solution'),
         $container3 = $('#challenge'),
-        $container4 = $('#labratory');
+        $container4 = $('#labratory'),
+
+        $stars = $( '.sticky-star' ),
+        $starText = $( '.sticky-text' );
+
 
 
     animate = {
@@ -165,8 +170,8 @@ permalink: /the-plan/
       },
       makeActive : function ($target_el, number){
         if ( animate.current !== number) {
-          $( '.sticky-star' ).removeClass(' active' );
-          $( '.sticky-text' ).removeClass( 'active' );
+          $stars.removeClass(' active' );
+          $starText.removeClass( 'active' );
           $target_el.children( '.sticky-star').addClass( 'active' );
           $target_el.children( '.sticky-text' ).addClass( 'active' );
           animate.current = number;
