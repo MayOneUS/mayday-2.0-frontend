@@ -104,7 +104,6 @@ $share-bg-img: 'share-bg.jpg';
  */
 html, body {
   height: auto;
-  // overflow-x: hidden;
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -113,6 +112,7 @@ html, body {
   background-color: $color-background;
   -webkit-text-size-adjust: 100%;
   @include phone{
+    overflow-x: hidden;
     color: #333;
   }
 }
