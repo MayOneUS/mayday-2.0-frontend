@@ -435,18 +435,18 @@
 
   .with-us-true{
     .stateface-replace{
-      color:$color-dossier-blue;
+      color:$color-dossier-green;
     }
     .background-square{
-      border: 4px solid $color-dossier-blue;
+      border: 4px solid $color-dossier-green;
     }
   }
   .with-us-false{
     .stateface-replace{
-      color:$color-dossier-red;
+      color:$color-dossier-orange;
     }
     .background-square{
-      border: 4px solid $color-dossier-red;
+      border: 4px solid $color-dossier-orange;
     }
   }
 }

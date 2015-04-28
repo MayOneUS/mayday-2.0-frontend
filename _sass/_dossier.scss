@@ -280,3 +280,25 @@
     @include star-rotation(-15deg);
   }
 }
+
+.legislators-listing{
+  min-height: 300px;
+  
+  .all{
+    .with-us-true{display:block}
+    .with-us-false{display:block}
+  }
+  .potential{
+    .with-us-true{display:none}
+    .with-us-false{display:block}
+  }
+  .leaders{
+    .with-us-true{display:block}
+    .with-us-false{display:none}
+  }
+}
+.legislators-filter{
+  .radio-inline input[type=radio]{
+    margin-top: 7px;
+  }
+}

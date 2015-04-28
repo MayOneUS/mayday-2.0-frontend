@@ -8,12 +8,26 @@ permalink: /legislators/
     <div class="row">
       <h1>Leaders supporting fundamental reform</h1>
       <p></p>
-      <form method="get" accept-charset="utf-8" class="md-inputs">
+      <form method="get" accept-charset="utf-8" class="md-inputs legislators-filter">
         <input id="search" class="form-control" name="search" placeholder="Search by name or state" type="text" data-list=".js-legislators">
+        <div class="form-group">
+          <label class="col-md-12 control-label sr-only" for="radios">Filter</label>
+            <label class="radio-inline" for="leaders">
+              <input type="radio" name="radios" id="leaders" value="leaders" checked="checked"> Leaders
+            </label>
+            <label class="radio-inline" for="potential">
+              <input type="radio" name="radios" id="potential" value="potential"> Potential Leaders
+            </label>
+            <label class="radio-inline" for="all">
+              <input type="radio" name="radios" id="all" value="all"> All Leglislators
+            </label>
+        </div>
       </form>
     </div>
-    <div class="row no-gutter legislators-listing">
-      <div id="js-legislators" class="js-legislators"></div>
+    <div class="row no-gutter legislators-listing leaders">
+      <div id="js-legislators" class="js-legislators text-center">
+        <i class="fa fa-refresh fa-spin fa-4x"></i>
+      </div>
     </div>
 </div>
 
@@ -40,7 +54,13 @@ permalink: /legislators/
 <script>
 (function ( data ){
   $(document).ready(function(){
-    $('#search').hideseek();
+    $('#search').hideseek({'nodata': "No legislator matched your search."});
+
+    $('form.legislators-filter .radio-inline input').on('change', function(e){
+      var filterValue = $('form.legislators-filter .radio-inline input:checked').val();
+      console.log('filterValue',filterValue)
+      $('#js-legislators').prop('class', 'js-legislators '+filterValue)
+    });
 
     "use strict";
 
@@ -58,14 +78,6 @@ permalink: /legislators/
       rendered = ich.legislator_template(legislator_data);
       $(rendered["0"]).find("div.background-square").css("background-image", bgIMG);
 
-      // if ( index % 3 === 0 ){
-      //   $(rendered["0"]).addClass("remove-padding-photo");
-      // } else if ( index === 1 ){ //adds verticallines the the middle article
-      //   // $(rendered["0"]).addClass("verticalLines");
-      //   $(rendered["0"]).addClass("remove-padding-photo-small");
-      // } else {
-      //   $(rendered["0"]).addClass("remove-padding-photo-small");
-      // }
 
       $('#js-legislators').append(rendered);
 
@@ -73,6 +85,7 @@ permalink: /legislators/
 
     function callDataAndTemplate(legislators) {
       var allyObject = [];
+      $('#js-legislators').removeClass('text-centered').empty();
 
       legislators.forEach( function ( data, index ){ //gets three reps
           allyObject.push( data );
@@ -84,7 +97,7 @@ permalink: /legislators/
 
   });
 
-})( '{{site.services_url}}/legislators/newest_supporters.json?limit=1000' );
+})( '{{site.services_url}}/legislators.json' );
 
 
 
