@@ -102,18 +102,17 @@ $(function() {
   function ajaxCall( url, callback) {
     $.getJSON( url, callback);
   }
-
   function transformEndpointData(response){
     var output = {};
-    output.name = response.name;
+    output.name = 'In the House';
     output.seriesData = [
         {
-          "name": "Needed <br>Sponsors",
+          "name": "Leaders<br>Needed",
           "y": response.needed_cosponsors,
           "color": "#5e8cac"
         },
         {
-          "name": "Current <br>Sponsors",
+          "name": "Current <br>Leaders",
           "y": response.current_cosponsors,
           "color": "#759c64"
         }
