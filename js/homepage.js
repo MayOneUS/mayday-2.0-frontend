@@ -10,6 +10,7 @@ $(function() {
         api_endpoint = 'bills/supporter_counts',
         bill_url_hr424 = root_services_url + api_endpoint + '?bill_id=hr424-114',
         bill_url_hr20 = root_services_url + api_endpoint + '?bill_id=hr20-114',
+        all_supporters_url = root_services_url + api_endpoint,
 
         // dom objects to render to
         $container1 = $('#container1'),
@@ -189,7 +190,7 @@ $(function() {
             if(animate.chart1Fin === false && $container1[0].offsetTop + 100 < scrolledTo) {
                 animate.chart1Fin = true;
                 console.log('loading1')
-                animate.fetchAndRender(root_services_url + api_endpoint, 'container1', 'chart1Fin');
+                animate.fetchAndRender(all_supporters_url, 'container1', 'chart1Fin');
 
             }
             if(animate.chart2Fin === false && $container2[0].offsetTop + 100 < scrolledTo) {
@@ -210,7 +211,7 @@ $(function() {
             if(animate.chart1Fin === false && $container1[0].offsetTop + ($container1.height() / 2) < windowHeight) {
                 animate.chart1Fin = true;
                 console.log('loading1')
-                animate.fetchAndRender(root_services_url + api_endpoint, 'container1', 'chart1Fin');
+                animate.fetchAndRender(all_supporters_url, 'container1', 'chart1Fin');
 
             }
 
