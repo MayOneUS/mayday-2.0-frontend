@@ -374,6 +374,20 @@
 
 .js-legislators{
   padding-top:45px;
+
+  .background-square{
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color:$color-grey;
+    @include small-desktop{
+      height: 90px;
+      width: 90px;
+    }
+  }
+
   h2{
     padding-top: 4px;
     font-size: 24px;
@@ -401,23 +415,39 @@
     }
   }
 }
+
+.legislators-listing{
+
+  .stateface-replace{
+    display:initial;
+  }
+  .stateface-replace:before{
+    position:relative;
+  }
+
+  .with-us-true{
+    .stateface-replace{
+      color:$color-dossier-blue;
+    }
+    .background-square{
+      border: 4px solid $color-dossier-blue;
+    }
+  }
+  .with-us-false{
+    .stateface-replace{
+      color:$color-dossier-red;
+    }
+    .background-square{
+      border: 4px solid $color-dossier-red;
+    }
+  }
+}
+
+
 .col-xs-12.bottom-margin{
   margin-bottom:15px;
 }
-.background-sqaure{
-  height: 100px;
-  width: 100px;
-  background-image: url("../images/temp-img/T000474.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  background-color:$color-grey;
-  @include small-desktop{
-    height: 90px;
-    width: 90px;
-  }
 
-}
 .mayday-quotes p{
   margin:45px 0 30px;
 }

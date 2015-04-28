@@ -8,7 +8,7 @@
 
     <div class="col-md-4 col-sm-8 col-xs-12 bottom-margin">
       <div class="col-md-4 col-sm-3 col-xs-4">
-        <a href="/legislator/?bioguide_id={{bioguide_id}}"><div class="background-sqaure"></div></a>
+        <a href="/legislator/?bioguide_id={{bioguide_id}}"><div class="background-square"></div></a>
       </div>
       <div class="col-md-8 col-sm-6 col-xs-8 remove-padding-text">
         <h2 class="no-top-margin">{{ name }}</h2>
@@ -34,7 +34,7 @@
           bgIMG = 'url(' + legislator_data["image_url"] + ')';
 
       rendered = ich.legislator_template(legislator_data);
-      $(rendered["0"]).find("div.background-sqaure").css("background-image", bgIMG);
+      $(rendered["0"]).find("div.background-square").css("background-image", bgIMG);
 
       if ( index === 0 ){
         $(rendered["0"]).addClass("remove-padding-photo");

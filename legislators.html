@@ -12,7 +12,7 @@ permalink: /legislators/
         <input id="search" class="form-control" name="search" placeholder="Search by name or state" type="text" data-list=".js-legislators">
       </form>
     </div>
-    <div class="row no-gutter">
+    <div class="row no-gutter legislators-listing">
       <div id="js-legislators" class="js-legislators"></div>
     </div>
 </div>
@@ -20,14 +20,17 @@ permalink: /legislators/
 <script id="legislator_template" type="text/html">
 {% raw %}
 
-    <div class="col-md-4 col-sm-8 col-xs-12 bottom-margin">
+    <div class="col-md-4 col-sm-8 col-xs-12 bottom-margin with-us-{{with_us}}">
       <div class="col-md-4 col-sm-3 col-xs-4">
-        <a href="/legislator/?bioguide_id={{bioguide_id}}"><div class="background-sqaure"></div></a>
+        <a href="/legislator/?bioguide_id={{bioguide_id}}"><div class="background-square"></div></a>
       </div>
       <div class="col-md-8 col-sm-6 col-xs-8 remove-padding-text">
-        <h2 class="no-top-margin">{{ name }}</h2>
+        <h3 class="no-top-margin"> {{short_title}}<strong>{{ name }}</strong> </h3>
         <h4>{{ title }} ({{ party }}-{{ state_abbrev }} {{display_district}})</h4>
-        <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">Read More</a>
+        <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}"><span class="stateface stateface-replace stateface-{{ lower_abbrev }}"></span> Read More</a>
+      </div>
+      <div class="hidden">
+        {{state_name}}
       </div>
     </div>
 
@@ -49,17 +52,20 @@ permalink: /legislators/
       var rendered = [],
           bgIMG = 'url(' + legislator_data["image_url"] + ')';
 
-      rendered = ich.legislator_template(legislator_data);
-      $(rendered["0"]).find("div.background-sqaure").css("background-image", bgIMG);
+      legislator_data.short_title = legislator_data.title === 'Senator' ? 'Sen.' : 'Rep.';
+      legislator_data.lower_abbrev = legislator_data.state_abbrev.toLowerCase();
 
-      if ( index % 3 === 0 ){
-        $(rendered["0"]).addClass("remove-padding-photo");
-      } else if ( index === 1 ){ //adds verticallines the the middle article
-        // $(rendered["0"]).addClass("verticalLines");
-        $(rendered["0"]).addClass("remove-padding-photo-small");
-      } else {
-        $(rendered["0"]).addClass("remove-padding-photo-small");
-      }
+      rendered = ich.legislator_template(legislator_data);
+      $(rendered["0"]).find("div.background-square").css("background-image", bgIMG);
+
+      // if ( index % 3 === 0 ){
+      //   $(rendered["0"]).addClass("remove-padding-photo");
+      // } else if ( index === 1 ){ //adds verticallines the the middle article
+      //   // $(rendered["0"]).addClass("verticalLines");
+      //   $(rendered["0"]).addClass("remove-padding-photo-small");
+      // } else {
+      //   $(rendered["0"]).addClass("remove-padding-photo-small");
+      // }
 
       $('#js-legislators').append(rendered);
 

@@ -366,7 +366,7 @@ pre {
     // float: left;
     font-size: 1.5em;
     padding-right:5px;
-  } 
+  }
 
   .text {
     float: left;
@@ -395,7 +395,7 @@ pre {
     height: 50px;
     text-align: center !important;
   }
-  
+
   &.facebook {
     @include button-colors($color-facebook);
   }
@@ -419,14 +419,14 @@ pre {
   .fa {
     font-size: 1.5em;
     line-height: 0;
-  } 
+  }
 
   .text {
     text-align: center;
     font-weight: 400;
   }
 
-  
+
   &.facebook {
     @include button-colors($color-facebook);
   }
@@ -473,7 +473,7 @@ pre {
     height: 65px;
     width: 160px;
     @include small-desktop{
-      width: 130px;      
+      width: 130px;
     }
     @include tablet{
       width: 24%;
@@ -485,17 +485,17 @@ pre {
 
 }
 /**
- * Mayday Button Newest Allies
+ * Mayday Button Newest Leaders
  */
 
 a.btn-targets {
   margin-top:12px;
-  background-color: #b0aeaf;
-  border-color: #b0aeaf;
   text-transform: uppercase;
   color: #fff !important;
   font-weight: 400;
   letter-spacing: 1px;
+  @include button-colors(#b0aeaf);
+
 
   @include large-desktop {
     padding: 6px 28px;
@@ -505,26 +505,6 @@ a.btn-targets {
   @include small-desktop {
     // padding: 8px 15px;
     font-size: 12px;
-  }
-
-  // @include tablet {
-  //   padding: 6px 16px;
-  //   font-size: 14px;
-  // }
-
-  // @include phone {
-  //   padding: 6px 16px;
-  //   font-size: 14px;
-  // }
-  &:visited {
-    color: #fff !important;
-    background-color: #adabac;
-    border-color: #adabac;
-  }
-  &:hover {
-    color: #fff !important;
-    background-color: $color-grey-light;
-    border-color: $color-grey-light;
   }
 }
 
