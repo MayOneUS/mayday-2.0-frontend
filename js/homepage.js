@@ -7,9 +7,9 @@ $(function() {
         chart3_Options, chart3,
 
         didScroll = false,
-        api_endpoint = '/bills/supporter_counts?bill_id=',
-        bill_url_hr424 = root_services_url + api_endpoint + 'hr424-114',
-        bill_url_hr20 = root_services_url + api_endpoint + 'hr20-114',
+        api_endpoint = 'bills/supporter_counts',
+        bill_url_hr424 = root_services_url + api_endpoint + '?bill_id=hr424-114',
+        bill_url_hr20 = root_services_url + api_endpoint + '?bill_id=hr20-114',
 
         // dom objects to render to
         $container1 = $('#container1'),
@@ -40,7 +40,7 @@ $(function() {
         title: {
             align: 'center',
             verticalAlign: 'middle',
-            y: -150,
+            y: -120,
             style: {
               "fontSize": "30px",
               "fontWeight":300,
@@ -72,8 +72,8 @@ $(function() {
                         color: '#222'
                     }
                 },
-                startAngle: -90,
-                endAngle: 270,
+                startAngle: -40,
+                endAngle: 320,
                 center: ['50%', '60%']
             }
         },
@@ -174,6 +174,7 @@ $(function() {
         },
         fetchAndRender: function(url, renderContainer, finishingVar){
             $.getJSON( url, function(data){
+                console.log('data:', data);
                 var endpoint_data = transformEndpointData(data);
                 animate.renderHouseSupport(endpoint_data, renderContainer, finishingVar);
             });
@@ -187,14 +188,17 @@ $(function() {
             }
             if(animate.chart1Fin === false && $container1[0].offsetTop + 100 < scrolledTo) {
                 animate.chart1Fin = true;
-                animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Fin');
+                console.log('loading1')
+                animate.fetchAndRender(root_services_url + api_endpoint, 'container1', 'chart1Fin');
 
             }
             if(animate.chart2Fin === false && $container2[0].offsetTop + 100 < scrolledTo) {
                 animate.chart2Fin = true;
-                animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
+                $container2.addClass('loaded');
+                // animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
             }
             if(animate.chart3Fin === false && $container2[0].offsetTop + 150 < scrolledTo) {
+                animate.chart3Fin = true;
                 $container3.addClass('loaded');
             }
         },
@@ -205,13 +209,15 @@ $(function() {
 
             if(animate.chart1Fin === false && $container1[0].offsetTop + ($container1.height() / 2) < windowHeight) {
                 animate.chart1Fin = true;
-                animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Fin');
+                console.log('loading1')
+                animate.fetchAndRender(root_services_url + api_endpoint, 'container1', 'chart1Fin');
 
             }
 
             if(animate.chart2Fin === false && $container2[0].offsetTop + ($container2.height() / 2) < windowHeight) {
-                animate.chart2Fin = true;
-                animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
+                // animate.chart2Fin = true;
+                // animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
+                $container2.addClass('loaded');
             }
 
             if(animate.chart3Fin === false && $container3[0].offsetTop + ($container3.height() / 2) < windowHeight) { //1663 + (250/2) < current window height

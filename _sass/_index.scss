@@ -409,13 +409,19 @@
   box-shadow: 1px 1px 2px #888;
   padding: 15px;
 }
-#container3{
-    opacity: 0;
+.chart-holder.non-chart {
+  opacity: 0;
   -webkit-transition: opacity 450ms;
   -moz-transition: opacity 450ms;
   -ms-transition: opacity 450ms;
   transition: opacity 450ms;
-}
-#container3.loaded{
-  opacity: 1;
+  &.loaded{
+    opacity: 1;
+  }
+
+  p{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
