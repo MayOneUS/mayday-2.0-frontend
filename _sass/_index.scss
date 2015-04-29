@@ -231,7 +231,7 @@
   }
 
   &.capitol-building{
-    background: #fff url(/images/capitol_building.png) right bottom no-repeat;
+    background: #fff url('/images/capitol_building.png') right bottom no-repeat;
   }
 }
 
@@ -372,27 +372,6 @@
   &:hover {
   }
 }
-.remove-padding-photo{
-  padding: 0 !important;
-}
-.remove-padding-photo .remove-padding-text{
-  padding-left: 5px !important;
-  @include tablet{
-    padding-left: 15px !important;;
-  }
-  @include phone{
-    padding-left: 15px !important;;
-  }
-}
-
-.remove-padding-photo-small{
-  @include tablet{
-    padding: 0 !important;
-  }
-  @include phone{
-    padding: 0 !important;
-  }
-}
 
 .js-legislators{
   padding-top:45px;
@@ -400,22 +379,33 @@
   .background-square{
     height: 100px;
     width: 100px;
-    background-repeat: no-repeat;
-    background-position: center;
     background-size: 100%;
-    background-color:$color-grey;
+    background:$color-grey url() center center no-repeat;
     @include small-desktop{
       height: 90px;
       width: 90px;
     }
+    @include phone{
+      padding: 0 5px 0 0;
+    }
   }
 
-  h2{
-    padding-top: 4px;
-    font-size: 24px;
+  &.newest-leaders{
+    .new-legislator{
+      border-right: 1px solid #b7b7b7;
+      &:nth-child(3n) {
+        border:none;
+      }
+    }
+  }
+
+  h3{
+    // padding-top: 4px;
+    font-size: 22px;
     font-weight: 400;
+    white-space: nowrap;
     @include small-desktop{
-      font-size: 20px;
+      font-size: 16px;
     }
     @include small-desktop{
       font-size: 20px;
@@ -428,9 +418,9 @@
   h4{
     color: $color-brand;
     margin-top:7px;
-    font-size: 17px;
+    font-size: 15px;
     @include small-desktop{
-      font-size: 14px;
+      font-size: 13px;
     }
     @include phone{
       font-size: 14px;

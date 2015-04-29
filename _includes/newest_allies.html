@@ -1,18 +1,20 @@
 
 <div class="row no-gutter">
-  <div id="js-legislators" class="js-legislators"></div>
+  <div id="js-legislators" class="js-legislators newest-leaders"></div>
 </div>
 
 <script id="legislator_template" type="text/html">
 {% raw %}
 
-    <div class="col-md-4 col-sm-8 col-xs-11 bottom-margin">
+    <div class="col-md-4 col-sm-8 col-xs-11 bottom-margin new-legislator">
       <div class="col-md-4 col-sm-3 col-xs-4">
-        <a href="/legislator/?bioguide_id={{bioguide_id}}"><div class="background-square"></div></a>
+        <a href="/legislator/?bioguide_id={{bioguide_id}}">
+          <div class="background-square" style="background-image:url('{{image_url}}')"></div>
+        </a>
       </div>
-      <div class="col-md-8 col-sm-6 col-xs-8 remove-padding-text">
-        <h2 class="no-top-margin">{{ name }}</h2>
-        <h4>{{ title }} ({{ party }}-{{ state_abbrev }} {{display_district}})</h4>
+      <div class="col-md-8 col-sm-6 col-xs-8">
+        <h3 class="no-top-margin">{{ short_title }} <strong>{{ name }}</strong></h3>
+        <h4> {{ party }}-{{ state_abbrev }} {{display_district}}</h4>
         <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">Read More</a>
       </div>
     </div>
@@ -30,23 +32,10 @@
 
     function renderAllies(legislator_data, index) {
 
-      var rendered = [],
-          bgIMG = 'url(' + legislator_data["image_url"] + ')';
-
+      var rendered = [];
+      legislator_data.short_title = legislator_data.title === 'Senator' ? 'Sen.' : 'Rep.';
       rendered = ich.legislator_template(legislator_data);
-      $(rendered["0"]).find("div.background-square").css("background-image", bgIMG);
-
-      if ( index === 0 ){
-        $(rendered["0"]).addClass("remove-padding-photo");
-      } else if ( index === 1 ){ //adds verticallines the the middle article
-        $(rendered["0"]).addClass("verticalLines");
-        $(rendered["0"]).addClass("remove-padding-photo-small");
-      } else {
-        $(rendered["0"]).addClass("remove-padding-photo-small");
-      }
-
       $('#js-legislators').append(rendered);
-
     }
 
     function callDataAndTemplate(legislators) {
