@@ -294,10 +294,28 @@ form.md-inputs{
   width: 100%;
 }
 
+#call-congress-modal .modal-dialog{
+  padding-bottom: 10px;
+  @include tablet-plus{
+    width: 800px;
+  }
+}
+
 .modal-body {
   padding:0;
+  .md-modal-wrap{
+    padding:10px;
+  }
+  dl, ul, li{
+    margin-left:20px;
+  }
+  dt{
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
   .close{
     margin-top:-14px;
     margin-right:-8px;
   }
 }
+

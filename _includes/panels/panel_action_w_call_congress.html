@@ -16,11 +16,17 @@
             <div class="form-group"><input type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="Zip Code" required/></div>
           </div>
         </div>
-        <div class="col-md-8 center-block">
-          <button type="submit" class="btn btn-md-wide btn-md-red">Call Congress</button>
+        <div class="col-md-10 center-block">
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-md-wide btn-md-red">Call Congress</button>
+          </div>
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-md-wide btn-md-gray" data-toggle="modal" data-target="#call-congress-modal">Learn More</button>
+          </div>
         </div>
       </form>
     </div>
+    <br>
     <div class="row skip-next">
       <small><a href="#" title="I completed this step" class="done">I Did This!</a> or <a href="#" class="next" title="Skip to Next Step">Skip to Next Step</a></small>
     </div>
@@ -34,6 +40,37 @@
     <!-- </div> -->
   </div>
 </div>
+
+<div class="modal fade" id="call-congress-modal" tabindex="-1" role="dialog" aria-labelledby="call-congress-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="md-modal-wrap">
+          <h3 class="text-center">Thank you for lending your voice to the fight for reform!<br/> Here's how our call tool works:</h3>
+          <dl>
+            <dt>Step 1.</dt> <dd>Enter your phone number and click the "Call Now" button.</dd>
+            <dt>Step 2.</dt> <dd>Your phone will ring. When you answer, our automated system will connect you to the first representative listed.</dd>
+            <dt>Step 3.</dt> <dd>A member of the rep's staff will answer. If you're calling after hours, you may be able to leave a message.</dd>
+            <dt>Step 4.</dt> <dd>Offer your name and explain why you're calling. For example:<br/> Hi. My name is _______. I'm calling to ask  _______ to be a leader in the fight to restore our democracy to us, the people, by cosponsoring legislation that would fundamentally change the way campaigns are funded. We are recommending five proposals that _____ could support. Each of these bills would radically change the way representatives would raise the money they need to get elected. You can see those proposals at RepsWith.US. I would ask __________ to please consider supporting one of those bills.</dd>
+            <dt>Step 5.</dt> <dd>Once you've completed your call, hit * to disconnect. Follow the prompts and you will be connected to the next rep on your list.</dd>
+          </dl>
+
+          <p>You can end your calling session at any time. If you're unable to complete your list in one session, you can come back later and pick up where you left off.</p>
+
+          <p>If you're questioned about specific legislation, any of the following reforms listed at http://www.repswith.us/reforms will bring about significant change:</p>
+          <ul>
+            <li>Government By the People Act</li>
+            <li>Empowering Citizens Act</li>
+            <li>The American Anti-corruption Act</li>
+            <li>Political Money Reform Proposal</li>
+            <li>Taxation Only With Representation Act</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 {% raw %}
 <script id="call_target_template" type="text/html">

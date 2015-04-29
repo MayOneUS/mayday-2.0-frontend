@@ -332,6 +332,11 @@ pre {
   @include simple-button;
   font-weight: 300;
 }
+.btn-md-gray, a.btn-md-gray:link {
+  @include button-colors($color-grey);
+  @include simple-button;
+  font-weight: 300;
+}
 .btn-reddit, a.btn-reddit:link {
   @include button-colors($color-reddit);
   @include simple-button;
