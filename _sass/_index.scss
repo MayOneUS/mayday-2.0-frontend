@@ -24,7 +24,7 @@
 
 .full-bg-imgage, .banner-image{
   background-color: #061C29;
-  // background-repeat: no-repeat;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 .full-bg-imgage {
@@ -32,7 +32,7 @@
   padding-top:0 !important;
   padding-bottom:0 !important;
   width: 100%;
-  // background-size: 200%;
+  position:relative;
   @include phone{
     margin-top: -50px !important;
   }
@@ -40,8 +40,18 @@
 .banner-image {
   padding-top:30px;
   padding-bottom:15px;
-  background: url("/images/campaigns/Sharegraphic_5_1.jpg") 0 40px no-repeat;
-  background-size: 60%;
+  background: url("/images/campaigns/20150429-Hero2.jpg") 0 -3px no-repeat;
+  position:relative;
+  z-index: 5;
+}
+.background-image-blurred{
+  filter: url(blur.svg#blur); -webkit-filter: blur(3px); filter: blur(3px);
+  background: url("/images/campaigns/20150429-Hero2.jpg") 0 -3px no-repeat;
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  background-size: cover;
 }
 .index-logo-small{
   @include phone{

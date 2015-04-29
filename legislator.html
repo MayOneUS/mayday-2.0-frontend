@@ -125,13 +125,13 @@ permalink: /legislator/
         l_d.page_title = [l_d.title_name,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
         l_d.support_message = 'some bill.';
         l_d.share_message = ['Hi. My name is _______. I\'m calling to thank',l_d.title_name,'for being a supporter of fundamental reform by supporting',l_d.support_message].join('');
-        l_d.tail_message = ['Say Thanks',l_d.short_title,l_d.name].join(' ') + '!';
+        l_d.tail_message = ['Thank',l_d.short_title,l_d.name, 'for being a leader'].join(' ') + '!';
       } else {
         status = false;
         l_d.background_img = '/images/call-page/money_sign.svg';
-        l_d.page_title = [l_d.title_name,'is not a leader supporting fundamental reform'].join(' ');
+        l_d.page_title = [l_d.title_name,'is not yet a leader supporting fundamental reform'].join(' ');
         l_d.share_message = ['Ask',l_d.title_name,'to become a leader for fundamental reform'].join(' ');
-        l_d.tail_message = ['Tell',l_d.short_title,l_d.name, 'to Support Reform!'].join(' '); // TODO: user short title
+        l_d.tail_message = ['Ask',l_d.short_title,l_d.name, 'to step up and lead!'].join(' '); // TODO: user short title
       }
 
 
