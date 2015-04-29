@@ -71,6 +71,16 @@ permalink: /the-plan/
 </div>
 <div class="page-panel grey">
   <div class="container content-offset">
+    <div id="" class="col-md-9 grey-group">
+      <div class="embed-responsive embed-responsive-16by9">
+        <a class='offsetAnchor' name="video1"></a>
+        <iframe class="embed-responsive-item" allowfullscreen src="//www.youtube.com/embed/XP9ryGVgF2U"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-panel light">
+  <div class="container content-offset">
     <div id="labratory" class="col-md-9 grey-group">
       <h2>The Mayday Lab: Getting a Congress committed to Reform</h2>
       <p>Our campaign will experiment with the most effective tools of persuasion: you. We are organizing grassroots campaigns to show members of Congress that doing the right thing for us is also the right thing for their political future. We want them to be leaders, and we’re going to give them every incentive — both positive and negative — that we can to inspire them to become leaders. </p>
@@ -121,7 +131,7 @@ permalink: /the-plan/
         secondlinkOffset = $link2.offset().top - $link1.offset().top,
         thridlinkOffset = $link3.offset().top - $link1.offset().top,
         forthlinkOffset = $link4.offset().top - $link1.offset().top,
-        
+
         // capture the whole fixed menu
         $stickyLinks = $(".sticky-tree"),
 
@@ -169,7 +179,7 @@ permalink: /the-plan/
         if ( animate.lockInPalace === false && ( lastContainerTop < firstLink - 10 )){
           animate.lockInPalace = true;
           $stickyLinks.addClass('unstuck').css('top',lastContainerTop);
-          
+
         } else if ( animate.lockInPalace === true && (window.scrollY +198 < lastContainerTop)) {
           animate.lockInPalace = false;
           $stickyLinks.removeClass('unstuck').css('top',198 + 'px');
