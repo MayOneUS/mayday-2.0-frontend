@@ -283,7 +283,7 @@
 
 .legislators-listing{
   min-height: 300px;
-  
+
   .all{
     .with-us-true{display:block}
     .with-us-false{display:block}
@@ -298,6 +298,12 @@
   }
 }
 .legislators-filter{
+  &.md-inputs input.form-control[type=text]{
+    margin-bottom: 0;
+  }
+  .radio-inline:first-child{
+    padding-left:0;
+  }
   .radio-inline input[type=radio]{
     margin-top: 7px;
   }

@@ -11,7 +11,7 @@ permalink: /legislators/
       <form method="get" accept-charset="utf-8" class="md-inputs legislators-filter">
         <input id="search" class="form-control" name="search" placeholder="Search by name or state" type="text" data-list=".js-legislators">
         <div class="form-group">
-          <label class="col-md-12 control-label sr-only" for="radios">Filter</label>
+          <label class="radio-inline" for="radios"><strong>Filter:</strong></label>
             <label class="radio-inline" for="leaders">
               <input type="radio" name="radios" id="leaders" value="leaders" checked="checked"> Leaders
             </label>
@@ -24,8 +24,8 @@ permalink: /legislators/
         </div>
       </form>
     </div>
-    <div class="row no-gutter legislators-listing leaders">
-      <div id="js-legislators" class="js-legislators text-center">
+    <div class="row no-gutter legislators-listing">
+      <div id="js-legislators" class="js-legislators text-center leaders">
         <i class="fa fa-refresh fa-spin fa-4x"></i>
       </div>
     </div>
@@ -39,8 +39,8 @@ permalink: /legislators/
         <a href="/legislator/?bioguide_id={{bioguide_id}}"><div class="background-square"></div></a>
       </div>
       <div class="col-md-8 col-sm-6 col-xs-8 remove-padding-text">
-        <h3 class="no-top-margin"> {{short_title}}<strong>{{ name }}</strong> </h3>
-        <h4>({{ party }}-{{ state_abbrev }} {{display_district}})</h4>
+        <h3 class="no-top-margin"> {{short_title}}<strong> {{ name }}</strong> </h3>
+        <h4>{{leadership}} {{ party }}-{{ state_abbrev }} {{display_district}}</h4>
         <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}"><span class="stateface stateface-replace stateface-{{ lower_abbrev }}"></span> Read More</a>
       </div>
       <div class="hidden">
