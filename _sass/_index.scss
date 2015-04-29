@@ -278,6 +278,7 @@
     }
     @include phone{
       font-size: 18px;
+      min-height:92px
     }
   }
 
@@ -299,19 +300,31 @@
 
 // call-box is where the number of calls is displayed
 // note line-height plays a part in creating their symmetry
-.call-box{}
-.call-box .col-sm-1{
-  font-size: 45px;
-  line-height: 45px;
-  font-weight: 400;
-  color: $color-dark-red;
-  width: 100px;
-}
-.call-box .col-sm-2{
-  width: 125px;
-  padding-right:0;
-  @include tablet{
-    width: 400px;
+.call-box{
+  @include phone{
+    br{display:none}
+    .col-sm-1{
+      padding-right:0;
+    }
+  }
+
+  .col-sm-1{
+    font-weight: 400;
+    color: $color-dark-red;
+
+    @include tablet-plus{
+      line-height: 45px;
+      font-size: 45px;
+      width: 100px;
+
+    }
+  }
+  .col-sm-2{
+    width: 125px;
+    padding-right:0;
+    @include tablet{
+      width: 400px;
+    }
   }
 }
 .call-box-thin{
@@ -470,7 +483,7 @@
 }
 
 
-.col-xs-12.bottom-margin{
+.col-xs-12.bottom-margin, .col-xs-11.bottom-margin{
   margin-bottom:15px;
 }
 
@@ -499,6 +512,10 @@
   transition: opacity 450ms;
   &.loaded{
     opacity: 1;
+  }
+
+  @include phone{
+    height: auto;
   }
 
   p{
