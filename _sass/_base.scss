@@ -210,7 +210,14 @@ p.byline{
   font-size:21px
 }
 
-
+.jumbo-text-wrap{
+  background:rgba(255,255,255,0.7);
+  padding: 0 20px 20px;
+  h2{
+    border-top: 10px solid;
+    padding-top: 10px;
+  }
+}
 
 /**
  * Paragraph
