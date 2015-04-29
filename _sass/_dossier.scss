@@ -301,10 +301,14 @@
   &.md-inputs input.form-control[type=text]{
     margin-bottom: 0;
   }
-  .radio-inline:first-child{
-    padding-left:0;
-  }
-  .radio-inline input[type=radio]{
-    margin-top: 7px;
+  .radio-inline{
+    margin-right:7px;
+
+    &:first-child{
+      padding-left:0;
+    }
+    input[type=radio]{
+      margin-top: 7px;
+    }
   }
 }
