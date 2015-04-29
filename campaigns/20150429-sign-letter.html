@@ -14,19 +14,39 @@ permalink: /sign-the-letter/
   .jumbotron>.container {
     padding-top:30px;
     padding-bottom:15px;
-    background: url("/images/campaigns/20150429-Hero2.jpg") 0 -3px no-repeat;
+    background: url("/images/campaigns/20150429-hero-bg.jpg") 0 -0 no-repeat;
     position:relative;
     z-index: 5;
+    background-size: cover;
+    box-shadow: 0 0 50px rgba(22,33,63,0.7);
+
   }
+
+  .jumbotron>.container>.row{
+    background: url("/images/campaigns/20150429-hero-white.png") 0 -0 no-repeat;
+    background-size: contain;
+  }
+
   .jumbotron .bg-blurred{
     filter: url(blur.svg#blur); -webkit-filter: blur(3px); filter: blur(3px);
-    background: url("/images/campaigns/20150429-Hero2.jpg") 0 -3px no-repeat;
+    background: url("/images/campaigns/20150429-hero-bg.jpg") 0 -3px no-repeat;
     position:absolute;
     width:105%;
     height:105%;
     left:-5px;
     z-index: 1;
     background-size: cover;
+  }
+
+.jumbo-text-wrap{
+  background:rgba(255,255,255,0.8);
+  padding: 0 20px 20px;
+}
+  .jumbo-text-wrap h2{
+    border-top: 10px solid;
+    padding-top: 20px;
+    border-bottom: 10px solid;
+    padding-bottom: 20px;
   }
 
 .letter-wrap{
@@ -75,14 +95,12 @@ permalink: /sign-the-letter/
 }
 
 </style>
-
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 <div class="jumbotron" style="">
   <div class="bg-blurred"></div>
   <div class="container">
-    <div class="row"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
-      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 jumbo-text-wrap">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-7 jumbo-text-wrap">
         <h2>Today we stand only 70 people away from a majority in the House who are committed to fundamental reform in the way campaigns are funded</h2>
       </div>
     </div>
