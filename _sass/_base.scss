@@ -324,13 +324,11 @@ pre {
 
 @mixin simple-button{
   margin:0;
-  // border: none;
   letter-spacing: 1px;
 }
 
 .btn-md-red, a.btn-md-red:link {
   @include simple-button;
-  font-weight: 300;
 }
 .btn-md-gray, a.btn-md-gray:link {
   @include button-colors($color-grey);
