@@ -97,6 +97,11 @@
       font-size: 14px;
       font-weight: 400;
       float: right;
+
+      &.btn-targets{
+        letter-spacing: 0;
+        bottom:6px;
+      }
     }
   }
 }

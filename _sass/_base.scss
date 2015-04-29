@@ -504,10 +504,10 @@ pre {
 a.btn-targets {
   margin-top:12px;
   text-transform: uppercase;
-  color: #fff !important;
   font-weight: 400;
   letter-spacing: 1px;
   @include button-colors(#b0aeaf);
+  color: #fff ;
 
 
   @include large-desktop {
