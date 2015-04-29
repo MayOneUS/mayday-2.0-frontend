@@ -234,7 +234,52 @@ a {
   }
 }
 
+/**
+ * simple list
+ */
 
+ ol.simple-list {
+    list-style-type: none;
+    margin: 1em 0 1em 3em;
+    padding: 0;
+    counter-reset: li-counter;
+
+  li{
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 0.5em;
+    min-height: 3em;
+    border-left: 2px solid #CCCCCC;
+    font-size:18px;
+  }
+  li:before {
+    position: absolute;
+    top: 0;
+    left: -1em;
+    width: 0.8em;
+
+    font-size: 3em;
+    line-height: 1;
+    font-weight: bold;
+    text-align: right;
+    color: #464646;
+    content: counter(li-counter);
+    counter-increment: li-counter;
+  }
+  &.small li:before {
+    font-size: 2em;
+  }
+  > li ul{
+    margin-bottom:1em;
+  }
+  li ul li{
+    list-style-type:square;
+  }
+}
+
+.md-modal-wrap ol.simple-list{
+  margin-left:10px;
+}
 
 /**
  * Blockquotes
@@ -702,3 +747,7 @@ form.no-gutter fieldset > [class*='col-'] {
 .thinner-font{
   font-weight: 300;
 }
+
+
+
+

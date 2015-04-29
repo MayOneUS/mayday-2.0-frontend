@@ -304,7 +304,10 @@ form.md-inputs{
 .modal-body {
   padding:0;
   .md-modal-wrap{
-    padding:10px;
+    padding:20px;
+  }
+  h3, h2{
+    font-weight: 400;
   }
   dl, ul, li{
     margin-left:20px;

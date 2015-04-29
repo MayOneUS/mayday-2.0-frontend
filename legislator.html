@@ -16,7 +16,7 @@ permalink: /legislator/
 </div>
 </script>
 <script id="legislator_template" type="text/html">
-<div class="dossier-page">
+<div class="dossier-page with-us-{{ with_us }}">
   <div class="top-line-left"></div>
   <div class="bottom-taper hidden-xs">
     <div class="triangle-up leg"></div>
@@ -39,6 +39,7 @@ permalink: /legislator/
           <div class="dossier-img">
             <div class=""  alt="{{ name }} Headshot" style="background-image:url(https://theunitedstates.io/images/congress/225x275/{{ bioguide_id }}.jpg)"></div>
           </div>
+          <caption>{{party}}-{{state_abbrev}} {{display_district}}</caption>
         </div>
       </div>
       <div class="row leader-visible">
@@ -69,7 +70,8 @@ permalink: /legislator/
         <div class="col-md-7 col-xs-12 center-block text-center">
           <div class="talk-bubble">
             <p><strong>You could say:</strong></p>
-            <p>{{ share_message }}</p>
+            <p class="leader-hidden">Hi. My name is _______ (if applicable: and I’m a constituent). I’m asking {{title_name}} to be a leader in the fight to restore our republic to the people. We need {{title_name}} to support legislation to change the way members of Congress raise money for their campaigns. There are five Republican and Democratic proposals. You can see the list at RepsWith.US. Will {{title_name}} please consider supporting one of those bills?</p>
+            <p class="leader-visible">Hi! My name is _______ (if applicable: and I'm a constituent). I'm calling to thank {{title_name}} for being a leader working to reform the way elections are funded. I am really happy to know that {{title_name}} is on the right side of this issue. Thanks for supporting {{supported_bills_message}}. </p>
           </div>
         </div>
       </div>
@@ -88,8 +90,7 @@ permalink: /legislator/
     "use strict";
     var bioguide_id = getParameterByName('bioguide_id'),
         status = '',
-        tallies ='',
-        tallie_columns;
+        tallies ='';
 
     function getParameterByName( name ) {
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -102,47 +103,38 @@ permalink: /legislator/
 
     function scorecard( legislator_data ){
 
-      var l_d = legislator_data;
+      var l_d = legislator_data,
+        supported_bill_names = [];
+
       l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
       l_d.title_name = [l_d.title,l_d.name].join(' ');
       l_d.bioguide_id = bioguide_id;
 
       if ( l_d.with_us === true ){
         l_d.tallies_rendered = ''
-        status = true;
 
-        if(l_d.current_sponsorships.length == 1){
-          tallie_columns = '12'
-        }else{
-          tallie_columns = '6'
-
-        }
         $.each(l_d.current_sponsorships, function(index, data){
-          data.column_width = tallie_columns;
+          data.column_width = l_d.current_sponsorships.length == 1 ? '12' : '6';
+          supported_bill_names.push(data.name)
           tallies += ich.talley_template(data, true);
-        })
+        });
+
+        console.log('supported_bill_names:', supported_bill_names);
+        l_d.supported_bills_message = supported_bill_names.join(' ');
         l_d.background_img = '/images/star_blue.svg';
         l_d.page_title = [l_d.title_name,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
-        l_d.support_message = 'some bill.';
-        l_d.share_message = ['Hi. My name is _______. I\'m calling to thank',l_d.title_name,'for being a supporter of fundamental reform by supporting',l_d.support_message].join('');
         l_d.tail_message = ['Thank',l_d.short_title,l_d.name, 'for being a leader'].join(' ') + '!';
       } else {
         status = false;
         l_d.background_img = '/images/call-page/money_sign.svg';
         l_d.page_title = [l_d.title_name,'is not yet a leader supporting fundamental reform'].join(' ');
-        l_d.share_message = ['Ask',l_d.title_name,'to become a leader for fundamental reform'].join(' ');
         l_d.tail_message = ['Ask',l_d.short_title,l_d.name, 'to step up and lead!'].join(' '); // TODO: user short title
       }
 
 
       var rendered = ich.legislator_template(l_d);
 
-      if (status) {
-        $(rendered["0"]).addClass("with-us-true");
-      } else {
-        $(rendered["0"]).addClass("with-us-false");
-      }
-       document.title = l_d.page_title
+      document.title = l_d.page_title
       $('#js-legislators').append(rendered);
       $('#js-tallies').append(tallies);
     }

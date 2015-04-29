@@ -39,7 +39,6 @@
   }
   .tallies{
     position:relative;
-    margin-bottom: 20px;
     overflow: hidden;
 
     >.col-md-6 .talley:first-child{float:right}
@@ -80,8 +79,6 @@
   }
   .bottom-line, .make-call, .top-line-left{
     background-color: $color-dossier-blue;
-  }
-  .talley{
   }
   .leader-visible{
     display: initial;
