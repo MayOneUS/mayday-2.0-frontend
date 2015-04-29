@@ -266,6 +266,13 @@ select.md-select {
   text-transform: uppercase;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 300px;
+}
 
 /**
  * Site footer
@@ -273,6 +280,9 @@ select.md-select {
 .site-footer {
   height: 300px;
   clear: both;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #0d3960;
   padding-top: 60px;
   color: #ffffff;
@@ -636,7 +646,7 @@ select.md-select {
   letter-spacing: .1px;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -300px;
+  // margin: 0 auto -300px;
   .footer-push {
     height: 300px;
     clear: both;
