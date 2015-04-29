@@ -96,9 +96,13 @@ permalink: /legislators/
       $('#js-legislators').removeClass('text-center').empty();
 
       legislators.forEach( function ( data, index ){ //gets three reps
-          allyObject.push( data );
-        });
+        allyObject.push( data );
+      });
       allyObject.map(renderAllies);
+      $('label[for=leaders]').append(' ('+ $('.legislators-listing .with-us-true').length+')');
+      $('label[for=potential]').append(' ('+ $('.legislators-listing .with-us-false').length+')');
+      $('label[for=all]').append(' ('+ $('.legislators-listing>div>div').length+')');
+
     }
 
     $.getJSON(newAllieData, callDataAndTemplate);
