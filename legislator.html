@@ -5,6 +5,7 @@ permalink: /legislator/
 ---
 
 <div id="js-legislators"></div>
+{% include modals/modal_call_congress.html %}
 
 {% raw %}
 <script id="talley_template" type="text/html">
@@ -58,14 +59,17 @@ permalink: /legislator/
             <i class="fa fa-phone"></i>
             Make the Call
           </a>
-          <a class="btn btn-md-wide btn-mini-share twitter-small" href="" role="button">
+          <a class="btn btn-md-wide btn-mini-share twitter-small" href="https://twitter.com/intent/tweet?screen_name={{ twitter_id }}" role="button">
             <i class="fa fa-twitter"></i>
           </a>
-          <a class="btn btn-md-wide btn-mini-share facebook-small" href="" role="button">
-            <i class="fa fa-facebook"></i>
+          <a class="btn btn-md-wide btn-mini-share facebook-small" data-toggle="modal" data-target="#call-congress-modal">
+            <i class="fa fa-envelope-o fa-lg"></i>
           </a>
+   
         </div>
       </div>
+
+
       <div class="row">
         <div class="col-md-7 col-xs-12 center-block text-center">
           <div class="talk-bubble">
@@ -77,6 +81,7 @@ permalink: /legislator/
       </div>
     </div>
   </div>
+
   <p class="text-center"><a href="/legislators" title="">View all Leaders for Fundamental Reform</a></p>
 
   <div class="bottom-line"></div>
@@ -118,7 +123,7 @@ permalink: /legislator/
           supported_bill_names.push(data.name)
           tallies += ich.talley_template(data, true);
         });
-
+        console.log( legislator_data );
         console.log('supported_bill_names:', supported_bill_names);
         l_d.supported_bills_message = supported_bill_names.join(' ');
         l_d.background_img = '/images/star_blue.svg';
@@ -131,7 +136,6 @@ permalink: /legislator/
         l_d.tail_message = ['Ask',l_d.short_title,l_d.name, 'to step up and lead!'].join(' '); // TODO: user short title
       }
 
-
       var rendered = ich.legislator_template(l_d);
 
       document.title = l_d.page_title
@@ -141,4 +145,21 @@ permalink: /legislator/
 
     $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, scorecard);
   });
-</script>
+</script> 
+
+ <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>

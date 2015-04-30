@@ -508,7 +508,10 @@ pre {
   }
   &.facebook-small {
     @include button-colors(#FFF);
-    border: solid 2px $color-facebook;
+    border: solid 2px $color-grey;
+    color: $color-grey;
+    line-height: 0;
+    font-size: 1.8em;
     height: 65px;
     width: 160px;
     @include small-desktop{
