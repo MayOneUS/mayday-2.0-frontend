@@ -56,7 +56,7 @@ permalink: /sign-the-letter/
 .letter {
   background: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  margin: 16px auto 0;
+  margin: 16px auto 40px;
   min-height: 300px;
   padding: 24px;
   position: relative;
@@ -92,6 +92,10 @@ permalink: /sign-the-letter/
 
 .jumbo-text-wrap{
   margin-bottom:20px;
+}
+
+.panel-body.thanks-message{
+  display: none;
 }
 
 </style>
@@ -131,7 +135,8 @@ permalink: /sign-the-letter/
         </div>
   </div>
   <div class="col-md-4">
-{% capture panel_content %}
+{% capture panel_body %}
+<div class="panel-body">
   <h2 style="line-height:34px;">Ask your member of Congress to become a <br><strong>#ReformLeader</strong></h2>
   <p style="text-align:left;">Calling on representatives to stand up as leaders is positive. It shows respect. It gives them the credit that their constituents also gave them. It asks them to be exactly what this Nation needs — a force for change, for the good of everyone. The pundits see impossible. <strong>We see hope. Join us.</strong></p>
   <form class="row smaller-form no-gutter" id="js-sign-up-form">
@@ -177,6 +182,37 @@ permalink: /sign-the-letter/
 
     </fieldset>
   </form>
+</div>
+
+<div class="panel-body thanks-message">
+    <h2>Thanks for signing the letter!</h2>
+    <h2>Now: Amplyfiy your voice!</h2>
+    <p>Let's start showing our friends and family the things can be better.</p>
+
+    <div class="row">
+      <div class="col-md-4">
+        <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/spread-the-word/" target="_blank" class="btn btn-md-wide btn-share-center facebook">
+          <span class="text"><i class="fa fa-facebook"></i></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://twitter.com/home?status=some social media status" target="_blank"
+            target="_blank" class="btn btn-md-wide btn-share-center twitter">
+          <span class="text"><i class="fa fa-twitter"></i></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="mailto:&subject=&body=" target="_blank" class="btn btn-md-wide btn-share-center youtube">
+          <span class="text"><i class="fa fa-envelope-o"></i></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><small><a href="/take-action/">Take more actions here</a>.</small></p>
+    </div>
+  </div>
 {% endcapture %}
     {% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
   </div>
@@ -187,16 +223,10 @@ permalink: /sign-the-letter/
     e.preventDefault();
     $form = $(e.target);
     $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
-      $form.find('button.btn').text('Loading..');
+      $form.find('button.btn').text('<i class="fa fa-refresh fa-spin"></i> Loading..');
     }).done(function(){
-      if(location.pathname == '/take-action/'){
-        $next = $form.parents('li').next();
-        $parent = $form.parents('li');
-        setAsComplete($parent);
-        makeActive($next);
-      }else{
-        location = '/take-action/#get-educated'
-      }
+      $form.parents('.panel-body').hide();
+      $form.parents('.panel-body').next().show()
     });
   });
 </script>
