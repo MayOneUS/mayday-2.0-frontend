@@ -408,6 +408,9 @@
   &.newest-leaders{
     .new-legislator{
       border-right: 1px solid #b7b7b7;
+      @include tablet-minus{
+        border:none;
+      }
       &:nth-child(3n) {
         border:none;
       }
