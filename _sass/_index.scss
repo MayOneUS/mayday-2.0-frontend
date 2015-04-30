@@ -34,7 +34,6 @@
   width: 100%;
   position:relative;
   @include phone{
-    margin-top: -50px !important;
   }
   @include tablet-minus{
     background: url("/images/campaigns/20150429-hero-bg.jpg") 0 0 no-repeat;
