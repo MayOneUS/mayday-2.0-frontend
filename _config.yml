@@ -6,6 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
 url: "https://mayday.us" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
 services_url: //mayday-step-two.herokuapp.com
+# services_url: //localhost:3000
 blog_root_url: http://blog.mayday.us
 blog_post_feed_url: //mayday-step-two.herokuapp.com/blog_posts
 press_releases_feed_url: //mayday-step-two.herokuapp.com/blog_posts/press_releases

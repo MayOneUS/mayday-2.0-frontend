@@ -2,49 +2,89 @@
 layout: default
 title: MAYDAY.US - We tried. We learned. We're trying something new.
 hideFromNav: true
+hideHeaderSignUp: true
 ---
 <div id="index">
   <div class="full-bg-imgage">
+      <div class="background-image-blurred"></div>
     <div class="container banner-image">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 spacer-opening">
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 fist-action spacer-opening">
-          {% include panels/panel_action_w_signup.html form_class='smaller-form no-gutter' alt_title='Sign the Letter' %}
+        <div class="col-md-offset-8 col-md-4 col-lg-4">
+{% capture panel_body %}
+<div class="panel-body">
+  <h2>Sign the letter</h2>
+  <p>Ask your member of Congress to <br>become a #ReformAlly</strong></p>
+  <form class="row smaller-form no-gutter" id="js-sign-letter-form">
+
+    <fieldset class="col-md-12">
+
+    <div class="form-group col-md-8 form-left">
+      <label class="control-label sr-only" for="person[email]">Email Address</label>
+      <input id="person[email]" name="person[email]" type="text" placeholder="Email Address" required="required">
+    </div>
+
+    <div class="form-group col-md-4 form-right">
+      <label class="control-label sr-only" for="person[zip]">ZIP Code</label>
+      <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP Code">
+
+    </div>
+
+
+
+
+    <div class="form-group cold-md-12">
+      <label class="control-label sr-only" for="singlebutton">Submit</label>
+      <input type="hidden" name="template_id" value="sign-letter-form">
+      <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
+      <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder -->
+      <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+    </div>
+
+    </fieldset>
+  </form>
+</div>
+
+{% endcapture %}
+    {% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
+  </div>
+</div>
+
+<script>
+  $('#js-sign-letter-form').on('submit', function(e){
+    e.preventDefault();
+    $form = $(e.target);
+    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading..');
+    $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
+    }).done(function(){
+      window.location = '/sign-the-letter/?already_signed=true'
+    });
+  });
+</script>
         </div>
       </div>
     </div>
   </div>
   <div class="container">
-    <div class="row gutter-justphone homepage-panel">
+    <div class="row gutter-justphone homepage-panel homepage-ribbon">
 
       <div class="col-xs-12 col-md-4">
-        <div class="col-xs-12 col-sm-2 col-md-4">
-          <img class="logo-img-center" src="/images/star_home.svg" alt="">
-        </div>
-        <div class="col-xs-12 col-sm-10 col-md-8 mini-panel-text">
-          <p class="no-top-margin"><a href="/">MAYDAY.US</a> is a crowd-funded SuperPAC to end all SuperPACs... including this one. Help us reduce the influence of money in politics by getting a Congress committed to fundamental reform by 2016<a href="/take-action"> Let's win our democracy back!</a></p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4 verticalLines">
-        <div class="col-xs-12 col-sm-2 col-md-4">
-          <img class="logo-img-center" src="/images/USA_home.svg" alt="">
-        </div>
-        <div class="col-xs-12 col-sm-10 col-md-8 mini-panel-text">
-          <p class="no-top-margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic illo veritatis ullam necessitatibus aliquid dignissimos incidunt laborum mollitia odit obcaecati? Ab veritatis saepe cumque, <a href="/the-state-of-reform">state of reform.</a></p>
+        <div class="mini-panel mini-panel-text">
+          <p class="no-top-margin"><a href="/">MAYDAY.US</a> is a crowd-funded SuperPAC to end all SuperPACs... including this one. Help us reduce the influence of money in politics by getting a Congress committed to fundamental reform by 2016<a href="/take-action/"> Let's win our democracy back!</a></p>
         </div>
       </div>
       <div class="col-xs-12 col-md-4">
-        <div class="col-xs-12 col-sm-2 col-md-4">
-          <img class="logo-img-center" src="/images/phone_home.svg" alt="">
+        <div class="mini-panel mini-panel-state">
+          <p class="no-top-margin">The closer we get to closing the gap, the more likely it is that leaders from either party will make this issue central to the 2016 campaign. <a href="/legislators/">Find out if your rep supports reform</a>.</p>
         </div>
-        <div class="col-xs-12 col-sm-10 col-md-8 mini-panel-text">
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="mini-panel mini-panel-call">
           <div class="row call-box">
             <span class="col-sm-1">678</span>
-            <span class="no-top-margin col-sm-2 call-box-thin">CALLS <i>to</i></span>
+            <span class="no-top-margin col-sm-2 call-box-thin">CALLS <i>to</i></span> <br/>
             <span class="no-top-margin col-sm-2 call-box-thick">CONGRESS</span>
           </div>
-          <p class="no-top-margin">Lorem ipsum facere ut nostrum incidunt aliquid dolorem, officia nobis maxime vero ncidunt laborum mollitia odit aliquid. <a href="/take-action#call-congress">Make the call</a></p>
+          <p class="no-top-margin">Move America towards fundamental reform. Call representatives and ask if they’re ready to be leaders. <a href="/take-action#call-congress">Make the call</a></p>
         </div>
       </div>
     </div>
@@ -64,31 +104,28 @@ hideFromNav: true
     <img class="bg-star" src="/images/star_white.svg">
     <div class="container gutter-justphone homepage-panel-body">
       <div class="col-md-10 col-xs-12">
-        <h2>Welcome to Mayday!</h2>
-        <p>In 2014, we rallied more than 50,000 Americans to support a fight for fundamental reform in the way campaigns are funded &mdash; to reduce the influence of money in politics, by increasing the influence of people in politics.</p>
-        <p>But in the campaigns, we didn&rsquo;t move the ball far enough.</p>
-        <p>So in 2015, we&rsquo;re doing something different. To show America that reform is possible, we need to close the gap on a majority in Congress &mdash; both Republicans and Democrats &mdash; committed to reforming the system of corruption in Washington, D.C., by changing the way campaigns are funded.</p>
+        <h2>We are Mayday PAC</h2>
+        <p>The biggest challenge blocking fundamental reform is the belief that it is not possible. In 2014, we raised $11,000,000 rallied more than 50,000 Americans that prove it is possible to fight for fundamental reform.  In 2015, we're going to keep closing the gap, by lobbying members of Congress to take the lead and commit to fundamental reform.</p>
       </div>
     </div>
   </div>
 
   <div class="container">
     <div class="row homepage-panel light">
-      <div class="col-md-10 homepage-panel-body">
+      <div class="col-md-12 homepage-panel-body">
         <h2>State of Reform</h2>
-        <p>We are less than 70 votes from a majority in the House, and when the Senate bills are introduced, we’ll see how far from a majority we are in the Senate. But across the range of fundamental reform (identified on the site, RepsWith.US), we are tracking how close we are to a majority in Congress. Because the closer we get, the more likely it is that leaders from either party will make this issue central to the 2016 campaign.</p>
-      </div>
-    </div>
 
-    <div class="row">
-      <div id="container1" class="chart-holder col-md-4 col-sm-6 col-xs-12"></div>
-      <div id="container2" class="chart-holder col-md-4 col-sm-6 col-xs-12"></div>
-      <div id="container3" class="chart-holder col-md-4 col-sm-6 col-xs-12">
-        {% include panels/panel_counters.html %}
+        <div id="container2" class="chart-holder non-chart col-md-4 col-sm-6 col-xs-12">
+          <p>We are less than 70 votes from a majority in the House, and when the Senate bills are introduced, we’ll see how far from a majority we are in the Senate. But across the range of fundamental reform (identified on the site, <a href="http://repswith.us/" target="_blank">RepsWith.US</a>), we are tracking how close we are to a majority in Congress. Because the closer we get, the more likely it is that leaders from either party will make this issue central to the 2016 campaign.</p>
+        </div>
+        <div id="container1" class="chart-holder col-md-4 col-sm-6 col-xs-12"></div>
+        <div id="container3" class="chart-holder non-chart col-md-4 col-sm-6 col-xs-12">
+          {% include panels/panel_counters.html %}
+        </div>
       </div>
     </div>
   </div>
-  <div class="homepage-panel grey">
+  <!-- <div class="homepage-panel grey">
     <div class="container">
       <div class="row">
         <div class="col-md-10 homepage-panel-body">
@@ -102,13 +139,16 @@ hideFromNav: true
         </div>
       </div>
     </div>
-  </div>
-  <div class="container homepage-panel light">
-    <div class="row homepage-panel-body">
-      <div class="col-xs-8"><h2>Newest Leaders for Fundamental Reform</h2></div>
+  </div> -->
+  <div class="homepage-panel grey">
+    <div class="container">
+      <div class="row homepage-panel-body">
+        <div class="col-xs-12"><h2>Newest Leaders for Fundamental Reform</h2></div>
+      </div>
+      {% include newest_allies.html %}
+      <p class="text-center"><a href="/legislators" title="">View all Leaders for Fundamental Reform</a></p>
     </div>
 
-    {% include newest_allies.html %}
 
   </div>
   <div class="homepage-panel dark">
@@ -119,21 +159,21 @@ hideFromNav: true
         </div>
       </div>
       <div class="row mayday-quotes">
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <p>"Lorem ipsum dignissimos nesciunt quia asperiores rerum id dicta quisquam necessitatibus, inventore non temporibus quam neque quidem voluptates aperiam, consectetur sapiente ad magnam neque quidem voluptates aperiam."</p>
-          <img class="center-block" src="/images/news-logos/The_New_York_Times_logo_white.png" alt="">
+        <div class="col-md-4 col-xs-12">
+          <p>“It’s an ingenious plan to make the drive for small-dollar publicly funded elections a central issue in 2016. With a little luck... idea could help save the republic.”</p>
+          <img class="center-block" alt="Matt Miller, Washington Post Opinions" src="/images/news-logos/washington-post-large-logo-2-300x78-white.png">
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <p>"Elit. Excepturi dignissimos nesciunt quia asperiores rerum id dicta quisquam necessitatibus, inventore non temporibus quam neque quidem voluptates aperiam, consectetur sapiente ad magnam."</p>
-          <img class="center-block" src="/images/news-logos/logo-atlantic-white.png" alt="">
+        <div class="col-md-4 col-xs-12">
+          <p>“The first part was hard. That second part is even harder. But now that MayDay has done the impossible once, it's worth staying tuned to see if they can do it again.”</p>
+          <img class="center-block" alt="Ben Wikler, Tech President" src="/images/news-logos/techrepublic-logo-white.png" style="opacity:0.8">
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi dignissimos nesciunt quia asperiores rerum id dicta quisquam necessitatibus."</p>
-          <img class="center-block" src="/images/news-logos/2000px-Time_Magazine_logo-white.png" alt="">
+        <div class="col-md-4 col-xs-12">
+          <p>“The mortal struggle at hand today is not between the right and the left. It is not between Republicans and Democrats. It is not between the Congress and the president. It is between us (currently outsiders to our own government) voters and the Washington Insiders.”</p>
+          <img class="center-block" alt="Ralph Benko, Forbes Opinion" src="/images/news-logos/forbes-logo-white.png">
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 text-center"><a class="white-link "href="/">Read more news</a></div>
+        <div class="col-xs-12 text-center"><a class="white-link "href="/in-the-news/">Read more news</a></div>
       </div>
     </div>
   </div>
@@ -147,4 +187,4 @@ hideFromNav: true
   </div>
   </div>
 </div>
-<script src="{{ root_path }}/js/lib/homepage.js"></script>
+<script src="{{ root_path }}/js/homepage.js"></script>

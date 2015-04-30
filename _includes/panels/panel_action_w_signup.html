@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
     <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
-    <p>Be part of the movement to restore our democracy. </p>
+    <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
     <form class="row {{include.form_class}}" id="js-sign-up-form">
 
       <fieldset class="col-md-12">
@@ -62,8 +62,8 @@
   $('#js-sign-up-form').on('submit', function(e){
     e.preventDefault();
     $form = $(e.target);
+    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading..');
     $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
-      $form.find('button.btn').text('Loading..');
     }).done(function(){
       if(location.pathname == '/take-action/'){
         $next = $form.parents('li').next();

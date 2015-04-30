@@ -12,13 +12,20 @@
     font-weight: 400;
   }
   .dossier-img{
-    width: 200px;
-    padding: 2px;
-    margin: 0 auto 20px;
+    margin: 0 auto 0px;
     border-radius: 5px;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 281px;
+    width: 231px;
+
+    &>div{
+      border:3px solid #fff;
+      border-radius: 5px;
+
+      height: 275px;
+      width: 225px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
   h1.lead-title{
     margin-top: 0;
@@ -32,8 +39,11 @@
   }
   .tallies{
     position:relative;
-    margin-bottom: 20px;
     overflow: hidden;
+
+    >.col-md-6 .talley:first-child{float:right}
+    >.col-md-6 .talley:last-child{float:left}
+    >.col-md-12 .talley{margin:0 auto;text-align:center;}
   }
   .talley{
     font-size: 18px;
@@ -41,11 +51,11 @@
     text-align: left;
     font-weight: 400;
     line-height: 18px;
-    width:200px;
+    width:180px;
     .fa{
       font-size: 46px;
       float: left;
-      margin-right: 5px;
+      // margin-right: 5px;
     }
   }
 
@@ -54,6 +64,19 @@
     font-size: 30px;
   }
 
+  .make-call{
+    cursor: text;
+    -webkit-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+    &::selection {
+      background: $color-dossier-red;
+    }
+    &::-moz-selection {
+      background: $color-dossier-red;
+    }
+  }
 
 }
 
@@ -63,12 +86,14 @@
   }
   .dossier-img{
     border:3px solid $color-dossier-blue;
+    &>div{
+      background-color: $color-dossier-blue;
+    }
   }
   .bottom-line, .make-call, .top-line-left{
     background-color: $color-dossier-blue;
   }
-  .talley{
-  }
+
   .leader-visible{
     display: initial;
   }
@@ -85,6 +110,9 @@
   }
   .dossier-img{
     border:3px solid $color-dossier-red;
+    &>div{
+      background-color: $color-dossier-red;
+    }
   }
   .bottom-line, .make-call, .top-line-left{
     background-color: $color-dossier-red;
@@ -261,5 +289,37 @@
     height: 200px;
     opacity: .1;
     @include star-rotation(-15deg);
+  }
+}
+
+.legislators-listing{
+  min-height: 300px;
+
+  .all{
+    .with-us-true{display:block}
+    .with-us-false{display:block}
+  }
+  .potential{
+    .with-us-true{display:none}
+    .with-us-false{display:block}
+  }
+  .leaders{
+    .with-us-true{display:block}
+    .with-us-false{display:none}
+  }
+}
+.legislators-filter{
+  &.md-inputs input.form-control[type=text]{
+    margin-bottom: 0;
+  }
+  .radio-inline{
+    margin-right:12px;
+
+    &:first-child{
+      padding-left:0;
+    }
+    input[type=radio]{
+      margin-top: 7px;
+    }
   }
 }

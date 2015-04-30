@@ -9,8 +9,9 @@
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="{{ root_path }}/images/mayday_og.jpg" name="twitter:image:src"/>
   <meta content='@mayday' name="twitter:site"/>
-  {% assign meta_content_size = meta_content | size %}
-  {% if meta_content_size < 2 %}
+
+  {% assign meta_content_size = page.meta_content | size %}
+  {% if page.meta_content_size < 2 %}
     <meta property="og:url" content="{{ page_url }}"/>
     <meta property="og:image" content="{{ root_path }}/images/mayday_og.jpg"/>
     <meta property="og:title" content="MAYDAY: Democracy needs an upgrade. Act now."/>
@@ -24,7 +25,7 @@
     <link rel="canonical" href="{{page_url}}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   {% else %}
-    {{ meta_content }}
+    {{ page.meta_content }}
   {% endif %}
 
   <script>var root_services_url = '{{site.services_url}}';</script>

@@ -78,9 +78,6 @@
       background-color:transparent;
       padding-bottom: 0;
 
-      strong{
-        font-size:50px;
-      }
     }
   }
 
@@ -113,30 +110,36 @@
       font-size: 26px;
       color:#fff;
     }
-
   }
+}
 
-  form {
-    margin: 25px 15px 0 15px;
-    padding-bottom: 15px;
-    input[type=text], input[type=email], input[type=tel], input[type=number] {
-      font-size: 22px;
-      width: 100%;
-      border: 2px solid $color-navy-blue;
-      padding: 8px 0 8px 12px;
-      border-radius: 4px;
-      margin-bottom: 15px;
-    }
-    &.smaller-form{
-      padding-bottom: 0;
-      .form-group{
-        input[type=text], input[type=email], input[type=tel], input[type=number] {
-          margin-bottom: 4px;
-          font-size: 18px;
-          font-weight: 300;
-        }
+
+.action-panel form, form.md-inputs {
+  margin: 25px 15px 0 15px;
+  padding-bottom: 15px;
+  input[type=text], input[type=email], input[type=tel], input[type=number] {
+    font-size: 22px;
+    width: 100%;
+    border: 2px solid $color-navy-blue;
+    padding: 8px 0 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  &.smaller-form{
+    padding-bottom: 0;
+    .form-group{
+      input[type=text], input[type=email], input[type=tel], input[type=number] {
+        margin-bottom: 4px;
+        font-size: 18px;
+        font-weight: 300;
       }
     }
+  }
+}
+form.md-inputs{
+  input[type=text], input[type=email], input[type=tel], input[type=number] {
+    padding:5px 10px;
+    height:auto;
   }
 }
 .banner-image .action-panel{
@@ -288,10 +291,44 @@
   width: 100%;
 }
 
+#call-congress-modal .modal-dialog{
+  padding-bottom: 10px;
+  @include tablet-plus{
+    width: 800px;
+  }
+}
+
 .modal-body {
   padding:0;
+  .md-modal-wrap{
+    padding:20px;
+  }
+  h3, h2{
+    font-weight: 400;
+  }
+  dl, ul, li{
+    margin-left:20px;
+  }
+  dt{
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
   .close{
     margin-top:-14px;
     margin-right:-8px;
   }
 }
+//started fixing the panel on the letter page
+// .lock-in{
+//   position:fixed !important;
+//   display: block !important;
+//   left: 50%;
+//   top: 210px !important;
+//   margin-left: 250px !important;
+// }
+// .lock-in.unlock{
+//   position:absolute !important;
+//   top: 210px !important;
+//   left: 0%;
+//   margin-left: 0px !important;
+// }

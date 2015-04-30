@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
     <h2>Volunteer</h2>
-    <p>Be part of the movement to restore our democracy. </p>
+    <p>Be a leader in the movement to repair our republic.</p>
     <form class="row" id="js-volunteer-form">
       <fieldset class="col-md-12">
 
@@ -57,8 +57,8 @@
   $('#js-volunteer-form').on('submit', function(e){
     e.preventDefault();
     $form = $(e.target);
+    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading..');
     $.post('{{site.services_url}}/people', $(e.target).serialize(), function(data){
-      $form.find('button.btn').text('Loading..');
     }).done(function(){
       if(location.pathname == '/take-action/'){
         $parent = $form.parents('li');

@@ -8,6 +8,7 @@
       </div>
       <div class="logo"><a href="{{ root_path }}/"><img src="{{ root_path }}/images/web_logo_2x.png"></a></div>
       <div class="search-section-right hidden-xs">
+      {% unless page.hideHeaderSignUp %}
         <form class="email-signup">
           <input type="email" name="person[email]" placeholder="Join our email list" required/>
           <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
@@ -20,6 +21,7 @@
         <div class="hidden">
           <h1 class="mayday-headline-smaller-inverse">Thank you!</h1>
         </div>
+      {% endunless %}
       </div>
     <div class="fade-line hidden-xs hidden-sm"></div>
     </div>
