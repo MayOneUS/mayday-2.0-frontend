@@ -295,20 +295,34 @@
 .legislators-listing{
   min-height: 300px;
 
-  .all{
-    .with-us-true{display:block}
-    .with-us-false{display:block}
-  }
-  .potential{
-    .with-us-true{display:none}
-    .with-us-false{display:block}
-  }
-  .leaders{
-    .with-us-true{display:block}
-    .with-us-false{display:none}
+  .js-legislators{
+    padding-top:15px;
   }
 }
-.legislators-filter{
+
+  .legislators-all{
+    .with-us-true{display:block}
+    .with-us-false{display:block}
+    .potential-true{display:block}
+    .show-potential{visibility:hidden;}
+  }
+  .legislators-potential{
+    .with-us-true{display:none}
+    .with-us-false{display:none}
+    .potential-true{display:block}
+    .show-potential{visibility: visible;}
+  }
+  .legislators-leaders{
+    .potential-true{display:none}
+    .with-us-false{display:none}
+    .with-us-true{display:block}
+    .show-potential{visibility: hidden;}
+  }
+form.md-inputs.legislators-filter{
+  padding-bottom:0;
+
+  .form-group{margin:0}
+
   &.md-inputs input.form-control[type=text]{
     margin-bottom: 0;
   }
