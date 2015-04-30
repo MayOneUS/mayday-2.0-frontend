@@ -64,6 +64,19 @@
     font-size: 30px;
   }
 
+  .make-call{
+    cursor: text;
+    -webkit-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+    &::selection {
+      background: $color-dossier-red;
+    }
+    &::-moz-selection {
+      background: $color-dossier-red;
+    }
+  }
 
 }
 
@@ -80,6 +93,7 @@
   .bottom-line, .make-call, .top-line-left{
     background-color: $color-dossier-blue;
   }
+
   .leader-visible{
     display: initial;
   }

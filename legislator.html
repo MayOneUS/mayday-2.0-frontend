@@ -55,22 +55,22 @@ permalink: /legislator/
       </div>
       <div class="row">
         <div class="col-md-8 col-xs-12 center-block text-center">
-          <a href="#" class="btn btn-md-wide btn-mini-share make-call" data-toggle="modal" data-target="#call-congress-modal">
+          <span href="#" class="btn btn-md-wide btn-mini-share make-call" style="display:{{show_phone}}">
             <i class="fa fa-phone"></i>
-            Make the Call
-          </a>
+            {{phone}}
+          </span>
           <a class="btn btn-md-wide btn-mini-share twitter-small" style="display:{{show_twitter}}" href="{{tweet_url}}" role="button">
             <i class="fa fa-twitter"></i>
           </a>
-          <a class="btn btn-md-wide btn-mini-share facebook-small" data-toggle="modal" data-target="#email-congress-modal">
+          <!--<a class="btn btn-md-wide btn-mini-share facebook-small" data-toggle="modal" data-target="#email-congress-modal">
             <i class="fa fa-envelope-o fa-lg"></i>
-          </a>
+          </a>-->
 
         </div>
       </div>
 
 
-      <div class="row">
+      <div class="row" style="display:{{show_phone}}">
         <div class="col-md-7 col-xs-12 center-block text-center">
           <div class="talk-bubble">
             <p><strong>You could say:</strong></p>
@@ -114,6 +114,7 @@ permalink: /legislator/
       l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
       l_d.title_name = [l_d.title,l_d.name].join(' ');
       l_d.bioguide_id = bioguide_id;
+      if(!l_d.phone) l_d.show_phone = 'none';
 
       if ( l_d.with_us === true ){
         l_d.tallies_rendered = ''
