@@ -36,18 +36,28 @@
   @include phone{
     margin-top: -50px !important;
   }
+  @include tablet-minus{
+    background: url("/images/campaigns/20150429-hero-bg.jpg") 0 0 no-repeat;
+    background-size: cover;
+  }
 }
 .banner-image {
   padding-top:20px;
   box-shadow: 0 0 50px rgba(22,33,63,0.7);
   padding-bottom:15px;
-  background: url("/images/campaigns/20150429-hero-bg.jpg") 0 -0 no-repeat;
+  background: url("/images/campaigns/20150429-hero-bg.jpg") 0 0 no-repeat;
   position:relative;
   background-size: cover;
   z-index: 5;
   >.row{
-    background: url("/images/campaigns/20150429-hero-white.png") 0 -0 no-repeat;
+    background: url("/images/campaigns/20150429-hero-white.png") 0 0 no-repeat;
     background-size: contain;
+  }
+
+  @include tablet-minus{
+    background-image:none;
+    box-shadow: none;
+    >.row{background-image:none;}
   }
 }
 .background-image-blurred{
@@ -58,6 +68,9 @@
   height:100%;
   z-index: 1;
   background-size: cover;
+  @include tablet-minus{
+    display:none;
+  }
 }
 .index-logo-small{
   @include phone{
@@ -289,17 +302,14 @@
     font-size: 16px;
     background-size:90px 90px;
 
-    @include tablet{
+    @include tablet-minus{
       margin-top: 8px;
-    }
-    @include phone{
       font-size: 18px;
       min-height:92px
     }
   }
 
   .mini-panel-text{
-    // padding-left:30px;// !important;
     background-image: url('/images/home_icon_star.svg');
   }
   .mini-panel-call{
@@ -493,8 +503,22 @@
   margin-bottom:15px;
 }
 
-.mayday-quotes p{
-  margin:45px 0 30px;
+.mayday-quotes{
+  p{
+    margin:45px 0 30px;
+  }
+
+  @include tablet-minus{
+    margin-top:20px;
+    margin-bottom:30px;
+    p{
+      margin:0 0 15px;
+      padding:0;
+    }
+    img{
+      margin-bottom:20px;
+    }
+  }
 }
 .chart-holder {
   height: 400px;

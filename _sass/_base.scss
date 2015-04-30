@@ -76,6 +76,13 @@ $share-bg-img: 'share-bg.jpg';
   }
 }
 
+
+@mixin tablet-minus {
+  @media (max-width: #{$small-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: #{$tablet-min-width}) and (max-width: #{$small-desktop-min-width - 1px}) {
     @content;

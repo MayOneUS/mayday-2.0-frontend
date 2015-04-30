@@ -57,7 +57,6 @@
       e.preventDefault();
       $form = $(e.target);
       $.post('{{site.services_url}}/calls', $form.serialize(), function(data){
-        console.log('display targets from:',data);
         $form.find('button.btn').text('calling');
       }).done(function(data){
         $parent = $form.parents('li');
