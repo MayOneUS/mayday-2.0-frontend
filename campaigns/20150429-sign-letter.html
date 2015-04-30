@@ -105,7 +105,7 @@ permalink: /sign-the-letter/
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-7 jumbo-text-wrap">
-        <h2><strong>Today</strong>, we stand only <strong>70</strong> people away from a majority in the House who are committed to fundamental reform in the way campaigns are funded</h2>
+        <h2><strong>Today</strong>, we stand only <strong>70</strong> people away from a majority in the House who are committed to fundamental reform in the way campaigns are funded.</h2>
       </div>
     </div>
   </div>
@@ -139,7 +139,7 @@ permalink: /sign-the-letter/
 <div class="panel-body">
   <h2 style="line-height:34px;">Ask your member of Congress to become a <br><strong>#ReformLeader</strong></h2>
   <p style="text-align:left;">Calling on representatives to stand up as leaders is positive. It shows respect. It gives them the credit that their constituents also gave them. It asks them to be exactly what this Nation needs — a force for change, for the good of everyone. The pundits see impossible. <strong>We see hope. Join us.</strong></p>
-  <form class="row smaller-form no-gutter" id="js-sign-up-form">
+  <form class="row smaller-form no-gutter" id="js-sign-letter-form">
 
     <fieldset class="col-md-12">
 
@@ -185,8 +185,8 @@ permalink: /sign-the-letter/
 </div>
 
 <div class="panel-body thanks-message">
-    <h2>Thanks for signing the letter!</h2>
-    <h2>Now: Amplyfiy your voice!</h2>
+    <h2>Thanks for signing!</h2>
+    <h2>Now: Amplify your voice!</h2>
     <p>Let's start showing our friends and family the things can be better.</p>
 
     <div class="row">
@@ -219,6 +219,24 @@ permalink: /sign-the-letter/
 </div>
 
 <script>
+function getParameterByName( name ) {
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+}
+
+$(document).ready(function(){
+  already_signed = getParameterByName('already_signed');
+  console.log(already_signed)
+  if(already_signed == 'true'){
+    $form = $('#js-sign-letter-form');
+    $form.parents('.panel-body').hide();
+    $form.parents('.panel-body').next().show();
+  }
+
   $('#js-sign-up-form').on('submit', function(e){
     e.preventDefault();
     $form = $(e.target);
@@ -229,6 +247,8 @@ permalink: /sign-the-letter/
       $form.parents('.panel-body').next().show()
     });
   });
+
+});
 </script>
 
   </div>
