@@ -55,17 +55,17 @@ permalink: /legislator/
       </div>
       <div class="row">
         <div class="col-md-8 col-xs-12 center-block text-center">
-          <a href="#" class="btn btn-md-wide btn-mini-share make-call">
+          <a href="#" class="btn btn-md-wide btn-mini-share make-call" data-toggle="modal" data-target="#call-congress-modal">
             <i class="fa fa-phone"></i>
             Make the Call
           </a>
-          <a class="btn btn-md-wide btn-mini-share twitter-small" href="https://twitter.com/intent/tweet?screen_name={{ twitter_id }}" role="button">
+          <a class="btn btn-md-wide btn-mini-share twitter-small" style="display:{{show_twitter}}" href="{{tweet_url}}" role="button">
             <i class="fa fa-twitter"></i>
           </a>
-          <a class="btn btn-md-wide btn-mini-share facebook-small" data-toggle="modal" data-target="#call-congress-modal">
+          <a class="btn btn-md-wide btn-mini-share facebook-small" data-toggle="modal" data-target="#email-congress-modal">
             <i class="fa fa-envelope-o fa-lg"></i>
           </a>
-   
+
         </div>
       </div>
 
@@ -120,6 +120,7 @@ permalink: /legislator/
 
         $.each(l_d.current_sponsorships, function(index, data){
           data.column_width = l_d.current_sponsorships.length == 1 ? '12' : '6';
+          data.name = data.name.replace(/ of 201\d/,'')
           supported_bill_names.push(data.name)
           tallies += ich.talley_template(data, true);
         });
@@ -129,11 +130,21 @@ permalink: /legislator/
         l_d.background_img = '/images/star_blue.svg';
         l_d.page_title = [l_d.title_name,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
         l_d.tail_message = ['Thank',l_d.short_title,l_d.name, 'for being a leader'].join(' ') + '!';
+        if(l_d.twitter_id){
+          l_d.tweet_url = 'https://twitter.com/intent/tweet?text='+l_d.twitter_id+escape(' is a #ReformLeader. Thanks for cosponsoring the ')+escape(supported_bill_names[0])+escape(' to change how campaigns are funded.');
+        }else{
+          l_d.show_twitter = 'none';
+        }
       } else {
         status = false;
         l_d.background_img = '/images/call-page/money_sign.svg';
         l_d.page_title = [l_d.title_name,'is not yet a leader supporting fundamental reform'].join(' ');
-        l_d.tail_message = ['Ask',l_d.short_title,l_d.name, 'to step up and lead!'].join(' '); // TODO: user short title
+        l_d.tail_message = ['Ask',l_d.short_title,l_d.name, 'to step up and lead!'].join(' ');
+        if(l_d.twitter_id){
+          l_d.tweet_url = 'https://twitter.com/intent/tweet?text=.@'+l_d.twitter_id+escape(' help lead the fight for fundamental reform of the way campaigns are funded. Be a #ReformLeader.')+'&url=http://repswith.us/reforms';
+        }else{
+          l_d.show_twitter = 'none';
+        }
       }
 
       var rendered = ich.legislator_template(l_d);
@@ -145,7 +156,7 @@ permalink: /legislator/
 
     $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, scorecard);
   });
-</script> 
+</script>
 
  <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
@@ -155,11 +166,11 @@ permalink: /legislator/
   js.id = id;
   js.src = "https://platform.twitter.com/widgets.js";
   fjs.parentNode.insertBefore(js, fjs);
- 
+
   t._e = [];
   t.ready = function(f) {
     t._e.push(f);
   };
- 
+
   return t;
 }(document, "script", "twitter-wjs"));</script>
