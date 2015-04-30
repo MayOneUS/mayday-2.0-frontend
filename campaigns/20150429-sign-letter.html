@@ -25,13 +25,34 @@ meta_content: |
     z-index: 5;
     background-size: cover;
     box-shadow: 0 0 50px rgba(22,33,63,0.7);
+  }
+  .jumbotron h1{
+    display:none;
+  }
+  .jumbotron.already-signed h1{
+    display:block;
+    color:#fff;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(13, 27, 63, 1), 0 0 10px rgba(13, 27, 63, 1),0 0 30px rgba(13, 27, 63, 1);
+  }
+  .jumbotron.already-signed .jumbo-text-wrap{
+    display:none;
+  }
 
+  .jumbotron.already-signed .container {
+    height:120px;
+    text-align: center;
   }
 
   .jumbotron>.container>.row{
     background: url("/images/campaigns/20150429-hero-white.png") 0 -0 no-repeat;
     background-size: contain;
   }
+  .already-signed .jumbotron.container{
+    background:none;
+  }
+
 
   .jumbotron .bg-blurred{
     filter: url(blur.svg#blur); -webkit-filter: blur(3px); filter: blur(3px);
@@ -114,6 +135,7 @@ meta_content: |
 <div class="jumbotron" style="">
   <div class="bg-blurred"></div>
   <div class="container">
+    <h1>Thank you for Signing!</h1>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-7 jumbo-text-wrap">
         <h2><strong>Today</strong>, we stand only <strong>70</strong> people away from a majority in the House who are committed to fundamental reform in the way campaigns are funded.</h2>
@@ -242,8 +264,8 @@ function getParameterByName( name ) {
 
 $(document).ready(function(){
   already_signed = getParameterByName('already_signed');
-  console.log(already_signed)
   if(already_signed == 'true'){
+    $('.jumbotron').addClass('already-signed')
     $form = $('#js-sign-letter-form');
     $form.parents('.panel-body').hide();
     $form.parents('.panel-body').next().show();
