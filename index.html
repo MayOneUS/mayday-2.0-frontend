@@ -14,7 +14,7 @@ hideHeaderSignUp: true
 <div class="panel-body">
   <h2>Sign the letter</h2>
   <p>Ask your member of Congress to <br>become a #ReformAlly</strong></p>
-  <form class="row smaller-form no-gutter" id="js-sign-up-form">
+  <form class="row smaller-form no-gutter" id="js-sign-letter-form">
 
     <fieldset class="col-md-12">
 
@@ -34,7 +34,7 @@ hideHeaderSignUp: true
 
     <div class="form-group cold-md-12">
       <label class="control-label sr-only" for="singlebutton">Submit</label>
-      <input type="hidden" name="template_id" value="sign-up-form">
+      <input type="hidden" name="template_id" value="sign-letter-form">
       <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
       <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder -->
       <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
@@ -50,7 +50,7 @@ hideHeaderSignUp: true
 </div>
 
 <script>
-  $('#js-sign-up-form').on('submit', function(e){
+  $('#js-sign-letter-form').on('submit', function(e){
     e.preventDefault();
     $form = $(e.target);
     $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading..');
