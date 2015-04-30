@@ -513,12 +513,8 @@ pre {
       width: 100%;
     }
   }
-  &.facebook-small {
+  &.social-small {
     @include button-colors(#FFF);
-    border: solid 2px $color-grey;
-    color: $color-grey;
-    line-height: 0;
-    font-size: 1.8em;
     height: 65px;
     width: 160px;
     @include small-desktop{
@@ -531,20 +527,17 @@ pre {
       width: 49%;
     }
   }
+  &.facebook-small{
+    border: solid 2px $color-facebook;
+  }
+  &.email-small{
+    border: solid 2px $color-grey;
+    color: $color-grey;
+    line-height: 0;
+    font-size: 1.8em;
+  }
   &.twitter-small {
-    @include button-colors(#FFF);
     border: solid 2px $color-twitter;
-    height: 65px;
-    width: 160px;
-    @include small-desktop{
-      width: 130px;
-    }
-    @include tablet{
-      width: 24%;
-    }
-    @include phone{
-      width: 49%;
-    }
   }
 
 }

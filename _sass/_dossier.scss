@@ -93,13 +93,6 @@
   .bottom-line, .make-call, .top-line-left{
     background-color: $color-dossier-blue;
   }
-
-  .leader-visible{
-    display: initial;
-  }
-  .leader-hidden{
-    display: none;
-  }
   .bg-star{
     background-image:url('/images/star_blue.svg') no-repeat;
   }
@@ -121,15 +114,26 @@
       font-size: 38px;
       margin-right: 8px;
   }
+  .bg-star{
+    background-image:url('/images/money_sign.svg') no-repeat;
+  }
+}
+
+.with-us-true{
+  .leader-visible{
+    display: initial;
+  }
+  .leader-hidden{
+    display: none;
+  }
+}
+
+.with-us-false{
   .leader-visible{
     display: none;
   }
   .leader-hidden{
     display: initial;
-  }
-
-  .bg-star{
-    background-image:url('/images/money_sign.svg') no-repeat;
   }
 }
 

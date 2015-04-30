@@ -59,12 +59,12 @@ permalink: /legislator/
             <i class="fa fa-phone"></i>
             {{phone}}
           </span>
-          <a class="btn btn-md-wide btn-mini-share twitter-small" style="display:{{show_twitter}}" href="{{tweet_url}}" role="button">
+          <a class="btn btn-md-wide btn-mini-share social-small twitter-small" style="display:{{show_twitter}}" href="{{tweet_url}}" role="button">
             <i class="fa fa-twitter"></i>
           </a>
-          <!--<a class="btn btn-md-wide btn-mini-share facebook-small" data-toggle="modal" data-target="#email-congress-modal">
-            <i class="fa fa-envelope-o fa-lg"></i>
-          </a>-->
+          <a class="btn btn-md-wide btn-mini-share social-small facebook-small" data-toggle="modal" data-target="#facebook-modal">
+            <i class="fa fa-facebook"></i>
+          </a>
 
         </div>
       </div>
@@ -72,9 +72,9 @@ permalink: /legislator/
 
       <div class="row" style="display:{{show_phone}}">
         <div class="col-md-7 col-xs-12 center-block text-center">
-          <div class="talk-bubble">
+          <div class="talk-bubble" id="js-talk-bubble">
             <p><strong>You could say:</strong></p>
-            <p class="leader-hidden">Hi. My name is _______ (if applicable: and I’m a constituent). I’m asking {{title_name}} to be a leader in the fight to restore our republic to the people. We need {{title_name}} to support legislation to change the way members of Congress raise money for their campaigns. There are five Republican and Democratic proposals. You can see the list at RepsWith.US. Will {{title_name}} please consider supporting one of those bills?</p>
+            <p class="leader-hidden">Hi. My name is _______ (if applicable: and I&rsquo;m a constituent). I&rsquo;m asking {{title_name}} to be a leader in the fight to restore our republic to the people. We need {{title_name}} to support legislation to change the way members of Congress raise money for their campaigns. There are five Republican and Democratic proposals. You can see the list at RepsWith.US. Will {{title_name}} please consider supporting one of those bills?</p>
             <p class="leader-visible">Hi! My name is _______ (if applicable: and I'm a constituent). I'm calling to thank {{title_name}} for being a leader working to reform the way elections are funded. I am really happy to know that {{title_name}} is on the right side of this issue. Thanks for supporting {{supported_bills_message}}. </p>
           </div>
         </div>
@@ -86,6 +86,33 @@ permalink: /legislator/
 
   <div class="bottom-line"></div>
 </div>
+
+<div class="modal fade" id="facebook-modal" tabindex="-1" role="dialog" aria-labelledby="facebook-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="md-modal-wrap with-us-{{ with_us }}">
+          <h2 class="text-center">Thank you for lending your voice to the fight for reform!</h2>
+          <h3>Here&rsquo;s how how to reach out to your legislator over Facebook:</h3>
+
+          <blockquote>
+            <p class="leader-hidden">I&rsquo;m asking {{title_name}} to be a leader in the fight to restore our republic to the people. We need {{title_name}} to support legislation to change the way members of Congress raise money for their campaigns. There are five Republican and Democratic proposals. You can see the list at RepsWith.US. Will {{title_name}} please consider supporting one of those bills?</p>
+            <p class="leader-visible">I&rsquo;m calling to thank {{title_name}} for being a leader working to reform the way elections are funded. I am really happy to know that {{title_name}} is on the right side of this issue. Thanks for supporting {{supported_bills_message}}. </p>
+          </blockquote>
+            <h3>And you can edit and paste it on her facebook page.</h3>
+
+          <div class="col-md-10 center-block">
+            <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/spread-the-word/" target="_blank" class="btn btn-md-wide btn-share-center facebook" style="text-transform:none;">
+              <span class="text"><i class="fa fa-facebook"></i> {{title_name}}</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </script>
 {% endraw %}
 <script>
@@ -174,4 +201,9 @@ permalink: /legislator/
   };
 
   return t;
-}(document, "script", "twitter-wjs"));</script>
+}(document, "script", "twitter-wjs"));
+ </script>
+
+
+
+
