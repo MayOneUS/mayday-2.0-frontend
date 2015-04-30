@@ -11,7 +11,56 @@ hideFromNav: true
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 spacer-opening">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 fist-action spacer-opening">
-          {% include panels/panel_action_w_signup.html form_class='smaller-form no-gutter' alt_title='Sign the Letter' alt_body="Ask your member of Congress <br>to become a #ReformAlly"%}
+{% capture panel_body %}
+<div class="panel-body">
+  <h2>Sign the letter</h2>
+  <p>Ask your member of Congress to <br>become a #ReformAlly</strong></p>
+  <form class="row smaller-form no-gutter" id="js-sign-up-form">
+
+    <fieldset class="col-md-12">
+
+    <div class="form-group col-md-8 form-left">
+      <label class="control-label sr-only" for="person[email]">Email Address</label>
+      <input id="person[email]" name="person[email]" type="text" placeholder="Email Address" required="required">
+    </div>
+
+    <div class="form-group col-md-4 form-right">
+      <label class="control-label sr-only" for="person[zip]">ZIP Code</label>
+      <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP Code">
+
+    </div>
+
+
+
+
+    <div class="form-group cold-md-12">
+      <label class="control-label sr-only" for="singlebutton">Submit</label>
+      <input type="hidden" name="template_id" value="sign-up-form">
+      <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
+      <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder -->
+      <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+    </div>
+
+    </fieldset>
+  </form>
+</div>
+
+{% endcapture %}
+    {% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
+  </div>
+</div>
+
+<script>
+  $('#js-sign-up-form').on('submit', function(e){
+    e.preventDefault();
+    $form = $(e.target);
+    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading..');
+    $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
+    }).done(function(){
+      window.location = '/sign-the-letter/?already_signed=true'
+    });
+  });
+</script>
         </div>
       </div>
     </div>
@@ -57,7 +106,7 @@ hideFromNav: true
     <div class="container gutter-justphone homepage-panel-body">
       <div class="col-md-10 col-xs-12">
         <h2>We are Mayday PAC</h2>
-        <p>The biggest challenge blocking fundamental reform is the belief that it is not possible. In 2014, we raised $11,000,000 rallied more than 50,000 Americans that prove it is possible to fight for fundamental reform.  In 2015, we're going to keep closing the gap, by lobbying members of Congress to take the lead and committi to fundamental reform.</p>
+        <p>The biggest challenge blocking fundamental reform is the belief that it is not possible. In 2014, we raised $11,000,000 rallied more than 50,000 Americans that prove it is possible to fight for fundamental reform.  In 2015, we're going to keep closing the gap, by lobbying members of Congress to take the lead and commit to fundamental reform.</p>
       </div>
     </div>
   </div>
