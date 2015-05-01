@@ -50,8 +50,12 @@
   background-size: cover;
   z-index: 5;
   >.row{
-    background: url("/images/campaigns/20150429-hero-white.png") 0 0 no-repeat;
+    background: url("/images/campaigns/20150429-hero-white_v01.png") 0 0 no-repeat;
     background-size: contain;
+    @include small-desktop{
+      background: url("/images/campaigns/20150429-hero-white.png") 0 0 no-repeat;
+      background-size:100%;
+    }
   }
 
   @include tablet-minus{
@@ -506,7 +510,7 @@
 }
 
 
-.col-xs-12.bottom-margin, .col-xs-11.bottom-margin{
+.bottom-margin{
   margin-bottom:15px;
 }
 

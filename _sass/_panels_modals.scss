@@ -176,6 +176,9 @@ form.md-inputs{
   @include phone{
     margin: 0;
   }
+  @include tablet-minus{
+    background: none;
+  }
 
   .headline {
     font-size: 30px;

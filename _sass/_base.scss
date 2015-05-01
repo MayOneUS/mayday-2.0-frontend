@@ -763,6 +763,10 @@ form.no-gutter fieldset > [class*='col-'] {
   font-weight: 300;
 }
 
-
+.text-center-sm{
+  @include tablet{
+    text-align: center;
+  }
+}
 
 
