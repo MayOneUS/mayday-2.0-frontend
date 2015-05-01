@@ -8,6 +8,7 @@ redirects:
   # Main page redirects
   # the-plan: 'about-us'
   about: 'about-us'
+  about_us: 'about-us'
   media: 'in-the-news'
   unsubscribe: 'http://act.mayday.us/unsubscribe'
   blog: 'http://blog.mayday.us/'

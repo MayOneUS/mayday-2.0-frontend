@@ -446,61 +446,6 @@
   }
 }
 
-.legislators-listing{
-
-  h3{
-    font-size:20px;
-    white-space: nowrap;
-  }
-  h4{
-    font-size: 16px;
-  }
-
-  .fa{
-    display: inline-block;
-    margin-right:1px
-  }
-
-
-  .stateface-replace{
-    display:initial;
-  }
-  .stateface-replace:before{
-    position:relative;
-  }
-  .background-square{
-    border:4px solid #b0aeaf;
-  }
-
-  .with-us-true{
-    .stateface-replace{
-    }
-    .fa-check-square-o{
-      display:inline-block;
-    }
-    .fa-ban{
-      display:none;
-    }
-    .btn-targets{
-      background-color: $color-dossier-green;
-    }
-  }
-  .with-us-false{
-    .stateface-replace{
-    }
-    .fa-check-square-o{
-      display:none;
-    }
-    .fa-ban{
-      display:inline-block;
-    }
-    .btn-targets{
-      background-color: $color-dossier-red;
-    }
-  }
-}
-
-
 .bottom-margin{
   margin-bottom:15px;
 }

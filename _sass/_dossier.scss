@@ -1,3 +1,46 @@
+.legislators-listing{
+
+  h3{
+    font-size:20px;
+    white-space: nowrap;
+  }
+  h4{
+    font-size: 16px;
+  }
+
+  .fa{
+    display: inline-block;
+    margin-right:1px
+  }
+
+  .background-square{
+    border:4px solid #b0aeaf;
+  }
+
+  .with-us-true{
+    .fa-check-square-o{display:inline-block}
+    .fa-minus-circle{display:none}
+    .fa-question-circle{display:none}
+    .btn-targets{
+      background-color: $color-dossier-green;
+    }
+  }
+  .with-us-unknowable{
+    .fa-question-circle{display:true}
+    .fa-check-square-o{display:none}
+    .fa-minus-circle{display:none}
+  }
+  .with-us-false{
+    .fa-question-circle{display:none}
+    .fa-check-square-o{display:none}
+    .fa-minus-circle{display:inline-block}
+    .btn-targets{
+      background-color: $color-dossier-red;
+    }
+  }
+}
+
+
 .page-open{
   padding-top:40px;
 }
@@ -307,12 +350,14 @@
   .legislators-all{
     .with-us-true{display:block}
     .with-us-false{display:block}
+    .with-us-unknowable{display:block}
     .potential-true{display:block}
-    .show-potential{visibility:hidden;}
+    .show-potential{visibility:hidden}
   }
   .legislators-potential{
     .with-us-true{display:none}
     .with-us-false{display:none}
+    .with-us-unknowable{display:none}
     .potential-true{display:block}
     .show-potential{visibility: visible;}
   }
@@ -320,6 +365,7 @@
     .potential-true{display:none}
     .with-us-false{display:none}
     .with-us-true{display:block}
+    .with-us-unknowable{display:none}
     .show-potential{visibility: hidden;}
   }
 form.md-inputs.legislators-filter{
@@ -341,3 +387,4 @@ form.md-inputs.legislators-filter{
     }
   }
 }
+
