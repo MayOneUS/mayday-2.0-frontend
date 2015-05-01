@@ -13,12 +13,12 @@ permalink: /legislators/
           <div class="form-group">
             <label class="radio-inline" for="filter-value"><strong>Filter:</strong></label>
               <label class="radio-inline" for="leaders">
-                <input type="radio" name="filter-value" id="leaders" value="leaders" checked="checked">
+                <input type="radio" name="filter-value" id="leaders" value="leaders">
                 <i class="fa fa-check-square-o"></i>
                 Leaders
               </label>
               <label class="radio-inline" for="potential">
-                <input type="radio" name="filter-value" id="potential" value="potential">
+                <input type="radio" name="filter-value" id="potential" value="potential" checked="checked">
                 <i class="fa fa-question-circle"></i>
                 Potential Leaders
               </label>
@@ -74,7 +74,12 @@ permalink: /legislators/
 
   function setListFilter(filterValue){
     $('.legislators-listing').parent().prop('class', 'container legislators-'+filterValue)
+    // will scroll page if using jquery here
+    var el = document.getElementById(filterValue);
+    var id = el.id;
+    el.removeAttribute('id');
     location.hash = filterValue;
+    el.setAttribute('id',id);
   }
 
   function renderAllies(legislator_data, index) {
