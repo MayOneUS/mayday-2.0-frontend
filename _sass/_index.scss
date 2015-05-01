@@ -28,12 +28,13 @@
   overflow: hidden;
 }
 .full-bg-imgage {
-  margin-top: -45px !important;
+  margin-top: -45px;
   padding-top:0 !important;
   padding-bottom:0 !important;
   width: 100%;
   position:relative;
   @include phone{
+    margin-top: 0;
   }
   @include tablet-minus{
     background: url("/images/campaigns/20150429-hero-bg.jpg") 0 0 no-repeat;
@@ -353,18 +354,16 @@
   }
 }
 .call-box-thin{
-  padding-left:0 !important;
   font-size: 15px;
   font-weight: 300;
   @include small-desktop{
     font-size:17px;
   }
   @include phone{
-    font-size: 18px;
+    font-size: 25px;
   }
 }
 .call-box-thick{
-  padding-left:0 !important;
   font-size: 25px;
   font-weight: 400;
   line-height: 14px;
@@ -373,7 +372,7 @@
     font-size: 20px;
   }
   @include phone{
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 // only white link I know of consider moving
@@ -390,6 +389,11 @@
 
 .js-legislators{
   padding-top:45px;
+
+  .pulled-image{
+    margin-right:2%;
+    margin-left:2%;
+  }
 
   .background-square{
     height: 100px;
@@ -409,6 +413,7 @@
     .new-legislator{
       border-right: 1px solid #b7b7b7;
       @include tablet-minus{
+        padding-left: 0;
         border:none;
       }
       &:nth-child(3n) {
@@ -554,5 +559,27 @@
     font-weight: 300;
     font-size: 20px;
     line-height: 30px;
+  }
+}
+#container2{
+  padding-right:0;
+  padding-left:0;
+}
+
+//needed the media query without writing a more complicated one on sign the letter
+.jumbo-text-wrap{
+  margin-bottom:100px;
+  @include phone{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+}
+.jumbotron{
+  margin-top: -45px;
+  padding:0;
+  position:relative;
+  overflow: hidden;
+  @include phone{
+    margin-top: 0px;
   }
 }

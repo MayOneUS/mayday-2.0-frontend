@@ -173,6 +173,9 @@ form.md-inputs{
   font-weight: 400;
   padding-top: 5px;
   padding-bottom: 30px;
+  @include phone{
+    margin: 0;
+  }
 
   .headline {
     font-size: 30px;
