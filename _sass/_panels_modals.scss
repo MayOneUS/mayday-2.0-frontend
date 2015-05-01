@@ -5,32 +5,38 @@
 .action-panel{
   text-align:center;
   border-radius:5px;
-  border: 1px solid $navy-blue-color;
+  border: 1px solid $color-navy-blue;
   padding:0;
   background:#fff;
-  overflow:hidden;
+  margin-bottom: 0;
+  // overflow:hidden;
+
+  .center-block{
+    float:none;
+  }
 
   .panel-heading{
     padding-top:0;
     padding-bottom:0;
-    background-color: $navy-blue-light-color;
-    border-bottom: 10px solid  $navy-blue-color;
+    background-color: $color-navy-blue-light;
+    border-bottom: 10px solid  $color-navy-blue;
   }
 
   .panel-body{
     padding-top: 0;
 
-    a.btn-mayday{
+    a.btn-md-red{
       margin-bottom:15px;
     }
   }
 
   &.with-shield{
+    position:relative;
 
     .panel-icon{
       padding:0;
-      background: $navy-blue-color;
-      border-bottom:5px solid $navy-blue-light-color;
+      background: $color-navy-blue;
+      border-bottom:5px solid $color-navy-blue-light;
       text-align:center;
       height:20px;
 
@@ -42,10 +48,10 @@
         margin-left:-20px;
         z-index:100;
         @include phone{
-          top:22px;
+          // top:22px;
         }
         @include tablet{
-          top:22px;
+          // top:22px;
         }
       }
       .fade-line{
@@ -61,20 +67,17 @@
         color: white;
         height: 2px;
         background: black;
-        background: -webkit-radial-gradient(circle, rgba(255,255,255, 0.5), $navy-blue-color);
-        background: radial-gradient(circle, rgba(255,255,255, 0.5), $navy-blue-color);
+        background: -webkit-radial-gradient(circle, rgba(255,255,255, 0.5), $color-navy-blue);
+        background: radial-gradient(circle, rgba(255,255,255, 0.5), $color-navy-blue);
       }
     }
     h2{
-      color: $navy-blue-color;
+      color: $color-navy-blue;
       font-weight:400;
       font-size:26px;
       background-color:transparent;
       padding-bottom: 0;
 
-      strong{
-        font-size:50px;
-      }
     }
   }
 
@@ -93,6 +96,13 @@
       margin-bottom:0;
       margin-top:0;
     }
+
+    &.help-block{
+      margin:0;
+      font-size:12px;
+      text-align: left;
+      margin-left:2px;
+    }
   }
 
   h2 {
@@ -107,34 +117,72 @@
       font-size: 26px;
       color:#fff;
     }
-
-  }
-
-  form {
-    margin: 25px 15px 0 15px;
-    padding-bottom: 15px;
-    input[type=text], input[type=email] {
-      font-size: 22px;
-      width: 100%;
-      border: 2px solid $navy-blue-color;
-      padding: 8px 0px 8px 12px;
-      border-radius: 4px;
-      margin-bottom: 15px;
-    }
   }
 }
 
+.action-panel form{
+  margin: 25px 15px 0 15px;
+}
+.action-panel form, form.md-inputs {
+  padding-bottom: 15px;
+
+  input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
+    font-size: 22px;
+    width: 100%;
+    border: 2px solid $color-navy-blue;
+    padding: 8px 0 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  &.smaller-form{
+    padding-bottom: 0;
+    .form-group{
+      input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
+        margin-bottom: 4px;
+        font-size: 18px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+form.md-inputs{
+  input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
+    padding:5px 10px;
+    height:auto;
+  }
+}
+.banner-image .action-panel{
+  .form-group{
+    margin-bottom:10px;
+    input[type=text], input[type=email], input[type=tel], input[type=number] {
+      margin-bottom: 0;
+      font-size: 18px;
+      font-weight: 300;
+    }
+    .btn-md-wide{
+      margin-bottom: 0;
+    }
+  }
+}
 .panel-mayday-counters {
-  height: 100%;
+  margin: 0px 20px 0;
   position: relative;
-  background-color: rgb(228,229,233);
+  background-color: #F9F9F9;//rgb(228,229,233);
   border-radius: 4px;
   text-align: center;
-  color: $navy-blue-light-color;
+  color: $color-navy-blue-light;
   font-weight: 400;
-  padding-top: 22px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  @include phone{
+    margin: 0;
+  }
+  @include tablet-minus{
+    background: none;
+  }
+
   .headline {
-    font-size: 34px;
+    font-size: 30px;
   }
   .icon-line {
     margin-top: 10px;
@@ -167,7 +215,7 @@
       display: inline-block;
       height: 100%;
       width: 56px;
-      background-color: $navy-blue-light-color;
+      background-color: $color-navy-blue-light;
       font-size: 76px;
       position: relative;
       .hr {
@@ -197,10 +245,6 @@
   }
 
   .modal-body {
-    .close{
-      margin-top:-14px;
-      margin-right:-8px;
-    }
 
     h2{
       font-weight:400;
@@ -211,7 +255,7 @@
       margin-top:5px;
     }
     p{
-      color: $navy-blue-color;
+      color: $color-navy-blue;
       line-height: 20px;
       font-size:16px;
     }
@@ -221,25 +265,25 @@
         width: 100%;
       }
       & > .btn{
-        border-color: $navy-blue-color;
+        border-color: $color-navy-blue;
       }
       &.btn-group .btn .filter-option{
-        color: $navy-blue-color;
+        color: $color-navy-blue;
         font-weight: 400;
         font-size:18px;
       }
       .text-muted{
-        color:$navy-blue-color;
+        color:$color-navy-blue;
         font-weight:300;
         padding-left:4px;
       }
       .dropdown-menu li.active a small{
-        color:$light-grey-color;
+        color:$color-grey-light;
       }
     }
 
     .form-control{
-      border-color: $navy-blue-color;
+      border-color: $color-navy-blue;
     }
 
     .checkbox-inline{
@@ -251,12 +295,41 @@
       margin-bottom:0;
     }
   }
+}
 
-  #onboarding-overlay {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    height: 100%;
-    width: 100%;
+#onboarding-overlay {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-height:400px;
+  height: 100%;
+  width: 100%;
+}
+
+#call-congress-modal .modal-dialog{
+  padding-bottom: 10px;
+  @include tablet-plus{
+    width: 800px;
+  }
+}
+
+.modal-body {
+  padding:0;
+  .md-modal-wrap{
+    padding:20px;
+  }
+  h3, h2{
+    font-weight: 400;
+  }
+  dl, ul, li{
+    margin-left:20px;
+  }
+  dt{
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .close{
+    margin-top:-14px;
+    margin-right:-8px;
   }
 }

@@ -32,9 +32,9 @@ $progress-breakpoint-small:715px;
   border-radius: 4px;
   height: 100%;
   .headline {
-    color: $navy-blue-light-color;
+    color: $color-navy-blue-light;
     font-size: 34px;
-    padding: 20px 3.5% 0px 3.5%;
+    padding: 20px 3.5% 0 3.5%;
     position: relative;
     z-index: 99;
     margin:0;
@@ -47,7 +47,7 @@ $progress-breakpoint-small:715px;
     }
     line-height: 28px;
     margin-top: 14px;
-    padding: 14px 3.5% 0px 3.5%;
+    padding: 14px 3.5% 0 3.5%;
     position: relative;
     z-index: 99;
     @include breakpoint-large{
@@ -64,7 +64,7 @@ $progress-breakpoint-small:715px;
     }
   }
   .legend {
-    color: $dark-red-color;
+    color: $color-dark-red;
     text-align: right;
     font-size: 27px;
     margin: 15px 5% 8px 0;
@@ -102,7 +102,7 @@ $progress-breakpoint-small:715px;
       height: 100%;
       font-size: 34px;
       font-weight: 300;
-      color: $navy-blue-color;
+      color: $color-navy-blue;
     }
     .bar {
       float: right;
@@ -157,7 +157,7 @@ $progress-breakpoint-small:715px;
       right: -25px;
       top: 6px;
       .rectangle {
-        background-color: $dark-red-color;
+        background-color: $color-dark-red;
         height: 30px;
         font-size: 20px;
         padding-top: 6px;
@@ -167,7 +167,7 @@ $progress-breakpoint-small:715px;
         height: 0;
         border-style: solid;
         border-width: 15px 25px 0 25px;
-        border-color: $dark-red-color transparent transparent transparent;
+        border-color: $color-dark-red transparent transparent transparent;
         /* force anti-aliasing */
         -moz-transform: scale(.9999);
         -webkit-transform: scale(.9999);

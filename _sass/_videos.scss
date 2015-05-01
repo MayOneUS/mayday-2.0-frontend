@@ -4,7 +4,7 @@
 .video-lead-title{
   margin-bottom: 10px;
   @include phone{
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
 .all-videos {
@@ -21,6 +21,9 @@
       }
     }
   }
+}
+.btn-md-wide.video-font{
+  font-size: 18px;
 }
 .large-video-group{
   margin-bottom: 15px;

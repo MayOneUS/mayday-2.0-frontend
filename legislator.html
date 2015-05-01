@@ -1,0 +1,209 @@
+---
+layout: default
+title: Demo Scorecard
+permalink: /legislator/
+---
+
+<div id="js-legislators"></div>
+{% include modals/modal_call_congress.html %}
+
+{% raw %}
+<script id="talley_template" type="text/html">
+<div class="col-md-{{ column_width }}">
+  <div class="talley">
+    <i class="fa fa-check-square-o"></i>
+    {{name}}
+  </div>
+</div>
+</script>
+<script id="legislator_template" type="text/html">
+<div class="dossier-page with-us-{{ with_us }}">
+  <div class="top-line-left"></div>
+  <div class="bottom-taper hidden-xs">
+    <div class="triangle-up leg"></div>
+  </div>
+  <div class="homepage-panel dossier-star">
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <img class="bg-star" src={{ background_img }}>
+    <div class="container page-open">
+      <div class="row">
+        <div class="col-md-8 col-xs-12 center-block text-center">
+          <h1 class="lead-title">{{page_title}}</h1>
+          <div class="dossier-img">
+            <div class=""  alt="{{ name }} Headshot" style="background-image:url(https://theunitedstates.io/images/congress/225x275/{{ bioguide_id }}.jpg)"></div>
+          </div>
+          <caption>{{party}}-{{state_abbrev}} {{display_district}}</caption>
+        </div>
+      </div>
+      <div class="row leader-visible">
+        <div class="col-md-8 center-block tallies no-gutter" id="js-tallies">
+        {{ tallies_rendered }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 col-xs-12 center-block text-center tail-message">
+          <h2>{{ tail_message }}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-xs-12 center-block text-center">
+          <span href="#" class="btn btn-md-wide btn-mini-share make-call" style="display:{{show_phone}}">
+            <i class="fa fa-phone"></i>
+            {{phone}}
+          </span>
+          <a class="btn btn-md-wide btn-mini-share social-small twitter-small" style="display:{{show_twitter}}" href="{{tweet_url}}" role="button">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a class="btn btn-md-wide btn-mini-share social-small facebook-small" data-toggle="modal" data-target="#facebook-modal">
+            <i class="fa fa-facebook"></i>
+          </a>
+
+        </div>
+      </div>
+
+
+      <div class="row" style="display:{{show_phone}}">
+        <div class="col-md-7 col-xs-12 center-block text-center">
+          <div class="talk-bubble" id="js-talk-bubble">
+            <p><strong>You could say:</strong></p>
+            <p class="leader-hidden">Hi. My name is _______ (if applicable: and I&rsquo;m a constituent). I&rsquo;m asking {{title_name}} to be a leader in the fight to restore our republic to the people. We need {{title_name}} to support legislation to change the way members of Congress raise money for their campaigns. There are five Republican and Democratic proposals. You can see the list at RepsWith.US. Will {{title_name}} please consider supporting one of those bills?</p>
+            <p class="leader-visible">Hi! My name is _______ (if applicable: and I'm a constituent). I'm calling to thank {{title_name}} for being a leader working to reform the way elections are funded. I am really happy to know that {{title_name}} is on the right side of this issue. Thanks for supporting {{supported_bills_message}}. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-center"><a href="/legislators" title="">View all Leaders for Fundamental Reform</a></p>
+
+  <div class="bottom-line"></div>
+</div>
+
+<div class="modal fade" id="facebook-modal" tabindex="-1" role="dialog" aria-labelledby="facebook-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="md-modal-wrap with-us-{{ with_us }}">
+          <h2 class="text-center">Thank you for lending your voice to the fight for reform!</h2>
+          <h3>Here&rsquo;s how how to reach out to your legislator over Facebook:</h3>
+
+          <blockquote>
+            <p class="leader-hidden">I&rsquo;m asking {{title_name}} to be a leader in the fight to restore our republic to the people. We need {{title_name}} to support legislation to change the way members of Congress raise money for their campaigns. There are five Republican and Democratic proposals. You can see the list at RepsWith.US. Will {{title_name}} please consider supporting one of those bills?</p>
+            <p class="leader-visible">I&rsquo;m calling to thank {{title_name}} for being a leader working to reform the way elections are funded. I am really happy to know that {{title_name}} is on the right side of this issue. Thanks for supporting {{supported_bills_message}}. </p>
+          </blockquote>
+            <h3>And you can edit and paste it on her facebook page.</h3>
+
+          <div class="col-md-10 center-block">
+            <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/spread-the-word/" target="_blank" class="btn btn-md-wide btn-share-center facebook" style="text-transform:none;">
+              <span class="text"><i class="fa fa-facebook"></i> {{title_name}}</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</script>
+{% endraw %}
+<script>
+
+
+  $( document ).ready( function(){
+    "use strict";
+    var bioguide_id = getParameterByName('bioguide_id'),
+        status = '',
+        tallies ='';
+
+    function getParameterByName( name ) {
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+    }
+
+    function scorecard( legislator_data ){
+
+      var l_d = legislator_data,
+        supported_bill_names = [];
+
+      l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
+      l_d.title_name = [l_d.title,l_d.name].join(' ');
+      l_d.bioguide_id = bioguide_id;
+      if(!l_d.phone) l_d.show_phone = 'none';
+
+      if ( l_d.with_us === true ){
+        l_d.tallies_rendered = ''
+
+        $.each(l_d.current_sponsorships, function(index, data){
+          data.column_width = l_d.current_sponsorships.length == 1 ? '12' : '6';
+          data.name = data.name.replace(/ of 201\d/,'')
+          supported_bill_names.push(data.name)
+          tallies += ich.talley_template(data, true);
+        });
+        console.log( legislator_data );
+        console.log('supported_bill_names:', supported_bill_names);
+        l_d.supported_bills_message = supported_bill_names.join(' ');
+        l_d.background_img = '/images/star_blue.svg';
+        l_d.page_title = [l_d.title_name,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
+        l_d.tail_message = ['Thank',l_d.short_title,l_d.name, 'for being a leader'].join(' ') + '!';
+        if(l_d.twitter_id){
+          l_d.tweet_url = 'https://twitter.com/intent/tweet?text=.@'+l_d.twitter_id+escape(' is a #Leader4Reform. Thanks for cosponsoring the ')+escape(supported_bill_names[0])+escape(' to change how campaigns are funded.');
+        }else{
+          l_d.show_twitter = 'none';
+        }
+      } else {
+        status = false;
+        l_d.background_img = '/images/call-page/money_sign.svg';
+        l_d.page_title = [l_d.title_name,'is not yet a leader supporting fundamental reform'].join(' ');
+        l_d.tail_message = ['Ask',l_d.short_title,l_d.name, 'to step up and lead!'].join(' ');
+        if(l_d.twitter_id){
+          l_d.tweet_url = 'https://twitter.com/intent/tweet?text=.@'+l_d.twitter_id+escape(' help lead the fight for fundamental reform of the way campaigns are funded. Be a #Leader4Reform.')+'&url=http://repswith.us/reforms';
+        }else{
+          l_d.show_twitter = 'none';
+        }
+      }
+
+      var rendered = ich.legislator_template(l_d);
+
+      document.title = l_d.page_title
+      $('#js-legislators').append(rendered);
+      $('#js-tallies').append(tallies);
+    }
+
+    $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, scorecard);
+  });
+</script>
+
+ <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+ </script>
+
+
+
+

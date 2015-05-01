@@ -1,0 +1,343 @@
+.page-open{
+  padding-top:40px;
+}
+.dossier-page{
+  margin-top: -45px;
+  h2{
+    font-weight: 400;
+    font-size: 34px;
+    letter-spacing: 1.5px;
+  }
+  p{
+    font-weight: 400;
+  }
+  .dossier-img{
+    margin: 0 auto 0px;
+    border-radius: 5px;
+    height: 281px;
+    width: 231px;
+
+    &>div{
+      border:3px solid #fff;
+      border-radius: 5px;
+
+      height: 275px;
+      width: 225px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  h1.lead-title{
+    margin-top: 0;
+    font-weight: 400;
+  }
+  .bottom-line, .top-line-left{
+    height: 6px;
+  }
+  .top-line-left{
+    height: 20px;
+  }
+  .tallies{
+    position:relative;
+    overflow: hidden;
+
+    >.col-md-6 .talley:first-child{float:right}
+    >.col-md-6 .talley:last-child{float:left}
+    >.col-md-12 .talley{margin:0 auto;text-align:center;}
+  }
+  .talley{
+    font-size: 18px;
+    // padding-left: 50px;
+    text-align: left;
+    font-weight: 400;
+    line-height: 18px;
+    width:180px;
+    .fa{
+      font-size: 46px;
+      float: left;
+      // margin-right: 5px;
+    }
+  }
+
+  .tail-message{
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+
+  .make-call{
+    cursor: text;
+    -webkit-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+    &::selection {
+      background: $color-dossier-red;
+    }
+    &::-moz-selection {
+      background: $color-dossier-red;
+    }
+  }
+
+}
+
+.dossier-page.with-us-true{
+  h2, h1, .talley{
+    color: $color-dossier-blue;
+  }
+  .dossier-img{
+    border:3px solid $color-dossier-blue;
+    &>div{
+      background-color: $color-dossier-blue;
+    }
+  }
+  .bottom-line, .make-call, .top-line-left{
+    background-color: $color-dossier-blue;
+  }
+  .bg-star{
+    background-image:url('/images/star_blue.svg') no-repeat;
+  }
+}
+.dossier-page.with-us-false{
+  h2, h1, .talley{
+    color: $color-dossier-red;
+  }
+  .dossier-img{
+    border:3px solid $color-dossier-red;
+    &>div{
+      background-color: $color-dossier-red;
+    }
+  }
+  .bottom-line, .make-call, .top-line-left{
+    background-color: $color-dossier-red;
+  }
+  .talley .fa{
+      font-size: 38px;
+      margin-right: 8px;
+  }
+  .bg-star{
+    background-image:url('/images/money_sign.svg') no-repeat;
+  }
+}
+
+.with-us-true{
+  .leader-visible{
+    display: initial;
+  }
+  .leader-hidden{
+    display: none;
+  }
+}
+
+.with-us-false{
+  .leader-visible{
+    display: none;
+  }
+  .leader-hidden{
+    display: initial;
+  }
+}
+
+.make-call>.fa-phone{
+  padding-right: 5px
+}
+.twitter-small{
+  margin-left: 10px !important;
+  @include tablet{
+    margin-left: 1% !important;
+  }
+  @include phone{
+    margin-left: 0 !important;
+  }
+  >.fa-twitter{
+    color: $color-twitter;
+    font-size:1.5em;
+    line-height: 50%;
+  }
+}
+.facebook-small{
+  margin-left: 10px !important;
+  @include phone{
+    margin-left: 0 !important;
+  }
+  @include tablet{
+    margin-left: 1% !important;
+  }
+  >.fa-facebook{
+    color: $color-facebook;
+    font-size:1.3em;
+    line-height: 50%;
+  }
+}
+
+.triangle-up .leg{
+  margin-top: 45px;
+}
+
+/* CSS talk bubble */
+.talk-bubble {
+  margin: 30px auto 20px;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  background-color: $color-grey-background;
+  border: 8px solid $color-navy-blue;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  padding:15px 20px;
+
+  text-align: left;
+  line-height: 1.5em;
+  font-size: 1.1em;
+  color:$color-navy-blue;
+
+  &:before, &:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    left: 50%;
+    bottom: auto;
+  }
+
+  &:before {
+    margin-left:-36px;
+    top: -64px;
+    border: 32px solid;
+    border-color: transparent transparent $color-navy-blue transparent;
+  }
+  &:after{
+    margin-left:-24px;
+    top: -40px;
+    border: 20px solid;
+    border-color:  transparent transparent $color-grey-background transparent;
+  }
+
+  p {
+    margin:0 0 10px;
+  }
+}
+
+
+.dossier-star {
+  .bg-star{
+    position: absolute;
+  }
+  .bg-star:first-of-type {
+    left: -400px;
+    top: -250px;
+    height: 650px;
+    opacity: .1;
+    @include star-rotation(-30deg)
+  }
+  .bg-star:nth-of-type(2) {
+    left: -500px;
+    top: 280px;
+    height: 800px;
+    opacity: .1;
+    @include star-rotation(-50deg);
+  }
+  .bg-star:nth-of-type(3) {
+    left: 10%;
+    top: -160px;
+    height: 265px;
+    opacity: .1;
+    @include star-rotation(-50deg);
+  }
+  .bg-star:nth-of-type(4) {
+    left: 1%;
+    top: -70px;
+    width: 600px;
+    opacity: .1;
+    @include star-rotation(35deg);
+  }
+  .bg-star:nth-of-type(5) {
+    left: 25%;
+    top: -200px;
+    height: 350px;
+    opacity: .1;
+    @include star-rotation(35deg);
+  }
+  .bg-star:nth-of-type(6) {
+    left: 25%;
+    top: 260px;
+    height: 350px;
+    opacity: .1;
+    @include star-rotation(35deg);
+  }
+  .bg-star:nth-of-type(7) {
+    left: 35%;
+    top: 100px;
+    height: 200px;
+    opacity: .1;
+    @include star-rotation(-50deg);
+  }
+  .bg-star:nth-of-type(8) {
+    left: 47%;
+    top: -120px;
+    height: 850px;
+    opacity: .1;
+    @include star-rotation(35deg);
+  }
+  .bg-star:nth-of-type(9) {
+    left: 76%;
+    top: -170px;
+    height: 600px;
+    opacity: .1;
+    @include star-rotation(40deg);
+  }
+  .bg-star:nth-of-type(10) {
+    left: 82%;
+    top: 475px;
+    height: 200px;
+    opacity: .1;
+    @include star-rotation(-15deg);
+  }
+}
+
+.legislators-listing{
+  min-height: 300px;
+
+  .js-legislators{
+    padding-top:15px;
+  }
+}
+
+  .legislators-all{
+    .with-us-true{display:block}
+    .with-us-false{display:block}
+    .potential-true{display:block}
+    .show-potential{visibility:hidden;}
+  }
+  .legislators-potential{
+    .with-us-true{display:none}
+    .with-us-false{display:none}
+    .potential-true{display:block}
+    .show-potential{visibility: visible;}
+  }
+  .legislators-leaders{
+    .potential-true{display:none}
+    .with-us-false{display:none}
+    .with-us-true{display:block}
+    .show-potential{visibility: hidden;}
+  }
+form.md-inputs.legislators-filter{
+  padding-bottom:0;
+
+  .form-group{margin:0}
+
+  &.md-inputs input.form-control[type=text]{
+    margin-bottom: 0;
+  }
+  .radio-inline{
+    margin-right:12px;
+
+    &:first-child{
+      padding-left:0;
+    }
+    input[type=radio]{
+      margin-top: 7px;
+    }
+  }
+}

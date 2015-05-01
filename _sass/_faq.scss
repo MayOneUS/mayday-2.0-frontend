@@ -70,7 +70,7 @@
   }
 }
 .faq-letter{
-  color: $dark-red-color;
+  color: $color-dark-red;
   font-weight: 400;
 }
 
@@ -80,16 +80,16 @@
 
 .btn-submit-join{
   width: 100%;
-  background-color: $dark-red-color;
-  border-color: $grey-blue-color;
+  background-color: $color-dark-red;
+  border-color: $color-grey-blue;
   text-transform: uppercase;
   color: #FFF;
   font-size: 1.5rem;
 
 
   &:hover {
-    background-color: $grey-color-light;
-    border-color: $grey-color-light;
+    background-color: $color-grey-light;
+    border-color: $color-grey-light;
   }
 }
 .hang-line{

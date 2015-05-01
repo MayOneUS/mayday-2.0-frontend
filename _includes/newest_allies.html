@@ -1,0 +1,54 @@
+
+<div class="row">
+  <div id="js-legislators" class="js-legislators newest-leaders no-gutter"></div>
+</div>
+
+<script id="legislator_template" type="text/html">
+{% raw %}
+
+    <div class="col-md-4 col-xs-12 col-sm-6 col-sm-offset-3 col-md-offset-0 bottom-margin new-legislator">
+        <a href="/legislator/?bioguide_id={{bioguide_id}}" class="pull-left pulled-image">
+          <div class="background-square" style="background-image:url('{{image_url}}')"></div>
+        </a>
+        <h3 class="no-top-margin">{{ short_title }} <strong>{{ name }}</strong></h3>
+        <h4> {{ party }}-{{ state_abbrev }} {{display_district}}</h4>
+        <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">Read More</a>
+    </div>
+
+{% endraw %}
+</script>
+<script>
+(function ( data ){
+  $(document).ready(function(){
+
+    "use strict";
+
+    var newAllieData = data;
+    var outSide = {};
+
+    function renderAllies(legislator_data, index) {
+
+      var rendered = [];
+      legislator_data.short_title = legislator_data.title === 'Senator' ? 'Sen.' : 'Rep.';
+      rendered = ich.legislator_template(legislator_data);
+      $('#js-legislators').append(rendered);
+    }
+
+    function callDataAndTemplate(legislators) {
+      var allyObject = [];
+
+      legislators.forEach( function ( data, index ){ //gets three reps
+        if (index < 3 ){
+          allyObject.push( data );
+        }
+      });
+      allyObject.map(renderAllies);
+    }
+
+    $.getJSON(newAllieData, callDataAndTemplate);
+
+  });
+
+})( '{{site.services_url}}/legislators/newest_supporters.json' );
+
+</script>

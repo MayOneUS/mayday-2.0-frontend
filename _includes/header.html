@@ -8,10 +8,11 @@
       </div>
       <div class="logo"><a href="{{ root_path }}/"><img src="{{ root_path }}/images/web_logo_2x.png"></a></div>
       <div class="search-section-right hidden-xs">
+      {% unless page.hideHeaderSignUp %}
         <form class="email-signup">
           <input type="email" name="person[email]" placeholder="Join our email list" required/>
-          <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
-          <input type="hidden" name="person[remote_fields][event_id]" value="25">
+          <input type="hidden" name="person[remote_fields][tags][]" value="20150314_join_list">
+          <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25"> -->
           <button type="submit">
             <div class="divide-line"></div>
             <span class="socicon">@</span>
@@ -20,6 +21,7 @@
         <div class="hidden">
           <h1 class="mayday-headline-smaller-inverse">Thank you!</h1>
         </div>
+      {% endunless %}
       </div>
     <div class="fade-line hidden-xs hidden-sm"></div>
     </div>
@@ -27,18 +29,21 @@
   <div class="sub-nav hidden-xs">
     <div class="container">
       <div class="left-links">
-        <a href="{{ root_path }}/about_us/">ABOUT</a>
+        <a href="{{ root_path }}/the-plan/">The Plan</a>
         <span class="middle-dot">·</span>
-        <a href="{{ root_path }}/news/">NEWS</a>
+        <a href="{{ root_path }}/take-action/">Take Action</a>
       </div>
       <div class="right-links">
+        <a href="{{ root_path }}/legislators/">Leaders</a>
+        <span class="middle-dot">·</span>
+        <a href="{{ root_path }}/news/">News</a>
+        <span class="middle-dot">·</span>
         <a class="donate-link" href="{{ root_path }}/donate/">DONATE</a>
       </div>
     </div>
   </div>
 
-  <div class="gap-filler hidden-sm hidden-md hidden-lg">
-  </div>
+  <div class="gap-filler hidden-sm hidden-md hidden-lg"></div>
 
 
   <nav class="navbar navbar-default hidden-sm hidden-md hidden-lg">
@@ -51,14 +56,16 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav nav-justified">
-          <li><a href="{{ root_path }}/about_us/">ABOUT</a></li>
-          <li><a href="{{ root_path }}/news/">NEWS</a></li>
+          <li><a href="{{ root_path }}/the-plan/">The Plan</a></li>
+          <li><a href="{{ root_path }}/take-action/">Take Action</a></li>
+          <li><a href="{{ root_path }}/legislators/">Leaders</a></li>
+          <li><a href="{{ root_path }}/news/">News</a></li>
           <li><a href="{{ root_path }}/donate/"><i class="menu-stars fa fa-star"></i> DONATE <i class="menu-stars fa fa-star"></i></a></li>
 
           <form class="email-signup menu-section-center">
             <input type="email" name="person[email]" placeholder="Join our email list" size="15" required/>
-            <input type="hidden" name="person[remote_fields][tags][]" value="20150314_v2_launch">
-            <input type="hidden" name="person[remote_fields][event_id]" value="25">
+            <input type="hidden" name="person[remote_fields][tags][]" value="20150314_join_list">
+            <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25"> -->
             <button type="submit">
               <span class="socicon">@</span>
             </button>
@@ -78,7 +85,8 @@
       <!-- </div> -->    <!-- /.navbar-collapse-->
     </div>  <!-- /.container-fluid -->
   </nav>
-  <div class="bottom-taper hidden-xs">
-    <div class="triangle-up"></div>
-  </div>
+    <div class="bottom-taper hidden-xs">
+      <div class="triangle-up"></div>
+    </div>
+
 </header>

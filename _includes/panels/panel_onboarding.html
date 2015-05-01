@@ -1,0 +1,46 @@
+<div class="panel action-panel">
+  <div class="panel-heading">
+    <h2>Ready to <strong>End Corruption?</strong></h2>
+  </div>
+  <div class="panel-body">
+    <p>Join the Mayday team of Citizen Lobbyists fighting together for fundamental reform.</p>
+    <form class="join">
+      <input type="email" name="person[email]" placeholder="Email Address"/>
+      <input type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="Zip Code"/>
+      <button type="submit" class="btn btn-md-wide btn-md-red" data-toggle="modal" data-target="#onboarding-modal">JOIN MAYDAY</button>
+    </form>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="onboarding-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <iframe id="onboarding-overlay" src="" frameborder="0" frameborder="0" allowtransparency="true"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$("form.join").submit(function (event) {
+  event.preventDefault();
+  var userZip = $(this).find('input[name="person[zip]"]').val();
+  var userEmail = $(this).find('input[name="person[email]"]').val();
+  var queryString = 'zip=' + encodeURIComponent(userZip) + '&email=' + encodeURIComponent(userEmail);
+  var baseURI = 'http://onboarding-staging.mayday.us';
+  var iframeURI = baseURI + '?' + queryString;
+
+  var saveURI = '{{site.services_url}}/people.json';
+  $.post(saveURI, $(this).serialize())
+    .always(function() {
+      $("#onboarding-overlay").attr("src", iframeURI);
+    })
+    .done(function (data, textStatus, jqXHR) {
+      console.log(data, textStatus);
+    })
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
+    });
+});
+</script>

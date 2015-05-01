@@ -57,7 +57,7 @@ permalink: /faq/
                 The core problem with our Congress today is the way campaigns are funded. Members spend between 30% and 70% of their time raising money, but they raise that money from less than 2% of us. The top 100 contributors in 2014 gave as much as the bottom 4.75 million. Less than .04% gave the maximum contribution in even one cycle.
               </p>
               <p>
-                "Fundamental reform&rdquo; means changing that system. We support reforms from both Democrats and Republicans that would change the way campaigns raise their money — so that their money comes from all of us, and not the privileged few.
+                Fundamental reform&rdquo; means changing that system. We support reforms from both Democrats and Republicans that would change the way campaigns raise their money &ndash; so that their money comes from all of us, and not the privileged few. You can read the reforms we support at <a href="http://RepsWith.US/reforms" target="_blank">RepsWith.US/reforms</a>.
               </p>
             </span>
           </div>
@@ -245,13 +245,15 @@ permalink: /faq/
         <br>
       </div>
 
-      <div class="col-md-4">
-        {% include panel_action.html %}
+      <div class="col-md-4 panel-wrapper">
+        {% include panels/panel_action_w_signup.html form_class='smaller-form no-gutter' %}
       </div>
     </div>
 
 <!--   </div> -->
 
 </div>
+<div style="display:none">
+{% include panels/all_panel_templates.html %}
+<div>
 
-{% include panel_action_modal.html %}

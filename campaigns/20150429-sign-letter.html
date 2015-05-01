@@ -1,0 +1,314 @@
+---
+layout: default
+title: Take Action
+permalink: /sign-the-letter/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/sign-the-letter/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="Sign the Letter.  Ask your member of Congress to become a #Leader4Reform"/>
+  <meta property="og:description" content="Mayday PAC is recruiting leaders in Congress who will fundamentally change the way campaigns are funded. We only need 70 more reps to have a pro-reform majority in the House! Voice your support by adding your name to this letter from Lawrence Lessig and Mark McKinnon, co-founders of Mayday PAC."/>
+  <link rel="canonical" href="https://mayday.us/sign-the-letter/">
+---
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+<style>
+
+  .jumbotron>.container {
+    padding-top:30px;
+    padding-bottom:15px;
+    background: url("/images/campaigns/20150429-hero-bg.jpg") 0 -0 no-repeat;
+    position:relative;
+    z-index: 5;
+    background-size: cover;
+    box-shadow: 0 0 50px rgba(22,33,63,0.7);
+  }
+  .jumbotron h1{
+    display:none;
+  }
+  .jumbotron.already-signed h1{
+    display:block;
+    color:#fff;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(13, 27, 63, 1), 0 0 10px rgba(13, 27, 63, 1),0 0 30px rgba(13, 27, 63, 1);
+  }
+  .jumbotron.already-signed .jumbo-text-wrap{
+    display:none;
+  }
+
+  .jumbotron.already-signed .container {
+    height:120px;
+    text-align: center;
+  }
+
+  .jumbotron>.container>.row{
+    background: url("/images/campaigns/20150429-hero-white_v01.png") 0 -0 no-repeat;
+    background-size: contain;
+  }
+  .already-signed .jumbotron.container{
+    background:none;
+  }
+
+
+  .jumbotron .bg-blurred{
+    filter: url(blur.svg#blur); -webkit-filter: blur(3px); filter: blur(3px);
+    background: url("/images/campaigns/20150429-hero-bg.jpg") 0 -3px no-repeat;
+    position:absolute;
+    width:105%;
+    height:105%;
+    left:-5px;
+    z-index: 1;
+    background-size: cover;
+  }
+
+.jumbo-text-wrap{
+  background:rgba(255,255,255,0.9);
+  padding: 0 20px 20px;
+}
+
+.jumbo-text-wrap h2{
+  border-top: 10px solid;
+  padding-top: 20px;
+  border-bottom: 10px solid;
+  padding-bottom: 20px;
+}
+
+
+.letter-wrap{
+  z-index:1000;
+  position: relative;
+}
+.letter {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin: 16px auto 40px;
+  min-height: 300px;
+  padding: 24px;
+  position: relative;
+  width: 90%;
+  font-family: 'Roboto Slab', serif;
+}
+.letter:before, .letter:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -3;
+}
+.letter:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+}
+.letter:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -3px;
+  top: 1px;
+  z-index: -4;
+  transform: rotate(1.4deg);
+}
+
+.lt-ie8 .notepaper {
+  padding: 15px 25px;
+}
+
+.panel-body.thanks-message{
+  display: none;
+}
+
+  @media (max-width:992px) {
+    .jumbotron>.container>.row{background-image: none;margin:0;}
+    .action-panel{margin-bottom: 40px;}
+    .jumbo-text-wrap{margin-bottom: 10px}
+  }
+
+</style>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+<div class="jumbotron" style="">
+  <div class="bg-blurred"></div>
+  <div class="container">
+    <h1>Thank you for Signing!</h1>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-7 jumbo-text-wrap">
+        <h2>Today, We are just <strong>70</strong> votes short from a majority in the House, supporting fundamental reform in the way campaigns are funded.</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="col-md-4 col-md-push-8">
+{% capture panel_body %}
+<div class="panel-body">
+  <h2 style="line-height:34px;">Ask your member of Congress to become a <br class="hidden-xs hidden-sm"><strong>#Leader4Reform</strong></h2>
+  <form class="row smaller-form no-gutter" id="js-sign-letter-form">
+
+    <fieldset class="col-md-12">
+
+    <div class="form-group col-md-6 form-left">
+      <label class="control-label sr-only" for="person[first_name]">First Name</label>
+      <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+    </div>
+
+    <div class="form-group col-md-6 form-right">
+      <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+      <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+    </div>
+
+    <div class="form-group col-md-8 form-left">
+      <label class="control-label sr-only" for="person[email]">Email Address</label>
+      <input id="person[email]" name="person[email]" type="text" placeholder="Email Address" required="required">
+    </div>
+
+    <div class="form-group col-md-4 form-right">
+      <label class="control-label sr-only" for="person[zip]">ZIP Code</label>
+      <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="required">
+
+    </div>
+
+    <div class="form-group col-md-12">
+      <label class="control-label sr-only" for="person[is_volunteer]">Volunteer</label>
+        <label class="checkbox-inline" for="person[is_volunteer]-0">
+          <input type="checkbox" name="person[remote_fields][is_volunteer]" id="person[is_volunteer]-0" value="true"> Are you ready to volunteer?
+        </label>
+    </div>
+
+
+    <div class="form-group cold-md-12">
+      <label class="control-label sr-only" for="singlebutton">Submit</label>
+      <input type="hidden" name="template_id" value="sign-up-form">
+      <input type="hidden" name="person[remote_fields][tags][]" value="20150501_signed_letter">
+      <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25">sets auto-repsonder -->
+      <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+    </div>
+
+    </fieldset>
+  </form>
+</div>
+
+<div class="panel-body thanks-message">
+    <h2>Thanks for signing!</h2>
+    <h2>Now: Amplify your voice!</h2>
+    <p>Let's show our friends and family that we can repair our republic.</p>
+
+    <div class="row">
+      <div class="col-md-4">
+        <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/sign-the-letter/" target="_blank" class="btn btn-md-wide btn-share-center facebook">
+          <span class="text"><i class="fa fa-facebook"></i></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://twitter.com/intent/tweet?text=Help+%40MAYDAYUS+recruit+70+more+congressional+leaders+committed+to+fight+political+corruption.+%23Leader4Reform+http%3A%2F%2Fgoo.gl%2FRqP4kG" target="_blank"
+            target="_blank" class="btn btn-md-wide btn-share-center twitter">
+          <span class="text"><i class="fa fa-twitter"></i></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="mailto:?subject=Help%20me%20end%20corruption%20in%20our%20government&body=I%20am%20writing%20to%20you%20to%20tell%20you%20about%20Mayday%20PAC.%20With%20my%20help%2C%20this%20organization%20is%20fighting%20political%20corruption%20in%20politics.%20Join%20me%20in%20recruiting%20congressional%20leaders%20who%20are%20committed%20to%20fundamental%20reform%20in%20the%20way%20campaigns%20are%20funded.%0A%0AIf%20you%20think%20we%20should%20get%20big%20money%20out%20of%20politics%2C%20add%20your%20name%20to%20this%20letter%20to%20Congress%20from%20Mayday%20PAC%20leaders%20Lawrence%20Lessig%20and%20Mark%20McKinnon%20to%20let%20congress%20know%20we%E2%80%99ll%20be%20calling%3A%20http%3A%2F%2Fmayday.us%2Fsign-the-letter%2F%0A%0ATogether%2C%20we%20can%20defeat%20political%20corruption%20in%20our%20country%21" class="btn btn-md-wide btn-share-center youtube">
+          <span class="text"><i class="fa fa-envelope-o"></i></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><small><a href="/take-action/#call-congress">After you share, take a moment to call Congress.</a>.</small></p>
+    </div>
+  </div>
+{% endcapture %}
+    {% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
+  </div>
+  <div class="col-md-8 col-md-pull-4">
+    <p style="text-align:left;">Calling on representatives to stand up as leaders is positive. It shows respect. It gives them the credit that their constituents also gave them. It asks them to be exactly what this Nation needs &ndash; a force for change, for the good of everyone. The pundits see impossible. We see hope. <strong>Join us.</strong></p>
+    <div class="embed-responsive embed-responsive-16by9" style="width: 90%;margin:0 auto;">
+      <iframe class="embed-responsive-item" allowfullscreen src="//www.youtube.com/embed/Kzj43rzd-4w"></iframe>
+    </div>
+    <h2>Today’s letter to Congress</h2>
+    <p>Mayday PAC is recruiting leaders in Congress who will fundamentally change the way elections are funded.</p>
+
+    <div class="letter-wrap">
+      <div class="letter">
+        <p>Dear Congressperson,</p>
+        <p>Mayday PAC (MAYDAY.US) is a crowd-funded super PAC committed to fundamentally changing the way elections are funded.  We want to help reform the system so that more of your constituents feel motivated to engage and participate.</p>
+        <p>We believe &ndash; not as Democrats, or as Republicans, but as citizens &ndash; that our Congress is crippled by its dependence on campaign cash.  We also believe it is on us to do something about it &ndash; by supporting leaders who will fundamentally change the way campaigns are funded so that legislators are dependent on citizens, not the funders of campaigns.</p>
+        <p class="read-more-link text-center"><a href="#read-more" title="">Read the full length letter</a></p>
+        <div id="read-more-letter" style="display:none">
+          <p>During the 2014 election cycle, MAYDAY targeted a number of congressional candidates for support or opposition, spending between $100,000 and $2.5 million in targeted House races.  Our targets included little-known challengers, powerful incumbents, and many candidates in between.</p>
+
+          <p>This year, our work is different.</p>
+          <p>On March 14, we asked the more than 50,000 contributors to MAYDAY to help us identify potential leaders in Congress who can help rally support behind legislation that would fundamentally change the way campaigns are funded. We had hundreds of replies, and beginning on May 1, our supporters will reach out to voters in districts across the country to ask them to help us recruit those potential leaders to the cause of reform.</p>
+          <p>You were one of these leaders identified by our members. We are writing today to ask you to answer their call.</p>
+          <p>We have identified 5 proposals that would fundamentally change how campaigns are funded. These include two Republican proposals, two Democratic proposals, and one that was crafted with advice from both sides. (You can see all five at <a href="http://repswith.us/" target="_blank">RepsWith.US</a>).</p>
+          <p>It would be enormously important to our democracy if you would answer the call of the citizens across the country who see you as a leader who could help us forge a majority for reform. Over the next weeks, we will be reaching out to voters to share with them the news that you have been identified as a leader, and to ask them to reach out to you as well. We hope you will take the chance to talk to these citizens and constituents, and we very much hope you can join at least one of these reforms as a cosponsor. </p>
+          <p>We know you know how frustrated the vast majority of Americans are with the current system for funding campaigns. Help us show them that there is a way to fix it. Because the closer we get to a majority committed to fundamental reform, the more this movement will grow. And if we can show voters that their leaders will step up and lead, we believe we can build enough strength to make this reform possible.</p>
+          <p>Thank you for your attention to this matter. If there are questions we can answer, please don&rsquo;t hesitate to contact me.</p>
+          <p>Sincerely,</p>
+          <p>Lawrence Lessig, Professor, Harvard Law School <br/> Mark McKinnon, former advisor to George W. Bush and John McCain</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function getParameterByName( name ) {
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+}
+
+$(document).ready(function(){
+  already_signed = getParameterByName('already_signed');
+  if(already_signed == 'true'){
+    $('.jumbotron').addClass('already-signed')
+    $form = $('#js-sign-letter-form');
+    $form.parents('.panel-body').hide();
+    $form.parents('.panel-body').next().show();
+  }
+  $('.read-more-link').on('click', function(e){
+    e.preventDefault();
+    $(e.target).hide();
+    $('#read-more-letter').slideDown();
+  })
+
+  $('#js-sign-letter-form').on('submit', function(e){
+    e.preventDefault();
+    $form = $(e.target);
+    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading..');
+    $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
+    }).done(function(){
+      $form.parents('.panel-body').hide();
+      $form.parents('.panel-body').next().show()
+    });
+  });
+
+});
+</script>
+
+  </div>
+</div>
+
+ <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>

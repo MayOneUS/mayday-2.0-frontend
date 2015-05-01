@@ -1,241 +1,584 @@
-#index {
 
-  .spacer-opening{
-    @include phone{
-      padding-top:30px;
-      padding-bottom:15px;
-    }
-    @include tablet{
-      padding-top:30px;
-      padding-bottom:15px;
+.spacer-opening{
+  padding-top:10px;
+  padding-bottom:10px;
+  @include small-desktop{
+    padding-top:20px;
+    padding-bottom:10px;
+  }
+  @include phone{
+    padding-top:30px;
+    padding-bottom:15px;
+  }
+  @include tablet{
+    padding-top:30px;
+    padding-bottom:15px;
+  }
+}
+
+///////////////////////////////////////////////
+//
+// where spaceing for jumbotron is set for -45px
+// full-bg-imgage span the whole page
+// banner image is in the 1170 page margin
+
+.full-bg-imgage, .banner-image{
+  background-color: #061C29;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.full-bg-imgage {
+  margin-top: -45px;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+  width: 100%;
+  position:relative;
+  @include phone{
+    margin-top: 0;
+  }
+  @include tablet-minus{
+    background: url("/images/campaigns/20150429-hero-bg.jpg") 0 0 no-repeat;
+    background-size: cover;
+  }
+}
+.banner-image {
+  padding-top:20px;
+  box-shadow: 0 0 50px rgba(22,33,63,0.7);
+  padding-bottom:15px;
+  background: url("/images/campaigns/20150429-hero-bg.jpg") 0 0 no-repeat;
+  position:relative;
+  background-size: cover;
+  z-index: 5;
+  >.row{
+    background: url("/images/campaigns/20150429-hero-white_v01.png") 0 0 no-repeat;
+    background-size: contain;
+    @include small-desktop{
+      background: url("/images/campaigns/20150429-hero-white.png") 0 0 no-repeat;
+      background-size:100%;
     }
   }
 
-  .homepage-panel{
-    position: relative;
-    overflow: hidden;
-    padding-top:50px;
-    padding-bottom:50px;
-    font-weight: 300;
+  @include tablet-minus{
+    background-image:none;
+    box-shadow: none;
+    >.row{background-image:none;}
+  }
+}
+.background-image-blurred{
+  filter: url(blur.svg#blur); -webkit-filter: blur(3px); filter: blur(3px);
+  background: url("/images/campaigns/20150429-hero-bg.jpg") 0 -3px no-repeat;
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  background-size: cover;
+  @include tablet-minus{
+    display:none;
+  }
+}
+.index-logo-small{
+  @include phone{
+    height: 50px;
+    margin: 0 auto;
+  }
+}
 
-    .container{
-      padding-top:0;
+.homepage-panel{
+  position: relative;
+  overflow: hidden;
+  padding-top:50px;
+  padding-bottom:50px;
+  font-weight: 300;
+
+  .container{
+    padding-top:0;
+    padding-bottom:0;
+  }
+
+  .homepage-panel-body{
+
+    h2 {
+      font-size: 37px;
+      margin-top:0;
+    }
+
+    .panel-headline-small {
+      margin-top: 30px;
+      font-size: 32px;
+    }
+
+    p {
+      margin-top: 30px;
+      font-weight: 300;
+      font-size: 20px;
+      line-height:30px;
+    }
+  }
+
+  &.dark {
+    background: $color-navy-blue-light;
+    color: #ffffff;
+
+    h2{
+      color:#fff
+    }
+  }
+  &.grey{
+    background-color: $color-grey-background;
+  }
+  &.light {
+  }
+
+  .bg-star{
+    position: absolute;
+  }
+
+  &.ten-star {
+    .bg-star:first-of-type {
+      left: -400px;
+      top: -250px;
+      height: 650px;
+      opacity: .03;
+      @include star-rotation(-30deg);
+    }
+    .bg-star:nth-of-type(2) {
+      left: -500px;
+      top: 80px;
+      height: 800px;
+      opacity: .03;
+      @include star-rotation(-50deg);
+    }
+    .bg-star:nth-of-type(3) {
+      left: 10%;
+      top: -160px;
+      height: 265px;
+      opacity: .03;
+      @include star-rotation(-50deg);
+    }
+    .bg-star:nth-of-type(4) {
+      left: 1%;
+      top: -70px;
+      width: 600px;
+      opacity: .015;
+      @include star-rotation(35deg);
+    }
+    .bg-star:nth-of-type(5) {
+      left: 25%;
+      top: -200px;
+      height: 350px;
+      opacity: .03;
+      @include star-rotation(35deg);
+    }
+    .bg-star:nth-of-type(6) {
+      left: 25%;
+      top: 260px;
+      height: 350px;
+      opacity: .02;
+      @include star-rotation(35deg);
+    }
+    .bg-star:nth-of-type(7) {
+      left: 35%;
+      top: 100px;
+      height: 200px;
+      opacity: .02;
+      @include star-rotation(-50deg);
+    }
+    .bg-star:nth-of-type(8) {
+      left: 33%;
+      top: -180px;
+      height: 850px;
+      opacity: .03;
+      @include star-rotation(35deg);
+    }
+    .bg-star:nth-of-type(9) {
+      left: 76%;
+      top: -170px;
+      height: 600px;
+      opacity: .03;
+      @include star-rotation(40deg);
+    }
+    .bg-star:nth-of-type(10) {
+      left: 82%;
+      top: 275px;
+      height: 200px;
+      opacity: .04;
+      @include star-rotation(-15deg);
+    }
+  }
+
+  &.starless{
+  }
+
+  &.two-star {
+    .bg-star:first-of-type {
+      left: -35%;
+      top: -450px;
+      height: 1500px;
+      opacity: .04;
+      @include star-rotation(20deg);
+    }
+    .bg-star:nth-of-type(2) {
+      left: 35%;
+      top: -750px;
+      height: 1500px;
+      opacity: .04;
+      @include star-rotation(-10deg);
+    }
+  }
+
+  &.three-star {
+    .bg-star:first-of-type {
+      left: -35%;
+      top: -450px;
+      height: 1500px;
+      opacity: .04;
+      @include star-rotation(-10deg);
+      z-index: 0;
+    }
+    .bg-star:nth-of-type(2) {
+      left: 40%;
+      top: 200px;
+      height: 1000px;
+      opacity: .04;
+      @include star-rotation(-20deg);
+      z-index: 0;
+    }
+    .bg-star:nth-of-type(3) {
+      left: -40%;
+      top: 400px;
+      height: 1500px;
+      opacity: .04;
+      @include star-rotation(20deg);
+      z-index: 0;
+    }
+  }
+
+  &.capitol-building{
+    background: #fff url('/images/capitol_building.png') right bottom no-repeat;
+  }
+}
+
+.bottom-form-wrap {
+  margin-top:40px;
+  margin-bottom:10px;
+  .center-block{
+    float:none;
+    form{
       padding-bottom:0;
     }
+  }
+}
 
-    .homepage-panel-body{
 
-      h2 {
-        font-size: 48px;
-        margin-top:0;
-      }
+/**
+ * M2 styling
+ */
 
-      .panel-headline-small {
-        margin-top: 30px;
-        font-size: 32px;
-      }
+.verticalLines{
+  border-left: 1px solid $color-grey-line;
+  border-right: 1px solid $color-grey-line;
+  height: 100%;
+  @include tablet{
+    border: none;
+  }
+  @include phone{
+    border: none;
+  }
+}
 
-      p {
-        margin-top: 30px;
-        font-size: 24px;
-        line-height:30px;
-      }
-    }
+.homepage-ribbon{
+  padding-top: 20px;
+  padding-bottom: 20px;
 
-    &.dark {
-      background: $navy-blue-light-color;
-      color: #ffffff;
+  >div .mini-panel{
+    padding-right:10px;
+  }
+  >div:last-child .mini-panel{
+    padding-right: 0
+  }
 
-      h2{
-        color:#fff
-      }
-    }
 
-    &.light {
-    }
+  .mini-panel{
+    padding-left:110px;
+    background:transparent url('') 5px 0 no-repeat;
+    letter-spacing: .2px;
+    line-height: 22px;
+    font-size: 16px;
+    background-size:90px 90px;
 
-    &.ten-star {
-      .bg-star:first-of-type {
-        position: absolute;
-        left: -400px;
-        top: -250px;
-        height: 650px;
-        opacity: .03;
-        -ms-transform: rotate(-30deg);
-        -webkit-transform: rotate(-30deg);
-        transform: rotate(-30deg);
-      }
-      .bg-star:nth-of-type(2) {
-        position: absolute;
-        left: -500px;
-        top: 80px;
-        height: 800px;
-        opacity: .03;
-        -ms-transform: rotate(-50deg);
-        -webkit-transform: rotate(-50deg);
-        transform: rotate(-50deg);
-      }
-      .bg-star:nth-of-type(3) {
-        position: absolute;
-        left: 10%;
-        top: -160px;
-        height: 265px;
-        opacity: .03;
-        -ms-transform: rotate(-50deg);
-        -webkit-transform: rotate(-50deg);
-        transform: rotate(-50deg);
-      }
-      .bg-star:nth-of-type(4) {
-        position: absolute;
-        left: 1%;
-        top: -70px;
-        width: 600px;
-        opacity: .015;
-        -ms-transform: rotate(35deg);
-        -webkit-transform: rotate(35deg);
-        transform: rotate(35deg);
-      }
-      .bg-star:nth-of-type(5) {
-        position: absolute;
-        left: 25%;
-        top: -200px;
-        height: 350px;
-        opacity: .03;
-        -ms-transform: rotate(35deg);
-        -webkit-transform: rotate(35deg);
-        transform: rotate(35deg);
-      }
-      .bg-star:nth-of-type(6) {
-        position: absolute;
-        left: 25%;
-        top: 260px;
-        height: 350px;
-        opacity: .02;
-        -ms-transform: rotate(35deg);
-        -webkit-transform: rotate(35deg);
-        transform: rotate(35deg);
-      }
-      .bg-star:nth-of-type(7) {
-        position: absolute;
-        left: 35%;
-        top: 100px;
-        height: 200px;
-        opacity: .02;
-        -ms-transform: rotate(-50deg);
-        -webkit-transform: rotate(-50deg);
-        transform: rotate(-50deg);
-      }
-      .bg-star:nth-of-type(8) {
-        position: absolute;
-        left: 33%;
-        top: -180px;
-        height: 850px;
-        opacity: .03;
-        -ms-transform: rotate(35deg);
-        -webkit-transform: rotate(35deg);
-        transform: rotate(35deg);
-      }
-      .bg-star:nth-of-type(9) {
-        position: absolute;
-        left: 76%;
-        top: -170px;
-        height: 600px;
-        opacity: .03;
-        -ms-transform: rotate(40deg);
-        -webkit-transform: rotate(40deg);
-        transform: rotate(40deg);
-      }
-      .bg-star:nth-of-type(10) {
-        position: absolute;
-        left: 82%;
-        top: 275px;
-        height: 200px;
-        opacity: .04;
-        -ms-transform: rotate(-15deg);
-        -webkit-transform: rotate(-15deg);
-        transform: rotate(-15deg);
-      }
-    }
-
-    &.starless{
-    }
-
-    &.two-star {
-      .bg-star:first-of-type {
-        position: absolute;
-        left: -35%;
-        top: -450px;
-        height: 1500px;
-        opacity: .04;
-        -ms-transform: rotate(20deg);
-        -webkit-transform: rotate(20deg);
-        transform: rotate(20deg);
-      }
-      .bg-star:nth-of-type(2) {
-        position: absolute;
-        left: 35%;
-        top: -750px;
-        height: 1500px;
-        opacity: .04;
-        -ms-transform: rotate(-10deg);
-        -webkit-transform: rotate(-10deg);
-        transform: rotate(-10deg);
-      }
-    }
-
-    &.three-star {
-      .bg-star:first-of-type {
-        position: absolute;
-        left: -35%;
-        top: -450px;
-        height: 1500px;
-        opacity: .04;
-        -ms-transform: rotate(-10deg);
-        -webkit-transform: rotate(-10deg);
-        transform: rotate(-10deg);
-        z-index: 0;
-      }
-      .bg-star:nth-of-type(2) {
-        position: absolute;
-        left: 40%;
-        top: 200px;
-        height: 1000px;
-        opacity: .04;
-        -ms-transform: rotate(-20deg);
-        -webkit-transform: rotate(-20deg);
-        transform: rotate(-20deg);
-              z-index: 0;
-
-      }
-      .bg-star:nth-of-type(3) {
-        position: absolute;
-        left: -40%;
-        top: 400px;
-        height: 1500px;
-        opacity: .04;
-        -ms-transform: rotate(20deg);
-        -webkit-transform: rotate(20deg);
-        transform: rotate(20deg);
-              z-index: 0;
-
-      }
-    }
-
-    &.capitol-building{
-      background: #fff url(/images/capitol_building.png) right bottom no-repeat;
+    @include tablet-minus{
+      margin-top: 8px;
+      font-size: 18px;
+      min-height:92px
     }
   }
 
-  .bottom-form-wrap {
-    margin-top:40px;
-    margin-bottom:10px;
+  .mini-panel-text{
+    background-image: url('/images/home_icon_star.svg');
+  }
+  .mini-panel-call{
+    background-image: url('/images/home_icon_map.svg');
+  }
+  .mini-panel-state{
+    background-image: url('/images/home_icon_phone.svg');
+  }
 
-    .col-md-6.center-block{
-      float:none;
 
-      form{
-        padding-bottom:0;
+}
+
+
+
+// call-box is where the number of calls is displayed
+// note line-height plays a part in creating their symmetry
+.call-box{
+  @include phone{
+    br{display:none}
+    .col-sm-1{
+      padding-right:0;
+    }
+  }
+
+  .col-sm-1{
+    font-weight: 400;
+    color: $color-dark-red;
+
+    @include tablet-plus{
+      line-height: 45px;
+      font-size: 45px;
+      width: 100px;
+
+    }
+  }
+  .col-sm-2{
+    width: 125px;
+    padding-right:0;
+    @include tablet{
+      width: 400px;
+    }
+  }
+}
+.call-box-thin{
+  font-size: 15px;
+  font-weight: 300;
+  @include small-desktop{
+    font-size:17px;
+  }
+  @include phone{
+    font-size: 25px;
+  }
+}
+.call-box-thick{
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 14px;
+  @include small-desktop{
+    line-height: 15px;
+    font-size: 20px;
+  }
+  @include phone{
+    font-size: 25px;
+  }
+}
+// only white link I know of consider moving
+.white-link{
+  color: #fff;
+  font-size: 18px;
+  text-decoration: underline;
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+  }
+}
+
+.js-legislators{
+  padding-top:45px;
+
+  .pulled-image{
+    margin-right:2%;
+    margin-left:2%;
+  }
+
+  .background-square{
+    height: 100px;
+    width: 100px;
+    background-size: 100%;
+    background:$color-grey url() center center no-repeat;
+    @include small-desktop{
+      height: 90px;
+      width: 90px;
+    }
+    @include phone{
+      padding: 0 5px 0 0;
+    }
+  }
+
+  &.newest-leaders{
+    .new-legislator{
+      @include tablet-minus{
+        padding-left: 0;
       }
     }
+  }
+
+  h3{
+    // padding-top: 4px;
+    font-size: 22px;
+    font-weight: 400;
+    white-space: nowrap;
+    @include small-desktop{
+      font-size: 16px;
+    }
+    @include small-desktop{
+      font-size: 20px;
+    }
+    @include phone{
+      padding-top: 8px;
+      font-size: 18px;
+    }
+  }
+  h4{
+    color: $color-brand;
+    margin-top:7px;
+    font-size: 15px;
+    @include small-desktop{
+      font-size: 13px;
+    }
+    @include phone{
+      font-size: 14px;
+    }
+  }
+}
+
+.legislators-listing{
+
+  h3{
+    font-size:20px;
+    white-space: nowrap;
+  }
+  h4{
+    font-size: 16px;
+  }
+
+  .fa{
+    display: inline-block;
+    margin-right:1px
+  }
+
+
+  .stateface-replace{
+    display:initial;
+  }
+  .stateface-replace:before{
+    position:relative;
+  }
+  .background-square{
+    border:4px solid #b0aeaf;
+  }
+
+  .with-us-true{
+    .stateface-replace{
+    }
+    .fa-check-square-o{
+      display:inline-block;
+    }
+    .fa-ban{
+      display:none;
+    }
+    .btn-targets{
+      background-color: $color-dossier-green;
+    }
+  }
+  .with-us-false{
+    .stateface-replace{
+    }
+    .fa-check-square-o{
+      display:none;
+    }
+    .fa-ban{
+      display:inline-block;
+    }
+    .btn-targets{
+      background-color: $color-dossier-red;
+    }
+  }
+}
+
+
+.bottom-margin{
+  margin-bottom:15px;
+}
+
+.mayday-quotes{
+  p{
+    margin:45px 0 30px;
+  }
+
+  @include tablet-minus{
+    margin-top:20px;
+    margin-bottom:30px;
+    p{
+      margin:0 0 15px;
+      padding:0;
+    }
+    img{
+      margin-bottom:20px;
+    }
+  }
+}
+.chart-holder {
+  min-height: 400px;
+  padding-right:0;
+  @include phone{
+    padding-right: 15px;
+  }
+}
+.highcharts-tooltip>span {
+  background: rgb(255,255,255);
+  border: 1px solid silver;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #888;
+  padding: 15px;
+}
+.chart-holder.non-chart {
+  opacity: 0;
+  -webkit-transition: opacity 450ms;
+  -moz-transition: opacity 450ms;
+  -ms-transition: opacity 450ms;
+  transition: opacity 450ms;
+  &.loaded{
+    opacity: 1;
+  }
+
+  @include phone{
+    height: auto;
+  }
+
+  p{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+#container2{
+  padding-right:0;
+  padding-left:0;
+}
+
+//needed the media query without writing a more complicated one on sign the letter
+.jumbo-text-wrap{
+  margin-bottom:100px;
+  @include phone{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+}
+.jumbotron{
+  margin-top: -45px;
+  padding:0;
+  position:relative;
+  overflow: hidden;
+  @include phone{
+    margin-top: 0px;
   }
 }

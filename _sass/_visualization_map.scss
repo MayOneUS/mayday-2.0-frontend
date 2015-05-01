@@ -1,0 +1,348 @@
+.voxel-map {
+  line-height: 1;
+  letter-spacing: 0;
+
+  * {
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    -webkit-tap-highlight-color: transparent;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        box-sizing: border-box;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  select.md-select {
+    margin: 0 0 32px;
+    width: 50%;
+    min-width: 300px;
+    float:right;
+  }
+
+  h2{
+    float:left;
+  }
+
+  .voxels {
+    position: relative;
+    top: 12px;
+    left: 0;
+    height: 100px;
+
+    -webkit-transition: opacity 0.9s;
+            transition: opacity 0.9s;
+  }
+
+  .voxels .label {
+    color: #fff;
+    letter-spacing: 0;
+    font-size: 15px;
+    line-height: 28px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+    width: 34px;
+  }
+}
+
+.voxel-map[size-modifier="0.75"] .voxels .label {
+  font-size: 14px;
+  line-height: 21px;
+  width: 26px;
+}
+
+.voxel-map[size-modifier="0.5"] .voxels .label {
+  font-size: 9px;
+  line-height: 16px;
+  width: 16px;
+}
+
+.voxel-map[size-modifier="0.25"] .voxels .label {
+  font-size: 5px;
+  line-height: 24px;
+  width: 7px;
+}
+
+.voxel-map .voxels .voxel {
+  cursor: pointer;
+  position: absolute;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.voxel-map .voxels .voxel svg polygon {
+  -webkit-transition: fill 0.4s;
+      transition: fill 0.4s;
+}
+
+.voxel-map .voxel svg {
+  height: 25px;
+  width: 25px;
+}
+
+.voxel-map .voxel svg polygon.border-top,
+.voxel-map .voxel svg polygon.border-right,
+.voxel-map .voxel svg polygon.border-bottom,
+.voxel-map .voxel svg polygon.border-bottom-angled,
+.voxel-map .voxel svg polygon.border-left {
+  display: none;
+  fill: rgba(255,255,255,0.9);
+  // fill:#000;
+
+}
+
+.voxel-map .voxel[color=blue]{
+  svg polygon.front {fill: #5e8cac;}
+  svg polygon.left {fill: #81aac1;}
+  svg polygon.bottom {fill: #385768;}
+  &[dark] svg polygon.front {fill: #385467;}
+  &[dark] svg polygon.left {fill: #4d6674;}
+  &[dark] svg polygon.bottom {fill: #507C94;}
+  svg polygon.border-top,
+  svg polygon.border-right,
+  svg polygon.border-bottom,
+  svg polygon.border-bottom-angled,
+  svg polygon.border-left {
+    display: none;
+    fill: rgba(56,87,104, 0.8);
+    // fill:#000;
+
+  }
+}
+.voxel-map .voxel[color=green]{ 
+  svg polygon.front {fill: #759c64;}
+  svg polygon.left {fill: #96af8b;}
+  svg polygon.bottom {fill: #6C895E;}
+  &[dark] svg polygon.front {fill: #465e3c;}
+  &[dark] svg polygon.left {fill: #5a6953;}
+  &[dark] svg polygon.bottom {fill: #203117;}
+  svg polygon.border-top,
+  svg polygon.border-right,
+  svg polygon.border-bottom,
+  svg polygon.border-bottom-angled,
+  svg polygon.border-left {
+    display: none;
+    fill: rgba(91,115,79,1);
+    // fill:#000;
+  }
+}
+.voxel-map .voxel[color=gray]{
+  svg polygon.front {fill: #ccc;}
+  svg polygon.left {fill: #ddd;}
+  svg polygon.bottom {fill: #bbb;}
+  &[dark] svg polygon.front {fill: #7a7a7a;}
+  &[dark] svg polygon.left {fill: #858585;}
+  &[dark] svg polygon.bottom {fill: #707070;}
+  svg polygon.border-top,
+  svg polygon.border-right,
+  svg polygon.border-bottom,
+  svg polygon.border-bottom-angled,
+  svg polygon.border-left {
+    display: none;
+    fill: rgba(0,0,0, 0.35);
+    // fill:#000;
+
+  }
+}
+.voxel-map .voxel[color=white]{
+  svg polygon.front {fill: #eee;}
+  svg polygon.left {fill: #f3f3f3;}
+  svg polygon.bottom {fill: #e9e9e9;}
+  &[dark] svg polygon.front {fill: #eee;}
+  &[dark] svg polygon.left {fill: #f3f3f3;}
+  &[dark] svg polygon.bottom {fill: #e9e9e9;}
+}
+
+
+// .voxel-map .voxel.has-border-top svg polygon.border-top,
+.voxel-map .voxel.has-border-right svg polygon.border-right,
+.voxel-map .voxel.has-border-bottom svg polygon.border-bottom,
+.voxel-map .voxel.has-border-bottom svg polygon.border-bottom-angled
+// .voxel-map .voxel.has-border-left svg polygon.border-left 
+{
+  display: block;
+}
+
+.voxel-map .key {
+  overflow: hidden;
+  position: absolute;
+  top:70%;
+  right:0;
+  padding: 0;
+  width:150px;
+
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+  .color {
+    color: #889;
+    float: left;
+    font: italic 100 20px  Verdana,sans-serif;
+    margin-bottom: 5px;
+    width: 100%;
+    margin-right: 20px;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+    .voxel svg{
+      float:left;
+    }
+
+    p{
+      display:inline;
+      padding-left: 6px;
+    }
+  }
+}
+
+.voxel-map .loading {
+  color: #0d3960;
+  font-size: 24px;
+}
+
+
+
+.voxel-map .voxel-popover {
+  background-color: rgba(240,240,240, 0.9);
+  display: none;
+  font-family: Arial, sans-serif;
+  padding: 12px;
+  position: absolute;
+  width: 308px;
+  z-index: 9999999;
+
+  animation: fadeIn .4s forwards ease-in-out;
+  -webkit-animation: fadeIn .4s forwards ease-in-out;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      box-sizing: border-box;
+}
+
+.voxel-map .voxel-popover .left {
+  color: #39383d;
+  float: left;
+  width: 116px;
+}
+
+.voxel-map .voxel-popover .left .photo {
+  height: 120px;
+  opacity: 0;
+  padding: 0 0 6px;
+  width: 99px;
+
+  -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+}
+
+.voxel-map .voxel-popover .left .stateface {
+  float: left;
+  opacity: 1;
+  font-size: 20px;
+  padding: 0 0 10px 0;
+  max-width: 30px;
+  color:$color-navy-blue-light;
+
+  -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+}
+
+.voxel-map .voxel-popover .left .title {
+}
+
+.voxel-map .voxel-popover .left .code {
+}
+
+.voxel-map .voxel-popover .right {
+  width: 168px;
+  float: right;
+}
+
+.voxel-map .voxel-popover .name {
+  font-size: 22px;
+  font-weight: bold;
+  // color: #51395f;
+}
+
+.voxel-map .voxel-popover h3{
+  font-size: 22px;
+}
+
+.voxel-map .voxel-popover .description {
+  color: #38373d;
+  font-size: 12px;
+  margin: 6px 0 0;
+}
+
+.voxel-map .voxel-popover .button {
+  background-color: $color-navy-blue-light;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 8px 0;
+  margin: 10px 0 0;
+  text-align: center;
+  text-decoration: none;
+  width: 168px;
+}
+
+.voxel-map .voxel-popover .arrow {
+  bottom: -42px;
+  height: 42px;
+  width: 42px;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+  border: solid transparent 42px;
+  border-top: none;
+  border-left-color: rgba(240,240,240, 0.9);
+}
+
+.voxel-map .voxel-popover.right {
+  margin: 0 0 0 -307px;
+}
+
+.voxel-map .voxel-popover.right .arrow {
+  border-top: none;
+  border-left: none;
+  border-right-color: rgba(240,240,240, 0.9);
+  left: auto;
+  right: 0;
+}
+
+/* IE9 */
+.voxel-map.ie9 .voxels .voxel,
+.voxel-map.ie9 .voxels .voxel-popover .photo {
+  opacity: 1 !important;
+}
