@@ -1,4 +1,9 @@
 # Visit /extern/press-articles-generator.html to use the generator helper to clean up quotes.
+- title: 'The Fifth Column: Keeping the Republic'
+  link: 'http://thefifthcolumnnews.com/2015/05/keeping-the-republic/'
+  quotes:
+    - 'Mayday PAC, however, also realized that simply electing fresh candidates is an overwhelming undertaking.  In order to reach the Congressional majority required to pass campaign finance legislation, Mayday needs to recruit sitting members of Congress as well.'
+    - 'Lessig is confident that academics and activists can unite around this effort for stage 2 of Mayday’s plan.  On May 1, 2015, Mayday will officially launch its citizen lobbying platform to crowdsource activists’ voices to influence incumbent members of Congress and recruit those members to support campaign finance reform.'
 - title: 'Bloomberg: The &rsquo;Super PAC to End Super PACs&rsquo; Makes a Strategic Retreat'
   link: 'https://www.bloomberg.com/politics/articles/2015-03-17/the-super-pac-to-end-super-pacs-makes-a-strategic-retreat'
   quotes:
