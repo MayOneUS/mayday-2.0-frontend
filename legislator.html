@@ -159,7 +159,7 @@ permalink: /legislator/
         l_d.page_title = [l_d.title_name,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
         l_d.tail_message = ['Thank',l_d.short_title,l_d.name, 'for being a leader'].join(' ') + '!';
         if(l_d.twitter_id){
-          l_d.tweet_url = 'https://twitter.com/intent/tweet?text=.@'+l_d.twitter_id+escape(' is a #ReformLeader. Thanks for cosponsoring the ')+escape(supported_bill_names[0])+escape(' to change how campaigns are funded.');
+          l_d.tweet_url = 'https://twitter.com/intent/tweet?text=.@'+l_d.twitter_id+escape(' is a #Leader4Reform. Thanks for cosponsoring the ')+escape(supported_bill_names[0])+escape(' to change how campaigns are funded.');
         }else{
           l_d.show_twitter = 'none';
         }
@@ -169,7 +169,7 @@ permalink: /legislator/
         l_d.page_title = [l_d.title_name,'is not yet a leader supporting fundamental reform'].join(' ');
         l_d.tail_message = ['Ask',l_d.short_title,l_d.name, 'to step up and lead!'].join(' ');
         if(l_d.twitter_id){
-          l_d.tweet_url = 'https://twitter.com/intent/tweet?text=.@'+l_d.twitter_id+escape(' help lead the fight for fundamental reform of the way campaigns are funded. Be a #ReformLeader.')+'&url=http://repswith.us/reforms';
+          l_d.tweet_url = 'https://twitter.com/intent/tweet?text=.@'+l_d.twitter_id+escape(' help lead the fight for fundamental reform of the way campaigns are funded. Be a #Leader4Reform.')+'&url=http://repswith.us/reforms';
         }else{
           l_d.show_twitter = 'none';
         }
