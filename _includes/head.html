@@ -11,7 +11,7 @@
   <meta content='@mayday' name="twitter:site"/>
 
   {% assign meta_content_size = page.meta_content | size %}
-  {% if page.meta_content_size < 2 %}
+  {% if meta_content_size < 2 %}
     <meta property="og:url" content="{{ page_url }}"/>
     <meta property="og:image" content="{{ root_path }}/images/mayday_og.jpg"/>
     <meta property="og:title" content="MAYDAY: Democracy needs an upgrade. Act now."/>
