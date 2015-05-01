@@ -6,26 +6,28 @@ permalink: /legislators/
 
 <div class="container legislators-leaders">
     <div class="row">
-      <h1>Leaders supporting fundamental reform</h1>
-      <form method="get" accept-charset="utf-8" class="md-inputs legislators-filter">
-        <input id="search" class="form-control" name="search" placeholder="Search by name or state" type="text" data-list=".js-legislators">
-        <div class="form-group">
-          <label class="radio-inline" for="filter-value"><strong>Filter:</strong></label>
-            <label class="radio-inline" for="leaders">
-              <input type="radio" name="filter-value" id="leaders" value="leaders" checked="checked">
-              <i class="fa fa-check-square-o"></i>
-              Leaders
-            </label>
-            <label class="radio-inline" for="potential">
-              <input type="radio" name="filter-value" id="potential" value="potential">
-              <i class="fa fa-question-circle"></i>
-              Potential Leaders
-            </label>
-            <label class="radio-inline" for="all">
-              <input type="radio" name="filter-value" id="all" value="all"> All Legislators
-            </label>
-        </div>
-      </form>
+      <div class="col-md-12">
+        <h1>Leaders supporting fundamental reform</h1>
+        <form method="get" accept-charset="utf-8" class="md-inputs legislators-filter">
+          <input id="search" class="form-control" name="search" placeholder="Search by name or state" type="text" data-list=".js-legislators">
+          <div class="form-group">
+            <label class="radio-inline" for="filter-value"><strong>Filter:</strong></label>
+              <label class="radio-inline" for="leaders">
+                <input type="radio" name="filter-value" id="leaders" value="leaders" checked="checked">
+                <i class="fa fa-check-square-o"></i>
+                Leaders
+              </label>
+              <label class="radio-inline" for="potential">
+                <input type="radio" name="filter-value" id="potential" value="potential">
+                <i class="fa fa-question-circle"></i>
+                Potential Leaders
+              </label>
+              <label class="radio-inline" for="all">
+                <input type="radio" name="filter-value" id="all" value="all"> All Legislators
+              </label>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="row">
       <div class="col-md-12">
@@ -42,11 +44,8 @@ permalink: /legislators/
 <script id="legislator_template" type="text/html">
 {% raw %}
 
-    <div class="col-md-4 col-sm-8 col-xs-11 bottom-margin with-us-{{with_us}}  potential-{{targeted?}}">
-      <div class="col-md-4 col-sm-3 col-xs-4">
-        <a href="/legislator/?bioguide_id={{bioguide_id}}"><div class="background-square"></div></a>
-      </div>
-      <div class="col-md-8 col-sm-6 col-xs-8 remove-padding-text">
+    <div class="col-md-4 col-sm-6 col-xs-6 bottom-margin with-us-{{with_us}}  potential-{{targeted?}}">
+      <a href="/legislator/?bioguide_id={{bioguide_id}}" class="pull-left pulled-image"><div class="background-square"></div></a>
         <h3 class="no-top-margin"> {{short_title}}<strong> {{ name }}</strong> </h3>
         <h4>{{leadership}} {{ party }}-{{ state_abbrev }} {{display_district}}</h4>
         <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">
@@ -54,7 +53,6 @@ permalink: /legislators/
           <i class="fa fa-ban"></i>
           Read More
         </a>
-      </div>
       <div class="hidden">
         {{state_name}}
       </div>
@@ -116,6 +114,7 @@ permalink: /legislators/
     loadTargetedAction();
 
     $('form.legislators-filter .radio-inline input').on('change', function(e){
+      e.preventDefault();
       var filterValue = $('form.legislators-filter .radio-inline input:checked').val();
       setListFilter(filterValue);
     });

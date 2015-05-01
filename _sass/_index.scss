@@ -415,13 +415,8 @@
 
   &.newest-leaders{
     .new-legislator{
-      border-right: 1px solid #b7b7b7;
       @include tablet-minus{
         padding-left: 0;
-        border:none;
-      }
-      &:nth-child(3n) {
-        border:none;
       }
     }
   }
@@ -532,7 +527,7 @@
   }
 }
 .chart-holder {
-  height: 400px;
+  min-height: 400px;
   padding-right:0;
   @include phone{
     padding-right: 15px;
