@@ -50,7 +50,7 @@ hideHeaderSignUp: true
   $('#js-sign-letter-form').on('submit', function(e){
     e.preventDefault();
     $form = $(e.target);
-    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading..');
+    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
     $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
     }).done(function(){
       window.location = '/sign-the-letter/?already_signed=true'
