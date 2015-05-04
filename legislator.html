@@ -155,7 +155,7 @@ permalink: /legislator/
           supported_bill_names.push(data.name)
           tallies += ich.talley_template(data, true);
         });
-        l_d.supported_bills_message = supported_bill_names.join(' ');
+        l_d.supported_bills_message = supported_bill_names.join(' and ');
         l_d.background_img = '/images/star_blue.svg';
         l_d.page_title = [l_d.title_name,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
         l_d.tail_message = ['Thank',l_d.short_title,l_d.name, 'for being a leader'].join(' ') + '!';
@@ -167,7 +167,11 @@ permalink: /legislator/
       } else {
         if(legislator_data.title == 'Senator' || $.inArray(legislator_data.state_abbrev, unknowable_reps) > -1){
           legislator_data.with_us = 'unknowable';
-          l_d.page_title = ['No Senate reform bill has been introduced yet this year for', l_d.title_name,'to cosponsor.'].join(' ');
+          if(legislator_data.title == 'Senator'){
+            l_d.page_title = ['No Senate reform bill has been introduced yet this year for', l_d.title_name,'to cosponsor.'].join(' ');
+          }else{
+            l_d.page_title = [l_d.title_name, 'is a non-voting member.'].join(' ')
+          }
           l_d.tail_message = '';
           l_d.show_phone = 'none';
           l_d.show_social = 'none';
