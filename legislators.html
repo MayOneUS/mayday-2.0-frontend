@@ -3,7 +3,7 @@ layout: default
 title: legislators
 permalink: /legislators/
 ---
-
+{%capture content %}
 <div class="container legislators-potential">
     <div class="row">
       <div class="col-md-12">
@@ -40,6 +40,9 @@ permalink: /legislators/
       </div>
     </div>
 </div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
 
 <script id="legislator_template" type="text/html">
 {% raw %}

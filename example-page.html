@@ -1,0 +1,33 @@
+---
+layout: default
+title: Take Action
+permalink: /example-page/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/example-page/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="Custom meta content"/>
+  <meta property="og:description" content="Mayday PAC is recruiting...."/>
+  <link rel="canonical" href="https://mayday.us/example-page/">
+  <meta name="robots" content="noindex">
+---
+{% capture custom_css %}
+<style type="text/css">
+  .somePageSpecificCss{}
+</style>
+{% endcapture %}
+
+{% capture content %}
+<div class="container">
+  <div class="col-md-12">
+    <p>Whatever content might og on your page</p>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
+
+<script>
+//custom scripts per page
+//This in included just before before the close body tag.
+</script>
+

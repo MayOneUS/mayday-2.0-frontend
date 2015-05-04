@@ -1,0 +1,13 @@
+{% include head.html %}
+
+<body>
+  <div class="page-content">
+    {% include header.html %}
+
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </div>
+
+  {% include footer.html %}
+{% comment %} body tag closed in default.html layout{% endcomment %}

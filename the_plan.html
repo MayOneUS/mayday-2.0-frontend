@@ -3,6 +3,7 @@ layout: default
 title: The Plan
 permalink: /the-plan/
 ---
+{% capture content %}
 <div>
     <div id="stick-group" class="sticky-tree hidden-xs">
       <div class="row sticky-grid">
@@ -65,7 +66,7 @@ permalink: /the-plan/
     <div id="challenge" class="col-md-9">
       <h2>The Challenge: A Congress Committed to Reform</h2>
       <p>We are asking members of Congress to become #Leaders4Reform, by cosponsoring legislation that will reverse the corrupting influence of money on our elections.</p>
-      <p>We have identified five proposals that would fundamentally change how campaigns are funded. These include two Republican proposals, two Democratic proposals, and one that was crafted with advice from both sides. (You can see all five at <a href="http://repswith.us" target="_blank">RepsWith.US</a>).</p>
+      <p>We have identified five proposals that would fundamentally change how campaigns are funded. These include two Republican proposals, two Democratic proposals, and one that was crafted with advice from both sides. (You can see all five at <a href="http://repswith.us/reforms" target="_blank">RepsWith.US</a>).</p>
       <p>Earlier this year, you helped us identify 47 potential #Leaders4Reform who could be the key to unlocking a pro-reform Congress in 2016. We know 47 is not the 70 we ultimately need. But the truth is, we won&rsquo;t have all 70 with us by the end of this year. We want to focus our energy and resources on potential leaders you helped identify, and urge those members to support reform. Our aim is to close the gap enough this year so that we&rsquo;re in striking distance of having a pro-reform majority in Congress by 2016.</p>
     </div>
   </div>
@@ -104,10 +105,11 @@ permalink: /the-plan/
 
 </div>
 </div>
+{% endcapture %}
 
+{% include sub_layouts/default_layout.html %}
 
 <script src="{{ root_path }}/js/lib/smooth-scroll.min.js"></script>
-
 <script>
   smoothScroll.init({
     speed: 500,
@@ -211,5 +213,3 @@ permalink: /the-plan/
     }, 60);// important
   });
 </script>
-
-

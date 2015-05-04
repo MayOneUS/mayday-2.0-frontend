@@ -4,8 +4,9 @@ title: MAYDAY.US - We tried. We learned. We're trying something new.
 hideFromNav: true
 hideHeaderSignUp: true
 ---
+{% capture content %}
 <div id="index">
-  <div class="full-bg-imgage">
+  <div class="full-bg-image">
     <div class="background-image-blurred"></div>
     <div class="container banner-image">
       <div class="row">
@@ -40,23 +41,8 @@ hideHeaderSignUp: true
   </form>
   <p class="text-center"><small><a href="/sign-the-letter/">Read the letter here</a></small></p>
 </div>
-
 {% endcapture %}
-    {% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
-  </div>
-</div>
-
-<script>
-  $('#js-sign-letter-form').on('submit', function(e){
-    e.preventDefault();
-    $form = $(e.target);
-    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-    $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
-    }).done(function(){
-      window.location = '/sign-the-letter/?already_signed=true'
-    });
-  });
-</script>
+{% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
         </div>
       </div>
     </div>
@@ -149,8 +135,6 @@ hideHeaderSignUp: true
       {% include newest_allies.html %}
       <p class="text-center"><a href="/legislators" title="">View all Leaders for Fundamental Reform</a></p>
     </div>
-
-
   </div>
   <div class="homepage-panel dark two-star">
     <img class="bg-star" src="/images/star_white.svg">
@@ -189,4 +173,20 @@ hideHeaderSignUp: true
     </div>
   </div>
 </div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
+
+
 <script src="{{ root_path }}/js/homepage.js"></script>
+<script>
+  $('#js-sign-letter-form').on('submit', function(e){
+    e.preventDefault();
+    $form = $(e.target);
+    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+    $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
+    }).done(function(){
+      window.location = '/sign-the-letter/?already_signed=true'
+    });
+  });
+</script>

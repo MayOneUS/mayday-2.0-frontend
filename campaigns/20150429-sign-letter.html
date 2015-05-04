@@ -9,7 +9,8 @@ meta_content: |
   <meta property="og:description" content="Mayday PAC is recruiting leaders in Congress who will fundamentally change the way campaigns are funded. We only need 70 more reps to have a pro-reform majority in the House! Voice your support by adding your name to this letter from Lawrence Lessig and Mark McKinnon, co-founders of Mayday PAC."/>
   <link rel="canonical" href="https://mayday.us/sign-the-letter/">
 ---
-<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+{% capture custom_css %}
+<link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 <style>
 
   .jumbotron>.container {
@@ -125,14 +126,15 @@ meta_content: |
   }
 
 </style>
-<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+{% endcapture %}
+{% capture content %}
 <div class="jumbotron" style="">
   <div class="bg-blurred"></div>
   <div class="container">
     <h1>Thank you for Signing!</h1>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-7 jumbo-text-wrap">
-        <h2>Today, We are just <strong>70</strong> votes short from a majority in the House, supporting fundamental reform in the way campaigns are funded.</h2>
+        <h2>We are just <strong>70</strong> votes short from a majority in the House, supporting fundamental reform in the way campaigns are funded.</h2>
       </div>
     </div>
   </div>
@@ -227,7 +229,7 @@ meta_content: |
     <div class="embed-responsive embed-responsive-16by9" style="width: 90%;margin:0 auto;">
       <iframe class="embed-responsive-item" allowfullscreen src="//www.youtube.com/embed/Kzj43rzd-4w"></iframe>
     </div>
-    <h2>Today’s letter to Congress</h2>
+    <h2>Our letter to Congress</h2>
     <p>Mayday PAC is recruiting leaders in Congress who will fundamentally change the way elections are funded.</p>
 
     <div class="letter-wrap">
@@ -255,6 +257,12 @@ meta_content: |
 
 </div>
 
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
+
 <script>
 function getParameterByName( name ) {
   var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -262,7 +270,6 @@ function getParameterByName( name ) {
 
   name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
   return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-
 }
 
 $(document).ready(function(){
@@ -292,9 +299,6 @@ $(document).ready(function(){
 
 });
 </script>
-
-  </div>
-</div>
 
  <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],

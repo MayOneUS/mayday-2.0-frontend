@@ -3,6 +3,7 @@ layout: default
 title: MAYDAY.US - Attribution
 permalink: /attribution/
 ---
+{% capture content %}
 <div class="container">
   <div class="row">
     <div class="col-md-8">
@@ -21,9 +22,7 @@ permalink: /attribution/
       {% include panels/panel_action_w_signup.html hide_next=true %}
     </div>
   </div>
-<!--   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-    </div>
-  </div> -->
 </div>
+{% endcapture %}
 
+{% include sub_layouts/default_layout.html %}

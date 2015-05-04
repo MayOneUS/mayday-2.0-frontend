@@ -1,19 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html>{{content}}</body></html>
+{% comment %}layout elements are includes so that captured content is rendered{% endcomment %}
 
-  {% include head.html %}
 
-  <body>
-    <div class="page-content">
-      {% include header.html %}
-
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
-  </body>
-
-</html>
