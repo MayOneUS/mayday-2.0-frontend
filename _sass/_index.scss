@@ -311,70 +311,69 @@
       font-size: 18px;
       min-height:92px
     }
+
+    .call-box{
+      @include phone{
+        br{display:none}
+        .col-sm-1{
+          padding-right:0;
+        }
+      }
+
+      .col-sm-1{
+        font-weight: 400;
+        color: $color-dark-red;
+
+        @include tablet-plus{
+          line-height: 45px;
+          font-size: 45px;
+          width: 100px;
+
+        }
+      }
+      .col-sm-2{
+        width: 125px;
+        padding-right:0;
+        @include tablet{
+          width: 400px;
+        }
+      }
+    }
+    .call-box-thin{
+      font-size: 15px;
+      font-weight: 300;
+      @include small-desktop{
+        font-size:17px;
+      }
+      @include phone{
+        font-size: 25px;
+      }
+    }
+    .call-box-thick{
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 14px;
+      @include small-desktop{
+        line-height: 15px;
+        font-size: 20px;
+      }
+      @include phone{
+        font-size: 25px;
+      }
+    }
   }
 
   .mini-panel-text{
     background-image: url('/images/home_icon_star.svg');
   }
   .mini-panel-call{
-    background-image: url('/images/home_icon_map.svg');
-  }
-  .mini-panel-state{
     background-image: url('/images/home_icon_phone.svg');
   }
-}
-
-// call-box is where the number of calls is displayed
-// note line-height plays a part in creating their symmetry
-.call-box{
-  @include phone{
-    br{display:none}
-    .col-sm-1{
-      padding-right:0;
-    }
-  }
-
-  .col-sm-1{
-    font-weight: 400;
-    color: $color-dark-red;
-
-    @include tablet-plus{
-      line-height: 45px;
-      font-size: 45px;
-      width: 100px;
-
-    }
-  }
-  .col-sm-2{
-    width: 125px;
-    padding-right:0;
-    @include tablet{
-      width: 400px;
-    }
+  .mini-panel-state{
+    background-image: url('/images/home_icon_map.svg');
   }
 }
-.call-box-thin{
-  font-size: 15px;
-  font-weight: 300;
-  @include small-desktop{
-    font-size:17px;
-  }
-  @include phone{
-    font-size: 25px;
-  }
-}
-.call-box-thick{
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 14px;
-  @include small-desktop{
-    line-height: 15px;
-    font-size: 20px;
-  }
-  @include phone{
-    font-size: 25px;
-  }
-}
+
 // only white link I know of consider moving
 .white-link{
   color: #fff;
