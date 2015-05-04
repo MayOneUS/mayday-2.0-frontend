@@ -737,6 +737,54 @@ form.no-gutter fieldset > [class*='col-'] {
   font-size: 21px;
 }
 
+/* form styles */
+
+.form-group{
+  position: relative;
+}
+
+input.error{
+  border-color: $color-dark-red;
+}
+label.error{
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  background: $color-grey-background;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid $color-dark-red;
+  padding: 0 3px;
+  box-shadow:2px 2px 10px #000;
+  white-space: nowrap;
+  max-width: initial;
+  color:$color-dark-red;
+  z-index: 999;
+
+  &:before, &:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    bottom: auto;
+  }
+
+  &:before {
+    margin-left: 10px;
+    top: -13px;
+    border: 6px solid;
+    border-color: transparent transparent $color-dark-red transparent;
+  }
+  &:after{
+    left: 8px;
+    top: -13px;
+    border: 8px solid;
+    border-color: transparent transparent #f0f0f0 transparent;
+  }
+}
+
 /* helper classes */
 .no-top-margin{
   margin-top:0 !important;

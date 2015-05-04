@@ -37,16 +37,17 @@
 </footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="{{ root_path }}/js/lib/ICanHaz.min.js"></script>
-<script src="{{ root_path }}/js/lib/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<script src="{{ root_path }}/js/lib/plugins.js"></script>
 <script>
 $(document).ready(function(){
-  $("form.email-signup").submit(function (event) {
-    event.preventDefault();
-    var saveURI = '{{ site.services_url }}/people';
-    $.post(saveURI, $(this).serialize());
-    $(this).hide();
-    $(this).next().removeClass('hidden');
+  $("form.email-signup").validate({
+    submitHandler: function($form) {
+      var saveURI = '{{ site.services_url }}/people';
+      $.post(saveURI, $form.serialize());
+      $form.hide();
+      $form.next().removeClass('hidden');
+    }
   });
 });
 </script>

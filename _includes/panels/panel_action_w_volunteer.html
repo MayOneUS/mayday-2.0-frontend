@@ -26,7 +26,7 @@
 
       <div class="form-group col-md-4 form-right">
         <label class="control-label sr-only" for="person[zip]">ZIP Code</label>
-        <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP">
+        <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="required">
       </div>
 
       <div class="form-group col-md-12 no-padding form-right">
@@ -37,6 +37,7 @@
       <div class="form-group col-md-5 center-block">
         <label class="control-label sr-only" for="singlebutton">Submit</label>
         <input type="hidden" name="person[remote_fields][tags][]" value="20150501_volunteer">
+        <input type="hidden" name="person[remote_fields][is_volunteer]"  value="true">
         <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
       </div>
 
@@ -51,19 +52,19 @@
 
 {% capture panel_volunteer_form %}
 <script>
-  $('.js-volunteer-form').on('submit', function(e){
-    e.preventDefault();
-    $form = $(e.target);
-    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-    $.post('{{site.services_url}}/people', $(e.target).serialize(), function(data){
-    }).done(function(){
-      if(location.pathname == '/take-action/'){
-        $parent = $form.parents('li');
-        setAsComplete($parent);
-      }else{
-        //shouldn't really be on another page.
-      }
-    });
+  $('.js-volunteer-form').validate({
+    submitHandler: function($form) {
+      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $.post('{{site.services_url}}/people', $(e.target).serialize(), function(data){
+      }).done(function(){
+        if(location.pathname == '/take-action/'){
+          $parent = $form.parents('li');
+          setAsComplete($parent);
+        }else{
+          //shouldn't really be on another page.
+        }
+      });
+    }
   });
 </script>
 {% endcapture %}

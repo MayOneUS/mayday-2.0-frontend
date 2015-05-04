@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-md-8 form-left-sm">
             <div class="form-group">
-              <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" required="required"/>
+              <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
               <p class="help-block">We respect your privacy. Your phone number will not be shared with any third party.</p>
             </div>
           </div>
@@ -73,19 +73,19 @@
 
 <script>
   $(document).ready(function(){
-    $('.js-form-call-congress').on('submit', function(e){
-      e.preventDefault();
-      $form = $(e.target);
-      $.post('{{site.services_url}}/calls', $form.serialize(), function(data){
-        $form.find('button.btn').text('calling');
-      }).done(function(data){
-        $parent = $form.parents('li');
-        setAsComplete($parent);
-        $.each(data.targets, function(index, target_data){
-          var rendered = ich.call_target_template(target_data);
-          $('.js-targets').append(rendered);
-        });
-      });//done
+    $('.js-form-call-congress').validate({
+      submitHandler: function($form) {
+        $.post('{{site.services_url}}/calls', $form.serialize(), function(data){
+          $form.find('button.btn').text('calling');
+        }).done(function(data){
+          $parent = $form.parents('li');
+          setAsComplete($parent);
+          $.each(data.targets, function(index, target_data){
+            var rendered = ich.call_target_template(target_data);
+            $('.js-targets').append(rendered);
+          });
+        });//done
+      }
     });//on submit
   });
 </script>

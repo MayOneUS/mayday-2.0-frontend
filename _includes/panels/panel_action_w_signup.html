@@ -27,7 +27,7 @@
 
       <div class="form-group col-md-4 form-right">
         <label class="control-label sr-only" for="person[zip]">ZIP</label>
-        <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP">
+        <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
 
       </div>
 
@@ -59,21 +59,21 @@
 </div>
 {% capture panel_signup_js %}
 <script>
-  $('.js-sign-up-form').on('submit', function(e){
-    e.preventDefault();
-    $form = $(e.target);
-    $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-    $.post('{{site.services_url}}/actions', $(e.target).serialize(), function(data){
-    }).done(function(){
-      if(location.pathname == '/take-action/'){
-        $next = $form.parents('li').next();
-        $parent = $form.parents('li');
-        setAsComplete($parent);
-        makeActive($next);
-      }else{
-        location = '/take-action/#get-educated'
-      }
-    });
+  $('.js-sign-up-form').validate({
+    submitHandler: function($form) {
+      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
+      }).done(function(){
+        if(location.pathname == '/take-action/'){
+          $next = $form.parents('li').next();
+          $parent = $form.parents('li');
+          setAsComplete($parent);
+          makeActive($next);
+        }else{
+          location = '/take-action/#get-educated'
+        }
+      });
+    }
   });
 </script>
 {% endcapture %}
