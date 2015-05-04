@@ -21,7 +21,7 @@ permalink: /take-action/
     </div>
   </div> -->
   <ul class="action-tree col-md-10 center-block list-unstyled">
-    <li class="incomplete active" id="js-sign-up">
+    <li class="incomplete active js-sign-up">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-sign-up">Incomplete</small>
       <a href="#" class="btn btn-md-wide tk-act" title="Sign Up for Updates">
@@ -31,7 +31,7 @@ permalink: /take-action/
       </a>
       {% include panels/panel_action_w_signup.html hide_volunteer=true %}
     </li>
-    <li class="incomplete" id="js-get-educated">
+    <li class="incomplete js-get-educated">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-get-educated">Incomplete</small>
       <a href="#" class="btn btn-md-wide tk-act" title="Get Educated">
@@ -41,7 +41,7 @@ permalink: /take-action/
       </a>
       {% include panels/panel_action_w_get_educated.html %}
     </li>
-    <li class="incomplete" id="js-spread-the-word">
+    <li class="incomplete js-spread-the-word">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-spread-the-word">Incomplete</small>
       <a href="#" class="btn btn-md-wide tk-act" title="Spread the Word">
@@ -51,7 +51,7 @@ permalink: /take-action/
       </a>
       {% include panels/panel_action_w_spread_the_word.html %}
     </li>
-    <li class="incomplete" id="js-call-congress">
+    <li class="incomplete js-call-congress">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-call-congress">Incomplete</small>
       <a href="#" class="btn btn-md-wide tk-act" title="Take Action: Call Congress">
@@ -61,7 +61,7 @@ permalink: /take-action/
       </a>
       {% include panels/panel_action_w_call_congress.html %}
     </li>
-    <li class="incomplete" id="js-join-the-discussion">
+    <li class="incomplete js-join-the-discussion">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-join-discussion">Incomplete</small>
       <a href="#" class="btn btn-md-wide tk-act" title="Join the Discussion">
@@ -71,7 +71,7 @@ permalink: /take-action/
       </a>
       {% include panels/panel_action_w_join_discussion.html %}
     </li>
-    <li class="incomplete" id="js-volunteer">
+    <li class="incomplete js-volunteer">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-volunteer">Incomplete</small>
       <a href="#" class="btn btn-md-wide tk-act" title="Volunteer">
@@ -99,7 +99,7 @@ permalink: /take-action/
   function loadTargetedAction(){
     if(location.hash.length > 1){
       hash_location = location.hash.replace(/^#/,'');
-      $targetAction = $('#js-'+hash_location);
+      $targetAction = $('.js-'+hash_location);
       makeActive($targetAction);
       $("html, body").animate({ scrollTop: $targetAction.offset().top }, 100);
     }
@@ -111,7 +111,7 @@ permalink: /take-action/
       e.preventDefault();
       $target = $(this).parents('li')
       makeActive($target);
-      new_hash = $target.prop('id').replace('js-','')
+      new_hash = $target.prop('class').replace(/^.+js-([\w-]+) .+/,"$1")
       location.hash = new_hash
     });
     $('.skip-next a.next').on('click', function(e){

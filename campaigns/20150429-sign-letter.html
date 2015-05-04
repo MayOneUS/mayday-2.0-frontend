@@ -147,7 +147,7 @@ meta_content: |
 {% capture panel_body %}
 <div class="panel-body">
   <h2 style="line-height:34px;">Ask your member of Congress to become a <br class="hidden-xs hidden-sm"><strong>#Leader4Reform</strong></h2>
-  <form class="row smaller-form no-gutter" id="js-sign-letter-form">
+  <form class="row smaller-form no-gutter js-sign-letter-form">
 
     <fieldset class="col-md-12">
 
@@ -276,7 +276,7 @@ $(document).ready(function(){
   already_signed = getParameterByName('already_signed');
   if(already_signed == 'true'){
     $('.jumbotron').addClass('already-signed')
-    $form = $('#js-sign-letter-form');
+    $form = $('.js-sign-letter-form');
     $form.parents('.panel-body').hide();
     $form.parents('.panel-body').next().show();
   }
@@ -286,7 +286,7 @@ $(document).ready(function(){
     $('#read-more-letter').slideDown();
   })
 
-  $('#js-sign-letter-form').on('submit', function(e){
+  $('.js-sign-letter-form').on('submit', function(e){
     e.preventDefault();
     $form = $(e.target);
     $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');

@@ -7,7 +7,7 @@
     <h2>Take Action: Call Congress</h2>
     <div class="row">
       <p>Join the Mayday team of Citizen Lobbyists fighting together for fundamental reform. This tool will help you call the office of one of our potential leaders, to ask them to support reform.</p>
-      <form class="join" id="js-form-call-congress">
+      <form class="join js-form-call-congress">
         <div class="row">
           <div class="col-md-8 form-left-sm">
             <div class="form-group">
@@ -39,7 +39,7 @@
     <div class="col-md-12 center-block" style="text-align:left">
       <h2 class="text-center">Thanks for calling Congress!</h2>
       <p>You should receive a phone call to the number you shared momentarily.  We&rsquo;ve identified 5 reprentatives you can help convince to sign on as supporters of reform. We'll connect you to them in the following order:</p>
-      <ul id="js-targets" class="col-md-10 center-block"></ul>
+      <ul class="col-md-10 center-block js-targets"></ul>
       <h3>Sample script:</h3>
       <blockquote> Hi. My name is _______ (if applicable: and I’m a voter in your district). I’m asking  _______ to be a leader in the fight to restore our republic to the people. We need _______ to support legislation to change the way members of Congress raise money for their campaigns. There are five Republican and Democratic proposals. You can see the list at RepsWith.US. Will _______ please consider supporting one of those bills? </blockquote>
       <p>When finished with one call, press * on your phone to be connected to the next rep. If you're accidentally disconnected, just redial the number you’ve been called from: +1 224-334-3343</p>
@@ -73,7 +73,7 @@
 
 <script>
   $(document).ready(function(){
-    $('#js-form-call-congress').on('submit', function(e){
+    $('.js-form-call-congress').on('submit', function(e){
       e.preventDefault();
       $form = $(e.target);
       $.post('{{site.services_url}}/calls', $form.serialize(), function(data){
@@ -82,9 +82,8 @@
         $parent = $form.parents('li');
         setAsComplete($parent);
         $.each(data.targets, function(index, target_data){
-          console.log(target_data)
           var rendered = ich.call_target_template(target_data);
-          $('#js-targets').append(rendered);
+          $('.js-targets').append(rendered);
         });
       });//done
     });//on submit

@@ -15,7 +15,7 @@ hideHeaderSignUp: true
 <div class="panel-body">
   <h2>Sign the letter</h2>
   <p>Ask your member of Congress to become a #Leader4Reform</strong></p>
-  <form class="row smaller-form no-gutter" id="js-sign-letter-form">
+  <form class="row smaller-form no-gutter js-sign-letter-form">
 
     <fieldset class="col-md-12">
 
@@ -180,7 +180,7 @@ hideHeaderSignUp: true
 
 <script src="{{ root_path }}/js/homepage.js"></script>
 <script>
-  $('#js-sign-letter-form').on('submit', function(e){
+  $('.js-sign-letter-form').on('submit', function(e){
     e.preventDefault();
     $form = $(e.target);
     $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
