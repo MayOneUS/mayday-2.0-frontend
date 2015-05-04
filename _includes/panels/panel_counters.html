@@ -26,6 +26,8 @@
   </div>
 </div>
 
+{% capture panel_counter_js %}
+
 <script>
   function panelCounter($targetHolder, count) {
     count = count.toString()
@@ -45,3 +47,5 @@
     });
   });
 </script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_counter_js}}{% endcapture %}

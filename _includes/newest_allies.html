@@ -2,7 +2,7 @@
 <div class="row">
   <div id="js-legislators" class="js-legislators newest-leaders no-gutter"></div>
 </div>
-
+{% capture newest_leaders_js %}
 <script id="legislator_template" type="text/html">
 {% raw %}
 
@@ -52,3 +52,6 @@
 })( '{{site.services_url}}/legislators/newest_supporters.json' );
 
 </script>
+
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{newest_leaders_js}}{% endcapture %}
