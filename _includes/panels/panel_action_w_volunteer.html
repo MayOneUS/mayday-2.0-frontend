@@ -53,7 +53,8 @@
 {% capture panel_volunteer_form %}
 <script>
   $('.js-volunteer-form').validate({
-    submitHandler: function($form) {
+    submitHandler: function(form) {
+      $form = $(form);
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
       $.post('{{site.services_url}}/people', $(e.target).serialize(), function(data){
       }).done(function(){

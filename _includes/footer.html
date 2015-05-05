@@ -43,7 +43,8 @@
 <script>
 $(document).ready(function(){
   $("form.email-signup").validate({
-    submitHandler: function($form) {
+    submitHandler: function(form) {
+      $form = $(form);
       var saveURI = '{{ site.services_url }}/people';
       $.post(saveURI, $form.serialize());
       $form.hide();

@@ -74,7 +74,8 @@
 <script>
   $(document).ready(function(){
     $('.js-form-call-congress').validate({
-      submitHandler: function($form) {
+      submitHandler: function(form) {
+        $form = $(form);
         $.post('{{site.services_url}}/calls', $form.serialize(), function(data){
           $form.find('button.btn').text('calling');
         }).done(function(data){
