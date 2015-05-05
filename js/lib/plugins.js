@@ -1,3 +1,12 @@
+function getParameterByName( name ) {
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
 /**
  * matches US phone number format
  *
@@ -32,3 +41,15 @@ e.apply(d):e},includes:function(a,c){return-1!=c.indexOf(this.otag+a)},create_co
 d||(d=b[this.ctag]={});(b=d[a])||(b=d[a]=c(this.otag,this.ctag));return b}};r={name:"mustache.js",version:"0.4.0",to_html:function(a,c,b,d){var e=new u;d&&(e.send=d);e.render(a,c||{},b);if(!d)return e.buffer.join("\n")}};(function(){function a(a){return"".trim?a.trim():a.replace(/^\s+/,"").replace(/\s+$/,"")}var c={VERSION:"0.10.2",templates:{},$:"undefined"!==typeof window?window.jQuery||window.Zepto||null:null,addTemplate:function(b,d){if("object"===typeof b)for(var e in b)this.addTemplate(e,b[e]);
 else c[b]?console.error("Invalid name: "+b+"."):c.templates[b]?console.error('Template "'+b+'  " exists'):(c.templates[b]=d,c[b]=function(d,e){d=d||{};var j=r.to_html(c.templates[b],d,c.templates);return c.$&&!e?c.$(a(j)):j})},clearAll:function(){for(var a in c.templates)delete c[a];c.templates={}},refresh:function(){c.clearAll();c.grabTemplates()},grabTemplates:function(){var b,d,e=document.getElementsByTagName("script"),g,h=[];b=0;for(d=e.length;b<d;b++)if((g=e[b])&&g.innerHTML&&g.id&&("text/html"===
 g.type||"text/x-icanhaz"===g.type))c.addTemplate(g.id,a(g.innerHTML)),h.unshift(g);b=0;for(d=h.length;b<d;b++)h[b].parentNode.removeChild(h[b])}};"undefined"!==typeof exports?("undefined"!==typeof module&&module.exports&&(exports=module.exports=c),exports.ich=c):this.ich=c;"undefined"!==typeof document&&(c.$?c.$(function(){c.grabTemplates()}):document.addEventListener("DOMContentLoaded",function(){c.grabTemplates()},!0))})()})();
+
+/*!
+ * Javascript Cookie v1.5.1
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2014 Klaus Hartl
+ * Released under the MIT license
+ */
+(function(e){var l;if("function"===typeof define&&define.amd)define(["jquery"],e);else if("object"===typeof exports){try{l=require("jquery")}catch(n){}module.exports=e(l)}else{var m=window.Cookies,h=window.Cookies=e(window.jQuery);h.noConflict=function(){window.Cookies=m;return h}}})(function(e){function l(a){a=c.json?JSON.stringify(a):String(a);return c.raw?a:encodeURIComponent(a)}function n(a,r){var b;if(c.raw)b=a;else a:{var d=a;0===d.indexOf('"')&&(d=d.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,
+"\\"));try{d=decodeURIComponent(d.replace(p," "));b=c.json?JSON.parse(d):d;break a}catch(e){}b=void 0}return h(r)?r(b):b}function m(){for(var a,c,b=0,d={};b<arguments.length;b++)for(a in c=arguments[b],c)d[a]=c[a];return d}function h(a){return"[object Function]"===Object.prototype.toString.call(a)}var p=/\+/g,c=function(a,e,b){if(1<arguments.length&&!h(e)){b=m(c.defaults,b);if("number"===typeof b.expires){var d=b.expires,k=b.expires=new Date;k.setMilliseconds(k.getMilliseconds()+864E5*d)}return document.cookie=
+[c.raw?a:encodeURIComponent(a),"=",l(e),b.expires?"; expires="+b.expires.toUTCString():"",b.path?"; path="+b.path:"",b.domain?"; domain="+b.domain:"",b.secure?"; secure":""].join("")}for(var d=a?void 0:{},k=document.cookie?document.cookie.split("; "):[],q=0,p=k.length;q<p;q++){var f=k[q].split("="),g;g=f.shift();g=c.raw?g:decodeURIComponent(g);f=f.join("=");if(a===g){d=n(f,e);break}a||void 0===(f=n(f))||(d[g]=f)}return d};c.get=c.set=c;c.defaults={};c.remove=function(a,e){c(a,"",m(e,{expires:-1}));
+return!c(a)};e&&(e.cookie=c,e.removeCookie=c.remove);return c});
