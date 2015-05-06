@@ -50,11 +50,11 @@
 
       </fieldset>
     </form>
-    {% if !hide_next %}
+    {% unless include.hide_next %}
     <div class="row skip-next">
       <small><a href="#" title="Skip to Next Step" class="next">Skip to Next Step</a></small>
     </div>
-    {% endif %}
+    {% endunless %}
   </div>
 </div>
 {% capture panel_signup_js %}

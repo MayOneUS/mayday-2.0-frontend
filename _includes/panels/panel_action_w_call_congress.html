@@ -4,9 +4,9 @@
     <div class="fade-line hidden-xs hidden-sm"></div>
   </div>
   <div class="panel-body">
-    <h2>Take Action: Call Congress</h2>
+    <h2>Call Congress</h2>
     <div class="row">
-      <p>Join the Mayday team of Citizen Lobbyists fighting together for fundamental reform. This tool will help you call the office of one of our potential leaders, to ask them to support reform.</p>
+      <p>{% if include.intro_content %}{{include.intro_content}}{%else%}Start fighting for fundamental reform. This tool will help you call the office of one of our potential leaders, so you can ask your legislators to support reform.{% endif %}</p>
       <form class="join js-form-call-congress">
         <div class="row">
           <div class="col-md-8 form-left-sm">
@@ -19,27 +19,32 @@
             <div class="form-group"><input class="no-bottom-margin" type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="ZIP" required="required" /></div>
           </div>
         </div>
-        <div class="col-md-10 center-block">
-          <div class="col-md-6">
+        <div class="col-md-{% unless include.hide_instructions %}10{% else %}12{% endunless %} center-block">
+          <div class="col-md-{% unless include.hide_instructions %}6{% else %}12{% endunless %}">
             <button type="submit" class="btn btn-md-wide btn-md-red">Call Congress</button>
             <input type="hidden" name="person[remote_fields][tags][]" value="20150501_call_congress">
           </div>
+          {% unless include.hide_instructions %}
           <div class="col-md-6">
             <a class="btn btn-md-wide btn-md-gray" data-toggle="modal" data-target="#call-congress-modal">How it works</a>
           </div>
+          {% endunless%}
         </div>
       </form>
     </div>
     <br>
+    {% unless include.hide_next %}
     <div class="row skip-next">
       <small><a href="#" title="I completed this step" class="done">I Did This!</a> or <a href="#" class="next" title="Skip to Next Step">Skip to Next Step</a></small>
     </div>
+    {% endunless %}
   </div>
   <div class="panel-body thanks-message">
     <div class="col-md-12 center-block" style="text-align:left">
       <h2 class="text-center">Thanks for calling Congress!</h2>
       <p>You should receive a phone call to the number you shared momentarily.  We&rsquo;ve identified 5 reprentatives you can help convince to sign on as supporters of reform. We'll connect you to them in the following order:</p>
       <ul class="col-md-10 center-block js-targets"></ul>
+      {% unless include.hide_instructions %}
       <h3>Sample script:</h3>
       <blockquote> Hi. My name is _______ (if applicable: and I’m a voter in your district). I’m asking  _______ to be a leader in the fight to restore our republic to the people. We need _______ to support legislation to change the way members of Congress raise money for their campaigns. There are five Republican and Democratic proposals. You can see the list at RepsWith.US. Will _______ please consider supporting one of those bills? </blockquote>
       <p>When finished with one call, press * on your phone to be connected to the next rep. If you're accidentally disconnected, just redial the number you’ve been called from: +1 224-334-3343</p>
@@ -52,6 +57,8 @@
         <li><strong>Proposal:</strong> Political Money Reform Proposal</li>
         <li><strong>Proposal:</strong> Taxation Only With Representation Act</li>
       </ul>
+      {% endunless%}
+
       <br>
       <hr>
       <p class="text-center no-y-margin"><small>If you have any feedback, please write to <a href="mailto:info@mayday.us">info@mayday.us</a>.</small></p>
@@ -80,7 +87,12 @@
           $form.find('button.btn').text('calling');
         }).done(function(data){
           $parent = $form.parents('li');
-          setAsComplete($parent);
+          if(location.pathname == '/take-action/'){
+            setAsComplete($parent);
+          }else{
+            $target_li.removeClass('incomplete');
+            $target_li.addClass('complete').addClass('thanked');
+          }
           $.each(data.targets, function(index, target_data){
             var rendered = ich.call_target_template(target_data);
             $('.js-targets').append(rendered);

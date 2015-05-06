@@ -273,7 +273,7 @@ a {
     content: counter(li-counter);
     counter-increment: li-counter;
   }
-  &.small li:before {
+  &.small-list li:before {
     font-size: 2em;
   }
   > li ul{
