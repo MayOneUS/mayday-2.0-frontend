@@ -52,14 +52,21 @@ $(document).ready(function(){
     }
   });
 
-  var utm_source = getParameterByName('utm_source');
-  if (utm_source.length > 2){
-    Cookies.set('utm_source', getParameterByName('utm_source'), { expires: 7 });
+  function manageSource(source_key){
+    var utm_source = getParameterByName(source_key);
+    if (utm_source.length > 2){
+      Cookies.set(source_key, getParameterByName(source_key), { expires: 7 });
+    }
+    var current_source = Cookies.get(source_key);
+    if(typeof current_source != "undefined"){
+      $('form').append('<input type="hidden" name="'+source_key+'" value="'+current_source+'">');
+    }
   }
-  var current_source = Cookies.get('utm_source');
-  if(typeof current_source != "undefined"){
-    $('form').append('<input type="hidden" name="utm_source" value="'+current_source+'">');
-  }
+
+  manageSource('utm_source');
+  manageSource('utm_medium');
+  manageSource('utm_campaign');
+
   $('form').append('<input type="hidden" name="source_url" value="'+window.location.href +'">');
 });
 </script>
