@@ -52,17 +52,17 @@ $(document).ready(function(){
     }
   });
 
-  function manageSource(source_key){
+  function manageSource(source_key, skipped_forms_selector){
     var url_param = getParameterByName(source_key);
     if (url_param.length > 2){
       Cookies.set(source_key, getParameterByName(source_key), { expires: 7 });
     }
     var current_cookie_value = Cookies.get(source_key);
     if(typeof current_cookie_value != "undefined"){
-      var $form = $('form')
-
+      var $form = $('form').not(skipped_forms_selector);
       var input_name = 'input[name='+source_key+']';
       input_name = input_name.replace(/(email)/, 'person\\[$1\\]');
+
       if($form.find(input_name).length == 0){
         $form.append('<input type="hidden" name="'+input_name+'" value="'+current_cookie_value+'">');
       }else{
@@ -74,7 +74,7 @@ $(document).ready(function(){
   manageSource('utm_source');
   manageSource('utm_medium');
   manageSource('utm_campaign');
-  manageSource('email');
+  manageSource('email', 'header form, footer form');
 
   $('form').append('<input type="hidden" name="source_url" value="'+window.location.href +'">');
 });
