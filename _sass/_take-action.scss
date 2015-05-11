@@ -86,7 +86,7 @@
     .show-incomplete{display:none;}
     .panel{background:#eee;}
     >.btn-md-wide{background:$color-grey;}
-    &.active.thanked{
+    &.active.thanked, &.thanked{
       .panel-body{display:none;}
       .thanks-message{display:initial;overflow:hidden;}
     }

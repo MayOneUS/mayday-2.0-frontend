@@ -78,7 +78,8 @@ $(document).ready(function(){
   manageSource('utm_campaign');
   manageSource('email', 'header form, footer form');
 
-  $('form').append('<input type="hidden" name="source_url" value="'+window.location.href +'">');
+  var source_url = location.protocol + '//' + location.host + location.pathname;
+  $('form').append('<input type="hidden" name="source_url" value="'+source_url+'">');
 });
 </script>
 

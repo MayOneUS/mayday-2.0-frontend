@@ -73,7 +73,7 @@
 {% raw %}
 <script id="call_target_template" type="text/html">
 <li>
-  <a href="/legislators?bioguid_id={{ bioguid_id}}" title="">{{title}} {{name}} {{party}}-{{state_abbrev}} {{display_district}}</a>
+  <a href="/legislators?bioguide_id={{ bioguide_id}}" title="">{{title}} {{name}} {{party}}-{{state_abbrev}} {{display_district}}</a>
 </li>
 </script>
 {% endraw %}
@@ -83,21 +83,25 @@
     $('.js-form-call-congress').validate({
       submitHandler: function(form) {
         $form = $(form);
-        $.post('{{site.services_url}}/calls', $form.serialize(), function(data){
-          $form.find('button.btn').text('calling');
-        }).done(function(data){
-          $parent = $form.parents('li');
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling');
+        $.post('{{site.services_url}}/calls', $form.serialize() ).done(function(data){
+          $parent = $form.parents('.incomplete');
           if(location.pathname == '/take-action/'){
             setAsComplete($parent);
           }else{
-            $target_li.removeClass('incomplete');
-            $target_li.addClass('complete').addClass('thanked');
+            $parent.removeClass('incomplete');
+            $parent.addClass('complete').addClass('thanked');
           }
-          $.each(data.targets, function(index, target_data){
+          console.log(data.targets.slice(0, 5))
+          $.each(data.targets.slice(0, 5), function(index, target_data){
             var rendered = ich.call_target_template(target_data);
+            console.log(target_data, rendered, $('.js-targets'))
             $('.js-targets').append(rendered);
           });
-        });//done
+        }).fail(function(data){
+          alert('There was an error. Please try again later.')
+        })
+
       }
     });//on submit
   });

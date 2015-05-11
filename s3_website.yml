@@ -12,6 +12,9 @@ redirects:
   media: 'in-the-news'
   unsubscribe: 'http://act.mayday.us/unsubscribe'
   blog: 'http://blog.mayday.us/'
+  wmail: http://s187953.gridserver.com/.tools/webmail/
+  feed.xml: 'http://blog.mayday.us/rss'
+  labs: http://mayday.us/take-action/
 
   # Pledge pages
   newpledge: 'donate'
@@ -24,6 +27,7 @@ redirects:
 
   # Embed page and associated images
   embed: 'https://v1.mayday.us/embed/'
+  embed.html: 'https://pledge.mayday.us/embed.html'
   images/ProfilePic.jpg: 'https://v1.mayday.us/images/ProfilePic.jpg'
   images/Banner.jpg: 'https://v1.mayday.us/images/Banner.jpg'
   images/superpacforinternet.jpg: 'https://v1.mayday.us/images/superpacforinternet.jpg'

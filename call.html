@@ -3,18 +3,13 @@ layout: default
 title: Call Congress
 permalink: /call/
 meta_content: |
-  <meta property="og:url" content="https://mayday.us/example-page/"/>
+  <meta property="og:url" content="https://mayday.us/call/"/>
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
-  <meta property="og:title" content="Custom meta content"/>
-  <meta property="og:description" content="Mayday PAC is recruiting...."/>
-  <link rel="canonical" href="https://mayday.us/example-page/">
+  <meta property="og:title" content="Call undecided Reps now!"/>
+  <title>MAYDAY PAC - Call undecided Reps now!</title>
+  <meta property="og:description" content="We're close to a pro-reform majority in the House! Help us close the gap by calling on undecided reps to support reform now."/>
+  <link rel="canonical" href="https://mayday.us/call/">
 ---
-{% capture custom_css %}
-<style type="text/css">
-  .somePageSpecificCss{}
-</style>
-{% endcapture %}
-
 {% capture content %}
 <div class="container">
   <div class="row">
@@ -47,7 +42,7 @@ meta_content: |
       <p>Learn more about these reforms at <a href="http://www.repswith.us/reforms" title="">http://www.repswith.us/reforms</a></p>
 
     </div>
-    <div class="col-md-4 action-sidebar">
+    <div class="col-md-4 action-sidebar incomplete">
       {% include panels/panel_action_w_call_congress.html hide_instructions=true hide_next=true intro_content='Call Congress now.' %}
     </div>
   </div>
