@@ -1,5 +1,5 @@
 {% include head.html %}
-<body id="{{page.cssid}}" class="default-body">
+<body class="default-body" {{page.body_attrs}}>
   <script type='text/javascript' src='https://ad.doubleclick.net/N6673/adj/resn.pixel;alias=mpac0814a0;sz=1x1;ord=1?'></script>
 
   <div class="page-content">
@@ -11,7 +11,6 @@
         </div>
       </div>
     </div>
-    <div class="footer-push"></div>
   </div>
   {% include footer.html %}
 </body>

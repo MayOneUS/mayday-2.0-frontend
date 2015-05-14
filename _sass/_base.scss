@@ -375,6 +375,10 @@ pre {
 @mixin simple-button{
   margin:0;
   letter-spacing: 1px;
+  @include phone{
+    letter-spacing: 0;
+    font-size:20px;
+  }
 }
 
 .btn-md-red, a.btn-md-red:link {
@@ -804,6 +808,15 @@ label.error{
 .bottom-spacer{
   margin-bottom: 80px;
 }
+
+.top-spacer-btn{
+  margin-top: 20px;
+  .form-group{
+    margin-bottom: 0;
+  }
+}
+
+
 .bottom-thankyou-spacer{
   margin-top: 20px;
 }

@@ -14,7 +14,7 @@ redirects:
   blog: 'http://blog.mayday.us/'
   wmail: http://s187953.gridserver.com/.tools/webmail/
   feed.xml: 'http://blog.mayday.us/rss'
-  labs: http://mayday.us/take-action/
+  labs: https://mayday.us/take-action/
 
   # Pledge pages
   newpledge: 'donate'

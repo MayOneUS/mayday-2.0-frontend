@@ -7,38 +7,46 @@
     <h2>Volunteer</h2>
     <p>We've got lots we need people to help with. Sign up if you can do more.</p>
     <form class="row js-volunteer-form">
-      <fieldset class="col-md-12">
+      <fieldset class="">
 
-      <div class="form-group col-md-6 form-left">
-        <label class="control-label sr-only" for="person[first_name]">First Name</label>
-        <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label class="control-label sr-only" for="person[first_name]">First Name</label>
+          <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+          <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+        </div>
       </div>
 
-      <div class="form-group col-md-6 form-right">
-        <label class="control-label sr-only" for="person[last_name]">Last Name</label>
-        <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+      <div class="row">
+        <div class="form-group col-md-8">
+          <label class="control-label sr-only" for="person[email]">Email Address</label>
+          <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label class="control-label sr-only" for="person[zip]">ZIP Code</label>
+          <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="required">
+        </div>
       </div>
 
-      <div class="form-group col-md-8 form-left">
-        <label class="control-label sr-only" for="person[email]">Email Address</label>
-        <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required">
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label class="control-label sr-only" for="person[remote_fields][skills]">Skills</label>
+          <textarea class="form-control" id="person[remote_fields][skills]" name="person[remote_fields][skills]" placeholder="Tell us your ideas or how you'd like to contribute." aria-describedby="skills"></textarea>
+        </div>
       </div>
 
-      <div class="form-group col-md-4 form-right">
-        <label class="control-label sr-only" for="person[zip]">ZIP Code</label>
-        <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="required">
-      </div>
-
-      <div class="form-group col-md-12 no-padding form-right">
-        <label class="control-label sr-only" for="person[remote_fields][skills]">Skills</label>
-        <textarea class="form-control" id="person[remote_fields][skills]" name="person[remote_fields][skills]" placeholder="Tell us your ideas or how you'd like to contribute." aria-describedby="skills"></textarea>
-      </div>
-
-      <div class="form-group col-md-5 center-block">
-        <label class="control-label sr-only" for="singlebutton">Submit</label>
-        <input type="hidden" name="person[remote_fields][tags][]" value="20150501_volunteer">
-        <input type="hidden" name="person[remote_fields][is_volunteer]"  value="true">
-        <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+      <div class="row top-spacer-btn">
+        <div class="form-group col-md-5 center-block">
+          <label class="control-label sr-only" for="singlebutton">Submit</label>
+          <input type="hidden" name="person[remote_fields][tags][]" value="20150501_volunteer">
+          <input type="hidden" name="person[remote_fields][is_volunteer]"  value="true">
+          <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+        </div>
       </div>
 
       </fieldset>
