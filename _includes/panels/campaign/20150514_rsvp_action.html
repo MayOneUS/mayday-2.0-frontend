@@ -1,0 +1,78 @@
+<div class="panel action-panel with-shield">
+  <div class="panel-icon">
+    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
+    <div class="fade-line hidden-xs hidden-sm"></div>
+  </div>
+  <div class="panel-body">
+    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
+    <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
+    <form class="row smaller-form js-rsvp-form">
+
+      <fieldset class="col-md-12">
+
+      <div class="row sm-gutter">
+        <div class="form-group col-md-6">
+          <label class="control-label sr-only" for="person[first_name]">First Name</label>
+          <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+          <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+        </div>
+      </div>
+
+      <div class="row sm-gutter">
+        <div class="form-group col-md-8">
+          <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label class="control-label sr-only" for="person[zip]">ZIP</label>
+          <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
+        </div>
+      </div>
+
+      <div class="row sm-gutter">
+        <div class="form-group col-md-12">
+          <label class="control-label sr-only" for="person[email]">Email Address</label>
+          <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required">
+        </div>
+      </div>
+
+
+      <div class="form-group col-md-12">
+        <label class="checkbox-inline" for="person[is_volunteer]-0">
+          <input type="checkbox" name="person[remote_fields][is_volunteer]" id="person[is_volunteer]-0" value="true"> Are you ready to volunteer?
+        </label>
+      </div>
+
+      <div class="form-group col-md-12">
+        <label class="control-label sr-only" for="singlebutton">Submit</label>
+        <input type="hidden" name="template_id" value="rsvp">
+        <input type="hidden" name="person[remote_fields][tags][]" value="20150514_rsvp">
+        <input type="hidden" name="person[remote_fields][event_id]" value="25">
+        <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+      </div>
+          <p class="help-block">We respect your privacy. Your phone number will not be shared with any third party.</p>
+
+      </fieldset>
+    </form>
+
+  </div>
+</div>
+{% capture panel_signup_js %}
+<script>
+  $('.js-rsvp-form').validate({
+    submitHandler: function(form) {
+      $form = $(form);
+      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $.post('{{site.services_url}}/events/create_rsvp', $form.serialize(), function(data){
+      }).done(function(){
+        location = '/take-action/#get-educated'
+      });
+    }
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_signup_js}}{% endcapture %}
