@@ -109,6 +109,10 @@
       }).done(function(){
         $form.parents('.panel-body').hide();
         $form.parents('.panel-body').next().show()
+      }).fail(function(){
+        //double signups aren't permitted by NB.  Let's ignore those failures.
+        $form.parents('.panel-body').hide();
+        $form.parents('.panel-body').next().show()
       });
     }
   });
