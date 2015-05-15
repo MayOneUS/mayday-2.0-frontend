@@ -42,7 +42,7 @@
 <script src="{{ root_path }}/js/lib/plugins.js"></script>
 <script>
 $(document).ready(function(){
-  $("form.email-signup").validate({
+  HeaderFooterSignupOptions = {
     submitHandler: function(form) {
       $form = $(form);
       var saveURI = '{{ site.services_url }}/people';
@@ -50,7 +50,10 @@ $(document).ready(function(){
       $form.hide();
       $form.next().removeClass('hidden');
     }
-  });
+  }
+
+  $("header form.email-signup").validate(HeaderFooterSignupOptions);
+  $("footer form.email-signup").validate(HeaderFooterSignupOptions);
 
   function manageSource(source_key, skipped_forms_selector){
     var url_param = getParameterByName(source_key);
