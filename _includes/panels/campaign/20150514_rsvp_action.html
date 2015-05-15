@@ -4,7 +4,7 @@
     <div class="fade-line hidden-xs hidden-sm"></div>
   </div>
   <div class="panel-body">
-    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
+    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Sign Up Now{% endif %}</h2>
     <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
     <form class="row smaller-form js-rsvp-form">
 
@@ -44,13 +44,13 @@
         <div class="form-group col-md-12 text-left">
           <div class="radio">
             <label for="radios-0">
-              <input type="radio" name="person[remote_fields][event_id]" id="radios-0" value="1" required="required">
+              <input type="radio" name="event_id" id="radios-0" value="35" required="required">
               Tuesday, May 19th at 9pm ET
             </label>
           </div>
           <div class="radio">
             <label for="radios-1">
-              <input type="radio" name="person[remote_fields][event_id]" id="radios-1" value="2" required="required">
+              <input type="radio" name="event_id" id="radios-1" value="36" required="required">
               Thursday, May 21st at 3pm ET
             </label>
           </div>
@@ -61,7 +61,6 @@
         <label class="control-label sr-only" for="singlebutton">Submit</label>
         <input type="hidden" name="template_id" value="rsvp">
         <input type="hidden" name="person[remote_fields][tags][]" value="20150515_rsvp">
-        <input type="hidden" name="person[remote_fields][event_id]" value="25">
         <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
       </div>
           <p class="help-block">We respect your privacy. Your phone number will not be shared with any third party. Note: If submitting your mobile number, you certify that this  phone number is yours and you grant Mayday PAC permission to call you.</p>
