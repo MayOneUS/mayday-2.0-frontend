@@ -652,6 +652,9 @@ body {
     clear: both;
     content: '';
   }
+  .index-page &{
+    padding: 0;
+  }
   @include phone{
     line-height: 1.7em;
   }

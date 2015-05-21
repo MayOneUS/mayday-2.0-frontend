@@ -3,6 +3,7 @@ layout: default
 title: MAYDAY.US - We tried. We learned. We're trying something new.
 hideFromNav: true
 hideHeaderSignUp: true
+bodyClass: index-page
 ---
 {% capture content %}
 <div id="index">
@@ -13,33 +14,9 @@ hideHeaderSignUp: true
         <div class="col-md-offset-8 col-lg-offset-6 col-md-4 col-lg-4 col-sm-8 col-sm-offset-2">
 {% capture panel_body %}
 <div class="panel-body">
-  <h2>Sign the letter</h2>
-  <p>Ask your member of Congress to become a #Leader4Reform</strong></p>
-  <form class="row smaller-form no-gutter js-sign-letter-form">
-
-    <fieldset class="col-md-12">
-
-    <div class="form-group col-md-8 form-left">
-      <label class="control-label sr-only" for="person[email]">Email Address</label>
-      <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required">
-    </div>
-
-    <div class="form-group col-md-4 form-right">
-      <label class="control-label sr-only" for="person[zip]">ZIP Code</label>
-      <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="required">
-    </div>
-
-    <div class="form-group cold-md-12">
-      <label class="control-label sr-only" for="singlebutton">Submit</label>
-      <input type="hidden" name="template_id" value="sign-letter-form">
-      <input type="hidden" name="person[remote_fields][tags][]" value="20150501_signed_letter">
-      <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25">sets auto-repsonder -->
-      <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
-    </div>
-
-    </fieldset>
-  </form>
-  <p class="text-center"><small><a href="/sign-the-letter/">Read the letter here</a></small></p>
+  <h2>Make Calls with Team MAYDAY</h2>
+  <p>Join Team MAYDAY to call Congress together.</strong></p>
+  <p><a href="/townhall/" title="" class="btn btn-md-wide">I'm In</a></p>
 </div>
 {% endcapture %}
 {% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
@@ -166,10 +143,12 @@ hideHeaderSignUp: true
       </div>
     </div>
   </div>
-  <div class="row homepage-panel light capitol-building">
-    <div class="container text-center">
-      <div class="col-md-8 center-block panel-wrapper">
-        {% include panels/panel_action_w_signup.html hide_next=true %}
+  <div class="homepage-panel light capitol-building">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 center-block panel-wrapper">
+          {% include panels/panel_action_w_signup.html hide_next=true %}
+        </div>
       </div>
     </div>
   </div>
