@@ -5,10 +5,10 @@ permalink: /example-page/
 meta_content: |
   <meta property="og:url" content="https://mayday.us/example-page/"/>
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
-  <meta property="og:title" content="Custom meta content"/>
-  <meta property="og:description" content="Mayday PAC is recruiting...."/>
+  <meta property="og:title" content="Custom meta content - Optional"/>
+  <meta property="og:description" content="This is optional content"/>
   <link rel="canonical" href="https://mayday.us/example-page/">
-  <meta name="robots" content="noindex">
+  <meta name="robots" content="noindex"><!--  remove no-index when you take pages live -->
 ---
 {% capture custom_css %}
 <style type="text/css">
@@ -26,8 +26,20 @@ meta_content: |
 
 {% include sub_layouts/default_layout.html %}
 
-<script>
-//custom scripts per page
-//This in included just before before the close body tag.
-</script>
+{% capture page_specific_javascript %}
 
+{% raw %}<!-- wrap any {{}} templates in raw tags -->
+<script id="call_target_template" type="text/html">
+  <a href="/legislators?bioguide_id={{ bioguide_id}}" title="">{{title}} {{name}} {{party}}-{{state_abbrev}} {{display_district}}</a>
+</script>
+{% endraw %}
+
+<script>
+  $(document).ready(function(){
+    //some custom js
+  });
+</script>
+{% endcapture %}
+
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
