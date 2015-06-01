@@ -4,57 +4,36 @@
 
 .record {
 
+  .cta{
+    h2{
+      background-color: $color-grey-background;
+      display:inline-block;
+      padding: 20px 30px;
+      border-radius: 5px;
+    }
+    strong{
+      white-space: nowrap;
+    }
+  }
 
+  .simple-list{
+    strong{
+      color: #000;
+    }
+  }
 
+  .panel {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
 
+  h2 {
+    font-weight: 400;
+  }
 
-.cta{
-  height: 70px;
-  margin-top: 5px;
-}
-
-.cta .number {
-  width: 100%;
-  margin-bottom: 10px;
-  margin-top: 6px;
-  line-height: normal;
-  color: #16213f;
-  font-weight: 400;
-  font-size: 24px;
-  background-color: transparent;
-  padding-bottom: 0;
-}
-
-.cta .fa-phone {
-  padding-right: 7px;
-}
-
-.content-block{
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-.content-block .strong{
-  color: black;
-  font-weight: bold;
-}
-
-.panel {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-h2 {
-  color: #16213f;
-  font-weight: 400;
-  font-size: 26px;
-  background-color: transparent;
-  padding-bottom: 0;
-}
-
-.tooltip-prompt {
-  text-decoration: none;
-  cursor: default;
-}
+  .tooltip-prompt {
+    text-decoration: none;
+    cursor: default;
+  }
 
 }
