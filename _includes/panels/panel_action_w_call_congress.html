@@ -9,6 +9,13 @@
       <p>{% if include.intro_content %}{{include.intro_content}}{%else%}Start fighting for fundamental reform. This tool will help you call the office of one of our potential leaders, so you can ask your legislators to support reform.{% endif %}</p>
       <form class="join js-form-call-congress">
         <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="email" class="no-bottom-margin" name="person[email]" placeholder="Email Address" required="required"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-8">
             <div class="form-group">
               <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
