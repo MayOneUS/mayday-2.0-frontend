@@ -13,6 +13,37 @@ meta_content: |
   <title>You record your message. We deliver it to Congress. - MAYDAY</title>
 ---
 
+{% capture custom_css %}
+<style type="text/css">
+  .cta h2{
+    background-color: #f0f0f0;
+    display:inline-block;
+    padding: 20px 30px;
+    border-radius: 5px;
+  }
+  .cta strong{
+    white-space: nowrap;
+  }
+
+  .simple-list strong{
+    color: #000;
+  }
+
+  .record .panel {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-weight: 400;
+  }
+
+  .tooltip-prompt {
+    text-decoration: none;
+    cursor: default;
+  }
+</style>
+{% endcapture %}
 {% capture content %}
 <div class="container smaller-layout record">
   <div class="row">
