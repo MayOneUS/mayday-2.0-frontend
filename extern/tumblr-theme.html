@@ -5,52 +5,52 @@ omit_title_suffix: true
 cssid: extern-tumblr-theme
 offSite: true
 meta_content: |
-<meta name="google-site-verification" content="eotfmNVR-r4qTL0MAFLUR0XVumvKeC2i87xYg102u7I" />
-<link rel="shortcut icon" href="//mayday.us/favicon.ico" />
+  <meta name="google-site-verification" content="eotfmNVR-r4qTL0MAFLUR0XVumvKeC2i87xYg102u7I" />
+  <link rel="shortcut icon" href="//mayday.us/favicon.ico" />
 
 
-<link rel="alternate" type="application/rss+xml" href="{RSS}" />
-<meta property="og:type" content="blog" />
-<meta property="og:url" codntent="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}">
-<title>{block:IndexPage}{Title}{/block:IndexPage}{block:SearchPage}Search results for: {SearchQuery}{/block:SearchPage}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
-<meta property="og:site_name" content="{Title}" />
-{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
-<!-- OPEN GRAPH INFO-->
-{block:PermalinkPage}{block:Posts}
-  {block:Photo}<meta property="og:image" content="{PhotoURL-500}" /> {/block:Photo}
-  {block:Answer}<meta property="og:image" content="{AskerPortraitURL-500}"/> {/block:Answer}
-  {block:Text}
+  <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+  <meta property="og:type" content="blog" />
+  <meta property="og:url" codntent="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}">
+  <title>{block:IndexPage}{Title}{/block:IndexPage}{block:SearchPage}Search results for: {SearchQuery}{/block:SearchPage}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
+  <meta property="og:site_name" content="{Title}" />
+  {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+  <!-- OPEN GRAPH INFO-->
+  {block:PermalinkPage}{block:Posts}
+    {block:Photo}<meta property="og:image" content="{PhotoURL-500}" /> {/block:Photo}
+    {block:Answer}<meta property="og:image" content="{AskerPortraitURL-500}"/> {/block:Answer}
+    {block:Text}
+      <meta property="og:image" content="{PortraitURL-128}" />
+      <meta property="og:image:url" content="{PortraitURL-128}" />
+    {/block:Text}
+    {block:Photoset}
+      {block:Photos}
+        <meta property="og:image" content="{PhotoURL-500}" />
+      {/block:Photos}
+    {/block:Photoset}
+    {block:Quote}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Quote}
+    {block:Link}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Link}
+    {block:Chat}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Chat}
+    {block:Video}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Video}
+  {/block:Posts}{/block:PermalinkPage}
+
+  {block:IndexPage}
+    <meta property="og:title" content="{block:Description}{MetaDescription}{/block:Description}" />
     <meta property="og:image" content="{PortraitURL-128}" />
-    <meta property="og:image:url" content="{PortraitURL-128}" />
-  {/block:Text}
-  {block:Photoset}
-    {block:Photos}
-      <meta property="og:image" content="{PhotoURL-500}" />
-    {/block:Photos}
-  {/block:Photoset}
-  {block:Quote}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Quote}
-  {block:Link}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Link}
-  {block:Chat}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Chat}
-  {block:Video}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Video}
-{/block:Posts}{/block:PermalinkPage}
+  {/block:IndexPage}
 
-{block:IndexPage}
-  <meta property="og:title" content="{block:Description}{MetaDescription}{/block:Description}" />
-  <meta property="og:image" content="{PortraitURL-128}" />
-{/block:IndexPage}
+  <link rel="apple-touch-icon" href="{PortraitURL-128}"/>
 
-<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
-
-<!-- DEFAULT VARIABLES -->
-<meta name="image:Header" content=""/>
-<meta name="if:Show About Widget" content="1"/>
-<meta name="if:Show Stuff I Like Widget" content="1"/>
-<meta name="if:Show Latest Tweets Widget" content="1"/>
-<meta name="if:Show People I Follow Widget" content="1"/>
-<meta name="text:Number of Tweets" content="3"/>
-<meta name="text:Disqus Shortname" content="maydaypacblog" />
-<meta name="text:TwitterUsername" content="MAYDAYUS" />
-<meta name="text:Flickr Username" content=""/>
+  <!-- DEFAULT VARIABLES -->
+  <meta name="image:Header" content=""/>
+  <meta name="if:Show About Widget" content="1"/>
+  <meta name="if:Show Stuff I Like Widget" content="1"/>
+  <meta name="if:Show Latest Tweets Widget" content="1"/>
+  <meta name="if:Show People I Follow Widget" content="1"/>
+  <meta name="text:Number of Tweets" content="3"/>
+  <meta name="text:Disqus Shortname" content="maydaypacblog" />
+  <meta name="text:TwitterUsername" content="MAYDAYUS" />
+  <meta name="text:Flickr Username" content=""/>
 ---
 
 {% capture custom_css %}
