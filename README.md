@@ -9,8 +9,8 @@ Front-end repository for the MAYDAY 2.0 site. Built with [Jekyll](http://jekyllr
 This site is built with the Ruby library [Jekyll](http://jekyllrb.com) - it's a HTML/CSS preprocessor that supports limited plugins.  You'll need that on your computer to hack on the code. If you don't already have ruby installed, we recommend installing it with [RVM](https://rvm.io/rvm/install).  Then install jekyll `gem install jekyll`. Finally, to run it locally just run `jekyll serve --watch`, it'll update when you change the code.
 
 Running jekyll may require the following gems if you run into execjs error `'autodetect': Could not find a JavaScript runtime.` Alternatively installing NodeJS will install a compatiable javascript runtime. And non-intel machines may have issues. [Jekyll issue 2327][j_issue]
-  1. gem install execjs
-  1. gem install therubyracer
+  1. `gem install execjs`
+  1. `gem install therubyracer`
     * execjs requires a js runtime and therubyracer installs a v8 javascript runtime
   [j_issue]: https://github.com/jekyll/jekyll/issues/2327
 
