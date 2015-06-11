@@ -168,7 +168,6 @@ meta_content: |
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
         $.post('{{site.services_url}}/google/district_meetings', $form.serialize() ).done(function(data){
           window.location = '/record/'
-          }
         }).fail(function(data){
           alert('There was an error. Please try again later.')
         })
