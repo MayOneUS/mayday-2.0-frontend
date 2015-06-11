@@ -808,6 +808,13 @@ label.error{
   margin-bottom:0 !important;
 }
 
+.no-y-margin-md{
+  @include tablet-plus{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+  }
+}
+
 .no-bottom-margin{
   margin-bottom:0 !important;
 }

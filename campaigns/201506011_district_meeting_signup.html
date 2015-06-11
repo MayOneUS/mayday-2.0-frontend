@@ -1,0 +1,183 @@
+---
+layout: default
+title: MAYDAY.US - Make your voice heard. Get involved in your district.
+permalink: /district-meetings/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/district-meetings/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
+  <meta property="og:title" content="Make your voice heard. Get involved in your district."/>
+  <meta property="og:description" content="I’m getting involved, and I hope you will too. Sign up to attend a meeting with your members of Congress or write a letter to the editor. Let them know that you want them to reform the way campaigns are funded. It’s easy, and it makes a difference. "/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title>Make your voice heard. Get involved in your district. - MAYDAY</title>
+---
+
+{% capture custom_css %}
+<style type="text/css">
+  .simple-list strong{
+    color: #000;
+  }
+  .record .panel {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-weight: 400;
+  }
+  .tooltip-prompt {
+    text-decoration: none;
+    cursor: default;
+  }
+
+</style>
+{% endcapture %}
+{% capture content %}
+<div class="container smaller-layout">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Get involved in your district</h1>
+
+      <p>Your member of Congress is a top MAYDAY.US Potential Leader for Reform. We can put you together with other MAYDAY volunteers in the district, provide you with materials, and support you in other ways to ensure a successful effort.</p>
+      <p>Fill out this form to meet with your local congressional office or to write a letter to the editor. This is a big opportunity to put us within striking distance of a majority for reform before our 2016 electoral work.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 action-wrap center-block incomplete">
+      <form class="join js-form-in-district md-inputs">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label sr-only" for="person[first_name]">First Name</label>
+              <input type="text" class="no-bottom-margin" name="person[first_name]" placeholder="First Name" required="required"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+              <input type="text" class="no-bottom-margin" name="person[last_name]" placeholder="Last Name" required="required"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label sr-only" for="person[email]">Email Address</label>
+              <input type="email" class="no-bottom-margin" name="person[email]" placeholder="Email Address" required="required"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group no-y-margin-md">
+              <label class="control-label sr-only" for="person[phone]">Phone</label>
+              <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group no-y-margin-md">
+              <label class="control-label sr-only" for="person[zip]">ZIP</label>
+              <input class="no-bottom-margin" type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="ZIP" required="required" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="help-block" style="margin-bottom:10px">We respect your privacy. Your phone number will not be shared with any third party. Your number will appear as the caller ID when we deliver this message.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="political_leaning">If I had to pick, I lean... </label>
+              <span class="help-block">This will help us tailor the outreach.</span>
+              <div class="radio">
+                <label for="radios-0">
+                  <input type="radio" name="political_leaning" id="radios-0" value="conservative">
+                  Conservative
+                </label>
+              </div>
+              <div class="radio">
+                <label for="radios-1">
+                  <input type="radio" name="political_leaning" id="radios-1" value="progressive">
+                  Progressive
+                </label>
+              </div>
+              <div class="radio">
+                <label for="radios-1">
+                  <input type="radio" name="political_leaning" id="radios-1" value="centrist">
+                  Centrist
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="volunteer_tasks">I'm willing to... </label>
+              <span class="help-block">Check all that apply.</span>
+              <div class="checkbox">
+                <label for="checkboxes-0">
+                  <input type="checkbox" name="volunteer_tasks" id="checkboxes-0" value="letter">
+                  Write a letter to the editor
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="checkboxes-1">
+                  <input type="checkbox" name="volunteer_tasks" id="checkboxes-1" value="attend_meeting">
+                  Attend the meeting
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="checkboxes-1">
+                  <input type="checkbox" name="volunteer_tasks" id="checkboxes-1" value="call_voters">
+                  Help call other citizens to attend the meeting
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label" for="person[congress_relationship]">If you have a relationship with a member of Congress, please let us know.</label>
+              <textarea name="person[congress_relationship]" placeholder="Describe any congrssional relationships"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-xs-12 center-block">
+            <div class="col-md-12 top-spacer-btn">
+              <button type="submit" class="btn btn-md-wide btn-md-red">I'm In</button>
+              <input type="hidden" name="person[remote_fields][tags][]" value="20150611_district_meeting_signup">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture panel_record_js%}
+<script>
+  $(document).ready(function(){
+    $('.js-form-in-district').validate({
+      submitHandler: function(form) {
+        $form = $(form);
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
+        $.post('{{site.services_url}}/google/district_meetings', $form.serialize() ).done(function(data){
+          window.location = '/record/'
+          }
+        }).fail(function(data){
+          alert('There was an error. Please try again later.')
+        })
+
+      }
+    });//on submit
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_record_js}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
