@@ -42,31 +42,37 @@
   }
 }
 .banner-image {
-  padding-top:20px;
-  box-shadow: 0 0 50px rgba(22,33,63,0.7);
+  padding-top:30px;
+  // box-shadow: 0 0 50px rgba(22,33,63,0.7);
   padding-bottom:15px;
-  background: url("/images/campaigns/20150429-hero-bg.jpg") 0 0 no-repeat;
+  background: url("/images/campaigns/20150615_dayofaction-rsvp_homepage_1170x440.jpg") 0 -10px no-repeat;
+  min-height: 420px;
   position:relative;
-  background-size: cover;
+  // background-size: cover;
   z-index: 5;
-  >.row{
-    background: url("/images/campaigns/20150429-hero-white_v01.png") 0 0 no-repeat;
-    background-size: contain;
-    @include small-desktop{
-      background: url("/images/campaigns/20150429-hero-white.png") 0 0 no-repeat;
-      background-size:100%;
-    }
-  }
+  // >.row{
+  //   background: url("/images/campaigns/20150429-hero-white_v01.png") 0 0 no-repeat;
+  //   background-size: contain;
+  //   @include small-desktop{
+  //     background: url("/images/campaigns/20150429-hero-white.png") 0 0 no-repeat;
+  //     background-size:100%;
+  //   }
+  // }
 
   @include tablet-minus{
     background-image:none;
     box-shadow: none;
     >.row{background-image:none;}
   }
+
+  .action-panel{
+    margin-top:60px;
+  }
 }
 .background-image-blurred{
-  filter: url(blur.svg#blur); -webkit-filter: blur(3px); filter: blur(3px);
-  background: url("/images/campaigns/20150429-hero-bg.jpg") 0 -3px no-repeat;
+  // filter: url(blur.svg#blur); -webkit-filter: blur(3px); filter: blur(3px);
+  // background: url("/images/campaigns/20150429-hero-bg.jpg") 0 -3px no-repeat;
+  background: #B0010E;
   position:absolute;
   width:100%;
   height:100%;
