@@ -15,8 +15,8 @@ bodyClass: index-page
 {% capture panel_body %}
 <div class="panel-body">
   <h2>RSVP for the Day of Action</h2>
-  <p>Take action on Tuesday June 23.</strong></p>
-  <p><a href="/june23/" title="" class="btn btn-md-wide">Let's Go</a></p>
+  <p>Take action on Tuesday June 23.</p>
+  <p class="no-bottom-margin"><a href="/june23/" title="" class="btn btn-md-wide no-bottom-margin">Let's Go</a></p>
 </div>
 {% endcapture %}
 {% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
@@ -160,13 +160,16 @@ bodyClass: index-page
 <script src="{{ root_path }}/js/lib/highcharts.js"></script>
 <script src="{{ root_path }}/js/homepage.js"></script>
 <script>
+$('.full-bg-image').on('click', function(){
+  window.location = '/june23/';
+})
   $('.js-sign-letter-form').validate({
     submitHandler: function(form) {
       $form = $(form);
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
       $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
       }).done(function(){
-        window.location = '/sign-the-letter/?already_signed=true'
+        window.location = '/sign-the-letter/?already_signed=true';
       });
     }
   });
