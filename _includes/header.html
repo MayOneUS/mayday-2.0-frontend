@@ -28,6 +28,7 @@
   </div>
   <div class="sub-nav hidden-xs">
     <div class="container">
+      {% unless page.hideMenus %}
       <div class="left-links">
         <a href="{{ root_path }}/the-plan/">The Plan</a>
         <span class="middle-dot">·</span>
@@ -40,6 +41,7 @@
         <span class="middle-dot">·</span>
         <a class="donate-link" href="{{ root_path }}/donate/">DONATE</a>
       </div>
+      {% endunless %}
     </div>
   </div>
 
