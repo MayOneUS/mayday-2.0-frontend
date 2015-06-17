@@ -11,12 +11,12 @@ bodyClass: index-page
     <div class="background-image-blurred"></div>
     <div class="container banner-image">
       <div class="row">
-        <div class="col-md-offset-8 col-lg-offset-6 col-md-4 col-lg-4 col-sm-8 col-sm-offset-2">
+        <div class="col-md-offset-8 col-lg-offset-8 col-md-4 col-lg-4 col-sm-8 col-sm-offset-2">
 {% capture panel_body %}
 <div class="panel-body">
-  <h2>Make Calls with Team MAYDAY</h2>
-  <p>Join Team MAYDAY to call Congress.</strong></p>
-  <p><a href="/call/" title="" class="btn btn-md-wide">Get Started</a></p>
+  <h2>RSVP for the Day of Action</h2>
+  <p>Take action on Tuesday June 23.</p>
+  <p class="no-bottom-margin"><a href="/june23/" title="" class="btn btn-md-wide no-bottom-margin">Let's Go</a></p>
 </div>
 {% endcapture %}
 {% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
@@ -30,7 +30,7 @@ bodyClass: index-page
 
       <div class="col-xs-12 col-md-4">
         <div class="mini-panel mini-panel-text">
-          <p class="no-top-margin"><a href="/">MAYDAY.US</a> is a crowd-funded Super PAC to end all Super PACs... including our own. Help us reduce the influence of money in politics by getting a Congress that is committed to fundamental reform by 2016,<a href="/take-action/"> Let's win our democracy back!</a></p>
+          <p class="no-top-margin"><a href="/">MAYDAY.US</a> is a crowd-funded Super PAC to end all Super PACs... including our own. Help us reduce the influence of money in politics by getting a Congress that is committed to fundamental reform by 2016. <a href="/take-action/">Let's win our democracy back!</a></p>
         </div>
       </div>
       <div class="col-xs-12 col-md-4">
@@ -160,13 +160,16 @@ bodyClass: index-page
 <script src="{{ root_path }}/js/lib/highcharts.js"></script>
 <script src="{{ root_path }}/js/homepage.js"></script>
 <script>
+$('.full-bg-image').on('click', function(){
+  window.location = '/june23/';
+})
   $('.js-sign-letter-form').validate({
     submitHandler: function(form) {
       $form = $(form);
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
       $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
       }).done(function(){
-        window.location = '/sign-the-letter/?already_signed=true'
+        window.location = '/sign-the-letter/?already_signed=true';
       });
     }
   });

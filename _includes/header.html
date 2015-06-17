@@ -1,11 +1,13 @@
 <header class="site-header">
   <div class="top-nav">
     <div class="container">
+      {% unless page.hideMenus %}
       <div class="icon-bar-left hidden-xs">
         <a class="facebook" href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
         <a class="twitter" href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
         <a class="reddit" href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
       </div>
+      {% endunless %}
       <div class="logo"><a href="{{ root_path }}/"><img src="{{ root_path }}/images/web_logo_2x.png"></a></div>
       <div class="search-section-right hidden-xs">
       {% unless page.hideHeaderSignUp %}
@@ -28,6 +30,7 @@
   </div>
   <div class="sub-nav hidden-xs">
     <div class="container">
+      {% unless page.hideMenus %}
       <div class="left-links">
         <a href="{{ root_path }}/the-plan/">The Plan</a>
         <span class="middle-dot">·</span>
@@ -40,6 +43,7 @@
         <span class="middle-dot">·</span>
         <a class="donate-link" href="{{ root_path }}/donate/">DONATE</a>
       </div>
+      {% endunless %}
     </div>
   </div>
 

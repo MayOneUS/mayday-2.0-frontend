@@ -49,6 +49,9 @@ redirects:
   images/leaderboard.png: 'https://v1.mayday.us/images/leaderboard.png'
   images/banner.png: 'https://v1.mayday.us/images/banner.png'
 
+  # campaign pages likely to accidentally get upcased
+  June23: 'june23'
+
 # Below are examples of all the available configurations.
 # See README for more detailed info on each of them.
 
