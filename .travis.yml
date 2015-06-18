@@ -4,12 +4,12 @@ rvm:
 - 2.2.0
 branches:
   only:
-    - m2
+  - production
 env:
   global:
-  - S3_BUCKET=step-two.mayday.us
-  - secure: RfgvRVzcCzI5DsyxQDRVvL95k6M2I9cR1G+Zfq/4EHY38IT92EaBH2tCFtODBgSNj4bNQWm7KRvntpgIN/ysIWXJhyBudm8W8jrzFWzHMTgv2d4qRKs7/+pEWoq8Y/WyXqGT1c/1rWai/N3dyblX3rA6GEEGzFsCILhuXn+0Ucs=
-  - secure: ZyJtB4DFtIxjkQpKG41+99/ahAccscgKc99iIU4GA/ykxxJM24axCQwbaZzq7urxfbv1WmUPZr5xGk6tfxTPa7VfXdO/zkch+7yA0GEZcuwbmICmuNhqKDn7v3CE5LCNfOmVko2Fe5IC71qgsNmo9XT0vHVhv5s1LtmLG4c6IQI=
+  - S3_BUCKET=mayday.us
+  - secure: d9lhYJxZfmIW1qs0ehoNVYhPC9p4YOpO3FTQ07dta2wLfoSOpvv/W2QHsW1ieQp/PCm0MbTOb2sQyiQS/J2dZj5U+H7wORAqN8cvd3m9ZbNILOS+17sSuydjSuDPXmz3O0FFM+1capNKcSvGBssDEaIFXC7RT5koRPRlWd67Xcw=
+  - secure: f1IR0oKpxNXTDyHQtAW5x1qMGRK7ttsw3bkBzRvUmdwqfIouLOAdxwvKnmkKq/aYN2nYzYvtExrBF2dmx/drCl4iTCx3DQSmSVV6451xMhdM6qA5CvVRPrWolwTvKPKs5QKT6I+cXwBHru7cBWzHJKj3aKqbrDkoOA65htfCDcA=
 install:
 - gem install jekyll s3_website
 script: echo "No tests - proceeding to deployment"
