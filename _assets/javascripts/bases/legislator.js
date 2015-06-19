@@ -16,7 +16,7 @@ $( document ).ready( function(){
     l_d.bioguide_id = bioguide_id;
     if(!l_d.phone) l_d.show_phone = 'none';
 
-    if ( l_d.with_us === true ){
+    if ( l_d.with_us === true && l_d.eligible == true){
       l_d.tallies_rendered = ''
 
       $.each(l_d.current_sponsorships, function(index, data){
@@ -35,10 +35,10 @@ $( document ).ready( function(){
         l_d.show_twitter = 'none';
       }
     } else {
-      if(legislator_data.title == 'Senator' || $.inArray(legislator_data.state_abbrev, unknowable_reps) > -1){
+      if(legislator_data.eligible == false || $.inArray(legislator_data.state_abbrev, unknowable_reps) > -1){
         legislator_data.with_us = 'unknowable';
         if(legislator_data.title == 'Senator'){
-          l_d.page_title = ['No Senate reform bill has been introduced yet this year for', l_d.title_name,'to cosponsor.'].join(' ');
+          l_d.page_title = [l_d.title_name,'is not up for re-election in 2016.'].join(' ');
         }else{
           l_d.page_title = [l_d.title_name, 'is a non-voting member.'].join(' ')
         }

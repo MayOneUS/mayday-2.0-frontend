@@ -6,12 +6,14 @@ if( window.location.pathname == '/legislators/' ){
     if(location.hash.length > 1){
       hash_location = location.hash.replace(/^#/,'');
       setListFilter(hash_location);
-      $('input[name="filter-value"][value="' + hash_location + '"]').prop('checked', true);
     }
   }
 
   function setListFilter(filterValue){
     $('.legislators-listing').parent().prop('class', 'container legislators-'+filterValue)
+    var $target = $('input[name="filter-value"][value="' + filterValue + '"]')
+    $target.prop('checked', true);
+    $('.filter-title').text($target.prop('title'));
     // will scroll page if using jquery here
     var el = document.getElementById(filterValue);
     var id = el.id;
@@ -27,7 +29,7 @@ if( window.location.pathname == '/legislators/' ){
 
     legislator_data.short_title = legislator_data.title === 'Senator' ? 'Sen.' : 'Rep.';
     legislator_data.lower_abbrev = legislator_data.state_abbrev.toLowerCase();
-    if(legislator_data.title == 'Senator' || $.inArray(legislator_data.state_abbrev, unknowable_reps) > -1){
+    if($.inArray(legislator_data.state_abbrev, unknowable_reps) > -1){
       legislator_data.with_us = 'unknowable';
     }
 
@@ -51,7 +53,7 @@ if( window.location.pathname == '/legislators/' ){
 
     potentialCount = $('.legislators-listing .potential-true').length;
     $('label[for=leaders]').append(' ('+ $('.legislators-listing .with-us-true').length+')');
-    $('label[for=all]').append(' ('+ $('.legislators-listing>div>div').length+')');
+    $('label[for=all]').append(' ('+ $('.legislators-listing>div>div').not('.with-us-unknowable').length+')');
     $('label[for=potential]').append(' ('+potentialCount+')');
     $('#js-potential-count').text(potentialCount);
 
