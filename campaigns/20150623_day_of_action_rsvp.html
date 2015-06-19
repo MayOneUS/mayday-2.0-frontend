@@ -6,7 +6,7 @@ hideMenus: true
 hideHeaderSignUp: true
 meta_content: |
   <meta property="og:url" content="https://mayday.us/june23/"/>
-  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150615_dayofaction-rsvp_social-share_748x440.png"/>
   <meta property="og:title" content="June 23 Day of Action to Reform Congress"/>
   <title>June 23 Day of Action to Reform Congress</title>
   <meta property="og:description" content="I just signed up to take action on June 23, and I hope you’ll do it too. MAYDAY is helping us reform the way campaigns are funded. It’s easy, and it makes a big difference."/>
@@ -94,7 +94,7 @@ meta_content: |
         </div>
         <div class="form-group col-md-12">
           <label class="control-label sr-only" for="singlebutton">Submit</label>
-          <input type="hidden" name="template_id" value="dayofaction_rsvp">
+          <input type="hidden" name="template_id" value="20150623_dayofaction_rsvp">
           <input type="hidden" name="person[remote_fields][tags][]" value="20150623_dayofaction_rsvp">
           <input type="hidden" name="person[remote_fields][tags][]" value="robocallable">
           <input type="hidden" name="person[is_volunteer]" value="1">
@@ -123,7 +123,7 @@ meta_content: |
           </a>
         </div>
         <div class="col-md-4">
-          <a href="mailto:?subject=Help%20me%20reform%20Congress&body=I%20just%20signed%20up%20to%20take%20action%20on%20June%2023%2C%20and%20I%20hope%20you%E2%80%99ll%20do%20it%2C%20too.%20MAYDAY%20is%20helping%20us%20change%20the%20way%20campaigns%20are%20funded%2C%20to%20end%20the%20system%20of%20corruption%20in%20Washington%20DC.%20It%E2%80%99s%20easy%2C%20and%20it%20makes%20a%20difference.%20It%20takes%20less%20than%20minute--thanks%20in%20advance!%20https%3A%2F%2Fmayday.us%2FJune23%2F%0A%0A%0AIf%20we%20wish%20to%20provide%20sharable%20graphics%20for%20this%20CTA%2C%20see%20design%20guidelines%20for%20recommended%20sizes." class="btn btn-md-wide btn-share-center youtube">
+          <a href="mailto:?subject=Help%20me%20reform%20Congress&body=I%20just%20signed%20up%20to%20take%20action%20on%20June%2023rd%2C%20and%20I%20hope%20you%E2%80%99ll%20do%20it%20with%20me.%20MAYDAY%20is%20helping%20us%20change%20the%20way%20campaigns%20are%20funded%20by%20electing%20a%20Congress%20committed%20to%20fundamental%20reform.%20It%E2%80%99s%20easy%20to%20get%20involved%20with%20them%20and%20it%20will%20make%20a%20big%20difference.%20%0A%0ACheck%20out%20their%20page%20here%20to%20see%20the%20different%20ways%20you%20can%20get%20involved%3A%20https%3A%2F%2Fmayday.us%2FJune23%2F.%20%20It%20only%20takes%20a%20minute!%20%0A%0AThanks!" class="btn btn-md-wide btn-share-center youtube">
             <span class="text"><i class="fa fa-envelope-o"></i></span>
           </a>
         </div>
@@ -141,6 +141,7 @@ meta_content: |
     submitHandler: function(form) {
       $form = $(form);
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      ga('send', 'event', 'form', 'submit', '20150623_dayofaction_rsvp');
       $.post('{{site.services_url}}/events/create_rsvp', $form.serialize(), function(data){
       }).done(function(){
         $form.parents('.rsvp-wrap').hide();
