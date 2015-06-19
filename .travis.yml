@@ -11,7 +11,7 @@ env:
   - secure: d9lhYJxZfmIW1qs0ehoNVYhPC9p4YOpO3FTQ07dta2wLfoSOpvv/W2QHsW1ieQp/PCm0MbTOb2sQyiQS/J2dZj5U+H7wORAqN8cvd3m9ZbNILOS+17sSuydjSuDPXmz3O0FFM+1capNKcSvGBssDEaIFXC7RT5koRPRlWd67Xcw=
   - secure: f1IR0oKpxNXTDyHQtAW5x1qMGRK7ttsw3bkBzRvUmdwqfIouLOAdxwvKnmkKq/aYN2nYzYvtExrBF2dmx/drCl4iTCx3DQSmSVV6451xMhdM6qA5CvVRPrWolwTvKPKs5QKT6I+cXwBHru7cBWzHJKj3aKqbrDkoOA65htfCDcA=
 install:
-- gem install jekyll s3_website
+- bundle install
 script: echo "No tests - proceeding to deployment"
 after_success:
 - jekyll build
