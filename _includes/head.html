@@ -28,7 +28,11 @@
     {{ page.meta_content }}
   {% endif %}
 
-  <script>var root_services_url = '{{site.services_url}}';</script>
+  <script>
+    var services_url = '{{site.services_url}}';
+    var blog_post_feed_url = '{{site.blog_post_feed_url}}';
+    var press_releases_feed_url = '{{site.press_releases_feed_url}}';
+  </script>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,400italic" type="text/css">
   <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}">

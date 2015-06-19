@@ -8,9 +8,9 @@ $(function() {
 
     didScroll = false,
     api_endpoint = '/bills/supporter_counts',
-    bill_url_hr424 = root_services_url + api_endpoint + '?bill_id=hr424-114',
-    bill_url_hr20 = root_services_url + api_endpoint + '?bill_id=hr20-114',
-    all_supporters_url = root_services_url + api_endpoint,
+    bill_url_hr424 = services_url + api_endpoint + '?bill_id=hr424-114',
+    bill_url_hr20 = services_url + api_endpoint + '?bill_id=hr20-114',
+    all_supporters_url = services_url + api_endpoint,
 
     // dom objects to render to
     $container1 = $('#container1'),
