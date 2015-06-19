@@ -1,9 +1,8 @@
 if( window.location.pathname == '/news/' ){
 
   (function($, ich) {
-    var url = '{{site.blog_post_feed_url}}';
 
-    $.getJSON(url, function (data) {
+    $.getJSON(blog_post_feed_url, function (data) {
       var posts = data.posts;
       var $posts = $('#tumblr-posts');
 
@@ -12,9 +11,7 @@ if( window.location.pathname == '/news/' ){
       });
     });
 
-    var url = '{{site.press_releases_feed_url}}';
-
-    $.getJSON(url, function (data) {
+    $.getJSON(press_releases_feed_url, function (data) {
       var releasePosts = data.posts;
       var $releasesContainer = $('#tumblr-press-releases');
 

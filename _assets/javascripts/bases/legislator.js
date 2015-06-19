@@ -64,7 +64,7 @@ $( document ).ready( function(){
     $('#js-tallies').append(tallies);
   }
 
-  $.getJSON('{{site.services_url}}/legislators/'+bioguide_id, scorecard);
+  $.getJSON(services_url+'/legislators/'+bioguide_id, scorecard);
 });
 
 window.twttr = (function(d, s, id) {

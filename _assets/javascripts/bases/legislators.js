@@ -76,7 +76,7 @@ if( window.location.pathname == '/legislators/' ){
 
   });
 
-})( '{{site.services_url}}/legislators.json' );
+})( services_url+'/legislators.json' );
 
 
 
