@@ -69,10 +69,10 @@ if( window.location.pathname == '/legislators/' ){
       setListFilter(filterValue);
     });
 
-    var newAllieData = data;
+    var newAllyDataUrl = data;
     var outSide = {};
 
-    $.getJSON(newAllieData, callDataAndTemplate);
+    $.getJSON(newAllyDataUrl, callDataAndTemplate);
 
   });
 
