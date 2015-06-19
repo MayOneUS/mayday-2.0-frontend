@@ -1,4 +1,4 @@
-if(window.location.href == window.location.origin + '/legislator/'){ 
+if( window.location.pathname == '/legislator/' ){
 
 $( document ).ready( function(){
   "use strict";

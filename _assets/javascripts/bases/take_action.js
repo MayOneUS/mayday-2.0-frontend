@@ -1,4 +1,5 @@
-if(window.location.href == window.location.origin + '/take-action/'){ 
+if( window.location.pathname == '/take-action/' ){
+
 
 function makeActive($target_li){
   $target_li.addClass('active').siblings().removeClass('active');

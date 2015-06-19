@@ -1,4 +1,4 @@
-if(window.location.href == window.location.origin + '/the-plan/'){ 
+if( window.location.pathname == '/the-plan/' ){
 
 smoothScroll.init({
   speed: 500,

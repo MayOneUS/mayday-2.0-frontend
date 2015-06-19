@@ -1,5 +1,4 @@
-// if(window.location == '/record/'){ 
-// TODO: figure this syntax out
+// if( window.location.pathname == '/record/' ){
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()

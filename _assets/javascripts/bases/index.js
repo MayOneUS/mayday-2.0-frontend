@@ -1,4 +1,4 @@
-if( window.location.href == window.location.origin + '/' ){ 
+if( window.location.pathname == '/' ){
 
   $('.full-bg-image').on('click', function(){
     window.location = '/june23/';

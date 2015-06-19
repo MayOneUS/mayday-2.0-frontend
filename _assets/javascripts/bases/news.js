@@ -1,4 +1,4 @@
-if(window.location.href == window.location.origin + '/news/'){ 
+if( window.location.pathname == '/news/' ){
 
 
 
