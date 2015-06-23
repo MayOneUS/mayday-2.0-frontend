@@ -73,7 +73,7 @@
       <div class="row">
       <div class="col-md-12 text-center">
         <h3>Thanks for recording a message for Congress.</h3>
-        <h2>Now Spread the Word!</h2>
+        <h2>Now spread the word below!</h2>
       </div>
       <p class="text-center no-y-margin"><small>If you have any feedback, please write to <a href="mailto:info@mayday.us">info@mayday.us</a>.</small></p>
     </div>
@@ -96,6 +96,7 @@
           setAllStandardFormsValues($form);
           setAsComplete($parent);
           $form.parents('li').next().addClass('active');
+          $("html, body").animate({ scrollTop: $parent.offset().top }, 100);
         }).fail(function(data){
           alert('There was an error. Please try again later.')
         })

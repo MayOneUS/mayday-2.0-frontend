@@ -94,7 +94,7 @@
     <div class="col-md-12 center-block">
       <div class="row text-center">
         <h3>Thanks for getting involved locally.</h3>
-        <h2>Now record a message for Congress!</h2>
+        <h2>Now record a message for Congress below!</h2>
       </div>
       <p class="text-center no-y-margin"><small>If you have any feedback, please write to <a href="mailto:info@mayday.us">info@mayday.us</a>.</small></p>
     </div>
@@ -116,6 +116,7 @@
           $parent = $form.parents('.incomplete');
           setAllStandardFormsValues($form);
           setAsComplete($parent);
+          $("html, body").animate({ scrollTop: $parent.offset().top }, 100);
           $form.parents('li').next().addClass('active');
         }).fail(function(data){
           alert('There was an error. Please try again later.')
