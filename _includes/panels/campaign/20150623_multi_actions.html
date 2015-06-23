@@ -1,0 +1,150 @@
+<div class="panel action-panel with-shield">
+  <div class="panel-icon">
+    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
+    <div class="fade-line hidden-xs hidden-sm"></div>
+  </div>
+  <div class="panel-body">
+    <h2>Get Involved in your district</h2>
+    <div class="row">
+      <div class="col-md-12 text-left">
+        <p>Meet with your local congressional office, write a letter to the editor, or work on a demonstration. This is a big opportunity to put us within striking distance of a majority for reform before our 2016 electoral work.</p>
+        <p>We can put you together with other MAYDAY volunteers in the district, provide you with materials, and support you in other ways to ensure a successful effort.</p>
+        <form class="row md-inputs js-rsvp-dayofaction-form" style="margin:25px 0 0">
+          <fieldset>
+            <div class="row ">
+              <div class="form-group col-md-6">
+                <label class="control-label sr-only" for="person[first_name]">First Name</label>
+                <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+                <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-8">
+                <input type="tel" class="" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label class="control-label sr-only" for="person[zip]">ZIP</label>
+                <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="control-label sr-only" for="person[email]">Email Address</label>
+                <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-10 center-block text-left">
+                 <label class="control-label no-bottom-margin" for="volunteer_tasks"><h3>I’m willing to...</h3></label>
+                 <small class="help-block">Check all that apply.</small>
+                 <div class="checkbox">
+                   <label for="checkboxes-0">
+                     <input type="checkbox" name="person[remote_fields][tags][]" id="checkboxes-0" value="20150623_local_action" />
+                     Learn how to get involved in my district
+                   </label>
+                 </div>
+                 <div class="checkbox">
+                   <label for="checkboxes-1">
+                     <input type="checkbox" name="person[remote_fields][tags][]" id="checkboxes-1" value="20150623_want_record" />
+                      Record a voicemail for MAYDAY to deliver to Congress
+                   </label>
+                 </div>
+                 <div class="checkbox">
+                   <label for="checkboxes-2">
+                     <input type="checkbox" name="person[remote_fields][tags][]" id="checkboxes-2" value="20150623_recruit_VM" />
+                     Email my friends to record a message for Congress
+                   </label>
+                 </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-10 center-block">
+                <label class="control-label sr-only" for="singlebutton">Submit</label>
+                <input type="hidden" name="template_id" value="20150623_dayofaction_rsvp">
+                <input type="hidden" name="person[remote_fields][tags][]" value="20150623_dayofaction_rsvp">
+                <input type="hidden" name="person[remote_fields][tags][]" value="robocallable">
+                <input type="hidden" name="person[is_volunteer]" value="1">
+                <input type="hidden" name="event_id" value="152">
+                <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+                <p class="help-block">We respect your privacy. Your phone number will not be shared with outside parties. Note:  If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. </p>
+
+              </div>
+            </div>
+            <div class="row">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    {% unless include.hide_next %}
+    <div class="row skip-next">
+      <small><a href="#" title="I completed this step" class="done">I Did This!</a> or <a href="#" class="next" title="Skip to Next Step">Skip to Next Step</a></small>
+    </div>
+    {% endunless %}
+  </div>
+  <div class="panel-body thanks-message">
+    <div class="col-md-12 center-block">
+      <div class="row text-center">
+        <h3>Thanks for recording a message for Congress.</h3>
+        <h2>Now Spread the Word!</h2>
+        <p>Invite your friends to leave their message for Congress:</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/record/" target="_blank" class="btn btn-md-wide btn-share-center facebook">
+            <span class="text"><i class="fa fa-facebook"></i></span>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <a href="https://twitter.com/home?status=Record%20your%20message%20and%20we%27ll%20deliver%20it%20to%20key%20members%20of%20Congress.%20Tell%20them%20to%20%23Lead4Reform%21%20https%3A%2F%2Fmayday.us%2Frecord%20%40maydayus" target="_blank" class="btn btn-md-wide btn-share-center twitter">
+            <span class="text"><i class="fa fa-twitter"></i></span>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <a href="mailto:?Subject=Help%20me%20send%20Congress%20a%20message&body=Make%20your%20voice%20heard%21%20Send%20Congress%20a%20message.%20Record%20a%20simple%20voicemail%20message%2C%20and%20Mayday%20PAC%20will%20deliver%20it%20to%20key%20Members%20of%20Congress.%20Tell%20them%20you%20want%20them%20to%20reform%20the%20way%20campaigns%20are%20funded.%20It%20takes%201%20minute--thanks%20in%20advance%21%20https%3A%2F%2Fmayday.us%2Frecord%2F" class="btn btn-md-wide btn-share-center">
+            <span class="text"><i class="fa fa-envelope-o"></i></span>
+          </a>
+        </div>
+      </div>
+      <p class="text-center no-y-margin"><small>If you have any feedback, please write to <a href="mailto:info@mayday.us">info@mayday.us</a>.</small></p>
+    </div>
+  </div>
+</div>
+{% include modals/modal_call_congress.html %}
+
+
+{% capture panel_record_js%}
+
+<script>
+  $(document).ready(function(){
+    $('.js-form-record-message').validate({
+      submitHandler: function(form) {
+        $form = $(form);
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling You');
+        ga('send', 'event', 'form', 'submit', '20150611_S1538_recording');
+        $.post('{{site.services_url}}/ivr/calls', $form.serialize() ).done(function(data){
+          $parent = $form.parents('.incomplete');
+          if(location.pathname == '/take-action/'){
+            setAsComplete($parent);
+          }else{
+            $parent.removeClass('incomplete');
+            $parent.addClass('complete').addClass('thanked');
+          }
+        }).fail(function(data){
+          alert('There was an error. Please try again later.')
+        })
+
+      }
+    });//on submit
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_record_js}}{% endcapture %}
