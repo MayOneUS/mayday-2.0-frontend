@@ -1,0 +1,108 @@
+<div class="panel action-panel with-shield">
+  <div class="panel-icon">
+    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
+    <div class="fade-line hidden-xs hidden-sm"></div>
+  </div>
+  <div class="panel-body">
+    <h2>Record a message</h2>
+    <div class="row">
+      <div class="col-md-12">
+        {% if include.show_instructions %}
+
+        <p class="text-left">Record your message and we'll deliver it to key members of Congress. Submit your phone number, and our reording system will connect you. Here are a few helpful tips, and remember: If you're unhappy with your message, you can always re-record it.</p>
+
+        <ol class="simple-list small-list text-left">
+          <li>
+            Say your name, phone number, and that you're a voter. <br />
+            <small>Remember: Be confident, speak slowly, and don't forget to breathe.</small>
+          </li>
+          <li>Explain that you're asking the Senator to <strong>support S. 1538</strong>, The Fair Elections Now Act.</li>
+          <li>Thank the Senator for listening to citizens instead of special interests.</li>
+          <li>When you finish your message, stay on the line to review or re-record your message.</li>
+        </ol>
+        {% else %}
+        <p>{% if include.intro_content %}{{include.intro_content}}{%else%}Start fighting for fundamental reform. This tool will help you call the office of one of our potential leaders, so you can ask your legislators to support reform.{% endif %}</p>
+        {% endif %}
+        <form class="join js-form-record-message">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="email" class="no-bottom-margin" name="person[email]" placeholder="Email Address" required="required"/>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <div class="form-group">
+                <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group"><input class="no-bottom-margin" type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="ZIP" required="required" /></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="help-block">We respect your privacy. Your phone number will not be shared with outside parties. Note: If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-xs-12 center-block">
+              <div class="col-md-12 top-spacer-btn">
+                <button type="submit" class="btn btn-md-wide btn-md-red">Record <span class="hidden-xs">Your</span> Message</button>
+                <input type="hidden" name="person[remote_fields][tags][]" value="20150609_record_message">
+                <input type="hidden" name="person[remote_fields][tags][]" value="20150611_S1538_recording">
+                <input type="hidden" name="person[remote_fields][tags][]" value="robocallable1">
+                <input type="hidden" name="person[is_volunteer]" value="true">
+                <input type="hidden" name="call_type" value="record_message">
+                <input type="hidden" name="campaign_ref" value="20150611_S1538">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% unless include.hide_next %}
+    <div class="row skip-next">
+      <small><a href="#" title="I completed this step" class="done">I Did This!</a> or <a href="#" class="next" title="Skip to Next Step">Skip to Next Step</a></small>
+    </div>
+    {% endunless %}
+  </div>
+  <div class="panel-body thanks-message">
+    <div class="col-md-12 center-block text-left">
+      <div class="row">
+      <div class="col-md-12 text-center">
+        <h3>Thanks for recording a message for Congress.</h3>
+        <h2>Now Spread the Word!</h2>
+      </div>
+      <p class="text-center no-y-margin"><small>If you have any feedback, please write to <a href="mailto:info@mayday.us">info@mayday.us</a>.</small></p>
+    </div>
+  </div>
+</div>
+{% include modals/modal_call_congress.html %}
+
+
+{% capture panel_record_js%}
+
+<script>
+  $(document).ready(function(){
+    $('.js-form-record-message').validate({
+      submitHandler: function(form) {
+        $form = $(form);
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling You');
+        ga('send', 'event', 'form', 'submit', '20150611_S1538_recording');
+        $.post('{{site.services_url}}/ivr/calls', $form.serialize() ).done(function(data){
+          $parent = $form.parents('.incomplete');
+          setAllStandardFormsValues($form);
+          setAsComplete($parent);
+          $form.parents('li').next().addClass('active');
+        }).fail(function(data){
+          alert('There was an error. Please try again later.')
+        })
+
+      }
+    });//on submit
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_record_js}}{% endcapture %}

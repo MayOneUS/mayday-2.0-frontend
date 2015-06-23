@@ -1,4 +1,4 @@
-if( window.location.pathname == '/take-action/' ){
+if( window.location.pathname == '/take-action/' || window.location.pathname == '/june23/'){
 
 
 function makeActive($target_li){

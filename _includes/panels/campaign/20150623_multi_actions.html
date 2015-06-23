@@ -93,26 +93,8 @@
   <div class="panel-body thanks-message">
     <div class="col-md-12 center-block">
       <div class="row text-center">
-        <h3>Thanks for recording a message for Congress.</h3>
-        <h2>Now Spread the Word!</h2>
-        <p>Invite your friends to leave their message for Congress:</p>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-sm-4">
-          <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/record/" target="_blank" class="btn btn-md-wide btn-share-center facebook">
-            <span class="text"><i class="fa fa-facebook"></i></span>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-4">
-          <a href="https://twitter.com/home?status=Record%20your%20message%20and%20we%27ll%20deliver%20it%20to%20key%20members%20of%20Congress.%20Tell%20them%20to%20%23Lead4Reform%21%20https%3A%2F%2Fmayday.us%2Frecord%20%40maydayus" target="_blank" class="btn btn-md-wide btn-share-center twitter">
-            <span class="text"><i class="fa fa-twitter"></i></span>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-4">
-          <a href="mailto:?Subject=Help%20me%20send%20Congress%20a%20message&body=Make%20your%20voice%20heard%21%20Send%20Congress%20a%20message.%20Record%20a%20simple%20voicemail%20message%2C%20and%20Mayday%20PAC%20will%20deliver%20it%20to%20key%20Members%20of%20Congress.%20Tell%20them%20you%20want%20them%20to%20reform%20the%20way%20campaigns%20are%20funded.%20It%20takes%201%20minute--thanks%20in%20advance%21%20https%3A%2F%2Fmayday.us%2Frecord%2F" class="btn btn-md-wide btn-share-center">
-            <span class="text"><i class="fa fa-envelope-o"></i></span>
-          </a>
-        </div>
+        <h3>Thanks for getting involved locally.</h3>
+        <h2>Now record a message for Congress!</h2>
       </div>
       <p class="text-center no-y-margin"><small>If you have any feedback, please write to <a href="mailto:info@mayday.us">info@mayday.us</a>.</small></p>
     </div>
@@ -125,26 +107,40 @@
 
 <script>
   $(document).ready(function(){
-    $('.js-form-record-message').validate({
+    $('.js-rsvp-dayofaction-form').validate({
       submitHandler: function(form) {
         $form = $(form);
-        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling You');
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
         ga('send', 'event', 'form', 'submit', '20150611_S1538_recording');
-        $.post('{{site.services_url}}/ivr/calls', $form.serialize() ).done(function(data){
+        $.post('{{site.services_url}}/actions', $form.serialize() ).done(function(data){
           $parent = $form.parents('.incomplete');
-          if(location.pathname == '/take-action/'){
-            setAsComplete($parent);
-          }else{
-            $parent.removeClass('incomplete');
-            $parent.addClass('complete').addClass('thanked');
-          }
+          setAllStandardFormsValues($form);
+          setAsComplete($parent);
+          $form.parents('li').next().addClass('active');
         }).fail(function(data){
           alert('There was an error. Please try again later.')
-        })
+        });
 
       }
     });//on submit
   });
+
+  // $('.js-rsvp-dayofaction-form').validate({
+  //   submitHandler: function(form) {
+  //     $form = $(form);
+  //     $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+  //     ga('send', 'event', 'form', 'submit', '20150623_dayofaction_rsvp');
+  //     $.post('{{site.services_url}}/events/create_rsvp', $form.serialize(), function(data){
+  //     }).done(function(){
+  //       $form.parents('.rsvp-wrap').hide();
+  //       $form.parents('.rsvp-wrap').next().show()
+  //     }).fail(function(){
+  //       //double signups aren't permitted by NB.  Let's ignore those failures.
+  //       $form.parents('.rsvp-wrap').hide();
+  //       $form.parents('.rsvp-wrap').next().show()
+  //     });
+  //   }
+  // });
 </script>
 {% endcapture %}
 {% capture footer_scripts %}{{footer_scripts}}{{panel_record_js}}{% endcapture %}
