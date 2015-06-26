@@ -1,6 +1,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="left-col col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      {% unless page.hideMenus %}
       <div class="icon-line added-margin">
         <a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
         <a href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
@@ -19,19 +20,22 @@
         <h1 class="mayday-headline-smaller-inverse bottom-thankyou-spacer">Thank you!</h1>
       </div>
       <div class="vertical-fade-line hidden-xs hidden-sm"></div>
+      {% endunless %}
     </div>
     <div class="center-col col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <a href="/" class="name">MAYDAY.US</a>
       <div class="disclaimer-box">Paid for by Mayday PAC. Not authorized by any candidate or candidate's committee. MAYDAY.US</div>
       <div class="copyright">©2015 Mayday PAC. Some rights reserved.</div>
       <div class="creative-commons"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="//i.creativecommons.org/l/by/3.0/80x15.png"/></a></div>
-      <div class="vertical-fade-line hidden-xs hidden-sm"></div>
+      {% unless page.hideMenus %}<div class="vertical-fade-line hidden-xs hidden-sm"></div>{% endunless %}
     </div>
     <div class="right-col hidden-xs hidden-sm col-md-3 col-lg-3">
+      {% unless page.hideMenus %}
       <div><a href="/about-us/">About</a></div>
       <div><a href="/news/">News</a></div>
       <div>&nbsp;</div>
       <div class="donate-link"><a href="/donate/">DONATE</a></div>
+      {% endunless %}
     </div>
   </div>
 </footer>
@@ -41,9 +45,48 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 <script src="{{ root_path }}/js/lib/plugins.js"></script>
 <script>
+function manageDataFromParams(source_key, skipped_forms_selector){
+  var url_param = getParameterByName(source_key);
+  if (url_param.length > 2){
+    Cookies.set(source_key, getParameterByName(source_key), { expires: 7 });
+  }
+  var current_cookie_value = Cookies.get(source_key);
+  setFormsValues(source_key, current_cookie_value, skipped_forms_selector)
+}
+
+function wrapParamForRails(param_key) {
+  return param_key.replace(/(email|first_name|last_name|phone|zip)/, 'person\\[$1\\]');
+}
+
+function setFormsValues(source_key, current_cookie_value, skipped_forms_selector){
+  if(typeof current_cookie_value != "undefined"){
+    current_cookie_value = current_cookie_value.replace(' ','+');
+    var $form = $('form').not(skipped_forms_selector);
+    var input_name = wrapParamForRails(source_key);
+    var target_ref = 'input[name='+input_name+']';
+    input_name = input_name.replace('\\[','[').replace('\\]',']')
+
+    if($form.find(target_ref).length == 0){
+      $form.append('<input type="hidden" name="'+input_name+'" value="'+current_cookie_value+'">');
+    }else{
+      $form.find(target_ref).val(current_cookie_value);
+    }
+  }
+}
+
+function setAllStandardFormsValues($form){
+  $(['email', 'first_name', 'last_name', 'phone', 'zip']).each(function(index, attribute_key){
+    var input_name = wrapParamForRails(attribute_key);
+    var target_ref = 'input[name='+input_name+']';
+    var current_cookie_value = $form.find(target_ref).val();
+    setFormsValues(attribute_key, current_cookie_value);
+  })
+}
+
 $(document).ready(function(){
   HeaderFooterSignupOptions = {
     submitHandler: function(form) {
+      ga('send', 'event', 'form', 'submit', 'email_signup');
       $form = $(form);
       var saveURI = '{{ site.services_url }}/people';
       $.post(saveURI, $form.serialize());
@@ -55,31 +98,11 @@ $(document).ready(function(){
   $("header form.email-signup").validate(HeaderFooterSignupOptions);
   $("footer form.email-signup").validate(HeaderFooterSignupOptions);
 
-  function manageSource(source_key, skipped_forms_selector){
-    var url_param = getParameterByName(source_key);
-    if (url_param.length > 2){
-      Cookies.set(source_key, getParameterByName(source_key), { expires: 7 });
-    }
-    var current_cookie_value = Cookies.get(source_key);
-    if(typeof current_cookie_value != "undefined"){
-      current_cookie_value = current_cookie_value.replace(' ','+');
-      var $form = $('form').not(skipped_forms_selector);
-      var input_name = source_key.replace(/(email)/, 'person\\[$1\\]');
-      var target_ref = 'input[name='+input_name+']';
-      input_name = input_name.replace('\\[','[').replace('\\]',']')
 
-      if($form.find(target_ref).length == 0){
-        $form.append('<input type="hidden" name="'+input_name+'" value="'+current_cookie_value+'">');
-      }else{
-        $form.find(target_ref).val(current_cookie_value);
-      }
-    }
-  }
-
-  manageSource('utm_source');
-  manageSource('utm_medium');
-  manageSource('utm_campaign');
-  manageSource('email', 'header form, footer form');
+  manageDataFromParams('utm_source');
+  manageDataFromParams('utm_medium');
+  manageDataFromParams('utm_campaign');
+  manageDataFromParams('email', 'header form, footer form');
 
   var source_url = location.protocol + '//' + location.host + location.pathname;
   $('form').append('<input type="hidden" name="source_url" value="'+source_url+'">');
@@ -95,5 +118,7 @@ $(document).ready(function(){
   ga('create', 'UA-50367295-1', 'auto');
   ga('send', 'pageview');
 </script>
+
+{% javascript app %}
 
 {{ footer_scripts }}
