@@ -1,0 +1,56 @@
+<style type="text/css" media="screen">
+.full-bg-image, .banner-image{
+  background-color: #061C29;
+}
+.banner-image {
+  padding-top:20px;
+  box-shadow: 0 0 50px rgba(22,33,63,0.7);
+  padding-bottom:15px;
+  background: url("/images/campaigns/20150429-hero-bg.jpg") 0 0 no-repeat;
+  min-height: 420px;
+  background-size: cover;
+}
+  .banner-image >.row{
+    background: url("/images/campaigns/20150429-hero-white_v01.png") 0 0 no-repeat;
+    background-size: contain;
+    @include small-desktop{
+      background: url("/images/campaigns/20150429-hero-white.png") 0 0 no-repeat;
+      background-size:100%;
+    }
+  }
+  .background-image-blurred{
+    filter: url(blur.svg#blur);
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    background: transparent url("/images/campaigns/20150429-hero-bg.jpg") 0 -3px no-repeat;
+    background-size: cover;
+  }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .banner-image >.row{
+    background-size:100%;
+    background: url("/images/campaigns/20150429-hero-white.png") 0 0 no-repeat;
+  }
+}
+
+
+</style>
+
+<div class="full-bg-image">
+  <div class="background-image-blurred"></div>
+  <div class="container banner-image">
+    <div class="row">
+      <div class="col-md-offset-8 col-lg-offset-6 col-md-4 col-lg-4 col-sm-8 col-sm-offset-2">
+        {% capture panel_body %}
+        <div class="panel-body">
+          <h2>Make Calls with Team MAYDAY</h2>
+          <p>Join Team MAYDAY to call Congress.</strong></p>
+          <p><a href="/call/" title="" class="btn btn-md-wide">Get Started</a></p>
+        </div>
+        {% endcapture %}
+        {% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

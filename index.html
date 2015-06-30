@@ -7,24 +7,7 @@ bodyClass: index-page
 ---
 {% capture content %}
 <div id="index">
-  <div class="full-bg-image">
-    <div class="background-image-blurred"></div>
-    <div class="container banner-image">
-      <div class="row">
-        <div class="col-md-offset-8 col-lg-offset-8 col-md-4 col-lg-4 col-sm-8 col-sm-offset-2">
-{% capture panel_body %}
-<div class="panel-body">
-  <h2>RSVP for the Day of Action</h2>
-  <p>Take action on Tuesday June 23.</p>
-  <p class="no-bottom-margin"><a href="/june23/" title="" class="btn btn-md-wide no-bottom-margin">Let's Go</a></p>
-</div>
-{% endcapture %}
-{% include panels/panel_empty.html form_class='smaller-form no-gutter'%}
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
+  {% include jumbotrons/20150624_record_message.html %}
   <div class="container">
     <div class="row gutter-justphone homepage-panel homepage-ribbon">
 
