@@ -2,21 +2,15 @@ language: ruby
 sudo: false
 rvm:
 - 2.2.0
-branches:
-  only:
-  - production
 env:
   global:
-  - S3_BUCKET=mayday.us
-  - secure: d9lhYJxZfmIW1qs0ehoNVYhPC9p4YOpO3FTQ07dta2wLfoSOpvv/W2QHsW1ieQp/PCm0MbTOb2sQyiQS/J2dZj5U+H7wORAqN8cvd3m9ZbNILOS+17sSuydjSuDPXmz3O0FFM+1capNKcSvGBssDEaIFXC7RT5koRPRlWd67Xcw=
-  - secure: f1IR0oKpxNXTDyHQtAW5x1qMGRK7ttsw3bkBzRvUmdwqfIouLOAdxwvKnmkKq/aYN2nYzYvtExrBF2dmx/drCl4iTCx3DQSmSVV6451xMhdM6qA5CvVRPrWolwTvKPKs5QKT6I+cXwBHru7cBWzHJKj3aKqbrDkoOA65htfCDcA=
+  - secure: HqoGZSlTHg6omIR0NFAbV52HGs867MuupS4OOtC6f5w8BJejIJwUchCjPH2itmYby1bCm82gw/BWV7rQxXS/rGSWVOUsTe/IwxiojksGo8BxQ0iCO29DKKHugWAzL0qS6kBcfbo+kjophvRPc+Z0z0qUD4Vrf/xh76JyOvBywEY=
+  - secure: eaXJv2OPWjWeQ/oI+zqCUNqbKEQBhW3hn/3H0k5zdAK9RTqEFw7ynXJRlMZSP4rAqNXRrD09ZohrbCidMdvWBcvFFsK/HUdwmDH58KaiLMbuCPHaoHPZvPb3PPidC4h2rLkPuXNX/jrLBa02nODmtELLK2rA9h4E8JD3JONjiEo=
 install:
 - bundle install
 script: echo "No tests - proceeding to deployment"
 after_success:
-- jekyll build
-- s3_website cfg apply --headless
-- s3_website push
+- "./s3_deploy.sh"
 notifications:
   slack:
     secure: NgPwE/VQxoOVvlsyZUaAz2q6XOwRNlWg2+L1OwYSChlcAbLF2lUFuNra4ucoYcCXXkaHaRKc4w+IYMT5uw62RktPqKqMBC7MqR3n7iQakMu9J982QL7CiAbpwvvJ3k5eqms/ZIAwZTO0t1meZHbaDZEUYbS1pZJ1AJ+zXbzIYt4=
