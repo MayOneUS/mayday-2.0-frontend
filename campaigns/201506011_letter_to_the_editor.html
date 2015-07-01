@@ -12,24 +12,56 @@ meta_content: |
   <meta content='@mayday' name="twitter:site"/>
   <title> I’m sending a message to Congress. Will you? - MAYDAY</title>
   <link rel="canonical" href="https://mayday.us/letters-to-the-editor/">
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 ---
 
 {% capture custom_css %}
 <style type="text/css">
-  .simple-list strong{
-    color: #000;
-  }
-  .record .panel {
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
   h2 {
     font-weight: 400;
   }
-  .tooltip-prompt {
-    text-decoration: none;
-    cursor: default;
-  }
+
+.letter-wrap{
+  z-index:1000;
+  position: relative;
+}
+.letter {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin: 16px auto 40px;
+  min-height: 300px;
+  padding: 24px;
+  position: relative;
+  width: 90%;
+  font-family: 'Roboto Slab', serif;
+}
+.letter:before, .letter:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -3;
+}
+.letter:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+}
+.letter:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -3px;
+  top: 1px;
+  z-index: -4;
+  transform: rotate(1.4deg);
+}
+
+form.md-inputs .letter input, form.md-inputs .letter textarea{border-color: rgba(0,0,0,0.05);margin-bottom:0}
+form.md-inputs .letter p.help-block{font-size:14px;}
+form.md-inputs .letter p.help-block.text-right{text-align:right;}
+
 
 </style>
 {% endcapture %}
@@ -112,23 +144,36 @@ meta_content: |
           <p>Use the space below to write your letter. We have provided a few talking points and tips to help your letter get published.  While length requirements vary by publication, most letters to the editor should be less than 200 words.</p>
           <div class="row">
             <div class="col-md-6">
-              <div class="row">
-                <div class="form-group col-md-12">
-                  <label class="control-label sr-only" for="letter[subject]">Subject <attr>*</attr></label>
-                  <input id="letter[subject]" name="letter[subject]" type="text" placeholder="Subject">
+              <div class="letter-wrap">
+                <div class="letter">
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                      <label class="control-label sr-only" for="letter[subject]">Subject <attr>*</attr></label>
+                      <input id="letter[subject]" name="letter[subject]" type="text" placeholder="Subject">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                      <label class="control-label sr-only" for="letter[letter]">Your Letter <attr>*</attr></label>
+                      <textarea id="letter" name="letter[letter]" type="text" placeholder="Write your letter here..." rows="20"></textarea>
+                      <p class="help-block text-right"><span id="display_count">0</span> Words</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                      <label class="control-label sr-only" for="letter[subject]">Your News Outlets</label>
+                      <input id="letter[subject]" name="letter[subject]" type="text" placeholder="Your News Outlets..">
+                      <p class="help-block">Feel free to name 2 or 3 news publications that accept letters to the editor and have circulation in your area.  </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row">
-                <div class="form-group col-md-12">
-                  <label class="control-label sr-only" for="letter[letter]">Your Letter <attr>*</attr></label>
-                  <textarea id="letter[letter]" name="letter[letter]" type="text" placeholder="Write your letter here..." rows="20"></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-12">
-                  <label class="control-label sr-only" for="letter[subject]">Your News Outlets</label>
-                  <input id="letter[subject]" name="letter[subject]" type="text" placeholder="Your News Outlets..">
-                  <p class="help-block">Feel free to name 2 or 3 news publications that accept letters to the editor and have circulation in your area.  </p>
+                <div class="form-group col-md-10 center-block">
+                  <label class="control-label sr-only" for="person[required]">permission</label>
+                  <label class="checkbox-inline" for="person[required]-0">
+                    <input type="checkbox" name="person[required]" id="person[required]-0" required="required"> I give MAYDAY.US permission to submit my letter to media outlets for publication on my behalf, and to make minor edits for spelling and factual accuracy prior to submission.
+                  </label>
                 </div>
               </div>
               <div class="row">
@@ -201,12 +246,45 @@ meta_content: |
 
 {% capture panel_record_js%}
 <script>
+/*
+ *
+ * Textarea Word Count Jquery Plugin
+ * Version 1.0
+ *
+ * Copyright (c) 2008 Roshan Bhattarai
+ * website : http://roshanbh.com.np
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+*/
+
+jQuery.fn.wordCount = function(params){
+  var p = {
+    counterElement:"display_count"
+  };
+  var total_words;
+
+  if(params) {
+    jQuery.extend(p, params);
+  }
+
+  //for each keypress function on text areas
+  this.keypress(function()
+  {
+    total_words=this.value.split(/[\s\.\?]+/).length;
+    jQuery('#'+p.counterElement).html(total_words);
+  });
+};
+
   $(document).ready(function(){
     $('.toggle-next-ul').on('click', function(e){
       e.preventDefault();
       console.log(e);
       $(e.target).next('ul').toggleClass('hidden');
     });
+    $('#letter').wordCount();
     $('.js-form-letter-info').validate({
       submitHandler: function(form) {
         $form = $(form);
