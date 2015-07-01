@@ -1,7 +1,6 @@
 //= require lib/ICanHaz.min.js
 //= require lib/plugins.js
 //= require _includes/footer.js
-//= require lib/highcharts.js
 //= require bases/index.js
 //= require bases/legislator.js
 //= require bases/legislators.js
