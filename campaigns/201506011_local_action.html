@@ -84,7 +84,7 @@ meta_content: |
         </div>
         <div class="row">
           <div class="col-md-12">
-            <p class="help-block" style="margin-bottom:10px">We respect your privacy. Your phone number will not be shared with any third party.  Note: If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. Message &amp; data rates may apply.</p>
+            <p class="help-block" style="margin-bottom:10px">We respect your privacy. Your phone number will not be shared with any third party. Note: If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. Message &amp; data rates may apply.</p>
           </div>
         </div>
         <div class="row">
@@ -168,7 +168,12 @@ meta_content: |
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
         $.post('{{site.services_url}}/google/district_meetings', $form.serialize() ).done(function(data){
-          window.location = '/record/'
+          if($('#checkboxes-0').val() == 'true'){
+            window.location = '/letters-to-the-editor/'
+          }else{
+            window.location = '/record/'
+          }
+          console.log('nada')
         }).fail(function(data){
           alert('There was an error. Please try again later.')
         })
