@@ -1,0 +1,404 @@
+---
+layout: default
+title: MAYDAY.US - Make your voice heard. Get involved in your district.
+permalink: /letters-to-the-editor/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/letters-to-the-editor/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
+  <meta property="og:title" content=" I’m sending a message to Congress. Will you?"/>
+  <meta property="og:description" content="Join me and team MAYDAY in telling Congress we mean business when it comes to campaign finance reform.  Write a letter to the editor telling your reps and senators to lead on reform!"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title> I’m sending a message to Congress. Will you? - MAYDAY</title>
+  <link rel="canonical" href="https://mayday.us/letters-to-the-editor/">
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+---
+
+{% capture custom_css %}
+<style type="text/css">
+  h2 {
+    font-weight: 400;
+  }
+
+.letter-wrap{
+  z-index:1000;
+  position: relative;
+}
+.letter {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin: 16px auto 40px;
+  min-height: 300px;
+  padding: 24px;
+  position: relative;
+  width: 90%;
+  font-family: 'Roboto Slab', serif;
+}
+.letter:before, .letter:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -3;
+}
+.letter:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+}
+.letter:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -3px;
+  top: 1px;
+  z-index: -4;
+  transform: rotate(1.4deg);
+}
+
+form.md-inputs .letter input, form.md-inputs .letter textarea{border-color: rgba(0,0,0,0.05);margin-bottom:0}
+form.md-inputs .letter p.help-block{font-size:14px;}
+form.md-inputs .letter p.help-block.text-right{text-align:right;}
+.js-legislators{padding-top:20px;}
+.js-legislators .background-square{border:5px solid #bbb;}
+
+</style>
+{% endcapture %}
+{% capture content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1><strong>Write a Letter to the Editor</strong></h1>
+    </div>
+  </div>
+
+  <div class="row js-step-one">
+    <div class="col-md-10 action-wrap center-block incomplete">
+      <h2 class="text-center">Ask Congress to change the way campaigns are funded</h2>
+
+      <p>Let's send a message to Congress by placing a letter to the editor in a local paper. With a clear ask of a specific representative or Senator, a letter to the editor immediately gets attention.  Write a letter urging your member of Congress to fight political corruption.</p>
+      <form class="join js-form-letter-info md-inputs">
+        <fieldset>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label sr-only" for="person[first_name]">First Name</label>
+              <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+              <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <input type="tel" class="" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
+            </div>
+
+             <div class="form-group col-md-6">
+              <input type="text" class="" name="person[city]" placeholder="City" required="required"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label class="control-label sr-only" for="person[zip]">ZIP</label>
+              <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" />
+            </div>
+
+            <div class="form-group col-md-8">
+              <label class="control-label sr-only" for="person[email]">Email Address</label>
+              <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-10 center-block">
+              <label class="control-label sr-only" for="singlebutton">Submit</label>
+              <input type="hidden" name="template_id" value="20150701_local_action_lte">
+              <input type="hidden" name="person[remote_fields][tags][]" value="20150701_local_action_lte">
+              <input type="hidden" name="person[remote_fields][tags][]" value="robocallable">
+              <input type="hidden" name="person[remote_fields][tags][]" value="textable">
+              <input type="hidden" name="person[is_volunteer]" value="1">
+              <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+              <p class="help-block">We respect your privacy. Your phone number will not be shared with outside parties. Note:  If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number. Message &amp; data rates may apply.</p>
+
+            </div>
+          </div>
+          <div class="row">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+    <div class="row js-step-one-b hidden">
+    <div class="col-md-10 action-wrap center-block incomplete">
+      <h2>Whoops. We need your address</h2>
+      <p>Your zip code is in multiple congrsessional districts.  Can you please provide your address so we can determine who your legislators are?</p>
+      <form class="join js-form-address-info md-inputs">
+        <fieldset>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label sr-only" for="person[address]">Street Address</label>
+              <input id="person[address]" name="person[address]" type="text" placeholder="Street Address">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-10 center-block">
+              <label class="control-label sr-only" for="singlebutton">Submit</label>
+              <button type="submit" class="btn btn-md-wide btn-md-red">Continue</button>
+            </div>
+          </div>
+          <div class="row">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="row js-step-two hidden">
+    <div class="col-md-12 action-wrap center-block">
+      <form class="join js-form-letter md-inputs">
+        <fieldset>
+          <h2 class="text-center">Compose Your Letter</h2>
+
+          <p>Use the space below to write your letter. We have provided a few talking points and tips to help your letter get published.  While length requirements vary by publication, most letters to the editor should be less than 200 words.</p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="letter-wrap">
+                <div class="letter">
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                      <label class="control-label sr-only" for="letter_subject">Subject <attr>*</attr></label>
+                      <input id="letter_subject" name="letter_subject" type="text" placeholder="Subject">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                      <label class="control-label sr-only" for="letter_letter">Your letter <attr>*</attr></label>
+                      <textarea id="letter" name="letter_letter" type="text" placeholder="Write your letter here..." rows="20"></textarea>
+                      <p class="help-block text-right"><span id="display_count">0</span> Words</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                      <label class="control-label sr-only" for="letter_media_outlets">Your news outlets</label>
+                      <input id="letter_media_outlets" name="letter_media_outlets" type="text" placeholder="Your News Outlets..">
+                      <p class="help-block">Feel free to name 2 or 3 news publications that accept letters to the editor and have circulation in your area.  </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-10 center-block">
+                  <label class="control-label sr-only" for="person[required]">permission</label>
+                  <label class="checkbox-inline" for="person[required]-0">
+                    <input type="checkbox" name="person[required]" id="person[required]-0" required="required"> I give MAYDAY.US permission to submit my letter to media outlets for publication on my behalf, and to make minor edits for spelling and factual accuracy prior to submission.
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-10 center-block">
+                  <label class="control-label sr-only" for="singlebutton">Submit</label>
+                  <input type="hidden" name="template_id" value="20150701_local_action_lte">
+                  <input type="hidden" name="person[remote_fields][tags][]" value="20150701_local_action_lte">
+                  <input type="hidden" name="person[remote_fields][tags][]" value="robocallable">
+                  <input type="hidden" name="person[remote_fields][tags][]" value="textable">
+                  <input type="hidden" name="person[is_volunteer]" value="1">
+                  <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+                  <p class="help-block">I give MAYDAY.US permission to submit my letter to media outlets for publication on my behalf, and to make minor edits for spelling and factual accuracy prior to submission.</p>
+                </div>
+              </div>
+            </div> <!-- end form column-->
+
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="js-legislators" class="js-legislators newest-leaders no-gutter"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h3><strong>General Tips</strong></h3>
+                  <ul>
+                    <li>Write clearly and respectfully and double check your spelling - especially names!</li>
+                    <li>Tailor your letter to your own representative and senators.  For example, if one is already a leader on reform, encourage the others to follow suit.</li>
+                    <li>Keep it short! You’ll have the best chance of getting published if you stay under 200 words.</li>
+                    <li>If possible, cite a recent story from the publication.</li>
+                    <li>Find your voice! Use these talking points as a guide, but write in your own words.</li>
+                  </ul>
+
+                  <h3><strong>Talking Points</strong></h3>
+                  <ol>
+                    <li>
+                      "Big money pouring into our elections and corrupting the political process. It’s a huge problem that distorts policy and drowns out the needs of the American people." You could support your case by citing a related local event, local news story, or statistics. <a href="#" title="See Examples" class="toggle-next-ul">See examples</a>.
+                      <ul class="hidden">
+                        <li>Expensive campaigns force members of Congress to spend up to 70% of their time raising cash from special interests, instead of doing their job for the American people.</li>
+                        <li>Last year, less than one out of every 50 Americans gave money to candidates for Congress. Among those who did make contributions, the 100 biggest donors gave as much as the smallest 4.75 million donors.</li>
+                        <li>Most SuperPAC money last year came from just 100 people. The results? In the latest budget, President Obama and Congress changed the law to put us back on the hook for risky Wall Street derivative trading.</li>
+                        <li>With current campaign statutes, no candidate can turn down huge money and hope to take (or keep) a seat in Congress. Only through fundamental campaign finance reform can this institutionalized corruption be stopped</li>
+                      </ul>
+                    </li>
+                    <li>
+                      "I’m tired of corruption and everyone I know is demanding change."  <a href="#" title="See Examples" class="toggle-next-ul">More</a>.
+                      <ul class="hidden">
+                        <li>The deck is stacked against us ordinary Americans; only when fundamental reform reduces the corrupting influence of huge money in elections can Congress people return to their calling: representing the people of this great nation.</li>
+                        <li>One recent poll showed that 96% of Americans think it is critical that we “reduce the influence of money in politics.”  I couldn't agree more, and everyone I talk to feels the same.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      Demand support for a specific bill or thank your legislator for their support.  "My representatives in Congress should co-sponsor [a specific bill]."  Find out if your representative or senators support reform <a href="https://mayday.us/legislators">here</a>.
+                      <ul class="hidden">
+                        <li>Representative ___________ can co-sponsor the Government By The People Act (H.R.20), a strong reform bill calling for citizen-funded elections that has already been introduced in Congress.</li>
+                        <li>Senator(s) ___________ can co-sponsor the Fair Elections Now Act (S.1538), a strong reform bill calling for citizen-funded elections that has already been introduced in Congress.</li>
+                        <li>Rep./Sen(s). ___________ has signed onto H.R.20 / S.1358, a strong reform bill calling for citizen-funded elections before Congress now, which is great news.  Rep./Sen(s). ___________ should follow suit and lead on fundamental reform.</li>
+                      </ul>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="row js-thanks-message hidden">
+    <div class="col-md-12">
+      <h2 class="text-center">Thank you for submitting your letter to the editor!</h2>
+      <p>Your letter will help ensure that Congress hears the call for reform loud and clear. We’ll send you an email with a copy of your letter before we submit it to any news publications.  You can respond to us with any questions or concerns - or to tell us not to send your letter - within 24 hours of receiving our email.  If you don’t respond within that time, we’ll assume we’re good to go! We’ll be in touch soon, but for now, thank you for adding your voice! </p>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture panel_record_js%}
+<script id="legislator_template" type="text/html">
+{% raw %}
+
+    <div class="col-md-4 col-xs-12 col-sm-6 col-sm-offset-3 col-md-offset-0 bottom-margin new-legislator">
+        <a href="/legislator/?bioguide_id={{bioguide_id}}">
+          <div class="background-square" style="background-image:url('{{image_url}}')"></div>
+        </a>
+        <h3 class="no-top-margin">{{ short_title }} <strong>{{ name }}</strong></h3>
+        <h4> {{ party }}-{{ state_abbrev }} {{display_district}}</h4>
+        <!--<a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">Read More</a>-->
+    </div>
+
+{% endraw %}
+</script>
+<script>
+/*
+ *
+ * Textarea Word Count Jquery Plugin
+ * Version 1.0
+ *
+ * Copyright (c) 2008 Roshan Bhattarai
+ * website : http://roshanbh.com.np
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+*/
+
+jQuery.fn.wordCount = function(params){
+  var p = {
+    counterElement:"display_count"
+  };
+  var total_words;
+
+  if(params) {
+    jQuery.extend(p, params);
+  }
+
+  //for each keypress function on text areas
+  this.keypress(function()
+  {
+    total_words=this.value.split(/[\s\.\?]+/).length;
+    jQuery('#'+p.counterElement).html(total_words);
+  });
+};
+
+    function renderLocalLegislators(legislator_data) {
+      legislator_data.forEach(function(legislator, index){
+        legislator.short_title = legislator.title === 'Senator' ? 'Sen.' : 'Rep.';
+        var rendered_template = ich.legislator_template(legislator);
+        $('#js-legislators').append(rendered_template);
+      })
+    }
+
+  $(document).ready(function(){
+    var form_data;
+    $('.toggle-next-ul').on('click', function(e){
+      e.preventDefault();
+      $(e.target).next('ul').toggleClass('hidden');
+    });
+    $('#letter').wordCount();
+    $('.js-form-letter-info').validate({
+      submitHandler: function(form) {
+        $form = $(form);
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
+        form_data =  $form.serializeObject()
+        $.post('{{site.services_url}}/people/targets', $form.serialize() ).done(function(data){
+          $('.js-step-one').addClass('hidden');
+          if(data['address_required'] == true){
+            $('.js-step-one-b').removeClass('hidden');
+          }else{
+            renderLocalLegislators(data['local_legislators']);
+            $('.js-step-two').removeClass('hidden');
+            $.post('{{site.services_url}}/google/lte_forms', $form.serialize() )
+          }
+        }).fail(function(data){
+          alert('There was an error. Please try again later.')
+          $form.find('button.btn').html('Try Again');
+        });
+      }
+    });//on submit
+    $('.js-form-address-info').validate({
+      submitHandler: function(form) {
+        $form = $(form);
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
+        form_data = $.extend(true, form_data, $form.serializeObject())
+        $.post('{{site.services_url}}/people/targets', form_data ).done(function(data){
+          $('.js-step-one').addClass('hidden');
+          if(data['address_required'] == 'true'){
+            alert('We couldn\'t find your address.  Please try again.')
+          }else{
+            renderLocalLegislators(data['local_legislators']);
+            $('.js-step-one-b').addClass('hidden');
+            $('.js-step-two').removeClass('hidden');
+          }
+          $.post('{{site.services_url}}/google/lte_forms', $form.serialize() )
+        }).fail(function(data){
+          alert('There was an error. Please try again later.')
+          $form.find('button.btn').html('Try Again');
+        });
+      }
+    });//on submit
+    $('.js-form-letter').validate({
+      submitHandler: function(form) {
+        $form = $(form);
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
+        form_data = $.extend(true, form_data, $form.serializeObject())
+        $.post('{{site.services_url}}/google/lte_forms', form_data ).done(function(data){
+          $('.js-step-two').addClass('hidden');
+          $('.js-thanks-message').removeClass('hidden');
+        }).fail(function(data){
+          alert('There was an error. Please try again later.')
+          $form.find('button.btn').html('Try Again');
+        });
+      }
+    });//on submit
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_record_js}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
