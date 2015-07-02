@@ -182,8 +182,8 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
                   </div>
                   <div class="row">
                     <div class="form-group col-md-12">
-                      <label class="control-label sr-only" for="letter_letter">Your letter <attr>*</attr></label>
-                      <textarea id="letter" name="letter_letter" type="text" placeholder="Write your letter here..." rows="20"></textarea>
+                      <label class="control-label sr-only" for="letter_body">Your letter <attr>*</attr></label>
+                      <textarea id="letter_body" name="letter_body" type="text" placeholder="Write your letter here..." rows="20"></textarea>
                       <p class="help-block text-right"><span id="display_count">0</span> Words</p>
                     </div>
                   </div>
@@ -322,7 +322,7 @@ jQuery.fn.wordCount = function(params){
   }
 
   //for each keypress function on text areas
-  this.keypress(function()
+  this.on('keypress paste', function()
   {
     total_words=this.value.split(/[\s\.\?]+/).length;
     jQuery('#'+p.counterElement).html(total_words);
@@ -344,7 +344,7 @@ jQuery.fn.wordCount = function(params){
       e.preventDefault();
       $(e.target).next('ul').toggleClass('hidden');
     });
-    $('#letter').wordCount();
+    $('#letter_body').wordCount();
     $('.js-form-letter-info').validate({
       submitHandler: function(form) {
         $form = $(form);
