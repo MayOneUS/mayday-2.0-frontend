@@ -174,24 +174,24 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
             <div class="col-md-6">
               <div class="letter-wrap">
                 <div class="letter">
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="form-group col-md-12">
                       <label class="control-label sr-only" for="letter_subject">Subject <attr>*</attr></label>
                       <input id="letter_subject" name="letter_subject" type="text" placeholder="Subject">
                     </div>
-                  </div>
+                  </div> -->
                   <div class="row">
                     <div class="form-group col-md-12">
-                      <label class="control-label sr-only" for="letter_letter">Your letter <attr>*</attr></label>
-                      <textarea id="letter" name="letter_letter" type="text" placeholder="Write your letter here..." rows="20"></textarea>
+                      <label class="control-label sr-only" for="letter_body">Your letter <attr>*</attr></label>
+                      <textarea id="letter_body" name="letter_body" type="text" placeholder="Write your letter here..." rows="20"></textarea>
                       <p class="help-block text-right"><span id="display_count">0</span> Words</p>
                     </div>
                   </div>
                   <div class="row">
                     <div class="form-group col-md-12">
                       <label class="control-label sr-only" for="letter_media_outlets">Your news outlets</label>
-                      <input id="letter_media_outlets" name="letter_media_outlets" type="text" placeholder="Your News Outlets...">
-                      <p class="help-block">Feel free to name 2 or 3 news publications that accept letters to the editor and have circulation in your area.  </p>
+                      <input id="letter_media_outlets" name="letter_media_outlets" type="text" placeholder="Optional: Your News Outlets...">
+                      <p class="help-block">Optionally, name 2 or 3 news publications in your area that accept letters to the editor.</p>
                     </div>
                   </div>
                 </div>
@@ -237,7 +237,7 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
                   <h3><strong>Talking Points</strong></h3>
                   <ol>
                     <li>
-                      "Big money pouring into our elections and corrupting the political process. It’s a huge problem that distorts policy and drowns out the needs of the American people." You could support your case by citing a related local event, local news story, or statistics. <a href="#" title="See Examples" class="toggle-next-ul">See more</a>.
+                      <strong>Big money pouring into our elections and corrupting the political process. It’s a huge problem that distorts policy and drowns out the needs of the American people.</strong> You could support your case by citing a related local event, local news story, or statistics. <a href="#" title="See Examples" class="toggle-next-ul">See more</a>.
                       <ul class="hidden">
                         <li>Expensive campaigns force members of Congress to spend up to 70% of their time raising cash from special interests, instead of doing their job for the American people.</li>
                         <li>Last year, less than one out of every 50 Americans gave money to candidates for Congress. Among those who did make contributions, the 100 biggest donors gave as much as the smallest 4.75 million donors.</li>
@@ -247,14 +247,14 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
                       </ul>
                     </li>
                     <li>
-                      "I and others are tired of corruption and are demanding reform of campaign funding"  <a href="#" title="More" class="toggle-next-ul">See more</a>.
+                      <strong>I and others are tired of corruption and are demanding reform of campaign funding</strong>  <a href="#" title="More" class="toggle-next-ul">See more</a>.
                       <ul class="hidden">
                         <li>The deck is stacked against us ordinary Americans; only when fundamental reform reduces the corrupting influence of huge money in elections can Congress people return to their calling: representing the people of this great nation.</li>
                         <li>One recent poll showed that 96% of Americans think it is critical that we “reduce the influence of money in politics.”  I couldn't agree more, and everyone I talk to feels the same.</li>
                       </ul>
                     </li>
                     <li>
-                      My legislators should support a specific reform bill (and if they already do, I thank them for their support).   <a href="#" title="More" class="toggle-next-ul">See examples</a>.
+                     <strong> My legislators should support a specific reform bill (and if they already do, I thank them for their support).</strong>   <a href="#" title="More" class="toggle-next-ul">See examples</a>.
                       <ul class="hidden">
                         <li>Representative ___________ can co-sponsor the Government By The People Act (H.R.20), a strong reform bill calling for citizen-funded elections that has already been introduced in Congress.</li>
                         <li>Senator(s) ___________ can co-sponsor the Fair Elections Now Act (S.1538), a strong reform bill calling for citizen-funded elections that has already been introduced in Congress.</li>
@@ -322,7 +322,7 @@ jQuery.fn.wordCount = function(params){
   }
 
   //for each keypress function on text areas
-  this.keypress(function()
+  this.on('keypress paste', function()
   {
     total_words=this.value.split(/[\s\.\?]+/).length;
     jQuery('#'+p.counterElement).html(total_words);
@@ -344,7 +344,7 @@ jQuery.fn.wordCount = function(params){
       e.preventDefault();
       $(e.target).next('ul').toggleClass('hidden');
     });
-    $('#letter').wordCount();
+    $('#letter_body').wordCount();
     $('.js-form-letter-info').validate({
       submitHandler: function(form) {
         $form = $(form);
