@@ -53,7 +53,7 @@ redirects:
   June23: 'june23'
   LTE: 'letters-to-the-editor'
   lte: 'letters-to-the-editor'
-  join: 'local-action'
+  # join: 'local-action'
   sign-the-letter: 'take-action'
 
 # Below are examples of all the available configurations.
