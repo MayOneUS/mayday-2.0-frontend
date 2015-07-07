@@ -44,8 +44,8 @@ meta_content: |
           Say your name, phone number, and that you're a voter. <br />
           <small>Remember: Be confident, speak slowly, and don't forget to breathe.</small>
         </li>
-        <li>Explain that you're asking the Senator to <strong>support S. 1538</strong>, The Fair Elections Now Act.</li>
-        <li>Thank the Senator for listening to citizens instead of special interests.</li>
+        <li>Explain that you're asking the <span class="billData legSingular">Representative</span> to <strong>support <span class="billData billNumber">HR 20</span></strong>, <a href="http://www.repswith.us/reforms/government-by-the-people-act" class="billData shortName billLink" target="_blank">The Government By The People Act</a>.</li>
+        <li>Thank the <span class="billData legSingular">Representative</span> for listening to citizens instead of special interests.</li>
         <li>When you finish your message, stay on the line to review or re-record your message.</li>
       </ol>
     </div>
@@ -59,3 +59,42 @@ meta_content: |
 {% endcapture %}
 
 {% include sub_layouts/default_layout.html %}
+
+<script>
+  var billData = {
+    's1538': {
+      'copy': {
+        'shortName': 'The Fair Elections Now Act',
+        'billNumber': 'S. 1538',
+        'legSingular': 'Senator',
+        'legPlural': 'Senators',
+        'legBody': 'Senate',
+      },
+      'billLink': 'https://www.govtrack.us/congress/bills/114/s1538',
+      'googleEvent': '20150611_S1538_recording',
+      'campaignRef': '20150611_S1538'
+    },
+    'hr20': {
+      'copy': {
+        'shortName': 'The Government By The People Act',
+        'billNumber': 'HR 20',
+        'legSingular': 'Represenatative',
+        'legPlural': 'Represenatatives',
+        'legBody': 'House',
+      },
+      'billLink': 'http://www.repswith.us/reforms/government-by-the-people-act',
+      'googleEvent': '20150611_HR20_recording',
+      'campaignRef': '20150611_HR20'
+    }
+  },
+  hashValue = location.hash.replace(/^#/,''),
+  targetData = billData[hashValue];
+  if(typeof targetData !== 'undefined'){
+    $.each(targetData['copy'], function(key, value){
+      $('.billData.'+key).text(value);
+    })
+    $('.billData.billLink').prop('href', targetData['billLink'])
+    $('.billData.campaignRef').val(targetData['campaignRef'])
+  }
+
+</script>
