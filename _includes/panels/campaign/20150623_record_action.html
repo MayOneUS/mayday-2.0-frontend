@@ -16,8 +16,8 @@
             Say your name, phone number, and that you're a voter. <br />
             <small>Remember: Be confident, speak slowly, and don't forget to breathe.</small>
           </li>
-          <li>Explain that you're asking the <span class="billData legSingular">Senator</span> to <strong>support <span class="billData billNumber">S. 1538</span></strong>, <span class="billData shortName">The Fair Elections Now Act</span>.</li>
-          <li>Thank the <span class="billData legSingular">Senator</span> for listening to citizens instead of special interests.</li>
+          <li>Explain that you're asking the <span class="billData legSingular">Representative</span> to <strong>support <span class="billData billNumber">HR 20</span></strong>, <span class="billData shortName">The Government By The People Act</span>.</li>
+          <li>Thank the <span class="billData legSingular">Representative</span> for listening to citizens instead of special interests.</li>
           <li>When you finish your message, stay on the line to review or re-record your message.</li>
         </ol>
         {% else %}
@@ -51,12 +51,12 @@
               <div class="col-md-12 top-spacer-btn">
                 <button type="submit" class="btn btn-md-wide btn-md-red">Record <span class="hidden-xs">Your</span> Message</button>
                 <input type="hidden" name="person[remote_fields][tags][]" value="20150609_record_message">
-                <input type="hidden" name="person[remote_fields][tags][]"  class="billData googleEvent" value="20150611_S1538_recording">
+                <input type="hidden" name="person[remote_fields][tags][]"  class="billData googleEvent" value="20150611_HR20_recording">
                 <input type="hidden" name="person[remote_fields][tags][]" value="robocallable">
                 <input type="hidden" name="person[remote_fields][tags][]" value="textable">
                 <input type="hidden" name="person[is_volunteer]" value="true">
                 <input type="hidden" name="call_type" value="record_message">
-                <input type="hidden" name="campaign_ref"  class="billData campaignRef" value="20150611_S1538">
+                <input type="hidden" name="campaign_ref"  class="billData campaignRef" value="20150611_HR20">
               </div>
             </div>
           </div>
@@ -81,8 +81,8 @@
             Say your name, phone number, and that you're a voter. <br />
             <small>Remember: Be confident, speak slowly, and don't forget to breathe.</small>
           </li>
-          <li>Explain that you're asking the <span class="billData legSingular">Senator</span> to <strong>support <span class="billData billNumber">S. 1538</span></strong>, <span class="billData shortName">The Fair Elections Now Act</span>.</li>
-          <li>Thank the <span class="billData legSingular">Senator</span> for listening to citizens instead of special interests.</li>
+          <li>Explain that you're asking the <span class="billData legSingular">Representative</span> to <strong>support <span class="billData billNumber">HR20</span></strong>, <span class="billData shortName">The Government By The People Act</span>.</li>
+          <li>Thank the <span class="billData legSingular">Representative</span> for listening to citizens instead of special interests.</li>
           <li>When you finish your message, stay on the line to review or re-record your message.</li>
         </ol>
         <h2>When you're done, invite your friends to do the same!</h2>
@@ -103,7 +103,7 @@
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling You');
         targetData = targetData || {};
-        ga('send', 'event', 'form', 'submit',  targetData['googleEvent'] || '20150611_S1538_recording');
+        ga('send', 'event', 'form', 'submit',  targetData['googleEvent'] || '20150611_HR20_recording');
         $.post('{{site.services_url}}/ivr/calls', $form.serialize() ).done(function(data){
           $parent = $form.parents('.incomplete');
           setAllStandardFormsValues($form);
