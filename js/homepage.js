@@ -178,6 +178,7 @@ $(function() {
         animate.renderHouseSupport(endpoint_data, renderContainer, finishingVar);
       });
     },
+    //The following is some custom position checking. Can we just use wow.js and DRY it up?
     positionCheck: function () {
 
       if(window.scrollY) {
@@ -187,18 +188,18 @@ $(function() {
       }
       if(animate.chart1Fin === false && $container1[0].offsetTop + 100 < scrolledTo) {
         animate.chart1Fin = true;
-        animate.fetchAndRender(all_supporters_url, 'container1', 'chart1Fin');
+        animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Fin');
 
       }
-      if(animate.chart2Fin === false && $container2[0].offsetTop + 100 < scrolledTo) {
-        animate.chart2Fin = true;
-        $container2.addClass('loaded');
-        // animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
-      }
-      if(animate.chart3Fin === false && $container2[0].offsetTop + 150 < scrolledTo) {
-        animate.chart3Fin = true;
-        $container3.addClass('loaded');
-      }
+      // if(animate.chart2Fin === false && $container2[0].offsetTop + 100 < scrolledTo) {
+      //   animate.chart2Fin = true;
+      //   $container2.addClass('loaded');
+      //   animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
+      // }
+      // if(animate.chart3Fin === false && $container2[0].offsetTop + 150 < scrolledTo) {
+      //   animate.chart3Fin = true;
+      //   $container3.addClass('loaded');
+      // }
     },
     // runs charts on page load if they are in the view port currently
     pageLoad: function() {
@@ -207,20 +208,20 @@ $(function() {
 
       if(animate.chart1Fin === false && $container1[0].offsetTop + ($container1.height() / 2) < windowHeight) {
         animate.chart1Fin = true;
-        animate.fetchAndRender(all_supporters_url, 'container1', 'chart1Fin');
+        animate.fetchAndRender(bill_url_hr20, 'container1', 'chart1Fin');
 
       }
 
-      if(animate.chart2Fin === false && $container2[0].offsetTop + ($container2.height() / 2) < windowHeight) {
-        // animate.chart2Fin = true;
-        // animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
-        $container2.addClass('loaded');
-      }
+      // if(animate.chart2Fin === false && $container2[0].offsetTop + ($container2.height() / 2) < windowHeight) {
+      //   animate.chart2Fin = true;
+      //   animate.fetchAndRender(bill_url_hr424, 'container2', 'chart2Fin');
+      //   $container2.addClass('loaded');
+      // }
 
-      if(animate.chart3Fin === false && $container3[0].offsetTop + ($container3.height() / 2) < windowHeight) { //1663 + (250/2) < current window height
-        animate.chart3Fin = true;
-        $container3.addClass('loaded');
-      }
+      // if(animate.chart3Fin === false && $container3[0].offsetTop + ($container3.height() / 2) < windowHeight) { //1663 + (250/2) < current window height
+      //   animate.chart3Fin = true;
+      //   $container3.addClass('loaded');
+      // }
     }
   }
 
