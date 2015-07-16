@@ -18,12 +18,12 @@
 {% endraw %}
 </script>
 <script>
-(function ( data ){
+(function ( url_string ){
   $(document).ready(function(){
 
     "use strict";
 
-    var newAllieData = data;
+    var newAlliesUrl = url_string;
     var outSide = {};
 
     function renderAllies(legislator_data, index) {
@@ -37,15 +37,15 @@
     function callDataAndTemplate(legislators) {
       var allyObject = [];
 
-      legislators.forEach( function ( data, index ){ //gets three reps
+      legislators.forEach( function ( leg_data, index ){ //gets three reps
         if (index < 3 ){
-          allyObject.push( data );
+          allyObject.push( leg_data );
         }
       });
       allyObject.map(renderAllies);
     }
 
-    $.getJSON(newAllieData, callDataAndTemplate);
+    $.getJSON(newAlliesUrl, callDataAndTemplate);
 
   });
 
