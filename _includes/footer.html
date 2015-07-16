@@ -63,7 +63,7 @@ function setFormsValues(source_key, current_cookie_value, skipped_forms_selector
     current_cookie_value = current_cookie_value.replace(' ','+');
     var $form = $('form').not(skipped_forms_selector);
     var input_name = wrapParamForRails(source_key);
-    var target_ref = 'input[name='+input_name+']';
+    var target_ref = 'input[name='+input_name+'], input[name='+input_name+']';
     input_name = input_name.replace('\\[','[').replace('\\]',']')
 
     if($form.find(target_ref).length == 0){
@@ -102,7 +102,7 @@ $(document).ready(function(){
   manageDataFromParams('utm_source');
   manageDataFromParams('utm_medium');
   manageDataFromParams('utm_campaign');
-  // manageDataFromParams('email', 'header form, footer form');
+  manageDataFromParams('email', 'header form, footer form');
 
   var source_url = location.protocol + '//' + location.host + location.pathname;
   $('form').append('<input type="hidden" name="source_url" value="'+source_url+'">');
