@@ -1,0 +1,208 @@
+---
+layout: default
+title: MAYDAY.US - Make your voice heard. Get involved in your district.
+permalink: /tech-volunteers/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/letters-to-the-editor/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
+  <meta property="og:title" content=" I’m sending a message to Congress. Will you?"/>
+  <meta property="og:description" content="Join me and team MAYDAY in telling Congress we mean business when it comes to campaign finance reform.  Write a letter to the editor telling your reps and senators to lead on reform!"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title> I’m sending a message to Congress. Will you? - MAYDAY</title>
+  <link rel="canonical" href="https://mayday.us/letters-to-the-editor/">
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+---
+
+{% capture custom_css %}
+<style type="text/css">
+h2 {font-weight: 400;}
+
+form.md-inputs .letter input, form.md-inputs .letter textarea{border-color: rgba(0,0,0,0.05);margin-bottom:0}
+form.md-inputs .letter p.help-block{font-size:14px;}
+form.md-inputs .letter p.help-block.text-right{text-align:right;}
+
+</style>
+{% endcapture %}
+{% capture content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1><strong>Got some skill?</strong></h1>
+    </div>
+  </div>
+
+  <div class="row js-step-one">
+    <div class="col-md-10 action-wrap center-block incomplete">
+      <h2 class="text-center">Help push toward fundemental </h2>
+
+      <p>Let's work together and apply our tech talents to make a real difference. Please fill out the form below and let us know if you're available to attend a kick off meeting for tech volunteers.</p>
+      <form class="join js-tech-volunteer md-inputs">
+        <fieldset>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label sr-only" for="person[first_name]">First Name</label>
+              <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+              <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label class="control-label sr-only" for="person[zip]">ZIP</label>
+              <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" />
+            </div>
+
+            <div class="form-group col-md-8">
+              <label class="control-label sr-only" for="person[email]">Email Address</label>
+              <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label" for="volunteer_tasks">I'm willing to... </label>
+              <span class="help-block">Check all that apply.</span>
+              <div class="checkbox">
+                <label for="checkboxes-0">
+                  <input type="checkbox" name="skill_nationbuilder" id="checkboxes-0" value="true">
+                  NationBuilder (CRM)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="checkboxes-1">
+                  <input type="checkbox" name="skill_ruby_rails" id="checkboxes-1" value="true">
+                  Ruby/Rails
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="checkboxes-2">
+                  <input type="checkbox" name="skill_html_css" id="checkboxes-2" value="true">
+                  HTML/CSS
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="checkboxes-4">
+                  <input type="checkbox" name="skill_python" id="checkboxes-4" value="true">
+                  Python
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="checkboxes-5">
+                  <input type="checkbox" name="skill_sys_admin" id="checkboxes-5" value="true">
+                  Server/Systems Admin
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="checkboxes-6">
+                  <input type="checkbox" name="skill_javascript" id="checkboxes-6" value="true">
+                  Javascript
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="checkboxes-7">
+                  <input type="checkbox" name="skill_data_science" id="checkboxes-7" value="true">
+                  Data Science
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label class="control-label" for="meeting_time">I could attend a kick-off meeting at... </label>
+              <span class="help-block">Check all that apply.</span>
+              <div class="radio">
+                <label for="radios-0">
+                  <input type="radio" name="meeting_time" id="radios-0" value="july_23_2pm">
+                  Thursday, 2pm EDT July 23rd
+                </label>
+              </div>
+              <div class="radio">
+                <label for="radios-1">
+                  <input type="radio" name="meeting_time" id="radios-1" value="july_26_9pm">
+                  Sunday, 9pm EDT July 26th
+                </label>
+              </div>
+              <div class="radio">
+                <label for="radios-2">
+                  <input type="radio" name="meeting_time" id="radios-2" value="july_29_2pm">
+                  Wednesday, 2pm EDT July 29th
+                </label>
+              </div>
+              <div class="radio">
+                <label for="radios-3">
+                  <input type="radio" name="meeting_time" id="radios-3" value="july_29_9pm">
+                  Wednesday, 9pm EDT July 29th
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label sr-only" for="skill_other">Other Skills</label>
+              <textarea id="skill_other" name="skill_other" type="text" placeholder="Other Skills"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label sr-only" for="github_link">If you're on github, what is your profile link?</label>
+              <input id="github_link" name="github_link" type="text" placeholder="If you're on github, what is your profile link?" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-10 center-block">
+              <label class="control-label sr-only" for="singlebutton">Submit</label>
+              <input type="hidden" name="template_id" value="20150720_tech_volunteer">
+              <input type="hidden" name="person[remote_fields][tags][]" value="20150720_tech_volunteer">
+              <input type="hidden" name="person[is_volunteer]" value="1">
+              <button type="submit" class="btn btn-md-wide btn-md-red">Let's get started</button>
+            </div>
+          </div>
+          <div class="row">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="row js-thanks-message hidden">
+    <div class="col-md-12">
+      <h2 class="text-center">Thank yous for signing up!</h2>
+      <p>We'll email you once we have responses from more volunteers to decide on a meeting time.</p>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture panel_record_js%}
+<script>
+  $(document).ready(function(){
+    var form_data;
+    $('.js-tech-volunteer').validate({
+      submitHandler: function(form) {
+        $form = $(form);
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+        form_data =  $form.serializeObject()
+        $.post('{{site.services_url}}/v1/google/tech_volunteers', $form.serialize() ).done(function(data){
+          $('.js-step-one').addClass('hidden');
+            $('.js-thanks-message').removeClass('hidden');
+        }).fail(function(data){
+          alert('There was an error. Please try again later.')
+          $form.find('button.btn').html('Try Again');
+        });
+      }
+    });//on submit
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_record_js}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
