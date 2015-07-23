@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Announcing a our new CEO
-permalink: /fight-corruption/
+permalink: /join-ceo/
 hideMenus: true
 hideHeaderSignUp: true
 ---
@@ -10,7 +10,7 @@ hideHeaderSignUp: true
   .dayofaction .thanks-message{display:none;}
   .jumbotron{background: #af010e;min-height: 140px; text-align:center; color:#fff;}
   .control-label h3{font-weight:400;}
-  .page-content{padding-bottom: 0}
+  .page-content{padding-bottom: 20px}
   .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
   blockquote{font-weight:300;}
   blockquote .quote-author{text-align:right;font-style: italic;}
@@ -35,22 +35,12 @@ hideHeaderSignUp: true
     <blockquote class="visible-md-block visible-lg-block"><p>&ldquo;Corruption is the issue hiding in plain sight in the 2016 campaign. Together, we’ll continue the MAYDAY.US spirit of dreaming big, trying new things, and striking at the root of corruption with large, unafraid actions. With all hands on deck, we can overcome legalized bribery and achieve political equality. We’re asking you to re-commit. Your donation will ensure we can address a big problem with bold action.&rdquo;</p> <p class="quote-author">- Zephyr Teachout</p></blockquote>
   </div>
   <div class="col-sm-8 col-md-6 col-lg-5">
-    <div class="box-inner donate-page-box">
-      <h2 class="box-title">Empower All Americans</h2>
-      {% include donate_form.html redirect_url='/ceo-thanks/'%}
-    </div>
+    {% include panels/panel_action_w_signup.html hide_next=true form_class="smaller-form" %}
     <blockquote class="visible-xs-block visible-sm-block"><p>&ldquo;Zephyr is a rising star in our movement who spearheaded a bold campaign against the establishment in her bid for Governor of New York. I first met her when she entered politics as the director of online organizing for Howard Dean’s 2004 presidential campaign. That campaign showed the world the potential for online organizing. A proven fighter with a spirit that is not afraid, Zephyr is an extraordinary leader for MAYDAY and the entire reform movement. This change couldn’t make me happier. I will of course remain deeply involved with MAYDAY.US, serving on its board and as Zephyr’s minion. But we need you as well.&rdquo;</p> <p class="quote-author">- Lawrence Lessig</p></blockquote>
     <blockquote class="visible-xs-block visible-sm-block"><p>&ldquo;Corruption is the issue hiding in plain sight in the 2016 campaign. Together, we’ll continue the MAYDAY.US spirit of dreaming big, trying new things, and striking at the root of corruption with large, unafraid actions. With all hands on deck, we can overcome legalized bribery and achieve political equality. We’re asking you to re-commit. Your donation will ensure we can address a big problem with bold action.&rdquo;</p> <p class="quote-author">- Zephyr Teachout</p></blockquote>
   </div>
 </div><!-- END .donate-page.container -->
 
-<div id="rules" class="contribution-rules container-fluid">
-  <div class="container">
-    <div class="col-md-10">
-    {% include donate_rules.html %}
-    </div>
-  </div>
-</div>
 {% endcapture %}
 
 {% include sub_layouts/default_layout.html %}
