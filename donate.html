@@ -3,5 +3,29 @@ layout: default
 title: Donate
 permalink: /donate/
 ---
+{% capture content %}
+<div class="donate-page container">
+  <div class="col-md-6 col-lg-6 donate-flavor-text">
+    <h1>Donate</h1>
+    <p>Be part of the movement to restore our democracy.</p>
+    <p>Mayday is built on the idea that harnessing the full strength of our community will make reform possible.</p>
+    <p>We've got a million ideas for different ways to experiment on how best to move members to commit to fundamental reform. Help us learn what works, by supporting MaydayPAC.</p>
+  </div>
+  <div class="col-sm-8 col-md-6 col-lg-5">
+    <div class="box-inner donate-page-box">
+      <h2 class="box-title">Donate In Two Minutes or Less</h2>
+      {% include donate_form.html %}
+    </div>
+  </div>
+</div><!-- END .donate-page.container -->
 
-{% include donate_page.html %}
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
