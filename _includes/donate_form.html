@@ -215,7 +215,7 @@
 <script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 {% assign pledge_url = site.pledge_url or '//pledge.mayday.us' %}
-<script src="https:{{ pledge_url }}/static/pledge.js"></script>
+<script src="{{ root_path }}/js/pledge.js"></script>
 
 <script>
 /*
@@ -236,7 +236,8 @@ limitations under the License.
 
 */
 
-    PLEDGE_URL = "{{ pledge_url }}";
+  PLEDGE_URL = "{{ pledge_url }}";
+  REDIRECT_URL = {% if include.redirect_url %}'{{include.redirect_url}}'{% else %}'/donate-thanks/'{%endif%};
 
     function step2(amount){
   $(".step-1-container").hide("slow");
