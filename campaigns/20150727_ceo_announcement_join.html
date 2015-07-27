@@ -8,9 +8,11 @@ hideHeaderSignUp: true
 {% capture custom_css %}
 <style type="text/css">
   .dayofaction .thanks-message{display:none;}
-  .jumbotron{background: #af010e;min-height: 140px; text-align:center; color:#fff;}
+  .jumbotron{background: #444 url('/images/campaigns/20150727_ceo_donate_page_bg_w_photos.jpg') center 0px no-repeat;min-height: 210px;text-align:center;color:#fff;}
+  .jumbotron h1{background: transparent url('/images/campaigns/20150727_ceo_headline_v4_776x69.png') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top:40px;margin-bottom:0;}
+  .jumbotron h3{color:#fff;text-align:left;font-weight:400;margin-top:0}
   .control-label h3{font-weight:400;}
-  .page-content{padding-bottom: 20px}
+  .page-content{padding-bottom: 0}
   .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
   blockquote{font-weight:300;}
   blockquote .quote-author{text-align:right;font-style: italic;}
@@ -20,27 +22,40 @@ hideHeaderSignUp: true
 {% capture content %}
 
 <div class="jumbotron hidden-xs hidden-sm">
-  <h1>[Placeholder for Graphic]</h1>
+  <div class="container">
+    <div class="col-lg-6 col-md-offset-5 col-md-7">
+      <h1 class="text-hide">We're here to Fight</h1>
+      <h3>A well-connected few are pumping billions of dollars to hijack your government. Contribute now to take back our Republic.</h3>
+    </div>
+  </div>
 </div>
 
 <div class="donate-page container">
   <div class="col-md-6 col-lg-7 donate-flavor-text">
-    <h1>Stand with Zephyr.</h1>
-    <h2>Empower all Americans.</h2>
-    <p>Our government should  work for everyday Americans, not just the well-connected few. Led by new CEO Zephyr Teachout, MAYDAY.US will drive a bold, innovative campaign to empower all Americans and fundamentally change the way campaigns are financed. </p>
-
-    <p>The 2016 elections are just around the corner. What you give now will determine how much we can fight to change the status quo. </p>
+    <h1>Fight against corruption in the 2016 elections.</h1>
+    <p>At MAYDAY.US, we believe that the root issue in American democratic failure is the way politicians raise money. Every other issue is connected to privately financed campaigns.</p>
+    <p>We are up against some of the most powerful anti-democratic forces in the world, and need people power to fight.</p>
+    <p>Public elections are a feminist issue. They are a race issue. The are a democracy issue. They are a power issue.</p>
+    <p><strong>Show your power and join our movement.</strong></p>
 
     <blockquote class="visible-md-block visible-lg-block"><p>&ldquo;Zephyr is a rising star in our movement who spearheaded a bold campaign against the establishment in her bid for Governor of New York. I first met her when she entered politics as the director of online organizing for Howard Dean’s 2004 presidential campaign. That campaign showed the world the potential for online organizing. A proven fighter with a spirit that is not afraid, Zephyr is an extraordinary leader for MAYDAY and the entire reform movement. This change couldn’t make me happier. I will of course remain deeply involved with MAYDAY.US, serving on its board and as Zephyr’s minion. But we need you as well.&rdquo;</p> <p class="quote-author">- Lawrence Lessig</p></blockquote>
     <blockquote class="visible-md-block visible-lg-block"><p>&ldquo;Corruption is the issue hiding in plain sight in the 2016 campaign. Together, we’ll continue the MAYDAY.US spirit of dreaming big, trying new things, and striking at the root of corruption with large, unafraid actions. With all hands on deck, we can overcome legalized bribery and achieve political equality. We’re asking you to re-commit. Your donation will ensure we can address a big problem with bold action.&rdquo;</p> <p class="quote-author">- Zephyr Teachout</p></blockquote>
   </div>
-  <div class="col-sm-8 col-md-6 col-lg-5">
-    {% include panels/panel_action_w_signup.html hide_next=true form_class="smaller-form" %}
+  <div class="col-sm-12 col-md-6 col-lg-5">
+    {% include panels/panel_action_w_signup.html hide_next=true form_class="smaller-form" alt_title="Join Movement" alt_body="We need you. We need to build power so we can demand that politicians do something about how private money is destroying democracy." %}
     <blockquote class="visible-xs-block visible-sm-block"><p>&ldquo;Zephyr is a rising star in our movement who spearheaded a bold campaign against the establishment in her bid for Governor of New York. I first met her when she entered politics as the director of online organizing for Howard Dean’s 2004 presidential campaign. That campaign showed the world the potential for online organizing. A proven fighter with a spirit that is not afraid, Zephyr is an extraordinary leader for MAYDAY and the entire reform movement. This change couldn’t make me happier. I will of course remain deeply involved with MAYDAY.US, serving on its board and as Zephyr’s minion. But we need you as well.&rdquo;</p> <p class="quote-author">- Lawrence Lessig</p></blockquote>
     <blockquote class="visible-xs-block visible-sm-block"><p>&ldquo;Corruption is the issue hiding in plain sight in the 2016 campaign. Together, we’ll continue the MAYDAY.US spirit of dreaming big, trying new things, and striking at the root of corruption with large, unafraid actions. With all hands on deck, we can overcome legalized bribery and achieve political equality. We’re asking you to re-commit. Your donation will ensure we can address a big problem with bold action.&rdquo;</p> <p class="quote-author">- Zephyr Teachout</p></blockquote>
   </div>
 </div><!-- END .donate-page.container -->
 
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
 {% endcapture %}
 
 {% include sub_layouts/default_layout.html %}
+
