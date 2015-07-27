@@ -1,0 +1,96 @@
+<style type="text/css" media="screen">
+
+.jumbotron{min-height:460px;margin-bottom:0;background: #444 url('/images/campaigns/20150727_ceo_bg_w_photos.jpg') center 0 no-repeat;}
+.jumbotron h1{background: transparent url('/images/campaigns/20150727_ceo_headline_v4_776x69.png') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top: 30px;margin-bottom: 20px;}
+
+
+.jumbotron .action-panel form{margin-top:15px;}
+.jumbotron .action-panel .form-group{margin-bottom:0;}
+.jumbotron .action-panel .no-gutter .col-md-8{padding-right:10px;}
+
+@media (min-width: 768px) and (max-width: 1199px){
+  .jumbotron h1{margin-top:20px;}
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .jumbotron{background-image: url('/images/campaigns/20150727_ceo_bg_w_photos_md.jpg');}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .jumbotron{min-height: 430px;background-image: url('/images/campaigns/20150727_ceo_bg_w_photos_xs.jpg');background-position:-90px bottom;}
+  .jumbotron h1{margin-bottom:0;}
+  .jumbotron .action-panel .no-gutter .col-md-8{padding-right:10px;}
+
+}
+
+@media (max-width: 767px){
+  .jumbotron{background:#424645;}
+  .jumbotron .action-panel{margin:0 0 15px;}
+  .jumbotron .action-panel .no-gutter .col-md-8{padding-right:0;}
+}
+</style>
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-lg-7 col-xs-12 pull-right">
+        <h1 class="text-hide">We're here to Fight</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-8 col-md-4 col-sm-6 col-sm-offset-6">
+        {% capture panel_body %}
+        <div class="panel-body">
+          <h2>Join the movement</h2>
+          <p class="hidden-xs">A well-connected few are spending billions to hijack your government. Let’s take back our Republic. </p>
+          <p class="visible-xs-block">A well-connected few are hijacking your government. Join new CEO Zephyr Teachout to take back our Republic.</p>
+
+          <form class="row {{include.form_class}} smaller-form no-gutter js-jumbotron-signup">
+
+            <fieldset class="col-md-12 no-gutter">
+              <div class="row no-gutter">
+                <div class="form-group col-md-8 col-sm-8">
+                  <label class="control-label sr-only" for="person[email]">Email Address</label>
+                  <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
+                </div>
+
+                <div class="form-group col-md-4 col-sm-4">
+                  <label class="control-label sr-only" for="person[zip]">ZIP</label>
+                  <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
+                </div>
+              </div>
+
+              <div class="row no-gutter top-spacer-btn">
+                <div class="form-group col-md-12">
+                  <label class="control-label sr-only" for="singlebutton">Submit</label>
+                  <input type="hidden" name="template_id" value="20150727_accouncement_signup">
+                  <input type="hidden" name="person[remote_fields][tags][]" value="20150727_accouncement_signup">
+                  <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+                </div>
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+        {% endcapture %}
+        {% include panels/panel_empty.html %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% capture jumbotron_signup_js %}
+<script>
+  $('.js-jumbotron-signup').validate({
+    submitHandler: function(form) {
+      $form = $(form);
+      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
+      }).done(function(){
+        location = '/fight-corruption/'
+      });
+    }
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{jumbotron_signup_js}}{% endcapture %}
