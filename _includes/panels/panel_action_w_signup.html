@@ -77,7 +77,11 @@
           setAsComplete($parent);
           makeActive($next);
         }else{
-          location = '/take-action/#get-educated'
+          if(typeof JOIN_REDIRECT_URL == 'undefined'){
+            window.location = '/take-action/#get-educated';
+          }else{
+            window.location = JOIN_REDIRECT_URL;
+          }
         }
       });
     }
