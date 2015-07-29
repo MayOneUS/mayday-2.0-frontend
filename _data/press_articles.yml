@@ -1,5 +1,11 @@
 # Visit /extern/press-articles-generator.html to use the generator helper to clean up quotes.
-- title: 'Zephyr Teachout takes over Larry Lessig&rdquo;s PAC'
+- title: 'The Hill: Anti-super PAC group gets new leader'
+  link: 'http://thehill.com/blogs/ballot-box/249275-anti-super-pac-group-gets-new-leader'
+  quotes:
+    - 'Former New York gubernatorial candidate Zephyr Teachout will take the reigns of  the super-PAC meant to advocate for the destruction of all super-PACs, the group announced Monday.'
+    - '&ldquo;Private financing of elections is the enemy of democracy. Americans know it, but politicians are far too silent and like to deflect the conversation elsewhere,&ldquo; she said in a statement.'
+    - '&ldquo;At Mayday, we directly confront power and corruption and refuse to allow the plague of silence and lip-treatment to propagate fundamental corruption.&ldquo;'
+- title: 'Politico: Zephyr Teachout takes over Larry Lessig&rdquo;s PAC'
   link: 'http://www.politico.com/story/2015/07/zephyr-teachout-larry-lessig-mayday-pac-2016-120660.html'
   quotes:
     - 'Teachout, an associate professor of law at Fordham Law School, is a longtime transparency advocate. She served as director of Internet organizing for the 2004 Howard Dean presidential campaign and was later the first national director of the Sunlight Foundation.'
