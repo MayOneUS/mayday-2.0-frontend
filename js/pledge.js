@@ -272,19 +272,20 @@ var createPledge = function(name, payment) {
     dataType: 'json',
     success: function(data) {
       utm_data = $('#pledgeForm').serialize();
-      $.post(services_url+'/actions', utm_data);
-      if (typeof FACEBOOK_TRACKING_ID != 'undefined'){
-        window._fbq = window._fbq || [];
-        _fbq.push(['track',FACEBOOK_TRACKING_ID,{'value': $('#amount_input').val(),'currency':'USD'}]);
-      }
-      if ('paypal_url' in data) {
-        location.href = data.paypal_url;
-      } else if ('bitpay_url' in data) {
-        location.href = data.bitpay_url;
-      } else if (typeof REDIRECT_URL == 'undefined'){
-        location.href = PLEDGE_URL + data.receipt_url;
-      } else {
-        location.href = REDIRECT_URL;
+      $.post(services_url+'/actions', utm_data, function(){
+        if (typeof FACEBOOK_TRACKING_ID != 'undefined'){
+          window._fbq = window._fbq || [];
+          _fbq.push(['track',FACEBOOK_TRACKING_ID,{'value': $('#amount_input').val(),'currency':'USD'}]);
+        }
+        if ('paypal_url' in data) {
+          location.href = data.paypal_url;
+        } else if ('bitpay_url' in data) {
+          location.href = data.bitpay_url;
+        } else if (typeof REDIRECT_URL == 'undefined'){
+          location.href = PLEDGE_URL + data.receipt_url;
+        } else {
+          location.href = REDIRECT_URL;
+        }
       }
     },
     error: function(data) {

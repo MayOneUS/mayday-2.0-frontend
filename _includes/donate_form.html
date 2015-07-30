@@ -35,7 +35,7 @@
   <form id="pledgeForm" role="form" method="POST" onsubmit="step3();" action="javascript:;">
     <input type="hidden" name="targeting_input" id="targeting_input" value="Whatever Helps">
     <input type="hidden" name="target" id="target" value="Whatever Helps">
-    <input type="hidden" name="template_id" value="20150727_accouncement_donate">
+    <input type="hidden" name="template_id" value="{% if includes.action_template_id %}{{ includes.action_template_id }}{% else %}donation{% endif %}">
 
     {% if page.only-bitcoin %}
     <div class="row">
