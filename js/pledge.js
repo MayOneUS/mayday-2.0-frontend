@@ -271,7 +271,7 @@ var createPledge = function(name, payment) {
     contentType: "application/json",
     dataType: 'json',
     success: function(data) {
-      utm_data = $form.serialize();
+      utm_data = $('#pledgeForm').serialize();
       $.post(services_url+'/actions', utm_data);
       if (typeof FACEBOOK_TRACKING_ID != 'undefined'){
         window._fbq = window._fbq || [];
