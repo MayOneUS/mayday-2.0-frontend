@@ -286,7 +286,7 @@ var createPledge = function(name, payment) {
         } else {
           location.href = REDIRECT_URL;
         }
-      }
+      });
     },
     error: function(data) {
       setLoading(false);
