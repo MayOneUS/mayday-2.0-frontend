@@ -271,6 +271,8 @@ var createPledge = function(name, payment) {
     contentType: "application/json",
     dataType: 'json',
     success: function(data) {
+      utm_data = $form.serialize();
+      $.post(services_url+'/actions', utm_data);
       if ('paypal_url' in data) {
         location.href = data.paypal_url;
       } else if ('bitpay_url' in data) {
