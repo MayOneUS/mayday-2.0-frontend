@@ -136,21 +136,21 @@ var validateBitcoinForm = function() {
 }
 
 var bitcoinPledge = function() {
-    if (validateForm() && validateBitcoinForm()) {
-        var amount = $('#amount_input').val() || null;
+  if (validateForm() && validateBitcoinForm()) {
+    var amount = $('#amount_input').val() || null;
 
-        setLoading(true);
-        createPledge("Bitcoin", { BITCOIN: {} });
-    }
-    return false;
+    setLoading(true);
+    createPledge("Bitcoin", { BITCOIN: {} });
+  }
+  return false;
 };
 
 var paypalPledge = function() {
-    if (validateForm()) {
-        setLoading(true);
-        createPledge("Paypal", { PAYPAL: { step : 'start' } });
-    }
-    return false;
+  if (validateForm()) {
+    setLoading(true);
+    createPledge("Paypal", { PAYPAL: { step : 'start' } });
+  }
+  return false;
 };
 var pledge = function() {
   if (validateForm()) {
@@ -192,15 +192,15 @@ var createPledge = function(name, payment) {
   var request_url = null;
 
   if ('STRIPE' in payment) {
-      request_url = PLEDGE_URL + '/r/pledge';
+    request_url = PLEDGE_URL + '/r/pledge';
   }
 
   if ('PAYPAL' in payment) {
-      request_url = PLEDGE_URL + '/r/paypal_start';
+    request_url = PLEDGE_URL + '/r/paypal_start';
   }
 
   if ('BITCOIN' in payment) {
-      request_url = PLEDGE_URL + '/r/bitcoin_start';
+    request_url = PLEDGE_URL + '/r/bitcoin_start';
   }
   // ALL PAYPAL PAYMENTS AND BITCOIN PAYMENTS ARE DONATIONS
   if($("#directDonate_input").is(':checked') || ('PAYPAL' in payment) || ('BITCOIN' in payment) ) {
@@ -265,31 +265,35 @@ var createPledge = function(name, payment) {
   }
 
   $.ajax({
-      type: 'POST',
-      url: request_url,
-      data: JSON.stringify(data),
-      contentType: "application/json",
-      dataType: 'json',
-      success: function(data) {
-        if ('paypal_url' in data) {
-          location.href = data.paypal_url;
-        } else if ('bitpay_url' in data) {
-          location.href = data.bitpay_url;
-        } else if (typeof REDIRECT_URL == 'undefined'){
-          location.href = PLEDGE_URL + data.receipt_url;
-        } else {
-          location.href = REDIRECT_URL;
-        }
-      },
-      error: function(data) {
-        setLoading(false);
-        if ('paymentError' in data) {
-          showError("We're having trouble charging your card: " + data.paymentError);
-        } else {
-          $('#formError').text('Oops, something went wrong. Try again in a few minutes');
-          $('#formError').show();
-        }
-      },
+    type: 'POST',
+    url: request_url,
+    data: JSON.stringify(data),
+    contentType: "application/json",
+    dataType: 'json',
+    success: function(data) {
+      if (typeof FACEBOOK_TRACKING_ID != 'undefined'){
+        window._fbq = window._fbq || [];
+        _fbq.push(['track',FACEBOOK_TRACKING_ID,{'value': $('#amount_input').val(),'currency':'USD'}]);
+      }
+      if ('paypal_url' in data) {
+        location.href = data.paypal_url;
+      } else if ('bitpay_url' in data) {
+        location.href = data.bitpay_url;
+      } else if (typeof REDIRECT_URL == 'undefined'){
+        location.href = PLEDGE_URL + data.receipt_url;
+      } else {
+        location.href = REDIRECT_URL;
+      }
+    },
+    error: function(data) {
+      setLoading(false);
+      if ('paymentError' in data) {
+        showError("We're having trouble charging your card: " + data.paymentError);
+      } else {
+        $('#formError').text('Oops, something went wrong. Try again in a few minutes');
+        $('#formError').show();
+      }
+    },
   });
 };
 

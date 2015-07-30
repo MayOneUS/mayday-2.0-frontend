@@ -64,7 +64,19 @@
   </div>
 </div>
 {% capture panel_signup_js %}
+
 <script>
+  (function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+  })();
   $('.js-sign-up-form').validate({
     submitHandler: function(form) {
       $form = $(form);
@@ -72,7 +84,11 @@
       $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
       }).done(function(){
         window['optimizely'] = window['optimizely'] || [];
-        window.optimizely.push(["trackEvent", "eventName"]);
+        window.optimizely.push(["trackEvent", "JoinSignup"]);
+        {% if include.facebook_pixel_id %}
+        window._fbq = window._fbq || [];
+        _fbq.push(['track',{{include.facebook_pixel_id}},{'value':'0.00','currency':'USD'}]);
+        {% endif %}
         if(location.pathname == '/take-action/'){
           $next = $form.parents('li').next();
           $parent = $form.parents('li');
