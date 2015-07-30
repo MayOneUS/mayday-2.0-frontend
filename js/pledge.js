@@ -69,32 +69,32 @@ var getAmountCents = function() {
 };
 
 var validateForm = function() {
-    var email = $('#email_input').val() || null;
-    var occ = $('#occupation_input').val() || null;
-    var emp = $('#employer_input').val() || null;
-    var amount = $('#amount_input').val() || null;
+  var email = $('#email_input').val() || null;
+  var occ = $('#occupation_input').val() || null;
+  var emp = $('#employer_input').val() || null;
+  var amount = $('#amount_input').val() || null;
 
 
-    if (!email) {
-      showError( "Please enter email");
-      return false;
-    } else if (!validateEmail(email)) {
-      showError("Please enter a valid email");
-      return false;
-    } else if (!occ) {
-      showError( "Please enter occupation");
-      return false;
-    } else if (!emp) {
-      showError( "Please enter employer");
-      return false;
-    } else if (!amount) {
-      showError( "Please enter an amount");
-      return false;
-    } else if (amount < 1) {
-      showError( "Please enter an amount of $1 or more");
-      return false;
-    }
-    return true;
+  if (!email) {
+    showError( "Please enter email");
+    return false;
+  } else if (!validateEmail(email)) {
+    showError("Please enter a valid email");
+    return false;
+  } else if (!occ) {
+    showError( "Please enter occupation");
+    return false;
+  } else if (!emp) {
+    showError( "Please enter employer");
+    return false;
+  } else if (!amount) {
+    showError( "Please enter an amount");
+    return false;
+  } else if (amount < 1) {
+    showError( "Please enter an amount of $1 or more");
+    return false;
+  }
+  return true;
 };
 
 var validateBitcoinForm = function() {
@@ -136,21 +136,21 @@ var validateBitcoinForm = function() {
 }
 
 var bitcoinPledge = function() {
-    if (validateForm() && validateBitcoinForm()) {
-        var amount = $('#amount_input').val() || null;
+  if (validateForm() && validateBitcoinForm()) {
+    var amount = $('#amount_input').val() || null;
 
-        setLoading(true);
-        createPledge("Bitcoin", { BITCOIN: {} });
-    }
-    return false;
+    setLoading(true);
+    createPledge("Bitcoin", { BITCOIN: {} });
+}
+  return false;
 };
 
 var paypalPledge = function() {
-    if (validateForm()) {
-        setLoading(true);
-        createPledge("Paypal", { PAYPAL: { step : 'start' } });
-    }
-    return false;
+  if (validateForm()) {
+    setLoading(true);
+    createPledge("Paypal", { PAYPAL: { step : 'start' } });
+  }
+  return false;
 };
 var pledge = function() {
   if (validateForm()) {
@@ -192,15 +192,15 @@ var createPledge = function(name, payment) {
   var request_url = null;
 
   if ('STRIPE' in payment) {
-      request_url = PLEDGE_URL + '/r/pledge';
+    request_url = PLEDGE_URL + '/r/pledge';
   }
 
   if ('PAYPAL' in payment) {
-      request_url = PLEDGE_URL + '/r/paypal_start';
+    request_url = PLEDGE_URL + '/r/paypal_start';
   }
 
   if ('BITCOIN' in payment) {
-      request_url = PLEDGE_URL + '/r/bitcoin_start';
+    request_url = PLEDGE_URL + '/r/bitcoin_start';
   }
   // ALL PAYPAL PAYMENTS AND BITCOIN PAYMENTS ARE DONATIONS
   if($("#directDonate_input").is(':checked') || ('PAYPAL' in payment) || ('BITCOIN' in payment) ) {
@@ -265,31 +265,31 @@ var createPledge = function(name, payment) {
   }
 
   $.ajax({
-      type: 'POST',
-      url: request_url,
-      data: JSON.stringify(data),
-      contentType: "application/json",
-      dataType: 'json',
-      success: function(data) {
-        if ('paypal_url' in data) {
-          location.href = data.paypal_url;
-        } else if ('bitpay_url' in data) {
-          location.href = data.bitpay_url;
-        } else if (typeof REDIRECT_URL == 'undefined'){
-          location.href = PLEDGE_URL + data.receipt_url;
-        } else {
-          location.href = REDIRECT_URL;
-        }
-      },
-      error: function(data) {
-        setLoading(false);
-        if ('paymentError' in data) {
-          showError("We're having trouble charging your card: " + data.paymentError);
-        } else {
-          $('#formError').text('Oops, something went wrong. Try again in a few minutes');
-          $('#formError').show();
-        }
-      },
+    type: 'POST',
+    url: request_url,
+    data: JSON.stringify(data),
+    contentType: "application/json",
+    dataType: 'json',
+    success: function(data) {
+      if ('paypal_url' in data) {
+        location.href = data.paypal_url;
+      } else if ('bitpay_url' in data) {
+        location.href = data.bitpay_url;
+      } else if (typeof REDIRECT_URL == 'undefined'){
+        location.href = PLEDGE_URL + data.receipt_url;
+      } else {
+        location.href = REDIRECT_URL;
+      }
+    },
+    error: function(data) {
+      setLoading(false);
+      if ('paymentError' in data) {
+        showError("We're having trouble charging your card: " + data.paymentError);
+      } else {
+        $('#formError').text('Oops, something went wrong. Try again in a few minutes');
+        $('#formError').show();
+      }
+    },
   });
 };
 
@@ -307,17 +307,17 @@ $(document).ready(function() {
   $('#bitcoinButton').on('click', bitcoinPledge);
 
   $.get(PLEDGE_URL + '/r/payment_config', {}, function(){}, "json").done(function(pConf) {
-      paymentConfig = pConf;
-      stripeConfig = {
-        key: paymentConfig.stripePublicKey,
-        name: 'MAYDAY.US',
-        panelLabel: 'Pledge',
-        billingAddress: true,
-        image: PLEDGE_URL + '/static/flag.jpg',
-        token: function(token, args) {
-          onTokenRecv(token, args);
-        }
-      };
+    paymentConfig = pConf;
+    stripeConfig = {
+      key: paymentConfig.stripePublicKey,
+      name: 'MAYDAY.US',
+      panelLabel: 'Pledge',
+      billingAddress: true,
+      image: PLEDGE_URL + '/static/flag.jpg',
+      token: function(token, args) {
+        onTokenRecv(token, args);
+      }
+    };
     stripeHandler = StripeCheckout.configure(stripeConfig);
   });
 });
