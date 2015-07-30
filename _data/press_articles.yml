@@ -1,4 +1,20 @@
 # Visit /extern/press-articles-generator.html to use the generator helper to clean up quotes.
+- title: 'Crowdfund Insider: Lawrence Lessig Out as CEO Of Mayday PAC. Replaced by former New York Governor Candidate Zephyr Teachout'
+  link: 'http://www.crowdfundinsider.com/2015/07/71839-lawrence-lessig-out-as-ceo-of-mayday-pac-replaced-by-former-new-york-governor-candidate-zephyr-teachout/'
+  quotes:
+   - 'According to Mayday, Zephyr Teachout will now handle day-to-day operations as Mayday CEO and Board Chair. Lessig will remain on the Board of Directors.  Teachout is an Associate Professor of Law at Fordham University. She is a &ldquo;constitutional and property law expert&ldquo; who authored the book &ldquo;Corruption in America: From Benjamin Franklin&rsquo;s Snuff Box to Citizens United&ldquo;. Teachout also served as the first national director of the Sunlight Foundation, a non-resident fellow at the Berkman Center for Internet and Society at Harvard Law School and the Director of Internet Organizing for Howard Dean&rsquo;s 2004 presidential campaign.'
+   - 'Lessig affirmed his belief that &ldquo;private financing of elections is the enemy of democracy&ldquo;. Teachout called Lessig&rsquo;s legacy &ldquo;extraordinary&ldquo;. &ldquo;Mayday, at its heart, is a fight for democracy against fear and silence. We will speak out against silence and corruption in the 2016 election starting today,&ldquo; stated Teachout.'
+- title: 'The Hill: Anti-super PAC group gets new leader'
+  link: 'http://thehill.com/blogs/ballot-box/249275-anti-super-pac-group-gets-new-leader'
+  quotes:
+    - 'Former New York gubernatorial candidate Zephyr Teachout will take the reigns of  the super-PAC meant to advocate for the destruction of all super-PACs, the group announced Monday.'
+    - '&ldquo;Private financing of elections is the enemy of democracy. Americans know it, but politicians are far too silent and like to deflect the conversation elsewhere,&ldquo; she said in a statement.'
+    - '&ldquo;At Mayday, we directly confront power and corruption and refuse to allow the plague of silence and lip-treatment to propagate fundamental corruption.&ldquo;'
+- title: 'Politico: Zephyr Teachout takes over Larry Lessig&rdquo;s PAC'
+  link: 'http://www.politico.com/story/2015/07/zephyr-teachout-larry-lessig-mayday-pac-2016-120660.html'
+  quotes:
+    - 'Teachout, an associate professor of law at Fordham Law School, is a longtime transparency advocate. She served as director of Internet organizing for the 2004 Howard Dean presidential campaign and was later the first national director of the Sunlight Foundation.'
+    - 'In 2014, she launched a surprisingly potent bid to oust New York Gov. Andrew Cuomo, along with her running mate, Columbia law professor and net neutrality advocate Tim Wu.'
 - title: 'The Fifth Column: Keeping the Republic'
   link: 'http://thefifthcolumnnews.com/2015/05/keeping-the-republic/'
   quotes:

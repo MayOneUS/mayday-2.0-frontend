@@ -141,7 +141,7 @@ var bitcoinPledge = function() {
 
     setLoading(true);
     createPledge("Bitcoin", { BITCOIN: {} });
-}
+  }
   return false;
 };
 
@@ -273,6 +273,10 @@ var createPledge = function(name, payment) {
     success: function(data) {
       utm_data = $form.serialize();
       $.post(services_url+'/actions', utm_data);
+      if (typeof FACEBOOK_TRACKING_ID != 'undefined'){
+        window._fbq = window._fbq || [];
+        _fbq.push(['track',FACEBOOK_TRACKING_ID,{'value': $('#amount_input').val(),'currency':'USD'}]);
+      }
       if ('paypal_url' in data) {
         location.href = data.paypal_url;
       } else if ('bitpay_url' in data) {
