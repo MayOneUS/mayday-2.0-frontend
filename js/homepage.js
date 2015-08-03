@@ -104,7 +104,7 @@ $(function() {
   }
   function transformEndpointData(response){
     var output = {};
-    output.name = 'In the House';
+    output.name = 'On House Bill HR20';
     output.seriesData = [
         {
           "name": "Leaders<br>Needed",
