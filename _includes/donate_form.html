@@ -215,8 +215,7 @@
 <script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 {% assign pledge_url = site.pledge_url or '//pledge.mayday.us' %}
-<script src="{{ root_path }}/js/pledge.js"></script>
-
+{% javascript _includes/donate_form.js %}
 <script>
 /*
 

@@ -18,16 +18,12 @@
 {% endraw %}
 </script>
 <script>
-(function ( url_string ){
   $(document).ready(function(){
-
     "use strict";
 
-    var newAlliesUrl = url_string;
-    var outSide = {};
+    var newAlliesUrl = '{{site.services_url}}/legislators/newest_supporters.json';
 
     function renderAllies(legislator_data, index) {
-
       var rendered = [];
       legislator_data.short_title = legislator_data.title === 'Senator' ? 'Sen.' : 'Rep.';
       rendered = ich.legislator_template(legislator_data);
@@ -49,7 +45,6 @@
 
   });
 
-})( '{{site.services_url}}/legislators/newest_supporters.json' );
 
 </script>
 
