@@ -22,64 +22,29 @@ permalink: /take-action/
   </div> -->
   <ul class="action-tree col-md-10 center-block list-unstyled">
     <li class="incomplete active js-sign-up">
-      <small class="text-hide show-complete">Completed:</small>
-      <small class="text-hide show-incomplete icon-sign-up">Incomplete</small>
-      <a href="#" class="btn btn-md-wide" title="Sign Up for Updates">
-        <strong class="show-complete">Completed:</strong>
-        <strong class="show-incomplete">1.</strong>
-        Sign Up for Updates
-      </a>
+      {% include take_action_section_header.html iconClass="sign-up" title="Sign Up for Updates" increment="1" %}
       {% include panels/panel_action_w_signup.html hide_volunteer=true %}
     </li>
-    <li class="incomplete js-get-educated">
-      <small class="text-hide show-complete">Completed:</small>
-      <small class="text-hide show-incomplete icon-get-educated">Incomplete</small>
-      <a href="#" class="btn btn-md-wide" title="Get Educated">
-        <strong class="show-complete">Completed:</strong>
-        <strong class="show-incomplete">2.</strong>
-        Get Educated
-      </a>
-      {% include panels/panel_action_w_get_educated.html %}
+    <li class="incomplete js-call-congress">
+      {% include take_action_section_header.html iconClass="call-congress" title="Record a Message for Congress" increment="2" %}
+      {% include panels/panel_action_w_record_message.html %}
     </li>
-    <li class="incomplete js-spread-the-word">
-      <small class="text-hide show-complete">Completed:</small>
-      <small class="text-hide show-incomplete icon-spread-the-word">Incomplete</small>
-      <a href="#" class="btn btn-md-wide" title="Spread the Word">
-        <strong class="show-complete">Completed:</strong>
-        <strong class="show-incomplete">3.</strong>
-        Spread the Word
-      </a>
+    <!-- <li class="incomplete js-get-educated">
+      {% include take_action_section_header.html iconClass="get-educated" title="Get Educated" increment="2" %}
+      {% include panels/panel_action_w_get_educated.html %}
+    </li> -->
+    <li class="incomplete js-invite-your-friends">
+      {% include take_action_section_header.html iconClass="spread-the-word" title="Invite Your Friends" increment="3" %}
       {% include panels/panel_action_w_spread_the_word.html %}
     </li>
-    <li class="incomplete js-call-congress">
-      <small class="text-hide show-complete">Completed:</small>
-      <small class="text-hide show-incomplete icon-call-congress">Incomplete</small>
-      <a href="#" class="btn btn-md-wide" title="Take Action: Call Congress">
-        <strong class="show-complete">Completed:</strong>
-        <strong class="show-incomplete">4.</strong>
-        Call Congress
-      </a>
-      {% include panels/panel_action_w_call_congress.html %}
-    </li>
+    
     <li class="incomplete js-join-the-discussion">
-      <small class="text-hide show-complete">Completed:</small>
-      <small class="text-hide show-incomplete icon-join-discussion">Incomplete</small>
-      <a href="#" class="btn btn-md-wide" title="Join the Discussion">
-        <strong class="show-complete">Completed:</strong>
-        <strong class="show-incomplete">5.</strong>
-        Join the Discussion
-      </a>
+      {% include take_action_section_header.html iconClass="join-discussion" title="Join the Discussion" increment="4" %}
       {% include panels/panel_action_w_join_discussion.html %}
     </li>
-    <li class="incomplete js-volunteer">
-      <small class="text-hide show-complete">Completed:</small>
-      <small class="text-hide show-incomplete icon-volunteer">Incomplete</small>
-      <a href="#" class="btn btn-md-wide" title="Volunteer">
-        <strong class="show-complete">Completed:</strong>
-        <strong class="show-incomplete">6.</strong>
-        Volunteer
-      </a>
-      {% include panels/panel_action_w_volunteer.html %}
+    <li class="incomplete js-local-action">
+      {% include take_action_section_header.html iconClass="volunteer" title="Take Local Action" increment="5" %}
+      {% include panels/panel_action_w_local_action.html %}
     </li>
   </ul>
 </div>

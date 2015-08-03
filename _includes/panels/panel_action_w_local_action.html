@@ -1,0 +1,167 @@
+<div class="panel action-panel with-shield">
+  <div class="panel-icon">
+    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
+    <div class="fade-line hidden-xs hidden-sm"></div>
+  </div>
+  <div class="panel-body">
+    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Take Local Action{% endif %}</h2>
+    <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Get involved in your district{% endif %}</p>
+    <form class="row {{include.form_class}} js-local-action-form no-gutter">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="control-label sr-only" for="first_name">First Name</label>
+            <input type="text" class="no-bottom-margin" name="person[first_name]" placeholder="First Name" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="control-label sr-only" for="last_name">Last Name</label>
+            <input type="text" class="no-bottom-margin" name="person[last_name]" placeholder="Last Name" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="control-label sr-only" for="email">Email Address</label>
+            <input type="email" class="no-bottom-margin" name="person[email]" placeholder="Email Address" required="required"/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group no-y-margin-md">
+            <label class="control-label sr-only" for="phone">Phone</label>
+            <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" phoneUs="phoneUs"/>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group no-y-margin-md">
+            <label class="control-label sr-only" for="zip">ZIP</label>
+            <input class="no-bottom-margin" type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="ZIP" required="required" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="help-block" style="margin-bottom:10px">We respect your privacy. Your phone number will not be shared with any third party. Note: If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. Message &amp; data rates may apply.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group text-left">
+            <label class="control-label" for="political_leaning">If I had to pick, I lean... </label>
+            <span class="help-block">This will help us tailor the outreach.</span>
+            <div class="radio">
+              <label for="radios-0">
+                <input type="radio" name="political_leaning" id="radios-0" value="conservative">
+                Conservative
+              </label>
+            </div>
+            <div class="radio">
+              <label for="radios-1">
+                <input type="radio" name="political_leaning" id="radios-1" value="progressive">
+                Progressive
+              </label>
+            </div>
+            <div class="radio">
+              <label for="radios-2">
+                <input type="radio" name="political_leaning" id="radios-2" value="centrist">
+                Centrist
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group text-left">
+            <label class="control-label" for="volunteer_tasks">I'm willing to... </label>
+            <span class="help-block">Check all that apply.</span>
+            <div class="checkbox">
+              <label for="checkboxes-0">
+                <input type="checkbox" name="volunteer_letter" id="checkboxes-0" value="true">
+                Write a letter to the editor
+              </label>
+            </div>
+            <div class="checkbox">
+              <label for="checkboxes-1">
+                <input type="checkbox" name="volunteer_attend" id="checkboxes-1" value="true">
+                Attend the meeting
+              </label>
+            </div>
+            <div class="checkbox">
+              <label for="checkboxes-2">
+                <input type="checkbox" name="volunteer_call" id="checkboxes-2" value="true">
+                Help call other citizens to attend the meeting
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="control-label" for="congress_relationship">Know a member of congress? Have special skills to contribute? Please let us know.</label>
+            <textarea name="congress_relationship" placeholder="Describe any congressional relationships"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-xs-12 center-block">
+          <div class="col-md-12 top-spacer-btn">
+            <button type="submit" class="btn btn-md-wide btn-md-red">I'm In</button>
+            <input type="hidden" name="remote_fields[tags][]" value="20150611_district_meeting_signup">
+            <input type="hidden" name="remote_fields[tags][]" value="textable">
+          </div>
+        </div>
+      </div>
+    </form>
+    {% unless include.hide_next %}
+    <div class="row skip-next">
+      <small><a href="#" title="Skip to Next Step" class="next">Skip to Next Step</a></small>
+    </div>
+    {% endunless %}
+  </div>
+</div>
+{% capture panel_signup_js %}
+
+<script>
+  (function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+  })();
+  $('.js-local-action-form').validate({
+    submitHandler: function(form) {
+      $form = $(form);
+      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $.post('{{site.services_url}}/google/district_meetings', $form.serialize() ).done(function(data){
+      }).done(function(){
+        {% if include.facebook_pixel_id %}
+        window._fbq = window._fbq || [];
+        _fbq.push(['track',{{include.facebook_pixel_id}},{'value':'0.00','currency':'USD'}]);
+        {% endif %}
+        if(location.pathname == '/take-action/'){
+          $next = $form.parents('li').next();
+          $parent = $form.parents('li');
+          setAsComplete($parent);
+        };
+        if($('#checkboxes-0').val() == 'true'){
+          window.location = '/letters-to-the-editor/'
+        }else{
+          window.location = '/record/'
+        }
+      }).fail(function(data){
+        alert('There was an error. Please try again later.')
+      });
+    }
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_signup_js}}{% endcapture %}
