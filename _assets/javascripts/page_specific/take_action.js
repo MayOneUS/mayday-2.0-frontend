@@ -1,12 +1,20 @@
 if( window.location.pathname == '/take-action/' || window.location.pathname == '/june23/'){
 
-
 function makeActive($target_li){
   $target_li.addClass('active').siblings().removeClass('active');
+  setHash($target_li)
 }
+
 function setAsComplete($target_li){
   $target_li.removeClass('incomplete');
   $target_li.addClass('complete').addClass('thanked');
+  $form.find('button.btn').html('Thank You!');
+  $form.find('button,input,textarea').prop('disabled', true);
+}
+
+function setHash($target){
+  new_hash = $target.prop('class').replace(/^.+js-([\w-]+) .+/,"$1");
+  location.hash = new_hash;
 }
 
 function loadTargetedAction(){
@@ -17,6 +25,7 @@ function loadTargetedAction(){
     $("html, body").animate({ scrollTop: $targetAction.offset().top }, 100);
   }
 }
+
 $(document).ready(function(){
   loadTargetedAction();
 
@@ -24,8 +33,6 @@ $(document).ready(function(){
     e.preventDefault();
     $target = $(this).parents('li')
     makeActive($target);
-    new_hash = $target.prop('class').replace(/^.+js-([\w-]+) .+/,"$1")
-    location.hash = new_hash
   });
   $('.skip-next a.next').on('click', function(e){
     e.preventDefault();
