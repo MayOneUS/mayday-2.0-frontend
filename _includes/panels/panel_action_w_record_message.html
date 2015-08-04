@@ -60,29 +60,18 @@
   <div class="panel-body thanks-message">
     <div class="col-md-12 center-block text-left">
       <div class="row">
-      <div class="col-md-12 text-center">
-        <h3>Thanks for recording a message for Congress.</h3>
-        <h2>Now Spread the Word!</h2>
-        <p>Invite your friends to leave their message for Congress:</p>
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/record/" target="_blank" class="btn btn-md-wide btn-share-center facebook">
-              <span class="text"><i class="fa fa-facebook"></i></span>
-            </a>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <a href="https://twitter.com/home?status=Record%20your%20message%20and%20we%27ll%20deliver%20it%20to%20key%20members%20of%20Congress.%20Tell%20them%20to%20%23Lead4Reform%21%20https%3A%2F%2Fmayday.us%2Frecord%20%40maydayus" target="_blank" class="btn btn-md-wide btn-share-center twitter">
-              <span class="text"><i class="fa fa-twitter"></i></span>
-            </a>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <a href="mailto:?Subject=Help%20me%20send%20Congress%20a%20message&body=Make%20your%20voice%20heard%21%20Send%20Congress%20a%20message.%20Record%20a%20simple%20voicemail%20message%2C%20and%20Mayday%20PAC%20will%20deliver%20it%20to%20key%20Members%20of%20Congress.%20Tell%20them%20you%20want%20them%20to%20reform%20the%20way%20campaigns%20are%20funded.%20It%20takes%201%20minute--thanks%20in%20advance%21%20https%3A%2F%2Fmayday.us%2Frecord%2F" class="btn btn-md-wide btn-share-center">
-              <span class="text"><i class="fa fa-envelope-o"></i></span>
-            </a>
-          </div>
+        <div class="col-md-12 text-center">
+          <h3>Thanks for recording a message for Congress.</h3>
+          {% include recording_instructions.html %}
         </div>
       </div>
-      <p class="text-center no-y-margin"><small>If you have any feedback, please write to <a href="mailto:info@mayday.us">info@mayday.us</a>.</small></p>
+      {% unless include.hide_next %}
+      <div class="row skip-next">
+        <div class="col-md-12 text-center">
+          <small><a href="#" class="next" title="Skip to Next Step">Skip to Next Step</a></small>
+        </div>
+      </div>
+      {% endunless %}
     </div>
   </div>
 </div>
@@ -95,21 +84,20 @@
   $(document).ready(function(){
     $('.js-form-record-message').validate({
       submitHandler: function(form) {
-        targetData = targetData || {};
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling You');
-        ga('send', 'event', 'form', 'submit', targetData['googleEvent'] || '20150611_HR20_recording');
+        ga('send', 'event', 'form', 'submit', '20150611_HR20_recording');
         $.post('{{site.services_url}}/ivr/calls', $form.serialize() ).done(function(data){
-          $parent = $form.parents('.incomplete');
+          $parent = $form.parents('li');
           if(location.pathname == '/take-action/'){
             setAsComplete($parent);
           }else{
             $parent.removeClass('incomplete');
-            $parent.addClass('complete').addClass('thanked');
           }
+          $parent.addClass('complete').addClass('thanked');
         }).fail(function(data){
           alert('There was an error. Please try again later.');
-        })
+        });
 
       }
     });//on submit
