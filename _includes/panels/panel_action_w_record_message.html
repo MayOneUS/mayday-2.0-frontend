@@ -86,7 +86,7 @@
       submitHandler: function(form) {
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling You');
-        ga('send', 'event', 'form', 'submit', '20150611_HR20_recording');
+        _gaq.push(['_trackEvent', 'submit', '20150611_HR20_recording'])
         $.post('{{site.services_url}}/ivr/calls', $form.serialize() ).done(function(data){
           $parent = $form.parents('li');
           if(location.pathname == '/take-action/'){

@@ -92,7 +92,7 @@
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling You');
         targetData = targetData || {};
-        ga('send', 'event', 'form', 'submit',  targetData['googleEvent'] || '20150611_HR20_recording');
+        _gaq.push(['_trackEvent', 'submit',  targetData['googleEvent'] || '20150611_HR20_recording']);
         $.post('{{site.services_url}}/ivr/calls', $form.serialize() ).done(function(data){
           $parent = $form.parents('.incomplete');
           setAllStandardFormsValues($form);

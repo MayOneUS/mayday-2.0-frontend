@@ -90,7 +90,7 @@
   $(document).ready(function(){
     $('.js-form-call-congress').validate({
       submitHandler: function(form) {
-        ga('send', 'event', 'form', 'submit', '20150501_call_congress');
+        _gaq.push(['_trackEvent', 'submit', '20150501_call_congress']);
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling');
         $.post('{{site.services_url}}/ivr/calls', $form.serialize() ).done(function(data){

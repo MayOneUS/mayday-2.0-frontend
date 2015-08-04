@@ -49,7 +49,7 @@ function setRecycledFormCookies($form){
 $(document).ready(function(){
   HeaderFooterSignupOptions = {
     submitHandler: function(form) {
-      ga('send', 'event', 'form', 'submit', 'email_signup');
+      _gaq.push(['_trackEvent', 'submit', 'email_signup']);
       $form = $(form);
       var saveURI = '{{ site.services_url }}/people';
       $.post(saveURI, $form.serialize());

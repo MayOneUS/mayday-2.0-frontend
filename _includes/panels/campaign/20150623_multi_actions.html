@@ -112,7 +112,7 @@
       submitHandler: function(form) {
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-        ga('send', 'event', 'form', 'submit', '20150611_S1538_recording');
+        _gaq.push(['_trackEvent', 'submit', '20150611_S1538_recording']);
         $.post('{{site.services_url}}/actions', $form.serialize() ).done(function(data){
           $parent = $form.parents('.incomplete');
           setAllStandardFormsValues($form);
@@ -131,7 +131,7 @@
   //   submitHandler: function(form) {
   //     $form = $(form);
   //     $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-  //     ga('send', 'event', 'form', 'submit', '20150623_dayofaction_rsvp');
+  //     _gaq.push(['_trackEvent', 'submit', '20150623_dayofaction_rsvp']);
   //     $.post('{{site.services_url}}/events/create_rsvp', $form.serialize(), function(data){
   //     }).done(function(){
   //       $form.parents('.rsvp-wrap').hide();
