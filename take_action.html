@@ -21,28 +21,27 @@ permalink: /take-action/
     </div>
   </div> -->
   <ul class="action-tree col-md-10 center-block list-unstyled">
-    <li class="incomplete active js-sign-up">
+    <li class="action-wrap incomplete active js-sign-up">
       {% include take_action_section_header.html iconClass="sign-up" title="Sign Up for Updates" increment="1" %}
       {% include panels/panel_action_w_signup.html hide_volunteer=true %}
     </li>
-    <li class="incomplete js-call-congress">
+    <li class="action-wrap incomplete js-record-message">
       {% include take_action_section_header.html iconClass="call-congress" title="Record a Message for Congress" increment="2" %}
-      {% include panels/panel_action_w_record_message.html %}
+      {% include panels/panel_action_w_record_message.html show_instructions="true" %}
     </li>
-    <!-- <li class="incomplete js-get-educated">
+    <!-- <li class="action-wrap incomplete js-get-educated">
       {% include take_action_section_header.html iconClass="get-educated" title="Get Educated" increment="2" %}
       {% include panels/panel_action_w_get_educated.html %}
     </li> -->
-    <li class="incomplete js-invite-your-friends">
+    <li class="action-wrap incomplete js-invite-your-friends">
       {% include take_action_section_header.html iconClass="spread-the-word" title="Invite Your Friends" increment="3" %}
       {% include panels/panel_action_w_spread_the_word.html %}
     </li>
-    
-    <li class="incomplete js-join-the-discussion">
+    <li class="action-wrap incomplete js-join-the-discussion">
       {% include take_action_section_header.html iconClass="join-discussion" title="Join the Discussion" increment="4" %}
       {% include panels/panel_action_w_join_discussion.html %}
     </li>
-    <li class="incomplete js-local-action">
+    <li class="action-wrap incomplete js-local-action">
       {% include take_action_section_header.html iconClass="volunteer" title="Take Local Action" increment="5" %}
       {% include panels/panel_action_w_local_action.html %}
     </li>
