@@ -1,6 +1,10 @@
-//= require bases/index.js
-//= require bases/legislator.js
-//= require bases/legislators.js
-//= require bases/news.js
-//= require bases/take_action.js
-
+//= require vendor/ICanHaz.min.js
+//= require vendor/smooth-scroll.min.js
+//= require vendor/jquery.hideseek.min.js
+//= require _includes/plugins.js
+//= require _includes/global.js
+//= require page_specific/index.js
+//= require page_specific/legislator.js
+//= require page_specific/legislators.js
+//= require page_specific/news.js
+//= require page_specific/take_action.js

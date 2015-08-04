@@ -22,7 +22,7 @@
   }
 }
 
-.action-tree>li, .action-sidebar, .action-wrap{
+.action-wrap{
 
   .thanks-message{display:none}
 
@@ -83,12 +83,14 @@
 
   &.complete{
     .show-complete{display:initial;}
-    .show-incomplete{display:none;}
+    .show-incomplete, .skip-next{display:none;}
     .panel{background:#eee;}
     >.btn-md-wide{background:$color-grey;}
-    &.active.thanked, &.thanked{
+    &.active.thanked{
       .panel-body{display:none;}
+      .panel-body:last-child{display: initial}
       .thanks-message{display:initial;overflow:hidden;}
+      .thanks-message .skip-next{display:initial;}
     }
   }
 

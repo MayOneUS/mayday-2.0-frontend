@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="eotfmNVR-r4qTL0MAFLUR0XVumvKeC2i87xYg102u7I" />
 
   {% if page.offSite %}{% assign root_path = site.url %}{% endif %}
   {% assign page_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
@@ -30,9 +31,9 @@
   {% endif %}
 
   <script>
-    var services_url = '{{site.services_url}}';
-    var blog_post_feed_url = '{{site.blog_post_feed_url}}';
-    var press_releases_feed_url = '{{site.press_releases_feed_url}}';
+    window.services_url = '{{site.services_url}}';
+    window.blog_post_feed_url = '{{site.blog_post_feed_url}}';
+    window.press_releases_feed_url = '{{site.press_releases_feed_url}}';
   </script>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,400italic" type="text/css">
