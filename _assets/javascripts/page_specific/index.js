@@ -1,3 +1,5 @@
+if( window.location.pathname == '/' ){
+
 // high chart code
 $(function() {
 
@@ -24,12 +26,12 @@ $(function() {
     chart: {
       style: {
         fontFamily: 'Lato'
-    },
-    plotOptions: {
-      pie: {
-        shadow: false
+      },
+      plotOptions: {
+        pie: {
+          shadow: false
+        }
       }
-    }
     }
   });
 
@@ -104,7 +106,7 @@ $(function() {
   }
   function transformEndpointData(response){
     var output = {};
-    output.name = 'On House Bill HR20';
+    output.name = 'House Bill HR20';
     output.seriesData = [
         {
           "name": "Leaders<br>Needed",
@@ -227,5 +229,4 @@ $(function() {
 
 });
 
-
-
+}
