@@ -8,18 +8,7 @@
     <div class="row">
       <div class="col-md-12">
         {% if include.show_instructions %}
-
-        <p class="text-left">Record your message and we'll deliver it to key members of Congress. Submit your phone number, and our recording system will connect you. Here are a few helpful tips, and remember: If you're unhappy with your message, you can always re-record it.</p>
-
-        <ol class="simple-list small-list text-left">
-          <li>
-            Say your name, phone number, and that you're a voter. <br />
-            <small>Remember: Be confident, speak slowly, and don't forget to breathe. <strong>Important:</strong> You must say your phone number, or we will be unable to deliver your message.</small>
-          </li>
-          <li>Explain that you're asking the <span class="billData legSingular">Representative</span> to <strong>support <span class="billData billNumber">HR 20</span></strong>, <a href="https://www.govtrack.us/congress/bills/114/s1538" class="billData shortName">The Government By The People Act</a>.</li>
-          <li>Say what’s on your mind -- talk about why corruption is important to you.</li>
-          <li>When you finish your message, stay on the line to review or re-record your message.</li>
-        </ol>
+          {% include recording_instructions.html %}
         {% else %}
         <p>{% if include.intro_content %}{{include.intro_content}}{%else%}Start fighting for fundamental reform. This tool will help you call the office of one of our potential leaders, so you can ask your legislators to support reform.{% endif %}</p>
         {% endif %}
