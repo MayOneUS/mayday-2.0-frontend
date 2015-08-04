@@ -152,6 +152,13 @@
       }
     }
   }
+  input:disabled, input:disabled:-webkit-autofill{
+    border-color:#999;
+    color:#666;
+    -webkit-text-fill-color:#666;
+    background-color: #ddd;
+    -webkit-box-shadow: 0 0 0 1000px #ddd inset;
+  }
 }
 form.md-inputs{
   input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
