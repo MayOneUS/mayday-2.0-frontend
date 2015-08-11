@@ -8,3 +8,4 @@
 //= require page_specific/legislators.js
 //= require page_specific/news.js
 //= require page_specific/take_action.js
+//= require_tree ./templates

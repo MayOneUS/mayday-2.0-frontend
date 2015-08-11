@@ -4,3 +4,4 @@ gem 'execjs' #execjs requires a js runtime and therubyracer installs a v8 javasc
 gem 's3_website'
 gem 'jekyll'
 gem 'jekyll-assets'
+gem 'handlebars_assets'
