@@ -22,6 +22,11 @@ GEM
     fastimage (1.7.0)
       addressable (~> 2.3, >= 2.3.5)
     ffi (1.9.8)
+    handlebars_assets (0.20.2)
+      execjs (~> 2.0)
+      multi_json (~> 1.0)
+      sprockets (>= 2.0.0, < 4.0)
+      tilt (~> 1.2)
     hike (1.2.3)
     hitimes (1.2.2)
     jekyll (2.5.3)
@@ -104,6 +109,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  handlebars_assets
   jekyll
   jekyll-assets
   s3_website
