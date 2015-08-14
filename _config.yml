@@ -16,3 +16,8 @@ twitter_username: MAYDAYUS
 
 # Build settings
 markdown: kramdown
+page_gen:
+  - data: 'reforms'
+    template: 'reform'
+    name: 'slug'
+    dir: 'reforms'

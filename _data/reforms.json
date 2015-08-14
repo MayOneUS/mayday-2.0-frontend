@@ -1,0 +1,183 @@
+[{
+  "reformStatus": "introduced",
+  "id": 0,
+  "subtitle": "Building a Government Of, By and For the People",
+  "sponsor": {
+    "lastName": "Sarbanes",
+    "bioShort": "Congressman for MD-3",
+    "bioguideId": "S001168",
+    "title": "Rep",
+    "picture": "http://votesmart.org/canphoto/66575_lg.jpg",
+    "website": "http://sarbanes.house.gov",
+    "firstName": "John",
+    "state": "MD",
+    "party": "D"
+  },
+  "parties": ["D"],
+  "reformTopic": "matching funds, tax credit, vouchers",
+  "provisions": [
+    {"name":"Citizen Funded Elections", "values": ["Refundable tax credit of 50% of qualified congressional House campaign contributions","Multiply small-dollar donations ($150 or less) at a rate of $6 to $1 for candidates who forgo PAC money","Multiply small-dollar donations ($150 or less) at a rate of $9 to $1 for candidates who only take small-dollar donations","Citizen-funded candidates who raise at least $50,000 in small-dollar donations within 60-days of the general election are eligible for additional resources"]}
+  ],
+  "bills": ["hr20-114"],
+  "active": true,
+  "slug": "government-by-the-people-act",
+  "billTitle": "Government By the People Act",
+  "descriptionShort": "The Government by the People Act is a proposed bill to reform the campaign finance system, introduced into the House by 2014 by John Sarbanes (D-MD). A companion bill, the Fair Elections Now Act, was also introduced into the Senate.\n\nUnder the proposed bill, political contributions of up to $150 would be matched by a factor of six times more than the original donation as long as candidates meet certain requirements. They must not use their own money, not accept donations over $1000, have already received at least $50,000 from 1000 in-state donors, and decline most political action committee money.\n",
+  "reformType": "legislative",
+  "url": "http://ofby.us"
+}, {
+  "reformStatus": "introduced",
+  "id": 1,
+  "subtitle": "Tax credit and deductions for small contributions to political campaigns",
+  "sponsor": {
+    "lastName": "Petri",
+    "bioguideId": "P000265",
+    "title": "Rep",
+    "party": "R",
+    "website": "http://petri.house.gov",
+    "state": "WI",
+    "firstName": "Thomas"
+  },
+  "parties": ["R"],
+  "reformTopic": "tax credit",
+  "bills": ["hr3586-113"],
+  "active": false,
+  "slug": "citizen-involvement-in-campaigns-act",
+  "billTitle": "Citizen Involvement in Campaigns Act",
+  "reformType": "legislative",
+  "url": "http://beta.congress.gov/bill/113th/house-bill/3586",
+  "descriptionShort":"To amend the Internal Revenue Code of 1986 to provide a credit and a deduction for small political contributions."
+}, {
+  "reformStatus": "proposed",
+  "id": 2,
+  "subtitle": "Fundamental lobbying reform, and funding for small dollar funded campaigns",
+  "sponsor": {
+    "website": "https://represent.us/",
+    "bioShort": "Non-partisan, Anti-Corruption Non-profit",
+    "firstName": "Represent.US",
+    "picture": "/images/reforms/sponsors/representus.png",
+    "party": "I"
+  },
+  "descriptionLong": "The AACA contains eleven provisions, grouped into three areas. \n\n1. Prohibit politicians from raising funds from interests they regulate and from taking actions to benefit interests that spend heavily to influence their elections.\n2. Limit campaign contributions and fundraising activities by lobbyists.\n3. Close the revolving door.\n4. Prohibit campaign contributions from government contractors and primary associates.\n5. Extend contribution limits on PACs to Super PACs.\n6. Give each registered voter a $100 tax rebate every other year that they may contribute to qualifying political candidates, parties and committees.\n7. Revise the FEC's coordination regulations to restrict coordination between candidates and \"independent expenditures.\"\n8. Prohibit politicians from fundraising during normal working hours and require disclosure of fundraising by legislators during legislative sessions.\n9. Everyone who lobbies or helps lobbyists is a lobbyist.\n10. Increase transparency of fundraising and spending including disclosing bundlers.\n11. Improve enforcement.\n\nAll the provisions of the act are based on existing law in some parts of the U.S. that have withstood court challenges and are therefore likely constitutional. \n\nThe act has also been adapted to be applied at the local and state level. So far Princeton, NJ and Tallahassee, FL have both enacted resolutions based on this local adaptation.\n",
+  "parties": ["D", "R"],
+  "reformTopic": "vouchers & lobbying reform",
+  "provisions": [
+    {"name":"Citizen Funded Elections", "values": ["Biennial $100 Tax Rebate for qualified contributions to federal candidates, political parties, and political committees. ","Candidates and political groups only eligible if they agree to accept only contributions from small donors (giving $500 or less a year)."]},
+    {"name":"Transparency", "values": ["Require any organization that spends $10,000 or more on advertisements to elect or defeat federal candidates to file a disclosure report online with the Federal Election Commission within 24 hours.","List each of the donors who gave $10,000 or more to the organization to run such ads. Include all PACs, 501c nonprofits, or other groups that engage in electioneering."]},
+    {"name":"Revolving Door", "values": ["Bar negotiating jobs while in office.","Bar from all lobbying activity for 5 years."]},
+    {"name":"Lobbyist Donations", "values": ["Limit the amount that lobbyists and their clients can contribute to federal candidates, political parties, and political committees to $500 per year.","Limit lobbyist fundraising for political campaigns.","Ban federal governmetn contractor lobbyists, high-level executives, government relations employees, and PACs from contributing to campaigns."]},
+    {"name":"Bundling", "values": ["Require federal candidates to disclose the names of individuals who \u201cbundle\u201d contributions for the member of Congress or candidate, regardless of whether such individuals are registered lobbyists."]},
+    {"name":"Lobbyist Registation", "values": ["Expand the definition of and register all lobbyists"]},
+    {"name":"Super PACs", "values": ["Require super PACs to abide by the same contribution limits as other political committees.","Toughen rules regarding super PACs\u2019 and other groups\u2019 coordination with political campaigns and political parties."]},
+    {"name":"Conflict Of Interest" , "values": ["Prohibit soliciting and receiving contributions from any industry or entity they regulate, including lobbyists", "Prohibit all fundraising during Congressional working hours"]},
+    {"name":"Enforcement", "values": ["Strengthen the Federal Election Commission\u2019s independence.","Strengthen the House and Senate ethics enforcement processes.","Provide federal prosecutors the tools necessary to combat corruption.","Prohibit lobbyists who fail to properly register and disclose their activities from engaging in federal lobbying activities for a period of two years."]}
+  ],
+  "bills": [],
+  "active": true,
+  "slug": "the-american-anticorruption-act",
+  "billTitle": "The American Anticorruption Act",
+  "descriptionShort": "American Anti-Corruption Act (AACA) is a piece of model legislation originally crafted in 2011 by a bi-partisan team lead by former Federal Election Commission chairman Trevor Potter.  The addresses political corruption in three main areas:\n\n- Stop political bribery by overhauling lobbying and ethics laws\n- End secret money by dramatically increasing transparency\n- Give every voter a voice by creating citizen-funded elections\n\nThe Act is primarily supported by Represent.us\n",
+  "reformType": "legislative",
+  "url": "http://anticorruptionact.org/"
+}, {
+  "reformStatus": "proposed",
+  "id": 3,
+  "slug": "taxation-only-with-representation-act",
+  "subtitle": "$200 voucher to support small dollar funded campaigns",
+  "sponsor": {
+    "lastName": "Painter",
+    "bioShort": "George W. Bush's Ethics Czar",
+    "picture": "/images/reforms/sponsors/painter.jpg",
+    "website": "http://www.law.umn.edu/facultyprofiles/painterr.html",
+    "firstName": "Richard",
+    "party": "R"
+  },
+  "parties": ["R"],
+  "reformTopic": "vouchers",
+  "provisions": [
+    {"name":"Citizen Funded Elections", "values": ["$200 tax-funded voucher","Value adjusted for inflation every 5 years"]}
+  ],
+  "bills": [],
+  "active": true,
+  "descriptionShort": "The Taxation Only With Representation Act proposes that each taxpayer should be allowed to earmark a the first two hundred dollars of his or her tax payments to support election of one or more candidates to public office. It was created in 2012 by Richard Painter, President George W. Bush\u2019s chief ethics lawyer.\n",
+  "billTitle": "Taxation Only With Representation Act",
+  "reformType": "legislative",
+  "url": "http://www.legalethicsforum.com/blog/2014/03/federal-and-state-constitutional-amendments-and-statutes-providing-for-taxation-only-with-representa.html"
+}, {
+  "reformStatus": "introduced",
+  "id": 4,
+  "subtitle": "Amends the Federal Election Campaign Act of 1971",
+  "parties": ["D"],
+  "reformTopic": "matching funds",
+  "bills": ["hr269-113", "s2023-113", "s1538-114"],
+  "active": false,
+  "slug": "fair-elections-now-act",
+  "billTitle": "Fair Elections Now Act",
+  "reformType": "legislative",
+  "descriptionShort":"",
+  "sponsor": {
+    "lastName": "Durbin",
+    "bioShort": "",
+    "picture": "/images/reforms/sponsors/painter.jpg",
+    "firstName": "Richard",
+    "party": "D"
+  }
+}, {
+  "reformStatus": "introduced",
+  "id": 5,
+  "longDescription": "The legislation also aims to remedy some of the loopholes created by Citizens United, by providing a broader definition of coordination so that super PACs and political non-profits cannot function as arms of candidates\u2019 campaigns.\n\nSponsored by Representatives David Price (D-NC) and Chris Van Hollen (D-MD), the legislation draws from a proposal for federal public financing from the Brennan Center and Democracy 21 \u2014 Empowering Small Donors in Federal Elections.\n",
+  "subtitle": "Match campaign donations up to $250 at 6:1 ratio",
+  "sponsor": {
+    "bioShort": "Congressman for NC-4",
+    "party": "D",
+    "firstName": "David",
+    "lastName": "Price",
+    "picture": "http://votesmart.org/canphoto/119_lg.jpg"
+  },
+  "parties": ["D"],
+  "references": ["http://www.brennancenter.org/publication/empowering-small-donors-federal-elections", "http://www.democracy21.org/ppf-notes/press-releases-ppf-notes/a-summary-of-h-r-6448-the-empowering-citizens-act-2/", "http://www.democracy21.org/legislative-action/press-releases-legislative-action/summary-of-empowering-citizens-act/"],
+  "reformTopic": "matching funds, disclosure",
+  "provisions": [
+    {"name":"Citizen Funded Elections", "values": ["Match contributions up to $250 with public funds at a 5-1 ratio for qualified presidential and congressional candidates who accept donor contribution limits", "Value-adjusted for inflation", "Qualifying House candidates must raise $40,000 from at least 400 in-state individual donors, counting only the first $250 of a contribution from a single donor", "Qualifying Senate candidates must raise the same amount as a House candidate multiplied by the number of congressional districts in the Senate candidate\u2019s state", "Citizen funding matching payments are limited to $2million for representatives and $10million for senators", "Candidates eligible if they agree to accept only contributions from small donors (giving $1000 or less a year), to limit personal expenditures to $50,000 per election, to not accept bundled payments, and to not fundraise for any political party or committee", "Excludes contributions from out-of-state residents", "Repeal public financing of party conventions"]},
+    {"name":"Transparency", "values": ["Contributions must be disclosed in a daily report starting 21 days before the election"," Prohibition on joint fundraising committees"]},
+    {"name":"Contribution And Spending Limits", "values": ["No spending limits"," Presidential primary candidate personal expenditure limitation of $50,000"," Unlimited coordinated party expenditures in support of candidates, but only from funds the parties raised from contributions limited to no more than $1,250 per donor per year."]},
+    {"name":"Bundling", "values": ["Limits bundled contributions to Presidential campaigns"," Discloses bundled contributions from lobbyists"]},
+    {"name":"Super PACs", "values": ["Shut down individual candidate Super PACs."," Strengthens rules prohibiting coordination"," Prohibits candidates from raising any funds for a Super PAC"]},
+    {"name":"Enforcement", "values": ["Strengthens judicial review of violations"]}
+  ],
+  "bills": ["hr424-114"],
+  "active": true,
+  "slug": "empowering-citizens-act",
+  "billTitle": "Empowering Citizens Act",
+  "descriptionShort": "The Empowering Citizens Act is federal public financing legislation modeled on New York City\u2019s small donor matching fund program. It aims to amplify the voices of small donors in congressional and presidential elections by matching contributions up to $250 with public funds at a 5-1 ratio. The legislation encourages candidates to run grassroots-oriented campaigns by cutting contribution limits in half for candidates who choose to accept public funding.\n",
+  "reformType": "legislative",
+  "url": "https://www.brennancenter.org/legislation/empowering-citizens-act"
+}, {
+  "reformStatus": "proposed",
+  "id": 6,
+  "slug": "political-money-reform-proposal",
+  "subtitle": "Jim Rubens' Vouchers and Transparency Plan",
+  "sponsor": {
+    "lastName": "Rubens",
+    "bioShort": "Candidate for Senate, NH",
+    "picture": "http://votesmart.org/canphoto/8660_lg.jpg",
+    "website": "http://jimrubens.com/",
+    "firstName": "Jim",
+    "party": "R"
+  },
+  "descriptionLong": "In the 2014 election, Jim Rubens (NH) was the only Republican candidate for Senate to run a campaign focussed on a reform agenda. His proposal to reform the way elections are funded consists of three policy points:\n\n1. Enact a public elections finance system for candidates voluntarily opting out of the current corrupted private money system. Each two years, every legal voter is given a $50 tax rebate voucher assignable to and spendable only by candidates for Congress. Candidates eligible to receive vouchers must first establish credibility by having raised a threshold sum of private money in small dollar contributions from persons eligible to vote for the participating candidate. There is no requirement that candidates participate in the public system. If every voter used them (unlikely), the tax rebate vouchers would cost taxpayers about $4 billion per year, far less than the cost of the private system, where political money is traded for taxpayer-financed tax loopholes, pork, and regulatory and diplomatic favors. Unused vouchers expire worthless at the end of each cycle; voucher privacy and anti-fraud protections are required.\n2. Require searchable, realtime online reporting of contributions above $200 to every candidate and organization engaging in campaigning for or against candidates, legislation or regulatory activity. While disclosure can suppress paid speech, there is a stronger and offsetting public interest in knowing about real or perceivable conflicts of interest involving public money and the public trust.\n3. Remove all political spending and contribution limits. Attempts to limit private political spending have failed and the First Amendment protects the right of even wealthy and well-organized people to speak using as much money as they wish. Note: this must be coupled with a sufficiently funded public elections finance system.\n",
+  "references": ["concordmonitor.com/home/14928117-95/my-turn-a-remedy-for-bipartisan-political-corruption"],
+  "reformTopic": "vouchers, realtime disclosure, remove limits",
+  "provisions": [
+    {"name":"Citizen Funded Elections", "values": ["Biennial $50 tax rebate voucher for eligible candidates"," Candidate eligibility based on having raised a threshold sum of private money in small dollar contributions from persons eligible to vote for the participating candidate. \n- Candidate participation is optional."]},
+    {"name":"Contribution And Spending Limits", "values": ["Remove all political spending and contribution limits."]},
+    {"name":"Transparency", "values": ["Require searchable, real-time online reporting of contributions above $200 to every candidate and organization engaging in campaigning for or against candidates, legislation, or regulatory activity."]}
+  ],
+  "bills": [],
+  "active": true,
+  "parties": ["R"],
+  "billTitle": "Political Money Reform Proposal",
+  "descriptionShort": "Jim Rubens\u2019 Political Money Reform Proposal suggests that each voter be given a $50 tax rebate voucher usable to fund congressional candidates, that all contributions over $200 be immediately searchable, and that all political spending and contribution limits be lifted.\n",
+  "reformType": "legislative",
+  "url": "http://jimrubens.com/issues/agenda"
+}]

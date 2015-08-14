@@ -1,13 +1,3 @@
----
-layout: default
-title: Reform
-permalink: /reform/
-meta_content: |
-  <meta property="og:title" content="Reforms"/>
-  <title>Reforms</title>
-  <meta name="robots" content="noindex"><!--  remove this meta content when you take pages live -->
----
-
 {% capture content %}
 
 <style type="text/css">
@@ -160,7 +150,7 @@ h1 {
     <div class="row page-panel">
       <div class="col-md-10 col-lg-10 col-lg-push-1">
         <span class="label label-danger">House Bill</span>
-        <h1 style="margin-top: 9px; margin-bottom: 27px;">{{page.title}}</h1>
+        <h1 style="margin-top: 9px; margin-bottom: 27px;">{{page.billTitle}}</h1>
         <h2 style="line-height: 37px; margin-bottom: 29px;">{{page.subtitle}}</h2>
       </div>
     </div>
@@ -179,8 +169,8 @@ h1 {
                 <span class="media-thing"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>
               </div>
               <div class="media-body">
-                <h4 class="media-heading"><strong>Provision</strong></h4>
-                <span class="small">description</span>
+                <h4 class="media-heading"><strong>{{page.title}}</strong></h4>
+                <span class="small">{{page.subtitle}}</span>
               </div>
             </div>
           </div>
@@ -201,42 +191,21 @@ h1 {
         <hr>
 
         <h3>WHAT IS IT?</h3>
-        {{page.shotDescription}}
-
-        <hr>
-
-        <h3>SPONSOR</h3>
-
-        <div class="row authors">
-          <div class="col-md-12 col-sm-12 col-xs-6 bottom-margin with-us-true potential-false">
-            <a href="http://mayday.us/legislator/?bioguide_id=A000370" class="pull-left pulled-image"><div class="background-square" style="background-image: url(https://s3.amazonaws.com/audio.mayday.us/congress-photos/99x120/A000370.jpg);"></div></a>
-              <h3 class="no-top-margin"> Rep.<strong> Alma Adams</strong> </h3>
-              <h4> D-NC District 12</h4>
-              <a class="btn btn-targets story-grey" href="http://mayday.us/legislator/?bioguide_id=A000370">
-                <i class="fa fa-check-square-o"></i>
-                <i class="fa fa-minus-circle"></i>
-                <i class="fa fa-question-circle"></i>
-                Read More
-              </a>
-          </div>
-        </div>
+       {{page.descriptionShort}}
 
         <hr>
 
         <h3>PROVISIONS</h3>
+        {% for provision in page.provisions %}
 
-        <h5>Citizen Funded Elections</h5>
-
-        <p>Match contributions up to $250 with public funds at a 5-1 ratio for qualified presidential and congressional candidates who accept donor contribution limits,Value-adjusted for inflation,Qualifying House candidates must raise $40,000 from at least 400 in-state individual donors, counting only the first $250 of a contribution from a single donor,Qualifying Senate candidates must raise the same amount as a House candidate multiplied by the number of congressional districts in the Senate candidate’s state,Citizen funding matching payments are limited to $2million for representatives and $10million for senators,Candidates eligible if they agree to accept only contributions from small donors (giving $1000 or less a year), to limit personal expenditures to $50,000 per election, to not accept bundled payments, and to not fundraise for any political party or committee,Excludes contributions from out-of-state residents,Repeal public financing of party conventions</p>
-
-        <h5>Transparency</h5>
+        <h5>{{provision.name}}</h5>
 
         <ul class="checked-list">
-          <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Contributions must be disclosed in a daily report starting 21 days before the elections</li>
-          <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Prohibition on joint fundraising committees</li>
+          {% for provision_option in provision.values %}
+            <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>{{provision_option}}</li>
+          {% endfor %}
         </ul>
-
-
+        {% endfor %}
 
         <hr>
 
@@ -259,14 +228,13 @@ h1 {
             <div class="fade-line hidden-xs hidden-sm"></div>
           </div>
           <h2>Proposal Status</h2>
-
-          <div class="col-md-4 col-xs-12 col-sm-6 col-sm-offset-3 col-md-offset-0 bottom-margin new-legislator">
-              <a href="/legislator/?bioguide_id={{bioguide_id}}" class="pull-left pulled-image">
-                <div class="background-square" style="background-image:url('{{image_url}}')"></div>
-              </a>
-              <h3 class="no-top-margin">{{ page.sponsor.title }} <strong>{{ page.sponsor.firstName }} {{page.sponsor.lastName}}</strong></h3>
-              <h4> {{ page.sponsor.party }}- state_abbrev display_district</h4>
-              <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">Read More</a>
+          <div class="row bottom-margin new-legislator">
+            <a href="/legislator/?bioguide_id={{bioguide_id}}" class="pull-left pulled-image">
+              <div class="background-square" style="background-image:url('{{image_url}}')"></div>
+            </a>
+            <h3 class="no-top-margin">{{ page.sponsor.title }} <strong>{{ page.sponsor.firstName }} {{page.sponsor.lastName}}</strong></h3>
+            <h4> {{ page.sponsor.party }}- state_abbrev display_district</h4>
+            <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">Read More</a>
           </div>
           <hr>
 
