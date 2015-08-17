@@ -6,15 +6,23 @@ Front-end repository for the MAYDAY 2.0 site. Built with [Jekyll](http://jekyllr
 
 ## Getting started.
 
-This site is built with the Ruby library [Jekyll](http://jekyllrb.com) - it's a HTML/CSS preprocessor that supports limited plugins.  You'll need that on your computer to hack on the code. If you don't already have ruby installed, we recommend installing it with [RVM](https://rvm.io/rvm/install).  Then install jekyll `gem install jekyll`. Finally, to run it locally just run `jekyll serve --watch`, it'll update when you change the code.
+This site is built with the Ruby library [Jekyll](http://jekyllrb.com) - it's a HTML/CSS preprocessor that supports limited plugins.  You'll need that on your computer to hack on the code. If you don't already have ruby installed, we recommend installing it with [RVM](https://rvm.io/rvm/install).
 
-Running jekyll may require the following gems if you run into execjs error `'autodetect': Could not find a JavaScript runtime.` Alternatively installing NodeJS will install a compatiable javascript runtime. And non-intel machines may have issues. [Jekyll issue 2327][j_issue]
+1. Install ruby. Any 2.1+ version should be fine.
+1. Install bundler if it isn't already installed with `gem install bundler`
+1. Run `bundle install` to install dependent gems, including the Jekyll library (which is a gem)
+1. Run `jekyll server` to get the server up and running.
+1. Check out http://localhost:4000/ to see the site up and running.  Any update you make to the source files should be reflected in localhost virtually immediately.
+
+If you run into execjs error `'autodetect': Could not find a JavaScript runtime.` You can confirm the following gems are installed or installing NodeJS will install a compatiable javascript runtime. 
   1. `gem install execjs`
   1. `gem install therubyracer`
     * execjs requires a js runtime and therubyracer installs a v8 javascript runtime
   [j_issue]: https://github.com/jekyll/jekyll/issues/2327
 
-## Code Review Process
+Note: Non-intel machines may have additional issues. [Jekyll issue 2327][j_issue]
+
+## Contributing & Code Review Process
 
 Goal: Ensure at least two parties have reviewed any code commited for "production."
 
