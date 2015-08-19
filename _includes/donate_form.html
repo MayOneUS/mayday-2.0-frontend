@@ -35,10 +35,12 @@
   <form id="pledgeForm" role="form" method="POST" onsubmit="step3();" action="javascript:;">
     <input type="hidden" name="targeting_input" id="targeting_input" value="Whatever Helps">
     <input type="hidden" name="target" id="target" value="Whatever Helps">
+    <input type="hidden" name="template_id" value="{% if include.action_template_id %}{{ include.action_template_id }}{% else %}donation{% endif %}">
+
     {% if page.only-bitcoin %}
     <div class="row">
-      <div class="form-group col-sm-6"><label class="control-label">First Name</label><input type="text" required placeholder="First Name" class="form-control input-lg" id="first_name_input" /></div>
-      <div class="form-group col-sm-6"><label class="control-label">Last Name</label><input type="text" required placeholder="Last Name" class="form-control input-lg" id="last_name_input" /></div>
+      <div class="form-group col-sm-6"><label class="control-label">First Name</label><input type="text" name="person[first_name]" required placeholder="First Name" class="form-control input-lg" id="first_name_input" /></div>
+      <div class="form-group col-sm-6"><label class="control-label">Last Name</label><input type="text" name="person[last_name]" required placeholder="Last Name" class="form-control input-lg" id="last_name_input" /></div>
     </div>
 
     <div class="row">
@@ -122,7 +124,7 @@
     <div class="row">
       <div class="form-group col-sm-12">
         <label class="control-label">Email</label>
-        <input type="email" required placeholder="Email" class="form-control input-lg" id="email_input" />
+        <input type="email" required placeholder="Email" name="person[email]" class="form-control input-lg" id="email_input" />
       </div>
     </div>
     <input type="hidden" name="redirect" value="https://mayday.us/" />
@@ -141,7 +143,7 @@
     <div class="row">
       <div class="form-group col-sm-6">
         <label class="control-label">Phone Number <span class="label label-default">Optional</span></label>
-        <input type="tel" placeholder="Phone number" class="form-control input-lg" id="phone_input" />
+        <input type="tel" placeholder="Phone number" name="person[phone]" class="form-control input-lg" id="phone_input" />
       </div>
       <div class="form-group col-sm-6" style="display:none;">
         <label class="control-label">Who to Fund?</label>
@@ -162,13 +164,13 @@
     </div>
     <div class="row">
       <div id="donation-type" class="form-group col-sm-12">
-        <div class="checkbox"><label><input type="checkbox" id="emailSignupInput" checked> Want to know how we're using the money? <br />Sign up for emails from us.</label></div>
+        <div class="checkbox text-left"><label><input type="checkbox" id="emailSignupInput" checked> Want to know how we're using the money? <br />Sign up for emails from us.</label></div>
       </div>
     </div>
 
     <div class="row">
       <div id="recurring" class="form-group col-sm-12">
-        <div class="checkbox"><label><input type="checkbox" id="recurring_input"> Donate this amount every month.</input></label></div>
+        <div class="checkbox text-left"><label><input type="checkbox" id="recurring_input"> Donate this amount every month.</input></label></div>
       </div>
     </div>
     <input type="hidden" id="recurrence_period_input" value="monthly">
@@ -176,7 +178,7 @@
     {% if page.only-bitcoin %}
     <div class="row">
       <div class="form-group col-sm-12">
-        <div class="checkbox"><label><input type="checkbox" id="requiredConfirmation" >I confirm that: (1) I am a U.S. citizen or permanent resident; and (2) the Bitcoin I am donating are solely owned by me.</label></div>
+        <div class="checkbox text-left"><label><input type="checkbox" id="requiredConfirmation" >I confirm that: (1) I am a U.S. citizen or permanent resident; and (2) the Bitcoin I am donating are solely owned by me.</label></div>
       </div>
     </div>
     {% endif %}
@@ -281,12 +283,12 @@ limitations under the License.
    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
      var verStr = $.browser.version;
      var ffVersion = verStr.split('.')[0];
-     console.log("detected version: " + ffVersion);
+     // console.log("detected version: " + ffVersion);
      if (ffVersion < 17) {
        $('#pledgeBox .info').after('<div class="alert-danger row">Sorry, we are not supporting older Firefox versions at the moment. Please try another browser for now.</div>');
      } else {
-       console.log('Firefox version was OK: ' + ffVersion);
-     }
+       // console.log('Firefox version was OK: ' + ffVersion);
+js     }
    }
   });
 

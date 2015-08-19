@@ -69,32 +69,32 @@ var getAmountCents = function() {
 };
 
 var validateForm = function() {
-    var email = $('#email_input').val() || null;
-    var occ = $('#occupation_input').val() || null;
-    var emp = $('#employer_input').val() || null;
-    var amount = $('#amount_input').val() || null;
+  var email = $('#email_input').val() || null;
+  var occ = $('#occupation_input').val() || null;
+  var emp = $('#employer_input').val() || null;
+  var amount = $('#amount_input').val() || null;
 
 
-    if (!email) {
-      showError( "Please enter email");
-      return false;
-    } else if (!validateEmail(email)) {
-      showError("Please enter a valid email");
-      return false;
-    } else if (!occ) {
-      showError( "Please enter occupation");
-      return false;
-    } else if (!emp) {
-      showError( "Please enter employer");
-      return false;
-    } else if (!amount) {
-      showError( "Please enter an amount");
-      return false;
-    } else if (amount < 1) {
-      showError( "Please enter an amount of $1 or more");
-      return false;
-    }
-    return true;
+  if (!email) {
+    showError( "Please enter email");
+    return false;
+  } else if (!validateEmail(email)) {
+    showError("Please enter a valid email");
+    return false;
+  } else if (!occ) {
+    showError( "Please enter occupation");
+    return false;
+  } else if (!emp) {
+    showError( "Please enter employer");
+    return false;
+  } else if (!amount) {
+    showError( "Please enter an amount");
+    return false;
+  } else if (amount < 1) {
+    showError( "Please enter an amount of $1 or more");
+    return false;
+  }
+  return true;
 };
 
 var validateBitcoinForm = function() {
@@ -271,19 +271,22 @@ var createPledge = function(name, payment) {
     contentType: "application/json",
     dataType: 'json',
     success: function(data) {
-      if (typeof FACEBOOK_TRACKING_ID != 'undefined'){
-        window._fbq = window._fbq || [];
-        _fbq.push(['track',FACEBOOK_TRACKING_ID,{'value': $('#amount_input').val(),'currency':'USD'}]);
-      }
-      if ('paypal_url' in data) {
-        location.href = data.paypal_url;
-      } else if ('bitpay_url' in data) {
-        location.href = data.bitpay_url;
-      } else if (typeof REDIRECT_URL == 'undefined'){
-        location.href = PLEDGE_URL + data.receipt_url;
-      } else {
-        location.href = REDIRECT_URL;
-      }
+      utm_data = $('#pledgeForm').serialize();
+      $.post(services_url+'/actions', utm_data, function(){
+        if (typeof FACEBOOK_TRACKING_ID != 'undefined'){
+          window._fbq = window._fbq || [];
+          _fbq.push(['track',FACEBOOK_TRACKING_ID,{'value': $('#amount_input').val(),'currency':'USD'}]);
+        }
+        if ('paypal_url' in data) {
+          location.href = data.paypal_url;
+        } else if ('bitpay_url' in data) {
+          location.href = data.bitpay_url;
+        } else if (typeof REDIRECT_URL == 'undefined'){
+          location.href = PLEDGE_URL + data.receipt_url;
+        } else {
+          location.href = REDIRECT_URL;
+        }
+      });
     },
     error: function(data) {
       setLoading(false);
@@ -311,17 +314,17 @@ $(document).ready(function() {
   $('#bitcoinButton').on('click', bitcoinPledge);
 
   $.get(PLEDGE_URL + '/r/payment_config', {}, function(){}, "json").done(function(pConf) {
-      paymentConfig = pConf;
-      stripeConfig = {
-        key: paymentConfig.stripePublicKey,
-        name: 'MAYDAY.US',
-        panelLabel: 'Pledge',
-        billingAddress: true,
-        image: PLEDGE_URL + '/static/flag.jpg',
-        token: function(token, args) {
-          onTokenRecv(token, args);
-        }
-      };
+    paymentConfig = pConf;
+    stripeConfig = {
+      key: paymentConfig.stripePublicKey,
+      name: 'MAYDAY.US',
+      panelLabel: 'Pledge',
+      billingAddress: true,
+      image: PLEDGE_URL + '/static/flag.jpg',
+      token: function(token, args) {
+        onTokenRecv(token, args);
+      }
+    };
     stripeHandler = StripeCheckout.configure(stripeConfig);
   });
 });
