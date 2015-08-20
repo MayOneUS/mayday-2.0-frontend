@@ -6,6 +6,7 @@ $( document ).ready( function(){
       tallies ='';
 
   function scorecard( legislator_data ){
+    $('#js-legislator').empty();
 
     var l_d = legislator_data,
       supported_bill_names = [],
@@ -60,7 +61,7 @@ $( document ).ready( function(){
     var rendered = ich.legislator_template(l_d);
 
     document.title = l_d.page_title
-    $('#js-legislators').append(rendered);
+    $('#js-legislator').append(rendered);
     $('#js-tallies').append(tallies);
   }
 

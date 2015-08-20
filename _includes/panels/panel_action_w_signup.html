@@ -95,11 +95,7 @@
           setAsComplete($parent);
           makeActive($next);
         }else{
-          if(typeof JOIN_REDIRECT_URL == 'undefined'){
-            window.location = '/take-action/#get-educated';
-          }else{
-            window.location = JOIN_REDIRECT_URL;
-          }
+          window.location = {% if include.redirect %}{{include.redirect}}{% else %}'/take-action/#record-message'{% endif %};
         }
       });
     }
