@@ -59,6 +59,10 @@
   p{
     font-weight: 400;
   }
+  .homepage-panel{
+    padding-top:30px;
+    padding-bottom:35px;
+  }
   .dossier-img{
     margin: 0 auto 0px;
     border-radius: 5px;
@@ -107,7 +111,6 @@
   }
 
   .tail-message{
-    margin-bottom: 20px;
     font-size: 30px;
   }
 
@@ -142,6 +145,7 @@
   }
   .bg-star{
     background-image:url('/images/star_blue.svg') no-repeat;
+    opacity:0.1;
   }
 }
 .dossier-page.with-us-false{
@@ -162,7 +166,7 @@
       margin-right: 8px;
   }
   .bg-star{
-    background-image:url('/images/money_sign.svg') no-repeat;
+    opacity:0.2;
   }
 }
 
@@ -274,70 +278,60 @@
     left: -400px;
     top: -250px;
     height: 650px;
-    opacity: .1;
     @include star-rotation(-30deg)
   }
   .bg-star:nth-of-type(2) {
     left: -500px;
     top: 280px;
     height: 800px;
-    opacity: .1;
     @include star-rotation(-50deg);
   }
   .bg-star:nth-of-type(3) {
     left: 10%;
     top: -160px;
     height: 265px;
-    opacity: .1;
     @include star-rotation(-50deg);
   }
   .bg-star:nth-of-type(4) {
     left: 1%;
     top: -70px;
     width: 600px;
-    opacity: .1;
     @include star-rotation(35deg);
   }
   .bg-star:nth-of-type(5) {
     left: 25%;
     top: -200px;
     height: 350px;
-    opacity: .1;
     @include star-rotation(35deg);
   }
   .bg-star:nth-of-type(6) {
     left: 25%;
     top: 260px;
     height: 350px;
-    opacity: .1;
     @include star-rotation(35deg);
   }
   .bg-star:nth-of-type(7) {
     left: 35%;
     top: 100px;
     height: 200px;
-    opacity: .1;
     @include star-rotation(-50deg);
   }
   .bg-star:nth-of-type(8) {
     left: 47%;
     top: -120px;
     height: 850px;
-    opacity: .1;
     @include star-rotation(35deg);
   }
   .bg-star:nth-of-type(9) {
     left: 76%;
     top: -170px;
     height: 600px;
-    opacity: .1;
     @include star-rotation(40deg);
   }
   .bg-star:nth-of-type(10) {
     left: 82%;
     top: 475px;
     height: 200px;
-    opacity: .1;
     @include star-rotation(-15deg);
   }
 }
