@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Demo Scorecard
+title: Legislator -- MAYDAY PAC
 permalink: /legislator/
 ---
 {% capture legislator_template %}
@@ -15,39 +15,40 @@ permalink: /legislator/
 </script>
 <script id="legislator_template" type="text/html">
 <div class="dossier-page with-us-{{ with_us }}">
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+
   <div class="top-line-left"></div>
   <div class="bottom-taper hidden-xs">
     <div class="triangle-up leg"></div>
   </div>
-  <div class="homepage-panel dossier-star">
-    <img class="bg-star" src={{ background_img }}>
-    <img class="bg-star" src={{ background_img }}>
-    <img class="bg-star" src={{ background_img }}>
-    <img class="bg-star" src={{ background_img }}>
-    <img class="bg-star" src={{ background_img }}>
-    <img class="bg-star" src={{ background_img }}>
-    <img class="bg-star" src={{ background_img }}>
-    <img class="bg-star" src={{ background_img }}>
-    <img class="bg-star" src={{ background_img }}>
-    <img class="bg-star" src={{ background_img }}>
+  <div class="homepage-panel">
     <div class="container page-open">
       <div class="row">
         <div class="col-md-8 col-xs-12 center-block">
-          <div class="col-md-4">
+          <div class="dossier-img-wrap">
             <div class="dossier-img">
               <div class=""  alt="{{ name }} Headshot" style="background-image:url(https://theunitedstates.io/images/congress/225x275/{{ bioguide_id }}.jpg)"></div>
+              <caption>{{party}}-{{state_abbrev}} {{display_district}}</caption>
             </div>
-            <caption>{{party}}-{{state_abbrev}} {{display_district}}</caption>
           </div>
-          <div class="col-md-8">
-            <h1 class="lead-title">{{page_title}}</h1>
-            <blockquote class="leader-hidden">
-              <p>"{{ name }}, please sponsor legislation in Congress for public financing of elections so that elected officials can represent us, The People--not a well-connected few."</p>
-            </blockquote>
-            <div class="leader-visible">
-              <div class="tallies no-gutter" id="js-tallies">
-              {{ tallies_rendered }}
-              </div>
+          <h1 class="lead-title">{{page_title}}</h1>
+          <div class="blockquote-wrap leader-hidden">
+          <blockquote>
+            "{{ name }}, please sponsor legislation in Congress for public financing of elections so that elected officials can represent us, The People--not a well-connected few."
+          </blockquote>
+          </div>
+          <div class="leader-visible">
+            <div class="tallies no-gutter" id="js-tallies">
+            {{ tallies_rendered }}
             </div>
           </div>
         </div>
@@ -64,6 +65,8 @@ permalink: /legislator/
 
 
 {% capture content %}
+
+
 <div id="js-legislator"><i class="fa fa-refresh fa-spin fa-5"></i></div>
 <div class="container">
   <div class="row">

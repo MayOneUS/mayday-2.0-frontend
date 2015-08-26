@@ -43,7 +43,7 @@
 
 #js-legislator{
   text-align: center;
-  min-height:400px;
+  margin-bottom:5px;
 }
 
 .page-open{
@@ -59,12 +59,22 @@
   p{
     font-weight: 400;
   }
+  .blockquote-wrap{
+    padding-left:245px;
+    blockquote{
+      display:block;
+    }
+  }
   .homepage-panel{
     padding-top:30px;
     padding-bottom:35px;
   }
+  .dossier-img-wrap{
+    float:left;
+    margin-right:15px;
+  }
   .dossier-img{
-    margin: 0 auto;
+    margin: 0 0 4px;
     border-radius: 5px;
     height: 281px;
     width: 231px;
@@ -72,11 +82,11 @@
     &>div{
       border:3px solid #fff;
       border-radius: 5px;
-
       height: 275px;
       width: 225px;
       background-size: cover;
       background-repeat: no-repeat;
+      margin-bottom:8px;
     }
   }
   h1.lead-title{
@@ -186,7 +196,7 @@
     display: none;
   }
   .leader-hidden{
-    display: initial;
+    // display: initial;
   }
 }
 
@@ -272,7 +282,7 @@
   }
 }
 
-.dossier-star {
+.dossier-page {
   .bg-star{
     position: absolute;
   }
