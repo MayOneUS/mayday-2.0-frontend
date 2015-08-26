@@ -38,7 +38,7 @@ Goal: Ensure at least two parties have reviewed any code commited for "productio
 We use Amazon's Simple Storage Service (S3) to host this site. Here are the URLs for each environment:
 
 - **Alpha:** http://alpha.mayday.us/ (automatically receives changes to `alpha` branch)
-- **Beta:** http://beta.mayday.us/ (automatically receives changes to `master` branch)
+- **Beta/Master:** http://beta.mayday.us/ (automatically receives changes to `master` branch)
 - **Production:** https://mayday.us (automatically receives changes to `production` branch)
 
 We use the [s3_website](https://github.com/laurilehmijoki/s3_website) project to deploy this site.
