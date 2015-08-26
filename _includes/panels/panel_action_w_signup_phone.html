@@ -4,8 +4,8 @@
     <div class="fade-line hidden-xs hidden-sm"></div>
   </div>
   <div class="panel-body">
-    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
-    <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
+    <h2 id="panel-title">{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
+    <p id="panel-body-p">{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
     <form class="row {{include.form_class}} js-sign-up-form no-gutter">
 
       <fieldset class="col-md-12 no-gutter">
@@ -31,7 +31,7 @@
         <div class="row">
           <div class="form-group col-md-8">
             <label class="control-label sr-only" for="person[phone]">Phone</label>
-            <input id="person[phone]" name="person[phone]" type="text" placeholder="Phone" required="">
+            <input id="person[phone]" name="person[phone]" type="tel" placeholder="Phone" required="">
           </div>
 
           <div class="form-group col-md-4">

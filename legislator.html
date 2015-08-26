@@ -32,22 +32,24 @@ permalink: /legislator/
     <img class="bg-star" src={{ background_img }}>
     <div class="container page-open">
       <div class="row">
-        <div class="col-md-8 col-xs-12 center-block text-center">
-          <h1 class="lead-title">{{page_title}}</h1>
-          <div class="dossier-img">
-            <div class=""  alt="{{ name }} Headshot" style="background-image:url(https://theunitedstates.io/images/congress/225x275/{{ bioguide_id }}.jpg)"></div>
+        <div class="col-md-8 col-xs-12 center-block">
+          <div class="col-md-4">
+            <div class="dossier-img">
+              <div class=""  alt="{{ name }} Headshot" style="background-image:url(https://theunitedstates.io/images/congress/225x275/{{ bioguide_id }}.jpg)"></div>
+            </div>
+            <caption>{{party}}-{{state_abbrev}} {{display_district}}</caption>
           </div>
-          <caption>{{party}}-{{state_abbrev}} {{display_district}}</caption>
-        </div>
-      </div>
-      <div class="row leader-visible">
-        <div class="col-md-8 center-block tallies no-gutter" id="js-tallies">
-        {{ tallies_rendered }}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-5 col-xs-12 center-block text-center tail-message">
-          <h2>{{ tail_message }}</h2>
+          <div class="col-md-8">
+            <h1 class="lead-title">{{page_title}}</h1>
+            <blockquote class="leader-hidden">
+              <p>"{{ name }}, please sponsor legislation in Congress for public financing of elections so that elected officials can represent us, The People--not a well-connected few."</p>
+            </blockquote>
+            <div class="leader-visible">
+              <div class="tallies no-gutter" id="js-tallies">
+              {{ tallies_rendered }}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
