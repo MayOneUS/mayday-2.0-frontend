@@ -72,6 +72,7 @@
   .dossier-img-wrap{
     float:left;
     margin-right:15px;
+    margin-bottom:15px;
   }
   .dossier-img{
     margin: 0 0 4px;
@@ -397,3 +398,35 @@ form.md-inputs.legislators-filter{
   }
 }
 
+
+@media(max-width:550px){
+  .dossier-page{
+  // .dossier-img-wrap{float:none;}
+    .blockquote-wrap{
+      padding-left:170px;
+      text-align: left;
+    }
+    .dossier-img{
+      height: 206px;
+      width: 170px;
+
+      &>div{
+        height: 200px;
+        width: 164px;
+      }
+    }
+  }
+}
+
+@media(max-width:460px){
+  .dossier-page h1.lead-title{font-size: 24px}
+}
+
+@media(max-width:400px){
+  .dossier-page{
+    .blockquote-wrap{
+      padding-left:0;
+      blockquote{display:inline-block}
+    }
+  }
+}
