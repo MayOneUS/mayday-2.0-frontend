@@ -57,7 +57,9 @@ $( document ).ready( function(){
         }
       }
     }
-
+    if(l_d.bioguide_id == 'D000613'){
+      $('#panel-body-p').text('MAYDAY activists are meeting with Congressman Dold’s District Director Philippe Melin on Wednesday, Sept. 9 at 10am in Lincolnshire. To receive updates or participate in this important initiative, sign up below.')
+    }
     $('#panel-title').text(l_d.tail_message);
     var rendered = ich.legislator_template(l_d);
 
