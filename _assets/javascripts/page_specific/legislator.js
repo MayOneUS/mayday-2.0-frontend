@@ -6,6 +6,7 @@ $( document ).ready( function(){
       tallies ='';
 
   function scorecard( legislator_data ){
+    $('#js-legislator').empty();
 
     var l_d = legislator_data,
       supported_bill_names = [],
@@ -47,7 +48,7 @@ $( document ).ready( function(){
         l_d.show_social = 'none';
       }else{
         l_d.background_img = '/images/call-page/money_sign.svg';
-        l_d.page_title = [l_d.title_name,'is not yet a leader supporting fundamental reform'].join(' ');
+        l_d.page_title = [l_d.title_name,'is not yet a supporter of reforming the way elections are funded.'].join(' ');
         l_d.tail_message = ['Ask',l_d.short_title,l_d.name, 'to step up and lead!'].join(' ');
         if(l_d.twitter_id){
           l_d.tweet_url = 'https://twitter.com/intent/tweet?text=.@'+l_d.twitter_id+escape(' help lead the fight for fundamental reform of the way campaigns are funded. #Lead4Reform.')+'&url=http://repswith.us/reforms';
@@ -56,11 +57,14 @@ $( document ).ready( function(){
         }
       }
     }
-
+    if(l_d.bioguide_id == 'D000613'){
+      $('#panel-body-p').text('MAYDAY activists are meeting with Congressman Dold’s District Director Philippe Melin on Wednesday, Sept. 9 at 10am in Lincolnshire. To receive updates or participate in this important initiative, sign up below.')
+    }
+    $('#panel-title').text(l_d.tail_message);
     var rendered = ich.legislator_template(l_d);
 
     document.title = l_d.page_title
-    $('#js-legislators').append(rendered);
+    $('#js-legislator').append(rendered);
     $('#js-tallies').append(tallies);
   }
 
