@@ -64,14 +64,15 @@ permalink: /legislator/
 {% capture footer_scripts %}{{footer_scripts}}{{legislator_template}}{% endcapture %}
 
 
+{% capture hidden_fields %}
+  <input type="hidden" name="person[remote_fields][tags][]" value="20150827_legislator_signup">
+{% endcapture %}
 {% capture content %}
-
-
 <div id="js-legislator"><i class="fa fa-refresh fa-spin fa-5"></i></div>
 <div class="container">
   <div class="row">
     <div class="col-md-8 center-block">
-      {% include panels/panel_action_w_signup_phone.html hide_next=true alt_title="Reclaim your Voice" %}
+      {% include panels/panel_action_w_signup_phone.html hide_next=true alt_title="Reclaim your Voice" hidden_fields=hidden_fields %}
     </div>
   </div>
 </div>

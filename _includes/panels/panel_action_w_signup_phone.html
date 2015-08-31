@@ -56,6 +56,8 @@
             <label class="control-label sr-only" for="singlebutton">Submit</label>
             <input type="hidden" name="template_id" value="sign-up-form">
             <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20150501_signup{% endif %}">
+            <input type="hidden" name="person[remote_fields][tags][]" value="web_signup_simple">
+            {{include.hidden_fields}}
             <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder  -->
             <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
             <p class="help-block">We respect your privacy. Your phone number will not be shared with outside parties. Note:  If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. Message &amp; data rates may apply.</p>
