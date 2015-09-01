@@ -1,10 +1,4 @@
-/** 
- * Mayday Panel Styles
- */
-.panel-title {
-
-}
-/** 
+/**
  * Mayday Content
  */
 .faq-qa{
@@ -15,17 +9,14 @@
 
   @include small-desktop {
     width: 10%
-
   }
-  
+
   @include tablet {
     width: 10%
-
   }
 
   @include phone {
     width: 10%;
-
   }
 }
 .faq-content{
@@ -36,17 +27,14 @@
 
   @include small-desktop {
     width: 85%
-
   }
-  
+
   @include tablet {
     width: 85%
-
   }
 
   @include phone {
     width: 85%
-
   }
 }
 .faq-content p {
@@ -58,7 +46,7 @@
   @include small-desktop {
 
   }
-  
+
   @include tablet {
 
   }
@@ -74,7 +62,7 @@
   font-weight: 400;
 }
 
-/** 
+/**
  * Mayday Button
  */
 
