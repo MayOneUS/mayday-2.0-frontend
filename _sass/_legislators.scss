@@ -51,6 +51,14 @@
 }
 .dossier-page{
   margin-top: -45px;
+  .jumbotron{
+    overflow:visible;
+    margin-bottom: 0;
+    .container{
+      position:relative;
+    }
+  }
+
   h2{
     font-weight: 400;
     font-size: 34px;
@@ -59,29 +67,29 @@
   p{
     font-weight: 400;
   }
-  .blockquote-wrap{
-    padding-left:245px;
-    blockquote{
-      display:block;
-    }
+  .lead-title{
+    // padding-left:285px;
   }
   .homepage-panel{
     padding-top:30px;
     padding-bottom:35px;
   }
   .dossier-img-wrap{
-    float:left;
     margin-right:15px;
+    position:absolute;
+    top:20px;
+    left:20%;
     margin-bottom:15px;
   }
   .dossier-img{
     margin: 0 0 4px;
+    border:5px solid transparent;
     border-radius: 5px;
-    height: 281px;
-    width: 231px;
+    height: 283px;
+    width: 233px;
+    color:#444;
 
     &>div{
-      border:3px solid #fff;
       border-radius: 5px;
       height: 275px;
       width: 225px;
@@ -144,11 +152,12 @@
 }
 
 .dossier-page.with-us-true{
-  h2, h1, .talley{
+  h2, h1.lead-title, .talley{
     color: $color-dossier-blue;
   }
   .dossier-img{
-    border:3px solid $color-dossier-blue;
+    border-color:$color-dossier-blue;
+    background-color: $color-dossier-blue;
     &>div{
       background-color: $color-dossier-blue;
     }
@@ -162,11 +171,12 @@
   }
 }
 .dossier-page.with-us-false{
-  h2, h1, .talley{
+  h2, h1.lead-title, .talley{
     color: $color-dossier-red;
   }
   .dossier-img{
-    border:3px solid $color-dossier-red;
+    border-color: $color-dossier-red;
+    background-color: $color-dossier-red;
     &>div{
       background-color: $color-dossier-red;
     }
@@ -398,12 +408,16 @@ form.md-inputs.legislators-filter{
   }
 }
 
+@media(max-width:$small-desktop-min-width){
+  .dossier-page h1.lead-title{padding:0}
+}
+
 
 @media(max-width:550px){
   .dossier-page{
   // .dossier-img-wrap{float:none;}
-    .blockquote-wrap{
-      padding-left:170px;
+    .lead-title{
+      // padding-left:170px;
       text-align: left;
     }
     .dossier-img{
@@ -424,7 +438,7 @@ form.md-inputs.legislators-filter{
 
 @media(max-width:400px){
   .dossier-page{
-    .blockquote-wrap{
+    .lead-title{
       padding-left:0;
       blockquote{display:inline-block}
     }
