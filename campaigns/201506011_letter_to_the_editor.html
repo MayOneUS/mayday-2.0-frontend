@@ -339,7 +339,7 @@ jQuery.fn.wordCount = function(params){
     }
 
   $(document).ready(function(){
-    var form_data;
+    window.form_data = {}
     $('.toggle-next-ul').on('click', function(e){
       e.preventDefault();
       $(e.target).next('ul').toggleClass('hidden');
@@ -349,7 +349,7 @@ jQuery.fn.wordCount = function(params){
       submitHandler: function(form) {
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
-        form_data =  $form.serializeObject()
+        window.form_data =  $form.serializeObject()
         $.post('{{site.services_url}}/people/targets', $form.serialize() ).done(function(data){
           $('.js-step-one').addClass('hidden');
           if(data['address_required'] == true){
@@ -357,7 +357,7 @@ jQuery.fn.wordCount = function(params){
           }else{
             renderLocalLegislators(data['local_legislators']);
             $('.js-step-two').removeClass('hidden');
-            $.post('{{site.services_url}}/google/lte_forms', $form.serialize() )
+            $.post('{{site.services_url}}/google/lte_forms', window.form_data )
           }
         }).fail(function(data){
           alert('There was an error. Please try again later.')
@@ -369,8 +369,8 @@ jQuery.fn.wordCount = function(params){
       submitHandler: function(form) {
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
-        form_data = $.extend(true, form_data, $form.serializeObject())
-        $.post('{{site.services_url}}/people/targets', form_data ).done(function(data){
+        window.form_data = $.extend(true, window.form_data, $form.serializeObject())
+        $.post('{{site.services_url}}/people/targets', window.form_data ).done(function(data){
           $('.js-step-one').addClass('hidden');
           if(data['address_required'] == 'true'){
             alert('We couldn\'t find your address.  Please try again.')
@@ -379,7 +379,7 @@ jQuery.fn.wordCount = function(params){
             $('.js-step-one-b').addClass('hidden');
             $('.js-step-two').removeClass('hidden');
           }
-          $.post('{{site.services_url}}/google/lte_forms', $form.serialize() )
+          $.post('{{site.services_url}}/google/lte_forms', window.form_data )
         }).fail(function(data){
           alert('There was an error. Please try again later.')
           $form.find('button.btn').html('Try Again');
@@ -390,8 +390,8 @@ jQuery.fn.wordCount = function(params){
       submitHandler: function(form) {
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
-        form_data = $.extend(true, form_data, $form.serializeObject())
-        $.post('{{site.services_url}}/google/lte_forms', form_data ).done(function(data){
+        window.form_data = $.extend(true, window.form_data, $form.serializeObject())
+        $.post('{{site.services_url}}/google/lte_forms', window.form_data ).done(function(data){
           $('.js-step-two').addClass('hidden');
           $('.js-thanks-message').removeClass('hidden');
         }).fail(function(data){
