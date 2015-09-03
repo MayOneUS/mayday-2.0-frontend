@@ -1,4 +1,4 @@
-if( window.location.pathname == '/legislator/' ){
+if( window.location.pathname == '/legislator/' || window.location.pathname == '/legislator-landing/' ){
 
 $( document ).ready( function(){
   "use strict";
