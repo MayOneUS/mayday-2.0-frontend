@@ -104,7 +104,7 @@ meta_content: |
         <div class="row">
         {% for reform in site.data.reforms %}
           <div class="col-lg-4 col-md-4 col-sm-6 reform">
-            <a href="{{ reform.slug | data_page_url: 'reforms' }}" class="thumbnail">
+            <a href="{{ reform.slug | data_page_url: 'reforms' }}.html" class="thumbnail">
               <div class="caption">
                 <h2>{{reform.billTitle}}</h2>
                 <!-- <div class="progress spacer-y-margin">
