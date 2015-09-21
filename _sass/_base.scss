@@ -359,17 +359,22 @@ pre {
     color: $color-font;
   }
 }
-.btn-md-wide{
+.btn-md-wide, .btn-md-md{
   @include button-colors($color-dark-red);
   width: 100%;
   margin-bottom: 10px;
   margin-top: 6px;
-  padding: 16px 16px;
+  padding: 16px;
   font-size: 28px;
   line-height: normal;
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.btn-md-md{
+  padding: 8px;
+  font-size: 22px;
 }
 
 @mixin simple-button{
