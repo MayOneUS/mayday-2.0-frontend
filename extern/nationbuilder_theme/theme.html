@@ -1,0 +1,53 @@
+---
+layout: extern
+title: some title
+offSite: true
+body_attrs: '{{ page.page_class_name }}'
+---
+
+{% capture custom_css %}
+<link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css" media="screen and (min-width: 768px)">
+{% raw %}
+ {{ content_for_header }}
+{% endraw %}
+ <script type="text/javascript">
+  NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
+</script>
+{% endcapture %}
+
+{% capture content %}
+
+{% if page.features_count > 0 %}
+  {% include "features" %}
+{% endif %}
+
+
+{% raw %}
+{% if request.is_sidebar? %}
+{% include "columns_2" %}
+{% else %}
+{% include "columns_1" %}
+{% endif %}
+{% endraw %}
+
+<!-- <div class="span7 footer-left">
+ {% if request.logged_in? %}
+   Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
+   {% if site.show_public_profiles? %}
+     <a href="{{ request.current_signup.profile_url }}">public profile</a>,
+   {% endif %}
+   <a href="{{ request.current_signup.settings_url }}">account settings</a>, or
+   <a href="{{ request.current_signup.logout_url }}">sign out</a>.
+ {% else %}
+   Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
+       href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.
+ {% endif %}
+</div> -->
+
+{% endcapture %}
+
+{% include sub_layouts/external.html %}
+
+{% raw %}
+{{content_for_footer}}
+{% endraw %}
