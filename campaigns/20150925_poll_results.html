@@ -24,8 +24,7 @@ meta_content: |
   .control-label h3{font-weight:400;}
   .page-content{padding-bottom: 0}
   .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
-  blockquote{font-weight:300;}
-  blockquote .quote-author{text-align:right;font-style: italic;}
+  #question-4{min-width:310px;height:600px}
 </style>
 {% endcapture %}
 
@@ -46,6 +45,7 @@ meta_content: |
       <h1>Voters of Every Political Stripe Agree on the Need for Fundamental Reform to the Campaign Finance System</h1>
 
       <p>We are conducting a poll to see which presidential candidates have the most anti-corruption supporters. We'll show these candidates that their supporters want fundamental reform of the way elections are funded. We'll show presidential candidates from both parties that they need to step up and lead in the fight for real reform.</p>
+      <div id="question-4"></div>
       <p>Let's prove that there is at least one thing that both Trump and Bernie supporters agree on: the need to fundamentally change the system. The headlines write themselves, and we'll put the spotlight of presidential politics directly on corruption, and fixing it. We’ll show every candidate that fighting for real change in Washington can be a winning issue in 2016.</p>
       <p>We’ll even put the results online for others to dig through and use to help tell the story that voters across the ideological spectrum all agree on one thing: we want politicians to stand up and fight for clean elections.</p>
       <p><strong>With your help, our data can be even more convincing.</strong> Every $2,000 we raise helps us increase our sample size, enriching our data to include even more presidential candidates.</p>
@@ -102,5 +102,63 @@ meta_content: |
 </div><!-- END .donate-page.container -->
 
 {% endcapture %}
+
+{% capture poll_page_js %}
+{% javascript vendor/highcharts.js %}
+
+<script>
+  $(document).ready(function() {
+    $('#question-4').highcharts({
+      chart: {
+        type: 'bar'
+      },
+      style: {
+        "fontSize": "30px",
+        "fontWeight":300,
+        "color":"#0d3960",
+        fontFamily: 'Lato',
+      },
+      title: {
+        text: 'Everyone Agrees that the system for funding elections needs fundamental reform!'
+      },
+      xAxis: {
+        categories: ['Biden','Chafee','Clinton','Lessig','O\'Malley','Sanders','Webb','Bush','Carson','Christie','Cruz','Fiorina','Huckabee','Kasich','Paul','Rubio','Trump','Undecided (R)','Not sure (D)']
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Support'
+        },
+        labels: {
+          format: '{value}%'
+        }
+      },
+      legend: {
+        reversed: true
+      },
+      plotOptions: {
+        series: {
+          stacking: 'normal'
+        }
+      },
+      tooltip: {
+        valueSuffix: '%'
+      },
+      series: [{
+        name: 'Somewhat Agree',
+        data: [16,31,19,51,17,9,6,19,25,19,23,23,22,28,15,22,17,14,12]
+      },{
+        name: 'Strongly Agree',
+        data: [71,22,69,44,40,80,58,60,56,68,50,54,66,58,73,59,66,55,66],
+        color: "#0D3960"
+      }]
+    });
+  });
+</script>
+{% endcapture %}
+
+
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{poll_page_js}}{% endcapture %}
 
 {% include sub_layouts/default_layout.html %}
