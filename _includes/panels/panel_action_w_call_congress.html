@@ -103,7 +103,7 @@
             $parent.removeClass('incomplete');
             $parent.addClass('complete').addClass('thanked');
           }
-          $.each(data.targets.slice(0, 5), function(index, target_data){
+          $.each(data.targets.slice(0, 6), function(index, target_data){
             var rendered = ich.call_target_template(target_data);
             $('.js-targets').append(rendered);
           });
