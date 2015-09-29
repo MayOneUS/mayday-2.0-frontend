@@ -246,12 +246,14 @@
   }
 }
 
-.contribution-rules {
+.contribution-rules, .gray-container-wrap {
   margin: 20px 0 0;
   padding: 30px 0 40px;
   background-color: #ebebeb;
   font-weight: 300;
+}
 
+.contribution-rules {
   h2 {
     font-weight: 400;
   }

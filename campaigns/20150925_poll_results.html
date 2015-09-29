@@ -9,7 +9,7 @@ meta_content: |
   <link rel="canonical" href="https://mayday.us/presidential-poll/">
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150727_social_share_graphic.jpg"/>
   <meta property="og:title" content="Voters of Every Political Stripe Agree on the Need for Fundamental Reform to the Campaign Finance System"/>
-  <meta property="og:description" content="Check out this new presidential poll showing which candidates’ supporters care most about reforming the corrupt way elections are funded."/>
+  <meta property="og:description" content="Check out this new presidential poll showing which candidates&rsquo; supporters care most about reforming the corrupt way elections are funded."/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
   <meta content='@mayday' name="twitter:site"/>
@@ -26,7 +26,7 @@ meta_content: |
   .control-label h3{font-weight:400;}
   .page-content{padding-bottom:0}
   .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
-  #question-4-dem, #question-4-gop{min-width:310px;height:400px; margin:30px 0;border:6px solid #ddd}
+  #question-4-dem, #question-4-gop{min-width:310px;height:500px; margin:30px 0;border:6px solid #ddd;padding-top:10px;background-color:#fff;}
   #question-4-gop{height:500px}
 </style>
 {% endcapture %}
@@ -49,15 +49,24 @@ meta_content: |
       <h1>NEW MAYDAY.US PRESIDENTIAL POLL:  Supporters of Every Candidate Want Reform of How Elections are Funded</h1>
       <p class="byline">Voters of Every Political Stripe Agree on the Need for Fundamental Reform to the Campaign Finance System</p>
 
-      <p>We just released a new presidential poll showing which candidates’ supporters care most about reforming how elections are funded.</p>
+      <p>We just released a new presidential poll showing which candidates&rsquo; supporters care most about reforming how elections are funded.</p>
       <p>We found that the vast majority of primary voters agree &ndash; regardless of which party or candidate they support &ndash; that we need to fundamentally reform the corrupt way we fund elections, including establishing citizen-funded elections that match small donations using public funds.</p>
+
+      <div class="row spacer-y-sm" style="background-color:#eee;">
+        <div class="col-md-8 center-block text-center">
+          <h2>All voters agree: &ldquo;The system for funding elections needs fundamental reform."</h2>
+        </div>
+        <div class="col-md-6">
+          <div id="question-4-dem"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="question-4-gop" class="bottom-spacer-sm"></div>
+        </div>
+      </div>
+
       <p>The survey is available now online, broken into a <a href="/data/20150925_gop_polling_results.pdf" target="_blank">Republican sample</a> and a <a href="/data/20150925_dem_polling_results.pdf" target="_blank">Democratic sample</a>.</p>
+      <p>&ldquo;A lot divides us as a country, but the results are clear: Supporters of every candidate for President &ndash; all the way from Ted Cruz and Ben Carson to Joe Biden and Bernie Sanders &ndash; believe that our system is broken and needs fundamental reform,&rdquo; MAYDAY.US CEO and Board Chair Zephyr Teachout said.  &ldquo;Americans are looking to Washington to break the cycle of corruption, and they&rsquo;ve had it with a handful of corporations and well-connected individuals exploiting the weakness in our democratic design to corrupt our country from the inside.&rdquo;</p>
 
-      <div id="question-4-dem"></div>
-
-      <blockquote>“A lot divides us as a country, but the results are clear: Supporters of every candidate for President &ndash; all the way from Ted Cruz and Ben Carson to Joe Biden and Bernie Sanders &ndash; believe that our system is broken and needs fundamental reform,” MAYDAY.US CEO and Board Chair Zephyr Teachout said.  “Americans are looking to Washington to break the cycle of corruption, and they’ve had it with a handful of corporations and well-connected individuals exploiting the weakness in our democratic design to corrupt our country from the inside.”</blockquote>
-
-      <div id="question-4-gop" class="bottom-spacer-sm"></div>
     </div>
   </div>
   <div class="row">
@@ -73,7 +82,7 @@ meta_content: |
           <div class="row">
             <div class="col-md-12 center-block">
               <h2>Spread the News</h2>
-              <p>Show your friends which candidates’ supporters care the most about fighting corrupt big money in politics!</p>
+              <p>Show your friends which candidates&rsquo; supporters care the most about fighting corrupt big money in politics!</p>
             </div>
           </div>
           <div class="row">
@@ -119,11 +128,7 @@ meta_content: |
 
 <script>
   $(document).ready(function() {
-    $('#question-4-dem').highcharts({
-      credits: {
-        text: 'MAYDAY.US 09/2015 Presidential Poll',
-        href: 'https://mayday.us/data/20150925_dem_polling_results.pdf'
-      },
+    var highChartsCommonOptions = {
       chart: {
         type: 'bar'
       },
@@ -132,13 +137,6 @@ meta_content: |
         "fontWeight":300,
         "color":"#0d3960",
         'fontFamily': 'Lato',
-      },
-      title: {
-        text: 'Everyone Agrees that the system for funding elections needs fundamental reform!',
-        style: {'fontSize': '24px'}
-      },
-      xAxis: {
-        categories: ['Biden','Chafee','Clinton','Lessig','O\'Malley','Sanders','Webb'] //['Bush','Carson','Christie','Cruz','Fiorina','Huckabee','Kasich','Paul','Rubio','Trump']
       },
       yAxis: {
         min: 0,
@@ -160,6 +158,19 @@ meta_content: |
       },
       tooltip: {
         valueSuffix: '%'
+      }
+    }
+    $('#question-4-dem').highcharts($.extend(highChartsCommonOptions,{
+      credits: {
+        text: 'MAYDAY.US 09/2015 Presidential Poll',
+        href: 'https://mayday.us/data/20150925_dem_polling_results.pdf'
+      },
+      xAxis: {
+        categories: ['Biden','Chafee','Clinton','Lessig','O\'Malley','Sanders','Webb'] //['Bush','Carson','Christie','Cruz','Fiorina','Huckabee','Kasich','Paul','Rubio','Trump']
+      },
+      title: {
+        text: 'Democratic Candidates\' Supporters',
+        style: {'fontSize': '20px', 'color': '#0d3960'}
       },
       series: [{
         name: 'Somewhat Agree',
@@ -171,53 +182,18 @@ meta_content: |
         color: "#0D3960",
         pointWidth: 24
       }]
-    });
-  });
-</script>
-
-<script>
-  $(document).ready(function() {
-    $('#question-4-gop').highcharts({
+    }));
+    $('#question-4-gop').highcharts($.extend(highChartsCommonOptions,{
       credits: {
         text: 'MAYDAY.US 09/2015 Presidential Poll',
         href: 'https://mayday.us/data/20150925_gop_polling_results.pdf',
       },
-      chart: {
-        type: 'bar'
-      },
-      style: {
-        "fontSize": "30px",
-        "fontWeight":300,
-        "color":"#0d3960",
-        'fontFamily': 'Lato',
-      },
       title: {
-        text: 'Everyone Agrees that the system for funding elections needs fundamental reform!',
-        style: {'fontSize': '24px'}
+        text: 'Republican Candidates\' Supporters',
+        style: {'fontSize': '20px', 'color': '#0d3960'}
       },
       xAxis: {
         categories: ['Bush','Carson','Christie','Cruz','Fiorina','Huckabee','Kasich','Paul','Rubio','Trump']
-      },
-      yAxis: {
-        min: 0,
-        max: 100,
-        title: {
-          text: 'Support'
-        },
-        labels: {
-          format: '{value}%'
-        }
-      },
-      legend: {
-        reversed: true
-      },
-      plotOptions: {
-        series: {
-          stacking: 'normal'
-        }
-      },
-      tooltip: {
-        valueSuffix: '%'
       },
       series: [{
         name: 'Somewhat Agree',
@@ -230,7 +206,7 @@ meta_content: |
         color: "#8C000A",
         pointWidth: 24
       }]
-    });
+    }));
   });
 </script>
 {% endcapture %}
