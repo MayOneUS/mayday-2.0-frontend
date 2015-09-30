@@ -1,4 +1,4 @@
-if( window.location.pathname == '/take-action/' || window.location.pathname == '/june23/'  || window.location.pathname == '/presidential-poll/'){
+if( window.location.pathname == '/take-action/' || window.location.pathname == '/june23/' || window.location.pathname == '/presidential-poll/' || window.location.pathname == '/new-presidential-poll/'){
 
 function makeActive($target_li){
   $target_li.addClass('active').siblings().removeClass('active');
