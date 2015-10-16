@@ -1,0 +1,66 @@
+---
+layout: default
+title: Announcing MD Stuff
+permalink: /elect-jamie-raskin/
+hideMenus: true
+hideHeaderSignUp: true
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/elect-jamie-raskin/"/>
+  <link rel="canonical" href="https://mayday.us/elect-jamie-raskin/">
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150727_social_share_graphic.jpg"/>
+  <meta property="og:title" content="Let's put the Spotlight on Campaign Finance Reform"/>
+  <meta property="og:description" content="Let's show candidates that their supporters want fundamental reform of the way elections are funded. Donate to help us inscrease our sample size"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title>Let's put the Spotlight on Campaign Finance Reform - MAYDAY</title>
+---
+{% capture custom_css %}
+<style type="text/css">
+  .control-label h3{font-weight:400;}
+  .page-content{padding-bottom: 0}
+  .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+</style>
+{% endcapture %}
+
+{% capture content %}
+{% include campaigns/20151019_md_jumbotron.html %}
+
+
+
+<div class="donate-page container">
+  <div class="row">
+    {% include campaigns/20151019_md_progress_bars.html %}
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-7 donate-flavor-text">
+      <p class="no-top-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae ligula gravida enim ultrices egestas. Vivamus pellentesque mauris in arcu pulvinar congue. Cras ut justo a lectus interdum cursus. Quisque pharetra est non finibus congue. Cras ornare mattis leo, id pellentesque sem rhoncus ornare. Aenean tortor urna, dignissim vel pretium sit amet, finibus vitae enim. Donec pellentesque ultrices elit, ut egestas purus vestibulum et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam felis sem, lobortis nec sollicitudin ut, vehicula in enim. Nulla bibendum posuere magna id tincidunt. Curabitur eu blandit magna. Integer dictum justo id leo bibendum, eu lacinia mauris ullamcorper. Aenean mauris odio, elementum id velit et, scelerisque gravida magna. Quisque posuere a eros id egestas.</p>
+      <p>Nunc eu pharetra nisl, id vulputate lectus. Nulla id quam sit amet leo viverra cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla a nibh ac risus facilisis sodales vitae eget nisl. Sed consequat neque urna. Mauris varius velit sit amet facilisis lobortis. Aliquam erat volutpat. Suspendisse ut dolor odio. Fusce quis tempor quam. Maecenas quis elementum lorem. Cras ex diam, pulvinar vel leo ac, bibendum lobortis felis.</p>
+      <p><strong>Vestibulum at diam quis ante feugiat volutpat non eu magna.</strong> Quisque eu efficitur massa. Quisque eget turpis non mauris varius consectetur non quis augue. Suspendisse lacinia quam ac eros condimentum, in suscipit purus efficitur. Maecenas diam orci, rutrum sed egestas nec, congue non tortor.</p>
+
+    <p><strong>Aliquam ac cursus neque.</strong></p>
+
+    </div>
+    <div class="col-md-6 col-lg-5">
+      {% capture panel_body %}
+      <div class="panel-body donate-page-box">
+        <h2>Contribute Today</h2>
+        {% include donate_form.html redirect_url='/ceo-thanks/' action_template_id="20151019_md_donate" %}
+
+      </div>
+      {% endcapture %}
+      {% include panels/panel_empty.html %}
+    </div>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
