@@ -20,6 +20,8 @@ meta_content: |
   .control-label h3{font-weight:400;}
   .page-content{padding-bottom: 0}
   .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+  .not-ready-link{line-height:100%;margin: 5px 0 0;}
+  .not-ready-link a{color:#808080;}
 </style>
 {% endcapture %}
 
@@ -46,7 +48,8 @@ meta_content: |
       <div class="panel-body donate-page-box">
         <h2>Contribute Today</h2>
         {% include donate_form.html redirect_url='/ceo-thanks/' action_template_id="20151019_md_donate" %}
-
+        <hr />
+        <p class="not-ready-link"><a href="/jamie-raskin-for-md/" title=""><small>Not ready to donate? Sign up for updates!</small></a>
       </div>
       {% endcapture %}
       {% include panels/panel_empty.html %}
