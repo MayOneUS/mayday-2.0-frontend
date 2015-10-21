@@ -2,6 +2,10 @@
  * Mayday Panel Styles
  */
 
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio]{
+  margin-top:6px;
+}
+
 h3.panel-title {
   .byline{font-size:0.8em}
 }

@@ -7,7 +7,6 @@
     <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
     <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
     <form class="row {{include.form_class}} js-sign-up-form no-gutter">
-
       <fieldset class="col-md-12 no-gutter">
         <div class="row">
           <div class="form-group col-md-6">
@@ -22,34 +21,34 @@
         </div>
 
         <div class="row">
-          <div class="form-group col-md-8">
+          <div class="form-group col-md-8 no-bottom-margin">
             <label class="control-label sr-only" for="person[email]">Email Address</label>
             <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
           </div>
 
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-4 no-bottom-margin">
             <label class="control-label sr-only" for="person[zip]">ZIP</label>
             <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
           </div>
         </div>
 
-        {% if !hide_volunteer %}
+        {% unless include.hide_volunteer %}
         <div class="row">
-          <div class="form-group col-md-12">
+          <div class="form-group col-md-12 text-left">
             <label class="control-label sr-only" for="person[is_volunteer]">Volunteer</label>
               <label class="checkbox-inline" for="person[is_volunteer]-0">
                 <input type="checkbox" name="person[is_volunteer]" id="person[is_volunteer]-0" value="true"> Are you ready to volunteer?
               </label>
           </div>
         </div>
-        {% endif %}
+        {% endunless %}
 
         <div class="row top-spacer-btn">
           <div class="form-group col-md-12">
             <label class="control-label sr-only" for="singlebutton">Submit</label>
-            <input type="hidden" name="template_id" value="sign-up-form">
-            <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20150501_signup{% endif %}">
-            <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder  -->
+            <input type="hidden" name="template_id" value="{% if include.template_id %}{{include.template_id}}{% else %}signup-form{% endif %}">
+            <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20151026_rsvp{% endif %}">
+            {{include.custom_form_inputs}}
             <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
           </div>
         </div>
@@ -95,7 +94,7 @@
           setAsComplete($parent);
           makeActive($next);
         }else{
-          window.location = {% if include.redirect %}{{include.redirect}}{% else %}'/take-action/#record-message'{% endif %};
+          window.location = '{% if include.redirect %}{{include.redirect}}{% else %}/take-action/#record-message{% endif %}';
         }
       });
     }
