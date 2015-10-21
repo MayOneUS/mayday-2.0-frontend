@@ -1,0 +1,107 @@
+---
+layout: default
+title: Take Action
+permalink: /md-rsvp/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/md-rsvp/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="Press Conference in D.C. with Zephyr Teachout"/>
+  <title>Press Conference in D.C. with Zephyr Teachout</title>
+  <meta property="og:description" content="This is optional content"/>
+  <link rel="canonical" href="https://mayday.us/md-rsvp/">
+  <meta name="robots" content="noindex"><!--  remove no-index when you take pages live -->
+---
+{% capture custom_css %}
+<style type="text/css">
+  .dayofaction .thanks-message{display:none;}
+  .jumbotron{background: #444 url('/images/campaigns/20150811_zephyr_donate_page_graphic_no_words_2400x210.jpg') center 0px no-repeat;min-height: 210px;text-align:center;color:#fff;}
+  .jumbotron h1{background: transparent url('/images/campaigns/20150727_ceo_headline_v4_776x69.png') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top:40px;margin-bottom:0;}
+  .jumbotron h3{color:#fff;text-align:left;font-weight:400;margin-top:0}
+  .control-label h3{font-weight:400;}
+  .page-content{padding-bottom: 0}
+  .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+  blockquote{font-weight:300;}
+  blockquote .quote-author{text-align:right;font-style: italic;}
+  #js-map{height:250px;border: 3px solid #ccc;}
+  .map-wrap{background-color: #efefef;padding: 10px;margin-bottom:40px;box-shadow: 2px 2px 5px #ccc;margin-bottom:20px;}
+  .map-wrap dd{margin-bottom:10px}
+  .map-wrap dd, .map-wrap dt{line-height: 1.2}
+</style>
+
+{% endcapture %}
+
+{% capture content %}
+
+<div class="jumbotron hidden-xs hidden-sm">
+  <div class="container">
+    <div class="col-lg-6 col-md-offset-5 col-md-7">
+      <h1 class="text-hide">We're here to Fight</h1>
+      <h3>A well-connected few are pumping billions of dollars to hijack your government. Contribute now to take back our Republic.</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-7 donate-flavor-text">
+      <h1>Press Conference in D.C. with Zephyr Teachout</h1>
+      <p>Join us on Monday, September 26 at the Kellogg Conference Center Hotel in Washington D.C. as we announce our first Congressional candidate for the 2016 elections! We need you to stand behind Zephyr as she makes this exciting announcement in front of the press. Feel free to bring signs and posters to show your support for reform in front of the cameras!</p>
+      <p>Team MAYDAY.US will also be holding a conference call on the morning of Monday the 26th for all who are interested in learning more about the announcement and how you can get involved!</p>
+      <div class="row  map-wrap">
+        <div class="col-md-6" id="js-map">
+
+        </div>
+        <div class="col-md-6">
+          <h3>Kellogg Conference Center Hotel</h3>
+          <dl>
+            <dt>Address</dt>
+            <dd>800 Florida Ave NE<br> Washington, DC 20002</dd>
+            <dt>Website:</dt>
+            <dd>https://kelloggconferencehotel.com/</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-5">
+      {% capture custom_form_inputs %}
+        <input type="hidden" name="person[remote_fields][event_id]" value="155">
+      {% endcapture %}
+      {% include panels/panel_action_w_signup.html custom_form_inputs=custom_form_inputs hide_next=true hide_volunteer="true" form_class="smaller-form" facebook_pixel_id="6033824141290" alt_title="Join the Movement" alt_body="We need you. We need to build power so we can demand that politicians do something about how private money is destroying democracy." redirect="http://shpg.org/220/16431" %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+
+{% capture page_specific_javascript %}
+
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.21/gmaps.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+$(document).ready(function(){
+
+  var map = new GMaps({
+    el: '#js-map',
+    lat: 38.907911,
+    lng: -76.995059,
+    zoom: 11,
+    mapTypeControl: false,
+    streetViewControl: false
+  });
+  map.addMarker({
+    lat: 38.907911,
+    lng: -76.995059,
+    title: 'Kellogg Conference Center Hotel',
+    infoWindow: {
+      content: '<h2>Kellogg Conference Center Hotel</h3>'
+    }
+  });
+
+});
+</script>
+{% endcapture %}
+
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
+
+{% include sub_layouts/default_layout.html %}
