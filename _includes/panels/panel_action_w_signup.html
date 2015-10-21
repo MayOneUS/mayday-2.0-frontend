@@ -46,9 +46,9 @@
         <div class="row top-spacer-btn">
           <div class="form-group col-md-12">
             <label class="control-label sr-only" for="singlebutton">Submit</label>
-            <input type="hidden" name="template_id" value="sign-up-form">
-            <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20150501_signup{% endif %}">
-            <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder  -->
+            <input type="hidden" name="template_id" value="{% if include.template_id %}{{include.template_id}}{% else %}signup-form{% endif %}">
+            <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20151026_rsvp{% endif %}">
+            {{include.custom_form_inputs}}
             <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
           </div>
         </div>
@@ -94,7 +94,7 @@
           setAsComplete($parent);
           makeActive($next);
         }else{
-          window.location = {% if include.redirect %}{{include.redirect}}{% else %}'/take-action/#record-message'{% endif %};
+          window.location = '{% if include.redirect %}{{include.redirect}}{% else %}/take-action/#record-message{% endif %}';
         }
       });
     }
