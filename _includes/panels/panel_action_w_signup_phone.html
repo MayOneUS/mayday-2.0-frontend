@@ -51,14 +51,14 @@
         </div>
         {% endunless %}
 
+        {{include.custom_form_inputs}}
+
         <div class="row">
           <div class="form-group col-md-12">
             <label class="control-label sr-only" for="singlebutton">Submit</label>
             <input type="hidden" name="template_id" value="{% if include.template_id %}{{include.template_id}}{% else %}signup-form{% endif %}">
             <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20150501_signup{% endif %}">
             <input type="hidden" name="person[remote_fields][tags][]" value="web_signup_simple">
-            {{include.hidden_fields}}
-            <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25"><!-- sets auto-repsonder  -->
             <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
             <p class="help-block">We respect your privacy. Your phone number will not be shared with outside parties. Note:  If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. Message &amp; data rates may apply.</p>
           </div>
@@ -68,7 +68,7 @@
     </form>
     {% unless include.hide_next %}
     <div class="row skip-next">
-      <small class="not-ready-link"><a href="#" title="Skip to Next Step" class="next">{% if include.alt_next_copy %}{{include.alt_next_copy}}{% else %}Skip to Next Step{% endif %}</a></small>
+      <small class="not-ready-link"><a href="{% if include.alt_next_link %}{{include.alt_next_link}}{% else %}Skip to Next Step{% endif %}" class="next">{% if include.alt_next_copy %}{{include.alt_next_copy}}{% else %}Skip to Next Step{% endif %}</a></small>
     </div>
     {% endunless %}
   </div>
