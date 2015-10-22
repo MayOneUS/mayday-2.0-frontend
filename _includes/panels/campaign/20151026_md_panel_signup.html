@@ -4,7 +4,7 @@
     <div class="fade-line hidden-xs hidden-sm"></div>
   </div>
   <div class="panel-body">
-    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
+    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Let's do this!{% endif %}</h2>
     <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
     <form class="row {{include.form_class}} js-sign-up-form no-gutter">
       <fieldset class="col-md-12 no-gutter">
@@ -32,24 +32,26 @@
           </div>
         </div>
 
-        {% unless include.hide_volunteer %}
         <div class="row">
           <div class="form-group col-md-12 text-left">
-            <label class="control-label sr-only" for="person[is_volunteer]">Volunteer</label>
-              <label class="checkbox-inline" for="person[is_volunteer]-0">
-                <input type="checkbox" name="person[is_volunteer]" id="person[is_volunteer]-0" value="true"> Are you ready to volunteer?
-              </label>
+            <label class="control-label" for="person[is_volunteer]">Are you ready?</label>
+            <br />
+            <label class="checkbox-inline" for="person-remote_fields-tags-0">
+              <input type="checkbox" name="person[remote_fields][tags][]" id="person-remote_fields-tags-0" value="20151026_md_want_volunteer"> To Volunteer?
+            </label>
+            <label class="checkbox-inline" for="person-remote_fields-tags-0">
+              <input type="checkbox" name="person[remote_fields][tags][]" id="person-remote_fields-tags-1" value="20151026_md_want_donate"> To Donate?
+            </label>
           </div>
         </div>
-        {% endunless %}
 
         {{include.custom_form_inputs}}
 
         <div class="row top-spacer-btn">
           <div class="form-group col-md-12">
             <label class="control-label sr-only" for="singlebutton">Submit</label>
-            <input type="hidden" name="template_id" value="{% if include.template_id %}{{include.template_id}}{% else %}signup-form{% endif %}">
-            <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20151026_rsvp{% endif %}">
+            <input type="hidden" name="template_id" value="{% if include.template_id %}{{include.template_id}}{% else %}20151026_md_signup{% endif %}">
+            <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20151026_md_signup{% endif %}">
             <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
           </div>
         </div>
@@ -58,7 +60,7 @@
     </form>
     {% unless include.hide_next %}
     <div class="row skip-next">
-      <small class="not-ready-link"><a href="{% if include.alt_next_link %}{{include.alt_next_link}}{% else %}Skip to Next Step{% endif %}" class="next">{% if include.alt_next_copy %}{{include.alt_next_copy}}{% else %}Skip to Next Step{% endif %}</a></small>
+      <small class="not-ready-link"><a href="{% if include.alt_next_link %}{{include.alt_next_link}}{% else %}/elect-jamie-raskin/donate/{% endif %}" class="next">{% if include.alt_next_copy %}{{include.alt_next_copy}}{% else %}Just Donate? Click here!{% endif %}</a></small>
     </div>
     {% endunless %}
   </div>
@@ -79,24 +81,36 @@
   })();
   $('.js-sign-up-form').validate({
     submitHandler: function(form) {
-      $form = $(form);
+      console.log('submitHandler');
+      var donate_redirect = '/elect-jamie-raskin/donate/',
+          volunteer_redirect = '/elect-jamie-raskin/volunteer/',
+          share_redirect = 'http://shpg.org/220/16397',
+          param_append = '?redirect_from=signing%20up',
+          target_location,
+          $form = $(form),
+          $volunteer_input = $('#person-remote_fields-tags-0'),
+          $donate_input = $('#person-remote_fields-tags-1');
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-      $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
-      }).done(function(){
+      console.log('loading');
+      $.post('{{site.services_url}}/actions', $form.serialize()).done(function(){
+        console.log('done posting');
         window['optimizely'] = window['optimizely'] || [];
         window.optimizely.push(["trackEvent", "JoinSignup"]);
         {% if include.facebook_pixel_id %}
         window._fbq = window._fbq || [];
         _fbq.push(['track',{{include.facebook_pixel_id}},{'value':'0.00','currency':'USD'}]);
         {% endif %}
-        if(location.pathname == '/take-action/'){
-          $next = $form.parents('li').next();
-          $parent = $form.parents('li');
-          setAsComplete($parent);
-          makeActive($next);
+        if($donate_input.is(':checked')){
+          console.log('donate_input is checked');
+          target_location = donate_redirect;
+        }else if($volunteer_input.is(':checked')){
+          console.log('volunteer_input is checked');
+          target_location = volunteer_redirect;
         }else{
-          window.location = '{% if include.redirect %}{{include.redirect}}{% else %}/take-action/#record-message{% endif %}';
+          target_location = share_redirect;
         }
+        console.log('window.location', target_location, param_append);1
+        window.location = target_location + param_append;
       });
     }
   });
