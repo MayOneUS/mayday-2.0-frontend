@@ -3,12 +3,12 @@ layout: default
 title: Take Action
 permalink: /20151026-announcement/
 meta_content: |
-  <meta property="og:url" content="https://mayday.us/md-rsvp/"/>
+  <meta property="og:url" content="https://mayday.us/20151026-announcement/"/>
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
   <meta property="og:title" content="Press Conference in D.C. with Zephyr Teachout"/>
   <title>Press Conference in D.C. with Zephyr Teachout</title>
   <meta property="og:description" content="RSVP for our press conference in D.C. with Zephyr Teachout"/>
-  <link rel="canonical" href="https://mayday.us/md-rsvp/">
+  <link rel="canonical" href="https://mayday.us/20151026-announcement/">
   <meta name="robots" content="noindex"><!--  remove no-index when you take pages live -->
 ---
 {% capture custom_css %}
@@ -45,19 +45,18 @@ meta_content: |
   <div class="row">
     <div class="col-md-6 col-lg-7 donate-flavor-text">
       <h1>Press Conference in D.C. with Zephyr Teachout</h1>
-      <p>Join us on Monday, September 26 at the Kellogg Conference Center Hotel in Washington D.C. as we announce our first Congressional candidate for the 2016 elections! We need you to stand behind Zephyr as she makes this exciting announcement in front of the press. Feel free to bring signs and posters to show your support for reform in front of the cameras!</p>
-      <p>Team MAYDAY.US will also be holding a conference call on the morning of Monday the 26th for all who are interested in learning more about the announcement and how you can get involved!</p>
+      <p>Join us on Monday, October 26 by the Takoma Red Line Metro Station in D.C. as we announce our first Congressional candidate for the 2016 elections! We need you to stand with Zephyr as she makes this exciting announcement in front of the press. Due to the nature of the announcement, attendees will receive the exact location after RSVPing. Feel free to bring signs and posters to show your support for reform in front of the cameras!</p>
+      <p>Team MAYDAY.US will also be holding a conference call on the morning of Monday October 26 for all who are interested in learning more about the announcement and how you can get involved!</p>
       <div class="row  map-wrap">
         <div class="col-md-6" id="js-map">
 
         </div>
         <div class="col-md-6">
-          <h3>Kellogg Conference Center Hotel</h3>
+          <h3>Takoma Red Line Metro Station</h3>
           <dl>
             <dt>Address</dt>
-            <dd>800 Florida Ave NE<br> Washington, DC 20002</dd>
-            <dt>Website:</dt>
-            <dd>https://kelloggconferencehotel.com/</dd>
+            <dd>327 Cedar St NW<br> Washington, DC 20012</dd>
+            
           </dl>
         </div>
       </div>
@@ -66,7 +65,7 @@ meta_content: |
       {% capture custom_form_inputs %}
         <input type="hidden" name="person[remote_fields][event_id]" value="155">
       {% endcapture %}
-      {% include panels/panel_action_w_signup.html custom_form_inputs=custom_form_inputs hide_next=true hide_volunteer="true" form_class="smaller-form" facebook_pixel_id="6033824141290" alt_title="Join the Movement" alt_body="We need you. We need to build power so we can demand that politicians do something about how private money is destroying democracy." redirect="http://shpg.org/220/16431" %}
+      {% include panels/panel_action_w_signup.html custom_form_inputs=custom_form_inputs hide_next=true hide_volunteer="true" form_class="smaller-form" facebook_pixel_id="6033824141290" alt_title="RSVP to Stand with Zephyr" alt_body="We need you. Let us know if you can join Zephyr on Monday." redirect="http://shpg.org/220/16431" %}
     </div>
   </div>
 </div>
@@ -82,18 +81,18 @@ $(document).ready(function(){
 
   var map = new GMaps({
     el: '#js-map',
-    lat: 38.907911,
-    lng: -76.995059,
+    lat: 38.9748255,
+    lng: -77.0202411,
     zoom: 11,
     mapTypeControl: false,
     streetViewControl: false
   });
   map.addMarker({
-    lat: 38.907911,
-    lng: -76.995059,
-    title: 'Kellogg Conference Center Hotel',
+    lat: 38.9748255,
+    lng: -77.0202411,
+    title: 'Takoma Red Line Metro Station',
     infoWindow: {
-      content: '<h2>Kellogg Conference Center Hotel</h3>'
+      content: '<h2>Takoma Red Line Metro Station</h3>'
     }
   });
 
