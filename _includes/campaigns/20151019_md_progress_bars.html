@@ -6,7 +6,7 @@
   <div class="col-md-4">
     <h3>Funds raised</h3>
     <div class="progress">
-      <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-donations" style="width:0%">
+      <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-donations" style="width:0%;min-width:15%">
         <span class="">Loading...</span>
       </div>
     </div>
@@ -17,7 +17,7 @@
   <div class="col-md-4">
     <h3>Volunteers to win</h3>
     <div class="progress">
-      <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-volunteers" style="width: 0%">
+      <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-volunteers" style="width: 0%;min-width:15%">
         <span class="">Loading...</span>
       </div>
     </div>
@@ -38,15 +38,13 @@
     $.get('{{site.services_url}}/stats', function(data){
       donations_current = data.donations_total - donations_start;
       volunteers_current = data.volunteer_count - volunteers_start;
-      volunteers_percent = Math.max(volunteers_current/volunteers_goal,1)*100;
-      donations_percent = Math.max(donations_current/donations_goal_in_cents,1)*100;
+      volunteers_percent = Math.min(volunteers_current/volunteers_goal,1)*100;
+      donations_percent = Math.min(donations_current/donations_goal_in_cents,1)*100;
 
-      $volunteer_progress.css('width', volunteers_percent+'px');
-      $donations_progress.css('width', donations_percent+'px');
+      $volunteer_progress.css('width', volunteers_percent+'%');
+      $donations_progress.css('width', donations_percent+'%');
       $volunteer_progress.find('span').text(volunteers_current+' of '+volunteers_goal);
       $donations_progress.find('span').text('$'+addCommas(Math.ceil(donations_current/100)));
-      console.log('donations_current: ', donations_current, ' donations_percent: ', donations_percent)
-      console.log('volunteers_current: ', volunteers_current, ' volunteers_percent: ', donations_percent)
     });
   });
 </script>
