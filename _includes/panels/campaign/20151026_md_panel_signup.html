@@ -4,8 +4,8 @@
     <div class="fade-line hidden-xs hidden-sm"></div>
   </div>
   <div class="panel-body">
-    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Let's do this!{% endif %}</h2>
-    <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
+    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Fight corruption in politics{% endif %}</h2>
+    <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Help send Jamie Raskin to Congress to fight big money from special interests! Take back our Republic.{% endif %}</p>
     <form class="row {{include.form_class}} js-sign-up-form no-gutter">
       <fieldset class="col-md-12 no-gutter">
         <div class="row">
@@ -60,7 +60,7 @@
     </form>
     {% unless include.hide_next %}
     <div class="row skip-next">
-      <small class="not-ready-link"><a href="{% if include.alt_next_link %}{{include.alt_next_link}}{% else %}/elect-jamie-raskin/donate/{% endif %}" class="next">{% if include.alt_next_copy %}{{include.alt_next_copy}}{% else %}Just Donate? Click here!{% endif %}</a></small>
+      <small class="not-ready-link"><a href="{% if include.alt_next_link %}{{include.alt_next_link}}{% else %}/elect-jamie-raskin/donate/{% endif %}" class="next">{% if include.alt_next_copy %}{{include.alt_next_copy}}{% else %}Click here to donate{% endif %}</a></small>
     </div>
     {% endunless %}
   </div>
