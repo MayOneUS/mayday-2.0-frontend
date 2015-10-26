@@ -2,14 +2,15 @@
   .grey-box{background:#eee;border: 1px dashed;outline:5px solid #eee;}
   .grey-box .progress{background-color:#ddd}
   @media (max-width: 767px){
-    .grey-boxy{text-align: center}
+    .grey-box{text-align: center;padding: 0;margin: 15px 20px 10px;}
+    .grey-box h1{margin-bottom:10px;}
   }
 </style>
 <div class="col-md-12 grey-box bottom-spacer-sm donate-flavor-text clearfix">
-  <div class="col-sm-4 col-xs-12 col-sm-push-4">
+  <div class="col-sm-4 col-sm-push-4">
     <h1 class="text-center">{% if include.alt_title %}{{include.alt_title}}{% else %}Let's do this!{% endif %}</h1>
   </div>
-  <div class="col-sm-4 col-sm-pull-4 col-xs-12">
+  <div class="col-sm-4 col-sm-pull-4">
     <h3>Funds raised</h3>
     <div class="progress">
       <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-donations" style="width:0%;min-width:40px">
@@ -17,8 +18,8 @@
       </div>
     </div>
   </div>
-  
-  <div class="col-sm-4 col-xs-12">
+
+  <div class="col-sm-4">
     <h3>Volunteers to win</h3>
     <div class="progress">
       <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-volunteers" style="width: 0%;min-width:50px">
