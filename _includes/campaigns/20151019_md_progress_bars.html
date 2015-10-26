@@ -4,13 +4,10 @@
 </style>
 <div class="col-md-12 grey-box bottom-spacer-sm donate-flavor-text">
   <div class="col-md-4">
-    <h3>Funds Raised</h3>
+    <h3>Funds raised</h3>
     <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 50%">
-        <span class="">$67,000</span>
-      </div>
-      <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 17%">
-        <span class="sr-only"></span>
+      <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-donations" style="width:0%">
+        <span class="">Loading...</span>
       </div>
     </div>
   </div>
@@ -18,11 +15,42 @@
     <h1 class="text-center">{% if include.alt_title %}{{include.alt_title}}{% else %}Let's do this!{% endif %}</h1>
   </div>
   <div class="col-md-4">
-    <h3>New Volunteers</h3>
+    <h3>Volunteers to win</h3>
     <div class="progress">
-      <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 50%">
-        <span class="">172 of 250</span>
+      <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-volunteers" style="width: 0%">
+        <span class="">Loading...</span>
       </div>
     </div>
   </div>
 </div>
+
+{% capture progress_bar_js %}
+<script>
+  $(document).ready(function(){
+    var donations_start = 757779006,
+        volunteers_start = 4129,
+        volunteers_goal = 250,
+        donations_goal_in_cents = 10000000,
+        donations_current,
+        volunteers_current,
+        $volunteer_progress = $('#js-progress-volunteers')
+        $donations_progress = $('#js-progress-donations');
+    $.get('{{site.services_url}}/stats', function(data){
+      donations_current = data.donations_total - donations_start;
+      volunteers_current = data.volunteer_count - volunteers_start;
+      volunteers_percent = Math.max(volunteers_current/volunteers_goal,1)*100;
+      donations_percent = Math.max(donations_current/donations_goal_in_cents,1)*100;
+
+      $volunteer_progress.css('width', volunteers_percent+'px');
+      $donations_progress.css('width', donations_percent+'px');
+      $volunteer_progress.find('span').text(volunteers_current+' of '+volunteers_goal);
+      $donations_progress.find('span').text('$'+addCommas(Math.ceil(donations_current/100)));
+      console.log('donations_current: ', donations_current, ' donations_percent: ', donations_percent)
+      console.log('volunteers_current: ', volunteers_current, ' volunteers_percent: ', donations_percent)
+    });
+  });
+</script>
+{% endcapture %}
+
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{progress_bar_js}}{% endcapture %}
