@@ -1,6 +1,8 @@
 <style type="text/css">
   .grey-box{background:#eee;border: 1px dashed;outline:5px solid #eee;}
-  .grey-box .progress{background-color:#ddd}
+  .grey-box .progress{background-color:#ddd;margin-bottom: 0}
+  .grey-box > :nth-child(3) .progress{margin-bottom:20px;}
+  .progress-labels{font-size:12px;}
   @media (max-width: 767px){
     .grey-box{text-align: center;padding: 0;margin: 15px 20px 10px;}
     .grey-box h1{margin-bottom:10px;}
@@ -13,10 +15,15 @@
   <div class="col-sm-4 col-sm-pull-4">
     <h3>Funds raised</h3>
     <div class="progress">
-      <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-donations" style="width:0%;min-width:40px">
+      <div class="progress-bar progress-bar-success progress-bar-striped" id="js-progress-donations" style="width:0%;min-width:45px">
         <span class="">Loading...</span>
       </div>
     </div>
+     <div class="row progress-labels">
+        <div class="col-xs-12 text-right">
+        $100,000
+        </div>
+      </div>
   </div>
 
   <div class="col-sm-4">
