@@ -170,6 +170,9 @@ meta_content: |
   $('.js-volunteer').validate({
     submitHandler: function(form) {
       var share_redirect = 'http://shpg.org/220/16397',
+          donate_redirect = '/elect-jamie-raskin/donate/?redirect_from=volunteering',
+          $donate_input = $('#person-tags-6'),
+          target_location,
           $form = $(form);
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
       $.post('{{site.services_url}}/actions', $form.serialize()).done(function(){
@@ -179,7 +182,12 @@ meta_content: |
         window._fbq = window._fbq || [];
         _fbq.push(['track',{{include.facebook_pixel_id}},{'value':'0.00','currency':'USD'}]);
         {% endif %}
-        window.location = share_redirect;
+        if($donate_input.is(':checked')){
+          target_location = donate_redirect;
+        }else{
+          target_location = share_redirect;
+        }
+        window.location = target_location;
       });
     }
   });

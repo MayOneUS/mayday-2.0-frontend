@@ -81,7 +81,6 @@
   })();
   $('.js-sign-up-form').validate({
     submitHandler: function(form) {
-      console.log('submitHandler');
       var donate_redirect = '/elect-jamie-raskin/donate/',
           volunteer_redirect = '/elect-jamie-raskin/volunteer/',
           share_redirect = 'http://shpg.org/220/16397',
@@ -91,9 +90,7 @@
           $volunteer_input = $('#person-remote_fields-tags-0'),
           $donate_input = $('#person-remote_fields-tags-1');
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-      console.log('loading');
       $.post('{{site.services_url}}/actions', $form.serialize()).done(function(){
-        console.log('done posting');
         window['optimizely'] = window['optimizely'] || [];
         window.optimizely.push(["trackEvent", "JoinSignup"]);
         {% if include.facebook_pixel_id %}
@@ -101,15 +98,12 @@
         _fbq.push(['track',{{include.facebook_pixel_id}},{'value':'0.00','currency':'USD'}]);
         {% endif %}
         if($donate_input.is(':checked')){
-          console.log('donate_input is checked');
           target_location = donate_redirect;
         }else if($volunteer_input.is(':checked')){
-          console.log('volunteer_input is checked');
           target_location = volunteer_redirect;
         }else{
           target_location = share_redirect;
         }
-        console.log('window.location', target_location, param_append);1
         window.location = target_location + param_append;
       });
     }
