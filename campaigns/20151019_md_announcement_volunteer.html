@@ -172,13 +172,10 @@ meta_content: |
   })();
   $('.js-volunteer').validate({
     submitHandler: function(form) {
-      console.log('submitHandler');
       var share_redirect = 'http://shpg.org/220/16397',
           $form = $(form);
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-      console.log('loading');
       $.post('{{site.services_url}}/actions', $form.serialize()).done(function(){
-        console.log('done posting');
         window['optimizely'] = window['optimizely'] || [];
         window.optimizely.push(["trackEvent", "JoinSignup"]);
         {% if include.facebook_pixel_id %}
