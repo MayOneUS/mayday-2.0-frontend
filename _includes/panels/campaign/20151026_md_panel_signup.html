@@ -45,14 +45,16 @@
           </div>
         </div>
 
+        <input type="hidden" name="template_id" value="{% if include.template_id %}{{include.template_id}}{% else %}20151026_md_signup{% endif %}">
+        <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20151026_md_signup{% endif %}">
         {{include.custom_form_inputs}}
 
         <div class="row top-spacer-btn">
-          <div class="form-group col-md-12">
-            <label class="control-label sr-only" for="singlebutton">Submit</label>
-            <input type="hidden" name="template_id" value="{% if include.template_id %}{{include.template_id}}{% else %}20151026_md_signup{% endif %}">
-            <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20151026_md_signup{% endif %}">
-            <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-md-md btn-md-gray" value="donate">Donate</button>
+          </div>
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-md-md btn-md-red" value="signup">I'm in</button>
           </div>
         </div>
 
@@ -79,6 +81,10 @@
     _fbq.loaded = true;
     }
   })();
+  $('.js-sign-up-form button[type=submit]').on('click', function(event) {
+    console.log(event.target)
+    $(event.target).prop('id', 'clicked');
+  });
   $('.js-sign-up-form').validate({
     submitHandler: function(form) {
       var donate_redirect = '/elect-jamie-raskin/donate/',
@@ -88,8 +94,9 @@
           target_location,
           $form = $(form),
           $volunteer_input = $('#person-remote_fields-tags-0'),
-          $donate_input = $('#person-remote_fields-tags-1');
-      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+          $donate_input = $('#person-remote_fields-tags-1'),
+          submit_button_val = $form.find("button#clicked").val();
+      $form.find$('button#clicked').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
       $.post('{{site.services_url}}/actions', $form.serialize()).done(function(){
         window['optimizely'] = window['optimizely'] || [];
         window.optimizely.push(["trackEvent", "JoinSignup"]);
@@ -97,7 +104,7 @@
         window._fbq = window._fbq || [];
         _fbq.push(['track',{{include.facebook_pixel_id}},{'value':'0.00','currency':'USD'}]);
         {% endif %}
-        if($donate_input.is(':checked')){
+        if($donate_input.is(':checked') || submit_button_val == 'donate'){
           target_location = donate_redirect;
         }else if($volunteer_input.is(':checked')){
           target_location = volunteer_redirect;
