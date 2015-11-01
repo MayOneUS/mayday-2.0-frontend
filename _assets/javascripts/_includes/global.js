@@ -75,7 +75,6 @@ $(document).ready(function(){
 
   setRecycledFormsInputValues($('form'))
   $('form').on('submit', function(){
-    console.log($(this))
     setRecycledFormCookies($(this));
     setRecycledFormsInputValues($('form'));
   });

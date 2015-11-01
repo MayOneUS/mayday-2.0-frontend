@@ -82,7 +82,6 @@
     }
   })();
   $('.js-sign-up-form button[type=submit]').on('click', function(event) {
-    console.log(event.target)
     $(event.target).prop('id', 'clicked');
   });
   $('.js-sign-up-form').validate({
@@ -96,7 +95,7 @@
           $volunteer_input = $('#person-remote_fields-tags-0'),
           $donate_input = $('#person-remote_fields-tags-1'),
           submit_button_val = $form.find("button#clicked").val();
-      $form.find$('button#clicked').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $form.find('button#clicked').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
       $.post('{{site.services_url}}/actions', $form.serialize()).done(function(){
         window['optimizely'] = window['optimizely'] || [];
         window.optimizely.push(["trackEvent", "JoinSignup"]);
