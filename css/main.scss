@@ -5,17 +5,16 @@
 @import "_panels_modals";
 @import "_tumblr";
 
-@import "_index";
-@import "_the-plan";
-@import "_take-action";
-@import "_news";
-@import "_progress";
-@import "_faq";
-@import "_team-and-board";
-@import "_videos";
-@import "_about";
-@import "_signup";
-@import "_donate";
+@import "page_specific/_index";
+@import "page_specific/_the-plan";
+@import "page_specific/_take-action";
+@import "page_specific/_news";
+@import "page_specific/_faq";
+@import "page_specific/_team-and-board";
+@import "page_specific/_videos";
+@import "page_specific/_about";
+@import "_progress_indicator";
 @import "_legislators";
-// @import "_visualization_map";
+@import "_donate_forms";
 @import "_stateface";
+// @import "_visualization_map";
