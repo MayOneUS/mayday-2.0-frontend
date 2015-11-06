@@ -1,0 +1,80 @@
+---
+layout: default
+title: Keep the fight going
+permalink: /join-benj/
+hideMenus: true
+hideHeaderSignUp: true
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/join-fight/"/><!-- BENJ -->
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150727_social_share_graphic.jpg"/>
+  <meta property="og:title" content="I'm continuing the fight with Team MAYDAY.US"/><!-- BENJ -->
+  <meta property="og:description" content="Our government should work for all Americans, not just a well-connected few. Led by CEO Zephyr Teachout, MAYDAY.US will fight to fundamentally change the way campaigns are financed. The 2016 elections are just around the corner. What you give now will determine if we can achieve political equality."/><!-- BENJ -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title>I'm joining Team MAYDAY.US - MAYDAY.US</title>
+  <link rel="canonical" href="https://mayday.us/join-fight/"><!-- BENJ -->
+---
+{% capture custom_css %}
+<style type="text/css">
+  .dayofaction .thanks-message{display:none;}
+
+  .jumbotron{background: #444 url('/images/campaigns/20150811_zephyr_donate_page_graphic_no_words_2400x210.jpg') center 0px no-repeat;min-height: 210px;text-align:center;color:#fff;}
+  .jumbotron h1{background: transparent url('/images/campaigns/20150727_ceo_headline_v4_776x69.png') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top:40px;margin-bottom:0;}
+  .jumbotron h3{color:#fff;text-align:left;font-weight:400;margin-top:0}
+  .control-label h3{font-weight:400;}
+  .page-content{padding-bottom: 0}
+  .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+  blockquote{font-weight:300;}
+  blockquote .quote-author{text-align:right;font-style: italic;}
+</style>
+{% endcapture %}
+
+{% capture content %}
+
+
+<!-- BENJ remove if you like -->
+<div class="jumbotron hidden-xs hidden-sm">
+  <div class="container">
+    <div class="col-lg-6 col-md-offset-5 col-md-7">
+      <h1 class="text-hide">We're here to Fight</h1>
+      <h3>A well-connected few are pumping billions of dollars to hijack your government. Contribute now to take back our Republic.</h3>
+    </div>
+  </div>
+</div>
+
+<div class="donate-page container">
+  <div class="col-md-6 col-lg-7 donate-flavor-text">
+    <h1>Continue the fight against corruption in the 2016 elections.</h1>
+    <p>We’re proud of everything Lawrence Lessig accomplished in the presidential race.  Even though the DNC and media hosts kept Lessig out of the debates, his campaign helped make the corruption of our campaign finance system a central issue in the 2016 elections and helped inspire other candidates to take stronger positions.  Now it's on each of us to step up and win this fight!</p>
+    <p>Contribute now. We need you. We need to build power so we can demand that politicians do something about how private money is destroying democracy.</strong></p>
+    <p>At MAYDAY.US, we believe that the root issue in American democratic failure is the way politicians raise money. Every other issue is connected to privately financed campaigns.</p>
+    <p>We are up against some of the most powerful anti-democratic forces in the world, and need people power to fight.</p>
+    <p>Public elections are a feminist issue. They are a race issue. They are a democracy issue. They are a power issue.</p>
+    <p><strong>Show your power and contribute.</strong></p>
+
+    <blockquote class="visible-md-block visible-lg-block"><p>&ldquo;Corruption is the issue hiding in plain sight in the 2016 campaign. Together, we’ll continue the MAYDAY.US spirit of dreaming big, trying new things, and striking at the root of corruption with large, unafraid actions. With all hands on deck, we can overcome legalized bribery and achieve political equality. We’re asking you to re-commit. Your donation will ensure we can address a big problem with bold action.&rdquo;</p> <p class="quote-author">- Zephyr Teachout</p></blockquote>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-5">
+    {% capture panel_body %}
+    <div class="panel-body donate-page-box">
+      <h2>Contribute Today</h2>
+      {% include form_donate.html redirect_url='/ceo-thanks/' facebook_tracking_id='6033848599090' action_template_id="20150727_accouncement_donate" %}<!-- BENJ -->
+
+    </div>
+    {% endcapture %}
+    {% include panels/panel_empty.html %}
+    <blockquote class="visible-xs-block visible-sm-block"><p>&ldquo;Corruption is the issue hiding in plain sight in the 2016 campaign. Together, we’ll continue the MAYDAY.US spirit of dreaming big, trying new things, and striking at the root of corruption with large, unafraid actions. With all hands on deck, we can overcome legalized bribery and achieve political equality. We’re asking you to re-commit. Your donation will ensure we can address a big problem with bold action.&rdquo;</p> <p class="quote-author">- Zephyr Teachout</p></blockquote>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}

@@ -1,0 +1,63 @@
+---
+layout: default
+title: Take Action
+permalink: /201511105-ed-announcement/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/20151026-announcement/"/><!-- BENJ -->
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="Press Conference in D.C. with Zephyr Teachout"/><!-- BENJ -->
+  <title>Press Conference in D.C. with Zephyr Teachout</title><!-- BENJ -->
+  <meta property="og:description" content="RSVP for our press conference in D.C. with Zephyr Teachout"/><!-- BENJ -->
+  <link rel="canonical" href="https://mayday.us/20151026-announcement/"><!-- BENJ -->
+  <meta name="robots" content="noindex"><!--  BENJ remove this line when you take pages live -->
+---
+{% capture custom_css %}
+<style type="text/css">
+  .dayofaction .thanks-message{display:none;}
+  .jumbotron{background: #444 url('/images/campaigns/20150811_zephyr_donate_page_graphic_no_words_2400x210.jpg') center 0px no-repeat;min-height: 210px;text-align:center;color:#fff;}
+  .jumbotron h1{background: transparent url('/images/campaigns/20150727_ceo_headline_v4_776x69.png') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top:40px;margin-bottom:0;}
+  .jumbotron h3{color:#fff;text-align:left;font-weight:400;margin-top:0}
+  .control-label h3{font-weight:400;}
+  .page-content{padding-bottom: 0}
+  .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+  blockquote{font-weight:300;}
+  blockquote .quote-author{text-align:right;font-style: italic;}
+  #js-map{height:250px;border: 3px solid #ccc;}
+  .map-wrap{background-color: #efefef;padding: 10px;margin-bottom:40px;box-shadow: 2px 2px 5px #ccc;margin-bottom:20px;}
+  .map-wrap dd{margin-bottom:10px}
+  .map-wrap dd, .map-wrap dt{line-height: 1.2}
+</style>
+
+{% endcapture %}
+
+{% capture content %}
+<!-- BENJ remove the jumbotron here if you like -->
+<div class="jumbotron hidden-xs hidden-sm">
+  <div class="container">
+    <div class="col-lg-6 col-md-offset-5 col-md-7">
+      <h1 class="text-hide">We're here to Fight</h1>
+      <h3>A well-connected few are pumping billions of dollars to hijack your government. Contribute now to take back our Republic.</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-7 donate-flavor-text">
+      <h1>Press Conference in D.C. with Zephyr Teachout</h1>
+      <p>Join us on Monday, October 26 by the Takoma Red Line Metro Station in D.C. as we announce our first Congressional candidate for the 2016 elections! We need you to stand with Zephyr as she makes this exciting announcement in front of the press. Due to the nature of the announcement, attendees will receive the exact location after RSVPing. Feel free to bring signs and posters to show your support for reform in front of the cameras!</p>
+      <p>Team MAYDAY.US will also be holding a conference call on the morning of Monday October 26 for all who are interested in learning more about the announcement and how you can get involved!</p>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-5">
+      {% capture custom_form_inputs %}
+        <input type="hidden" name="person[remote_fields][event_id]" value="155">  <!-- BENJ you have to put the event id here.  It is hard to find in NB. I cannot remember off the top of my head how to do-->
+      {% endcapture %}
+      {% include panels/panel_action_w_signup.html custom_form_inputs=custom_form_inputs hide_next=true hide_volunteer="true" form_class="smaller-form" facebook_pixel_id="6033824141290" alt_title="RSVP to Stand with Zephyr" alt_body="We need you. Let us know if you can join Zephyr on Monday." redirect="http://shpg.org/220/16431" template_id="20151026_md_rsvp" %} <!-- BENJ -->
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+
+
+{% include sub_layouts/default_layout.html %}
