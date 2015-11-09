@@ -1,0 +1,60 @@
+---
+layout: default
+title: Join the Volunteer Revolution
+permalink: /volunteer-with-zephyr/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/volunteer-with-zephyr/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="National volunteer call with Zephyr Teachout"/>
+  <title>National volunteer call with Zephyr Teachout</title>
+  <meta property="og:description" content="RSVP for the National Volunteer Call with Zephyr Teachout"/>
+  <link rel="canonical" href="https://mayday.us/volunteer-with-zephyr/">
+---
+{% capture custom_css %}
+<style type="text/css">
+  .dayofaction .thanks-message{display:none;}
+  .jumbotron{background: #444 url('/images/campaigns/20151106_we-are-mayday-pac_header_1546x203.jpg') center 0px repeat;min-height: 213px;text-align:center;color:#fff;}
+  .jumbotron h3{color:#fff;text-align:left;font-weight:400;margin-top:0}
+  .control-label h3{font-weight:400;}
+  .page-content{padding-bottom: 0}
+  .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+  blockquote{font-weight:300;}
+  blockquote .quote-author{text-align:right;font-style: italic;}
+  #js-map{height:250px;border: 3px solid #ccc;}
+  .map-wrap{background-color: #efefef;padding: 10px;margin-bottom:40px;box-shadow: 2px 2px 5px #ccc;margin-bottom:20px;}
+  .map-wrap dd{margin-bottom:10px}
+  .map-wrap dd, .map-wrap dt{line-height: 1.2}
+</style>
+
+{% endcapture %}
+
+{% capture content %}
+<div class="jumbotron hidden-xs hidden-sm">
+  <div class="container">
+    <div class="col-lg-6 col-md-offset-5 col-md-7">
+      <h1 class="text-hide">We are MAYDAY PAC</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-7 donate-flavor-text">
+      <h1>Join the National Volunteer Call!</h1>
+      <p>MAYDAY.US 2016 is running full steam ahead!</p>
+      <p>Join CEO &amp; Board Chair Zephyr Teachout, new Executive Director Cyrus Patten, and other members of Team MAYDAY.US for a strategy call that will help set the course for 2016.</p>
+      <p>The call is at 2pm ET/11am PT every Monday. You'll receive call-in details via email after you RSVP, so make sure your email address is correct!</p>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-5">
+      {% capture custom_form_inputs %}
+        <input type="hidden" name="person[remote_fields][event_id]" value="156">
+      {% endcapture %}
+      {% include panels/panel_action_w_signup.html custom_form_inputs=custom_form_inputs hide_next=true hide_volunteer="true" form_class="smaller-form" facebook_pixel_id="6033824141290" alt_title="RSVP to Join" alt_body="We need you. Let us know if you can join the national call on Monday." redirect="http://shpg.org/220/16693" template_id="20151026_md_rsvp" %} 
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+
+
+{% include sub_layouts/default_layout.html %}

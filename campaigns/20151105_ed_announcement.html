@@ -1,0 +1,75 @@
+---
+layout: default
+title: Fight by my side for democracy
+permalink: /cyrus-fight/
+hideMenus: true
+hideHeaderSignUp: true
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/cyrus-fight/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150727_social_share_graphic.jpg"/>
+  <meta property="og:title" content="I'm fighting for democracy with Team MAYDAY.US"/>
+  <meta property="og:description" content="Our government should work for all Americans, not just a well-connected few. Led by CEO Zephyr Teachout and Executive Director Cyrus Patten, MAYDAY.US will fight to fundamentally change the way campaigns are financed. The 2016 elections are just around the corner. What you give now will determine if we can achieve political equality."/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title>I'm joining Team MAYDAY.US - MAYDAY.US</title>
+  <link rel="canonical" href="https://mayday.us/cyrus-fight/">
+---
+{% capture custom_css %}
+<style type="text/css">
+  .dayofaction .thanks-message{display:none;}
+
+  .jumbotron{background: #444 url('/images/campaigns/20151106_we-are-mayday-pac_header_1546x203.jpg') center 0px repeat;min-height: 213px;text-align:center;color:#fff;}
+  .jumbotron h3{color:#fff;text-align:left;font-weight:400;margin-top:0}
+  .control-label h3{font-weight:400;}
+  .page-content{padding-bottom: 0}
+  .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+  blockquote{font-weight:300;}
+  blockquote .quote-author{text-align:right;font-style: italic;}
+</style>
+{% endcapture %}
+
+{% capture content %}
+
+<div class="jumbotron hidden-xs hidden-sm">
+  <div class="container">
+    <div class="col-lg-6 col-md-offset-5 col-md-7">
+      <h1 class="text-hide">We are MAYDAY PAC</h1>
+    </div>
+  </div>
+</div>
+
+<div class="donate-page container">
+  <div class="col-md-6 col-lg-7 donate-flavor-text">
+    <h1>Fight by my side for democracy.</h1>
+    <p>Big money interests have hijacked my country, and I am here to take it back.</p>
+    <p>As the new Executive Director of MAYDAY.US, I am thrilled to join Zephyr Teachout, you, and other citizens across the country on the front lines of the fight to take back our Republic from the corrupting influence of big money.</p>
+    <p><strong>If all MAYDAY.US citizens chose to give monthly, we’d have enough ongoing support to take back our Republic.</strong></p>
+    <p>Let’s fight together for democracy.</p>
+    <p>—Cyrus Patten, Executive Director, MAYDAY<span>.</span>US</p>
+
+    <blockquote class="visible-md-block visible-lg-block"><p>&ldquo;Corruption is the issue hiding in plain sight in the 2016 campaign. Together, we’ll continue the MAYDAY.US spirit of dreaming big, trying new things, and striking at the root of corruption with large, unafraid actions. With all hands on deck, we can overcome legalized bribery and achieve political equality. We’re asking you to re-commit. Your donation will ensure we can address a big problem with bold action.&rdquo;</p> <p class="quote-author">- Zephyr Teachout, CEO, MAYDAY<SPAN>.</SPAN>US</p></blockquote>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-5">
+    {% capture panel_body %}
+    <div class="panel-body donate-page-box">
+      <h2>Contribute Today</h2>
+      {% include form_donate.html redirect_url='http://shpg.org/220/16692' facebook_tracking_id='6033848599090' action_template_id="20150727_accouncement_donate" %}
+
+    </div>
+    {% endcapture %}
+    {% include panels/panel_empty.html %}
+    <blockquote class="visible-xs-block visible-sm-block"><p>&ldquo;Corruption is the issue hiding in plain sight in the 2016 campaign. Together, we’ll continue the MAYDAY.US spirit of dreaming big, trying new things, and striking at the root of corruption with large, unafraid actions. With all hands on deck, we can overcome legalized bribery and achieve political equality. We’re asking you to re-commit. Your donation will ensure we can address a big problem with bold action.&rdquo;</p> <p class="quote-author">- Zephyr Teachout</p></blockquote>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
