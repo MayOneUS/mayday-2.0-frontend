@@ -17,6 +17,8 @@ meta_content: |
 ---
 {% capture custom_css %}
 <style type="text/css">
+  .jumbotron{background: #444 url('/images/campaigns/20151106_we-are-mayday-pac_header_1546x203.jpg') center 0px repeat;min-height: 213px;text-align:center;color:#fff;}
+  .jumbotron h3{color:#fff;text-align:left;font-weight:400;margin-top:0}
   .control-label h3{font-weight:400;}
   .page-content{padding-bottom: 0}
   .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
@@ -26,10 +28,13 @@ meta_content: |
 {% endcapture %}
 
 {% capture content %}
-{% include campaigns/20151019_md_jumbotron.html action_text='Join the grassroots movement. <br class="hidden-sm hidden-xs hidden-md"/>Let’s take back our Republic.' %}
-
-
-
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-offset-7 col-md-5">
+      <h1 class="text-hide">Elect Jamie Raskin - A Proven Reformer</h1>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">
@@ -42,10 +47,10 @@ meta_content: |
         <iframe class="embed-responsive-item" allowfullscreen src="//www.youtube.com/embed/9Ps0vvytB64"></iframe>
       </div>
       <div class='sp_16769 sp_em_large' ></div><div class='sp_16771 sp_fb_large' ></div><div class='sp_16773 sp_tw_large' ></div>
-      <p>If we work hard in primaries, we can elect more reformers to outnumber the "old guard" and take back our Republic.<p/> 
-<p>Our wins put politicians on notice: support citizen-funded elections, or lose your job.</p> 
-<p>Join the 2016 fight to elect reformers across the country to fight big money corruption in politics.</p> 
-<p>Chip in towards the $100,000 goal or become one of 250 volunteers for the MAYDAY.US comeback campaign.</p>
+      <p>If we work hard in primaries, we can elect more reformers to outnumber the "old guard" and take back our Republic.<p/>
+      <p>Our wins put politicians on notice: support citizen-funded elections, or lose your job.</p>
+      <p>Join the 2016 fight to elect reformers across the country to fight big money corruption in politics.</p>
+      <p>Chip in towards the $100,000 goal or become one of 250 volunteers for the MAYDAY.US comeback campaign.</p>
 
     </div>
     <div class="col-md-6 col-lg-5 bottom-spacer-sm">
