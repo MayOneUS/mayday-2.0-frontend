@@ -1,35 +1,44 @@
 <div class="flash-share">
-  <h3 class="bottom-spacer-sm">{{ flash.message }}</h3>
-
-  <div class="share">
-    <h3>Tell all your friends, they should join you! A link will be included.</h3>
-    <small>(<span id="face-tweet-content-charsleft"></span> chars left)</small>
-    <div class="form md-inputs">
-      {% form_for face_tweet %}
-      {% hidden_field_tag "face_tweet[page_id]", flash.page_id %}
-      <div class="form-errors">{% error_messages_for face_tweet %}</div>
-      {% text_field "content", class:"face-tweet-content share-url text" %}
-      <div class="row">
-        <div class="col-md-8 center-block">
-          <div class="col-md-6">
-            <label for="face_tweet_is_twitter" class="checkbox">{% check_box "is_twitter", class:"checkbox" %} Tweet</label>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title"><h2 ckass="no-y-margin">{{ flash.message }}</h2></div>
+    </div>
+    <div class="panel-body">
+      <h3 class="spacer-y-margin">Tell all your friends, they should join you! A link will be included.</h3>
+      <div class="form md-inputs">
+        {% form_for face_tweet %}
+        {% hidden_field_tag "face_tweet[page_id]", flash.page_id %}
+        <div class="form-errors">{% error_messages_for face_tweet %}</div>
+        <div class="form-group">
+          <label class="sr-only" for="textinput">Tweet and Facebook Text:</label>
+          {% text_field "content", class:"face-tweet-content share-url text form-control input-md" %}
+          <span class="help-block">(<span id="face-tweet-content-charsleft"></span> chars left)</span>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="checkboxes">Share on:</label>
+          <div class="checkbox">
+            <label for="is_twitter">
+              {% check_box "is_twitter", class:"checkbox" %} Tweet
+            </label>
           </div>
-          <div class="col-md-6">
-            <label for="face_tweet_is_facebook" class="checkbox">{% check_box "is_facebook", class:"checkbox" %} Post on Facebook</label>
+          <div class="checkbox">
+            <label for="is_facebook">
+              {% check_box "is_facebook", class:"checkbox" %} Post on Facebook
+            </label>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8 center-block">
-          <div class="col-md-6">
-            {% submit_tag "Post", class:"btn btn-md-md" %}
-          </div>
-          <div class="col-md-6">
-            <small><a href="#" class="flash-close">No Thanks</a></small>
+        <div class="row">
+          <div class="col-md-8 center-block">
+            <div class="col-md-6">
+              {% submit_tag "Post", class:"btn btn-md-md" %}
+            </div>
+            <div class="col-md-6" style="padding-top:6px;"><!--a bit of a hack -->
+              <a href="#" class="flash-close btn btn-md-md btn-md-gray">No Thanks</a></small>
+            </div>
           </div>
         </div>
+        {% endform_for %}
       </div>
-      {% endform_for %}
     </div>
   </div>
 </div>
