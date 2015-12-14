@@ -1,0 +1,81 @@
+---
+layout: default
+title: MAYDAY.US - Elect Jamie Raskin to reform Congress
+permalink: /elect-jamie-raskin/donate/
+hideMenus: true
+hideHeaderSignUp: true
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/elect-jamie-raskin/"/>
+  <link rel="canonical" href="https://mayday.us/elect-jamie-raskin/">
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20151019_md_launch_social_800x500_v01.1.jpg"/>
+  <meta property="og:title" content="MAYDAY.US: Donate to elect Jamie Raskin to reform Congress"/>
+  <meta property="og:description" content="Our first people-powered candidate is Jamie Raskin. He has spent his entire career fighting big money corruption in politics for citizen-funded elections. Raskin has pledged to refuse all campaign contributions from Big Oil, Big Gas, and Big Coal PACs. You can help him win a seat in Congress."/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title>Elect a national voice to fight big money in politics - MAYDAY.US</title>
+---
+{% capture custom_css %}
+<style type="text/css">
+  .control-label h3{font-weight:400;}
+  .page-content{padding-bottom: 0}
+  .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+  .not-ready-link{line-height:100%;margin: 5px 0 0;}
+  .not-ready-link a{color:#808080;}
+</style>
+{% endcapture %}
+
+{% capture content %}
+{% include campaigns/20151019_md_jumbotron.html action_text="Be part of the grassroots movement and donate today." %}
+
+
+
+<div class="donate-page container">
+  <div class="row">
+    <div class="col-md-6 col-lg-7 donate-flavor-text">
+      {% include campaigns/20151019_md_flash_message.html thanks_follow_up="" %}
+      <h2><strong>Change starts at the grassroots.</strong></h2>
+
+      <p>In 2016, MAYDAY.US will focus on the most important fights between entrenched power and open, democratic elections. We&rsquo;ll work at all levels of elected office and bring &ldquo;netroots&rdquo; people power wherever we go.</p>
+      <p><strong>Our first race is in one of the most important congressional races this cycle. We&rsquo;re backing a proven reformer against a former corporate lobbyist and Washington insider.</strong></p>
+      <div class="on-flash-hide">
+      <h3 class="bottom-spacer-xs">Zephyr Teachout announces campaign to elect Jamie Raskin</h3>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" allowfullscreen src="//www.youtube.com/embed/KdnKPaew5NQ"></iframe>
+      </div>
+      <p>Jamie Raskin is a powerful voice for reform who has spent his entire career fighting to end corruption from big money in politics. He focuses on the people and advocates for a better democracy: he literally wrote the campaign finance reform book about the &ldquo;wealth primary.&rdquo;</p>
+      <p><strong>The stakes could not be more clear. And we need your help now to send this reformer to Congress.</strong></p>
+      <p class="hidden-sm hidden-xs">Jamie&rsquo;s donations come from his district voters, the people he&rsquo;s fighting to represent. His main opponent&rsquo;s donations come from investment bankers, Fortune 500 executives, and DC insiders.</p>
+      <p class="hidden-sm hidden-xs">Kathleen Matthews thinks the way to do things is with a well-connected few. Her Big Money is outpacing Jamie Raskin&rsquo;s grassroots campaign: she just outraised him by $200,000, primarily from special interests.</p>
+      </div>
+      <p><strong>We&rsquo;re kicking off our campaign with a $100,000 investment to fight back and elect a national leader for reform!</strong></p>
+      <div class="on-flash-hide">
+      <p><a href="/elect-jamie-raskin/volunteer/">If you can&rsquo;t donate right now, but still want to help, then click here!</a> We need 250 volunteers &ndash; including 40 in Maryland &ndash; to build a revolution that will carry us to victory.</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-5 bottom-spacer-sm">
+      {% capture panel_body %}
+      <div class="panel-body donate-page-box">
+        <h2>Donate to fight corruption in politics</h2>
+        <p>Help send Jamie Raskin to Congress to fight big money from special interests! Let&rsquo;s take back our Republic.</p>
+        <hr />
+        {% include form_donate.html redirect_url='http://shpg.org/220/16397' action_template_id="20151019_md_donate" %}
+        <hr />
+        <p class="not-ready-link"><a href="/elect-jamie-raskin/volunteer/" title=""><small>Not ready to donate? Sign up to volunteer!</small></a>
+      </div>
+      {% endcapture %}
+      {% include panels/panel_empty.html %}
+    </div>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}

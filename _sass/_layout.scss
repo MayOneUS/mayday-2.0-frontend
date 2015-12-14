@@ -1,3 +1,14 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 300px;
+  @include tablet-minus{
+    margin-bottom: 420px;
+  }
+}
+
 /**
  * Site header
  */
@@ -266,16 +277,6 @@ select.md-select {
   text-transform: uppercase;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin-bottom: 300px;
-  @include tablet-minus{
-    margin-bottom: 420px;
-  }
-}
 
 /**
  * Site footer
@@ -346,10 +347,6 @@ body {
       font-size: 16px;
       width: 180px;
       position: relative;
-
-      // @include tablet {
-      //   width: 200px;
-      // }
 
       @include small-desktop {
         width: 100%;

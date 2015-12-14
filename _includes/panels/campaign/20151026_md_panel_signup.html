@@ -1,0 +1,119 @@
+<div class="panel action-panel with-shield md-inputs">
+  <div class="panel-icon">
+    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
+    <div class="fade-line hidden-xs hidden-sm"></div>
+  </div>
+  <div class="panel-body">
+    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Fight corruption in politics{% endif %}</h2>
+    <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Help send reformers to Congress to fight big money from special interests! Take back our Republic.{% endif %}</p>
+    <form class="row {{include.form_class}} js-sign-up-form no-gutter">
+      <fieldset class="col-md-12 no-gutter">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label class="control-label sr-only" for="person[first_name]">First Name</label>
+            <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+            <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-8 no-bottom-margin">
+            <label class="control-label sr-only" for="person[email]">Email Address</label>
+            <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
+          </div>
+
+          <div class="form-group col-md-4 no-bottom-margin">
+            <label class="control-label sr-only" for="person[zip]">ZIP</label>
+            <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12 text-left">
+            <label class="control-label" for="person[is_volunteer]">Are you ready?</label>
+            <br />
+            <label class="checkbox-inline" for="person-remote_fields-tags-0">
+              <input type="checkbox" name="person[remote_fields][tags][]" id="person-remote_fields-tags-0" value="20151026_md_want_volunteer"> To Volunteer?
+            </label>
+            <label class="checkbox-inline" for="person-remote_fields-tags-1">
+              <input type="checkbox" name="person[remote_fields][tags][]" id="person-remote_fields-tags-1" value="20151026_md_want_donate"> To Donate?
+            </label>
+          </div>
+        </div>
+
+        <input type="hidden" name="template_id" value="{% if include.template_id %}{{include.template_id}}{% else %}20151026_md_signup{% endif %}">
+        <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20151026_md_signup{% endif %}">
+        {{include.custom_form_inputs}}
+
+        <div class="row top-spacer-btn">
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-md-md btn-md-gray" value="donate">Donate</button>
+          </div>
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-md-md btn-md-red" value="signup">I'm in</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+    {% unless include.hide_next %}
+    <div class="row skip-next">
+      <small class="not-ready-link"><a href="{% if include.alt_next_link %}{{include.alt_next_link}}{% else %}/elect-jamie-raskin/donate/{% endif %}" class="next">{% if include.alt_next_copy %}{{include.alt_next_copy}}{% else %}Click here to donate{% endif %}</a></small>
+    </div>
+    {% endunless %}
+  </div>
+</div>
+{% capture panel_signup_js %}
+
+<script>
+  (function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+  })();
+  $('.js-sign-up-form button[type=submit]').on('click', function(event) {
+    $(event.target).prop('id', 'clicked');
+  });
+  $('.js-sign-up-form').validate({
+    submitHandler: function(form) {
+      var donate_redirect = '/elect-jamie-raskin/donate/',
+          volunteer_redirect = '/elect-jamie-raskin/volunteer/',
+          share_redirect = 'http://shpg.org/220/16397',
+          param_append = '?redirect_from=signing%20up',
+          target_location,
+          $form = $(form),
+          $volunteer_input = $('#person-remote_fields-tags-0'),
+          $donate_input = $('#person-remote_fields-tags-1'),
+          submit_button_val = $form.find("button#clicked").val();
+      $form.find('button#clicked').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $.post('{{site.services_url}}/actions', $form.serialize()).done(function(){
+        window['optimizely'] = window['optimizely'] || [];
+        window.optimizely.push(["trackEvent", "JoinSignup"]);
+        {% if include.facebook_pixel_id %}
+        window._fbq = window._fbq || [];
+        _fbq.push(['track',{{include.facebook_pixel_id}},{'value':'0.00','currency':'USD'}]);
+        {% endif %}
+        if($donate_input.is(':checked') || submit_button_val == 'donate'){
+          target_location = donate_redirect;
+        }else if($volunteer_input.is(':checked')){
+          target_location = volunteer_redirect;
+        }else{
+          target_location = share_redirect;
+        }
+        window.location = target_location + param_append;
+      });
+    }
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_signup_js}}{% endcapture %}

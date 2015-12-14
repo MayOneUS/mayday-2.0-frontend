@@ -170,7 +170,7 @@
 
     <div class="row">
       <div id="recurring" class="form-group col-sm-12">
-        <div class="checkbox text-left"><label><input type="checkbox" id="recurring_input"> Donate this amount every month.</input></label></div>
+        <div class="checkbox text-left"><label><input type="checkbox" id="recurring_input"> <strong>Donate this amount every month.</strong></input></label></div>
       </div>
     </div>
     <input type="hidden" id="recurrence_period_input" value="monthly">
@@ -217,7 +217,6 @@
 <script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 {% assign pledge_url = site.pledge_url or '//pledge.mayday.us' %}
-{% javascript _includes/donate_form.js %}
 <script>
 /*
 
@@ -239,7 +238,7 @@ limitations under the License.
 
   PLEDGE_URL = "{{ pledge_url }}";
   REDIRECT_URL = {% if include.redirect_url %}'{{include.redirect_url}}'{% else %}'/donate-thanks/'{%endif%};
-  FACEBOOK_TRACKING_ID = {% if include.facebook_tracking_id %}'{{include.facebook_tracking_id}}'{%endif%};
+  {% if include.facebook_tracking_id %}FACEBOOK_TRACKING_ID = '{{include.facebook_tracking_id}}';{%endif%}
 
   function step2(amount){
     $(".step-1-container").hide("slow");
@@ -256,18 +255,6 @@ limitations under the License.
   function step3(){
     $("#step-2").removeClass("active");
     $("#step-3").addClass("active");
-  }
-
-  function addCommas(nStr) {
-    nStr += '';
-    x = nStr.split('.');
-    x1 = x[0];
-    x2 = x.length > 1 ? '.' + x[1] : '';
-    var rgx = /(\d+)(\d{3})/;
-    while (rgx.test(x1)) {
-      x1 = x1.replace(rgx, '$1' + ',' + '$2');
-    }
-    return x1 + x2;
   }
 
   var ALREADY_BANKED = 1000000;
@@ -288,7 +275,7 @@ limitations under the License.
        $('#pledgeBox .info').after('<div class="alert-danger row">Sorry, we are not supporting older Firefox versions at the moment. Please try another browser for now.</div>');
      } else {
        // console.log('Firefox version was OK: ' + ffVersion);
-js     }
+     }
    }
   });
 
@@ -305,6 +292,8 @@ js     }
     }
   })();
 </script>
+{% javascript _includes/donate_form.js %}
+
 {% endcapture %}
 
 {% capture footer_scripts %}{{footer_scripts}}{{donation_javascript}}{% endcapture %}

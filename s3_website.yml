@@ -55,6 +55,7 @@ redirects:
   lte: 'letters-to-the-editor'
   # join: 'local-action'
   sign-the-letter: 'take-action'
+  elect-jamie-raskin/signup: 'elect-jamie-raskin'
 
 # Below are examples of all the available configurations.
 # See README for more detailed info on each of them.

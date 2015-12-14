@@ -1,0 +1,100 @@
+---
+layout: default
+title: MAYDAY.US - Elect Jamie Raskin to reform Congress
+permalink: /keep-fighting/
+hideMenus: true
+hideHeaderSignUp: true
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/keep-fighting/"/>
+  <link rel="canonical" href="https://mayday.us/keep-fighting/">
+  <!-- <meta property="og:image" content="https://mayday.us/images/campaigns/20151019_md_launch_social_800x500_v01.1.jpg"/> -->
+  <meta property="og:title" content="MAYDAY.US: Lessig is out of the race. We’re keeping his fight alive."/>
+  <meta property="og:description" content="The establishment’s treatment of Lessig shows why we need to elect people committed to changing the status quo instead of preserving it. He brought corruption into focus. Now we need to elect proven reformers who will fight to pass fundamental reform. Support the war on corruption now."/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title>Lessig is out of the race. We’re keeping his fight alive. - MAYDAY.US</title>
+---
+{% capture custom_css %}
+<style type="text/css">
+  .control-label h3{font-weight:400;}
+  .page-content{padding-bottom: 0}
+  .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+  .not-ready-link{line-height:100%;margin: 5px 0 0;}
+  .not-ready-link a{color:#808080;}
+</style>
+{% endcapture %}
+
+{% capture content %}
+<style type="text/css">
+  .jumbotron{background: #070604 url('/images/campaigns/20151104_lessig_out_landing_jumbotron_1170x400_v01.jpg') center 0 no-repeat;min-height:320px;text-align:center;color:#fff;}
+  .jumbotron .jumbotron-copy-wrap{margin-top: 50px;border-top: 14px solid #ddd;border-bottom: 8px solid #ddd;}
+  .jumbotron h1{font-weight: 400; font-size: 50px; text-transform: uppercase;margin-top: 20px; }
+  .jumbotron h3{color:#fff;font-weight:400;margin-bottom:20px}
+  @media (max-width: 767px){
+    .jumbotron{background-image: url('/images/campaigns/20151104_lessig_out_landing_jumbotron_800x250_v01.jpg');min-height:240px;}
+    .jumbotron .jumbotron-copy-wrap{margin-top:30px;}
+    .jumbotron h1{font-size:40px;margin-top:10px;}
+    .jumbotron h3{margin-bottom:10px;}
+  }
+  @media (max-width: 621px){
+    .jumbotron h1{font-size:30px;}
+    .jumbotron h3{font-size:20px;}
+  }
+  @media (max-width: 475px){
+    .jumbotron {min-height:190px;}
+    .jumbotron .jumbotron-copy-wrap{width:100%;margin-left:0;margin-top:20px;}
+    .jumbotron{background-image:none;}
+  }
+</style>
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-lg-offset-2 col-lg-4 col-md-5 col-xs-offset-1 col-sm-6 col-xs-6 jumbotron-copy-wrap">
+      <h1>Lessig is out<br/> of the race.</h1>
+      <h3>We’re keeping his fight alive.</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="donate-page container">
+  <div class="row">
+    <div class="col-md-6 col-lg-7 donate-flavor-text">
+      {% include campaigns/20151019_md_flash_message.html thanks_follow_up="" %}
+      <h2><strong>It’s time to step up and win this fight!</strong></h2>
+
+      <p>Lessig kickstarted a political revolution last year with MAYDAY.US and continued it by running for the Democratic nomination for President.</p>
+      <p>We’re proud of everything Lessig accomplished. And we’re also disappointed and angry that the political establishment changed their rules at the last minute to keep him – and his anti-corruption message – out of the debate, and thus out of the race.</p>
+      <p>The establishment’s treatment of Lessig shows why we need to elect people committed to changing the status quo instead of preserving it. Although they didn’t let Lessig into the debate, he brought corruption into focus.</p>
+      <p><strong>The establishment is not willing to fix this issue.</strong> We need to elect proven reformers who won’t play the corrupt game of today’s politics, and will fight to pass fundamental reform.</p>
+      <p><strong>Concentrated power corrupts, and that’s what we’re fighting to fix.</strong></p>
+      <p><strong>Support the war on corruption now.</strong></p>
+
+    </div>
+    <div class="col-md-6 col-lg-5 bottom-spacer-sm">
+      {% capture panel_body %}
+      <div class="panel-body donate-page-box">
+        <h2>Donate to fight corruption in politics</h2>
+        <p>The establishment won’t fix this issue. We need to elect new leaders who will. Contribute now to take back our Republic. </p>
+        <hr />
+        {% include form_donate.html redirect_url='http://shpg.org/220/16659' action_template_id="20151104_lessig_out_donate" %}
+        <hr />
+        <p class="not-ready-link"><a href="/join/" title=""><small>Not ready to donate? Sign up to volunteer!</small></a>
+      </div>
+      {% endcapture %}
+      {% include panels/panel_empty.html %}
+    </div>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}

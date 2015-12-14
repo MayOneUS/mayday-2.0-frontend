@@ -1,0 +1,80 @@
+---
+layout: default
+title: Announcing a our new CEO
+permalink: /poll-fundraising/
+hideMenus: true
+hideHeaderSignUp: true
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/poll-fundraising/"/>
+  <link rel="canonical" href="https://mayday.us/poll-fundraising/">
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150727_social_share_graphic.jpg"/>
+  <meta property="og:title" content="Let's put the Spotlight on Campaign Finance Reform"/>
+  <meta property="og:description" content="Let's show candidates that their supporters want fundamental reform of the way elections are funded. Donate to help us inscrease our sample size"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title>Let's put the Spotlight on Campaign Finance Reform - MAYDAY</title>
+---
+{% capture custom_css %}
+<style type="text/css">
+  .dayofaction .thanks-message{display:none;}
+  .jumbotron{background: #444 url('/images/campaigns/20150918_poll_donate_page_graphic.jpg') center 0px no-repeat;min-height: 210px;text-align:center;color:#fff;}
+  .jumbotron h1{background: transparent url('/images/campaigns/20150727_ceo_headline_v4_776x69.png') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top:40px;margin-bottom:0;}
+  .jumbotron h3{color:#fff;text-align:left;font-weight:400;margin-top:0}
+  .control-label h3{font-weight:400;}
+  .page-content{padding-bottom: 0}
+  .donate-flavor-text > p, .donate-flavor-text > p:first-of-type{font-weight:400}
+  blockquote{font-weight:300;}
+  blockquote .quote-author{text-align:right;font-style: italic;}
+</style>
+{% endcapture %}
+
+{% capture content %}
+
+<div class="jumbotron hidden-xs hidden-sm">
+  <div class="container">
+    <div class="col-lg-6 col-md-offset-5 col-md-7">
+      <h1 class="text-hide">We're here to Fight</h1>
+      <h3>A well-connected few are pumping billions of dollars to hijack your government. Contribute now to take back our Republic.</h3>
+    </div>
+  </div>
+</div>
+
+<div class="donate-page container">
+  <div class="row">
+    <div class="col-md-10 center-block donate-flavor-text">
+      <h1>Let's put the Spotlight on Campaign Finance Reform</h1>
+
+      <p>We are conducting a poll to see which presidential candidates have the most anti-corruption supporters. We'll show these candidates that their supporters want fundamental reform of the way elections are funded. We'll show presidential candidates from both parties that they need to step up and lead in the fight for real reform.</p>
+      <p>Let's prove that there is at least one thing that both Trump and Bernie supporters agree on: the need to fundamentally change the system. The headlines write themselves, and we'll put the spotlight of presidential politics directly on corruption, and fixing it. We’ll show every candidate that fighting for real change in Washington can be a winning issue in 2016.</p>
+      <p>We’ll even put the results online for others to dig through and use to help tell the story that voters across the ideological spectrum all agree on one thing: we want politicians to stand up and fight for clean elections.</p>
+      <p><strong>With your help, our data can be even more convincing.</strong> Every $2,000 we raise helps us increase our sample size, enriching our data to include even more presidential candidates.</p>
+      <p><strong>Contribute now. We need you.</strong></p>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-7 col-lg-6 center-block">
+      {% capture panel_body %}
+      <div class="panel-body donate-page-box">
+        <h2>Contribute Today</h2>
+        {% include form_donate.html redirect_url='/ceo-thanks/' facebook_tracking_id='6033848599090' action_template_id="20150727_accouncement_donate" %}
+
+      </div>
+      {% endcapture %}
+      {% include panels/panel_empty.html %}
+      <blockquote class="visible-xs-block visible-sm-block"><p>&ldquo;Corruption is the issue hiding in plain sight in the 2016 campaign. Together, we’ll continue the MAYDAY.US spirit of dreaming big, trying new things, and striking at the root of corruption with large, unafraid actions. With all hands on deck, we can overcome legalized bribery and achieve political equality. We’re asking you to re-commit. Your donation will ensure we can address a big problem with bold action.&rdquo;</p> <p class="quote-author">- Zephyr Teachout</p></blockquote>
+    </div>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}

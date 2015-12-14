@@ -282,7 +282,7 @@ var createPledge = function(name, payment) {
         } else if ('bitpay_url' in data) {
           location.href = data.bitpay_url;
         } else if (typeof REDIRECT_URL == 'undefined'){
-          location.href = PLEDGE_URL + data.receipt_url;
+          location.href = '/donate-thanks/';
         } else {
           location.href = REDIRECT_URL;
         }

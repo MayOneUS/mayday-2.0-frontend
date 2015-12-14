@@ -154,8 +154,6 @@ img {
   vertical-align: middle;
 }
 
-
-
 /**
  * Figures
  */
@@ -166,7 +164,6 @@ figure > img {
 figcaption {
   font-size: $small-font-size;
 }
-
 
 
 /**
@@ -359,17 +356,22 @@ pre {
     color: $color-font;
   }
 }
-.btn-md-wide{
+.btn-md-wide, .btn-md-md{
   @include button-colors($color-dark-red);
   width: 100%;
   margin-bottom: 10px;
   margin-top: 6px;
-  padding: 16px 16px;
+  padding: 16px;
   font-size: 28px;
   line-height: normal;
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.btn-md-md{
+  padding: 8px;
+  font-size: 22px;
 }
 
 @mixin simple-button{
@@ -736,18 +738,30 @@ form.no-gutter fieldset > [class*='col-'] {
 .mayday-headline-smaller-thinner{
   font-weight: 300;
 }
-.index-page-title{
-  font-size: 34px;
-  font-weight: 400;
-  margin: 0 0 40px;
-  text-align: center;
-  //text-align: center; margin-bottom: 40px; margin-top: 0;
-  @include phone{
-    margin: 25px 0 25px;
+
+/* flash messages */
+
+.flash-message {
+  &.error {
+    border: solid 4px #900;
+    background-color: #FF6565;
   }
-}
-.lead-font-size{
-  font-size: 21px;
+  &.notice {
+    border: solid 4px #26722D;
+    background-color: #A4E7A0;
+  }
+  &.success {
+    border: solid 4px #5CB85C;
+    background-color: #D7F9C9;
+  }
+  z-index: 999;
+  // position: fixed;
+  margin-bottom: 20px;
+  padding:5px;
+  h3{
+    font-weight: 700;
+    margin:0;
+  }
 }
 
 /* form styles */
@@ -798,6 +812,12 @@ label.error{
   }
 }
 
+.help-block.for-checkboxes{
+  font-size:15px;
+  line-height: 1em;
+  margin-top:0;
+}
+
 /* helper classes */
 .no-top-margin{
   margin-top:0 !important;
@@ -824,6 +844,11 @@ label.error{
 .bottom-spacer-sm{
   margin-bottom: 40px;
 }
+
+.bottom-spacer-xs{
+  margin-bottom: 20px;
+}
+
 .bottom-spacer{
   margin-bottom: 80px;
 }

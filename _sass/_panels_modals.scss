@@ -2,6 +2,14 @@
  * Mayday Panel Styles
  */
 
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio]{
+  margin-top:6px;
+}
+
+h3.panel-title {
+  .byline{font-size:0.8em}
+}
+
 .action-panel{
   text-align:center;
   border-radius:5px;
@@ -127,10 +135,12 @@
 .action-panel form{
   margin: 25px 15px 0 15px;
 }
-.action-panel form, form.md-inputs {
+form.md-inputs {
   padding-bottom: 15px;
+}
 
-  input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
+.md-inputs {
+  input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea {
     font-size: 22px;
     width: 100%;
     border: 2px solid $color-navy-blue;
@@ -145,7 +155,7 @@
   &.smaller-form{
     padding-bottom: 0;
     .form-group{
-      input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
+      input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea {
         margin-bottom: 4px;
         font-size: 18px;
         font-weight: 300;
