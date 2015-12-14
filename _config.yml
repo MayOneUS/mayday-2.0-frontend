@@ -16,6 +16,5 @@ twitter_username: MAYDAYUS
 # Build settings
 markdown: kramdown
 
-#jekyll-assets version
 assets:
-  cachebust: soft
+  digest: false
