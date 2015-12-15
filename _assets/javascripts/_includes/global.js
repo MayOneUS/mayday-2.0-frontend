@@ -10,7 +10,7 @@ function addCommas(nStr) {
   return x1 + x2;
 }
 
-window.recycyledFormAttributes = ['email', 'first_name', 'last_name', 'phone', 'zip'];
+window.recycyledFormAttributes = ['email', 'first_name', 'last_name', 'phone', 'zip', 'city'];
 function manageDataFromParams(source_key, skipped_forms_selector){
   var url_param = getParameterByName(source_key);
   if (url_param.length > 2){
@@ -21,7 +21,7 @@ function manageDataFromParams(source_key, skipped_forms_selector){
 }
 
 function wrapParamForRails(param_key) {
-  return param_key.replace(/(email|first_name|last_name|phone|zip)/, 'person\\[$1\\]');
+  return param_key.replace(/(email|first_name|last_name|phone|zip|city)/, 'person\\[$1\\]');
 }
 
 function setFormsValues(source_key, target_value, skipped_forms_selector){
