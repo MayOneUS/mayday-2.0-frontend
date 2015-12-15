@@ -56,6 +56,7 @@
   })();
 </script>
 
-{% javascript app %}
+{% capture asset_path_string %}{% asset_path app %}{% endcapture %}
+<script type="text/javascript" src="{{ asset_path_string | js_cache_bust }}"></script>
 
 {{ footer_scripts }}
