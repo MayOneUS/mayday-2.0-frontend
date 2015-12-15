@@ -24,19 +24,17 @@ if( window.location.pathname == '/legislators/' ){
 
   function renderAllies(legislator_data, index) {
     var rendered = [],
-        bgIMG = 'url(' + legislator_data["image_url"] + ')'
         unknowable_reps = ['DC', 'AS', 'GU', 'VI', 'PR', 'MP'];
 
     legislator_data.short_title = legislator_data.title === 'Senator' ? 'Sen.' : 'Rep.';
     legislator_data.lower_abbrev = legislator_data.state_abbrev.toLowerCase();
+    legislator_data.leg_thumbnail = 'url(' + legislator_data.image_url + ')';
     if($.inArray(legislator_data.state_abbrev, unknowable_reps) > -1){
       legislator_data.with_us = 'unknowable';
     }
 
-    rendered = ich.legislator_template(legislator_data);
-    $(rendered["0"]).find("div.background-square").css("background-image", bgIMG);
-
-    $('#js-legislators').append(rendered);
+    rendered_html = HandlebarsTemplates['cards/legislators-listing'](legislator_data);
+    $('#js-legislators').append(rendered_html);
   }
 
   function callDataAndTemplate(legislators) {

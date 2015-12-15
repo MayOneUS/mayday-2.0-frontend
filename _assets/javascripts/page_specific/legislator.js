@@ -21,10 +21,10 @@ $( document ).ready( function(){
       l_d.tallies_rendered = ''
 
       $.each(l_d.current_sponsorships, function(index, data){
-        data.column_width = l_d.current_sponsorships.length == 1 ? '12' : '6';
+        data.centered = l_d.current_sponsorships.length == 1 ? 'center-block' : '';
         data.name = data.name.replace(/ of 201\d/,'')
         supported_bill_names.push(data.name)
-        tallies += ich.talley_template(data, true);
+        l_d.tallies_rendered += HandlebarsTemplates['legislator-page-talley'](data);
       });
       l_d.supported_bills_message = supported_bill_names.join(' and ');
       l_d.background_img = '/images/star_blue.svg';
@@ -61,11 +61,11 @@ $( document ).ready( function(){
       $('#panel-body-p').text('MAYDAY activists are meeting with Congressman Dold’s District Director Philippe Melin on Wednesday, Sept. 9 at 10am in Lincolnshire. To receive updates or participate in this important initiative, sign up below.')
     }
     $('#panel-title').text(l_d.tail_message);
-    var rendered = ich.legislator_template(l_d);
-
+    var rendered_html = HandlebarsTemplates['legislator-page-legislator'](l_d);
     document.title = l_d.page_title
-    $('#js-legislator').append(rendered);
-    $('#js-tallies').append(tallies);
+
+    $('#js-legislator').append(rendered_html);
+    // $('#js-tallies').append(tallies);
   }
 
   $.getJSON(services_url+'/legislators/'+bioguide_id, scorecard);

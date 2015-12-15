@@ -104,21 +104,18 @@ permalink: /news/
 </div>
 {% endcapture %}
 
+{% capture page_specific_javascript %}
+<script>
+$(document).ready(function(){
+  render_blog_feed();
+  render_press_releases_feed();
+});
+</script>
+{% endcapture %}
+
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
+
 {% include sub_layouts/default_layout.html %}
 
-<!-- JavaScript to Pull in last 5 Tumblr Posts -->
-<script id="post" type="text/html">
-    {% raw %}<li><a href="{{ url }}">{{ regular-title }}</a></li>{% endraw %}
-</script>
-<script id="press_release" type="text/html">
-    {% raw %}
-      <li>
-        <p>
-          <time class="press-date">{{ date }}</time> -
-          <a class="press-link" href="{{ url }}">{{ regular-title }}</a>
-        </p>
-      </li>
-    {% endraw %}
-</script>
-<!-- end JavaScript -->
 

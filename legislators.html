@@ -43,24 +43,3 @@ permalink: /legislators/
 {% endcapture %}
 
 {% include sub_layouts/default_layout.html %}
-
-<script id="legislator_template" type="text/html">
-{% raw %}
-
-    <div class="col-md-4 col-sm-6 col-xs-6 bottom-margin with-us-{{with_us}}  potential-{{targeted?}}">
-      <a href="/legislator/?bioguide_id={{bioguide_id}}" class="pull-left pulled-image"><div class="background-square"></div></a>
-        <h3 class="no-top-margin"> {{short_title}}<strong> {{ name }}</strong> </h3>
-        <h4>{{leadership}} {{ party }}-{{ state_abbrev }} {{display_district}}</h4>
-        <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">
-          <i class="fa fa-check-square-o"></i>
-          <i class="fa fa-minus-circle"></i>
-          <i class="fa fa-question-circle"></i>
-          Read More
-        </a>
-      <div class="hidden">
-        {{state_name}}
-      </div>
-    </div>
-
-{% endraw %}
-</script>

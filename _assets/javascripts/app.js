@@ -1,9 +1,8 @@
-//= require vendor/ICanHaz.min.js
+//= require_tree ./templates
 //= require vendor/smooth-scroll.min.js
 //= require vendor/jquery.hideseek.min.js
 //= require _includes/plugins.js
 //= require _includes/global.js
-//= require page_specific/index.js
 //= require page_specific/legislator.js
 //= require page_specific/legislators.js
 //= require page_specific/news.js

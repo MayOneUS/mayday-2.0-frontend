@@ -853,11 +853,11 @@ label.error{
   margin-bottom: 80px;
 }
 
-.top-spacer-btn{
+.top-spacer-btn, .top-spacer{
   margin-top: 20px;
-  .form-group{
+}
+.top-spacer-btn .form-group{
     margin-bottom: 0;
-  }
 }
 
 
