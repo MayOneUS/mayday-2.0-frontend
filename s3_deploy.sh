@@ -3,7 +3,7 @@
 # Deploys changes to the correct S3 bucket after build success
 
 # Determine which bucket we should deploy to
-if [ "$TRAVIS_BRANCH" = "alpha" ]; then
+if [ "$TRAVIS_TAG" =~ 'alpha' ]; then
     echo "Going to deploy to alpha.mayday.us"
     export S3_BUCKET=alpha.mayday.us
 elif [ "$TRAVIS_BRANCH" = "master" ]; then
