@@ -17,6 +17,6 @@ else
     exit 0
 fi
 
-jekyll build
+JEKYLL_ENV=production jekyll build
 s3_website cfg apply --headless
 s3_website push

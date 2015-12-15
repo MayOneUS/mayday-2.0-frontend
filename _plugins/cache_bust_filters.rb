@@ -62,6 +62,7 @@ module Jekyll
     # jekyll-assests requires first capturing the asset_path string, and
     # passing the path to this filter in a subsequent liquid call
     def js_cache_bust(file_name)
+      file_name.gsub!('.js','.min.js') if ENV['JEKYLL_ENV'] == 'production'
       CacheDigester.new(file_name: file_name, directory: '_assets/javascripts').digest!
     end
   end
