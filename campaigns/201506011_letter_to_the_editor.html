@@ -281,21 +281,6 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
 {% endcapture %}
 
 {% capture panel_record_js%}
-<script id="legislator_template" type="text/html">
-{% raw %}
-
-    <div class="col-md-4 col-xs-12 col-sm-6 col-sm-offset-3 col-md-offset-0 bottom-margin new-legislator">
-        <a href="/legislator/?bioguide_id={{bioguide_id}}">
-          <div class="background-square" style="background-image:url('{{image_url}}')"></div>
-        </a>
-        <h3 class="no-top-margin">{{ short_title }} <strong>{{ name }}</strong></h3>
-        <h4> {{ party }}-{{ state_abbrev }} {{display_district}}</h4>
-        <h4> {{ support_message }}</h4>
-        <!--<a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">Read More</a>-->
-    </div>
-
-{% endraw %}
-</script>
 <script>
 /*
  *
@@ -329,14 +314,16 @@ jQuery.fn.wordCount = function(params){
   });
 };
 
-    function renderLocalLegislators(legislator_data) {
-      legislator_data.forEach(function(legislator, index){
-        legislator.short_title = legislator.title === 'Senator' ? 'Sen.' : 'Rep.';
-        legislator.support_message = legislator.with_us === true ? 'Supports Reform' : 'Doesn\'t Support Reform'
-        var rendered_template = ich.legislator_template(legislator);
-        $('#js-legislators').append(rendered_template);
-      })
-    }
+  function renderLocalLegislators(legislator_data) {
+    legislator_data.forEach(function(legislator, index){
+      legislator.short_title = legislator.title === 'Senator' ? 'Sen.' : 'Rep.';
+      legislator.support_message = legislator.with_us === true ? 'Supports Reform' : 'Doesn\'t Support Reform'
+      legislator.hide_read_more = true;
+      legislator.full_width = true;
+      rendered_html = HandlebarsTemplates['cards/legislator-newest'](legislator);
+      $('#js-legislators').append(rendered_html);
+    })
+  }
 
   $(document).ready(function(){
     window.form_data = {}

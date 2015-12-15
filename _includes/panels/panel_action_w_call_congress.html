@@ -80,14 +80,6 @@
 
 {% capture panel_call_congress_form %}
 
-{% raw %}
-<script id="call_target_template" type="text/html">
-<li>
-  <a href="/legislators?bioguide_id={{ bioguide_id}}" title="">{{title}} {{name}} {{party}}-{{state_abbrev}} {{display_district}}</a>
-</li>
-</script>
-{% endraw %}
-
 <script>
   $(document).ready(function(){
     $('.js-form-call-congress').validate({
@@ -104,8 +96,8 @@
             $parent.addClass('complete').addClass('thanked');
           }
           $.each(data.targets.slice(0, 6), function(index, target_data){
-            var rendered = ich.call_target_template(target_data);
-            $('.js-targets').append(rendered);
+            var rendered_html = HandlebarsTemplates['cards/legislator-call-list'](target_data);
+            $('.js-targets').append(rendered_html);
           });
         }).fail(function(data){
           alert('There was an error. Please try again later.')

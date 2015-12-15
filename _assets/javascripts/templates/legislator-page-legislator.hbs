@@ -1,0 +1,65 @@
+<div class="dossier-page with-us-{{ with_us }}">
+<div class="jumbotron hidden-xs hidden-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-4 col-lg-3">
+        <div class="dossier-img-wrap">
+          <div class="dossier-img">
+            <div class="brighter">
+              <div class="desaturate"  alt="{{ name }} Headshot" style="background-image:url(https://theunitedstates.io/images/congress/225x275/{{ bioguide_id }}.jpg)"></div>
+              <caption>{{party}}-{{state_abbrev}} {{display_district}}</caption>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h1 class="text-hide">We&rsquo;re here to Fight</h1>
+        <h3>A well-connected few are pumping billions of dollars to hijack your government. Let&rsquo;s take back our Republic.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>
+  <img class="dossier-star bg-star" src={{ background_img }}>-->
+
+  <div class="top-line-left"></div>
+  <div class="bottom-taper hidden-xs">
+    <div class="triangle-up leg"></div>
+  </div>
+  <div class="homepage-panel">
+    <div class="container page-open">
+      <div class="row">
+        <div class="col-md-offset-6 col-md-6 col-sm-12 col-lg-offset-5 col-lg-5">
+          <h1 class="lead-title">{{page_title}}</h1>
+        </div>
+      </div>
+      <div class="row tallies leader-visible">
+        <div class="col-md-6 col-sm-12 center-block" id="js-tallies">
+          <div class="talley-wrap clearfix">
+            {{{ tallies_rendered }}}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+          <div class="blockquote-wrap leader-hidden">
+          <blockquote>
+            "{{ name }}, please sponsor legislation in Congress for public financing of elections so that elected officials can represent us, The People--not a well-connected few."
+          </blockquote>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

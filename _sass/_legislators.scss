@@ -126,6 +126,7 @@
     font-weight: 400;
     line-height: 18px;
     width:190px;
+    margin:0 auto;
     .fa{
       font-size: 46px;
       float: left;
@@ -198,6 +199,7 @@
 .with-us-true{
   .leader-visible{
     display: initial;
+    &.tallies{display:block}
   }
   .leader-hidden{
     display: none;

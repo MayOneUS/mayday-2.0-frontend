@@ -1,27 +1,26 @@
-if( window.location.pathname == '/news/' ){
+function render_blog_feed(){
+  $.getJSON(blog_post_feed_url, function (data) {
+    var posts = data.posts;
+    var $posts = $('#tumblr-posts');
 
-  (function($, ich) {
-
-    $.getJSON(blog_post_feed_url, function (data) {
-      var posts = data.posts;
-      var $posts = $('#tumblr-posts');
-
-      posts.forEach(function(post, index) {
-        $posts.append( ich.post(post) );
-      });
+    posts.forEach(function(post, index) {
+      var rendered_html = HandlebarsTemplates['cards/blog-post'](post);
+      $posts.append(rendered_html);
     });
+  });
+} // end render_blog_feed
 
-    $.getJSON(press_releases_feed_url, function (data) {
-      var releasePosts = data.posts;
-      var $releasesContainer = $('#tumblr-press-releases');
+function render_press_releases_feed(){
+  $.getJSON(press_releases_feed_url, function (data) {
+    var releasePosts = data.posts;
+    var $releasesContainer = $('#tumblr-press-releases');
 
-      releasePosts.forEach(function(post, index) {
-        d = new Date(post['date']);
-        post['date'] = d.getMonth()+1 + "/" + d.getDate() + "/" + d.getFullYear();
-        post['regular-title'] = post['regular-title'].replace('PRESS RELEASE - ','')
-        $releasesContainer.append( ich.press_release(post) );
-      });
+    releasePosts.forEach(function(post, index) {
+      d = new Date(post['date']);
+      post['date'] = d.getMonth()+1 + "/" + d.getDate() + "/" + d.getFullYear();
+      post['regular-title'] = post['regular-title'].replace('PRESS RELEASE - ','')
+      var rendered_html = HandlebarsTemplates['cards/press-release'](post);
+      $releasesContainer.append( rendered_html );
     });
-  })(jQuery, ich);
-
-}
+  });
+} // end render_press_releases_feed

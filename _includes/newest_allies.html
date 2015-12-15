@@ -3,20 +3,7 @@
   <div id="js-legislators" class="js-legislators newest-leaders no-gutter"></div>
 </div>
 {% capture newest_leaders_js %}
-<script id="legislator_template" type="text/html">
-{% raw %}
 
-    <div class="col-md-4 col-xs-12 col-sm-6 col-sm-offset-3 col-md-offset-0 bottom-margin new-legislator">
-        <a href="/legislator/?bioguide_id={{bioguide_id}}" class="pull-left pulled-image">
-          <div class="background-square" style="background-image:url('{{image_url}}')"></div>
-        </a>
-        <h3 class="no-top-margin">{{ short_title }} <strong>{{ name }}</strong></h3>
-        <h4> {{ party }}-{{ state_abbrev }} {{display_district}}</h4>
-        <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">Read More</a>
-    </div>
-
-{% endraw %}
-</script>
 <script>
   $(document).ready(function(){
     "use strict";
@@ -24,10 +11,10 @@
     var newAlliesUrl = '{{site.services_url}}/legislators/newest_supporters.json';
 
     function renderAllies(legislator_data, index) {
-      var rendered = [];
+      var rendered_html = '';
       legislator_data.short_title = legislator_data.title === 'Senator' ? 'Sen.' : 'Rep.';
-      rendered = ich.legislator_template(legislator_data);
-      $('#js-legislators').append(rendered);
+      rendered_html = HandlebarsTemplates['cards/legislator-newest'](legislator_data);
+      $('#js-legislators').append(rendered_html);
     }
 
     function callDataAndTemplate(legislators) {
