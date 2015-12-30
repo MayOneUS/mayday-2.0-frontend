@@ -2,12 +2,12 @@
 module Jekyll
   module CacheBustFilters
     # A simple class to handle md5 hexdigesting
-    # Initalizing requires the following:
-    # * file_name - String - this is both filename to which the md5 hash
-    #   will be appended to, and will be read for hexdigest in the absense
+    # Initalizing params:
+    # * file_name - String - required - this is both filename to which the md5 
+    #   hash will be appended to, and will be read for hexdigest in the absense
     #   of a passed in directory.
-    # * directory - String - path of directory files that will be recursively
-    #   read and passed into hexdigest
+    # * directory - String - optional - path of directory files that will be
+    #   recursively read and passed into hexdigest
     class CacheDigester
       require 'digest/md5'
 
