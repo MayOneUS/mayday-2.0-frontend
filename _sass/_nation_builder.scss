@@ -5,3 +5,12 @@ h3.panel-title {
 .panel-heading{
   .byline{font-size:14px}
 }
+
+.label{
+  a:link, a:visited, a:active {color:#fff}
+}
+
+#headline .byline{
+  font-size:14px;
+  .label{display:none;}
+}
