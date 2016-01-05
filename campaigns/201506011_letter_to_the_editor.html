@@ -124,6 +124,20 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
               <input type="hidden" name="person[remote_fields][tags][]" value="robocallable">
               <input type="hidden" name="person[remote_fields][tags][]" value="textable">
               <input type="hidden" name="person[is_volunteer]" value="1">
+
+              <!-- REQUIRED: Google form submission data -->
+              <input type="hidden" name="google_form_metadata[form_id]" value="134sHDoCuId_Sh0NP0fC8Ifo07pZ6Y2yweI84l-MHIAQ" />
+              <input type="hidden" name="google_form_metadata[field_mappings][email]" value="entry_1511884496" />
+              <input type="hidden" name="google_form_metadata[field_mappings][first_name]" value="entry_1783847072" />
+              <input type="hidden" name="google_form_metadata[field_mappings][last_name]" value="entry_827129268" />
+              <input type="hidden" name="google_form_metadata[field_mappings][phone]" value="entry_1406003782" />
+              <input type="hidden" name="google_form_metadata[field_mappings][city]" value="entry_1828441747" />
+              <input type="hidden" name="google_form_metadata[field_mappings][zip]" value="entry_1647221161" />
+              <input type="hidden" name="google_form_metadata[field_mappings][address]" value="entry_211093862" />
+              <input type="hidden" name="google_form_metadata[field_mappings][letter_subject]" value="entry_499614295" />
+              <input type="hidden" name="google_form_metadata[field_mappings][letter_body]" value="entry_730656367" />
+              <input type="hidden" name="google_form_metadata[field_mappings][letter_media_outlets]" value="entry_471429366" />
+
               <button type="submit" class="btn btn-md-wide btn-md-red">Let's get started</button>
               <p class="help-block">We respect your privacy.  Newspapers require your phone number because they occasionally wish to contact you before publication. Your phone number will not be shared with other outside parties. Note:  If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number. Message &amp; data rates may apply.</p>
 
@@ -176,21 +190,21 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
                 <div class="letter">
                   <!-- <div class="row">
                     <div class="form-group col-md-12">
-                      <label class="control-label sr-only" for="letter_subject">Subject <attr>*</attr></label>
-                      <input id="letter_subject" name="letter_subject" type="text" placeholder="Subject">
+                      <label class="control-label sr-only" for="google_form_submission_data[letter_subject]">Subject <attr>*</attr></label>
+                      <input id="google_form_submission_data[letter_subject]" name="google_form_submission_data[letter_subject]" type="text" placeholder="Subject">
                     </div>
                   </div> -->
                   <div class="row">
                     <div class="form-group col-md-12">
-                      <label class="control-label sr-only" for="letter_body">Your letter <attr>*</attr></label>
-                      <textarea id="letter_body" name="letter_body" type="text" placeholder="Write your letter here..." rows="20"></textarea>
+                      <label class="control-label sr-only" for="google_form_submission_data[letter_body]">Your letter <attr>*</attr></label>
+                      <textarea id="google_form_submission_data[letter_body]" name="google_form_submission_data[letter_body]" type="text" placeholder="Write your letter here..." rows="20"></textarea>
                       <p class="help-block text-right"><span id="display_count">0</span> Words</p>
                     </div>
                   </div>
                   <div class="row">
                     <div class="form-group col-md-12">
-                      <label class="control-label sr-only" for="letter_media_outlets">Your news outlets</label>
-                      <input id="letter_media_outlets" name="letter_media_outlets" type="text" placeholder="Optional: Your News Outlets...">
+                      <label class="control-label sr-only" for="google_form_submission_data[letter_media_outlets]">Your news outlets</label>
+                      <input id="google_form_submission_data[letter_media_outlets]" name="google_form_submission_data[letter_media_outlets]" type="text" placeholder="Optional: Your News Outlets...">
                       <p class="help-block">Optionally, name 2 or 3 news publications in your area that accept letters to the editor.</p>
                     </div>
                   </div>
@@ -198,9 +212,9 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
               </div>
               <div class="row">
                 <div class="form-group col-md-10 center-block">
-                  <label class="control-label sr-only" for="person[required]">permission</label>
-                  <label class="checkbox-inline" for="person[required]-0">
-                    <input type="checkbox" name="person[required]" id="person[required]-0" required="required"> I give MAYDAY.US permission to submit my letter to media outlets for publication on my behalf, and to make minor edits for spelling and factual accuracy prior to submission.
+                  <label class="control-label sr-only" for="person[permission]">permission</label>
+                  <label class="checkbox-inline" for="person[permission]-0">
+                    <input type="checkbox" name="person[permission]" id="person[permission]-0" required="required"> I give MAYDAY.US permission to submit my letter to media outlets for publication on my behalf, and to make minor edits for spelling and factual accuracy prior to submission.
                   </label>
                 </div>
               </div>
@@ -344,7 +358,7 @@ jQuery.fn.wordCount = function(params){
           }else{
             renderLocalLegislators(data['local_legislators']);
             $('.js-step-two').removeClass('hidden');
-            $.post('{{site.services_url}}/google/lte_forms', window.form_data )
+            $.post('{{site.services_url}}/google_forms', window.form_data )
           }
         }).fail(function(data){
           alert('There was an error. Please try again later.')
@@ -366,7 +380,7 @@ jQuery.fn.wordCount = function(params){
             $('.js-step-one-b').addClass('hidden');
             $('.js-step-two').removeClass('hidden');
           }
-          $.post('{{site.services_url}}/google/lte_forms', window.form_data )
+          $.post('{{site.services_url}}/google_forms', window.form_data )
         }).fail(function(data){
           alert('There was an error. Please try again later.')
           $form.find('button.btn').html('Try Again');
@@ -378,7 +392,7 @@ jQuery.fn.wordCount = function(params){
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
         window.form_data = $.extend(true, window.form_data, $form.serializeObject())
-        $.post('{{site.services_url}}/google/lte_forms', window.form_data ).done(function(data){
+        $.post('{{site.services_url}}/google_forms', window.form_data ).done(function(data){
           $('.js-step-two').addClass('hidden');
           $('.js-thanks-message').removeClass('hidden');
         }).fail(function(data){
