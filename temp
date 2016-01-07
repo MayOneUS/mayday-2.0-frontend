@@ -1,0 +1,143 @@
+---
+layout: default
+title: MAYDAY.US - A national grassroots campaign to elect reformers.
+hideFromNav: true
+hideHeaderSignUp: true
+bodyClass: index-page
+---
+{% capture content %}
+<div id="index">
+  {% include jumbotrons/20151019_md_announcement.html %}
+  <div class="container">
+    <div class="row gutter-justphone homepage-panel homepage-ribbon">
+
+      <div class="col-xs-12 col-md-4">
+        <div class="mini-panel mini-panel-text">
+          <p class="no-y-margin"><a href="/">MAYDAY.US</a> is a crowd-funded Super PAC to end all Super PACs and the corruption of private money. <a href="/take-action/">Let's win our democracy back!</a></p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="mini-panel mini-panel-state">
+          <p class="no-y-margin">We're making campaign finance reform one of the issues of the 2016 campaign. <a href="/legislators/">Find out if your rep supports reform</a>.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="mini-panel mini-panel-call">
+          <div class="row call-box">
+            <!-- <span class="col-sm-1">678</span> -->
+            <span class="no-y-margin call-box-thin">MESSAGES <i>to</i></span>
+            <span class="no-y-margin call-box-thick">CONGRESS</span>
+          </div>
+          <p class="no-y-margin">Reclaim your voice. Leave a message for your representatives and urge them to support reform. <a href="/record/">Get Started</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="homepage-panel dark ten-star">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+    <div class="container homepage-panel-body">
+      <div class="row">
+        <div class="col-md-10 col-xs-12">
+          <h2>We are MAYDAY.US</h2>
+          <p>The biggest challenge blocking fundamental reform is the belief that it is not possible. We want to change that belief by showing America &ndash; with results in Congress &ndash; that it is absolutely possible.</p>
+          <p>Last year, more than 50,000 people rallied behind this idea. We want to leverage that energy to close the gap between the number in Congress committed to fundamental reform and the majority needed to pass it.</p>
+          <p>This platform helps citizens ask their representatives to step up and become #Leaders4Reform. <a href="/take-action/" style="color:#fff;text-decoration:underline">Give it a try.</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row homepage-panel light">
+      <div class="col-md-12 homepage-panel-body">
+        <h2>State of Reform</h2>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <p>We are 66 members away from a majority in the House, and the Senate bill has 22 sponsors. But across the range of fundamental reform (identified on the site, <a href="http://repswith.us/" target="_blank">RepsWith.US</a>), we are tracking how close we are to a majority in Congress. Because the closer we get, the more likely it is that leaders from either party will make this issue central to the 2016 campaign.</p>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-12">
+          <p style="width:100%;min-height:382px;background:transparent url(/images/20150826_homepage__progress_bar_800x382_v01.png) center 0 no-repeat;background-size:contain;">
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="homepage-panel grey">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 homepage-panel-body">
+          <h2>Our Progress</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus laudantium, id, sapiente repudiandae exercitationem facere nisi laboriosam quo minima, earum asperiores harum incidunt! Molestiae nesciunt quae quos sed illo voluptates?</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="/images/temp-img/mayday-story.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="homepage-panel grey">
+    <div class="container">
+      <div class="row homepage-panel-body">
+        <div class="col-xs-12 text-center-sm"><h2>Recent Leaders for Fundamental Reform</h2></div>
+      </div>
+      {% include newest_allies.html %}
+      <p class="text-center"><a href="/legislators" title="">View all Leaders for Fundamental Reform</a></p>
+    </div>
+  </div>
+  <div class="homepage-panel dark two-star">
+    <img class="bg-star" src="/images/star_white.svg">
+    <img class="bg-star" src="/images/star_white.svg">
+
+    <div class="container">
+      <div class="row homepage-panel-body">
+        <div class="col-xs-10">
+          <h2>Recent Coverage</h2>
+        </div>
+      </div>
+      <div class="row mayday-quotes">
+        <div class="col-md-4 col-xs-12">
+          <p>“It&rsquo;s an ingenious plan to make the drive for small-dollar publicly funded elections a central issue in 2016. With a little luck... idea could help save the republic.”</p>
+          <img class="center-block" alt="Matt Miller, Washington Post Opinions" src="/images/news-logos/washington-post-large-logo-2-300x78-white.png">
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <p>“The first part was hard. That second part is even harder. But now that MAYDAY has done the impossible once, it's worth staying tuned to see if they can do it again.”</p>
+          <img class="center-block" alt="Ben Wikler, Tech President" src="/images/news-logos/techrepublic-logo-white.png" style="opacity:0.8">
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <p>“The mortal struggle at hand today is not between the right and the left. It is not between Republicans and Democrats. It is not between the Congress and the president. It is between us (currently outsiders to our own government) voters and the Washington Insiders.”</p>
+          <img class="center-block" alt="Ralph Benko, Forbes Opinion" src="/images/news-logos/forbes-logo-white.png">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center"><a class="white-link "href="/in-the-news/">Read more news</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="homepage-panel light capitol-building">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 center-block panel-wrapper">
+          {% include panels/panel_action_w_signup.html hide_next=true %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+
+{% include sub_layouts/default_layout.html %}
