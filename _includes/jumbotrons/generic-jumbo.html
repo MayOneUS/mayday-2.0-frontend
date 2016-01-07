@@ -1,0 +1,100 @@
+<style type="text/css" media="screen">
+
+.jumbotron{min-height:460px;margin-bottom:0;background: #444 url('') center 0 no-repeat;}
+.jumbotron h1{background: transparent url('/images/campaigns/20150727_ceo_headline_v4_776x69.png') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top: 30px;margin-bottom: 20px;}
+
+.jumbotron .action-panel {margin-top:60px;box-shadow:0 2px 4px rgba(22,33,63,0.8);-webkit-box-shadow:0 2px 4px rgba(22,33,63,0.8);-moz-box-shadow:0 2px 4px rgba(22,33,63,0.8)}
+.jumbotron .action-panel .panel-body{padding:0 0 10px;}
+.jumbotron .action-panel form{margin-top:15px;}
+.jumbotron .action-panel form p{margin:5px 0 0;}
+.jumbotron .action-panel form p a small{color:#808080;}
+.jumbotron .action-panel .form-group{margin-bottom:0;}
+.jumbotron .action-panel .no-gutter .col-md-8{padding-right:10px;}
+
+@media (min-width: 768px) and (max-width: 1199px){
+  .jumbotron h1{margin-top:20px;}
+  .jumbotron .action-panel{margin-top:20px;}
+}
+
+@media (max-width: 1199px){
+  .jumbotron{background-image: url('/images/campaigns/20150429-hero-bg.jpg');background-color:#58C8DC;background-position:0 bottom;}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .jumbotron{min-height: 370px;background-size:contain;}
+  .btn-md-gray{font-size:20px;line-height:26px}
+}
+
+@media (max-width: 767px){
+  .jumbotron{background-image:none;}
+  .jumbotron .action-panel{margin:10px 0 15px;}
+  a.btn-md-gray:link{font-size:20px;line-height:26px;margin-top:10px;}
+}
+</style>
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-lg-7 col-xs-12 pull-right">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-7 col-md-5 col-sm-6 col-sm-offset-6">
+        {% capture panel_body %}
+        <div class="panel-body">
+          <h2>Fight corruption in politics</h2>
+          <p>Help us elect the next champion of democracy!</p>
+
+          <form class="row {{include.form_class}} smaller-form no-gutter js-jumbotron-signup">
+            <input type="hidden" name="template_id" value="20151026_md_signup">
+            <input type="hidden" name="person[remote_fields][tags][]" value="20151026_md_signup">
+
+
+            <fieldset class="col-md-12">
+              <div class="row">
+                <div class="form-group col-md-8 col-sm-8">
+                  <label class="control-label sr-only" for="person[email]">Email Address</label>
+                  <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
+                </div>
+
+                <div class="form-group col-md-4 col-sm-4">
+                  <label class="control-label sr-only" for="person[zip]">ZIP</label>
+                  <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <button type="submit" class="btn btn-md-md btn-md-red">I'm in</button>
+                </div>
+                <div class="form-group col-sm-6">
+                  <a href="/the-plan/" title="" class="btn btn-md-md btn-md-gray">Learn More</a>
+
+                </div>
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+        {% endcapture %}
+        {% include panels/panel_empty.html %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% capture jumbotron_signup_js %}
+<script>
+  $('.js-jumbotron-signup').validate({
+    submitHandler: function(form) {
+      $form = $(form);
+      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
+      }).done(function(){
+        location = '/elect-jamie-raskin/donate/'
+      });
+    }
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{jumbotron_signup_js}}{% endcapture %}
