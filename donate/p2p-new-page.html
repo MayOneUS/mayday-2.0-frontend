@@ -14,13 +14,13 @@ meta_content: |
 {% capture custom_css %}
 <style type="text/css">
   body.activeActionPanel{margin-top:80px;}
-  .js-p2p-page textarea{min-height:240px;}
+  .js-p2p-form-container textarea{min-height:240px;}
   .js-preview-action-panel{position:absolute;z-index:5000;width:100%;top:0;}
 </style>
 {% endcapture %}
 
 {% capture content %}
-<div class="container js-p2p-page">
+<div class="container js-p2p-form-container">
   <div class="col-md-12">
     <div class="row">
       <h1>Make your own donation page!</h1>
@@ -32,24 +32,24 @@ meta_content: |
           <div class="row">
             <div class="form-group col-md-6">
               <label class="control-label sr-only" for="person[first_name]">First Name</label>
-              <input id="person[first_name]" name="person[first_name]" type="text" required="required" value="First Name">
+              <input id="person[first_name]" name="person[first_name]" type="text" required="required" placeholder="First Name">
             </div>
 
             <div class="form-group col-md-6">
               <label class="control-label sr-only" for="person[last_name]">Last Name</label>
-              <input id="person[last_name]" name="person[last_name]" type="text" required="required" value="Last Name">
+              <input id="person[last_name]" name="person[last_name]" type="text" required="required" placeholder="Last Name">
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col-md-4">
               <label class="control-label sr-only" for="person[zip]">ZIP</label>
-              <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text"  required="required" value="ZIP" />
+              <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text"  required="required" placeholder="ZIP" />
             </div>
 
             <div class="form-group col-md-8">
               <label class="control-label sr-only" for="person[email]">Email Address</label>
-              <input id="person[email]" name="person[email]" type="email" value="Email Address" required="required" />
+              <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required" />
             </div>
           </div>
         </fieldset>
@@ -62,19 +62,19 @@ meta_content: |
           <div class="row">
             <div class="form-group col-md-12">
               <label class="control-label sr-only" for="donation_page[title]">Page title</label>
-              <input id="donation_page[title]" name="donation_page[title]" required="required" type="text" value="page title" />
+              <input id="donation_page[title]" name="donation_page[title]" required="required" type="text" placeholder="Your page title" />
             </div>
 
           </div>
           <div class="row">
             <div class="form-group col-md-8">
               <label class="control-label sr-only" for="donation_page[visible_user_name]">Your Display Name</label>
-              <input id="donation_page[visible_user_name]" name="donation_page[visible_user_name]" required="required" type="text" value="Your Display Name" />
+              <input id="donation_page[visible_user_name]" name="donation_page[visible_user_name]" required="required" type="text" placeholder="Your Display Name" />
             </div>
 
             <div class="form-group col-md-4">
               <label class="control-label sr-only" for="donation_page[slug]">Slug</label>
-              <input type="text" name="donation_page[slug]" value="Unique URL" class="js-slug" required="required" />
+              <input type="text" name="donation_page[slug]" placeholder="Unique URL" class="js-slug" required="required" />
               <span class="help-block">You can create a unique URL so that users can </span>
             </div>
           </div>
@@ -82,7 +82,7 @@ meta_content: |
           <div class="row">
             <div class="form-group col-md-12">
               <label class="control-label sr-only" for="donation_page[intro_text]">Intro</label>
-              <textarea name="donation_page[intro_text]" value="Intro"> *MAYDAY.US* is leading a modern day civil rights movement to bring true political equality back to our Republic. You may not be able to afford your own personal lobbyist, but you can band together with members of this community and support leaders who are on the right side of history.
+              <textarea name="donation_page[intro_text]" placeholder="Intro"> *MAYDAY.US* is leading a modern day civil rights movement to bring true political equality back to our Republic. You may not be able to afford your own personal lobbyist, but you can band together with members of this community and support leaders who are on the right side of history.
 
 Our innovative technologies and organizational strategies are inspiring a new generation of activism. To continue this work, we need your support. Every time you give, it’s a vote against political corruption, against legalized bribery, against crony capitalism. So, please, give what you can. Give with hope for our future, that we may one day restore our democracy.
               </textarea>
@@ -139,11 +139,11 @@ Our innovative technologies and organizational strategies are inspiring a new ge
           <div class="col-md-4">
             <div class="col-md-5">
               <label class="control-label sr-only" for="singlebutton">Edit</label>
-              <button type="submit" class="btn btn-md-md btn-md-lightblue">Edit</button>
+              <button type="submit" class="btn btn-md-md btn-md-lightblue js-edit">Edit</button>
             </div>
             <div class="col-md-7">
               <label class="control-label sr-only" for="singlebutton">Finish &amp; Save!</label>
-              <button type="submit" class="btn btn-md-md btn-md-green">Finish &amp; Save!</button>
+              <button type="submit" class="btn btn-md-md btn-md-green js-save">Finish &amp; Save!</button>
             </div>
           </div>
         </div>
@@ -151,9 +151,9 @@ Our innovative technologies and organizational strategies are inspiring a new ge
     </form>
   </div>
 </div>
-<div class="container hidden">
+<div class="container hidden js-preview">
   <div class="row">
-    <div class="col-md-6 col-lg-6 js-rendered-page-placeholder"></div>
+    <div class="col-md-6 col-lg-6 js-rendered-p2p-placeholder"></div>
     <div class="col-sm-8 col-md-6 col-lg-5">
       <div class="box-inner donate-page-box">
         <h2 class="box-title">Donate In Two Minutes or Less</h2>
@@ -169,33 +169,97 @@ Our innovative technologies and organizational strategies are inspiring a new ge
 {% javascript vendor/marked.min.js %}
 
 <script>
-  function generateRenderPageData(){
-    var rawData = $('.js-p2p-page form').serializeObject();
-    rawData.donation_page.intro_text_markdown = marked(rawData.donation_page.intro_text);
-    rawData.donation_page.slug = slugify(rawData.donation_page.slug);
-    return rawData.donation_page;
+ md.p2p = {};
+(function(p2p) {
+  p2p.initializeDomObjects = function(){
+    p2p.$renderElement      = $('.js-rendered-p2p-placeholder'),
+    p2p.$parentElement      = $('.js-rendered-p2p-placeholder').parents('.container');
+    p2p.$previewElement     = $('.js-preview'),
+    p2p.$actionBarElement   = $('.js-preview-action-panel'),
+    p2p.$editingElement     = $('.js-p2p-form-container'),
+    p2p.$editingFormElement = p2p.$editingElement.find('form'),
+    p2p.$body               = $('body');
   }
 
-  $(document).ready(function(){
+  p2p.generateRenderPageData = function(){
+    p2p.formObject = p2p.$editingFormElement.serializeObject();
+    p2p.formObject.donation_page.intro_text_markdown = marked(p2p.formObject.donation_page.intro_text);
+    p2p.formObject.donation_page.slug = slugify(p2p.formObject.donation_page.slug);
+    return p2p.formObject.donation_page;
+  }
+
+  p2p.renderPreview = function(){
+    var donation_page_data = p2p.generateRenderPageData(),
+      renderedHtml = HandlebarsTemplates['p2p-donate-content'](donation_page_data);
+    $('.js-sample-url').val('https://mayday.us/mydonate/#'+donation_page_data.slug);
+    p2p.$renderElement.empty().append(renderedHtml);
+    p2p.$parentElement.removeClass('hidden');
+    p2p.$actionBarElement.removeClass('hidden');
+    p2p.$previewElement.removeClass('hidden');
+    p2p.$editingElement.addClass('hidden');
+    p2p.$body.addClass('activeActionPanel');
+  }
+
+  p2p.renderEdit = function(){
+    p2p.$body.removeClass('activeActionPanel');
+    p2p.$actionBarElement.addClass('hidden');
+    p2p.$previewElement.addClass('hidden');
+    p2p.$editingElement.removeClass('hidden');
+  }
+
+  p2p.formValidator = function(callback){
+    p2p.$editingFormElement.validate({
+      submitHandler: function(form) {
+        callback();
+      }
+    });
+  }
+
+  p2p.storeDonationPage = function(){
+    p2p.generateRenderPageData();
+    $.post(services_url + '/donation_pages', p2p.formObject, function(data){
+      // Cookies.set('personal_donation_page_uuid', data.uuid)
+      window.location = 'https://mayday.us/mydonate/#' + p2p.formObject.slugify;
+    })
+  }
+
+  p2p.fetchExistingDonatePage = function(){
+    p2p.existingPageUuid = Cookies.get('personal_donation_page_uuid');
+    $.get(services_url + '/donation_page', data, function(){
+
+    });
+  }
+
+  p2p.initializeEventBindings = function(){
     $('.js-slug').on('blur', function(e){
-      console.log(e.currentTarget.value);
       e.currentTarget.value = slugify(e.currentTarget.value);
     });
     $('.js-preview').on('click', function(){
-      var donation_page_data = generateRenderPageData(),
-        renderedHtml = HandlebarsTemplates['p2p-donate-content'](donation_page_data),
-        $renderArea = $('.js-rendered-page-placeholder'),
-        $parentArea = $('.js-rendered-page-placeholder').parents('.container');
-        $previewArea = $('.js-preview-action-panel'),
-        $editingArea = $('.js-p2p-page');
-      $renderArea.empty().append(renderedHtml);
-      $('.js-sample-url').val('https://mayday.us/mydonate/#'+donation_page_data.slug);
-      $parentArea.removeClass('hidden');
-      $previewArea.removeClass('hidden');
-      $editingArea.addClass('hidden');
-      $('body').addClass('activeActionPanel')
+      p2p.formValidator(p2p.renderPreview);
+    });
+    $('.js-edit').on('click', function(){
+      p2p.renderEdit();
+    });
+    $('.js-save').on('click', function(){
+      p2p.formValidator(p2p.storeDonationPage);
+      alert('not implemented, but goal to save and redirect to target page');
+    });
+    $('.js-preview-action-panel form').on('submit', function(e){
+      e.preventDefault();
     })
-  });
+  }
+
+  p2p.initialize = function(){
+    p2p.initializeEventBindings();
+    p2p.initializeDomObjects();
+  }
+
+})(md.p2p);
+
+$(document).ready(function(){
+  md.p2p.initialize();
+});
+
 </script>
 {% endcapture %}
 
