@@ -1,3 +1,15 @@
+function addCommas(nStr) {
+  nStr += '';
+  x = nStr.split('.');
+  x1 = x[0];
+  x2 = x.length > 1 ? '.' + x[1] : '';
+  var rgx = /(\d+)(\d{3})/;
+  while (rgx.test(x1)) {
+    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+  }
+  return x1 + x2;
+}
+
 function getParameterByName (name) {
   var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
       results = regex.exec(location.search);
@@ -15,6 +27,22 @@ function slugify (text) {
     .replace(/^-+/, '')             // Trim - from start of text
     .replace(/-+$/, '');            // Trim - from end of text
 }
+
+
+// handle actions around fake file input
+$(document).on('change', '.btn-file :file', function() {
+  var input = $(this),
+    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+  input.trigger('fileselect', [numFiles, label]);
+});
+$('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+  var input = $(this).parents('.input-group').find(':text'),
+    log = numFiles > 1 ? numFiles + ' files selected' : label;
+  if( input.length ) {
+    input.val(log);
+  }
+});
 
 /**
  * matches US phone number format

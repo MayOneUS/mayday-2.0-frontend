@@ -169,20 +169,6 @@ Our innovative technologies and organizational strategies are inspiring a new ge
 {% javascript vendor/marked.min.js %}
 
 <script>
-  // enable fake file input select
-  $(document).on('change', '.btn-file :file', function() {
-    var input = $(this),
-      numFiles = input.get(0).files ? input.get(0).files.length : 1,
-      label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-    input.trigger('fileselect', [numFiles, label]);
-  });
-  $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
-    var input = $(this).parents('.input-group').find(':text'),
-      log = numFiles > 1 ? numFiles + ' files selected' : label;
-    if( input.length ) {
-      input.val(log);
-    }
-  });
   function generateRenderPageData(){
     var rawData = $('.js-p2p-page form').serializeObject();
     rawData.donation_page.intro_text_markdown = marked(rawData.donation_page.intro_text);
