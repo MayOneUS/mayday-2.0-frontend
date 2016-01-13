@@ -34,12 +34,12 @@
     }
   }
 
-  &:nth-child(1) > .btn-md-wide{background:#094067}
-  &:nth-child(2) > .btn-md-wide{background:#513c5f}
-  &:nth-child(3) > .btn-md-wide{background:#5e8cac}
-  &:nth-child(4) > .btn-md-wide{background:#759c64}
-  &:nth-child(5) > .btn-md-wide{background:#eaa663}
-  &:nth-child(6) > .btn-md-wide{background:#af010e}
+  &:nth-child(1) > .btn-md-wide{background:$color-button-blue} 
+  &:nth-child(2) > .btn-md-wide{background:$color-button-purple} 
+  &:nth-child(3) > .btn-md-wide{background:$color-button-lightblue} 
+  &:nth-child(4) > .btn-md-wide{background:$color-button-green} 
+  &:nth-child(5) > .btn-md-wide{background:$color-button-orange} 
+  &:nth-child(6) > .btn-md-wide{background:$color-button-lightred} 
 
   >small{
     position:absolute;

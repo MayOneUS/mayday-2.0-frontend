@@ -3,6 +3,16 @@
  * buttons
  */
 
+/* button colors */
+
+$color-button-blue: #094067;
+$color-button-purple: #513c5f;
+$color-button-lightblue: #5e8cac;
+$color-button-green: #759c64;
+$color-button-orange: #eaa663;
+$color-button-lightred: #af010e;
+
+
  /**
  * Wide Button Mixin
  * @param {Color} $color-bg
@@ -280,7 +290,7 @@ form.md-inputs{
     margin-bottom:10px;
   }
 
-  .btn + .help-block, label + .help-block{
+  .btn + .help-block, label + .help-block, {
     margin-top:0;
   }
 }
