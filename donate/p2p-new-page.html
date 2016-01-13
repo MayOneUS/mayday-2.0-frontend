@@ -1,0 +1,219 @@
+---
+layout: default
+title: Take Action
+permalink: /donate/new/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/donate/new/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="Create your donation page"/>
+  <title>Create your donation page</title>
+  <meta property="og:description" content="This is optional content"/>
+  <link rel="canonical" href="https://mayday.us/donate/new/">
+  <meta name="robots" content="noindex"><!--  remove no-index when you take pages live -->
+---
+{% capture custom_css %}
+<style type="text/css">
+  body.activeActionPanel{margin-top:80px;}
+  .js-p2p-page textarea{min-height:240px;}
+  .js-preview-action-panel{position:absolute;z-index:5000;width:100%;top:0;}
+</style>
+{% endcapture %}
+
+{% capture content %}
+<div class="container js-p2p-page">
+  <div class="col-md-12">
+    <div class="row">
+      <h1>Make your own donation page!</h1>
+      <p>Let's get started</p>
+    </div>
+    <div class="row">
+      <form class="join md-inputs">
+        <fieldset>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label sr-only" for="person[first_name]">First Name</label>
+              <input id="person[first_name]" name="person[first_name]" type="text" required="required" value="First Name">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+              <input id="person[last_name]" name="person[last_name]" type="text" required="required" value="Last Name">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label class="control-label sr-only" for="person[zip]">ZIP</label>
+              <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text"  required="required" value="ZIP" />
+            </div>
+
+            <div class="form-group col-md-8">
+              <label class="control-label sr-only" for="person[email]">Email Address</label>
+              <input id="person[email]" name="person[email]" type="email" value="Email Address" required="required" />
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="grey-content-wrap">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="bottom-spacer-sm">Your page info</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label sr-only" for="donation_page[title]">Page title</label>
+              <input id="donation_page[title]" name="donation_page[title]" required="required" type="text" value="page title" />
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="form-group col-md-8">
+              <label class="control-label sr-only" for="donation_page[visible_user_name]">Your Display Name</label>
+              <input id="donation_page[visible_user_name]" name="donation_page[visible_user_name]" required="required" type="text" value="Your Display Name" />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label class="control-label sr-only" for="donation_page[slug]">Slug</label>
+              <input type="text" name="donation_page[slug]" value="Unique URL" class="js-slug" required="required" />
+              <span class="help-block">You can create a unique URL so that users can </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label sr-only" for="donation_page[intro_text]">Intro</label>
+              <textarea name="donation_page[intro_text]" value="Intro"> *MAYDAY.US* is leading a modern day civil rights movement to bring true political equality back to our Republic. You may not be able to afford your own personal lobbyist, but you can band together with members of this community and support leaders who are on the right side of history.
+
+Our innovative technologies and organizational strategies are inspiring a new generation of activism. To continue this work, we need your support. Every time you give, it’s a vote against political corruption, against legalized bribery, against crony capitalism. So, please, give what you can. Give with hope for our future, that we may one day restore our democracy.
+              </textarea>
+              <span class="help-block">Please say why people should donate. Text can be styled with <a href="/donate/markdown-guide/" target="_blank">markdown</a>.</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label sr-only" for="donation_page[photo_url]">Your Photo</label>
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <span class="btn btn-md-md btn-md-lightblue btn-file">
+                    Your Photo <input type="file"name="donation_page[photo_url]" placeholder="Upload a file..." />
+                  </span>
+                </span>
+                <input type="text" class="form-control" readonly>
+              </div>
+              <span class="help-block">Why are you interested in the Fellowship? What do you hope to contribute and gain?</span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+
+          <div class="row">
+            <div class="form-group col-md-6 center-block">
+              <div class="col-md-5">
+                <label class="control-label sr-only" for="singlebutton">Preview</label>
+                <button type="submit" class="btn btn-md-wide btn-md-red btn-md-green js-preview">Preview</button>
+              </div>
+              <input type="hidden" name="template_id" value="20150720_tech_volunteer">
+              <input type="hidden" name="person[remote_fields][tags][]" value="20150720_tech_volunteer">
+              <input type="hidden" name="person[is_volunteer]" value="1">
+            </div>
+          </div>
+          <div class="row">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="grey-content-wrap hidden js-preview-action-panel">
+  <div class="container">
+    <form class="form-horizontal md-inputs">
+      <fieldset>
+        <div class="row">
+          <div class="form-group col-md-8 no-gutter">
+            <label class="control-label col-md-4 col-lg-2 text-left">Your URL:&nbsp;</label>
+            <div class="col-md-8 col-lg-10">
+              <input type="text" name="" value="" class="js-sample-url" />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="col-md-5">
+              <label class="control-label sr-only" for="singlebutton">Edit</label>
+              <button type="submit" class="btn btn-md-md btn-md-lightblue">Edit</button>
+            </div>
+            <div class="col-md-7">
+              <label class="control-label sr-only" for="singlebutton">Finish &amp; Save!</label>
+              <button type="submit" class="btn btn-md-md btn-md-green">Finish &amp; Save!</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<div class="container hidden">
+  <div class="row">
+    <div class="col-md-6 col-lg-6 js-rendered-page-placeholder"></div>
+    <div class="col-sm-8 col-md-6 col-lg-5">
+      <div class="box-inner donate-page-box">
+        <h2 class="box-title">Donate In Two Minutes or Less</h2>
+        {% include form_donate_dummy.html %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+
+{% capture page_specific_javascript %}
+{% javascript vendor/marked.min.js %}
+
+<script>
+  // enable fake file input select
+  $(document).on('change', '.btn-file :file', function() {
+    var input = $(this),
+      numFiles = input.get(0).files ? input.get(0).files.length : 1,
+      label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [numFiles, label]);
+  });
+  $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+    var input = $(this).parents('.input-group').find(':text'),
+      log = numFiles > 1 ? numFiles + ' files selected' : label;
+    if( input.length ) {
+      input.val(log);
+    }
+  });
+  function generateRenderPageData(){
+    var rawData = $('.js-p2p-page form').serializeObject();
+    rawData.donation_page.intro_text_markdown = marked(rawData.donation_page.intro_text);
+    rawData.donation_page.slug = slugify(rawData.donation_page.slug);
+    return rawData.donation_page;
+  }
+
+  $(document).ready(function(){
+    $('.js-slug').on('blur', function(e){
+      console.log(e.currentTarget.value);
+      e.currentTarget.value = slugify(e.currentTarget.value);
+    });
+    $('.js-preview').on('click', function(){
+      var donation_page_data = generateRenderPageData(),
+        renderedHtml = HandlebarsTemplates['p2p-donate-content'](donation_page_data),
+        $renderArea = $('.js-rendered-page-placeholder'),
+        $parentArea = $('.js-rendered-page-placeholder').parents('.container');
+        $previewArea = $('.js-preview-action-panel'),
+        $editingArea = $('.js-p2p-page');
+      $renderArea.empty().append(renderedHtml);
+      $('.js-sample-url').val('https://mayday.us/mydonate/#'+donation_page_data.slug);
+      $parentArea.removeClass('hidden');
+      $previewArea.removeClass('hidden');
+      $editingArea.addClass('hidden');
+      $('body').addClass('activeActionPanel')
+    })
+  });
+</script>
+{% endcapture %}
+
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}

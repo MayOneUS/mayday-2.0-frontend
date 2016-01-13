@@ -35,7 +35,6 @@ $color-dossier-red: #910216;
 $color-dossier-green: #426E2F;
 $color-dossier-orange: #D07F30;
 
-
 $spacing-unit: 1;
 $spacing-unit-half: 0.5em;
 $base-line-height: 1.0em;
@@ -45,7 +44,7 @@ $bottom-spacing: 15px;
 $top-spacing: 15px;
 $left-margin-spacing: 1.3em;
 
-$header-weight: 300;
+$header-weight: 400;
 
 $tablet-min-width: 768px;
 $small-desktop-min-width: 992px;
@@ -196,7 +195,7 @@ li {
 /**
  * Headings
  */
-h1, h2, h3, legend {
+h1, h2, h3, h4, legend {
   font-weight: $header-weight;
   color: $color-navy-blue-light;
 }
@@ -341,7 +340,6 @@ code {
 
 pre {
   padding: 8px 12px;
-  overflow-x: scroll;
 
   > code {
     border: 0;
@@ -520,4 +518,10 @@ pre {
 
 .jumbotron h1.text-hide { //bootstrap override
   color: transparent;
+}
+
+
+.grey-content-wrap{
+  background: $color-grey-light;
+  border:1px solid $color-grey-background;
 }
