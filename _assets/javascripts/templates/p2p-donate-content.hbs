@@ -1,6 +1,8 @@
 <h1>{{title}}</h1>
 <h3>by <strong>{{visible_user_name}}</strong></h3>
-<img src="{{photo_url}}" alt="user_photo">
+{{#if thumbnail}}
+<img src="{{thumbnail}}" alt="user_photo">
+{{/if}}
 {{{intro_text_markdown}}}
 
 <h3>Share this</h3>

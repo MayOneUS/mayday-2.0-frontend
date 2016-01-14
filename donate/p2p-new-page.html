@@ -16,6 +16,8 @@ meta_content: |
   body.activeActionPanel{margin-top:80px;}
   .js-p2p-form-container textarea{min-height:240px;}
   .js-preview-action-panel{position:absolute;z-index:5000;width:100%;top:0;}
+  .js-cloudinary-thumbnails .cloudinary-thumbnails{display:none;float:right;}
+  .js-cloudinary-thumbnails .cloudinary-thumbnails:last-child{display:block;}
 </style>
 {% endcapture %}
 
@@ -91,18 +93,14 @@ Our innovative technologies and organizational strategies are inspiring a new ge
           </div>
 
           <div class="row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-4">
               <label class="control-label sr-only" for="donation_page[photo_url]">Your Photo</label>
               <div class="input-group">
-                <span class="input-group-btn">
-                  <span class="btn btn-md-md btn-md-lightblue btn-file">
-                    Your Photo <input type="file"name="donation_page[photo_url]" placeholder="Upload a file..." />
-                  </span>
-                </span>
-                <input type="text" class="form-control" readonly>
+                <a href="#" id="upload_widget_opener" class="btn btn-md-md btn-md-lightblue">Upload your photo</a>
               </div>
-              <span class="help-block">Why are you interested in the Fellowship? What do you hope to contribute and gain?</span>
+              <span class="help-block">Add your photo because it's you!</span>
             </div>
+            <div class="col-md-8 js-cloudinary-thumbnails"></div>
           </div>
         </fieldset>
         <fieldset>
@@ -111,7 +109,7 @@ Our innovative technologies and organizational strategies are inspiring a new ge
             <div class="form-group col-md-6 center-block">
               <div class="col-md-5">
                 <label class="control-label sr-only" for="singlebutton">Preview</label>
-                <button type="submit" class="btn btn-md-wide btn-md-red btn-md-green js-preview">Preview</button>
+                <button type="submit" class="btn btn-md-wide btn-md-red btn-md-green js-preview-button">Preview</button>
               </div>
               <input type="hidden" name="template_id" value="20150720_tech_volunteer">
               <input type="hidden" name="person[remote_fields][tags][]" value="20150720_tech_volunteer">
@@ -152,44 +150,75 @@ Our innovative technologies and organizational strategies are inspiring a new ge
   </div>
 </div>
 <div class="container hidden js-preview">
-  <div class="row">
-    <div class="col-md-6 col-lg-6 js-rendered-p2p-placeholder"></div>
-    <div class="col-sm-8 col-md-6 col-lg-5">
-      <div class="box-inner donate-page-box">
-        <h2 class="box-title">Donate In Two Minutes or Less</h2>
-        {% include form_donate_dummy.html %}
-      </div>
-    </div>
-  </div>
+  {% include donate/p2p_page_body.html %}
 </div>
 {% endcapture %}
 
 
 {% capture page_specific_javascript %}
 {% javascript vendor/marked.min.js %}
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
 <script>
  md.p2p = {};
 (function(p2p) {
+  p2p.cloudinary_base_url = 'http://res.cloudinary.com/mayday/'
+
+  p2p.cloudinary_options = {
+      cloud_name: 'mayday',
+      upload_preset: 'gxmwkd7p',
+      cropping: 'server',
+      folder: 'p2p-donate-pages',
+      button_caption: 'Upload a profile photo',
+      button_class: 'btn btn-md-md btn-md-lightblue',
+      // theme: 'mininal',
+      cropping_aspect_ratio: 1,
+      field_name: 'donation_page[photo_url]',
+      multiple: false,
+      max_file_size: 1024000,
+      max_files: 1,
+      thumbnail_transformation: {width: 200, height: 200, crop: 'fill' },
+      thumbnails: '.js-cloudinary-thumbnails'
+    }
+
   p2p.initializeDomObjects = function(){
-    p2p.$renderElement      = $('.js-rendered-p2p-placeholder'),
+    p2p.$renderElement      = $('.js-rendered-p2p-placeholder');
     p2p.$parentElement      = $('.js-rendered-p2p-placeholder').parents('.container');
-    p2p.$previewElement     = $('.js-preview'),
-    p2p.$actionBarElement   = $('.js-preview-action-panel'),
-    p2p.$editingElement     = $('.js-p2p-form-container'),
-    p2p.$editingFormElement = p2p.$editingElement.find('form'),
+    p2p.$previewElement     = $('.js-preview');
+    p2p.$actionBarElement   = $('.js-preview-action-panel');
+    p2p.$editingElement     = $('.js-p2p-form-container');
+    p2p.$editingFormElement = p2p.$editingElement.find('form');
     p2p.$body               = $('body');
   }
 
-  p2p.generateRenderPageData = function(){
+  p2p.initializeImageUploader = function(){
+    $('#upload_widget_opener').cloudinary_upload_widget(
+      p2p.cloudinary_options,
+      function(error, result) { console.log(error, result) }
+    );
+  }
+
+  p2p.generateRenderedPageData = function(){
     p2p.formObject = p2p.$editingFormElement.serializeObject();
-    p2p.formObject.donation_page.intro_text_markdown = marked(p2p.formObject.donation_page.intro_text);
-    p2p.formObject.donation_page.slug = slugify(p2p.formObject.donation_page.slug);
-    return p2p.formObject.donation_page;
+    var donation_page = p2p.formObject.donation_page;
+    donation_page.slug = slugify(donation_page.slug);
+    donation_page.intro_text_markdown = marked(donation_page.intro_text);
+    donation_page.thumbnail = p2p.parseTransformedThumbnailUrl(donation_page.photo_url)
+    return donation_page;
+  }
+
+  p2p.parseTransformedThumbnailUrl = function(cloundiary_string){
+    if(typeof cloundiary_string != 'undefined'){
+      var transformed_image_path = cloundiary_string
+        .replace(/#.+/,'')
+        .replace('image/upload','image/upload/h_200,w_200,c_fill');
+      return (p2p.cloudinary_base_url + transformed_image_path);
+    }
   }
 
   p2p.renderPreview = function(){
-    var donation_page_data = p2p.generateRenderPageData(),
+    console.log('render')
+    var donation_page_data = p2p.generateRenderedPageData(),
       renderedHtml = HandlebarsTemplates['p2p-donate-content'](donation_page_data);
     $('.js-sample-url').val('https://mayday.us/mydonate/#'+donation_page_data.slug);
     p2p.$renderElement.empty().append(renderedHtml);
@@ -207,26 +236,31 @@ Our innovative technologies and organizational strategies are inspiring a new ge
     p2p.$editingElement.removeClass('hidden');
   }
 
-  p2p.formValidator = function(callback){
+  p2p.initializeFormValidator = function(){
     p2p.$editingFormElement.validate({
       submitHandler: function(form) {
-        callback();
-      }
+        p2p.storeDonationPage();
+      },
     });
   }
 
   p2p.storeDonationPage = function(){
-    p2p.generateRenderPageData();
+    console.log('posting:', p2p.formObject, 'to: services_url');
     $.post(services_url + '/donation_pages', p2p.formObject, function(data){
-      // Cookies.set('personal_donation_page_uuid', data.uuid)
-      window.location = 'https://mayday.us/mydonate/#' + p2p.formObject.slugify;
+      Cookies.set('personal_donation_page_uuid', data.slug)
+      data.inspect
+      // window.location = 'https://mayday.us/mydonate/#' + data;
     })
   }
 
-  p2p.fetchExistingDonatePage = function(){
-    p2p.existingPageUuid = Cookies.get('personal_donation_page_uuid');
-    $.get(services_url + '/donation_page', data, function(){
-
+  p2p.renderExistingDonatePage = function(slug){
+    // p2p.existingPageUuid = Cookies.get('personal_donation_page_uuid');
+    $.get(services_url + '/donation_page', {id: slug}, function(data){
+      $p2p.showDonationPageData = data;
+      $p2p.showDonationPageData.intro_text_markdown = marked($p2p.showDonationPageData.intro_text);
+      $p2p.showDonationPageData.thumbnail = p2p.parseTransformedThumbnailUrl(donation_page.photo_url)
+      renderedHtml = HandlebarsTemplates['p2p-donate-content']($p2p.showDonationPageData);
+      p2p.$renderElement.append(renderedHtml);
     });
   }
 
@@ -234,15 +268,18 @@ Our innovative technologies and organizational strategies are inspiring a new ge
     $('.js-slug').on('blur', function(e){
       e.currentTarget.value = slugify(e.currentTarget.value);
     });
-    $('.js-preview').on('click', function(){
-      p2p.formValidator(p2p.renderPreview);
+    $('.js-preview-button').on('click', function(e){
+      e.preventDefault();
+      if(p2p.$editingFormElement.valid()){
+        p2p.renderPreview();
+      }
     });
     $('.js-edit').on('click', function(){
       p2p.renderEdit();
     });
     $('.js-save').on('click', function(){
-      p2p.formValidator(p2p.storeDonationPage);
-      alert('not implemented, but goal to save and redirect to target page');
+      p2p.$editingFormElement.submit();
+      // alert('not implemented, but goal to save and redirect to target page');
     });
     $('.js-preview-action-panel form').on('submit', function(e){
       e.preventDefault();
@@ -252,6 +289,8 @@ Our innovative technologies and organizational strategies are inspiring a new ge
   p2p.initialize = function(){
     p2p.initializeEventBindings();
     p2p.initializeDomObjects();
+    p2p.initializeImageUploader();
+    p2p.initializeFormValidator();
   }
 
 })(md.p2p);
