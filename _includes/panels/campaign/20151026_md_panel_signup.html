@@ -96,7 +96,7 @@
           $donate_input = $('#person-remote_fields-tags-1'),
           submit_button_val = $form.find("button#clicked").val();
       $form.find('button#clicked').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-      $.post('{{site.services_url}}/actions', $form.serialize()).done(function(){
+      $.post(services_url+'/actions', $form.serialize()).done(function(){
         window['optimizely'] = window['optimizely'] || [];
         window.optimizely.push(["trackEvent", "JoinSignup"]);
         {% if include.facebook_pixel_id %}

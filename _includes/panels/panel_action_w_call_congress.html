@@ -87,7 +87,7 @@
         _gaq.push(['_trackEvent', 'submit', '20150501_call_congress']);
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Calling');
-        $.post('{{site.services_url}}/ivr/calls', $form.serialize() ).done(function(data){
+        $.post(services_url+'/ivr/calls', $form.serialize() ).done(function(data){
           $parent = $form.parents('.incomplete');
           if(location.pathname == '/take-action/'){
             setAsComplete($parent);
