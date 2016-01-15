@@ -87,7 +87,7 @@
   p2p.edit.storeDonationPage = function(){
     $.post(services_url + '/donation_pages', p2p.formObject, function(data){
       Cookies.set('personal_donation_page_uuid', data.slug)
-      // window.location = 'https://mayday.us/mydonate/#' + data;
+      window.location = '/mydonate/#' + data.slug;
     })
   }
 
