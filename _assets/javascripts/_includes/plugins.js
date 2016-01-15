@@ -18,6 +18,15 @@ function getParameterByName (name) {
   return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function urlHasFragment(){
+  return (location.hash.length > 1)
+}
+
+function getUrlFragment(){
+  hash_location = location.hash || '';
+  return hash_location.replace(/^#/,'');
+}
+
 // https://gist.github.com/mathewbyrne/1280286
 function slugify (text) {
   return text.toString().toLowerCase()

@@ -18,8 +18,8 @@ function setHash($target){
 }
 
 function loadTargetedAction(){
-  if(location.hash.length > 1){
-    hash_location = location.hash.replace(/^#/,'');
+  if(urlHasFragment()){
+    hash_location = getUrlFragment();
     $targetAction = $('.js-'+hash_location);
     makeActive($targetAction);
     $("html, body").animate({ scrollTop: $targetAction.offset().top }, 100);
