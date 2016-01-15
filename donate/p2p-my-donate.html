@@ -1,0 +1,37 @@
+---
+layout: default
+title: Take Action
+permalink: /mydonate/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/mydonate/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="Custom meta content - Optional"/>
+  <title>Custom meta content - Optional</title>
+  <meta property="og:description" content="This is optional content"/>
+  <link rel="canonical" href="https://mayday.us/mydonate/">
+  <meta name="robots" content="noindex"><!--  remove no-index when you take pages live -->
+---
+{% capture content %}
+<div class="container">
+  <div class="col-md-12">
+    {% include donate/p2p_page_body.html %}
+  </div>
+</div>
+{% endcapture %}
+
+
+{% capture page_specific_javascript %}
+{% capture asset_path_string %}{% asset_path p2p_donation_pages %}{% endcapture %}
+<script type="text/javascript" src="{{ asset_path_string | js_cache_bust }}"></script>
+
+<script>
+  $(document).ready(function(){
+    md.p2p.show.initialize();
+  });
+</script>
+{% endcapture %}
+
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
