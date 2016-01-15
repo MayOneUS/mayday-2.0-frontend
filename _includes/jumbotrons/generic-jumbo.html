@@ -90,7 +90,7 @@
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
       $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
       }).done(function(){
-        location = '/elect-jamie-raskin/donate/'
+        location = '/donate/'
       });
     }
   });
