@@ -1,7 +1,7 @@
 <style type="text/css" media="screen">
 
-.jumbotron{min-height:460px;margin-bottom:0;background: #444 url('https://cloud.githubusercontent.com/assets/15802634/12187416/c7c3f2c0-b579-11e5-9bd4-07fc06c7cf2b.jpg') center 0 no-repeat;}
-.jumbotron h1{background: transparent url('/images/campaigns/20150727_ceo_headline_join_zephyr_696x69.png') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top: 30px;margin-bottom: 20px;}
+.jumbotron{min-height:460px;margin-bottom:0;background: #444 url('/images/campaigns/20150114-fix.jpg') center 0 no-repeat;}
+.jumbotron h1{background: transparent url('') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top: 30px;margin-bottom: 20px;}
 
 .jumbotron .action-panel {margin-top:60px;box-shadow:0 2px 4px rgba(22,33,63,0.8);-webkit-box-shadow:0 2px 4px rgba(22,33,63,0.8);-moz-box-shadow:0 2px 4px rgba(22,33,63,0.8)}
 .jumbotron .action-panel .panel-body{padding:0 0 10px;}
@@ -17,7 +17,7 @@
 }
 
 @media (max-width: 1199px){
-  .jumbotron{background-image: url('');background-color:#58C8DC;background-position:0 bottom;}
+  .jumbotron{background-image: url('/images/campaigns/20150429-hero-white_v01_64.png');background-color:#58C8DC;background-position:0 bottom;}
 }
 
 @media (min-width: 768px) and (max-width: 991px){
@@ -43,12 +43,11 @@
         {% capture panel_body %}
         <div class="panel-body">
           <h2>Fight corruption in politics</h2>
-          <p>Help us elect the next champion of democracy!</p>
+          <p>Help us build a national grassroots network of activists to elect champions of democracy!</p>
 
           <form class="row {{include.form_class}} smaller-form no-gutter js-jumbotron-signup">
             <input type="hidden" name="template_id" value="20151026_md_signup">
             <input type="hidden" name="person[remote_fields][tags][]" value="20151026_md_signup">
-
 
             <fieldset class="col-md-12">
               <div class="row">
@@ -91,7 +90,7 @@
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
       $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
       }).done(function(){
-        location = '/elect-jamie-raskin/donate/'
+        location = '/donate/'
       });
     }
   });
