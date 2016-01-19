@@ -6,11 +6,11 @@ meta_content: |
   <meta property="og:url" content="https://mayday.us/jobs/fellowship/"/>
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
   <meta property="og:title" content="Got some skill?"/>
-  <meta property="og:description" content="Fellows will play a key role in the campaign, assisting with communications and organizing. We want YOU to be part of the next American Revolution.  Yeah, you. MAYDAY.US is a grassroots, non-partisan campaign to fight big money corruption in politic$. We help elect reformers who will pass laws for citizen-funded elections."/>
+  <meta property="og:description" content="Apply for our Fellowship for Political Reform"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
   <meta content='@mayday' name="twitter:site"/>
-  <title>Got some skill? - MAYDAY.US</title>
+  <title>Got some skill? - MAYDAY</title>
   <link rel="canonical" href="https://mayday.us/jobs/fellowship/">
   <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 ---
@@ -187,7 +187,7 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
   <div class="row js-thanks-message hidden">
     <div class="col-md-12">
       <h2 class="text-center">Thank you for signing up!</h2>
-      <p>Thank you for applying. We will contact you at the appropriate time to begin interviews for the indicated start date.</p>
+      <p>Thank you for signing up to help with the citizen lobbying campaign. Please look for an email in the next few weeks with orientation times. Thanks for helping end DC corruption and work for a true republic.</p>
       <p>Please visit <a href="http://MAYDAY.US">http://MAYDAY.US</a> for more information and opportunities to take action.</p>
 
 
@@ -205,7 +205,7 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
         form_data =  $form.serializeObject()
-        $.post('{{site.services_url}}/v1/google_forms', $form.serialize() ).done(function(data){
+        $.post(services_url+'/v1/google_forms', $form.serialize() ).done(function(data){
           $('.js-step-one').addClass('hidden');
             $('.js-thanks-message').removeClass('hidden');
         }).fail(function(data){
