@@ -1,7 +1,8 @@
 <style type="text/css" media="screen">
 
-.jumbotron{min-height:460px;margin-bottom:0;background: #444 url('') center 0 no-repeat;}
-.jumbotron h1{background: transparent url('/images/campaigns/20150727_ceo_headline_v4_776x69.png') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top: 30px;margin-bottom: 20px;}
+.jumbotron{min-height:370px;margin-bottom:0;background: #417DB3 url('/images/campaigns/20160120_generic_jumbotron.jpg') center 0 no-repeat;}
+.jumbotron h1{background: transparent url('') right 0 no-repeat;background-size:contain;height: 63px;display: block;margin-top: 30px;margin-bottom: 20px;}
+.jumbotron h3{text-align:right;font-family:'Permanent Marker', cursive;font-size:90px;margin-top:50px;color:#fff;line-height:90px;margin-bottom:20px;padding-right:20px;}
 
 .jumbotron .action-panel {margin-top:60px;box-shadow:0 2px 4px rgba(22,33,63,0.8);-webkit-box-shadow:0 2px 4px rgba(22,33,63,0.8);-moz-box-shadow:0 2px 4px rgba(22,33,63,0.8)}
 .jumbotron .action-panel .panel-body{padding:0 0 10px;}
@@ -11,45 +12,55 @@
 .jumbotron .action-panel .form-group{margin-bottom:0;}
 .jumbotron .action-panel .no-gutter .col-md-8{padding-right:10px;}
 
-@media (min-width: 768px) and (max-width: 1199px){
+@media (max-width: 1199px){
+  .jumbotron{min-height:330px;}
+  .jumbotron h3{margin-top:30px;font-size:80px;line-height:80px}
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  /*.jumbotron {background-size:cover;}*/
   .jumbotron h1{margin-top:20px;}
   .jumbotron .action-panel{margin-top:20px;}
 }
 
-@media (max-width: 1199px){
-  .jumbotron{background-image: url('/images/campaigns/20150429-hero-bg.jpg');background-color:#58C8DC;background-position:0 bottom;}
-}
-
 @media (min-width: 768px) and (max-width: 991px){
-  .jumbotron{min-height: 370px;background-size:contain;}
-  .btn-md-gray{font-size:20px;line-height:26px}
+  .jumbotron{min-height:350px;}
+  .jumbotron .action-panel{margin-top:40px;}
+  .btn-md-gray, a.btn-md-gray:link{font-size:20px;line-height:26px;letter-spacing:0px}
+  .jumbotron h3{margin-top:80px;font-size:62px;line-height:66px;}
 }
 
 @media (max-width: 767px){
+  .jumbotron h3{text-align:center;font-size:50px;margin-top:0;margin-bottom:20px;}
   .jumbotron{background-image:none;}
   .jumbotron .action-panel{margin:10px 0 15px;}
   a.btn-md-gray:link{font-size:20px;line-height:26px;margin-top:10px;}
+}
+@media (max-width: 540px){
+  .jumbotron h3{font-size:40px;}
+}
+@media (max-width: 420px){
+  .jumbotron h3{font-size:30px;}
 }
 </style>
 
 <div class="jumbotron">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8 col-lg-7 col-xs-12 pull-right">
+      <div class="col-lg-6 col-lg-offset-1 col-md-6 col-sm-6">
+        <h3>Fix Democracy First</h3>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-offset-7 col-md-5 col-sm-6 col-sm-offset-6">
+      <div class="col-lg-5 col-lg-offset-0 col-md-5 col-md-offset-0 col-sm-6">
         {% capture panel_body %}
         <div class="panel-body">
-          <h2>Fight corruption in politics</h2>
-          <p>Help us elect the next champion of democracy!</p>
+          <div class="col-md-12">
+            <h2>Fight corruption in politics</h2>
+            <p>Help us build a national grassroots network of activists to elect champions of democracy!</p>
+          </div>
 
           <form class="row {{include.form_class}} smaller-form no-gutter js-jumbotron-signup">
             <input type="hidden" name="template_id" value="20151026_md_signup">
             <input type="hidden" name="person[remote_fields][tags][]" value="20151026_md_signup">
-
-
             <fieldset class="col-md-12">
               <div class="row">
                 <div class="form-group col-md-8 col-sm-8">
@@ -91,7 +102,7 @@
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
       $.post('{{site.services_url}}/actions', $form.serialize(), function(data){
       }).done(function(){
-        location = '/elect-jamie-raskin/donate/'
+        location = '/donate/'
       });
     }
   });
