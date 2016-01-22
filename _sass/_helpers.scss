@@ -1,0 +1,71 @@
+/* helper classes */
+.no-top-margin{
+  margin-top:0 !important;
+}
+.no-y-margin{
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+}
+
+.no-y-margin-md{
+  @include tablet-plus{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+  }
+}
+
+.no-bottom-margin{
+  margin-bottom:0 !important;
+}
+.no-padding{
+  padding:0 !important;
+}
+
+.bottom-spacer-sm{
+  margin-bottom: 40px;
+}
+
+.bottom-spacer-xs{
+  margin-bottom: 20px;
+}
+
+.bottom-spacer{
+  margin-bottom: 80px;
+}
+
+.top-spacer-btn, .top-spacer{
+  margin-top: 20px;
+}
+.top-spacer-btn .form-group{
+    margin-bottom: 0;
+}
+
+
+.bottom-thankyou-spacer{
+  margin-top: 20px;
+}
+
+.spacer-y-margin{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.spacer-y-margin-lg{
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.thinner-font{
+  font-weight: 300;
+}
+
+.text-center-sm{
+  @include tablet{
+    text-align: center;
+  }
+}
+
+
+.jumbotron h1.text-hide { //bootstrap override
+  color: transparent;
+}

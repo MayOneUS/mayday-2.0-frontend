@@ -1,3 +1,74 @@
+$tablet-min-width: 768px;
+$small-desktop-min-width: 992px;
+$large-desktop-min-width: 1200px;
+
+@mixin phone {
+  @media (max-width: #{$tablet-min-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-minus {
+  @media (max-width: #{$small-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-min-width}) and (max-width: #{$small-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-plus {
+  @media (min-width: #{$tablet-min-width}) {
+    @content;
+  }
+}
+
+@mixin small-desktop {
+  @media (min-width: #{$small-desktop-min-width}) and (max-width: #{$large-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: #{$large-desktop-min-width}) {
+    @content;
+  }
+}
+
+
+/**
+ * Basic styling
+ */
+html, body {
+  height: auto;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 400;
+  color: $color-text;
+  background-color: $color-background;
+  -webkit-text-size-adjust: 100%;
+  @include phone{
+    overflow-x: hidden;
+    color: #333;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 300px;
+  @include tablet-minus{
+    margin-bottom: 420px;
+  }
+}
+
+
 /**
  * Page content
  */
