@@ -1,0 +1,31 @@
+---
+layout: default
+title: Donate
+permalink: /warren/
+---
+{% capture content %}
+<div class="donate-page container">
+  <div class="col-md-6 col-lg-6 donate-flavor-text">
+    <h1>Did you catch it?</h1>
+    <p>Senator Elizabeth Warren (D-MA) just gave a powerful speech calling upon Congress to fight big money corruption. Not only that, but she referenced a recent MAYDAY.US poll that showed overwhelming bipartisan support for the need to fight the influence of big money in our political system.</p>
+<p>"According to a recent poll, Democrats and Republicans both agreed strongly with the idea of citizen funded elections –72% of Democrats and 62% of Republicans said yes."</p>
+    <p>MAYDAY.US is here to fight, we're here to stay, and we're here to take back our democracy from those who have hijacked it. Will you help us fight by chipping in just $5?</p>
+  </div>
+  <div class="col-sm-8 col-md-6 col-lg-5">
+    <div class="box-inner donate-page-box">
+      <h2 class="box-title">Chip in $5 to save democracy</h2>
+      {% include form_donate.html facebook_tracking_id='6033848617290' %}
+    </div>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
