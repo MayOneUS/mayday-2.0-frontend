@@ -2,6 +2,7 @@
 //= require vendor/smooth-scroll.min.js
 //= require vendor/jquery.hideseek.min.js
 //= require _includes/plugins.js
+//= require _includes/helpers.js
 //= require _includes/global.js
 //= require page_specific/legislator.js
 //= require page_specific/legislators.js
