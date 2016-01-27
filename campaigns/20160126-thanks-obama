@@ -1,0 +1,19 @@
+---
+layout: default
+title: How should we thank President Obama?
+permalink: /thanksobama/
+---
+{% capture content %}
+<center><h2>President Obama just Required government contractors to disclose political spending.
+</h2></center>
+<center><h3>Which message should we send the President?
+</h3></center>
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
