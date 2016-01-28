@@ -1,14 +1,11 @@
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
   margin-top: $top-spacing;
-  margin-bottom: $spacing-unit / 2;
 }
-
 
 
 /**
@@ -36,6 +33,7 @@ figcaption {
  */
 ul, ol {
   margin-left: $left-margin-spacing;
+  margin-bottom: 10px;
 }
 
 li {
@@ -50,9 +48,12 @@ li {
 /**
  * Headings
  */
-h1, h2, h3, legend {
+
+h1, h2, h3, h4, h5, h6, legend {
   font-weight: $header-weight;
   color: $color-navy-blue-light;
+  margin-top:0;
+  margin-bottom:15px;
 }
 
 h1{
