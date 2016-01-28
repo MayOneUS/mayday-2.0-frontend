@@ -6,3 +6,13 @@ _site
 .ruby-gemset
 .ruby-version
 .asset-cache
+
+*.html
+
+_includes/footer.html
+
+_includes/jumbotrons/generic-jumbo.html
+
+_includes/jumbotrons/generic-jumbo.html
+
+_includes/jumbotrons/generic-jumbo.html
