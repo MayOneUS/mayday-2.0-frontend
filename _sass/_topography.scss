@@ -86,6 +86,10 @@ p {
   margin-bottom: $bottom-spacing;
 }
 
+p:first-child{
+  margin-top:0;
+}
+
 /**
  * Links
  */
@@ -99,11 +103,11 @@ a {
 
   &:hover {
     color: $color-text;
-    text-decoration: underline;
   }
 }
 
-a:link, a:visited, a:active {
+/* nots are UNFORTUNATELY needed for NB, or spend 10s of hours fixing nb dependencies */
+a:link:not(.btn), a:visited:not(.btn), a:active:not(.btn) {
   color: #007acf;
 }
 
