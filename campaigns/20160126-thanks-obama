@@ -8,7 +8,7 @@ permalink: /thanksobama/
 </h2></center>
 <center><h3>Which message should we send the President?
 </h3></center>
-<p><img src="/imagines/campaigns/20160128-kiss.png"><img src="/imagines/campaigns/20160128-bandaid.png"></p>
+<p><img src="/imagines/campaigns/20160128-kiss.jpg"><img src="/imagines/campaigns/20160128-bandaid.jpg"></p>
 {% endcapture %}
 
 {% include sub_layouts/default_layout.html %}
