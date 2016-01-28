@@ -1,0 +1,304 @@
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-top: $top-spacing;
+  margin-bottom: $spacing-unit / 2;
+}
+
+
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: $left-margin-spacing;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, legend {
+  font-weight: $header-weight;
+  color: $color-navy-blue-light;
+}
+
+h1{
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom:20px;
+}
+
+legend{
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+p.subheader {
+  color: $color-navy-blue-light;
+  font-weight: 300;
+}
+
+p.byline{
+  color: $color-navy-blue-light;
+  font-weight: 700;
+  font-style: italic;
+  font-size:21px
+}
+
+/**
+ * Paragraph
+ */
+p {
+  margin-bottom: $bottom-spacing;
+}
+
+/**
+ * Links
+ */
+a {
+  color: $color-brand;
+  text-decoration: none;
+
+  &:visited {
+    color: darken($color-brand, 15%);
+  }
+
+  &:hover {
+    color: $color-text;
+    text-decoration: underline;
+  }
+}
+
+a:link, a:visited, a:active {
+  color: #007acf;
+}
+
+/**
+ * simple list
+ */
+
+ ol.simple-list {
+    list-style-type: none;
+    margin: 1em 0 1em 3em;
+    padding: 0;
+    counter-reset: li-counter;
+
+  li{
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 0.5em;
+    min-height: 3em;
+    border-left: 2px solid #CCCCCC;
+    font-size:18px;
+  }
+  li:before {
+    position: absolute;
+    top: 0;
+    left: -1em;
+    width: 0.8em;
+
+    font-size: 3em;
+    line-height: 1;
+    font-weight: bold;
+    text-align: right;
+    color: #464646;
+    content: counter(li-counter);
+    counter-increment: li-counter;
+  }
+  &.small-list li:before {
+    font-size: 2em;
+    left:-1.2em;
+  }
+  > li ul{
+    margin-bottom:1em;
+  }
+  li ul li{
+    list-style-type:square;
+  }
+}
+
+.md-modal-wrap ol.simple-list{
+  margin-left:10px;
+}
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: $color-text;
+  padding: 0.5em 1em;
+  display:inline-block;
+  margin-left:1em;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  background: #FAFAFA;
+
+  > :first-child{
+    margin-top:0;
+    margin-top:0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  font-size: 15px;
+  border: 1px solid $color-grey-light;
+  border-radius: 3px;
+  background-color: #eef;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: scroll;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+.embed-responsive{
+  background: $color-grey-background;
+}
+
+/**
+ * Icons
+ */
+.icon {
+
+  > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+
+    path {
+      fill: $color-grey;
+    }
+  }
+}
+.icon-spacer{
+  padding-right:5px;
+}
+
+@font-face {
+    font-family: 'socicon';
+    src: url('/fonts/socicon/socicon-webfont.eot');
+    src: url('/fonts/socicon/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/socicon/socicon-webfont.woff') format('woff'),
+         url('/fonts/socicon/socicon-webfont.ttf') format('truetype'),
+         url('/fonts/socicon/socicon-webfont.svg#sociconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    text-transform: initial;
+}
+
+.socicon {
+    font-family: 'socicon' !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+/**
+ * page headlines
+ */
+.mayday-headline{
+  font-size: 60px;
+  margin-bottom: .315em;
+  @include small-desktop {
+    margin-bottom: .215em;
+  }
+}
+.mayday-headline-M2{
+  font-size: 55px;
+  margin-bottom: .315em;
+  @include small-desktop {
+    margin-bottom: .215em;
+  }
+}
+.mayday-headline-smaller{
+  font-weight: 400;
+  font-size: 40px;
+}
+.mayday-headline-smaller-inverse{
+  color: #fff;
+  font-weight: 400;
+  font-size: 40px;
+  @include tablet{
+    font-size: 30px;
+  }
+}
+.mayday-headline-smaller-thinner{
+  font-weight: 300;
+}
+
+/* flash messages */
+
+.flash-message {
+  &.error {
+    border: solid 4px #900;
+    background-color: #FF6565;
+  }
+  &.notice {
+    border: solid 4px #26722D;
+    background-color: #A4E7A0;
+  }
+  &.success {
+    border: solid 4px #5CB85C;
+    background-color: #D7F9C9;
+  }
+  z-index: 999;
+  margin-bottom: 20px;
+  padding:5px;
+  h3{
+    font-weight: 700;
+    margin:0;
+  }
+}

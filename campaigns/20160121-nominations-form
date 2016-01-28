@@ -1,9 +1,9 @@
 ---
 layout: default
 title: MAYDAY.US - Make your voice heard. Get involved in your district.
-permalink: /nominate/
+permalink: /volunteer-nominate/
 meta_content: |
-  <meta property="og:url" content="https://mayday.us/nominate/"/>
+  <meta property="og:url" content="https://mayday.us/volunteer-nominate/"/>
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
   <meta property="og:title" content="Nominate a reform candidate - MAYDAY.US"/>
   <meta property="og:description" content="Help us find the next generation of leaders! Who are you nominating?"/>
@@ -29,14 +29,15 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
-      <h1><strong>Nominate a reform candidate</strong></h1>
+      <h1><strong>Awesome! You've joined the movement.</strong></h1>
+      <h2><strong>Now help us find reformers to support.</strong></h2>
     </div>
   </div>
 
   <div class="row js-step-one">
     <div class="col-md-10 action-wrap center-block incomplete">
       <div class="row">
-        <p>Help us find the next generation of leaders! We're expanding our focus to include state and local races because we need defenders of democracy at all levels.</p>
+        <p>We're expanding our focus to include state and local races because we need defenders of democracy at all levels.</p>
         <p>Please nominate candidates who are campaigning to fight big money political corruption. They must support fundamental reform; i.e. any form of small-donor/publicly financed elections, rather than our corrupt private financing model.</p>
       </div>
       <div class="row">

@@ -16,8 +16,7 @@ function render_press_releases_feed(){
     var $releasesContainer = $('#tumblr-press-releases');
 
     releasePosts.forEach(function(post, index) {
-      d = new Date(post['date']);
-      post['date'] = d.getMonth()+1 + "/" + d.getDate() + "/" + d.getFullYear();
+      post['date'] = americanDateFormat(post['date']);
       post['regular-title'] = post['regular-title'].replace('PRESS RELEASE - ','')
       var rendered_html = HandlebarsTemplates['cards/press-release'](post);
       $releasesContainer.append( rendered_html );
