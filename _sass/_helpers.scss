@@ -1,6 +1,5 @@
 /* helper classes */
 
-
 /* DEPRRECATED */
   .no-y-margin-md{
     @include tablet-plus{margin-top:0 !important;margin-bottom:0 !important;}
@@ -45,3 +44,8 @@
   .jumbotron h1.text-hide { //bootstrap override
     color:transparent;
   }
+
+.stuck {
+  position:fixed;
+  top:0;
+}

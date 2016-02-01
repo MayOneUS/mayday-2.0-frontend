@@ -1,4 +1,3 @@
-require 'jekyll-assets'
 require 'handlebars_assets'
 
 env = Sprockets::Environment.new
