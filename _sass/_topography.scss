@@ -93,22 +93,13 @@ p:first-child{
 /**
  * Links
  */
-a {
-  color: $color-brand;
-  text-decoration: none;
-
-  &:visited {
-    color: darken($color-brand, 15%);
-  }
-
-  &:hover {
-    color: $color-text;
-  }
-}
-
 /* nots are UNFORTUNATELY needed for NB, or spend 10s of hours fixing nb dependencies */
 a:link:not(.btn), a:visited:not(.btn), a:active:not(.btn) {
   color: #007acf;
+}
+
+a:hover:not(.btn) {
+  color: $color-text;
 }
 
 /**
