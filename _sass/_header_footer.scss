@@ -113,7 +113,7 @@
             padding-top: 7px;
             outline: none;
             border: 0;
-            background-color: #ffffff;
+            background-color: #fff;
             position: relative;
             .divide-line {
               position: absolute;
@@ -141,8 +141,8 @@
         color: white;
         height: 2px;
         background: black;
-        background: -webkit-radial-gradient(circle, #ffffff, $color-navy-blue);
-        background: radial-gradient(circle, #ffffff, $color-navy-blue);
+        background: -webkit-radial-gradient(circle, #fff, $color-navy-blue);
+        background: radial-gradient(circle, #fff, $color-navy-blue);
         z-index: 0;
       }
     }
@@ -404,7 +404,7 @@
   width: 100%;
   background-color: #0d3960;
   padding-top: 60px;
-  color: #ffffff;
+  color: #fff;
   @include tablet-minus{
     height: 400px;
   }
@@ -425,9 +425,9 @@
       height: 200px;
       display: block;
       border: none;
-      color:  #ffffff;
+      color:  #fff;
       width: 1px;
-      background: #000000;
+      background: #000;
       background: -webkit-radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
       background: radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
     }
@@ -515,7 +515,7 @@
         padding-top: 6px;
         outline: none;
         border: 0;
-        background-color: #ffffff;
+        background-color: #fff;
         span {
           color: $color-navy-blue-light;
           font-size: 1.5em;
@@ -535,9 +535,9 @@
       height: 200px;
       display: block;
       border: none;
-      color:  #ffffff;
+      color:  #fff;
       width: 1px;
-      background: #000000;
+      background: #000;
       background: -webkit-radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
       background: radial-gradient(circle, rgba(255,255,255,.6), #0d3960);
     }
