@@ -13,7 +13,7 @@ elif [ "$TRAVIS_BRANCH" = "production" ]; then
     echo "Going to deploy to mayday.us"
     export S3_BUCKET=mayday.us
 else
-    echo "This branch isn't alpha, master, or production - not deploying anything"
+    echo "This branch isn't tagged alpha, on master, or on production - not deploying anything."
     exit 0
 fi
 
