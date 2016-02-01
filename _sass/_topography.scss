@@ -81,7 +81,12 @@ p {
     color: $color-navy-blue-light;
     font-weight: 700;
     font-style: italic;
-    font-size:21px
+    font-size:21px;
+    .small{
+      font-weight:400;
+      font-size:85%;
+      margin-top:0;
+    }
   }
 
   &:first-child{
