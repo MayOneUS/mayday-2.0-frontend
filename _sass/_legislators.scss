@@ -1,3 +1,69 @@
+///////////////////////////////////////////////
+//  From homepage
+
+.js-legislators{
+  padding-top:45px;
+
+  .pulled-image{
+    margin-right:2%;
+    margin-left:2%;
+  }
+
+  .background-square{
+    height: 100px;
+    width: 100px;
+    background-size: 100%;
+    background:$color-grey url() center center no-repeat;
+    @include small-desktop{
+      height: 90px;
+      width: 90px;
+    }
+    @include phone{
+      padding: 0 5px 0 0;
+    }
+  }
+
+  &.newest-leaders{
+    .new-legislator{
+      @include tablet-minus{
+        padding-left: 0;
+      }
+    }
+  }
+
+  h3{
+    // padding-top: 4px;
+    font-size: 22px;
+    font-weight: 400;
+    white-space: nowrap;
+    @include small-desktop{
+      font-size: 16px;
+    }
+    @include small-desktop{
+      font-size: 20px;
+    }
+    @include phone{
+      padding-top: 8px;
+      font-size: 18px;
+    }
+  }
+  h4{
+    color: $color-brand;
+    margin-top:7px;
+    font-size: 15px;
+    @include small-desktop{
+      font-size: 13px;
+    }
+    @include phone{
+      font-size: 14px;
+    }
+  }
+}
+
+
+///////////////////////////////////////////////
+//  Legislators page
+
 .legislators-listing{
 
   h3{

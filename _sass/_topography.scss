@@ -44,7 +44,6 @@ li {
 }
 
 
-
 /**
  * Headings
  */
@@ -96,6 +95,9 @@ p:first-child{
 /* nots are UNFORTUNATELY needed for NB, or spend 10s of hours fixing nb dependencies */
 a:link:not(.btn), a:visited:not(.btn), a:active:not(.btn) {
   color: #007acf;
+}
+a:hover:not(.btn) {
+  color: $color-text;
 }
 
 a:hover:not(.btn) {
@@ -173,6 +175,24 @@ blockquote {
   }
 }
 
+.mayday-quotes{
+  p{
+    margin:45px 0 30px;
+  }
+
+  @include tablet-minus{
+    margin-top:20px;
+    margin-bottom:30px;
+    p{
+      margin:0 0 15px;
+      padding:0;
+    }
+    img{
+      margin-bottom:20px;
+    }
+  }
+}
+
 
 /**
  * Code formatting
@@ -245,20 +265,6 @@ pre {
 /**
  * page headlines
  */
-.mayday-headline{
-  font-size: 60px;
-  margin-bottom: .315em;
-  @include small-desktop {
-    margin-bottom: .215em;
-  }
-}
-.mayday-headline-M2{
-  font-size: 55px;
-  margin-bottom: .315em;
-  @include small-desktop {
-    margin-bottom: .215em;
-  }
-}
 .mayday-headline-smaller{
   font-weight: 400;
   font-size: 40px;
@@ -271,10 +277,6 @@ pre {
     font-size: 30px;
   }
 }
-.mayday-headline-smaller-thinner{
-  font-weight: 300;
-}
-
 /* flash messages */
 
 .flash-message {
