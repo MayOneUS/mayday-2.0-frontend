@@ -66,28 +66,29 @@ legend{
   margin: 0 0 20px;
 }
 
-p.subheader {
-  color: $color-navy-blue-light;
-  font-weight: 300;
-}
-
-p.byline{
-  color: $color-navy-blue-light;
-  font-weight: 700;
-  font-style: italic;
-  font-size:21px
-}
-
 /**
  * Paragraph
  */
 p {
   margin-bottom: $bottom-spacing;
+
+  &.subheader {
+    color: $color-navy-blue-light;
+    font-weight: 300;
+  }
+
+  &.byline{
+    color: $color-navy-blue-light;
+    font-weight: 700;
+    font-style: italic;
+    font-size:21px
+  }
+
+  &:first-child{
+    margin-top:0;
+  }
 }
 
-p:first-child{
-  margin-top:0;
-}
 
 /**
  * Links
@@ -96,10 +97,6 @@ p:first-child{
 a:link:not(.btn), a:visited:not(.btn), a:active:not(.btn) {
   color: #007acf;
 }
-a:hover:not(.btn) {
-  color: $color-text;
-}
-
 a:hover:not(.btn) {
   color: $color-text;
 }

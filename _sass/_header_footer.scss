@@ -408,8 +408,8 @@
   @include tablet-minus{
     height: 400px;
   }
-  a {
-    color: #ffffff;
+  a:link, a:visited, a:hover {
+    color: #fff;
     text-decoration: none;
   }
 
