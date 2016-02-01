@@ -8,7 +8,7 @@ env:
   - secure: eaXJv2OPWjWeQ/oI+zqCUNqbKEQBhW3hn/3H0k5zdAK9RTqEFw7ynXJRlMZSP4rAqNXRrD09ZohrbCidMdvWBcvFFsK/HUdwmDH58KaiLMbuCPHaoHPZvPb3PPidC4h2rLkPuXNX/jrLBa02nODmtELLK2rA9h4E8JD3JONjiEo=
 install:
 - bundle install
-script: echo "No tests - proceeding to deployment"
+script: bundle exec jekyll build
 after_success:
 - "./s3_deploy.sh"
 notifications:
