@@ -1,75 +1,47 @@
 /* helper classes */
-.no-top-margin{
-  margin-top:0 !important;
-}
-.no-y-margin{
-  margin-top:0 !important;
-  margin-bottom:0 !important;
-}
 
-.no-y-margin-md{
-  @include tablet-plus{
-    margin-top:0 !important;
-    margin-bottom:0 !important;
+
+/* DEPRRECATED */
+  .no-y-margin-md{
+    @include tablet-plus{margin-top:0 !important;margin-bottom:0 !important;}
   }
-}
 
-.no-bottom-margin{
-  margin-bottom:0 !important;
-}
-.no-padding{
-  padding:0 !important;
-}
+  .no-padding{padding:0 !important;}
+  .no-y-margin{margin-top:0 !important;margin-bottom:0 !important;}
+  .spacer-y-margin-xs{margin-bottom:10px;margin-top:10px;}
+  .spacer-y-margin{margin-bottom:20px;margin-top:20px;}
+  .spacer-y-margin-lg{margin-bottom:40px;margin-top:40px;}
+  .spacer-y-margin-xl{margin-bottom:80px;margin-top:80px;}
+  .no-top-margin{margin-top:0 !important;}
+  .top-spacer-btn, .top-spacer, .bottom-thankyou-spacer{margin-top:20px;}
+  .no-bottom-margin, .top-spacer-btn .form-group{margin-bottom:0 !important;}
+  .bottom-margin{margin-bottom:15px;}
+  .bottom-spacer-xs{margin-bottom:20px;}
+  .bottom-spacer-sm{margin-bottom:40px;}
+  .bottom-spacer{margin-bottom:80px;}
 
-.bottom-margin{
-  margin-bottom:15px;
-}
+/* FUTURE USE */
+  .thinner-font{font-weight:300;}
 
-.bottom-spacer-sm{
-  margin-bottom: 40px;
-}
+  .padding-0{padding:0 !important;}
 
-.bottom-spacer-xs{
-  margin-bottom: 20px;
-}
+  .margin-y-0{margin-bottom:0 !important;margin-top:0 !important;}
+  .margin-y-xs{margin-bottom:10px;margin-top:10px;}
+  .margin-y-sm{margin-bottom:20px;margin-top:20px;}
+  .margin-y-md{margin-bottom:40px;margin-top:40px;}
+  .margin-y-lg{margin-bottom:60px;margin-top:60px;}
+  .margin-top-0{margin-top:0 !important;}
+  .margin-top-xs{margin-top:10px;}
+  .margin-top-sm{margin-top:20px;}
+  .margin-top-md{margin-top:40px;}
+  .margin-top-lg{margin-top:60px;}
+  .margin-bottom-0{margin-bottom:0 !important;}
+  .margin-bottom-xs{margin-bottom:10px;}
+  .margin-bottom-sm{margin-bottom:20px;}
+  .margin-bottom-md{margin-bottom:40px;}
+  .margin-bottom-lg{margin-bottom:60px;}
+  .margin-bottom-xl{margin-bottom:80px;}
 
-.bottom-spacer{
-  margin-bottom: 80px;
-}
-
-.top-spacer-btn, .top-spacer{
-  margin-top: 20px;
-}
-.top-spacer-btn .form-group{
-    margin-bottom: 0;
-}
-
-
-.bottom-thankyou-spacer{
-  margin-top: 20px;
-}
-
-.spacer-y-margin{
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.spacer-y-margin-lg{
-  margin-bottom: 40px;
-  margin-top: 40px;
-}
-
-.thinner-font{
-  font-weight: 300;
-}
-
-.text-center-sm{
-  @include tablet{
-    text-align: center;
+  .jumbotron h1.text-hide { //bootstrap override
+    color:transparent;
   }
-}
-
-
-.jumbotron h1.text-hide { //bootstrap override
-  color: transparent;
-}

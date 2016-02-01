@@ -9,6 +9,7 @@ h3.panel-title {
 .label{
   a:link, a:visited, a:active {color:#fff}
 }
+a.label:link, a.label:visited, a.label:active {color:#fff}
 
 #headline .byline{
   font-size:14px;
@@ -25,7 +26,7 @@ h3.panel-title {
 .gray-content-wrap{
   background:#eee;
   outline:5px solid #eee;
-  padding:10px 0;
+  padding:10px;
 }
 
 .tipsy-s{
