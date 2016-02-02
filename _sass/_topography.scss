@@ -16,6 +16,11 @@ img {
   vertical-align: middle;
 }
 
+.embed-responsive{
+  background: $color-grey-background;
+}
+
+
 /**
  * Figures
  */
@@ -59,6 +64,19 @@ h1{
   font-size: 40px;
   margin-top: 0;
   margin-bottom:20px;
+}
+
+.mayday-headline-smaller{
+  font-weight: 400;
+  font-size: 40px;
+}
+.mayday-headline-smaller-inverse{
+  color: #fff;
+  font-weight: 400;
+  font-size: 40px;
+  @include tablet{
+    font-size: 30px;
+  }
 }
 
 legend{
@@ -169,29 +187,10 @@ blockquote {
 
   > :first-child{
     margin-top:0;
-    margin-top:0;
   }
 
   > :last-child {
     margin-bottom: 0;
-  }
-}
-
-.mayday-quotes{
-  p{
-    margin:45px 0 30px;
-  }
-
-  @include tablet-minus{
-    margin-top:20px;
-    margin-bottom:30px;
-    p{
-      margin:0 0 15px;
-      padding:0;
-    }
-    img{
-      margin-bottom:20px;
-    }
   }
 }
 
@@ -220,11 +219,6 @@ pre {
     padding-right: 0;
     padding-left: 0;
   }
-}
-
-
-.embed-responsive{
-  background: $color-grey-background;
 }
 
 /**
@@ -264,24 +258,12 @@ pre {
     -webkit-font-smoothing: antialiased;
 }
 
-/**
- * page headlines
- */
-.mayday-headline-smaller{
-  font-weight: 400;
-  font-size: 40px;
-}
-.mayday-headline-smaller-inverse{
-  color: #fff;
-  font-weight: 400;
-  font-size: 40px;
-  @include tablet{
-    font-size: 30px;
-  }
-}
 /* flash messages */
 
 .flash-message {
+  z-index: 999;
+  margin-bottom: 20px;
+  padding:5px;
   &.error {
     border: solid 4px #900;
     background-color: #FF6565;
@@ -294,9 +276,6 @@ pre {
     border: solid 4px #5CB85C;
     background-color: #D7F9C9;
   }
-  z-index: 999;
-  margin-bottom: 20px;
-  padding:5px;
   h3{
     font-weight: 700;
     margin:0;

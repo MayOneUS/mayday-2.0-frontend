@@ -1,55 +1,11 @@
 /**
  * Mayday Content
  */
-.faq-qa{
-  width: 6.5%;
-  display: inline-block;
-  float: left;
-  padding-right: 1rem;
-
-  @include small-desktop {
-    width: 10%
-  }
-
-  @include tablet {
-    width: 10%
-  }
-
-  @include phone {
-    width: 10%;
-  }
-}
-.faq-content{
-  width: 87.5%;
-  display: inline-block;
-  float: left;
-
-
-  @include small-desktop {
-    width: 85%
-  }
-
-  @include tablet {
-    width: 85%
-  }
-
-  @include phone {
-    width: 85%
-  }
-}
 .faq-content p {
   font-size: 17px;
   padding-top: 8px;
   padding-bottom: 0;
   margin-bottom: 7px;
-
-  @include small-desktop {
-
-  }
-
-  @include tablet {
-
-  }
 
   @include phone {
     line-height: 140%;
@@ -61,27 +17,3 @@
   color: $color-dark-red;
   font-weight: 400;
 }
-
-/**
- * Mayday Button
- */
-
-.btn-submit-join{
-  width: 100%;
-  background-color: $color-dark-red;
-  border-color: $color-grey-blue;
-  text-transform: uppercase;
-  color: #FFF;
-  font-size: 1.5rem;
-
-
-  &:hover {
-    background-color: $color-grey-light;
-    border-color: $color-grey-light;
-  }
-}
-.hang-line{
-  text-indent: -0.9em;
-  margin-left: 0.9em;
-}
-

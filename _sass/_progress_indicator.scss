@@ -1,29 +1,3 @@
-/**
- * Variables
- */
-$progress-breakpoint-large:1200px;
-$progress-breakpoint-medium:968px;
-$progress-breakpoint-small:715px;
-
-@mixin breakpoint-small {
-  @media (max-width: #{$progress-breakpoint-small - 1px}) {
-    @content;
-  }
-}
-
-@mixin breakpoint-medium {
-   @media (min-width: #{$progress-breakpoint-medium}) and (max-width: #{$progress-breakpoint-medium - 1px}) {
-     @content;
-   }
-}
-
-@mixin breakpoint-large {
-  @media (min-width: #{$progress-breakpoint-medium}) and (max-width: #{$progress-breakpoint-large - 1px}) {
-    @content;
-  }
-}
-
-
 .progress-include {
   background: #e4e5e9 url(/images/capitol_building.png) 0 bottom;
   overflow: hidden;
@@ -50,16 +24,16 @@ $progress-breakpoint-small:715px;
     padding: 14px 3.5% 0 3.5%;
     position: relative;
     z-index: 99;
-    @include breakpoint-large{
+    @include small-desktop{
       padding-bottom: 1em;
     }
 
-    @include breakpoint-medium {
+    @include tablet {
       padding-bottom: 0em;
 
     }
 
-    @include breakpoint-small {
+    @include tablet-minus {
       padding-bottom: 1em;
     }
   }
@@ -75,17 +49,17 @@ $progress-breakpoint-small:715px;
     z-index: 99;
   }
   .lengend-shift{
-    @include breakpoint-large{
+    @include small-desktop{
       width: 50%;
       float: right;
     }
 
-    @include breakpoint-medium {
+    @include tablet {
       width: 100%;
       float: right;
     }
 
-    @include breakpoint-small {
+    @include tablet-minus {
       width: 50%;
       float: right;
     }
@@ -113,16 +87,16 @@ $progress-breakpoint-small:715px;
       border-radius: 5px;
       display: inline-block;
       position: relative;
-      @include breakpoint-large{
+      @include small-desktop{
         width: 87%;
         margin-right: 10%;
       }
 
-      @include breakpoint-medium {
+      @include tablet {
 
       }
 
-      @include breakpoint-small {
+      @include tablet-minus {
         width: 87%;
         margin-right: 10%;
       }
@@ -180,15 +154,15 @@ $progress-breakpoint-small:715px;
   .mobile-break{
     display: none;
 
-    @include breakpoint-large{
+    @include small-desktop{
       display: inline-block;
     }
 
-    @include breakpoint-medium {
+    @include tablet {
       display: none;
     }
 
-    @include breakpoint-small {
+    @include tablet-minus {
       display: inline-block;
     }
 
