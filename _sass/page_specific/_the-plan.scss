@@ -37,7 +37,7 @@
   display: block;
   float:left;
   z-index: 10;
-  color: $color-text;
+  color: $mayday-text;
   @include tablet{
     padding: 0px 0px 30px 25px;
   }
@@ -67,7 +67,7 @@
     padding-left:5px;
     padding-right:0;
     font-size: 12px;
-    color: $color-text;
+    color: $mayday-text;
     @include tablet{
       width: 140px;
       font-size: 10px;

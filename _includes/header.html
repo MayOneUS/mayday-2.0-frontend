@@ -1,96 +1,37 @@
 <header class="site-header">
-  <div class="top-nav">
-    <div class="container">
-      {% unless page.hideMenus %}
-      <div class="icon-bar-left hidden-xs">
-        <a class="facebook" href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
-        <a class="twitter" href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
-        <a class="reddit" href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
-      </div>
-      {% endunless %}
-      <div class="logo"><a href="{{ root_path }}/"><img src="{{ root_path }}/images/web_logo_2x.png"></a></div>
-      <div class="search-section-right hidden-xs">
-      {% unless page.hideHeaderSignUp %}
-        <form class="email-signup">
-          <input type="email" name="person[email]" placeholder="Join our email list" required/>
-          <input type="hidden" name="person[remote_fields][tags][]" value="20150314_join_list">
-          <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25"> -->
-          <button type="submit">
-            <div class="divide-line"></div>
-            <span class="socicon">@</span>
-          </button>
-        </form>
-        <div class="hidden">
-          <h1 class="mayday-headline-smaller-inverse">Thank you!</h1>
-        </div>
-      {% endunless %}
-      </div>
-    <div class="fade-line hidden-xs hidden-sm"></div>
-    </div>
-  </div>
-  <div class="sub-nav hidden-xs">
-    <div class="container">
-      {% unless page.hideMenus %}
-      <div class="left-links">
-        <a href="{{ root_path }}/the-plan/">The Plan</a>
-        <span class="middle-dot">·</span>
-        <a href="{{ root_path }}/take-action/">Take Action</a>
-      </div>
-      <div class="right-links">
-        <a href="{{ root_path }}/legislators/">Leaders</a>
-        <span class="middle-dot">·</span>
-        <a href="{{ root_path }}/news">News</a>
-        <span class="middle-dot">·</span>
-        <a class="donate-link" href="{{ root_path }}/donate/">DONATE</a>
-      </div>
-      {% endunless %}
-    </div>
-  </div>
-
-  <div class="gap-filler hidden-sm hidden-md hidden-lg"></div>
-
-
-  <nav class="navbar navbar-default hidden-sm hidden-md hidden-lg">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">MENU
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
+        <h1><a class="navbar-brand" href="#">MAYDAY.US</a></h1>
       </div>
 
+      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav nav-justified">
+        <ul class="nav navbar-nav nav-pills nav-justified">
+          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
           <li><a href="{{ root_path }}/the-plan/">The Plan</a></li>
           <li><a href="{{ root_path }}/take-action/">Take Action</a></li>
           <li><a href="{{ root_path }}/legislators/">Leaders</a></li>
           <li><a href="{{ root_path }}/news">News</a></li>
-          <li><a href="{{ root_path }}/donate/"><i class="menu-stars fa fa-star"></i> DONATE <i class="menu-stars fa fa-star"></i></a></li>
-
-          <form class="email-signup menu-section-center">
-            <input type="email" name="person[email]" placeholder="Join our email list" size="15" required/>
-            <input type="hidden" name="person[remote_fields][tags][]" value="20150314_join_list">
-            <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25"> -->
-            <button type="submit">
-              <span class="socicon">@</span>
-            </button>
-          </form>
-          <div class="hidden menu-section-center">
-            <h1>Thank you!</h1>
-          </div>
-          <p class="nav-spacer">x</p>
-          <div class="menu-section-center">
-            <div class="menu-div-center"><a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a></div>
-            <div class="menu-div-center"><a href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a></div>
-            <div class="menu-div-center"><a href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a></div>
-          </div>
+          <li><a class="donate-link" href="{{ root_path }}/donate/">DONATE</a></li>
         </ul>
-      </div>
-
-      <!-- </div> -->    <!-- /.navbar-collapse-->
-    </div>  <!-- /.container-fluid -->
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
   </nav>
-    <div class="bottom-taper hidden-xs">
-      <div class="triangle-up"></div>
-    </div>
+
+
+
+{% comment %}
+      <div class="logo"><a href="{{ root_path }}/"><img src="{{ root_path }}/images/web_logo_2x.png"></a></div>
+      {% unless page.hideMenus %}
+
+      {% endunless %}
+{% endcomment %}
 
 </header>

@@ -38,22 +38,26 @@ $large-desktop-min-width: 1200px;
   }
 }
 
+/**
+ * Reset some basic bootstrap elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure, legend{
+  margin: 0;
+  padding: 0;
+  font-family: $base-font-family;
+}
 
 /**
  * Basic styling
  */
 html, body {
   height: auto;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  font-weight: 400;
-  color: $color-text;
   background-color: $color-background;
   -webkit-text-size-adjust: 100%;
   @include phone{
     overflow-x: hidden;
-    color: #333;
   }
 }
 
@@ -90,6 +94,10 @@ body {
   }
   @include phone{
     line-height: 1.7em;
+  }
+
+  strong{
+    font-weight:500;
   }
 }
 
