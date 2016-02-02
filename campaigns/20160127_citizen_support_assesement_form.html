@@ -30,7 +30,7 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
-      <h1><strong>Who do you support</strong></h1>
+      <h1><strong>Who do you support?</strong></h1>
     </div>
   </div>
 
@@ -268,9 +268,9 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
                 </div>
               </div>
               <div class="form-group text-left">
-                <label class="control-label sr-only" for="google_form_metadata[is_volunteer]">Volunteer</label>
-                <label class="checkbox-inline" for="google_form_metadata[is_volunteer]-0">
-                  <input type="checkbox" name="google_form_metadata[is_volunteer]" id="google_form_metadata[is_volunteer]-0" value="true"> <strong>Are you ready to volunteer?</strong>
+                <label class="control-label sr-only" for="google_form_submission_data[is_volunteer]">Volunteer</label>
+                <label class="checkbox-inline" for="google_form_submission_data[is_volunteer]-0">
+                  <input type="checkbox" name="google_form_submission_data[is_volunteer]" id="google_form_submission_data[is_volunteer]-0" value="true"> <strong>Are you ready to volunteer?</strong>
                 </label>
               </div>
             </div>
@@ -283,7 +283,6 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
               <label class="control-label sr-only" for="singlebutton">Submit</label>
               <input type="hidden" name="template_id" value="20160127_identification_form">
               <input type="hidden" name="person[remote_fields][tags][]" value="20160127_identification_form">
-              <input type="hidden" name="person[is_volunteer]" value="1">
 
               <input type="hidden" name="google_form_metadata[form_id]" value="1ZgBJfnUJEJy5q2JwhvZW-8j1xOhN-7Tk44cVJFIFu5w" />
               <input type="hidden" name="google_form_metadata[field_mappings][email]" value="entry_414834134"/>
@@ -343,7 +342,8 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
       submitHandler: function(form) {
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-        form_data =  $form.serializeObject()
+        form_data =  $form.serializeObject();
+        form_data.person.remote_fields.is_volunteer = form_data.google_form_submission_data.is_volunteer
         $.post(services_url+'/v1/google_forms', $form.serialize() ).done(function(data){
           $('.js-step-one').addClass('hidden');
           $('.js-thanks-message').removeClass('hidden');
