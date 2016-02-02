@@ -92,54 +92,21 @@ body {
     line-height: 1.7em;
   }
 }
-.page-content p{
-  @include phone{
-    padding-bottom: 18px;
-  }
-}
-
-.page-heading {
-  font-size: 20px;
-}
-
-.post-list {
-  margin-left: 0;
-  list-style: none;
-
-  > li {
-    margin-bottom: $spacing-unit;
-  }
-}
-
-.post-meta {
-  font-size: $small-font-size;
-  color: $color-grey;
-}
-
-.post-link {
-  display: block;
-  font-size: 24px;
-}
-
 
 /**
  * responsive margins
- */
-.col-centered{
-  margin: 0 auto;
-}
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  // padding-right: 15px;
+  // padding-left: 15px;
+  // margin-right: auto;
+  // margin-left: auto;
   // margin-bottom: 80px;
   @include phone {
     padding-right: 10px;
     padding-left: 10px;
-
   }
 }
+ */
 
 .sm-gutter > [class*='col-'] {
   padding-right:5px;
@@ -182,10 +149,6 @@ body {
 form.no-gutter fieldset > [class*='col-'] {
     padding-right:5px;
     padding-left:5px;
-}
-.half-gutter > [class*='col-'] {
-    padding-right:15px;
-    padding-left:15px;
 }
 .no-gutter-top > [class*='col-'] {
     padding-top:0;

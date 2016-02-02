@@ -84,6 +84,8 @@ legend{
   margin: 0 0 20px;
 }
 
+.red-text{color: $color-dark-red}
+
 /**
  * Paragraph
  */
@@ -112,6 +114,11 @@ p {
   }
 }
 
+.page-content p{
+  @include phone{
+    padding-bottom: 18px;
+  }
+}
 
 /**
  * Links
