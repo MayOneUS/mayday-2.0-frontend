@@ -39,7 +39,7 @@
   }
 
   $(document).ready(function(){
-    $.get('{{site.services_url}}/stats', function(data){
+    $.get(services_url+'/stats', function(data){
       $('#js-lobbyists-counters').html('')
       $('#js-calls-counters').html('')
       panelCounter($('#js-lobbyists-counters'), data.volunteer_count);

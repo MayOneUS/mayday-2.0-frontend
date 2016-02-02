@@ -47,7 +47,7 @@
         volunteers_current,
         $volunteer_progress = $('#js-progress-volunteers')
         $donations_progress = $('#js-progress-donations');
-    $.get('{{site.services_url}}/stats', function(data){
+    $.get(services_url+'/stats', function(data){
       donations_current = data.donations_total - donations_start;
       volunteers_current = data.volunteer_count - volunteers_start;
       volunteers_percent = Math.min(volunteers_current/volunteers_goal,1)*100;

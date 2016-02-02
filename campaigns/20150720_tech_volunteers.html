@@ -187,7 +187,7 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
         form_data =  $form.serializeObject()
-        $.post('{{site.services_url}}/v1/google_forms', $form.serialize() ).done(function(data){
+        $.post(services_url+'/v1/google_forms', $form.serialize() ).done(function(data){
           $('.js-step-one').addClass('hidden');
             $('.js-thanks-message').removeClass('hidden');
         }).fail(function(data){

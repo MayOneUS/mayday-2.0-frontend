@@ -351,14 +351,14 @@ jQuery.fn.wordCount = function(params){
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
         window.form_data =  $form.serializeObject()
-        $.post('{{site.services_url}}/people/targets', $form.serialize() ).done(function(data){
+        $.post(services_url+'/people/targets', $form.serialize() ).done(function(data){
           $('.js-step-one').addClass('hidden');
           if(data['address_required'] == true){
             $('.js-step-one-b').removeClass('hidden');
           }else{
             renderLocalLegislators(data['local_legislators']);
             $('.js-step-two').removeClass('hidden');
-            $.post('{{site.services_url}}/google_forms', window.form_data )
+            $.post(services_url+'/google_forms', window.form_data )
           }
         }).fail(function(data){
           alert('There was an error. Please try again later.')
@@ -371,7 +371,7 @@ jQuery.fn.wordCount = function(params){
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
         window.form_data = $.extend(true, window.form_data, $form.serializeObject())
-        $.post('{{site.services_url}}/people/targets', window.form_data ).done(function(data){
+        $.post(services_url+'/people/targets', window.form_data ).done(function(data){
           $('.js-step-one').addClass('hidden');
           if(data['address_required'] == 'true'){
             alert('We couldn\'t find your address.  Please try again.')
@@ -380,7 +380,7 @@ jQuery.fn.wordCount = function(params){
             $('.js-step-one-b').addClass('hidden');
             $('.js-step-two').removeClass('hidden');
           }
-          $.post('{{site.services_url}}/google_forms', window.form_data )
+          $.post(services_url+'/google_forms', window.form_data )
         }).fail(function(data){
           alert('There was an error. Please try again later.')
           $form.find('button.btn').html('Try Again');
@@ -392,7 +392,7 @@ jQuery.fn.wordCount = function(params){
         $form = $(form);
         $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Thank You');
         window.form_data = $.extend(true, window.form_data, $form.serializeObject())
-        $.post('{{site.services_url}}/google_forms', window.form_data ).done(function(data){
+        $.post(services_url+'/google_forms', window.form_data ).done(function(data){
           $('.js-step-two').addClass('hidden');
           $('.js-thanks-message').removeClass('hidden');
         }).fail(function(data){

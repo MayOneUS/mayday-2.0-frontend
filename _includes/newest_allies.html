@@ -8,7 +8,7 @@
   $(document).ready(function(){
     "use strict";
 
-    var newAlliesUrl = '{{site.services_url}}/legislators/newest_supporters.json';
+    var newAlliesUrl = services_url+'/legislators/newest_supporters.json';
 
     function renderAllies(legislator_data, index) {
       var rendered_html = '';

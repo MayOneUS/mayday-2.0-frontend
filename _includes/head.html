@@ -31,7 +31,18 @@
   {% endif %}
 
   <script>
-    window.services_url = '{{site.services_url}}';
+    var md = md || {};
+
+    window.services_url = {% case jekyll.environment %}
+      {% when 'production' %}
+        '//services.mayday.us'
+      {% when 'alpha' %}
+        '//services-staging.mayday.us'
+      {% when 'development' %}
+        '{{site.development_services_url}}'
+      {% else %}
+        '//services.mayday.us'
+      {% endcase %};
     window.blog_post_feed_url = '{{site.blog_post_feed_url}}';
     window.press_releases_feed_url = '{{site.press_releases_feed_url}}';
   </script>

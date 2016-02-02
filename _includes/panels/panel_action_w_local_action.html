@@ -154,7 +154,7 @@
     submitHandler: function(form) {
       $form = $(form);
       $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-      $.post('{{site.services_url}}/google_forms', $form.serialize() ).done(function(data){
+      $.post(services_url+'/google_forms', $form.serialize() ).done(function(data){
       }).done(function(){
         {% if include.facebook_pixel_id %}
         window._fbq = window._fbq || [];
