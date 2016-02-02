@@ -1,0 +1,113 @@
+---
+layout: default
+title: MAYDAY.US - How should we thank President Obama?
+permalink: /thanksobama/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/thanksobama/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
+  <meta property="og:title" content="Who do you support?"/>
+  <meta property="og:description" content="How should we thank President Obama?"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title>Who do you support? - MAYDAY.US</title>
+  <link rel="canonical" href="https://mayday.us/thanksobama/">
+  <!-- <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'> -->
+---
+
+{% capture custom_css %}
+<style type="text/css">
+h2 {font-weight: 400;}
+
+form.md-inputs .letter input, form.md-inputs .letter textarea{border-color: rgba(0,0,0,0.05);margin-bottom:0}
+form.md-inputs .letter p.help-block{font-size:14px;}
+form.md-inputs .letter p.help-block.text-right{text-align:right;}
+.container .row ul > ul{margin-top:0;}
+
+</style>
+{% endcapture %}
+{% capture content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1><strong>How should we thank President Obama?</strong></h1>
+    </div>
+  </div>
+  <div class="row js-step-one">
+    <div class="col-md-10 col-lg-8 col-lg-offset-2 action-wrap center-block incomplete">
+      <p>President Obama just mandated that government contractors disclose their political spending!</p>
+      <p>How should we thank him?</p>
+      <form class="join js-tech-volunteer md-inputs">
+        <fieldset>
+          <div class="row">
+            <div class="form-group col-md-8">
+              <label class="control-label sr-only" for="person[email]">Email Address</label>
+              <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required" />
+            </div>
+            <div class="form-group col-md-4">
+              <label class="control-label sr-only" for="person[zip]">ZIP</label>
+              <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text"  required="required" placeholder="ZIP" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-10 center-block">
+
+<!--- This is the appropriate form ID --->
+              <input type="hidden" name="google_form_metadata[form_id]" value="1QSMstBXDhQv-nHeswcBMUkghIbBK1Cft3oP-doPHF5M">Loading...</iframe>" />
+
+            </div>
+          </div>
+          <div class="row">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="row js-thanks-message hidden">
+    <div class="col-md-12">
+      <h2 class="text-center">You're funny.</h2>
+<p>We'll send President Obama a thank you for issuing the dark money executive order.</p>
+<p>Help us keep the pressure up <a href="https://MAYDAY.US/donate">with a few bucks</a>!</p>
+
+
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture panel_record_js%}
+<script>
+  $(document).ready(function(){
+    $('input[name=google_form_submission_data\\[often_vote_for\\]]').on('change', function(){
+      if($('#radios-4').prop('checked')){
+        $('#often_vote_for_other').prop('disabled', false)
+      }else{
+        $('#often_vote_for_other').prop('disabled', 'disabled')
+      }
+    });
+
+    var form_data;
+    $('.js-tech-volunteer').validate({
+      submitHandler: function(form) {
+        $form = $(form);
+        $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+        form_data =  $form.serializeObject()
+        $.post(services_url+'/v1/google_forms', $form.serialize() ).done(function(data){
+          $('.js-step-one').addClass('hidden');
+          $('.js-thanks-message').removeClass('hidden');
+          // uncomment the following and add a url or path to execute a redirect after completing the form.
+          // window.loaction = '/some-redirect-url';
+        }).fail(function(data){
+          alert('There was an error. Please try again later.')
+          $form.find('button.btn').html('Try Again');
+        });
+      }
+    });//on submit
+  });
+
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_record_js}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
