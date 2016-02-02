@@ -3,3 +3,7 @@ function store_form_data ($form,keys) {
     $.jStorage.set(key, $form.find(key).val() )
   }
 }
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
