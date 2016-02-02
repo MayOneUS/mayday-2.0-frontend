@@ -3,10 +3,6 @@
  * buttons
  */
 
- /**
- * Wide Button Mixin
- * @param {Color} $color-bg
- */
 @mixin button-colors($color-bg, $color-font: #fff) {
   color: $color-font;
   background-color: $color-bg;
@@ -20,6 +16,16 @@
     color: $color-font;
   }
 }
+
+@mixin simple-button{
+  margin:0;
+  letter-spacing: 1px;
+  @include phone{
+    letter-spacing: 0;
+    font-size:20px;
+  }
+}
+
 .btn-md-wide, .btn-md-md{
   @include button-colors($color-dark-red);
   width: 100%;
@@ -38,15 +44,6 @@
   font-size: 22px;
 }
 
-@mixin simple-button{
-  margin:0;
-  letter-spacing: 1px;
-  @include phone{
-    letter-spacing: 0;
-    font-size:20px;
-  }
-}
-
 .btn-md-red, a.btn-md-red:link {
   @include simple-button;
 }
@@ -55,7 +52,6 @@
   @include simple-button;
   font-weight: 300;
 }
-
 .vid-share-button{
   letter-spacing: 1px;
   border-radius: 4px;
@@ -118,7 +114,6 @@ a.btn-targets {
   @include button-colors(#b0aeaf);
   color: #fff ;
 
-
   @include large-desktop {
     padding: 6px 28px;
     font-size: 14px;
@@ -146,6 +141,10 @@ a.btn-targets {
     background-color: lighten( $color-dark-red, 5% );
     border: 2px solid #fff;
   }
+}
+
+a.donate-link{
+  @include donate-button($color-dark-red);
 }
 
 
@@ -189,12 +188,6 @@ label.error{
     border: 8px solid;
     border-color: transparent transparent #f0f0f0 transparent;
   }
-}
-
-.help-block.for-checkboxes{
-  font-size:15px;
-  line-height: 1em;
-  margin-top:0;
 }
 
 .md-select-container{
@@ -258,29 +251,28 @@ form.md-inputs {
     background-color: #ddd;
     -webkit-box-shadow: 0 0 0 1000px #ddd inset;
   }
-}
-form.md-inputs{
+
   ::-webkit-input-placeholder{color:#aaa;}
   :-moz-placeholder{color:#aaa;}
   ::-moz-placeholder{color:#aaa;}
   :-ms-input-placeholder{color:#aaa;}
 
-  input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
-    padding:5px 10px;
-    height:auto;
-  }
+
   .help-block{
     font-size:15px;
     text-align: left;
     line-height: normal;
     padding-top:0;
     margin:-15px 0 10px 2px;
+    &.for-checkboxes{
+      font-size:15px;
+      line-height: 1em;
+      margin-top:0;
+    }
   }
   p.help-block{
     margin-top:0;
   }
-
-
   .btn + .help-block, label + .help-block{
     margin-top:0;
   }

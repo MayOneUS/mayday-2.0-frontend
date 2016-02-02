@@ -201,9 +201,6 @@
         width: 50%;
       }
     }
-    a.donate-link{
-      @include donate-button($color-dark-red);
-    }
   }
 
   .bottom-taper {
@@ -524,7 +521,6 @@
     }
   }
 
-
   .center-col {
     text-align: center;
     position: relative;
@@ -577,12 +573,8 @@
         color: #e6e6e6;
       }
     }
-    .donate-link {
+    a.donate-link {
       margin-top: 20px;
-
-      a {
-        @include donate-button($color-dark-red);
-      }
     }
   }
 }
