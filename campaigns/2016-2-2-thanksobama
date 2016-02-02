@@ -55,75 +55,11 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
 
             <div class="form-group col-md-6">
               <label class="control-label" for="volunteer_tasks">Which candidate are you supporting to fight big money corruption?</label>
-              <div class="radio">
-                <label for="candidate-radio-14">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-14" value="Hillary Clinton">
-                  Hillary Clinton
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-0">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-0" value="Bernie Sanders">
-                  Bernie Sanders
-                </label>
-              </div>
+
               <div class="row">
                 <hr class="col-md-6"/>
               </div>
-              <div class="radio">
-                <label for="candidate-radio-2">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-2" value="Jeb Bush">
-                  Jeb Bush
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-4">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-4" value="Ben Carson">
-                  Ben Carson
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-5">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-5" value="Chris Christie">
-                  Chris Christie
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-6">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-6" value="Ted Cruz">
-                  Ted Cruz
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-7">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-7" value="Carly Fiorina">
-                  Carly Fiorina
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-9">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-9" value="John Kasich">
-                  John Kasich
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-10">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-10" value="Marco Rubio">
-                  Marco Rubio
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-11">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-11" value="Rick Santorum">
-                  Rick Santorum
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-12">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-12" value="Donald Trump">
-                  Donald Trump
-                </label>
-              </div>
+              
               <div class="row">
                 <hr class="col-md-6"/>
               </div>
@@ -186,21 +122,6 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
               <input type="hidden" name="google_form_metadata[field_mappings][email]" value="entry_414834134"/>
               <input type="hidden" name="google_form_metadata[field_mappings][zip]" value="entry_530283736"/>
               <input type="hidden" name="google_form_metadata[field_mappings][candidate_info]" value="entry_1761676163"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][hillary_clinton]" value="entry_1077804147"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][bernie_sanders]" value="entry_1418693069"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][martin_omalley]" value="entry_1331422213"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][jeb_bush]" value="entry_1161990442"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][ben_carson]" value="entry_1002146156"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][chris_christie]" value="entry_1116859272"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][ted_cruz]" value="entry_424610493"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][carly_fiorina]" value="entry_1573069576"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][mike_huckabee]" value="entry_279843393"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][john_kasich]" value="entry_1192485738"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][marco_rubio]" value="entry_399292793"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][rick_santorum]" value="entry_11477877"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][donald_trump]" value="entry_1394581761"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][gary_johnson]" value="entry_1034869647"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][often_vote_for]" value="entry_356876391"/>
               <input type="hidden" name="google_form_metadata[field_mappings][is_volunteer]" value="entry_294836927"/>
               <button type="submit" class="btn btn-md-wide btn-md-red">Let's do this!</button>
             </div>
@@ -214,9 +135,9 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
 
   <div class="row js-thanks-message hidden">
     <div class="col-md-12">
-      <h2 class="text-center">Thank you!</h2>
-      <p>Candidates from both parties are railing against a dysfunctional and broken government, but not all of them posess the courage to fix our democracy.</p>
-      <p>We're fighting for the most courageous reformers. Will you help <a href="https://MAYDAY.US/donate">with a few bucks</a>?</p>
+      <h2 class="text-center">You're funny.</h2>
+<p>We'll send President Obama a thank you for issuing the dark money executive order.</p>
+<p>Help us keep the pressure up <a href="https://MAYDAY.US/donate">with a few bucks</a>!</p>
 
 
     </div>
