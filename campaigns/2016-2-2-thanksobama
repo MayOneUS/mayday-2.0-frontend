@@ -30,16 +30,15 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
-      <h1><strong>Who do you support?</strong></h1>
+      <h1><strong>How should we thank President Obama?</strong></h1>
     </div>
   </div>
-
   <div class="row js-step-one">
     <div class="col-md-10 col-lg-8 col-lg-offset-2 action-wrap center-block incomplete">
-      <p>We want to hear from YOU: which presidential candidate are you supporting to fight big money political corruption?</p>
+      <p>President Obama just mandated that government contractors disclose their political spending!</p>
+      <p>How should we thank him?</p>
       <form class="join js-tech-volunteer md-inputs">
         <fieldset>
-
           <div class="row">
             <div class="form-group col-md-8">
               <label class="control-label sr-only" for="person[email]">Email Address</label>
@@ -50,24 +49,12 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
               <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text"  required="required" placeholder="ZIP" />
             </div>
           </div>
-
-          <div class="row">
-
-            <div class="form-group col-md-6">
-              <label class="control-label" for="volunteer_tasks">Which candidate are you supporting to fight big money corruption?</label>
-
-            </div>
-
-
-          </div>
-
           <div class="row">
             <div class="form-group col-md-10 center-block">
               <label class="control-label sr-only" for="singlebutton">Submit</label>
               <input type="hidden" name="template_id" value="20160127_identification_form">
               <input type="hidden" name="person[remote_fields][tags][]" value="20160127_identification_form">
               <input type="hidden" name="person[is_volunteer]" value="1">
-
               <input type="hidden" name="google_form_metadata[form_id]" value="1ZgBJfnUJEJy5q2JwhvZW-8j1xOhN-7Tk44cVJFIFu5w" />
               <input type="hidden" name="google_form_metadata[field_mappings][email]" value="entry_414834134"/>
               <input type="hidden" name="google_form_metadata[field_mappings][zip]" value="entry_530283736"/>
