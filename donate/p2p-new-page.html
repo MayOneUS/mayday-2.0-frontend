@@ -1,0 +1,126 @@
+---
+layout: default
+title: Take Action
+permalink: /donate/new/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/donate/new/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="Create your donation page"/>
+  <title>Create your donation page</title>
+  <meta property="og:description" content="This is optional content"/>
+  <link rel="canonical" href="https://mayday.us/donate/new/">
+  <meta name="robots" content="noindex"><!--  remove no-index when you take pages live -->
+---
+{% capture custom_css %}
+<style type="text/css">
+  body.activeActionPanel{margin-top:80px;}
+  .js-p2p-form-container textarea{min-height:240px;}
+  .js-preview-action-panel{position:absolute;z-index:5000;width:100%;top:0;}
+  .js-cloudinary-thumbnails .cloudinary-thumbnails{display:none;float:right;}
+  .js-cloudinary-thumbnails .cloudinary-thumbnails:last-child{display:block;}
+</style>
+{% endcapture %}
+
+{% capture content %}
+<div class="container js-p2p-form-container">
+  <div class="col-md-12">
+    <div class="row">
+      <h1>Make your own donation page!</h1>
+      <p>Let's get started</p>
+    </div>
+    <div class="row">
+      <form class="join md-inputs">
+        <fieldset>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label sr-only" for="person[first_name]">First Name</label>
+              <input id="person[first_name]" name="person[first_name]" type="text" required="required" placeholder="First Name">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+              <input id="person[last_name]" name="person[last_name]" type="text" required="required" placeholder="Last Name">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label class="control-label sr-only" for="person[zip]">ZIP</label>
+              <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text"  required="required" placeholder="ZIP" />
+            </div>
+
+            <div class="form-group col-md-8">
+              <label class="control-label sr-only" for="person[email]">Email Address</label>
+              <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required" />
+            </div>
+          </div>
+        </fieldset>
+        {% include donate/p2p_edit_form.html form_title="Your donate page details" %}
+
+        <fieldset>
+          <div class="row">
+            <div class="form-group col-md-6 center-block">
+              <div class="col-md-5">
+                <label class="control-label sr-only" for="singlebutton">Preview</label>
+                <button type="submit" class="btn btn-md-wide btn-md-red btn-md-green js-preview-button">Preview</button>
+              </div>
+              <input type="hidden" name="template_id" value="20150720_tech_volunteer">
+              <input type="hidden" name="person[remote_fields][tags][]" value="20150720_tech_volunteer">
+              <input type="hidden" name="person[is_volunteer]" value="1">
+            </div>
+          </div>
+          <div class="row">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="grey-content-wrap hidden js-preview-action-panel">
+  <div class="container">
+    <form class="form-horizontal md-inputs">
+      <fieldset>
+        <div class="row">
+          <div class="form-group col-md-8 no-gutter">
+            <label class="control-label col-md-4 col-lg-2 text-left">Your URL:&nbsp;</label>
+            <div class="col-md-8 col-lg-10">
+              <input type="text" name="" value="" class="js-sample-url" />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="col-md-5">
+              <label class="control-label sr-only" for="singlebutton">Edit</label>
+              <button type="submit" class="btn btn-md-md btn-md-lightblue js-edit">Edit</button>
+            </div>
+            <div class="col-md-7">
+              <label class="control-label sr-only" for="singlebutton">Finish &amp; Save!</label>
+              <button type="submit" class="btn btn-md-md btn-md-green js-save">Finish &amp; Save!</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<div class="container hidden js-preview">
+  {% include donate/p2p_page_body.html %}
+</div>
+{% endcapture %}
+
+
+{% capture page_specific_javascript %}
+{% capture asset_path_string %}{% asset_path p2p_donation_pages %}{% endcapture %}
+<script type="text/javascript" src="{{ asset_path_string | js_cache_bust }}"></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
+<script>
+$(document).ready(function(){
+  md.p2p.edit.initialize();
+});
+</script>
+{% endcapture %}
+
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}

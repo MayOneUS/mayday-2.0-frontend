@@ -1,0 +1,83 @@
+---
+layout: default
+title: Take Action
+permalink: /donate/markdown-guide/
+---
+{% capture content %}
+
+<div class="container">
+  <div class="col-md-12">
+    <h2>Markdown Basics</h2>
+    <p class="bottom-spacer-sm"><a href="http://daringfireball.net/projects/markdown/">Markdown</a> allows you to write using an easy-to-read, easy-to-write plain text format, which then converts to valid HTML for viewing. Full documentation can be found <a href="http://markdown-guide.readthedocs.org/en/latest/basics.html" title="Full Markdown documentation" target="_blank">here</a>.</p>
+    <h3><a id="basic-writing" class="anchor" href="#basic-writing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic writing</h3>
+    <h4><a id="paragraphs" class="anchor" href="#paragraphs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Paragraphs</h4>
+    <p>Paragraphs in Markdown are just one or more lines of consecutive text followed by one or more blank lines.</p>
+<pre class="bottom-spacer-xs"><code>On July 2, an alien mothership entered Earth's orbit and deployed several dozen saucer-shaped "destroyer" spacecraft, each 15 miles (24 km) wide.
+
+On July 3, the Black Knights, a squadron of Marine Corps F/A-18 Hornets, participated in an assault on a destroyer near the city of Los Angeles.</code></pre>
+    <h4><a id="headings" class="anchor" href="#headings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Headings</h4>
+    <p>You can create a heading by adding one or more <code>#</code> symbols before your heading text. The number of <code>#</code> you use will determine the size of the heading.</p>
+    <pre class="bottom-spacer-xs"><code># The largest heading (an &lt;h1&gt; tag)
+## The second largest heading (an &lt;h2&gt; tag)
+…
+###### The 6th largest heading (an &lt;h6&gt; tag)
+    </code></pre>
+    <h4><a id="blockquotes" class="anchor" href="#blockquotes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Blockquotes</h4>
+    <p>You can indicate <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">blockquotes</a> with a <code>&gt;</code>.</p>
+    <pre class="bottom-spacer-xs"><code>In the words of Abraham Lincoln:
+&gt; Pardon my french</code></pre>
+    <h4><a id="styling-text" class="anchor" href="#styling-text" aria-hidden="true"><span class="octicon octicon-link"></span></a>Styling text</h4>
+    <p>You can make text <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong"><strong>bold</strong></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em"><em>italic</em></a>.</p>
+    <pre class="bottom-spacer-xs"><code>*This text will be italic*
+**This text will be bold**</code></pre>
+    <p>Both <strong>bold</strong> and <em>italic</em> can use either a <code>*</code> or an <code>_</code> around the text for styling. This allows you to combine both bold and italic if needed.</p>
+      <pre class="bottom-spacer-sm"><code>**Everyone _must_ attend the meeting at 5 o'clock today.**
+    </code></pre>
+    <h3><a id="lists" class="anchor" href="#lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists</h3>
+    <h4><a id="unordered-lists" class="anchor" href="#unordered-lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unordered lists</h4>
+    <p>You can make an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">unordered list</a> by preceding list items with either a <code>*</code> or a <code>-</code>.</p>
+    <pre class="bottom-spacer-xs"><code>* Item
+* Item
+* Item
+- Item
+- Item
+- Item</code></pre>
+    <h4><a id="ordered-lists" class="anchor" href="#ordered-lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ordered lists</h4>
+    <p>You can make an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">ordered list</a> by preceding list items with a number.</p>
+    <pre class="bottom-spacer-xs"><code>1. Item 1
+2. Item 2
+3. Item 3</code></pre>
+    <h4><a id="nested-lists" class="anchor" href="#nested-lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nested lists</h4>
+    <p>You can create nested lists by indenting list items by two spaces.</p>
+    <pre class="bottom-spacer-sm"><code>1. Item 1
+  1. A corollary to the above item.
+  2. Yet another point to consider.
+2. Item 2
+  * A corollary that does not need to be ordered.
+    * This is indented four spaces, because it's two spaces further than the item above.
+    * You might want to consider making a new list.
+3. Item 3</code></pre>
+    <h3><a id="code-formatting" class="anchor" href="#code-formatting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code formatting</h3>
+    <h4><a id="inline-formats" class="anchor" href="#inline-formats" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inline formats</h4>
+    <p>Use single backticks (<code>`</code>) to format text in a special monospace format. Everything within the backticks appear as-is, with no other special formatting.</p>
+      <pre class="bottom-spacer-xs"><code>Here's an idea: why don't we take `SuperiorProject` and turn it into `**Reasonable**Project`.
+    </code></pre>
+    <h4><a id="multiple-lines" class="anchor" href="#multiple-lines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multiple lines</h4>
+    <p>You can use triple backticks (<code>```</code>) to format text as its own distinct block.</p>
+    <pre class="bottom-spacer-sm">Check out this neat program I wrote:
+```
+x = 0
+x = 2 + 2
+what is x
+```
+    </pre>
+    <h3><a id="links" class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h3>
+    <p>You can create an inline link by wrapping link text in brackets ( <code>[ ]</code> ), and then wrapping the link in parentheses ( <code>( )</code> ). </p>
+    <p>For example, to create a hyperlink to <a href="http:/mayday.us">mayday.us</a>, with a link text that says, "Visit MAYDAY!," you'd write this in Markdown:</p>
+    <pre class="bottom-spacer"><code>[Visit MAYDAY.US!](https://www.mayday.us)</code></pre>
+    <p class="spacer-y-margin-lg"><small>Source for this content originally derived from: <a href="https://help.github.com/articles/markdown-basics/">https://help.github.com/articles/markdown-basics/</a> </small></p>
+  </div>
+
+</div>
+{% endcapture %}
+{% include sub_layouts/default_layout.html %}

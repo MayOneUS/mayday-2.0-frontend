@@ -22,3 +22,22 @@ function americanDateFormat(date_string){
   date = new Date(date_string);
   return(date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear());
 }
+
+function urlHasFragment(){
+  return (location.hash.length > 1)
+}
+
+function getUrlFragment(){
+  hash_location = location.hash || '';
+  return hash_location.replace(/^#/,'');
+}
+
+// https://gist.github.com/mathewbyrne/1280286
+function slugify (text) {
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
+}

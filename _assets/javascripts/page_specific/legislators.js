@@ -3,9 +3,9 @@ if( window.location.pathname == '/legislators/' ){
 (function ( data ){
 
   function loadTargetedAction(){
-    if(location.hash.length > 1){
-      hash_location = location.hash.replace(/^#/,'');
-      setListFilter(hash_location);
+    if(urlHasFragment()){
+      fragment = getUrlFragment();
+      setListFilter(fragment);
     }
   }
 

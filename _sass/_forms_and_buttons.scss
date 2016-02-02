@@ -53,6 +53,13 @@ $color-button-lightred: #af010e;
   cursor: pointer;
 }
 
+.btn-md-lightblue{
+  @include button-colors($color-button-lightblue);
+}
+.btn-md-green{
+  @include button-colors($color-button-green);
+}
+
 .btn-md-md{
   padding: 8px;
   font-size: 22px;
@@ -247,6 +254,28 @@ form.md-inputs {
     &.error{
       border-color:$color-dark-red;
     }
+  }
+  .btn-file {
+    margin-bottom:15px;
+    margin-top:0;
+    position: relative;
+    overflow: hidden;
+    padding:6px 8px;
+  }
+  .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: #efefef;
+    cursor: inherit;
+    display: block;
   }
   &.smaller-form{
     padding-bottom: 0;

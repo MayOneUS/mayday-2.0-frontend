@@ -1,0 +1,47 @@
+<fieldset class="grey-content-wrap">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="bottom-spacer-sm">{{ include.form_title }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label class="control-label sr-only" for="donation_page[title]">Page title</label>
+      <input id="donation_page[title]" name="donation_page[title]" required="required" type="text" placeholder="Your page title" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-8">
+      <label class="control-label sr-only" for="donation_page[visible_user_name]">Your Display Name</label>
+      <input id="donation_page[visible_user_name]" name="donation_page[visible_user_name]" required="required" type="text" placeholder="Your Display Name" />
+    </div>
+
+    <div class="form-group col-md-4">
+      <label class="control-label sr-only" for="donation_page[slug]">Slug</label>
+      <input type="text" name="donation_page[slug]" placeholder="Unique URL" class="js-slug" required="required" />
+      <span class="help-block">You can create a unique URL so that users can </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label class="control-label sr-only" for="donation_page[intro_text]">Intro</label>
+      <textarea name="donation_page[intro_text]" placeholder="Intro"> *MAYDAY.US* is leading a modern day civil rights movement to bring true political equality back to our Republic. You may not be able to afford your own personal lobbyist, but you can band together with members of this community and support leaders who are on the right side of history.
+
+Our innovative technologies and organizational strategies are inspiring a new generation of activism. To continue this work, we need your support. Every time you give, it’s a vote against political corruption, against legalized bribery, against crony capitalism. So, please, give what you can. Give with hope for our future, that we may one day restore our democracy.
+      </textarea>
+      <span class="help-block">Please say why people should donate. Text can be styled with <a href="/donate/markdown-guide/" target="_blank">markdown</a>.</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-4">
+      <label class="control-label sr-only" for="donation_page[photo_url]">Your Photo</label>
+      <div class="input-group">
+        <a href="#" id="upload_widget_opener" class="btn btn-md-md btn-md-lightblue">Upload your photo</a>
+      </div>
+      <span class="help-block">Add your photo because it's you!</span>
+    </div>
+    <div class="col-md-8 js-cloudinary-thumbnails"></div>
+  </div>
+</fieldset>
