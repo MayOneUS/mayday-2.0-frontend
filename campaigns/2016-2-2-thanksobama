@@ -51,16 +51,10 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
           </div>
           <div class="row">
             <div class="form-group col-md-10 center-block">
-              <label class="control-label sr-only" for="singlebutton">Submit</label>
-              <input type="hidden" name="template_id" value="20160127_identification_form">
-              <input type="hidden" name="person[remote_fields][tags][]" value="20160127_identification_form">
-              <input type="hidden" name="person[is_volunteer]" value="1">
-              <input type="hidden" name="google_form_metadata[form_id]" value="1ZgBJfnUJEJy5q2JwhvZW-8j1xOhN-7Tk44cVJFIFu5w" />
-              <input type="hidden" name="google_form_metadata[field_mappings][email]" value="entry_414834134"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][zip]" value="entry_530283736"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][candidate_info]" value="entry_1761676163"/>
-              <input type="hidden" name="google_form_metadata[field_mappings][is_volunteer]" value="entry_294836927"/>
-              <button type="submit" class="btn btn-md-wide btn-md-red">Let's do this!</button>
+
+<!--- This is the appropriate form ID --->
+              <input type="hidden" name="google_form_metadata[form_id]" value="1QSMstBXDhQv-nHeswcBMUkghIbBK1Cft3oP-doPHF5M">Loading...</iframe>" />
+
             </div>
           </div>
           <div class="row">
