@@ -1,6 +1,6 @@
 <header class="site-header">
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
+    <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -8,17 +8,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <h1><a class="navbar-brand" href="#">MAYDAY.US</a></h1>
+        <h1><a class="navbar-brand" href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday_logo_w_shadow.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></h1>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav nav-pills nav-justified">
+        <ul class="nav navbar-nav nav-pills">
           <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
           <li><a href="{{ root_path }}/the-plan/">The Plan</a></li>
           <li><a href="{{ root_path }}/take-action/">Take Action</a></li>
           <li><a href="{{ root_path }}/legislators/">Leaders</a></li>
           <li><a href="{{ root_path }}/news">News</a></li>
+          <li><a href="#">+ More</a></li>
           <li><a class="donate-link" href="{{ root_path }}/donate/">DONATE</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -28,7 +29,6 @@
 
 
 {% comment %}
-      <div class="logo"><a href="{{ root_path }}/"><img src="{{ root_path }}/images/web_logo_2x.png"></a></div>
       {% unless page.hideMenus %}
 
       {% endunless %}

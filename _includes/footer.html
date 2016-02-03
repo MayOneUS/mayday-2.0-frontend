@@ -1,48 +1,87 @@
+
 <footer class="site-footer">
   <div class="container">
-    <div class="left-col col-xs-12 col-sm-12 col-md-3 col-lg-3">
+    <div class="row margin-bottom-sm">
       {% unless page.hideMenus %}
-      <div class="icon-line added-margin">
-        <a href="http://www.reddit.com/r/maydaypac" target="_blank"><span class="socicon">C</span></a>
-        <a href="https://www.facebook.com/MAYDAYdotUS" target="_blank"><span class="socicon">b</span></a>
-        <a href="https://twitter.com/maydayus" target="_blank"><span class="socicon">a</span></a>
-        <a href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ" target="_blank"><span class="socicon">r</span></a>
+      <div class="col-md-12">
+        <hr class="margin-top-md margin-bottom-sm" />
       </div>
-      <form class="email-signup">
-        <input type="email" name="person[email]" placeholder="Join our email list" required/>
-        <input type="hidden" name="person[remote_fields][tags][]" value="20150314_join_list">
-        <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25"> -->
-        <button type="submit">
-          <span class="socicon">@</span>
-        </button>
-      </form>
-      <div class="hidden">
-        <h1 class="margin-top-xs">Thank you!</h1>
+      <div class="col-md-6">
+        <h1><a href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday_logo.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></h1>
       </div>
-      <div class="vertical-fade-line hidden-xs hidden-sm"></div>
+      <div class="col-md-6">
+        <div class="btn-group pull-right">
+          <a class="btn" href="http://www.reddit.com/r/maydaypac"><i class="fa fa-reddit fa-lg"></i> <span class="sr-only">Reddit</span></a>
+          <a class="btn" href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ"><i class="fa fa-youtube fa-lg"></i> <span class="sr-only">Youtube</span></a>
+          <a class="btn" href="https://www.facebook.com/MAYDAYdotUS"><i class="fa fa-facebook fa-lg"></i> <span class="sr-only">Facebook</span></a>
+          <a class="btn" href="https://twitter.com/maydayus"><i class="fa fa-twitter fa-lg"></i> <span class="sr-only">Twitter</span></a>
+          <a class="btn" href="https://github.com/MayOneUS/"><i class="fa fa-github fa-lg"></i> <span class="sr-only">Github</span></a>
+        </div>
+      </div>
+      {% else %}
+        <div class="col-md-6 center-column">
+          <h1><a class="navbar-brand" href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday_logo_w_shadow.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></h1>
+        </div>
       {% endunless %}
     </div>
-    <div class="center-col col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <a href="/" class="name">MAYDAY.US</a>
-      <div class="disclaimer-box">Paid for by Mayday PAC. Not authorized by any candidate or candidate's committee. MAYDAY.US</div>
-      <div class="copyright">©2015 Mayday PAC. Some rights reserved.</div>
-      <div class="creative-commons"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="//i.creativecommons.org/l/by/3.0/80x15.png"/></a></div>
-      {% unless page.hideMenus %}<div class="vertical-fade-line hidden-xs hidden-sm"></div>{% endunless %}
-    </div>
-    <div class="right-col hidden-xs hidden-sm col-md-3 col-lg-3">
-      {% unless page.hideMenus %}
-      <div><a href="/about-us/">About</a></div>
-      <div><a href="/the-plan/#problem">The Problem</a></div>
-      <div><a href="/the-plan/#plan/">The Plan</a></div>
-      <div><a href="/the-plan/#strategy/">The Strategy</a></div>
-      <div><a href="http://blog.mayday.us">The Blog</a></div>
-      <div>&nbsp;</div>
-      <div><a href="/donate/" class="donate-link">DONATE</a></div>
-      {% endunless %}
+    {% unless page.hideMenus %}
+    <nav class="row margin-bottom-md">
+      <div class="col-md-3">
+        <h4>About</h4>
+        <ul>
+          <li><a href="{{root_path}}/the-plan/#plan/">The Plan</a></li>
+          <li><a href="{{root_path}}/about-us/">About</a></li>
+          <li><a href="{{root_path}}/leaders/">Leaders for Reform</a></li>
+          <li><a href="{{root_path}}/team-and-board/">Our Team</a></li>
+          <li><a href="{{root_path}}/faq/">FAQ</a></li>
+          <li><a href="">Contact US</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h4>Take Action</h4>
+        <ul>
+          <li></li>
+          <li><a href="{{root_path}}/join/">Sign Up</a></li>
+          <li><a href="{{root_path}}/take-action/">Get Involved</a></li>
+          <li><a href="https://gear.mayday.us/">Buy Gear</a></li>
+          <li><a href="{{root_path}}/donate/" class="text-orange">Donate</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h4>Find Us</h4>
+        <ul>
+          <li><a href="http://www.reddit.com/r/maydaypac">Reddit</span></a></li>
+          <li><a href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ">Youtube</span></a></li>
+          <li><a href="https://www.facebook.com/MAYDAYdotUS">Facebook</span></a></li>
+          <li><a href="https://twitter.com/maydayus">Twitter</span></a></li>
+          <li><a href="https://github.com/MayOneUS/">Github</span></a></li>
+          <li><a href="">Email Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h4>Media</h4>
+        <ul>
+          <li><a href="http://blog.mayday.us/">Blog</a></li>
+          <li><a href="http://blog.mayday.us/">Press releases</a></li>
+          <li><a href="{{root_path}}/in-the-news/">MAYDAY.US in the News</a></li>
+          <li><a href="{{root_path}}/videos/">Videos</a></li>
+          <li><a href="">Press Assets</a></li>
+        </ul>
+      </div>
+    </nav>
+    {% endunless %}
+    <div class="row">
+      <div class="col-md-10 center-block text-center">
+        <div class="disclaimer-box">Paid for by Mayday PAC. Not authorized by any candidate or candidate's committee. MAYDAY.US</div>
+        <div class="copyright"><i class="fa fa-creative-commons"></i> 2015 Mayday PAC. Some rights reserved.</div>
+        <div class="creative-commons"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="//i.creativecommons.org/l/by/3.0/80x15.png"/></a></div>
+      </div>
     </div>
   </div>
 </footer>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>

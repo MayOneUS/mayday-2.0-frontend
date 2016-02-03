@@ -7,59 +7,87 @@ bodyClass: index-page
 ---
 {% capture content %}
 <div id="index">
-  {% include jumbotrons/generic-jumbo.html %}
+  {% include jumbotrons/20160203_web_refresh.html %}
   <div class="container">
-    <div class="row gutter-justphone homepage-panel homepage-ribbon">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Write your letter to the editor</h2>
+        <p>Ask your member(s) of congress to change the way campaigns are funded.</p>
+        <p><a href="" title="" class="btn btn-mayday-hollow">Get Started</a></p>
+      </div>
+       <div class="col-md-8">
+        <h2>Attend an Event</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p><a href="" title="" class="btn btn-mayday-hollow">Browse Events</a></p>
+      </div>
+       <div class="col-md-8">
+        <h2>Write your letter to the editor</h2>
+        <p>See how else you can take part in the movement to lorem ipsum</p>
+        <p><a href="" title="" class="btn btn-mayday-hollow">Take Action</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Latest from our blog</h2>
+        <h4><a href="" title="">More from our Blog</a></h4>
+        <ul class="row">
+          <li class="col-md-4">
+            <time datetime="2016-01-12">January 28th, 2016</time>
+            <h3><a href="{{ url }}">Some title</a></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          </li>
+          <li class="col-md-4">
+            <time datetime="2016-01-12">January 22nd, 2016</time>
+            <h3><a href="{{ url }}">Some title</a></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqu
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.</p>
+          </li>
+          <li class="col-md-4">
+            <time datetime="2016-01-12">January 12th, 2016</time>
+            <h3><a href="{{ url }}">Some title</a></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="homepage-panel grey">
 
-      <div class="col-xs-12 col-md-4">
-        <div class="mini-panel mini-panel-text">
-          <p class="margin-y-0"><a href="/">MAYDAY.US</a> is a cross-partisan campaign to fight big money corruption in politics by electing reformers. <a href="/take-action/">Let's win our democracy back!</a></p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="mini-panel mini-panel-state">
-          <p class="margin-y-0">We're going to the grassroots, organizing local teams to help elect champions of democracy. <a href="http://volunteer.mayday.us/projects">Find a team near you</a>!</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="mini-panel mini-panel-call">
-          <div class="row call-box">
-          </div>
-          <p class="margin-y-0">One person at a time, we're building a national grassroots campaign to save our democracy from big money corruption. <a href="/take-action/">Join us</a>!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="homepage-panel dark ten-star">
-    <img class="bg-star" src="/images/star_white.svg">
-    <img class="bg-star" src="/images/star_white.svg">
-    <img class="bg-star" src="/images/star_white.svg">
-    <img class="bg-star" src="/images/star_white.svg">
-    <img class="bg-star" src="/images/star_white.svg">
-    <img class="bg-star" src="/images/star_white.svg">
-    <img class="bg-star" src="/images/star_white.svg">
-    <img class="bg-star" src="/images/star_white.svg">
-    <img class="bg-star" src="/images/star_white.svg">
-    <img class="bg-star" src="/images/star_white.svg">
-    <div class="container homepage-panel-body">
-      <div class="row">
-        <div class="col-md-10 col-xs-12">
-          <h2>We are MAYDAY.US</h2>
-            <p>Our democracy has been hijacked by a handful super wealthy corporations and families. The framers of our constitution envisioned a democracy that was representative of <strong>all of us</strong>.</p>
-            <p>It now costs millions of dollars to get and stay elected. That means <strong>our</strong> representatives are indebted to large donors to fund their elections.</p>
-            <p><strong>Luckily, we have a solution</strong>. Simple legislation that maximizes small donor contributions by matching them 6:1. This has been proven to nullify the corruption of big money on our political system.</p>
-            <p>In order to make this happen, we need to elect a critical mass of state and local champions. By growing support for fundamental reform from the ground up, we’ll force Congress to act - <strong>or get out of the way!</strong></p>
-            <p>Help us in our fight to elect reformers at all levels of democracy – so that we might take our democracy back! We’re organizing a national grassroots campaign with local chapters in 18 states already. We’ll give you the tools to make an impact – sign up below!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="homepage-panel light capitol-building">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 center-block panel-wrapper">
-          {% include panels/panel_action_w_signup.html hide_next=true %}
+        <div class="col-md-6">
+          <h2>In the news <i class="fa fa-caret-right"></i></h2>
+          <div class="row">
+            <img class="center-block" alt="Matt Miller, Washington Post Opinions" src="/images/news-logos/washington-post-large-logo-2-300x78-white.png">
+            <p>&ldquo;It&rsquo;s an ingenious plan to make the drive for small-dollar publicly funded elections a central issue in 2016. With a little luck... idea could help save the republic.&rdquo;</p>
+          </div>
+          <div class="row">
+            <img class="center-block" alt="Ben Wikler, Tech President" src="/images/news-logos/techrepublic-logo-white.png" style="opacity:0.8">
+            <p>&ldquo;The first part was hard. That second part is even harder. But now that MAYDAY has done the impossible once, it's worth staying tuned to see if they can do it again.&rdquo;</p>
+          </div>
+          <div class="row">
+            <img class="center-block" alt="Ralph Benko, Forbes Opinion" src="/images/news-logos/forbes-logo-white.png">
+            <p>&ldquo;The mortal struggle at hand today is not between the right and the left. It is not between Republicans and Democrats. It is not between the Congress and the president. It is between us (currently outsiders to our own government) voters and the Washington Insiders.&rdquo;</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 center-block panel-wrapper">
+        {% include panels/panel_action_w_signup.html hide_next=true %}
       </div>
     </div>
   </div>

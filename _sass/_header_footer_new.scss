@@ -1,0 +1,110 @@
+.navbar-fixed-top{
+  top:20px;
+
+  .navbar-brand:link:not(.btn), .navbar-brand:visited:not(.btn){
+    color: $mayday-blue-medium;
+  }
+
+  .navbar-brand:hover:not(.btn){
+    color: $mayday-text;
+  }
+
+  .navbar-brand{
+    padding-left: 85px;
+    padding-top: 17px;
+    position: relative;
+    font-weight: 500;
+    font-size: 30px;
+
+    &:hover{
+      color: $mayday-text
+    }
+
+    img{
+      position: absolute;
+      width: 65px;
+      top: -8px;
+      left:0;
+    }
+  }
+}
+
+.jumbotron{
+  padding-top:100px;
+  padding-bottom:0;
+  color:#fff;
+
+  .container{
+    background: transparent url('/images/20160203_money_in_dome.svg') center bottom no-repeat;
+    background-size:100px;
+    padding-bottom:100px
+  }
+}
+
+
+footer{
+  h1 {
+    position: relative;
+    line-height: 35px;
+    font-size: 24px;
+    font-weight: 500;
+
+    a:link:not(.btn), a:visited:not(.btn){
+      padding-left: 45px;
+      color: $mayday-blue-medium;
+    }
+    a:hover:not(.btn) {
+      color: $mayday-text;
+    }
+
+    img{
+      position: absolute;
+      width: 30px;
+      top: 0;
+      left:0;
+    }
+  }
+
+  .btn-group{
+    a:hover {
+      color: $mayday-text;
+    }
+    .btn{
+      color: $mayday-grey-medium;
+    }
+  }
+
+  nav{
+    li{
+      list-style-type: none;
+      margin-bottom:5px;
+
+      a:link:not(.btn), a:visited:not(.btn) {
+        color: $mayday-grey-medium;
+        font-size: 16px;
+      }
+      a:hover:not(.btn) {
+        color: $mayday-text;
+      }
+    }
+  }
+
+  .disclaimer-box {
+    color: lighten($mayday-grey-medium, 20%);
+    display: inline-block;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 8px;
+    margin-top: 15px;
+    width: 80%;
+    border: 1px solid lighten($mayday-grey-medium, 20%);
+  }
+  .copyright {
+    margin-top: 15px;
+    color: lighten($mayday-grey-medium, 20%);
+    font-size: 15px;
+  }
+  .creative-commons {
+    margin-top: 15px;
+  }
+}

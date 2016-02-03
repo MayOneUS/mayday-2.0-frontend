@@ -1,0 +1,71 @@
+<style type="text/css" media="screen">
+.jumbotron{background:transparent url('/images/campaigns/20160203_jumbotron_bg_2400x900.jpg') 0 0 no-repeat; background-size:cover;}
+
+@media (max-width: 1199px){
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+}
+
+@media (max-width: 767px){
+}
+@media (max-width: 540px){
+}
+@media (max-width: 420px){
+}
+</style>
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 center-block">
+        <div class="row">
+          <div class="col-md-12">
+            <h1><span class="text-yellow">End money in politics.</span> <br/>Take back our democracy.</h1>
+            <p>MAYDAY<span orange-text>.US</span> is a cross-partisan campaign to fight big money corruption in politics by electing reformers. <a href="/the-plan/" title="">Learn More</a></p>
+          </div>
+        </div>
+
+        <form class="row {{include.form_class}} smaller-form no-gutter js-jumbotron-signup">
+          <input type="hidden" name="template_id" value="20151026_md_signup">
+          <input type="hidden" name="person[remote_fields][tags][]" value="20151026_md_signup">
+          <fieldset>
+            <div class="row">
+              <div class="form-group col-md-8 col-sm-7">
+                <label class="control-label sr-only" for="person[email]">Email Address</label>
+                <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
+              </div>
+
+              <div class="form-group col-md-4 col-sm-3">
+                <label class="control-label sr-only" for="person[zip]">ZIP</label>
+                <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
+              </div>
+              <div class="form-group col-sm-2">
+                <button type="submit" class="btn btn-md-md btn-md-red">I'm in</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% capture jumbotron_signup_js %}
+<script>
+  $('.js-jumbotron-signup').validate({
+    submitHandler: function(form) {
+      $form = $(form);
+      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $.post(services_url+'/actions', $form.serialize(), function(data){
+      }).done(function(){
+        location = '/donate/'
+      });
+    }
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{jumbotron_signup_js}}{% endcapture %}
