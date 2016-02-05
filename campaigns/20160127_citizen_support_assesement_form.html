@@ -1,12 +1,12 @@
 ---
 layout: default
-title: MAYDAY.US - Make your voice heard. Vote for the candidate that will fight big money corruption.
+title: MAYDAY.US - Make your voice heard. Vote for the candidate who will fight big money corruption.
 permalink: /who-do-you-support/
 meta_content: |
   <meta property="og:url" content="https://mayday.us/who-do-you-support/"/>
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
   <meta property="og:title" content="Who do you support?"/>
-  <meta property="og:description" content="Which Presidential candidate will fight big money corruption?"/>
+  <meta property="og:description" content="Which presidential candidate will fight big money corruption?"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
   <meta content='@mayday' name="twitter:site"/>
@@ -36,10 +36,7 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
 
   <div class="row js-step-one">
     <div class="col-md-10 col-lg-8 col-lg-offset-2 action-wrap center-block incomplete">
-
-      <p>MAYDAY.US is a grassroots, non-partisan campaign to fight big money corruption in politic$. We help elect reformers who will pass laws for citizen-funded elections. Founded by Lawrence Lessig and Mark McKinnon.</p>
-      <p>We want to hear from YOU: which Presidential candidate is most likely to fight against big money political corruption?</p>
-
+      <p>We want to hear from YOU: which presidential candidate are you supporting to fight big money political corruption?</p>
       <form class="join js-tech-volunteer md-inputs">
         <fieldset>
 
@@ -56,7 +53,7 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
 
           <div class="row">
 <!--             <div class="form-group col-md-6">
-              <label class="control-label" for="volunteer_tasks">What candidate will most likely end big money corruption?</label>
+              <label class="control-label" for="volunteer_tasks">Which candidate are you supporting to fight big money corruption?</label>
               <span class="help-block">Check all that apply.</span>
               <div class="checkbox">
                 <label for="checkboxes-14">
@@ -148,7 +145,7 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
             </div> -->
 
             <div class="form-group col-md-6">
-              <label class="control-label" for="volunteer_tasks">What candidate will most likely end big money corruption?</label>
+              <label class="control-label" for="volunteer_tasks">Which candidate are you supporting to fight big money corruption?</label>
               <div class="radio">
                 <label for="candidate-radio-14">
                   <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-14" value="Hillary Clinton">
@@ -159,12 +156,6 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
                 <label for="candidate-radio-0">
                   <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-0" value="Bernie Sanders">
                   Bernie Sanders
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-1">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-1" value="Martin O'Malley">
-                  Martin O'Malley
                 </label>
               </div>
               <div class="row">
@@ -201,12 +192,6 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
                 </label>
               </div>
               <div class="radio">
-                <label for="candidate-radio-8">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-8" value="Mike Huckabee">
-                  Mike Huckabee
-                </label>
-              </div>
-              <div class="radio">
                 <label for="candidate-radio-9">
                   <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-9" value="John Kasich">
                   John Kasich
@@ -219,16 +204,13 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
                 </label>
               </div>
               <div class="radio">
-                <label for="candidate-radio-11">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-11" value="Rick Santorum">
-                  Rick Santorum
-                </label>
-              </div>
-              <div class="radio">
                 <label for="candidate-radio-12">
                   <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-12" value="Donald Trump">
                   Donald Trump
                 </label>
+              </div>
+              <div class="row">
+                <hr class="col-md-6"/>
               </div>
               <div class="radio">
                 <label for="candidate-radio-13">
@@ -316,9 +298,9 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
 
   <div class="row js-thanks-message hidden">
     <div class="col-md-12">
-      <h2 class="text-center">Thank you for signing up!</h2>
-      <p>Thank you.</p>
-      <p>Please visit <a href="http://MAYDAY.US">http://MAYDAY.US</a> for more information and opportunities to take action.</p>
+      <h2 class="text-center">Thank you!</h2>
+      <p>Candidates from both parties are railing against a dysfunctional and broken government, but not all of them posess the courage to fix our democracy.</p>
+      <p>We're fighting for the most courageous reformers. Will you help <a href="https://MAYDAY.US/donate">with a few bucks</a>?</p>
 
 
     </div>
@@ -348,7 +330,7 @@ form.md-inputs .letter p.help-block.text-right{text-align:right;}
           $('.js-step-one').addClass('hidden');
           $('.js-thanks-message').removeClass('hidden');
           // uncomment the following and add a url or path to execute a redirect after completing the form.
-          // window.loaction = '/some-redirect-url';
+           window.location = '/poll-donate/';
         }).fail(function(data){
           alert('There was an error. Please try again later.')
           $form.find('button.btn').html('Try Again');
