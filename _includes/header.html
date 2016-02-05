@@ -2,7 +2,7 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-main-menu-collapsable" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -12,21 +12,18 @@
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav nav-pills">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+      <div class="collapse navbar-collapse" id="js-main-menu-collapsable">
+        <ul class="nav nav-pills pills nav-justified">
           <li><a href="{{ root_path }}/the-plan/">The Plan</a></li>
           <li><a href="{{ root_path }}/take-action/">Take Action</a></li>
           <li><a href="{{ root_path }}/legislators/">Leaders</a></li>
           <li><a href="{{ root_path }}/news">News</a></li>
           <li><a href="#">+ More</a></li>
-          <li><a class="donate-link" href="{{ root_path }}/donate/">DONATE</a></li>
+          <li class="btn-wrap"><a href="{{ root_path }}/donate/"><span class="btn btn-mayday btn-mayday-md btn-mayday-blue-light">DONATE</span></a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
-
 
 {% comment %}
       {% unless page.hideMenus %}

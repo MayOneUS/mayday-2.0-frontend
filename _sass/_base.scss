@@ -24,35 +24,44 @@ $color-orientation: rgb(76, 43, 98);
 
 
 /* 2015 MAYDAY COLORS */
-$color-navy-blue: #16213f;
-$color-navy-blue-mid: rgb(30,46,80);
-$color-navy-blue-light: #0d3960;
-$color-dark-red: #b0010e;
-$color-grey-blue: rgb(118, 159, 189);
-$color-brand: $color-navy-blue-light;
-$color-dark-grey: rgb(50,50,50);
-$color-grey: #808080;
-$color-grey-light: #ccc;
-$color-grey-background: #f0f0f0;
-$color-grey-line: #b7b7b7;
-$color-dossier-blue: #1c7bab;
-$color-dossier-red: #910216;
-$color-dossier-green: #426e2f;
-$color-dossier-orange: #d07f30;
+  $color-navy-blue: #16213f;
+  $color-navy-blue-mid: rgb(30,46,80);
+  $color-navy-blue-light: #0d3960;
+  $color-dark-red: #b0010e;
+  $color-grey-blue: rgb(118, 159, 189);
+  $color-brand: $color-navy-blue-light;
+  $color-dark-grey: rgb(50,50,50);
+  $color-grey: #808080;
+  $color-grey-light: #ccc;
+  $color-grey-background: #f0f0f0;
+  $color-grey-line: #b7b7b7;
+  $color-dossier-blue: #1c7bab;
+  $color-dossier-red: #910216;
+  $color-dossier-green: #426e2f;
+  $color-dossier-orange: #d07f30;
+  $color-background: #fff;
+/* 2015 button colors */
+  $color-button-blue: #094067;
+  $color-button-purple: #513c5f;
+  $color-button-lightblue: #5e8cac;
+  $color-button-green: #759c64;
+  $color-button-orange: #eaa663;
+  $color-button-lightred: #af010e;
+
 
 /* 2016 MAYDAY COLORS */
-$mayday-grey-dark:        #212230;
-$mayday-grey-medium:      #7b8082;
-$mayday-grey-light:       #dae4e7;
-$mayday-offwhite:         #f4f4f4;
-$mayday-blue-medium:      #00467e;
-$mayday-blue-light:       #0055ba;
-$mayday-orange-medium:    #ef3800;
-$mayday-orange-light:     #f36533;
-$mayday-blue-highlight:   #2ac4ea;
-$mayday-yellow-highlight: #fdd63f;
-$mayday-green-highlight:  #0ad6b2;
+  $mayday-grey-dark:        #212230;
+  $mayday-grey-medium:      #7b8082;
+  $mayday-grey-light:       #dae4e7;
+  $mayday-offwhite:         #f4f4f4;
+  $mayday-blue-medium:      #00467e;
+  $mayday-blue-light:       #0055ba;
+  $mayday-orange-medium:    #ef3800;
+  $mayday-orange-light:     #f36533;
+  $mayday-blue-highlight:   #2ac4ea;
+  $mayday-yellow-highlight: #fdd63f;
+  $mayday-green-highlight:  #0ad6b2;
 
-$mayday-text: $mayday-grey-dark;
-$color-background: #fff;
-$color-offwhite: $mayday-offwhite;
+  $mayday-text: $mayday-grey-dark;
+  $mayday-background: #fff;
+  $color-offwhite: $mayday-offwhite;

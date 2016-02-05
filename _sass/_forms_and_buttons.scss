@@ -3,33 +3,90 @@
  * buttons
  */
 
-/* button colors */
-
-$color-button-blue: #094067;
-$color-button-purple: #513c5f;
-$color-button-lightblue: #5e8cac;
-$color-button-green: #759c64;
-$color-button-orange: #eaa663;
-$color-button-lightred: #af010e;
-
-
- /**
+  /**
  * Wide Button Mixin
  * @param {Color} $color-bg
  */
-@mixin button-colors($color-bg, $color-font: #fff) {
-  color: $color-font;
+@mixin button-colors($color-bg: $mayday-orange-medium) {
   background-color: $color-bg;
-  // border: 1px solid $color-bg;
   &:hover {
-    color: $color-font;
     background-color: lighten( $color-bg, 5% );
-    // border-color: lighten( $color-bg, 5% );
-  }
-  &:visited, &:link, &:focus{
-    color: $color-font;
   }
 }
+
+.btn-mayday{
+  @include button-colors;
+  padding:10px;
+  background-color:$mayday-orange-medium;
+  font-weight:700;
+  text-transform: uppercase;
+  color: $mayday-background;
+  font-size:18px;
+  width: 100%;
+
+  &:hover, &:visited, &:link, &:focus{
+    color: $mayday-background;
+  }
+
+  &.btn-mayday-md{
+    padding: 9px;
+    font-size: 14px;
+    border-radius: 2px;
+  }
+
+  &.btn-mayday-blue{@include button-colors($mayday-blue-medium);}
+  &.btn-mayday-blue-light{@include button-colors($mayday-blue-light);}
+
+  &.facebook {@include button-colors($color-facebook);}
+  &.reddit   {@include button-colors($color-reddit);}
+  &.twitter  {@include button-colors($color-twitter);}
+  &.youtube  {@include button-colors($color-youtube);}
+}
+
+.mayday-inputs{
+  input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea {
+    font-family: $base-font-family;
+    border:2px solid $mayday-background;
+    border-width:0 0 2px;
+    background:transparent;
+    width:100%;
+    font-size: 20px;
+    padding: 6px 0;
+  }
+
+  input{
+    &:focus{
+      outline:none;
+    }
+    &.error{
+      border-color:$color-dark-red;
+    }
+  }
+
+  &.single-row{
+    .form-group{margin-bottom: 0}
+  }
+
+  ::-webkit-input-placeholder{color:rgba($mayday-background, 0.8);}
+  :-moz-placeholder{color:rgba($mayday-background, 0.8);}
+  ::-moz-placeholder{color:rgba($mayday-background, 0.8);}
+  :-ms-input-placeholder{color:rgba($mayday-background, 0.8);}
+
+  &.black-background{
+    background-color: rgba(0,0,0,0.5);
+    padding:20px 40px 30px;
+    border-radius:2px;
+
+    ::-webkit-input-placeholder{padding-left:1px;}
+    :-moz-placeholder{padding-left:1px;}
+    ::-moz-placeholder{padding-left:1px;}
+    :-ms-input-placeholder{padding-left:1px;}
+  }
+}
+
+
+
+
 
 @mixin simple-button{
   margin:0;
@@ -102,18 +159,7 @@ $color-button-lightred: #af010e;
   }
 
 
-  &.facebook {
-    @include button-colors($color-facebook);
-  }
-  &.reddit {
-    @include button-colors($color-reddit);
-  }
-  &.twitter {
-    @include button-colors($color-twitter);
-  }
-  &.youtube {
-    @include button-colors($color-youtube);
-  }
+
 }
 
 /**

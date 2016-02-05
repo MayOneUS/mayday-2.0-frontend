@@ -1,5 +1,10 @@
 <style type="text/css" media="screen">
-.jumbotron{background:transparent url('/images/campaigns/20160203_jumbotron_bg_2400x900.jpg') 0 0 no-repeat; background-size:cover;}
+.jumbotron{background:transparent url('/images/campaigns/20160203_jumbotron_bg_2400x900.jpg') 0 0 no-repeat; background-size:cover;padding-top:180px;}
+ .jumbotron .container{
+    background: transparent url('/images/20160203_money_in_dome.svg') center bottom no-repeat;
+    background-size:180px;
+    padding-bottom:180px
+  }
 
 @media (max-width: 1199px){
 }
@@ -21,30 +26,32 @@
 <div class="jumbotron">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 center-block">
-        <div class="row">
-          <div class="col-md-12">
-            <h1><span class="text-yellow">End money in politics.</span> <br/>Take back our democracy.</h1>
-            <p>MAYDAY<span orange-text>.US</span> is a cross-partisan campaign to fight big money corruption in politics by electing reformers. <a href="/the-plan/" title="">Learn More</a></p>
-          </div>
-        </div>
-
-        <form class="row {{include.form_class}} smaller-form no-gutter js-jumbotron-signup">
-          <input type="hidden" name="template_id" value="20151026_md_signup">
-          <input type="hidden" name="person[remote_fields][tags][]" value="20151026_md_signup">
+      <div class="col-md-12">
+        <h1 class="text-center"><span class="text-yellow">End money in politics.</span> <br/>Take back our democracy.</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 col-lg-8 center-block margin-bottom-sm">
+        <p class="text-center">MAYDAY<span orange-text>.US</span> is a cross-partisan campaign to fight big money<br class="hidden-sm"/> corruption in politics by electing reformers. <a href="/the-plan/" title="">Learn More</a></p>
+      </div>
+    </div>
+    <div class="row margin-bottom-lg">
+      <div class="col-lg-6 col-md-6 center-block">
+        <form class="mayday-inputs black-background single-row js-jumbotron-signup">
+          <input type="hidden" name="template_id" value="20160215_md_signup">
+          <input type="hidden" name="person[remote_fields][tags][]" value="20160215_md_signup">
           <fieldset>
             <div class="row">
-              <div class="form-group col-md-8 col-sm-7">
+              <div class="form-group col-md-6">
                 <label class="control-label sr-only" for="person[email]">Email Address</label>
                 <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
               </div>
-
-              <div class="form-group col-md-4 col-sm-3">
+              <div class="form-group col-md-3">
                 <label class="control-label sr-only" for="person[zip]">ZIP</label>
                 <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
               </div>
-              <div class="form-group col-sm-2">
-                <button type="submit" class="btn btn-md-md btn-md-red">I'm in</button>
+              <div class="form-group col-sm-3">
+                <button type="submit" class="btn btn-mayday btn-mayday-md">I'm in</button>
               </div>
             </div>
           </fieldset>

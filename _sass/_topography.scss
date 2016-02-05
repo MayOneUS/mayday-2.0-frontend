@@ -133,11 +133,28 @@ p {
 /* nots are UNFORTUNATELY needed for NB, or spend 10s of hours fixing nb dependencies */
 a:link:not(.btn), a:visited:not(.btn), a:active:not(.btn) {
   color: #007acf;
-}
-a:hover:not(.btn) {
-  color: $mayday-text;
+  position: relative;
 }
 
+a:hover:not(.btn) {
+  color: $mayday-text;
+  text-decoration: none;
+}
+
+  /* animated underlines*/
+  a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    border-bottom: 2px solid $mayday-orange-medium;
+    transition: 0.5s ease;
+  }
+
+  a:hover:not(.btn):after {
+    width: 100%;
+  }
 /**
  * simple list
  */

@@ -1,5 +1,44 @@
-.navbar-fixed-top{
+header .navbar-fixed-top{
   top:20px;
+
+  .navbar-header{
+    padding-right: 30px;
+  }
+
+  a:after{
+    display:none;
+  }
+
+  .nav-pills{
+    >li{
+      vertical-align: middle;
+
+      >a{
+        &:link:not(.btn), &:visited:not(.btn) {
+          color: #212230;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 500;
+          border:none;
+          padding: 15px 15px 10px;
+        }
+      }
+      &.btn-wrap{
+        width:0.5%;
+        a:not(.btn){
+          padding:0;
+        }
+        a:hover:not(.btn){
+          background-color:transparent;
+        }
+        span{
+          float:right;
+          width:auto;
+          padding: 7px 14px;
+        }
+      }
+    }
+  }
 
   .navbar-brand:link:not(.btn), .navbar-brand:visited:not(.btn){
     color: $mayday-blue-medium;
@@ -34,10 +73,8 @@
   padding-bottom:0;
   color:#fff;
 
-  .container{
-    background: transparent url('/images/20160203_money_in_dome.svg') center bottom no-repeat;
-    background-size:100px;
-    padding-bottom:100px
+  p a:hover{
+    color:$mayday-grey-light;
   }
 }
 
@@ -82,9 +119,15 @@ footer{
       a:link:not(.btn), a:visited:not(.btn) {
         color: $mayday-grey-medium;
         font-size: 16px;
+        &:after{
+          border-color: $mayday-grey-medium;
+        }
       }
       a:hover:not(.btn) {
         color: $mayday-text;
+        &:after{
+          border-color:$mayday-text;
+        }
       }
     }
   }
