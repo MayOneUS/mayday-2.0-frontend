@@ -1,0 +1,39 @@
+<div class="form-group">
+  <label class="checkbox-inline" for="checkboxes-0">
+    <div class="row">
+      <div class="col-md-1">
+        <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      </div>
+      <div class="col-md-5">
+        <ul>
+          <li>Name: {{name}}</li>
+          <li>City: {{city}}</li>
+          <li>State: {{state}}</li>
+          <li>Zip: {{zip}}</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+      On <time datetime="">{{contributed_at }}</time>, you contributed ${{amount}} to {{recipient}}{{#if office}} who ran for {{ office }}{{/if}}.
+      </div>
+    </div>
+  </label>
+</div>
+
+{{!-- EXAMPLE ATTRIBUTES
+amount: 500
+city: "WALTHAM"
+contributed_at: "05/29/2013"
+contribution_id: "2081420131195402605"
+cycle: "2014"
+employer: "LIBERTY MUTUAL" #don't show in case prvacy concerns
+gender: "N"
+name: "FLORES, TRINIDAD"
+occupation: "VICE PRESIDENT"  #don't show in case prvacy concerns
+office: "MES2"
+party: "R"
+recipient: "Susan Collins (R)"
+recipient_id: "N00000491"
+state: "MA"
+undefined: "MES2"
+zip: "02451"
+--}}

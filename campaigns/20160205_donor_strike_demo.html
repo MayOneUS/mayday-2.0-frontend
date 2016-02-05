@@ -1,0 +1,141 @@
+---
+layout: default
+title: Take Action
+permalink: /demo/donor-strike/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/demo/donor-strike/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="Donor Strike Demo"/>
+  <title>Donor Strike Demo</title>
+  <meta property="og:description" content="This is optional content"/>
+  <link rel="canonical" href="https://mayday.us/demo/donor-strike/">
+  <meta name="robots" content="noindex"><!--  remove no-index when you take pages live -->
+---
+{% capture custom_css %}
+<style type="text/css">
+  .somePageSpecificCss{}
+</style>
+{% endcapture %}
+
+{% capture content %}
+<style type="text/css" media="screen">
+  .jumbotron{
+    background: transparent url('http://d3n8a8pro7vhmx.cloudfront.net/themes/53f746aeebad647dd5000001/attachments/original/1391460447/435Volunteer.jpg?1391460447') no-repeat center center;
+    padding-top: 120px;
+    padding-bottom: 20px;
+  }
+  .jumbotron h1{text-shadow: 3px 3px 2px #212230;}
+</style>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Donor strike demo</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="col-md-12">
+    <form class="mayday-inputs" id="js-search-form" style="background-color:#eee;padding:10px">
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Form Name</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label sr-only" for="name">Your Name</label>
+        <div class="col-md-4">
+        <input id="name" name="name" type="text" placeholder="Your Name" class="">
+        <span class="help-block">You can search by your full name</span>
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label sr-only" for="city">City</label>
+        <div class="col-md-4">
+        <input id="city" name="city" type="text" placeholder="City" class="">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label sr-only" for="zip">Zip</label>
+        <div class="col-md-4">
+        <input id="zip" name="zip" type="text" placeholder="Zip" class="">
+
+        </div>
+      </div>
+
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label sr-only" for="state">State</label>
+        <div class="col-md-4">
+          <select id="state" name="state" class="form-control">
+            <option value="">Search By State</option>
+            <option value="AL">Alabama</option>
+            <option value="CA">California</option>
+            <option value="NY">New York</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 sr-only" for="search">Search</label>
+        <div class="col-md-4">
+          <button id="search" name="search" class="btn btn-mayday">Search</button>
+        </div>
+      </div>
+
+      <hr class="margin-y-lg"/>
+      <div id="js-results-holder">
+
+      </div>
+      </fieldset>
+    </form>
+
+  </div>
+</div>
+{% endcapture %}
+
+
+{% capture page_specific_javascript %}
+  <script>
+    function isValidQueryParam(param_name){
+      valid_params = ['name','city','state','zip']
+      return ($.inArray(param_name, valid_params) > -1);
+    }
+    function isValidSearchQuery(keyPair) {
+      return isValidQueryParam(keyPair.name) && keyPair.value != '';
+    }
+    function buildSearchQuery(formData){
+      var queryParams = [];
+      formData.forEach(function(keyPair){
+        if(isValidSearchQuery(keyPair)){
+          queryParams.push(keyPair.name+':"'+keyPair.value+'"');
+        }
+      });
+      return queryParams.join('+AND+');
+    }
+    $(document).ready(function(){
+      $('#js-search-form').on('submit', function(e){
+        e.preventDefault();
+        var base_url = 'http://simple-search-service-mayday-2040.mybluemix.net/search?q=',
+          formData = $('#js-search-form').serializeArray(),
+          searchPath = base_url + buildSearchQuery(formData),
+          $resultsHolder = $('#js-results-holder');
+        $.get(searchPath, function(data){
+          $.each(data.rows, function(index,row){
+            $resultsHolder.append(HandlebarsTemplates['donor-strike'](row));
+          });
+        });
+      });
+    });
+  </script>
+{% endcapture %}
+
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
