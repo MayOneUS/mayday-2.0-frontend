@@ -121,6 +121,7 @@ meta_content: |
     $(document).ready(function(){
       $('#js-search-form').on('submit', function(e){
         e.preventDefault();
+        // See https://gist.github.com/Rio517/29c3f2dc685012e2efbb for details on search index creation.
         var base_url = 'http://simple-search-service-mayday-2040.mybluemix.net/search?q=',
           formData = $('#js-search-form').serializeArray(),
           searchPath = base_url + buildSearchQuery(formData),
