@@ -13,7 +13,7 @@
   .spacer-y-margin-xl{margin-bottom:80px;margin-top:80px;}
   .no-top-margin{margin-top:0 !important;}
   .top-spacer-btn, .top-spacer{margin-top:20px;}
-  .no-bottom-margin, .top-spacer-btn .form-group{margin-bottom:0 !important;}
+  .margin-bottom-0, .top-spacer-btn .form-group{margin-bottom:0 !important;}
   .bottom-margin{margin-bottom:15px;}
   .bottom-spacer-xs{margin-bottom:20px;}
   .bottom-spacer-sm{margin-bottom:40px;}
@@ -34,9 +34,11 @@
   .margin-top-sm{margin-top:20px;}
   .margin-top-md{margin-top:40px;}
   .margin-top-lg{margin-top:60px;}
+  .margin-top-xl{margin-top:80px;}
   .margin-bottom-0{margin-bottom:0 !important;}
   .margin-bottom-xs{margin-bottom:10px;}
   .margin-bottom-sm{margin-bottom:20px;}
+  .margin-bottom-30{margin-bottom:30px;}
   .margin-bottom-md{margin-bottom:40px;}
   .margin-bottom-lg{margin-bottom:60px;}
   .margin-bottom-xl{margin-bottom:80px;}
@@ -50,8 +52,10 @@
   top:0;
 }
 
-@mixin star-rotation($rotation) {
-  -ms-transform: rotate($rotation);
-  -webkit-transform: rotate($rotation);
-  transform: rotate($rotation);
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+.vertical-center-inner{
+  width:100%;
 }

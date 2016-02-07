@@ -14,10 +14,10 @@ $left-margin-spacing: 1.3em;
 
 $header-weight: 400;
 
-$color-facebook: rgb(59, 89, 151);
-$color-twitter: rgb(64, 153, 255);
-$color-youtube: rgb(117, 117, 117);
-$color-reddit: rgb(31, 89, 111);
+$color-facebook: #3B5999;
+$color-twitter: #55ACEF;
+$color-youtube: #CE201F;
+$color-reddit: #EB4923;
 $color-join-mayday: rgb(19, 83, 145);
 $color-volunteer: rgb(80, 107, 134);
 $color-orientation: rgb(76, 43, 98);
@@ -50,18 +50,59 @@ $color-orientation: rgb(76, 43, 98);
 
 
 /* 2016 MAYDAY COLORS */
-  $mayday-grey-dark:        #212230;
-  $mayday-grey-medium:      #7b8082;
-  $mayday-grey-light:       #dae4e7;
-  $mayday-offwhite:         #f4f4f4;
-  $mayday-blue-medium:      #00467e;
-  $mayday-blue-light:       #0055ba;
-  $mayday-orange-medium:    #ef3800;
-  $mayday-orange-light:     #f36533;
-  $mayday-blue-highlight:   #2ac4ea;
-  $mayday-yellow-highlight: #fdd63f;
-  $mayday-green-highlight:  #0ad6b2;
+  $mayday-blue-black:    #212230;
+  $mayday-blue-dark:     #00467e;
+  $mayday-blue-medium:   #0054b9;
+  $mayday-blue-light:    #2ac4ea;
+  $mayday-grey-dark:     #7b8082;
+  $mayday-grey-medium:   #dae4e7;
+  $mayday-grey-light:    #f4f4f4;
+  $mayday-orange-medium: #ee3800;
+  $mayday-orange-light:  #f36433;
+  $mayday-green-light:   #0ad6b2;
+  $mayday-yellow-light:  #fdd63f;
 
-  $mayday-text: $mayday-grey-dark;
+  /* 2016 image overlay pixels image names*/
+  $pixel_blue_black:    'overlay_blue_black_212230.png';
+  $pixel_blue_medium:   'overlay_blue_medium_0054b9.png';
+  $pixel_blue_dark:     'overlay_blue_dark_00467e.png';
+  $pixel_blue_light:    'overlay_blue_light_2ac4ea.png';
+  $pixel_grey_dark:     'overlay_grey_dark_7b8082.png';
+  $pixel_grey_medium:   'overlay_grey_medium_dae437.png';
+  $pixel_grey_light:    'overlay_grey_light_f4f4f4.png';
+  $pixel_orange_medium: 'overlay_orange_medium_ee3800.png';
+  $pixel_orange_light:  'overlay_orange_light_f36433.png';
+  $pixel_green_light:   'overlay_green_light_0ad6b2.png';
+  $pixel_yellow_light:  'overlay_yellow_light_fdd63f.png';
+
+  $mayday-text: $mayday-blue-black;
   $mayday-background: #fff;
-  $color-offwhite: $mayday-offwhite;
+  $color-offwhite: $mayday-grey-light; /* TODO: delete later */
+
+
+
+
+
+// @mixin overlay-with-pixel($pixel_image, $background_declaration){
+//   background: url('/images/2016_image_overlay_pixels/#{$pixel_image}') repeat 0 0,
+//     #{$background_declaration};
+// }
+
+// @mixin overlay-blue-light($background_declaration){
+//   @include overlay-with-pixel($pixel_blue_light, $background_declaration);
+// }
+// @mixin overlay-green-light($background_declaration){
+//   @include overlay-with-pixel($pixel_green_light, $background_declaration);
+// }
+// @mixin overlay-grey-medium($background_declaration){
+//   @include overlay-with-pixel($pixel_grey_medium, $background_declaration);
+// }
+// @mixin overlay-orange-light($background_declaration){
+//   @include overlay-with-pixel($pixel_orange_light, $background_declaration);
+// }
+// @mixin overlay-orange-medium($background_declaration){
+//   @include overlay-with-pixel($pixel_orange_medium, $background_declaration);
+// }
+// @mixin overlay-yellow-light($background_declaration){
+//   @include overlay-with-pixel($pixel_yellow_light, $background_declaration);
+// }

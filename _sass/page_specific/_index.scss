@@ -1,27 +1,105 @@
-///////////////////////////////////////////////
-//  homepage panels
+#index{
+  .campaign-actions{
 
-.homepage-panel{
-  position: relative;
-  overflow: hidden;
-  padding-top:50px;
-  padding-bottom:50px;
-  font-weight: 300;
-
-  .container{
-    padding-top:0;
-    padding-bottom:0;
-  }
-
-  &.dark {
-    background: $color-navy-blue-light;
-    color: #ffffff;
-
-    h2{
-      color:#fff
+    h3, .byline.small{color:$mayday-background}
+    .vertical-center{
+      border-radius: 2px;
+      height:250px;
+    }
+    .letter, .events, .take-action{
+      p:last-child{
+        margin-bottom:0;
+      }
+    }
+    .letter{
+        height:530px;
+        @include overlay-yellow-light(
+          "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
+          url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+    }
+    .events{
+        @include overlay-blue-light(
+          "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
+          url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+    }
+    .take-action{
+        @include overlay-green-light(
+          "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
+          url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
     }
   }
-  &.grey{
-    background-color: $mayday-grey-light;
+
+  ///////////////////////////////////////////////
+  //  homepage panels
+
+  .homepage-panel{
+    position: relative;
+    overflow: hidden;
+    padding-top:50px;
+    padding-bottom:50px;
+    font-weight: 300;
+
+    .container{
+      padding-top:0;
+      padding-bottom:0;
+    }
+
+    &.dark {
+      background: $color-navy-blue-light;
+      color: $mayday-background;
+
+      h2{
+        color:$mayday-background;
+      }
+    }
+    &.grey{
+      background-color: $mayday-grey-medium;
+    }
+
+    &.with-supporters{
+      background-image:
+        url('/images/20160203_supporter_photos_913x385.jpg'),
+        url('/images/20160203_supporter_photos_913x385.jpg');
+      background-position:
+        calc(50% + (912px * 1.5)) 0,
+        calc(50% + (912px / 2)) 0;
+      background-repeat: repeat-y;
+
+      .btn-group{
+        margin-top:calc(50% - 80px)
+      }
+    }
+  }
+
+// }
+
+.closing-action-panel{
+    padding:60px 100px 100px;
+    h3{
+      color: $mayday-background;
+      span{
+        background-color: $mayday-background;
+        color:$mayday-yellow-light;
+        display: inline-block;
+        vertical-align:top;
+        width: 60px;
+        border-radius: 100px;
+        font-size: 50px;
+        text-align: center;
+      }
+    }
+    p{
+      color: $mayday-blue-black;
+    }
+    &.donate{
+      background-color: $mayday-yellow-light;
+    }
+    &.signup{
+      background-color: $mayday-blue-light;
+      h3 span{
+        color: $mayday-blue-light;
+        text-indent:-5px;
+      }
+    }
   }
 }

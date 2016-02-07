@@ -9,90 +9,184 @@ bodyClass: index-page
 <div id="index">
   {% include jumbotrons/20160203_web_refresh.html %}
   <div class="container">
-    <div class="row">
+    <div class="row campaign-actions margin-bottom-xl text-center">
+      <h2 class="sr-only">Take Action</h2>
       <div class="col-md-4">
-        <h2>Write your letter to the editor</h2>
-        <p>Ask your member(s) of congress to change the way campaigns are funded.</p>
-        <p><a href="" title="" class="btn btn-mayday-hollow">Get Started</a></p>
+        <div class="col-md-12 letter vertical-center">
+          <div class="vertical-center-inner">
+            <h3>Write your letter to the editor</h3>
+            <p class="byline small">Ask your member(s) of congress to change the way campaigns are funded.</p>
+            <p><a href="" title="" class="btn btn-mayday yellow-light-hover btn-mayday-hollow">Get Started</a></p>
+          </div>
+        </div>
       </div>
-       <div class="col-md-8">
-        <h2>Attend an Event</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p><a href="" title="" class="btn btn-mayday-hollow">Browse Events</a></p>
+      <div class="col-md-8 margin-bottom-30">
+        <div class="col-md-12 events vertical-center">
+          <div class="vertical-center-inner">
+            <h3>Attend an Event</h3>
+            <p class="byline small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p><a href="" title="" class="btn btn-mayday blue-light-hover btn-mayday-hollow">Browse Events</a></p>
+          </div>
+        </div>
       </div>
-       <div class="col-md-8">
-        <h2>Write your letter to the editor</h2>
-        <p>See how else you can take part in the movement to lorem ipsum</p>
-        <p><a href="" title="" class="btn btn-mayday-hollow">Take Action</a></p>
+      <div class="col-md-8">
+        <div class="col-md-12 take-action vertical-center">
+          <div class="vertical-center-inner">
+            <h3>Take Action</h3>
+            <p class="byline small">See how else you can take part in the movement to lorem ipsum</p>
+            <p><a href="" title="" class="btn btn-mayday green-light-hover btn-mayday-hollow">Take Action</a></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <h2>Latest from our blog</h2>
-        <h4><a href="" title="">More from our Blog</a></h4>
-        <ul class="row">
-          <li class="col-md-4">
-            <time datetime="2016-01-12">January 28th, 2016</time>
-            <h3><a href="{{ url }}">Some title</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-          </li>
-          <li class="col-md-4">
-            <time datetime="2016-01-12">January 22nd, 2016</time>
-            <h3><a href="{{ url }}">Some title</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqu
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.</p>
-          </li>
-          <li class="col-md-4">
-            <time datetime="2016-01-12">January 12th, 2016</time>
-            <h3><a href="{{ url }}">Some title</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-          </li>
-        </ul>
+        <h2 class="as-if-h3 text-center margin-bottom-xs">Latest from our blog</h2>
+        <p class="byline small text-center margin-bottom-md"><a href="" title="" class="text-grey-medium">More from our Blog</a></p>
+        <div class="row">
+          <ul class="blog-listings">
+            <li class="col-md-4">
+              <time datetime="2016-01-12" class="as-if-h6 text-blue-highlight"><span>Jan 28th, 2016</span></time>
+              <h3 class="as-if-h5"><a href="{{ url }}">Corporate Execs Moving from Buying Laws to Writing Them</a></h3>
+              <p class="byline small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </li>
+            <li class="col-md-4">
+              <time datetime="2016-01-12" class="as-if-h6 text-blue-highlight"><span>Jan 22nd, 2016</span></time>
+              <h3 class="as-if-h5"><a href="{{ url }}">Young Turks on Flint Water Crisis</a></h3>
+              <p class="byline small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqu
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.</p>
+            </li>
+            <li class="col-md-4">
+              <time datetime="2016-01-12" class="as-if-h6 text-blue-highlight"><span>Jan 12th, 2016</span></time>
+              <h3 class="as-if-h5"><a href="{{ url }}">Senator Warren Gets It</a></h3>
+              <p class="byline small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-  <div class="homepage-panel grey">
-
+  <div class="homepage-panel grey with-supporters">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h2>In the news <i class="fa fa-caret-right"></i></h2>
+        <div class="col-md-6 in-the-news">
+          <h2 class="as-if-h4 text-center text-grey-medium">In the news <i class="fa fa-caret-right"></i></h2>
           <div class="row">
-            <img class="center-block" alt="Matt Miller, Washington Post Opinions" src="/images/news-logos/washington-post-large-logo-2-300x78-white.png">
-            <p>&ldquo;It&rsquo;s an ingenious plan to make the drive for small-dollar publicly funded elections a central issue in 2016. With a little luck... idea could help save the republic.&rdquo;</p>
+            <div class="col-md-12">
+              <img class="center-block" alt="Matt Miller, Washington Post Opinions" src="/images/news-logos/washington-post-large-logo-2-300x78-white.png">
+              <p class="byline small">&ldquo;It&rsquo;s an ingenious plan to make the drive for small-dollar publicly funded elections a central issue in 2016. With a little luck... idea could help save the republic.&rdquo;</p>
+            </div>
           </div>
           <div class="row">
-            <img class="center-block" alt="Ben Wikler, Tech President" src="/images/news-logos/techrepublic-logo-white.png" style="opacity:0.8">
-            <p>&ldquo;The first part was hard. That second part is even harder. But now that MAYDAY has done the impossible once, it's worth staying tuned to see if they can do it again.&rdquo;</p>
+            <div class="col-md-12">
+              <img class="center-block" alt="Ben Wikler, Tech President" src="/images/news-logos/techrepublic-logo-white.png" style="opacity:0.8">
+              <p class="byline small">&ldquo;The first part was hard. That second part is even harder. But now that MAYDAY has done the impossible once, it's worth staying tuned to see if they can do it again.&rdquo;</p>
+            </div>
           </div>
           <div class="row">
-            <img class="center-block" alt="Ralph Benko, Forbes Opinion" src="/images/news-logos/forbes-logo-white.png">
-            <p>&ldquo;The mortal struggle at hand today is not between the right and the left. It is not between Republicans and Democrats. It is not between the Congress and the president. It is between us (currently outsiders to our own government) voters and the Washington Insiders.&rdquo;</p>
+            <div class="col-md-12">
+              <img class="center-block" alt="Ralph Benko, Forbes Opinion" src="/images/news-logos/forbes-logo-white.png">
+              <p class="byline small">&ldquo;The mortal struggle at hand today is not between the right and the left. It is not between Republicans and Democrats. It is not between the Congress and the president. It is between us (currently outsiders to our own government) voters and the Washington Insiders.&rdquo;</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <div class="btn-group">
+            <a class="btn btn-social btn-reddit" href="http://www.reddit.com/r/maydaypac"><i class="fa fa-reddit-alien fa-2x"></i> <span class="sr-only">Reddit</span></a>
+            <a class="btn btn-social btn-youtube" href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ"><i class="fa fa-youtube fa-2x"></i> <span class="sr-only">Youtube</span></a>
+            <a class="btn btn-social btn-facebook" href="https://www.facebook.com/MAYDAYdotUS"><i class="fa fa-facebook fa-2x"></i> <span class="sr-only">Facebook</span></a>
+            <a class="btn btn-social btn-twitter" href="https://twitter.com/maydayus"><i class="fa fa-twitter fa-2x"></i> <span class="sr-only">Twitter</span></a>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="container">
+    <h3 class="margin-top-xl margin-bottom-lg text-center">What can you do right now?</h3>
     <div class="row">
-      <div class="col-md-8 center-block panel-wrapper">
-        {% include panels/panel_action_w_signup.html hide_next=true %}
+      <div class="col-md-6">
+        <div class="col-md-12 closing-action-panel signup">
+          <h3 class="as-if-h1"><span>1</span> Sign Up</h3>
+          <p class="byline small">Be part of the movement to take our democracy back.<br/><br/></p>
+          <form class="mayday-inputs white-inputs js-signup">
+            <input type="hidden" name="template_id" value="20160215_homepage_signup">
+            <input type="hidden" name="person[remote_fields][tags][]" value="20160215_homepage_signup">
+            <fieldset>
+              <div class="row">
+                <div class="form-group col-md-8">
+                  <label class="control-label sr-only" for="person[email]">Email Address</label>
+                  <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
+                </div>
+                <div class="form-group col-md-4">
+                  <label class="control-label sr-only" for="person[zip]">ZIP</label>
+                  <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group margin-bottom-0">
+                    <button type="submit" class="btn btn-mayday">I'm in</button>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="md-col-12 closing-action-panel donate">
+          <h3 class="as-if-h1"><span>2</span> Donate</h3>
+          <p class="byline small">We are driven by passion and unfortunately, your dollars. We're funded 100% by folks like you and need resources to keep up the fight.</p>
+          <form class="mayday-inputs js-donate">
+            <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="btn-group btn-group-mayday btn-group-flexed" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
+                      <label class="btn btn-mayday btn-mayday-clear short" for="donate-10">
+                        <input type="radio" id="donate-10" name="donation_amount[10]" value="10" /> $10
+                      </label>
+                      <label class="btn btn-mayday btn-mayday-clear short" for="donate-35">
+                        <input type="radio" id="donate-35" name="donation_amount[35]" value="35" /> $35
+                      </label>
+                      <label class="btn btn-mayday btn-mayday-clear short" for="donate-50">
+                        <input type="radio" id="donate-50" name="donation_amount[50]" value="50" /> $50
+                      </label>
+                      <label class="btn btn-mayday btn-mayday-clear short active" for="donate-100">
+                        <input type="radio" id="donate-100" name="donation_amount[100]" value="100" /> $100
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group margin-bottom-0">
+                    <button type="submit" class="btn btn-mayday">Continue <i class="fa fa-arrow-circle-right"></i></button>
+                    </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
       </div>
     </div>
   </div>
+
 </div>
 {% endcapture %}
 
-
 {% include sub_layouts/default_layout.html %}
+

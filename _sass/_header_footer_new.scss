@@ -41,7 +41,7 @@ header .navbar-fixed-top{
   }
 
   .navbar-brand:link:not(.btn), .navbar-brand:visited:not(.btn){
-    color: $mayday-blue-medium;
+    color: $mayday-blue-dark;
   }
 
   .navbar-brand:hover:not(.btn){
@@ -74,7 +74,7 @@ header .navbar-fixed-top{
   color:#fff;
 
   p a:hover{
-    color:$mayday-grey-light;
+    color:$mayday-grey-medium;
   }
 }
 
@@ -88,7 +88,7 @@ footer{
 
     a:link:not(.btn), a:visited:not(.btn){
       padding-left: 45px;
-      color: $mayday-blue-medium;
+      color: $mayday-blue-dark;
     }
     a:hover:not(.btn) {
       color: $mayday-text;
@@ -107,7 +107,7 @@ footer{
       color: $mayday-text;
     }
     .btn{
-      color: $mayday-grey-medium;
+      color: $mayday-grey-dark;
     }
   }
 
@@ -117,10 +117,10 @@ footer{
       margin-bottom:5px;
 
       a:link:not(.btn), a:visited:not(.btn) {
-        color: $mayday-grey-medium;
+        color: $mayday-grey-dark;
         font-size: 16px;
         &:after{
-          border-color: $mayday-grey-medium;
+          border-color: $mayday-grey-dark;
         }
       }
       a:hover:not(.btn) {
@@ -133,18 +133,18 @@ footer{
   }
 
   .disclaimer-box {
-    color: lighten($mayday-grey-medium, 20%);
+    color: lighten($mayday-grey-dark, 20%);
     display: inline-block;
     font-size: 15px;
     line-height: 16px;
     padding: 8px;
     margin-top: 15px;
     width: 80%;
-    border: 1px solid lighten($mayday-grey-medium, 20%);
+    border: 1px solid lighten($mayday-grey-dark, 20%);
   }
   .copyright {
     margin-top: 15px;
-    color: lighten($mayday-grey-medium, 20%);
+    color: lighten($mayday-grey-dark, 20%);
     font-size: 15px;
   }
   .creative-commons {
