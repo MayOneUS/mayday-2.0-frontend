@@ -1,9 +1,5 @@
-<div class="panel action-panel with-shield md-inputs">
-  <div class="panel-icon">
-    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
-    <div class="fade-line hidden-xs hidden-sm"></div>
-  </div>
-  <div class="panel-body">
+<div class="panel action-panel">
+  <div class="panel-body mayday-inputs">
     <h2 id="panel-title">{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
     <p id="panel-body-p">{% if include.alt_body %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
     <form class="row {{include.form_class}} js-sign-up-form no-gutter">
@@ -29,12 +25,12 @@
         </div>
 
         <div class="row">
-          <div class="form-group col-md-8 no-bottom-margin">
+          <div class="form-group col-md-8 margin-bottom-0">
             <label class="control-label sr-only" for="person[phone]">Phone</label>
             <input id="person[phone]" name="person[phone]" type="tel" placeholder="Phone" required="">
           </div>
 
-          <div class="form-group col-md-4 no-bottom-margin">
+          <div class="form-group col-md-4 margin-bottom-0">
             <label class="control-label sr-only" for="person[zip]">ZIP</label>
             <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
           </div>

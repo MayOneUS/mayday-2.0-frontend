@@ -1,13 +1,9 @@
-<div class="panel action-panel mayday-inputs">
-  <div class="panel-icon">
-    <img src="/images/2016_mayday_logo.svg" class="img-responsive" alt="">
-    <div class="fade-line hidden-xs hidden-sm"></div>
-  </div>
-  <div class="panel-body">
-    <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
-    <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to take our democracy back.{% endif %}</p>
-    <form class="row {{include.form_class}} js-sign-up-form no-gutter">
-      <fieldset class="col-md-12 no-gutter">
+<div class="panel action-panel">
+  <div class="panel-body mayday-inputs">
+    <h2 class="as-if-h3">{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
+    <p class="byline small">{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to take our democracy back.{% endif %}</p>
+    <form class="row {{include.form_class}} js-sign-up-form margin-top-md">
+      <fieldset class="col-md-12">
         <div class="row">
           <div class="form-group col-md-6">
             <label class="control-label sr-only" for="person[first_name]">First Name</label>
@@ -21,12 +17,12 @@
         </div>
 
         <div class="row">
-          <div class="form-group col-md-8 no-bottom-margin">
+          <div class="form-group col-md-8 {% if include.hide_volunteer %}margin-bottom-0{% endif %}">
             <label class="control-label sr-only" for="person[email]">Email Address</label>
             <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
           </div>
 
-          <div class="form-group col-md-4 no-bottom-margin">
+          <div class="form-group col-md-4 {% if include.hide_volunteer %}margin-bottom-0{% endif %}">
             <label class="control-label sr-only" for="person[zip]">ZIP</label>
             <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
           </div>

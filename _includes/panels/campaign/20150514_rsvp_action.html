@@ -1,9 +1,5 @@
 <div class="panel action-panel with-shield md-inputs">
-  <div class="panel-icon">
-    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
-    <div class="fade-line hidden-xs hidden-sm"></div>
-  </div>
-  <div class="panel-body">
+  <div class="panel-body mayday-inputs">
     <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Sign Up Now{% endif %}</h2>
     <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
     <form class="row smaller-form js-rsvp-form">
@@ -24,7 +20,7 @@
 
       <div class="row sm-gutter">
         <div class="form-group col-md-8">
-          <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
+          <input type="tel" class="margin-bottom-0" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
         </div>
 
         <div class="form-group col-md-4">
@@ -34,7 +30,7 @@
       </div>
 
       <div class="row sm-gutter">
-        <div class="form-group col-md-12 no-bottom-margin">
+        <div class="form-group col-md-12 margin-bottom-0">
           <label class="control-label sr-only" for="person[email]">Email Address</label>
           <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required">
         </div>
