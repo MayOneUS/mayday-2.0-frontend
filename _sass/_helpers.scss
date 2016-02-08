@@ -11,7 +11,7 @@
   .spacer-y-margin-lg{margin-bottom:40px;margin-top:40px;}
   .spacer-y-margin-xl{margin-bottom:80px;margin-top:80px;}
   .no-top-margin{margin-top:0 !important;}
-  .top-spacer-btn, .top-spacer, .bottom-thankyou-spacer{margin-top:20px;}
+  .top-spacer-btn, .top-spacer{margin-top:20px;}
   .no-bottom-margin, .top-spacer-btn .form-group{margin-bottom:0 !important;}
   .bottom-margin{margin-bottom:15px;}
   .bottom-spacer-xs{margin-bottom:20px;}
@@ -47,4 +47,10 @@
 .stuck {
   position:fixed;
   top:0;
+}
+
+@mixin star-rotation($rotation) {
+  -ms-transform: rotate($rotation);
+  -webkit-transform: rotate($rotation);
+  transform: rotate($rotation);
 }

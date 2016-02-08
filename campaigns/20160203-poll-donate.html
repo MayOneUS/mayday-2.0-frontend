@@ -1,0 +1,35 @@
+---
+layout: default
+title: Support our grassroots work
+permalink: /poll-donate/
+---
+{% capture content %}
+<div class="donate-page container">
+  <div class="col-md-6 col-lg-6 donate-flavor-text">
+    <h1>Thanks for adding your voice!</h1>
+    <p>MAYDAY.US is leading a modern day civil rights movement to bring true political equality back to our Republic.</p>
+    <p>Our innovative technologies and organizational strategies are inspiring a new generation of activists. To continue this work, we need your support. Every time you give, it’s a vote against political corruption, against legalized bribery, against crony capitalism.</p>
+    <p>Every contribution is a message of hope for the future of our democracy.</p>
+        <p><strong>Prefer to donate by check?</strong></p>
+    <p>Mayday PAC<br />
+P.O. Box 75357<br />
+Washington, DC 20013</p>
+  </div>
+  <div class="col-sm-8 col-md-6 col-lg-5">
+    <div class="box-inner donate-page-box">
+      <h2 class="box-title">Help us fix democracy</h2>
+      {% include form_donate.html facebook_tracking_id='6033848617290' %}
+    </div>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="contribution-rules container-fluid">
+  <div class="container">
+    <div class="col-md-10">
+    {% include donate_rules.html %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
