@@ -1,8 +1,10 @@
 <div class="form-group">
-  <label class="checkbox-inline" for="checkboxes-0">
+  <label class="checkbox-inline" for="checkboxes-{{contribution_id}}">
     <div class="row">
       <div class="col-md-1">
-        <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+        <label for="{{contribution_id}}">
+          <input type="checkbox" class="js-claimable-contribution" name="checkboxes" id="{{contribution_id}}" value="1" data-amount="{{amount}}"> <span class="js-claim-text">Claim it!</span>
+        </label>
       </div>
       <div class="col-md-5">
         <ul>
@@ -13,7 +15,7 @@
         </ul>
       </div>
       <div class="col-md-6">
-      On <time datetime="">{{contributed_at }}</time>, you contributed ${{amount}} to {{recipient}}{{#if office}} who ran for {{ office }}{{/if}}.
+      On <time datetime="">{{contributed_at }}</time>, {{name}} contributed ${{amount}} to {{recipient}}{{#if office}} who ran for {{ office }}{{/if}}.
       </div>
     </div>
   </label>
@@ -37,3 +39,4 @@ state: "MA"
 undefined: "MES2"
 zip: "02451"
 --}}
+

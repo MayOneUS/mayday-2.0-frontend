@@ -20,7 +20,7 @@ meta_content: |
 {% capture content %}
 <style type="text/css" media="screen">
   .jumbotron{
-    background: transparent url('http://d3n8a8pro7vhmx.cloudfront.net/themes/53f746aeebad647dd5000001/attachments/original/1391460447/435Volunteer.jpg?1391460447') no-repeat center center;
+    background: transparent url('/images/campaigns/20160120_generic_jumbotron.jpg') no-repeat center center;
     padding-top: 120px;
     padding-bottom: 20px;
   }
@@ -36,62 +36,50 @@ meta_content: |
     <form class="mayday-inputs" id="js-search-form" style="background-color:#eee;padding:10px">
       <fieldset>
 
-      <!-- Form Name -->
-      <legend>Form Name</legend>
+        <legend>Form Name</legend>
 
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label sr-only" for="name">Your Name</label>
-        <div class="col-md-4">
-        <input id="name" name="name" type="text" placeholder="Your Name" class="">
-        <span class="help-block">You can search by your full name</span>
+        <div class="form-group">
+          <label class="col-md-4 control-label sr-only" for="name">Your Name</label>
+          <div class="col-md-4">
+            <input id="name" name="name" type="text" placeholder="Your Name" class="">
+            <span class="help-block">You can search by your full name</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label sr-only" for="city">City</label>
-        <div class="col-md-4">
-        <input id="city" name="city" type="text" placeholder="City" class="">
-
+        <div class="form-group">
+          <label class="col-md-4 control-label sr-only" for="city">City</label>
+          <div class="col-md-4">
+            <input id="city" name="city" type="text" placeholder="City" class="">
+          </div>
         </div>
-      </div>
 
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label sr-only" for="zip">Zip</label>
-        <div class="col-md-4">
-        <input id="zip" name="zip" type="text" placeholder="Zip" class="">
-
+        <div class="form-group">
+          <label class="col-md-4 control-label sr-only" for="zip">Zip</label>
+          <div class="col-md-4">
+            <input id="zip" name="zip" type="text" placeholder="Zip" class="">
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col-md-4 control-label sr-only" for="state">State</label>
-        <div class="col-md-4">
-          <select id="state" name="state" class="form-control">
-            <option value="">Search By State</option>
-            <option value="AL">Alabama</option>
-            <option value="CA">California</option>
-            <option value="NY">New York</option>
-            <option value="WY">Wyoming</option>
-          </select>
+        <div class="form-group">
+          <label class="col-md-4 control-label sr-only" for="state">State</label>
+          <div class="col-md-4">
+            <select id="state" name="state" class="form-control">
+              {%include state_options.html%}
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Button -->
-      <div class="form-group">
-        <label class="col-md-4 sr-only" for="search">Search</label>
-        <div class="col-md-4">
-          <button id="search" name="search" class="btn btn-mayday">Search</button>
+        <div id="js-claims-holder"></div>
+
+        <div class="form-group" id="js-search-buttons">
+          <label class="col-md-4 sr-only" for="search">Search</label>
+          <div class="col-md-4">
+            <button id="search" name="search" class="btn btn-mayday">Search</button>
+          </div>
         </div>
-      </div>
 
-      <hr class="margin-y-lg"/>
-      <div id="js-results-holder">
-
-      </div>
+        <hr class="margin-y-lg"/>
+        <div id="js-results-holder"></div>
       </fieldset>
     </form>
 
@@ -102,36 +90,62 @@ meta_content: |
 
 {% capture page_specific_javascript %}
   <script>
-    function isValidQueryParam(param_name){
-      valid_params = ['name','city','state','zip']
-      return ($.inArray(param_name, valid_params) > -1);
-    }
-    function isValidSearchQuery(keyPair) {
-      return isValidQueryParam(keyPair.name) && keyPair.value != '';
-    }
-    function buildSearchQuery(formData){
-      var queryParams = [];
-      formData.forEach(function(keyPair){
-        if(isValidSearchQuery(keyPair)){
-          queryParams.push(keyPair.name+':"'+keyPair.value+'"');
-        }
-      });
-      return queryParams.join('+AND+');
-    }
-    $(document).ready(function(){
-      $('#js-search-form').on('submit', function(e){
-        e.preventDefault();
-        // See https://gist.github.com/Rio517/29c3f2dc685012e2efbb for details on search index creation.
-        var base_url = 'http://simple-search-service-mayday-2040.mybluemix.net/search?q=',
-          formData = $('#js-search-form').serializeArray(),
-          searchPath = base_url + buildSearchQuery(formData),
+
+    md.donorstrike = {};
+    (function(donorstrike) {
+      donorstrike.base_url = 'http://simple-search-service-mayday-2040.mybluemix.net/search?q=';
+
+      donorstrike.isValidQueryParam = function (param_name){
+        valid_params = ['name','city','state','zip']
+        return ($.inArray(param_name, valid_params) > -1);
+      }
+      donorstrike.isValidSearchQuery = function (keyPair) {
+        return donorstrike.isValidQueryParam(keyPair.name) && keyPair.value != '';
+      }
+      donorstrike.buildSearchQuery = function (formData){
+        var queryParams = [];
+        formData.forEach(function(keyPair){
+          if(donorstrike.isValidSearchQuery(keyPair)){
+            queryParams.push(keyPair.name+':"'+keyPair.value+'"');
+          }
+        });
+        return queryParams.join('+AND+');
+      }
+      donorstrike.submitSearchQuery = function(callback){
+        var formData = $('#js-search-form').serializeArray(),
+          searchPath = donorstrike.base_url + donorstrike.buildSearchQuery(formData),
           $resultsHolder = $('#js-results-holder');
         $.get(searchPath, function(data){
           $.each(data.rows, function(index,row){
             $resultsHolder.append(HandlebarsTemplates['donor-strike'](row));
           });
+          callback();
         });
-      });
+      }
+      donorstrike.claim = function ($input_element) {
+        $target_element = $($input_element).parents('.form-group');
+        $clone = $target_element.clone();
+        $clone.find('.js-claim-text').text('Unclaim it.');
+        var amount = $($input_element).data('amount');
+        $target_element.html('<h4>Claimed $'+amount+'!</h4>')
+        $('#js-claims-holder').append($clone);
+      }
+      donorstrike.initializeClaim = function() {
+        $('.js-claimable-contribution').on('change', function(element){
+          donorstrike.claim(this);
+        });
+      }
+      donorstrike.initialize = function(){
+        console.log('initializing')
+        $('#js-search-form').on('submit', function(e){
+          e.preventDefault();
+          donorstrike.submitSearchQuery(donorstrike.initializeClaim);
+        });
+      }
+    })(md.donorstrike);
+
+    $(document).ready(function(){
+      md.donorstrike.initialize();
     });
   </script>
 {% endcapture %}
