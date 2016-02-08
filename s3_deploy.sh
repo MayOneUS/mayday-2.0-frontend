@@ -3,7 +3,11 @@
 # Deploys changes to the correct S3 bucket after build success
 
 # Determine which bucket we should deploy to
-if [[ "$TRAVIS_TAG" =~ 'alpha' ]]; then
+if [[ "$TRAVIS_TAG" =~ 'alpha2' ]]; then
+    echo "Going to deploy to alpha2.mayday.us"
+    environment='alpha'
+    export S3_BUCKET=alpha2.mayday.us
+elif [[ "$TRAVIS_TAG" =~ 'alpha' ]]; then
     echo "Going to deploy to alpha.mayday.us"
     environment='alpha'
     export S3_BUCKET=alpha.mayday.us
