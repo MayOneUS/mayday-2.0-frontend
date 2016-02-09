@@ -32,57 +32,72 @@ meta_content: |
   </div>
 </div>
 <div class="container">
-  <div class="col-md-12">
-    <form class="mayday-inputs" id="js-search-form" style="background-color:#eee;padding:10px">
-      <fieldset>
+  <div class="row" style="background-color: #eee;padding-top: 10px;">
+    <div class="col-md-12">
+      <form class="mayday-inputs" id="js-search-form">
+        <fieldset>
 
-        <legend>Form Name</legend>
+          <legend>Form Name</legend>
+          <input type="hidden" name="template_id" value="20160215_donor_strike">
+          <input type="hidden" name="person[remote_fields][tags][]" value="20160215_donor_strike">
 
-        <div class="form-group">
-          <label class="col-md-4 control-label sr-only" for="name">Your Name</label>
-          <div class="col-md-4">
-            <input id="name" name="name" type="text" placeholder="Your Name" class="">
-            <span class="help-block">You can search by your full name</span>
+          <div class="form-group row">
+            <div class="col-md-6">
+              <label class="control-label sr-only" for="person[email]">Email Address</label>
+              <input id="person[email]" name="person[email]" type="text" placeholder="Email Address" required="required">
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label class="col-md-4 control-label sr-only" for="city">City</label>
-          <div class="col-md-4">
-            <input id="city" name="city" type="text" placeholder="City" class="">
+          <div class="form-group row">
+            <div class="col-md-4">
+              <label class="control-label sr-only" for="name">Your Name</label>
+              <input id="name" name="name" type="text" placeholder="Your Name" class="">
+              <span class="help-block">You can search by your full name</span>
+            </div>
+
+            <div class="col-md-4">
+              <label class="control-label sr-only" for="city">City</label>
+              <input id="city" name="city" type="text" placeholder="City" class="">
+            </div>
+
+            <div class="col-md-2">
+              <label class="control-label sr-only" for="state">State</label>
+              <select id="state" name="state" class="form-control">
+                {%include state_options.html enableNullSelection="true" nullDescription="No State Selected"  %}
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <label class="control-label sr-only" for="zip">Zip</label>
+              <input id="zip" name="zip" type="text" placeholder="Zip" class="">
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label class="col-md-4 control-label sr-only" for="zip">Zip</label>
-          <div class="col-md-4">
-            <input id="zip" name="zip" type="text" placeholder="Zip" class="">
+          <div id="js-claims-holder"></div>
+
+          <div class="form-group row" id="js-search-buttons">
+            <div class="col-md-4">
+              <label class="checkbox-inline" for="privacy_status">
+                <input type="checkbox" name="privacy_status" id="privacy_status" value="hidden">
+                Please keep my donor strike private.
+              </label>
+            </div>
+
+            <div class="col-md-2 pull-right">
+              <label class="sr-only" for="search">Search</label>
+              <button id="search" name="search" class="btn btn-mayday">Search</button>
+            </div>
+            <div class="col-md-2 pull-right hidden">
+              <label class="sr-only" for="claim">Claim these Donations</label>
+              <button id="claim" name="claim" class="btn btn-mayday">Claim these Donations</button>
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label class="col-md-4 control-label sr-only" for="state">State</label>
-          <div class="col-md-4">
-            <select id="state" name="state" class="form-control">
-              {%include state_options.html%}
-            </select>
-          </div>
-        </div>
-
-        <div id="js-claims-holder"></div>
-
-        <div class="form-group" id="js-search-buttons">
-          <label class="col-md-4 sr-only" for="search">Search</label>
-          <div class="col-md-4">
-            <button id="search" name="search" class="btn btn-mayday">Search</button>
-          </div>
-        </div>
-
-        <hr class="margin-y-lg"/>
-        <div id="js-results-holder"></div>
-      </fieldset>
-    </form>
-
+          <hr class="margin-y-lg"/>
+          <div id="js-results-holder"></div>
+        </fieldset>
+      </form>
+    </div>
   </div>
 </div>
 {% endcapture %}
@@ -90,13 +105,15 @@ meta_content: |
 
 {% capture page_specific_javascript %}
   <script>
-
+  // FOR NOW, ADD NOTE somewhere THAT USERS CAN KEEP CLAIMING< BUT CANNOT EDIT
+  //
     md.donorstrike = {};
     (function(donorstrike) {
       donorstrike.base_url = 'http://simple-search-service-mayday-2040.mybluemix.net/search?q=';
+      donorstrike.claimedContributionIds = ($.cookie('claimedContributionIds') || '').split(',');
 
       donorstrike.isValidQueryParam = function (param_name){
-        valid_params = ['name','city','state','zip']
+        valid_params = ['name','city','state','zip'];
         return ($.inArray(param_name, valid_params) > -1);
       }
       donorstrike.isValidSearchQuery = function (keyPair) {
@@ -111,41 +128,99 @@ meta_content: |
         });
         return queryParams.join('+AND+');
       }
-      donorstrike.submitSearchQuery = function(callback){
-        var formData = $('#js-search-form').serializeArray(),
-          searchPath = donorstrike.base_url + donorstrike.buildSearchQuery(formData),
-          $resultsHolder = $('#js-results-holder');
-        $.get(searchPath, function(data){
-          $.each(data.rows, function(index,row){
+      donorstrike.submitSearchQuery = function(){
+        donorstrike.updatePostSearchHtml('<i class="fa fa-refresh fa-spin"></i> Loading...');
+        var formData = donorstrike.$mainForm.serializeArray(),
+          searchPath = donorstrike.base_url + donorstrike.buildSearchQuery(formData);
+        $.get(searchPath)
+        .done(function(data){
+          donorstrike.populateRecords(data.rows);
+          donorstrike.initializeClaimable();
+          donorstrike.updatePostSearchHtml('Search Again');
+        })
+        .fail(function(){
+          alert('There was an error. Please try again later.')
+          donorstrike.updatePostSearchHtml('Try Search Again');
+        });
+      }
+      donorstrike.populateRecords = function (rows) {
+        var $resultsHolder = $('#js-results-holder');
+        $resultsHolder.empty();
+        $.each(rows, function(index,row){
+          if(!donorstrike.isPreviouslyClaimed(row.contribution_id)){
             $resultsHolder.append(HandlebarsTemplates['donor-strike'](row));
-          });
-          callback();
+          }
         });
       }
-      donorstrike.claim = function ($input_element) {
-        $target_element = $($input_element).parents('.form-group');
-        $clone = $target_element.clone();
+      donorstrike.updatePostSearchHtml = function(updateText){
+        donorstrike.$searchButton.html(updateText);
+        donorstrike.$searchButton.prev().html(updateText);
+      }
+      donorstrike.claimContribution = function ($input_element) {
+        var $target_element = $($input_element).parents('.form-group'),
+            $inputData = $($input_element).data(),
+            $clone = $target_element.clone(),
+            amount = $inputData.amount;
         $clone.find('.js-claim-text').text('Unclaim it.');
-        var amount = $($input_element).data('amount');
-        $target_element.html('<h4>Claimed $'+amount+'!</h4>')
+        donorstrike.claimedContributionIds.push($inputData.contribution_id);
+        $target_element.html('<h4>Claimed $'+amount+'!</h4>');
         $('#js-claims-holder').append($clone);
+        donorstrike.revealClaimButton();
       }
-      donorstrike.initializeClaim = function() {
-        $('.js-claimable-contribution').on('change', function(element){
-          donorstrike.claim(this);
+      donorstrike.isPreviouslyClaimed = function (contributionId) {
+        return ($.inArray(contributionId, donorstrike.claimedContributionIds) > -1);
+      }
+      donorstrike.revealClaimButton = function () {
+        donorstrike.$claimButton.parent().removeClass('hidden');
+      }
+      donorstrike.gatherContributionInfo = function(){
+        form_data = donorstrike.$mainForm.serializeObject();
+        $.extend(form_data.person, form_data);
+        form_data.strike_amount_in_cents = 0;
+        $('.js-claimable-contribution').each(function(){
+          form_data.strike_amount_in_cents += $(this).data('amount');
+        });
+        return form_data;
+      }
+      donorstrike.submitContributionInfo = function(claimCallback) {
+        donorstrike.$claimButton.html('<i class="fa fa-refresh fa-spin"></i> Loading...')
+        $.post(services_url + '/actions', donorstrike.gatherContributionInfo())
+        .done(function(){
+          $.cookie('claimedContributionIds', donorstrike.claimedContributionIds);
+          claimCallback();
+        })
+        .fail(function(){
+          alert('There was an error. Please try again.')
+          donorstrike.$claimButton.html('Claim donations again.');
         });
       }
-      donorstrike.initialize = function(){
-        console.log('initializing')
-        $('#js-search-form').on('submit', function(e){
+      donorstrike.initializeClaimable = function() {
+        $('.js-claimable-contribution').on('change', function(element){
+          donorstrike.claimContribution(this);
+        });
+      }
+      donorstrike.initialize = function(mainFormSelector, claimCallback){
+        donorstrike.$mainForm = $(mainFormSelector);
+        donorstrike.$searchButton = donorstrike.$mainForm.find('#search');
+        donorstrike.$claimButton = donorstrike.$mainForm.find('#claim')
+
+        donorstrike.$searchButton.on('click', function(e){
           e.preventDefault();
-          donorstrike.submitSearchQuery(donorstrike.initializeClaim);
+          donorstrike.submitSearchQuery();
+        });
+        donorstrike.$claimButton.on('click', function(e){
+          e.preventDefault();
+          donorstrike.submitContributionInfo(claimCallback);
         });
       }
     })(md.donorstrike);
 
     $(document).ready(function(){
-      md.donorstrike.initialize();
+      md.donorstrike.initialize('#js-search-form', function(){
+        //what to do when done
+        alert('claimed');
+        //window.location = '/some-relative/path/'
+      });
     });
   </script>
 {% endcapture %}

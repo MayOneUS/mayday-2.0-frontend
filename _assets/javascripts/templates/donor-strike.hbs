@@ -1,24 +1,20 @@
-<div class="form-group">
-  <label class="checkbox-inline" for="checkboxes-{{contribution_id}}">
-    <div class="row">
-      <div class="col-md-1">
-        <label for="{{contribution_id}}">
-          <input type="checkbox" class="js-claimable-contribution" name="checkboxes" id="{{contribution_id}}" value="1" data-amount="{{amount}}"> <span class="js-claim-text">Claim it!</span>
-        </label>
-      </div>
-      <div class="col-md-5">
-        <ul>
-          <li>Name: {{name}}</li>
-          <li>City: {{city}}</li>
-          <li>State: {{state}}</li>
-          <li>Zip: {{zip}}</li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-      On <time datetime="">{{contributed_at }}</time>, {{name}} contributed ${{amount}} to {{recipient}}{{#if office}} who ran for {{ office }}{{/if}}.
-      </div>
-    </div>
-  </label>
+<div class="form-group row">
+  <div class="col-md-1">
+    <label for="{{contribution_id}}" class="checkbox-inline" for="checkboxes-{{contribution_id}}">
+      <input type="checkbox" class="js-claimable-contribution" name="checkboxes" id="{{contribution_id}}" value="1" data-amount="{{amount}}" data-contribution_id="{{contribution_id}}"/> <span class="js-claim-text">Claim it!</span>
+    </label>
+  </div>
+  <div class="col-md-5">
+    <ul>
+      <li>Name: {{name}}</li>
+      <li>City: {{city}}</li>
+      <li>State: {{state}}</li>
+      <li>Zip: {{zip}}</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <p>On <time datetime="">{{contributed_at }}</time>, {{name}} contributed ${{amount}} to {{recipient}}{{#if office}} who ran for {{ office }}{{/if}}.</p>
+  </div>
 </div>
 
 {{!-- EXAMPLE ATTRIBUTES

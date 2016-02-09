@@ -1,4 +1,4 @@
-<option value="" disabled selected>State</option>
+<option value="" {% unless include.enableNullSelection %}disabled {%endunless%}selected>{% unless include.nullDescription %}State {% else %}{{include.nullDescription }}{%endunless%}</option>
 <option value="AL">Alabama</option>
 <option value="AK">Alaska</option>
 <option value="AZ">Arizona</option>
