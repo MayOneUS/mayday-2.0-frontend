@@ -6,7 +6,7 @@ function getParameterByName( name ) {
   return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function addCommas(nStr) {
+function addCommas(nStr) { //ignores decimals
   nStr += '';
   x = nStr.split('.');
   x1 = x[0];
@@ -21,4 +21,14 @@ function addCommas(nStr) {
 function americanDateFormat(date_string){
   date = new Date(date_string);
   return(date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear());
+}
+
+
+function currencyFormat(number, decimalDigits){ //force decimal length to decimalDigits
+  decimalDigits = typeof decimalDigits !== 'undefined' ? decimalDigits : 2;
+  return parseFloat(number).toFixed(decimalDigits).replace(/(\d)(?=(\d{3})+\.?)/g, '$1,');
+}
+
+function currencyFormatCents(number, decimalDigits){
+  return currencyFormat(parseFloat(number)/100, decimalDigits);
 }

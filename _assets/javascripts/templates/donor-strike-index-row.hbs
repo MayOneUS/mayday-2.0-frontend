@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-12">
+    <ul>
+      <li>Name: {{first_name}}</li>
+      <li>City: {{last_initial}}</li>
+      <li>City: {{location.city}}</li>
+      <li>State: {{location.state_abbrev}}</li>
+      <li>On strike for: {{strike_amount}}</li>
+    </ul>
+  </div>
+</div>
+
+{{!-- EXAMPLE ATTRIBUTES
+amount: 500
+city: "WALTHAM"
+contributed_at: "05/29/2013"
+contribution_id: "2081420131195402605"
+cycle: "2014"
+employer: "LIBERTY MUTUAL" #don't show in case prvacy concerns
+gender: "N"
+name: "FLORES, TRINIDAD"
+occupation: "VICE PRESIDENT"  #don't show in case prvacy concerns
+office: "MES2"
+party: "R"
+recipient: "Susan Collins (R)"
+recipient_id: "N00000491"
+state: "MA"
+undefined: "MES2"
+zip: "02451"
+--}}
+
+{{!-- {
+  "count": 6,
+  "current_page": 1,
+  "total_pages": 1,
+  "limit": 30,
+  "strike_total_in_cents": 96195,
+  "results": [
+    {
+      "id": 2,
+      "created_at": "2016-02-09T14:33:02.360Z",
+      "strike_amount_in_cents": 33750,
+      "first_name": null,
+      "last_initial": "",
+      "location": {
+        "city": null,
+        "state_abbrev": null
+      }
+    }, --}}

@@ -1,0 +1,84 @@
+---
+layout: default
+title: Take Action
+permalink: /demo/donor-strike-index/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/demo/donor-strike/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
+  <meta property="og:title" content="Donor Strike Demo"/>
+  <title>Donor Strike Demo</title>
+  <meta property="og:description" content="This is optional content"/>
+  <link rel="canonical" href="https://mayday.us/demo/donor-strike-results/">
+  <meta name="robots" content="noindex"><!--  remove no-index when you take pages live -->
+---
+{% capture custom_css %}
+<style type="text/css">
+  .somePageSpecificCss{}
+</style>
+{% endcapture %}
+
+{% capture content %}
+<style type="text/css" media="screen">
+  .jumbotron{
+    background: transparent url('/images/campaigns/20160120_generic_jumbotron.jpg') no-repeat center center;
+    padding-top: 120px;
+    padding-bottom: 20px;
+  }
+  .jumbotron h1{text-shadow: 3px 3px 2px #212230;}
+</style>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center">Donor strike demo</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row" style="background-color: #eee;padding-top: 10px;">
+    <div class="col-md-12">
+      <div class="js-results">
+
+      </div>
+      <div class="js-individual-strikers">
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+
+{% capture page_specific_javascript %}
+<script>
+md.donorStrikeIndex = {};
+(function(donorStrikeIndex) {
+  donorStrikeIndex.targetTemplateId = '20160215_donor_strike';
+  donorStrikeIndex.targetUrl = [services_url,'/activities/',donorStrikeIndex.targetTemplateId,'/actions'].join('');
+  donorStrikeIndex.$resultsHolder= $('.js-results');
+  donorStrikeIndex.$resultsRowHolder= $('.js-individual-strikers');
+
+  donorStrikeIndex.populateResults = function (data) {
+    data.formatedCount = addCommas(data.count);
+    console.log(data.strike_total_in_cents, currencyFormatCents(data.strike_total_in_cents,0))
+    data.strike_total = currencyFormatCents(data.strike_total_in_cents,0);
+    donorStrikeIndex.$resultsHolder.append(HandlebarsTemplates['donor-strike-index'](data));
+
+    $.each(data.results, function(index,row){
+      row.strike_amount = currencyFormatCents(row.strike_amount_in_cents,0);
+      donorStrikeIndex.$resultsRowHolder.append(HandlebarsTemplates['donor-strike-index-row'](row));
+    })
+  }
+
+})(md.donorStrikeIndex);
+
+  $(document).ready(function(){
+    $.getJSON(md.donorStrikeIndex.targetUrl).done(function(data){
+      md.donorStrikeIndex.populateResults(data)
+    })
+    .fail(function(){
+      alert('There appears to be a server problem. Please try again later.')
+    })
+  });
+</script>
+{% endcapture %}
+
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}

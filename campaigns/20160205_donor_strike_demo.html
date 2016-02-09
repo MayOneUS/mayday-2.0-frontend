@@ -51,25 +51,24 @@ meta_content: |
           <div class="form-group row">
             <div class="col-md-4">
               <label class="control-label sr-only" for="name">Your Name</label>
-              <input id="name" name="name" type="text" placeholder="Your Name" class="">
-              <span class="help-block">You can search by your full name</span>
+              <input id="name" name="person[name]" type="text" placeholder="Your Name" class="">
             </div>
 
             <div class="col-md-4">
               <label class="control-label sr-only" for="city">City</label>
-              <input id="city" name="city" type="text" placeholder="City" class="">
+              <input id="city" name="person[city]" type="text" placeholder="City" class="">
             </div>
 
             <div class="col-md-2">
               <label class="control-label sr-only" for="state">State</label>
-              <select id="state" name="state" class="form-control">
+              <select id="state" name="person[state]" class="form-control">
                 {%include state_options.html enableNullSelection="true" nullDescription="No State Selected"  %}
               </select>
             </div>
 
             <div class="col-md-2">
               <label class="control-label sr-only" for="zip">Zip</label>
-              <input id="zip" name="zip" type="text" placeholder="Zip" class="">
+              <input id="zip" name="person[zip]" type="text" placeholder="Zip" class="">
             </div>
           </div>
 
@@ -116,25 +115,25 @@ meta_content: |
         valid_params = ['name','city','state','zip'];
         return ($.inArray(param_name, valid_params) > -1);
       }
-      donorstrike.isValidSearchQuery = function (keyPair) {
-        return donorstrike.isValidQueryParam(keyPair.name) && keyPair.value != '';
+      donorstrike.isValidSearchQuery = function (name,value) {
+        return donorstrike.isValidQueryParam(name) && value != '';
       }
       donorstrike.buildSearchQuery = function (formData){
         var queryParams = [];
-        formData.forEach(function(keyPair){
-          if(donorstrike.isValidSearchQuery(keyPair)){
-            queryParams.push(keyPair.name+':"'+keyPair.value+'"');
+        $.each(formData, function(name, value){
+          if(donorstrike.isValidSearchQuery(name,value)){
+            queryParams.push(name+':"'+value+'"');
           }
         });
         return queryParams.join('+AND+');
       }
       donorstrike.submitSearchQuery = function(){
         donorstrike.updatePostSearchHtml('<i class="fa fa-refresh fa-spin"></i> Loading...');
-        var formData = donorstrike.$mainForm.serializeArray(),
-          searchPath = donorstrike.base_url + donorstrike.buildSearchQuery(formData);
+        var formData = donorstrike.$mainForm.serializeObject(),
+          searchPath = donorstrike.base_url + donorstrike.buildSearchQuery(formData.person);
         $.get(searchPath)
         .done(function(data){
-          donorstrike.populateRecords(data.rows);
+          donorstrike.populateContributions(data.rows);
           donorstrike.initializeClaimable();
           donorstrike.updatePostSearchHtml('Search Again');
         })
@@ -143,14 +142,20 @@ meta_content: |
           donorstrike.updatePostSearchHtml('Try Search Again');
         });
       }
-      donorstrike.populateRecords = function (rows) {
+      donorstrike.populateContributions = function (rows) {
         var $resultsHolder = $('#js-results-holder');
         $resultsHolder.empty();
-        $.each(rows, function(index,row){
-          if(!donorstrike.isPreviouslyClaimed(row.contribution_id)){
-            $resultsHolder.append(HandlebarsTemplates['donor-strike'](row));
-          }
-        });
+        if(rows.length < 1){
+          $resultsHolder.append('<h3>No results found. Please try the search again</h3>');
+        }else{
+          $.each(rows, function(index,row){
+            if(!donorstrike.isPreviouslyClaimed(row.contribution_id)){
+              row.strike_amount_in_cents = row.amount*100;
+              row.amount = currencyFormat(row.amount,0);
+              $resultsHolder.append(HandlebarsTemplates['donor-strike'](row));
+            }
+          });
+        }
       }
       donorstrike.updatePostSearchHtml = function(updateText){
         donorstrike.$searchButton.html(updateText);
@@ -162,6 +167,7 @@ meta_content: |
             $clone = $target_element.clone(),
             amount = $inputData.amount;
         $clone.find('.js-claim-text').text('Unclaim it.');
+        $clone.toggleClass('claimed-contribution');
         donorstrike.claimedContributionIds.push($inputData.contribution_id);
         $target_element.html('<h4>Claimed $'+amount+'!</h4>');
         $('#js-claims-holder').append($clone);
@@ -175,11 +181,11 @@ meta_content: |
       }
       donorstrike.gatherContributionInfo = function(){
         form_data = donorstrike.$mainForm.serializeObject();
-        $.extend(form_data.person, form_data);
         form_data.strike_amount_in_cents = 0;
-        $('.js-claimable-contribution').each(function(){
-          form_data.strike_amount_in_cents += $(this).data('amount');
+        donorstrike.$mainForm.find('.claimed-contribution input').each(function(){
+          form_data.strike_amount_in_cents += parseInt($(this).data('strike_amount_in_cents'));
         });
+        console.log(form_data)
         return form_data;
       }
       donorstrike.submitContributionInfo = function(claimCallback) {
@@ -220,6 +226,7 @@ meta_content: |
         //what to do when done
         alert('claimed');
         //window.location = '/some-relative/path/'
+        window.location = '/demo/donor-strike-index/'
       });
     });
   </script>
