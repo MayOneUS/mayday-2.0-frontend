@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Take Action
-permalink: /demo/donor-strike/
+permalink: /demo/donor-strike/new/
 meta_content: |
   <meta property="og:url" content="https://mayday.us/demo/donor-strike/"/>
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150429-hero-bg.jpg"/>
@@ -49,19 +49,24 @@ meta_content: |
           </div>
 
           <div class="form-group row">
-            <div class="col-md-4">
-              <label class="control-label sr-only" for="name">Your Name</label>
-              <input id="name" name="person[name]" type="text" placeholder="Your Name" class="">
+            <div class="col-md-3">
+              <label class="control-label sr-only" for="person_first_name">First Name</label>
+              <input id="person_first_name" name="person[first_name]" type="text" placeholder="First Name" class="">
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
+              <label class="control-label sr-only" for="person_last_name">Last Name</label>
+              <input id="person_last_name" name="person[last_name]" type="text" placeholder="Last Name">
+            </div>
+
+            <div class="col-md-2">
               <label class="control-label sr-only" for="city">City</label>
               <input id="city" name="person[city]" type="text" placeholder="City" class="">
             </div>
 
             <div class="col-md-2">
               <label class="control-label sr-only" for="state">State</label>
-              <select id="state" name="person[state]" class="form-control">
+              <select id="state" name="person[state_abbrev]" class="form-control">
                 {%include state_options.html enableNullSelection="true" nullDescription="No State Selected"  %}
               </select>
             </div>
@@ -119,13 +124,17 @@ meta_content: |
         return donorstrike.isValidQueryParam(name) && value != '';
       }
       donorstrike.buildSearchQuery = function (formData){
-        var queryParams = [];
-        $.each(formData, function(name, value){
+        queryData = $.extend({},formData);
+        queryData.name = [queryData.last_name,queryData.first_name].join(' ');
+        queryData.state = queryData.state_abbrev;
+        var validQueryParams = [];
+        console.log(queryData);
+        $.each(queryData, function(name, value){
           if(donorstrike.isValidSearchQuery(name,value)){
-            queryParams.push(name+':"'+value+'"');
+            validQueryParams.push(name+':"'+value+'"');
           }
         });
-        return queryParams.join('+AND+');
+        return validQueryParams.join('+AND+');
       }
       donorstrike.submitSearchQuery = function(){
         donorstrike.updatePostSearchHtml('<i class="fa fa-refresh fa-spin"></i> Loading...');
@@ -138,7 +147,7 @@ meta_content: |
           donorstrike.updatePostSearchHtml('Search Again');
         })
         .fail(function(){
-          alert('There was an error. Please try again later.')
+          alert('There was an error. Please try again later.');
           donorstrike.updatePostSearchHtml('Try Search Again');
         });
       }
@@ -152,7 +161,7 @@ meta_content: |
             if(!donorstrike.isPreviouslyClaimed(row.contribution_id)){
               row.strike_amount_in_cents = row.amount*100;
               row.amount = currencyFormat(row.amount,0);
-              $resultsHolder.append(HandlebarsTemplates['donor-strike'](row));
+              $resultsHolder.append(HandlebarsTemplates['donor-strike-search-result'](row));
             }
           });
         }
@@ -225,8 +234,8 @@ meta_content: |
       md.donorstrike.initialize('#js-search-form', function(){
         //what to do when done
         alert('claimed');
-        //window.location = '/some-relative/path/'
-        window.location = '/demo/donor-strike-index/'
+        //window.location = '/some-relative/path/';
+        window.location = '/demo/donor-strike-index/';
       });
     });
   </script>
