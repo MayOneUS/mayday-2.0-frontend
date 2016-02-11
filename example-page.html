@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Take Action
+title: Example Page
 permalink: /example-page/
 meta_content: |
   <meta property="og:url" content="https://mayday.us/example-page/"/>
@@ -18,11 +18,13 @@ meta_content: |
 {% endcapture %}
 
 {% capture content %}
-{% include jumbotrons/general-dark.html title="News" %}
+{% include jumbotrons/general-dark.html title="Example Page" %}
 
 <div class="container">
-  <div class="col-md-12">
-    <p>Whatever content might og on your page</p>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Whatever content might og on your page</p>
+    </div>
   </div>
 </div>
 {% endcapture %}
