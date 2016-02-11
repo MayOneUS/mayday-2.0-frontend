@@ -69,13 +69,22 @@ header .navbar-fixed-top{
 }
 
 .jumbotron{
-  padding-top:100px;
-  padding-bottom:0;
-  color:#fff;
+  padding-top:120px;
+  padding-bottom:20px;
+  color:$mayday-background;
 
   p a:hover{
     color:$mayday-grey-medium;
   }
+
+  &.dark{
+    background:transparent url('/images/campaigns/20160203_jumbotron_bg_2400x900.jpg') center center no-repeat;
+    background-size:cover;
+    // @include
+    h1{text-shadow: 3px 3px 2px #212230;}
+    h2{color:$mayday-yellow-light;}
+  }
+
 }
 
 
@@ -151,3 +160,4 @@ footer{
     margin-top: 15px;
   }
 }
+

@@ -4,23 +4,11 @@ title: Take Action
 permalink: /take-action/
 ---
 {% capture content %}
+{% include jumbotrons/general-dark.html title="Take Action" %}
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h1 class="text-center">Take Action</h1>
-    </div>
-  </div>
-  <!-- <div class="row">
-    <div class="col-xs-12">
-      <p class="lead">
-        Be part of the movement to restore our democracy. MAYDAY.US is built on the idea that harnessing the full strenght of our community will make reform possible.
-      </p>
-      <p class="lead">
-        Systemic corruption has broken our government and is preventing progress on every issue that matters. The only reason it doesn't change is because we believe it can't.
-      </p>
-    </div>
-  </div> -->
-  <ul class="action-tree col-md-10 center-block list-unstyled">
+  <div class="col-md-10 center-block">
+  <ul class="action-tree list-unstyled">
     <li class="action-wrap incomplete active js-sign-up">
       {% include take_action_section_header.html iconClass="sign-up" title="Sign Up for Updates" increment="1" %}
       {% include panels/panel_action_w_signup.html hide_volunteer=true %}
@@ -46,6 +34,7 @@ permalink: /take-action/
       {% include panels/panel_action_w_local_action.html %}
     </li>
   </ul>
+  </div>
 </div>
 {% endcapture %}
 
