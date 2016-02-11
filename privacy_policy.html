@@ -4,12 +4,12 @@ title: MAYDAY.US - Privacy Policy
 permalink: /privacy-policy/
 ---
 
+{% capture content %}
+{% include jumbotrons/general-dark.html title="Privacy Policy" %}
 
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <h1>Privacy Policy</h1>
-
       <p>The Mayday PAC values your privacy. You join our movement for a specific purpose. We will not use your personal information in a way that is inconsistent with that purpose.</p>
       <p>What follows is our Privacy Policy. If you have any questions, or concerns, please contact us at info@mayday.us:</p>
       <ul>
@@ -37,4 +37,6 @@ permalink: /privacy-policy/
     </div>
   </div>
 </div>
+{% endcapture %}
 
+{% include sub_layouts/default_layout.html %}
