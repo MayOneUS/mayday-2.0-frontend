@@ -268,14 +268,15 @@ a:hover:not(.btn) {
  * Blockquotes
  */
 blockquote {
-  color: $mayday-text;
+  color: $mayday-grey-dark;
   padding: 0.5em 1em;
   display:inline-block;
   margin-left:1em;
-  font-size: 18px;
-  line-height: 120%;
+  font-size: 21px;
+  line-height: 30px;
   letter-spacing: -0.01em;
-  background: #FAFAFA;
+  background: $mayday-grey-light;
+  border-left:5px solid $mayday-blue-light;
 
   > :first-child{
     margin-top:0;
