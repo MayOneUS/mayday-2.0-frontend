@@ -25,49 +25,8 @@
       {% endunless %}
     </div>
     {% unless page.hideMenus %}
-    <nav class="row margin-bottom-md">
-      <div class="col-md-3">
-        <h4>About</h4>
-        <ul>
-          <li><a href="{{root_path}}/the-plan/#plan/">The Plan</a></li>
-          <li><a href="{{root_path}}/about-us/">About</a></li>
-          <li><a href="{{root_path}}/leaders/">Leaders for Reform</a></li>
-          <li><a href="{{root_path}}/team-and-board/">Our Team</a></li>
-          <li><a href="{{root_path}}/faq/">FAQ</a></li>
-          <li><a href="{{root_path}}/contact-us/">Contact US</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <h4>Take Action</h4>
-        <ul>
-          <li></li>
-          <li><a href="{{root_path}}/join/">Sign Up</a></li>
-          <li><a href="{{root_path}}/take-action/">Get Involved</a></li>
-          <li><a href="https://gear.mayday.us/">Buy Gear</a></li>
-          <li><a href="{{root_path}}/donate/" class="text-orange">Donate</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <h4>Find Us</h4>
-        <ul>
-          <li><a href="http://www.reddit.com/r/maydaypac">Reddit</span></a></li>
-          <li><a href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ">Youtube</span></a></li>
-          <li><a href="https://www.facebook.com/MAYDAYdotUS">Facebook</span></a></li>
-          <li><a href="https://twitter.com/maydayus">Twitter</span></a></li>
-          <li><a href="https://github.com/MayOneUS/">Github</span></a></li>
-          <li><a href="">Email Us</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <h4>Media</h4>
-        <ul>
-          <li><a href="http://blog.mayday.us/">Blog</a></li>
-          <li><a href="http://blog.mayday.us/">Press releases</a></li>
-          <li><a href="{{root_path}}/in-the-news/">MAYDAY.US in the News</a></li>
-          <li><a href="{{root_path}}/videos/">Videos</a></li>
-          <li><a href="">Press Assets</a></li>
-        </ul>
-      </div>
+    <nav class="row margin-bottom-md expanded-menu">
+      {% include expanded_menu.html %}
     </nav>
     {% endunless %}
     <div class="row">

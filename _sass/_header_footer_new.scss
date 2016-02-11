@@ -1,5 +1,7 @@
 header .navbar-fixed-top{
   top:20px;
+  background-color:$mayday-background;
+
 
   .navbar-header{
     padding-right: 30px;
@@ -14,13 +16,21 @@ header .navbar-fixed-top{
       vertical-align: middle;
 
       >a{
-        &:link:not(.btn), &:visited:not(.btn) {
-          color: #212230;
+        &:link:not(.btn), &:visited:not(.btn), &:focus:not(.btn) {
+          color: $mayday-blue-black;
           text-transform: uppercase;
           font-size: 14px;
           font-weight: 500;
           border:none;
           padding: 15px 15px 10px;
+          border-radius: 0;
+          background-color:$mayday-background;
+          &.collapse{background-color:$mayday-grey-light}
+          &.collapsed.collapse{background-color:$mayday-background;}
+        }
+        &:hover:not(.btn){
+          &.collapsed.collapse{background-color:$mayday-grey-light;}
+          background-color:$mayday-grey-light;
         }
       }
       &.btn-wrap{
@@ -38,6 +48,11 @@ header .navbar-fixed-top{
         }
       }
     }
+  }
+
+  .expanded-menu{
+    h4{padding-top: 40px;}
+    ul{padding-bottom: 20px;}
   }
 
   .navbar-brand:link:not(.btn), .navbar-brand:visited:not(.btn){
@@ -80,7 +95,6 @@ header .navbar-fixed-top{
   &.dark{
     background:transparent url('/images/campaigns/20160203_jumbotron_bg_2400x900.jpg') center center no-repeat;
     background-size:cover;
-    // @include
     h1{text-shadow: 3px 3px 2px #212230;}
     h2{color:$mayday-yellow-light;}
   }
@@ -89,6 +103,7 @@ header .navbar-fixed-top{
 
 
 footer{
+  padding-bottom:10px;
   h1 {
     position: relative;
     line-height: 35px;
@@ -120,27 +135,6 @@ footer{
     }
   }
 
-  nav{
-    li{
-      list-style-type: none;
-      margin-bottom:5px;
-
-      a:link:not(.btn), a:visited:not(.btn) {
-        color: $mayday-grey-dark;
-        font-size: 16px;
-        &:after{
-          border-color: $mayday-grey-dark;
-        }
-      }
-      a:hover:not(.btn) {
-        color: $mayday-text;
-        &:after{
-          border-color:$mayday-text;
-        }
-      }
-    }
-  }
-
   .disclaimer-box {
     color: lighten($mayday-grey-dark, 20%);
     display: inline-block;
@@ -161,3 +155,25 @@ footer{
   }
 }
 
+.expanded-menu{
+  li{
+    list-style-type: none;
+    margin-bottom:5px;
+    line-height:18px;
+
+    a:link:not(.btn), a:visited:not(.btn) {
+      color: $mayday-grey-dark;
+      font-size: 16px;
+      &.text-orange{color:$mayday-orange-medium;}
+      &:after{
+        border-color: $mayday-grey-dark;
+      }
+    }
+    a:hover:not(.btn) {
+      color: $mayday-text;
+      &:after{
+        border-color:$mayday-text;
+      }
+    }
+  }
+}

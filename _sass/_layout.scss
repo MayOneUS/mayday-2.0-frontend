@@ -65,12 +65,6 @@ html {
   position: relative;
   min-height: 100%;
 }
-body {
-  margin-bottom: 300px;
-  @include tablet-minus{
-    margin-bottom: 420px;
-  }
-}
 
 
 /**
@@ -83,12 +77,6 @@ body {
   letter-spacing: .1px;
   height: auto !important;
   height: 100%;
-  // margin: 0 auto -300px;
-  .footer-push {
-    height: 300px;
-    clear: both;
-    content: '';
-  }
   .index-page &{
     padding: 0;
   }
