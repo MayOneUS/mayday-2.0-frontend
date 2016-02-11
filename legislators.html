@@ -1,7 +1,7 @@
 ---
 layout: default
 title: legislators
-permalink: /legislators/
+permalink: /leaders/
 ---
 {%capture content %}
 {% include jumbotrons/general-dark.html title="Potential Leaders for Reform" sub_title="in the 114th Congress"%}
@@ -31,7 +31,7 @@ permalink: /legislators/
   </div>
   <div class="row">
     <div class="col-md-12">
-      <p class="show-potential margin-bottom-0">Potential leaders are the <span id="js-potential-count">47</span> nominations from our community that we agree are the key to unlocking the majority we need. <a href="/the-plan/">Learn more about our campaign.</a></p>
+      <p class="show-potential margin-y-sm">Potential leaders are the <span id="js-potential-count">47</span> nominations from our community that we agree are the key to unlocking the majority we need. <a href="/the-plan/">Learn more about our campaign.</a></p>
     </div>
   </div>
   <div class="row no-gutter legislators-listing">
@@ -41,5 +41,15 @@ permalink: /legislators/
   </div>
 </div>
 {% endcapture %}
+
+{% capture page_specific_javascript %}
+<script>
+  $(document).ready(function(){
+    md.leaders.initialize();
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
 
 {% include sub_layouts/default_layout.html %}

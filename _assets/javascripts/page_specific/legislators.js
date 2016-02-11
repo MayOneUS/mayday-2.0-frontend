@@ -1,15 +1,15 @@
-if( window.location.pathname == '/legislators/' ){
+md.leaders = {};
+(function(leaders) {
+  leaders.leader_data = services_url+'/legislators.json' ;
 
-(function ( data ){
-
-  function loadTargetedAction(){
+  leaders.loadTargetedAction = function (){
     if(location.hash.length > 1){
       hash_location = location.hash.replace(/^#/,'');
       setListFilter(hash_location);
     }
   }
 
-  function setListFilter(filterValue){
+  leaders.setListFilter = function (filterValue){
     $('.legislators-listing').parent().prop('class', 'container legislators-'+filterValue);
     var $target = $('input[name="filter-value"][value="' + filterValue + '"]');
     $target.prop('checked', true);
@@ -22,7 +22,7 @@ if( window.location.pathname == '/legislators/' ){
     el.setAttribute('id',id);
   }
 
-  function renderAllies(legislator_data, index) {
+  leaders.renderAllies = function (legislator_data, index) {
     var rendered = [],
         unknowable_reps = ['DC', 'AS', 'GU', 'VI', 'PR', 'MP'];
 
@@ -44,7 +44,7 @@ if( window.location.pathname == '/legislators/' ){
     $('#js-legislators').append(rendered_html);
   }
 
-  function callDataAndTemplate(legislators) {
+  leaders.callDataAndTemplate = function (legislators) {
     var allyObject = [],
       potentialCount;
 
@@ -54,7 +54,7 @@ if( window.location.pathname == '/legislators/' ){
     });
 
     $('#js-legislators').removeClass('text-center').empty();
-    allyObject.map(renderAllies);
+    allyObject.map(leaders.renderAllies);
 
     potentialCount = $('.legislators-listing .potential-true').length;
     $('label[for=leaders]').append(' ('+ $('.legislators-listing .with-us-true').length+')');
@@ -65,26 +65,16 @@ if( window.location.pathname == '/legislators/' ){
     $('#search').hideseek({'nodata': "No legislator matched your search."});
   }
 
-  $(document).ready(function(){
-    "use strict";
-
-    loadTargetedAction();
+  leaders.initialize = function () {
+    leaders.loadTargetedAction();
 
     $('form.legislators-filter .radio-inline input').on('change', function(e){
       e.preventDefault();
       var filterValue = $('form.legislators-filter .radio-inline input:checked').val();
-      setListFilter(filterValue);
+      leaders.setListFilter(filterValue);
     });
 
-    var newAllyDataUrl = data;
-    var outSide = {};
+    $.getJSON(leaders.leader_data, leaders.callDataAndTemplate);
+  }
 
-    $.getJSON(newAllyDataUrl, callDataAndTemplate);
-
-  });
-
-})( services_url+'/legislators.json' );
-
-
-
-}
+})(md.leaders);
