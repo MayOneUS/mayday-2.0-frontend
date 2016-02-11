@@ -10,8 +10,8 @@ if( window.location.pathname == '/legislators/' ){
   }
 
   function setListFilter(filterValue){
-    $('.legislators-listing').parent().prop('class', 'container legislators-'+filterValue)
-    var $target = $('input[name="filter-value"][value="' + filterValue + '"]')
+    $('.legislators-listing').parent().prop('class', 'container legislators-'+filterValue);
+    var $target = $('input[name="filter-value"][value="' + filterValue + '"]');
     $target.prop('checked', true);
     $('.filter-title').text($target.prop('title'));
     // will scroll page if using jquery here
@@ -29,6 +29,13 @@ if( window.location.pathname == '/legislators/' ){
     legislator_data.short_title = legislator_data.title === 'Senator' ? 'Sen.' : 'Rep.';
     legislator_data.lower_abbrev = legislator_data.state_abbrev.toLowerCase();
     legislator_data.leg_thumbnail = 'url(' + legislator_data.image_url + ')';
+    if(legislator_data.with_us == true){
+      legislator_data.link_text = 'Supporter';
+    }else if(legislator_data.with_us == false){
+      legislator_data.link_text = 'Non-Supporter';
+    }else{
+      legislator_data.link_text = 'Read More';
+    }
     if($.inArray(legislator_data.state_abbrev, unknowable_reps) > -1){
       legislator_data.with_us = 'unknowable';
     }

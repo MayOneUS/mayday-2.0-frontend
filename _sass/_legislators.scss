@@ -6,7 +6,6 @@
 
   .pulled-image{
     margin-right:2%;
-    margin-left:2%;
   }
 
   .background-square{
@@ -32,30 +31,13 @@
   }
 
   h3{
-    // padding-top: 4px;
-    font-size: 22px;
-    font-weight: 400;
     white-space: nowrap;
-    @include small-desktop{
-      font-size: 16px;
-    }
     @include small-desktop{
       font-size: 20px;
     }
     @include phone{
       padding-top: 8px;
       font-size: 18px;
-    }
-  }
-  h4{
-    color: $color-brand;
-    margin-top:7px;
-    font-size: 15px;
-    @include small-desktop{
-      font-size: 13px;
-    }
-    @include phone{
-      font-size: 14px;
     }
   }
 }
@@ -66,12 +48,17 @@
 
 .legislators-listing{
 
+  .legislator-wrap{
+    background:$mayday-grey-light;
+    overflow:hidden;
+  }
+
   h3{
-    font-size:20px;
     white-space: nowrap;
   }
-  h4{
-    font-size: 16px;
+
+  a{
+    font-size:14px;
   }
 
   .fa{
@@ -79,17 +66,15 @@
     margin-right:1px
   }
 
-  .background-square{
-    border:4px solid #b0aeaf;
-  }
+  .fa-check-square-o{color:$mayday-green-light;}
+  .fa-minus-circle{color:$mayday-orange-medium;}
+  .fa-question-circle{color:$mayday-grey-dark;}
+
 
   .with-us-true{
     .fa-check-square-o{display:inline-block}
     .fa-minus-circle{display:none}
     .fa-question-circle{display:none}
-    .btn-targets{
-      background-color: $color-dossier-green;
-    }
   }
   .with-us-unknowable{
     .fa-question-circle{display:true}
@@ -100,9 +85,6 @@
     .fa-question-circle{display:none}
     .fa-check-square-o{display:none}
     .fa-minus-circle{display:inline-block}
-    .btn-targets{
-      background-color: $color-dossier-red;
-    }
   }
 }
 
@@ -111,31 +93,44 @@
   text-align: center;
   margin-bottom:5px;
 }
-
 .page-open{
   padding-top:40px;
 }
+
+
 .dossier-page{
+  .desaturate{
+    -webkit-filter: grayscale(1);
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    filter: grayscale(100%);
+    filter: url(desaturate.svg#greyscale);
+  }
+  .brighter{
+    -webkit-filter: brightness(1.2);
+    -webkit-filter: brightness(120%);
+    filter: brightness(120%);
+  }
+  
   margin-top: -45px;
   .jumbotron{
     overflow:visible;
     margin-bottom: 0;
+    h1{
+      font-family:'permanent marker';
+      font-size: 50px;
+      margin-top: 10px;
+      text-align: left;
+    }
+    h2{
+      text-align: left;
+      margin-top:0;
+    }
     .container{
       position:relative;
     }
   }
 
-  h2{
-    font-weight: 400;
-    font-size: 34px;
-    letter-spacing: 1.5px;
-  }
-  p{
-    font-weight: 400;
-  }
-  .lead-title{
-    // padding-left:285px;
-  }
   .homepage-panel{
     padding-top:30px;
     padding-bottom:20px;
@@ -145,8 +140,6 @@
     position:absolute;
     top:20px;
     margin-bottom:15px;
-  }
-  .dossier-img, .brighter{
   }
   .dossier-img{
     height: 285px;
@@ -163,6 +156,10 @@
       background-size: cover;
       background-repeat: no-repeat;
       margin-bottom:8px;
+      caption{
+        margin-top:-40px;
+        color:#fff;
+      }
     }
   }
   h1.lead-title{
@@ -170,13 +167,19 @@
     font-weight: 400;
     font-size:28px;
     text-align: left;
-    margin-bottom:10px;
+    margin-bottom: 20px;
+    line-height: 30px;
   }
   .bottom-line, .top-line-left{
     height: 6px;
   }
   .top-line-left{
     height: 20px;
+  }
+  .talley-wrap{
+    background:#eee;
+    border-radius:5px;
+    padding:4px 10px 0;
   }
   .tallies{
     position:relative;
@@ -221,7 +224,7 @@
 }
 
 .dossier-page.with-us-true{
-  h2, h1.lead-title, .talley{
+  h1.lead-title, .talley{
     color: $color-dossier-blue;
   }
   .dossier-img{
@@ -240,7 +243,7 @@
   }
 }
 .dossier-page.with-us-false{
-  h2, h1.lead-title, .talley{
+  h1.lead-title, .talley{
     color: $color-dossier-red;
   }
   .dossier-img{
@@ -465,6 +468,7 @@ form.mayday-inputs.legislators-filter{
 
   &.mayday-inputs input.form-control[type=text]{
     margin-bottom: 0;
+    font-family: 'FontAwesome', Rubik;
   }
   .radio-inline{
     margin-right:12px;

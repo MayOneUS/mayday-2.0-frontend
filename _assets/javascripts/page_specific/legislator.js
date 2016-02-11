@@ -15,6 +15,7 @@ $( document ).ready( function(){
     l_d.short_title = l_d.title === 'Senator' ? 'Sen.' : 'Rep.';
     l_d.title_name = [l_d.title,l_d.name].join(' ');
     l_d.bioguide_id = bioguide_id;
+    l_d.party_office_info = '('+l_d.party+'-'+l_d.state_abbrev+' '+l_d.display_district+')'
     if(!l_d.phone) l_d.show_phone = 'none';
 
     if ( l_d.with_us === true && l_d.eligible == true){
@@ -28,7 +29,7 @@ $( document ).ready( function(){
       });
       l_d.supported_bills_message = supported_bill_names.join(' and ');
       l_d.background_img = '/images/star_blue.svg';
-      l_d.page_title = [l_d.title_name,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
+      l_d.page_title = [l_d.title_name,l_d.party_office_info,'is a leader supporting fundamental reform of the way campaigns are funded.'].join(' ');
       l_d.tail_message = ['Thank',l_d.short_title,l_d.name, 'for being a leader'].join(' ') + '!';
       if(l_d.twitter_id){
         l_d.tweet_url = 'https://twitter.com/intent/tweet?text=Way to #Lead4Reform, @'+l_d.twitter_id+escape('! Thanks for cosponsoring the ')+escape(supported_bill_names[0])+escape(' to change how campaigns are funded.');
@@ -39,16 +40,16 @@ $( document ).ready( function(){
       if(legislator_data.eligible == false || $.inArray(legislator_data.state_abbrev, unknowable_reps) > -1){
         legislator_data.with_us = 'unknowable';
         if(legislator_data.title == 'Senator'){
-          l_d.page_title = [l_d.title_name,'is not up for re-election in 2016.'].join(' ');
+          l_d.page_title = [l_d.title_name,l_d.party_office_info,'is not up for re-election in 2016.'].join(' ');
         }else{
-          l_d.page_title = [l_d.title_name, 'is a non-voting member.'].join(' ')
+          l_d.page_title = [l_d.title_name,l_d.party_office_info,'is a non-voting member.'].join(' ')
         }
         l_d.tail_message = '';
         l_d.show_phone = 'none';
         l_d.show_social = 'none';
       }else{
         l_d.background_img = '/images/call-page/money_sign.svg';
-        l_d.page_title = [l_d.title_name,'is not yet a supporter of reforming the way elections are funded.'].join(' ');
+        l_d.page_title = [l_d.title_name,l_d.party_office_info,'is not yet a supporter of reforming the way elections are funded.'].join(' ');
         l_d.tail_message = ['Ask',l_d.short_title,l_d.name, 'to step up and lead!'].join(' ');
         if(l_d.twitter_id){
           l_d.tweet_url = 'https://twitter.com/intent/tweet?text=.@'+l_d.twitter_id+escape(' help lead the fight for fundamental reform of the way campaigns are funded. #Lead4Reform.')+'&url=http://repswith.us/reforms';
