@@ -5,7 +5,7 @@
     </div>
     <div class="panel-body mayday-inputs">
       <h3 class="spacer-y-margin">Tell all your friends, they should join you! A link will be included.</h3>
-      <div class="form md-inputs">
+      <div class="form mayday-inputs">
         {% form_for face_tweet %}
         {% hidden_field_tag "face_tweet[page_id]", flash.page_id %}
         <div class="form-errors">{% error_messages_for face_tweet %}</div>

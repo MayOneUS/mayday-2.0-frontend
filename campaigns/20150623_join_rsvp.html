@@ -14,29 +14,20 @@ meta_content: |
   <link rel="canonical" href="https://mayday.us/join/">
 ---
 {% capture custom_css %}
-<style type="text/css">
-  .dayofaction .thanks-message{display:none;}
-  .jumbotron{background: #007ACF url("/images/campaigns/20150701_join_landing_long_capitol_blu_1170x133_v01.png") center bottom no-repeat; min-height: 140px}
-  .control-label h3{font-weight:400;}
-</style>
 {% endcapture %}
 
 {% capture content %}
-
-<div class="jumbotron text-hide hidden-xs hidden-sm">
-  <h1>Join the Movement to Reform Congress</h1>
-</div>
+{% include jumbotrons/general-dark.html title="Join the Movement" sub_title="to Reform Congress" %}
 
 <div class="container dayofaction">
   <div class="row">
     <div class="col-md-10 center-block">
-      <h1>Join the Movement to Reform Congress</h1>
       <p>It's time for the people to take back our country from special interests. Take one minute to join the movement. You can help change the way campaigns are funded and end the system of corruption in Washington, DC!</p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-10 rsvp-wrap center-block incomplete">
-      <form class="row md-inputs js-rsvp-dayofaction-form">
+      <form class="row mayday-inputs js-rsvp-dayofaction-form">
         <fieldset class="col-md-12">
 
         <div class="row ">
@@ -107,7 +98,7 @@ meta_content: |
           <input type="hidden" name="person[remote_fields][tags][]" value="vct_recruit">
           <input type="hidden" name="person[is_volunteer]" value="1">
           <input type="hidden" name="event_id" value="152">
-          <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+          <button type="submit" class="btn btn-mayday btn-md-red">I'm in</button>
         </div>
             <p class="help-block">We respect your privacy. Your phone number will not be shared with outside parties. Note:  If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. Message &amp; data rates may apply.</p>
 
@@ -120,18 +111,18 @@ meta_content: |
 
       <div class="row">
         <div class="col-md-4">
-          <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/join/" target="_blank" class="btn btn-md-wide btn-share-center facebook">
+          <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/join/" target="_blank" class="btn btn-mayday btn-share-center facebook">
             <span class="text"><i class="fa fa-facebook"></i></span>
           </a>
         </div>
         <div class="col-md-4">
           <a href="https://twitter.com/intent/tweet?text=Sign%20up%20to%20take%20action%20on%20June%2023%20to%20reform%20the%20way%20elections%20are%20funded.%20Tell%20%23Congress%20to%20%23Lead4Reform%21%20https%3A%2F%2Fmayday.us%2Fjoin%20%40maydayus" target="_blank"
-              target="_blank" class="btn btn-md-wide btn-share-center twitter">
+              target="_blank" class="btn btn-mayday btn-share-center twitter">
             <span class="text"><i class="fa fa-twitter"></i></span>
           </a>
         </div>
         <div class="col-md-4">
-          <a href="mailto:?subject=Help%20me%20reform%20Congress&body=I%20just%20signed%20up%20to%20take%20action%20on%20June%2023rd%2C%20and%20I%20hope%20you%E2%80%99ll%20do%20it%20with%20me.%20MAYDAY%20is%20helping%20us%20change%20the%20way%20campaigns%20are%20funded%20by%20electing%20a%20Congress%20committed%20to%20fundamental%20reform.%20It%E2%80%99s%20easy%20to%20get%20involved%20with%20them%20and%20it%20will%20make%20a%20big%20difference.%20%0A%0ACheck%20out%20their%20page%20here%20to%20see%20the%20different%20ways%20you%20can%20get%20involved%3A%20https%3A%2F%2Fmayday.us%2Fjoin%2F.%20%20It%20only%20takes%20a%20minute!%20%0A%0AThanks!" class="btn btn-md-wide btn-share-center youtube">
+          <a href="mailto:?subject=Help%20me%20reform%20Congress&body=I%20just%20signed%20up%20to%20take%20action%20on%20June%2023rd%2C%20and%20I%20hope%20you%E2%80%99ll%20do%20it%20with%20me.%20MAYDAY%20is%20helping%20us%20change%20the%20way%20campaigns%20are%20funded%20by%20electing%20a%20Congress%20committed%20to%20fundamental%20reform.%20It%E2%80%99s%20easy%20to%20get%20involved%20with%20them%20and%20it%20will%20make%20a%20big%20difference.%20%0A%0ACheck%20out%20their%20page%20here%20to%20see%20the%20different%20ways%20you%20can%20get%20involved%3A%20https%3A%2F%2Fmayday.us%2Fjoin%2F.%20%20It%20only%20takes%20a%20minute!%20%0A%0AThanks!" class="btn btn-mayday btn-share-center youtube">
             <span class="text"><i class="fa fa-envelope-o"></i></span>
           </a>
         </div>

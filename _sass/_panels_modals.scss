@@ -18,25 +18,14 @@
     padding: 40px 50px 50px;
 
     p{
-      // font-size: 18px;
-      // font-weight:400;
-      // line-height: 140%;
-
       @include phone{
         padding-bottom: 0;
       }
 
       &.small{
-        // font-size: 16px;
-        // margin-bottom:0;
-        // margin-top:0;
       }
 
       &.help-block{
-        // margin:0;
-        // font-size:12px;
-        text-align: left;
-        margin-left:2px;
       }
     }
 
@@ -74,10 +63,6 @@
       margin-top:15px;
     }
 
-
-    a.btn-md-red, a.btn-mayday{
-      // margin-bottom:15px;
-    }
   }
 
   .img-capitol{
@@ -88,9 +73,6 @@
 
 }
 
-.action-panel form{
-  // margin: 25px 15px 0 15px;
-}
 
 
 #call-congress-modal .modal-dialog{

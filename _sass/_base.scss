@@ -50,17 +50,18 @@ $color-orientation: rgb(76, 43, 98);
 
 
 /* 2016 MAYDAY COLORS */
-  $mayday-blue-black:    #212230;
-  $mayday-blue-dark:     #00467e;
-  $mayday-blue-medium:   #0054b9;
-  $mayday-blue-light:    #2ac4ea;
-  $mayday-grey-dark:     #7b8082;
-  $mayday-grey-medium:   #dae4e7;
-  $mayday-grey-light:    #f4f4f4;
-  $mayday-orange-medium: #ee3800;
-  $mayday-orange-light:  #f36433;
-  $mayday-green-light:   #0ad6b2;
-  $mayday-yellow-light:  #fdd63f;
+  $mayday-blue-black:      #212230;
+  $mayday-blue-dark:       #00467e;
+  $mayday-blue-medium:     #0054b9;
+  $mayday-blue-light:      #2ac4ea;
+  $mayday-grey-dark-alpha: rgba(#7b8082,0.65);
+  $mayday-grey-dark:       #7b8082;
+  $mayday-grey-medium:     #dae4e7;
+  $mayday-grey-light:      #f4f4f4;
+  $mayday-orange-medium:   #ee3800;
+  $mayday-orange-light:    #f36433;
+  $mayday-green-light:     #0ad6b2;
+  $mayday-yellow-light:    #fdd63f;
 
   /* 2016 image overlay pixels image names*/
   $pixel_blue_black:    'overlay_blue_black_212230.png';

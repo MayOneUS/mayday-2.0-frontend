@@ -39,7 +39,7 @@ meta_content: |
     <li class="action-wrap incomplete js-rsvp-wrap">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-sign-up">Incomplete</small>
-      <a href="#" class="btn btn-md-wide" title="Get Involved in Your District">
+      <a href="#" class="btn btn-mayday" title="Get Involved in Your District">
         <strong class="show-complete">Completed:</strong>
         <strong class="show-incomplete">1.</strong>
         <span class="hidden-xs hidden-sm">Get Involved in Your District</span> <span class="hidden-md hidden-lg">Engage Locally</span>
@@ -49,7 +49,7 @@ meta_content: |
     <li class="action-wrap incomplete js-record-message">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-call-congress">Incomplete</small>
-      <a href="#" class="btn btn-md-wide" title="Record a Message">
+      <a href="#" class="btn btn-mayday" title="Record a Message">
         <strong class="show-complete">Completed:</strong>
         <strong class="show-incomplete">2.</strong>
         Record a message
@@ -59,12 +59,12 @@ meta_content: |
     <li class="action-wrap incomplete js-spread-the-word">
       <small class="text-hide show-complete">Completed:</small>
       <small class="text-hide show-incomplete icon-spread-the-word">Incomplete</small>
-      <a href="#" class="btn btn-md-wide" title="Invite your friends">
+      <a href="#" class="btn btn-mayday" title="Invite your friends">
         <strong class="show-complete">Completed:</strong>
         <strong class="show-incomplete">3.</strong>
         Invite your friends
       </a>
-      <div class="panel action-panel with-shield md-inputs">
+      <div class="panel action-panel with-shield mayday-inputs">
         <div class="panel-icon">
           <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
           <div class="fade-line hidden-xs hidden-sm"></div>
@@ -78,7 +78,7 @@ meta_content: |
           </div>
           <div class="row">
             <div class="col-md-6 col-sm-8 center-block">
-              <a href="mailto:?body=MAYDAY%20is%20helping%20us%20end%20the%20system%20of%20corruption%20in%20Washington%2C%20DC%20by%20changing%20the%20way%20campaigns%20are%20funded.%20%0A%0AWill%20you%20join%20me%20to%20take%20action%20to%20reform%20Congress%3F%20It%20takes%20less%20than%20minute%20to%20respond%20and%20will%20make%20a%20big%20difference%20--%20thanks%20in%20advance%21%20https%3A%2F%2Fmayday.us%2FJune23%2F.%0A&subject=Please%20help%20reform%20Congress"  class="btn btn-md-wide btn-share-center youtube">
+              <a href="mailto:?body=MAYDAY%20is%20helping%20us%20end%20the%20system%20of%20corruption%20in%20Washington%2C%20DC%20by%20changing%20the%20way%20campaigns%20are%20funded.%20%0A%0AWill%20you%20join%20me%20to%20take%20action%20to%20reform%20Congress%3F%20It%20takes%20less%20than%20minute%20to%20respond%20and%20will%20make%20a%20big%20difference%20--%20thanks%20in%20advance%21%20https%3A%2F%2Fmayday.us%2FJune23%2F.%0A&subject=Please%20help%20reform%20Congress"  class="btn btn-mayday btn-share-center youtube">
                 <span class="text"><i class="fa fa-envelope-o"></i></span>
               </a>
             </div>
@@ -99,15 +99,13 @@ meta_content: |
 </div>
 {% endcapture %}
 
-
 {% capture day_of_action_js %}
-
 <script>
-
+  $(document).ready(function(){
+    md.takeAction.initialize();
+  });
 </script>
 {% endcapture %}
-
-<!-- following line combines page scripts into footer scripts, below loaded libraries -->
 {% capture footer_scripts %}{{footer_scripts}}{{day_of_action_js}}{% endcapture %}
 
 {% include sub_layouts/default_layout.html %}

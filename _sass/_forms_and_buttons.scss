@@ -34,6 +34,11 @@
     color: $mayday-background;
   }
 
+  &.btn-mayday-lg{
+    padding:18px;
+    font-size:24px;
+    font-weight: 500;
+  }
   &.btn-mayday-md{
     padding: 9px;
     font-size: 14px;
@@ -73,7 +78,10 @@
 }
 
 .btn{
-  &.btn-social{color:$mayday-background;}
+  &.btn-social{
+    color:$mayday-background;
+    .fa{margin-right:5px;}
+  }
   &.btn-facebook {@include button-colors($color-facebook);}
   &.btn-reddit   {@include button-colors($color-reddit);}
   &.btn-twitter  {@include button-colors($color-twitter);}
@@ -118,7 +126,7 @@
 //   }
 // }
 
-// .btn-md-wide, .btn-md-md{
+// .btn-mayday, .btn-md-md{
 //   @include button-colors($color-dark-red);
 //   width: 100%;
 //   margin-bottom: 10px;
@@ -230,26 +238,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**************************2016 INPUTS */
+.mayday-inputs form, form.mayday-inputs{
+  text-align:left;
+}
 .mayday-inputs{
+
   input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea {
     font-family: $base-font-family;
     border:2px solid $mayday-blue-black;
@@ -300,6 +294,28 @@
       padding-left:1px;
       color:rgba($mayday-background, 0.8);
     }
+  }
+
+  .help-block{
+    font-size:15px;
+    text-align: left;
+    line-height: normal;
+    padding-top:0;
+    margin:-5px 0 10px 0;
+    &.for-checkboxes{
+      font-size:15px;
+      line-height: 1em;
+      margin-top:0;
+    }
+    .btn + &, label + &{
+      margin-top:0;
+    }
+  }
+  p.help-block{
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    color:$mayday-grey-dark-alpha;
   }
 }
 
