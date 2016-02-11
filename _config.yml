@@ -7,8 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 development_services_url: //services.mayday.us
 # development_services_url: //localhost:3000
 blog_root_url: http://blog.mayday.us
-blog_post_feed_url: //services.mayday.us/blog_posts
-press_releases_feed_url: //services.mayday.us/blog_posts/press_releases
+blog_feed_url: //services.mayday.us/blog_posts
 pledge_url: '//pledge.mayday.us'
 github_username:  MayOneUS
 twitter_username: MAYDAYUS

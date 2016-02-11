@@ -18,6 +18,12 @@ function addCommas(nStr) {
   return x1 + x2;
 }
 
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+function maydayDateFormat(date_string){
+  date = new Date(date_string);
+  return(months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear());
+}
+
 function americanDateFormat(date_string){
   date = new Date(date_string);
   return(date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear());

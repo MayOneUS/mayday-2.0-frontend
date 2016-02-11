@@ -56,7 +56,7 @@ hr{
     margin-bottom: 10px;
   }
 
-  ul.list-unstyled ol.list-unstyled{
+  ul.list-unstyled, ol.list-unstyled{
     margin-left:auto;
     margin-bottom: auto;
   }
@@ -159,6 +159,11 @@ h1, h2, h3, h4, h5, h6, legend {
   margin-bottom:20px;
   a:link:not(.btn), a:visited:not(.btn){
     color: $mayday-text;
+  }
+  small{
+    font-weight: 500;
+    font-size: 75%;
+    color:$mayday-grey-dark-alpha;
   }
 }
 

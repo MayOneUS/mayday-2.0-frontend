@@ -6,91 +6,47 @@ permalink: /news/
 {% capture content %}
 {% include jumbotrons/general-dark.html title="News" %}
 
-<div class="container news-content">
-  <div class="row no-gutter">
-    <div class="col-xs-12 col-md-4">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
       <div class="panel panel-news">
         <div class="panel-heading">
-          <h2>
-            <i class="md-icon md-download"></i>
-            Media Resources
-          </h2>
+          <h2 class="as-if-h4"><a href="{{site.blog_root_url}}" target="_blank">Mayday Blog <small>More</small></a></h2>
         </div>
-        <div class="panel-body contact-info">
-            <p><a href="mailto:press@mayday.us?subject=Press">press@mayday.us</a></p>
+        <div class="panel-body">
+          <ul id="tumblr-posts" class="list-unstyled">
           </ul>
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-sm-4">
       <div class="panel panel-news">
         <div class="panel-heading">
-          <h2>
-            <i class="md-icon md-envelope"></i> Contact Us
-          </h2>
+          <h2 class="as-if-h4"><a href="{{site.blog_root_url}}/tagged/press-release">Press Releases <small>More</small></a></h2>
         </div>
-        <div class="panel-body contact-info">
-          <p>
-            <a href="mailto:info@mayday.us?subject=Info">info@mayday.us</a>
-          </p>
-          <p>
-            MAYDAY PAC<br/>
-            P.O. Box 75357<br/>
-            Washington, DC 20002
-          </p>
+        <div class="panel-body">
+          <ul id="tumblr-press-releases" class="list-unstyled">
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="row-same-height row-full-height">
-      <div class="col-xs-12 col-sm-6 col-sm-height col-full-height">
-        <div class="panel panel-news with-border">
-          <div class="panel-heading">
-            <h2>
-              <a href="{{site.blog_root_url}}" target="_blank"><i class="md-icon md-shield"></i> The Mayday Blog</a>
-            </h2>
-          </div>
-          <div class="panel-body panel-links">
-            <ul id="tumblr-posts">
-            </ul>
-            <a class="btn btn-targets more-link" href="{{site.blog_root_url}}">Visit the Blog</a>
-          </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="panel panel-news">
+        <div class="panel-heading">
+          <h2 class="as-if-h4"><a href="/in-the-news/">Mayday in the News</a> <small>More</small></h2>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-sm-height col-full-height">
-        <div class="panel panel-news with-border">
-          <div class="panel-heading">
-            <h2><a href="{{site.blog_root_url}}/tagged/press-release"><i class="md-icon md-microphone"></i>Press Releases</a></h2>
-          </div>
-          <div class="panel-body panel-links">
-            <ul id="tumblr-press-releases">
-            </ul>
-            <a class="more-link" href="{{site.blog_root_url}}/tagged/press-release">&gt; View our Press Release Library</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-sm-height col-full-height">
-        <div class="panel panel-news with-border">
-          <div class="panel-heading">
-            <h2>
-              <a href="/in-the-news/"><i class="md-icon md-newspaper"></i> Mayday in the News</a>
-            </h2>
-          </div>
-          <div class="panel-body panel-links">
-            <ul>
-            {% for article in site.data.press_articles limit:5 %}
-              <li>
-                <a href="/in-the-news/#{{article.link | slugify}}">{{ article.title }}</a>
-              </li>
-            {% endfor %}
-            </ul>
-            <a class="more-link" href="/in-the-news/">&gt; Read more news about Mayday</a>
+        <div class="panel-body">
+          <ul class="list-unstyled">
+          {% for article in site.data.press_articles limit:5 %}
+            <li>
+              <!-- <time datetime="{{date}}" class="as-if-h6 text-blue-highlight">{{date}}</time> -->
+              <p><a href="/in-the-news/#{{article.link | slugify}}">{{ article.title | truncatewords: 20}}</a></p>
+            </li>
+          {% endfor %}
+          </ul>
 
-          </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -104,8 +60,8 @@ permalink: /news/
 {% capture page_specific_javascript %}
 <script>
 $(document).ready(function(){
-  render_blog_feed();
-  render_press_releases_feed();
+  md.newsFeeds.renderBlogFeed();
+  md.newsFeeds.renderPressReleasesFeed();
 });
 </script>
 {% endcapture %}
