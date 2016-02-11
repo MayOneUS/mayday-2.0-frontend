@@ -19,66 +19,34 @@
   &.light{
     background-color: #fff;
   }
-  h2{
-    font-weight: 400;
-  }
-  p{
-    font-size: 17px;
-  }
 }
 /**
  * sticky nav
  */
 .sticky-nav{
-  background:#fff;
-  border-radius:5px;
-  padding: 0px 15px 30px 25px;
-  box-shadow: 1px 1px 2px #eee;
-  display: block;
-  float:left;
-  z-index: 10;
+  background:$mayday-background;
   color: $mayday-text;
+  padding:20px 20px 20px;
+  z-index:10;
+  margin-top:-15px;
+  li{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom:1px solid $mayday-grey-medium;
+    &:last-child{
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+    a:link, a:visited{color:$mayday-grey-dark;}
+    &.active{
+      a:link, a:visited{color:$mayday-blue-dark;}
+    }
+  }
   @include tablet{
     padding: 0px 0px 30px 25px;
   }
-  &.stuck{top:10px;}
-
-  .row{
-    margin-top: 15px;
-  }
-
-  .sticky-star{
-    height: 15px;
-    width: 15px;
-    padding-left:0;
-    padding-right:5px;
-    margin-top: 2px;
-    background:url('/images/plan_side_star_off.svg') center center no-repeat;
-    @include tablet{
-      height: 10px;
-      width: 10px;
-    }
-  }
-
-  .sticky-text{
-    font-weight: 400;
-    line-height: 140%;
-    width: 140px;
-    padding-left:5px;
-    padding-right:0;
-    font-size: 12px;
-    color: $mayday-text;
-    @include tablet{
-      width: 140px;
-      font-size: 10px;
-    }
-  }
-  .active {
-    .sticky-star{
-      background:url('/images/plan_side_star_on.svg') center center no-repeat;
-    }
-    .sticky-text{
-      color: $color-brand;
-    }
+  &.stuck{
+    top:110px;
+    max-width:165px;
   }
 }
