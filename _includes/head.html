@@ -37,16 +37,20 @@
       {% when 'production' %}
         '//services.mayday.us'
       {% when 'alpha' %}
-        '//services-staging.mayday.us'
+        window.services_url = '//services-staging.mayday.us'
       {% when 'development' %}
-        '{{site.development_services_url}}'
+        window.services_url = '{{site.development_services_url}}'
       {% else %}
         '//services.mayday.us'
       {% endcase %};
     window.blogFeedUrl = '{{site.blog_post_feed_url}}';
   </script>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Rubik:400,400italic,700,500|Permanent+Marker" type="text/css">
+  {% if jekyll.environment == 'development' %}
+    <link rel="stylesheet" href="{{ root_path }}{{ '/css/development.css' }}">
+  {% else %}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Rubik:400,400italic,700,500|Permanent+Marker" type="text/css">
+  {% endif %}
   <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}">
   <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" /> -->
   {{ custom_css }}
