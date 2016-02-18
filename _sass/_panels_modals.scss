@@ -11,28 +11,26 @@
   background:$mayday-grey-light;
   margin-bottom: 0;
 
+  h2{
+    color: $mayday-blue-dark;
+  }
+
   .mayday-inputs{
   }
 
   .panel-body{
     padding: 40px 50px 50px;
 
-    p{
-      @include phone{
-        padding-bottom: 0;
-      }
-
-      &.small{
-      }
-
-      &.help-block{
-      }
-    }
+    // p{
+      // @include phone{
+        // padding-bottom: 0;
+      // }
+    // }
 
     h2 {
       position: relative;
       padding-top: 60px;
-      color: $mayday-blue-dark;
+      // color: $mayday-blue-dark;
 
       &:before {
         content: ' ';
@@ -62,7 +60,6 @@
     .skip-next{
       margin-top:15px;
     }
-
   }
 
   .img-capitol{
@@ -70,6 +67,86 @@
     margin:0 auto;
   }
 
+
+  &.donate{
+    .panel-title h2{
+      padding:40px 20px 20px;
+    }
+    .progress-meter{
+      background-color:$mayday-blue-dark;
+      ul.list-unstyled{
+        @include flex;
+        padding:6px 0;
+
+        >li{
+          width: 100%;
+          color:rgba($mayday-background, 0.5);
+          font-weight:500;
+          .fa-check{display:none;}
+          &.active{color:$mayday-background;}
+          &.complete{
+            color:$mayday-yellow-light;
+            .fa-check{display:inline-block;}
+            .step-count{display:none;}
+          }
+
+          .fa-arrow-right{
+            color:$mayday-blue-medium;
+          }
+        }
+      }
+    }
+    .btn-group-flexed{
+      &.donation-amounts{
+        flex-wrap: wrap;
+        label.btn{
+          // flex-grow:1;
+          width: calc(100% * 1/3 - 5%);
+          margin-right:5%;
+          margin-bottom:5px;
+          &:last-child{
+            position:relative;
+            flex-grow:1;
+            padding-top:6px;
+            margin-right:0;
+            margin-left:6%;
+            line-height: inherit;
+            input[type=number]{
+              padding:0;
+              border-color:$mayday-blue-medium;
+              width:calc(100% - 20px);
+            }
+          }
+          &:nth-child(3n+3){
+            margin-right:0;
+          }
+        }
+      }
+      &.donation-recurring{
+        .btn-mayday-white{
+          flex-grow:1;
+          width:100%;
+          margin-right:10px;
+          &:last-child{
+            margin-right:0;
+          }
+        }
+      }
+      &.payment-method{
+        .btn-mayday-white{
+          width:100%;
+          margin-right:10px;
+          &:last-child{
+            margin-right:0;
+          }
+          .fa{
+            display:block;
+            width:100%;
+          }
+        }
+      }
+    }
+  }
 
 }
 

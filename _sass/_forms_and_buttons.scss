@@ -29,6 +29,13 @@
     padding-left:5px;
   }
 
+  small{
+    text-transform: none;
+    font-weight: 400;
+    font-size: 70%;
+    padding-left: 3px;
+  }
+
 
   &:hover, &:visited, &:link, &:focus{
     color: $mayday-background;
@@ -43,9 +50,23 @@
     padding: 9px;
     font-size: 14px;
   }
+  &.short{
+    line-height: 17px;
+    font-size:20px;
+  }
 
   &.btn-mayday-blue{@include button-colors($mayday-blue-dark);}
   &.btn-mayday-blue-medium{@include button-colors($mayday-blue-medium);}
+  &.btn-mayday-white{
+    background-color: #fff;
+    color:$mayday-grey-dark;
+    &:hover{
+      color: $mayday-blue-black;
+    }
+    &.active{
+      background-color:$mayday-grey-medium;
+    }
+  }
   &.btn-mayday-hollow{
     background-color: transparent;
     border: 2px solid $mayday-background;
@@ -67,12 +88,10 @@
       color: $mayday-blue-dark;
     }
     &.active{
-      background-color: $mayday-background;
-      box-shadow: none;
+      background-color: $mayday-yellow-light;
     }
-    &.short{
-      line-height: 17px;
-      font-size:20px;
+    #index &.active{
+      background-color: $mayday-background;
     }
   }
 }
@@ -89,28 +108,32 @@
 }
 
 /* BTN GROUP OVERRIDES */
-.btn-group .btn-social{
-  border-radius: 0;
-  width:80px;
-  padding:21px 0 20px;
-}
-
-.btn-group.btn-group-flexed{
-  @include flex;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-}
-
-.btn-group.btn-group-mayday>.btn{
-  &:first-child:not(:last-child):not(.dropdown-toggle),
-  &:not(:first-child):not(:last-child):not(.dropdown-toggle),
-  &:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child){
-    border-bottom-right-radius: 2px;
-    border-bottom-left-radius: 2px;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
+.btn-group{
+  &.btn-group-flexed{
+    @include flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+  &.btn-group-mayday>.btn{
+    &:first-child:not(:last-child):not(.dropdown-toggle),
+    &:not(:first-child):not(:last-child):not(.dropdown-toggle),
+    &:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child){
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
+      border-top-right-radius: 2px;
+      border-top-left-radius: 2px;
+    }
+  }
+  .btn-social{
+    border-radius: 0;
+    width:80px;
+    padding:21px 0 20px;
+  }
+  .btn.active{
+    box-shadow: none;
   }
 }
+
 
 
 

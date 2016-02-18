@@ -1,0 +1,162 @@
+<div class="panel action-panel donate">
+  <div class="panel-title">
+    <h2 class="as-if-h3">Donate in two minutes or less</h2>
+    <div class="col-md-12  progress-meter">
+      <ul class="list-unstyled col-md-6 center-block">
+        <li class="active"><span class="step-count">1</span> <i class="fa fa-check"></i></li>
+        <li><i class="fa fa-arrow-right"></i></li>
+        <li id="donate-step-2"><span class="step-count">2</span> <i class="fa fa-check"></i></li>
+        <li><i class="fa fa-arrow-right"></i></li>
+        <li id="donate-step-3"><span class="step-count">3</span> <i class="fa fa-check"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel-body mayday-inputs">
+    <form class="row margin-top-md" id="js-donate-form">
+      <fieldset class="col-md-12">
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <div class="btn-group btn-group-mayday btn-group-flexed donation-amounts" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-10">
+                <input type="radio" id="donate-10" name="donation_amount" value="10" /> $10
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-35">
+                <input type="radio" id="donate-35" name="donation_amount" value="35" /> $35
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-50">
+                <input type="radio" id="donate-50" name="donation_amount" value="50" /> $50
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short active" for="donate-100">
+                <input type="radio" id="donate-100" name="donation_amount" value="100" /> $100
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-250">
+                <input type="radio" id="donate-250" name="donation_amount" value="250" /> $250
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-500">
+                <input type="radio" id="donate-500" name="donation_amount" value="500" /> $500
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-1000">
+                <input type="radio" id="donate-1000" name="donation_amount" value="1000" /> $1000
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-other">
+                $<input type="radio" id="donate-other" name="donation_amount" /> <input type="number" name="donation_amount" placeholder="Other">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <div class="btn-group btn-group-mayday btn-group-flexed donation-recurring" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
+              <label class="btn btn-mayday btn-mayday-white short active " for="recurring-no">
+                <input type="radio" id="recurring-no" name="recurring" value="true" /> No
+              </label>
+              <label class="btn btn-mayday btn-mayday-white short" for="recurring-no">
+                <input type="radio" id="recurring-no" name="recurring" value="true" /> Yes
+                <small>donate this amount every month</small>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <a href="" title="" class="btn btn-mayday btn-mayday-blue-medium">Continue</a>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="col-md-12 hidden">
+
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label class="control-label sr-only" for="person[first_name]">First Name</label>
+            <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+            <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-8">
+            <label class="control-label sr-only" for="person[email]">Email Address</label>
+            <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
+          </div>
+
+          <div class="form-group col-md-4 {% if include.hide_volunteer %}margin-bottom-0{% endif %}">
+            <label class="control-label sr-only" for="person[zip]">ZIP</label>
+            <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
+          </div>
+        </div>
+
+        <h3>Employment Information</h3>
+        <p>Federal law requires us to collect your employer and occupation information.</p>
+
+        <div class="row">
+          <div class="form-group col-md-12 text-left">
+            <label class="control-label sr-only" for="person[is_retired]">Volunteer</label>
+              <label class="checkbox-inline" for="person[is_retired]-0">
+              <input type="checkbox" name="person[is_retired]" id="person[is_retired]-0" value="true"> Check here if you are retired or not employed.
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="control-label sr-only" for="person[occupation]">Occupation</label>
+            <input id="person[occupation]" name="person[occupation]" type="text" placeholder="Occupation" required="true">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="control-label sr-only" for="person[employer]">Employer</label>
+            <input id="person[employer]" name="person[employer]" type="text" placeholder="Employer" required="">
+          </div>
+        </div>
+
+        <h3>Payment Method</h3>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <div class="btn-group btn-group-mayday btn-group-flexed payment-method" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
+              <label class="btn btn-mayday btn-mayday-white" for="paypal">
+                <input type="radio" id="paypal" name="donation_amount" value="Paypal" /> <i class="fa fa-paypal"></i> Paypal
+              </label>
+              <label class="btn btn-mayday btn-mayday-white active" for="credit-card">
+                <input type="radio" id="credit-card" name="donation_amount" value="Credit Card" /> <i class="fa fa-credit-card-alt"></i> Credit Card
+              </label>
+              <label class="btn btn-mayday btn-mayday-white" for="bitcoin">
+                <input type="radio" id="bitcoin" name="donation_amount" value="BitCoin" /> <i class="fa fa-bitcoin"></i> BitCoin
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <a href="" title="" class="btn btn-mayday btn-mayday-blue-medium">Continue</a>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+{% capture page_specific_javascript %}
+<script>
+  $(document).ready(function(){
+  //   // $('.js-donate-form').validate();
+    $('#js-donate-form').find('.btn-mayday-blue-medium').on('click', function(e){
+      e.preventDefault();
+      $('.progress-meter .active').removeClass('active').addClass('complete')
+        .next().next().addClass('active');
+      $('#js-donate-form fieldset').toggleClass('hidden');
+    })
+
+  });
+</script>
+{% endcapture %}
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
