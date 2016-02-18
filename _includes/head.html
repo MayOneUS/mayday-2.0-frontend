@@ -1,5 +1,5 @@
 <head>
-  {% if page.optimizely %}<script src="//cdn.optimizely.com/js/210578001.js"></script>{% endif %}
+  {% if page.optimizely && jekyll.environment != 'development' %}<script src="//cdn.optimizely.com/js/210578001.js"></script>{% endif %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,11 +48,12 @@
   {% if jekyll.environment == 'development' %}
     <link rel="stylesheet" href="{{ root_path }}{{ '/css/development.css' }}">
   {% else %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Rubik:400,400italic,700,500|Permanent+Marker" type="text/css">
+    <script src="//c.shpg.org/220/sp.js"></script>
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" /> -->
   {% endif %}
   <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}">
-  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" /> -->
   {{ custom_css }}
-  <script src="//c.shpg.org/220/sp.js"></script>
 </head>
