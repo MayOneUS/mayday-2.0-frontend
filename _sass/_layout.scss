@@ -26,6 +26,13 @@ $large-desktop-min-width: 1200px;
   }
 }
 
+@mixin small-desktop-minus {
+  @media (max-width: #{$large-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+
 @mixin small-desktop {
   @media (min-width: #{$small-desktop-min-width}) and (max-width: #{$large-desktop-min-width - 1px}) {
     @content;

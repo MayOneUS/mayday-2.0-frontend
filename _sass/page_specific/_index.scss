@@ -5,6 +5,9 @@
     .vertical-center{
       border-radius: 2px;
       height:250px;
+      @include tablet-minus{
+        height:220px;
+      }
     }
     .letter, .events, .take-action{
       p:last-child{
@@ -16,6 +19,13 @@
         @include overlay-yellow-light(
           "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
           url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+        @include tablet-minus{
+          height:430px;
+        }
+        @include phone{
+          margin-bottom:30px;
+          height:220px;
+        }
     }
     .events{
         @include overlay-blue-light(
@@ -65,8 +75,16 @@
         calc(50% + (912px / 2)) 0;
       background-repeat: repeat-y;
 
+      @include small-desktop-minus{
+        background:$mayday-grey-medium;
+      }
+
       .btn-group{
-        margin-top:calc(50% - 80px)
+        margin-top:calc(50% - 80px);
+        @include small-desktop-minus{
+          margin-top:20px;
+        }
+
       }
     }
   }

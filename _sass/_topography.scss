@@ -243,7 +243,7 @@ a:link:not(.btn), a:visited:not(.btn), a:active:not(.btn) {
   position: relative;
 }
 
-a:hover:not(.btn) {
+a:hover:not(.btn), a:focus:not(.btn) {
   color: $mayday-text;
   text-decoration: none;
 }
@@ -257,7 +257,12 @@ a:hover:not(.btn) {
     width: 0;
     border-bottom: 2px solid $mayday-orange-medium;
     transition: 0.5s ease;
+    h1 &, h2 &, h3 &, h4 &, h5 &, h6 &{
+      bottom: -2px;
+    }
+
   }
+
 
   a:hover:not(.btn):after {
     width: 100%;
