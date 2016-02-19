@@ -135,137 +135,14 @@
 }
 
 
-
-
-
-
-/******************************LEGACY STARTS HERE */
-// @mixin simple-button{
-//   margin:0;
-//   letter-spacing: 1px;
-//   @include phone{
-//     letter-spacing: 0;
-//     font-size:20px;
-//   }
-// }
-
-// .btn-mayday, .btn-md-md{
-//   @include button-colors($color-dark-red);
-//   width: 100%;
-//   margin-bottom: 10px;
-//   margin-top: 6px;
-//   padding: 16px;
-//   font-size: 28px;
-//   line-height: normal;
-//   font-weight: 400;
-//   text-transform: uppercase;
-//   cursor: pointer;
-// }
-
-// .btn-md-md{
-//   padding: 8px;
-//   font-size: 22px;
-// }
-
-// .btn-md-red, a.btn-md-red:link {
-//   @include simple-button;
-// }
-// .btn-md-gray, a.btn-md-gray:link {
-//   @include button-colors($color-grey);
-//   @include simple-button;
-//   font-weight: 300;
-// }
-// .vid-share-button{
-//   letter-spacing: 1px;
-//   border-radius: 4px;
-//   font-weight: 400;
-//   padding: 10px 0;
-// }
-// .tw-row{
-//   @include button-colors($color-twitter);
-//   width: 98%;
-//   margin: 3% 0 2% 2.5%;
-// }
-// .fb-row{
-//   @include button-colors($color-facebook);
-//   width: 98%;
-//   margin: 3% 2% 2% 0;
-// }
-
-
-// .btn-share-center {
-//   margin-top: 12px;
-//   height: 50px;
-//   text-align: center;
-//   font-size:20px;
-//   font-weight: 400;
-
-//   .fa {
-//     font-size: 1.5em;
-//     line-height: 0;
-//   }
-
-//   .text {
-//     text-align: center;
-//     font-weight: 400;
-//   }
-
-
-
-// }
-
-// /**
-//  * Mayday Button Newest Leaders
-//  */
-
-// a.btn-targets {
-//   margin-top:12px;
-//   text-transform: uppercase;
-//   font-weight: 400;
-//   letter-spacing: 1px;
-//   @include button-colors(#b0aeaf);
-//   color: #fff ;
-
-//   @include large-desktop {
-//     padding: 6px 28px;
-//     font-size: 14px;
-//   }
-
-//   @include small-desktop {
-//     // padding: 8px 15px;
-//     font-size: 12px;
-//   }
-// }
-
-//  /**
-//  * Donate button Mixin
-//  * @param {Color} $color-dark-red
-//  */
-// @mixin donate-button($color-dark-red){
-//   border-radius: 5px;
-//   text-decoration: none;
-//   background-color: $color-dark-red;
-//   font-size: 20px;
-//   border: 2px solid darken(white, 10%);
-//   padding: 6px 20px;
-//   &:hover {
-//     color: #fff;
-//     background-color: lighten( $color-dark-red, 5% );
-//     border: 2px solid #fff;
-//   }
-// }
-
-// a.donate-link{
-//   @include donate-button($color-dark-red);
-// }
-
-
-
 /**************************2016 INPUTS */
 .mayday-inputs form, form.mayday-inputs{
   text-align:left;
 }
 .mayday-inputs{
+  @include input-placeholder{
+    color: $mayday-grey-dark;
+  }
 
   input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea {
     font-family: $base-font-family;
@@ -287,6 +164,12 @@
     &.error{
       border-color:$color-dark-red;
     }
+    &:disabled{
+      border-color:$mayday-grey-medium;
+      @include input-placeholder{
+        color:$mayday-grey-medium;
+      }
+    }
   }
 
   input[type=checkbox], input[type=radio] {
@@ -298,10 +181,6 @@
 
   &.single-row{
     .form-group{margin-bottom: 0}
-  }
-
-  @include input-placeholder{
-    color: $mayday-grey-dark;
   }
 
   &.black-background{
@@ -345,7 +224,7 @@
   }
 }
 
-/**************************LEGACY INPUTS */
+/**************************LEGACY ERROR POPUPS */
 input.error{
   border-color: $color-dark-red;
 }
@@ -410,68 +289,3 @@ select.md-select {
   width: 100%;
   text-transform: uppercase;
 }
-
-
-// form.md-inputs {
-//   padding-bottom: 15px;
-// }
-
-// .md-inputs {
-//   input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea {
-//     font-size: 22px;
-//     width: 100%;
-//     /*border: 2px solid #16213f;*/
-//     border:none;
-//     background-color:#efefef;
-//     padding: 8px 0 8px 12px;
-//     border-radius: 4px;
-//     margin-bottom: 15px;
-//     box-shadow: 0 0 5px rgba(90,90,90,0.1) inset;
-
-//     &.error{
-//       border-color:$color-dark-red;
-//     }
-//   }
-//   &.smaller-form{
-//     padding-bottom: 0;
-//     .form-group{
-//       input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea {
-//         margin-bottom: 4px;
-//         font-size: 18px;
-//         font-weight: 300;
-//       }
-//     }
-//   }
-//   input:disabled, input:disabled:-webkit-autofill{
-//     border-color:#999;
-//     color:#666;
-//     -webkit-text-fill-color:#666;
-//     background-color: #ddd;
-//     -webkit-box-shadow: 0 0 0 1000px #ddd inset;
-//   }
-
-//   ::-webkit-input-placeholder{color:#aaa;}
-//   :-moz-placeholder{color:#aaa;}
-//   ::-moz-placeholder{color:#aaa;}
-//   :-ms-input-placeholder{color:#aaa;}
-
-
-//   .help-block{
-//     font-size:15px;
-//     text-align: left;
-//     line-height: normal;
-//     padding-top:0;
-//     margin:-15px 0 10px 2px;
-//     &.for-checkboxes{
-//       font-size:15px;
-//       line-height: 1em;
-//       margin-top:0;
-//     }
-//   }
-//   p.help-block{
-//     margin-top:0;
-//   }
-//   .btn + .help-block, label + .help-block{
-//     margin-top:0;
-//   }
-// }
