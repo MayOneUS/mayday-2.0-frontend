@@ -50,7 +50,7 @@ md.donateForm = {};
     stripeHandler.open({
       name: 'MAYDAY.US',
       // description: '2 widgets',
-      amount: donateForm.donation_amount,
+      amount: donateForm.formData.donation_amount,
       email: donateForm.formData.person.email
     });
   };
@@ -67,7 +67,11 @@ md.donateForm = {};
       scrollTop: $nextFieldset.offset().top-200
     }, 200);
     if($nextFieldset.is('fieldset:last')){
-      stripePaymentProcess();
+      if(donateForm.formData.payment_method == 'paypal'){
+        alert('paypal is not implemented')
+      }else{
+        stripePaymentProcess();
+      }
     }
   };
 

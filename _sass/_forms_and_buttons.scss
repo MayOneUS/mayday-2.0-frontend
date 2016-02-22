@@ -166,9 +166,10 @@
     }
     &:disabled{
       border-color:$mayday-grey-medium;
-      @include input-placeholder{
-        color:$mayday-grey-medium;
-      }
+      &::-webkit-input-placeholder{color:$mayday-grey-medium}
+      &:-moz-placeholder{color:$mayday-grey-medium}
+      &::-moz-placeholder{color:$mayday-grey-medium}
+      &:-ms-input-placeholder{color:$mayday-grey-medium}
     }
   }
 
