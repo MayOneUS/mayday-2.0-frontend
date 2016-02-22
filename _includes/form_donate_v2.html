@@ -45,7 +45,7 @@
           </div>
         </div>
 
-        <div class="row margin-bottom-sm">
+        <div class="row margin-bottom-sm margin-top-xs">
           <div class="col-md-12 form-group">
             <div class="btn-group btn-group-mayday btn-group-flexed donation-recurring" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
               <label class="btn btn-mayday btn-mayday-white short active " for="recurring-no">
@@ -106,15 +106,15 @@
 
         <div class="row">
           <div class="form-group col-md-12">
-            <label class="control-label sr-only" for="person[occupation]">Occupation</label>
-            <input id="person[occupation]" name="person[occupation]" type="text" placeholder="Occupation" required="required">
+            <label class="control-label sr-only" for="person[remote_fields][occupation]">Occupation</label>
+            <input id="person[remote_fields][occupation]" name="person[remote_fields][occupation]" type="text" placeholder="Occupation" required="required">
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-md-12">
-            <label class="control-label sr-only" for="person[employer]">Employer</label>
-            <input id="person[employer]" name="person[employer]" type="text" placeholder="Employer" required="required">
+            <label class="control-label sr-only" for="person[remote_fields][employer]">Employer</label>
+            <input id="person[remote_fields][employer]" name="person[remote_fields][employer]" type="text" placeholder="Employer" required="required">
           </div>
         </div>
 
@@ -154,7 +154,10 @@
 {% javascript _includes/donate_form.js %}
 <script>
   $(document).ready(function(){
-    md.donateForm.initialize('#js-donate-form');
+    md.donateForm.initialize('#js-donate-form', function(){
+      console.log('donation is complete.');
+      //window.location = '/some-redirect/';
+    });
   });
 </script>
 {% endcapture %}

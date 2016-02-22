@@ -1,121 +1,105 @@
-example_token = {
-  "id": "tok_17fiSI2eZvKYlo2Ctrswi7Ye",
-  "object": "token",
-  "card": {
-    "id": "card_17fiSI2eZvKYlo2CiqNoPJrA",
-    "object": "card",
-    "address_city": null,
-    "address_country": null,
-    "address_line1": null,
-    "address_line1_check": null,
-    "address_line2": null,
-    "address_state": null,
-    "address_zip": null,
-    "address_zip_check": null,
-    "brand": "Visa",
-    "country": "US",
-    "cvc_check": null,
-    "dynamic_last4": null,
-    "exp_month": 8,
-    "exp_year": 2017,
-    "funding": "credit",
-    "last4": "4242",
-    "metadata": {
-    },
-    "name": null,
-    "tokenization_method": null
-  },
-  "client_ip": null,
-  "created": 1455766070,
-  "livemode": false,
-  "type": "card",
-  "used": false
-}
+
 // For PAYPAL, look at this link.
 //https://developer.paypal.com/docs/classic/express-checkout/in-context/integration/
 
 md.donateForm = {};
 (function(donateForm) {
-  var stripeConfiguration = {
+  var donationCompleteCallback;
+
+  var tokenReceivedCallback = function(token){
+    var employmentInfo = employmentBasedOnRetirement();
+    $.extend(donateForm.formData.person, {
+      address: token.card.address_line1,
+      city: token.card.address_city,
+      state_abbrev: token.card.address_state,
+      zip: token.card.address_zip
+    }, employmentInfo);
+    $.extend(donateForm.formData, {
+      stripe_token: token.id,
+      amount_in_cents: donateForm.formData.donation_amount*100
+    }, employmentInfo); // employmentInfo here should deprecate in backend.
+    console.log('calling back with', token, donateForm.formData);
+    $.post(services_url+'/donations', donateForm.formData, donationCompleteCallback);
+  };
+
+  var employmentBasedOnRetirement = function(){
+    if($('#person\\[is_retired\\]').is(':checked')){
+      var employmentInfo = {employer: 'retired', occupation: 'retired'};
+    }else{
+      var employmentInfo = {
+        employer: donateForm.formData.person.remote_fields.employer,
+        occupation: donateForm.formData.person.remote_fields.occupation
+      };
+    }
+    return employmentInfo;
+  };
+
+  var stripeConfigurationOptions = {
     key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
     image: '/images/2016_mayday-logo-sheild.svg',
     name: 'MAYDAY.US',
     locale: 'auto',
     panelLabel: 'Donate',
     billingAddress: true,
-    token: donateForm.tokenReceivedCallback,
+    token: tokenReceivedCallback,
     bitcoin: true,
   };
 
-  // donateForm.stripeHandler = StripeCheckout.configure(stripeConfiguration);
-
-  var tokenReceivedCallback = function(token){
-    console.log(token)
-    // Use the token to create the charge with a server-side script.
-    // You can access the token ID with `token.id`
-  };
-
-  var validSubmitHandler = function(form){
-    // var $form = $(form);
-    stripeHandler.open({
-      name: 'Stripe.com',
-      description: '2 widgets',
-      amount: 2000,
-      email: 'emailAddress@gmail.com'
+  var stripePaymentProcess = function(){
+    donateForm.stripeHandler = StripeCheckout.configure(stripeConfigurationOptions);
+    donateForm.stripeHandler.open({
+      name: 'MAYDAY.US',
+      // description: '2 widgets',
+      amount: donateForm.donation_amount,
+      email: donateForm.formData.person.email
     });
   };
 
   var revealNextStep = function() {
     $('.progress-meter .active').removeClass('active').addClass('complete')
         .next().next().addClass('active');
-    var $activeFieldset = $form.find('fieldset.active'),
+    var $activeFieldset = donateForm.$form.find('fieldset.active'),
       $nextFieldset = $activeFieldset.next();
     $activeFieldset.addClass('hidden').removeClass('active');
     $nextFieldset.addClass('active').removeClass('hidden');
+    donateForm.formData = donateForm.$form.serializeObject();
     $('html, body').animate({
-        scrollTop: $nextFieldset.offset().top-200
+      scrollTop: $nextFieldset.offset().top-200
     }, 200);
     if($nextFieldset.is('fieldset:last')){
-      console.log($nextFieldset, 'call payment method with object:', $form.serializeObject());
-    }else{
-      console.log($nextFieldset, 'is not last', $form.serializeObject());
+      console.log($nextFieldset, 'call payment method with object:', donateForm.formData);
+      stripePaymentProcess();
     }
   };
 
   var initializeOtherAmountInput = function(){
-    $form.find('#donate-other').on('change', function(){
-      $self = $(this)
-      console.log($self);
+    donateForm.$form.find('#donate-other').on('change', function(){
+     var  $self = $(this)
       if($self.prop('checked') == true){
-        console.log($self.siblings());
         $self.siblings().prop('disabled', false).focus();
       }
     });
   };
 
   var intializeRetiredCheckbox = function () {
-    $form.find('#person\\[is_retired\\]').on('change', function(){
-      console.log('retire trigger');
-      $('#person\\[employer\\], #person\\[occupation\\]').prop('disabled', function(i, v) { return !v; });
+    donateForm.$form.find('#person\\[is_retired\\]').on('change', function(){
+      $('#person\\[remote_fields\\]\\[employer\\], #person\\[remote_fields\\]\\[occupation\\]').prop('disabled', function(i, v) { return !v; });
     })
   }
 
   var initializeNextSteps = function() {
-    $form.find('.btn-mayday-blue-medium').on('click', function(e){
+    donateForm.$form.find('.btn-mayday-blue-medium').on('click', function(e){
       e.preventDefault();
-      if($form.valid()){
-        console.log('form indicates valid')
+      if(donateForm.$form.valid()){
         revealNextStep();
       }
     })
   }
 
-  donateForm.initialize = function(form_selector){
-    stripeHandler = StripeCheckout.configure(stripeConfiguration);
-    $form = $(form_selector);
-    $form.validate({
-      submitHandler: validSubmitHandler
-    });
+  donateForm.initialize = function(form_selector, completionCallback){
+    donationCompleteCallback = completionCallback;
+    donateForm.$form = $(form_selector);
+    donateForm.$form.validate();
     initializeOtherAmountInput();
     intializeRetiredCheckbox();
     initializeNextSteps();
