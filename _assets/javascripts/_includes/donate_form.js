@@ -4,7 +4,8 @@
 
 md.donateForm = {};
 (function(donateForm) {
-  var donationCompleteCallback;
+  var donationCompleteCallback,
+  stripeHandler;
 
   var tokenReceivedCallback = function(token){
     var employmentInfo = employmentBasedOnRetirement();
@@ -12,14 +13,24 @@ md.donateForm = {};
       address: token.card.address_line1,
       city: token.card.address_city,
       state_abbrev: token.card.address_state,
-      zip: token.card.address_zip
+      zip: token.card.address_zip,
     }, employmentInfo);
     $.extend(donateForm.formData, {
       stripe_token: token.id,
       amount_in_cents: donateForm.formData.donation_amount*100
     }, employmentInfo); // employmentInfo here should deprecate in backend.
-    console.log('calling back with', token, donateForm.formData);
     $.post(services_url+'/donations', donateForm.formData, donationCompleteCallback);
+  };
+
+  stripeConfigurationOptions = {
+    key: 'pk_test_g7UBToGvPpJ1xJa8OVsfV7zf',
+    image: '/images/2016_mayday-logo-sheild.svg',
+    name: 'MAYDAY.US',
+    locale: 'auto',
+    panelLabel: 'Donate',
+    billingAddress: true,
+    token: tokenReceivedCallback, //NOTE: function must be defined prior
+    bitcoin: true
   };
 
   var employmentBasedOnRetirement = function(){
@@ -34,20 +45,9 @@ md.donateForm = {};
     return employmentInfo;
   };
 
-  var stripeConfigurationOptions = {
-    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-    image: '/images/2016_mayday-logo-sheild.svg',
-    name: 'MAYDAY.US',
-    locale: 'auto',
-    panelLabel: 'Donate',
-    billingAddress: true,
-    token: tokenReceivedCallback,
-    bitcoin: true,
-  };
-
   var stripePaymentProcess = function(){
-    donateForm.stripeHandler = StripeCheckout.configure(stripeConfigurationOptions);
-    donateForm.stripeHandler.open({
+    stripeHandler = StripeCheckout.configure(stripeConfigurationOptions);
+    stripeHandler.open({
       name: 'MAYDAY.US',
       // description: '2 widgets',
       amount: donateForm.donation_amount,
@@ -67,10 +67,21 @@ md.donateForm = {};
       scrollTop: $nextFieldset.offset().top-200
     }, 200);
     if($nextFieldset.is('fieldset:last')){
-      console.log($nextFieldset, 'call payment method with object:', donateForm.formData);
       stripePaymentProcess();
     }
   };
+
+  var fetchDonationAmountFromParam = function (){
+    var targetDonationAmount = getParameterByName('donation_amount');
+    if(targetDonationAmount){
+      var targetDonationId = '#donate-'+targetDonationAmount,
+        $targetInput = $(targetDonationId),
+        $btnGroup = $('.donation-amounts');
+      $btnGroup.find('input').prop('checked', false);
+      $btnGroup.find('label').removeClass('active');
+      $targetInput.prop('checked', true).parent().addClass('active');
+    }
+  }
 
   var initializeOtherAmountInput = function(){
     donateForm.$form.find('#donate-other').on('change', function(){
@@ -103,6 +114,7 @@ md.donateForm = {};
     initializeOtherAmountInput();
     intializeRetiredCheckbox();
     initializeNextSteps();
+    fetchDonationAmountFromParam();
   }
 
 
