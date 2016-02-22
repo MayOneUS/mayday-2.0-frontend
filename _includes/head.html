@@ -37,9 +37,9 @@
       {% when 'production' %}
         '//services.mayday.us'
       {% when 'alpha' %}
-        window.services_url = '//services-staging.mayday.us'
+        '//services-staging.mayday.us'
       {% when 'development' %}
-        window.services_url = '{{site.development_services_url}}'
+        '{{site.development_services_url}}'
       {% else %}
         '//services.mayday.us'
       {% endcase %};
