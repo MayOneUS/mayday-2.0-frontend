@@ -1,5 +1,9 @@
 <style type="text/css" media="screen">
-.jumbotron{background:transparent url('/images/campaigns/20160203_jumbotron_bg_2400x900.jpg') 0 0 no-repeat; background-size:cover;}
+.jumbotron{
+  background:transparent url('/images/campaigns/20160203_jumbotron_bg_2400x900.jpg') 0 0 no-repeat;
+  background-size:cover;
+  padding-bottom:0;
+}
  .jumbotron .container{
     background: transparent url('/images/20160203_money_in_dome.svg') center bottom no-repeat;
     background-size:180px;
@@ -20,6 +24,10 @@
   .form-group:last-child{margin-top:15px;}
 }
 @media (max-width: 540px){
+  .jumbotron .container{
+    background-image:none;
+    padding-bottom:10px;
+  }
 }
 @media (max-width: 420px){
 }
