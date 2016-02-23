@@ -1,7 +1,3 @@
-
-// For PAYPAL, look at this link.
-//https://developer.paypal.com/docs/classic/express-checkout/in-context/integration/
-
 md.donateForm = {};
 (function(donateForm) {
   var donationCompleteCallback,
@@ -69,6 +65,9 @@ md.donateForm = {};
     if($nextFieldset.is('fieldset:last')){
       if(donateForm.formData.payment_method == 'paypal'){
         alert('paypal is not implemented')
+        // links for fornt-end paypal integration are below.  Their JS API integration is less than ideal, but ok.
+        // https://developer.paypal.com/docs/classic/express-checkout/in-context/integration/
+        // http://plnkr.co/edit/RifUli3hDIq6kQJI0Ujc?p=preview
       }else{
         stripePaymentProcess();
       }
