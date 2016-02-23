@@ -96,7 +96,6 @@ permalink: /the-plan/
           $parent = $('#link-'+_id).parent();
       $parent.siblings().removeClass('active');
       $parent.addClass('active');
-      console.log('calling on '+this.element.id, $parent)
     });
     var stickyNav = new Waypoint.Sticky({
       element: $('.sticky-nav')[0],

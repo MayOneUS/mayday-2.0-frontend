@@ -9,33 +9,36 @@
         height:220px;
       }
     }
+    .letter{
+      height:530px;
+      @include overlay-yellow-light(
+        "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
+        url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+      @include tablet{
+        height:470px;
+      }
+      @include phone{
+        margin-bottom:30px;
+      }
+    }
+    .events{
+      @include overlay-blue-light(
+        "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
+        url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+    }
+    .take-action{
+      @include overlay-green-light(
+        "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
+        url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+    }
     .letter, .events, .take-action{
       p:last-child{
         margin-bottom:0;
       }
-    }
-    .letter{
-        height:530px;
-        @include overlay-yellow-light(
-          "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
-          url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
-        @include tablet-minus{
-          height:430px;
-        }
-        @include phone{
-          margin-bottom:30px;
-          height:220px;
-        }
-    }
-    .events{
-        @include overlay-blue-light(
-          "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
-          url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
-    }
-    .take-action{
-        @include overlay-green-light(
-          "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
-          url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+      @include phone{
+        height:auto;
+        padding-top:10px;
+      }
     }
   }
 
@@ -75,13 +78,13 @@
         calc(50% + (912px / 2)) 0;
       background-repeat: repeat-y;
 
-      @include small-desktop-minus{
+      @include tablet-minus{
         background:$mayday-grey-medium;
       }
 
       .btn-group{
         margin-top:calc(50% - 80px);
-        @include small-desktop-minus{
+        @include tablet-minus{
           margin-top:20px;
         }
 
@@ -93,6 +96,13 @@
 
 .closing-action-panel{
     padding:60px 100px 100px;
+    @include small-desktop{
+      padding:40px 50px 50px;
+    }
+    @include tablet-minus{
+      padding:30px 40px 40px;
+      margin-bottom:20px;
+    }
     h3{
       color: $mayday-background;
       span{
@@ -105,6 +115,11 @@
         font-size: 50px;
         text-align: center;
         margin-right:15px;
+        @include tablet-minus{
+          width:40px;
+          font-size:30px;
+          margin-right:5px;
+        }
       }
     }
     p{

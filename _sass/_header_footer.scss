@@ -1,10 +1,16 @@
 header .navbar-fixed-top{
   top:20px;
   background-color:$mayday-background;
-
+  @include phone{
+    padding-left:10px;
+  }
 
   .navbar-header{
     padding-right: 30px;
+
+    @include tablet-minus{
+      padding-right:0;
+    }
   }
 
   a:after{
@@ -25,8 +31,13 @@ header .navbar-fixed-top{
           padding: 15px 15px 10px;
           border-radius: 0;
           background-color:$mayday-background;
+          white-space: nowrap;
           &.collapse{background-color:$mayday-grey-light}
           &.collapsed.collapse{background-color:$mayday-background;}
+          @include tablet-minus{
+            padding-left:7px;
+            padding-right:7px;
+          }
         }
         &:hover:not(.btn){
           &.collapsed.collapse{background-color:$mayday-grey-light;}
@@ -45,6 +56,16 @@ header .navbar-fixed-top{
           float:right;
           width:auto;
           padding: 7px 14px;
+
+          @include tablet-minus{
+            padding:7px;
+          }
+        }
+        @include phone{
+          width:auto;
+          span{
+            float:none;
+          }
         }
       }
     }
@@ -80,6 +101,16 @@ header .navbar-fixed-top{
       top: -8px;
       left:0;
     }
+
+    @include tablet-minus{
+      font-size:24px;
+      padding-left: 70px;
+
+      img{
+        width:55px;
+        top:-6px;
+      }
+    }
   }
 }
 
@@ -97,6 +128,11 @@ header .navbar-fixed-top{
     background-size:cover;
     h1{text-shadow: 3px 3px 2px #212230;}
     h2{color:$mayday-yellow-light;}
+  }
+  @include tablet{
+    h1{
+      font-size:40px;
+    }
   }
 
 }
