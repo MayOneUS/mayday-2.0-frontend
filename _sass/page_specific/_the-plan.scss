@@ -1,12 +1,7 @@
 .page-panel{
-  position: relative;
   padding-top:18px;
   padding-bottom:22px;
   font-weight: 400;
-
-  .sticky-wrapper{
-    float:left;
-  }
 
   .panel-wrapper{
     margin-top:20px;
@@ -19,10 +14,13 @@
   &.light{
     background-color: #fff;
   }
+  .sticky-nav-wrapper{
+    position:initial;
+  }
 }
-/**
- * sticky nav
- */
+
+
+/** * sticky table of contents */
 .sticky-nav{
   background:$mayday-background;
   color: $mayday-text;
@@ -49,4 +47,17 @@
     top:110px;
     max-width:165px;
   }
+  &.stuck-bottom{
+    bottom:0;
+    position:absolute;
+    max-width:165px;
+  }
+}
+// needed for sticky nav
+.the-plan .page-content{
+  position:relative;
+}
+.sticky-wrapper{
+  float:left;
+  background:rgba(0,0,0,0.1)
 }
