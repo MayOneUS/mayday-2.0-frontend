@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="{{ root_path }}/favicon.ico"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="{{ root_path }}/images/mayday_og.jpg" name="twitter:image:src"/>
-  <meta content='@mayday' name="twitter:site"/>
+  <meta content='@maydayus' name="twitter:site"/>
 
   {% assign meta_content_size = page.meta_content | size %}
   {% if meta_content_size < 2 %}
@@ -23,8 +23,8 @@
     <meta content='@mayday' name="twitter:site"/>
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-    <link rel="canonical" href="{{page_url}}">
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <link rel="canonical" href="{{page_url}}" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   {% else %}
     {{ page.meta_content }}
@@ -46,14 +46,14 @@
     window.blogFeedUrl = '{{site.blog_post_feed_url}}';
   </script>
   {% if jekyll.environment == 'development' %}
-    <link rel="stylesheet" href="{{ root_path }}{{ '/css/development.css' }}">
+    <link rel="stylesheet" href="{{ root_path }}{{ '/css/development.css' }}" />
   {% else %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Rubik:400,400italic,700,500|Permanent+Marker" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Rubik:400,400italic,700,500|Permanent+Marker" type="text/css" />
     <script src="//c.shpg.org/220/sp.js"></script>
     <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" /> -->
   {% endif %}
-  <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}">
+  <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}" />
   {{ custom_css }}
 </head>
