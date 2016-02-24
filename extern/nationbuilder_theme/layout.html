@@ -1,5 +1,4 @@
 ---
----
 layout: default
 title: some title
 offSite: true
@@ -44,28 +43,29 @@ body_attrs: '{{ page.page_class_name }}'
   {% endraw %}
 {% endcapture %}
 
-{% include sub_layouts/default.html %}
-
-
-{% raw %}
-  {% if site.footer_content.size > 0 %}
-    <div class="footer-text">{{ site.footer_content }}</div>
-    <hr/>
-    {% endif %}
-    <div class="row margin-bottom-xs">
-      <div class="col-md-12">
-        {% if request.logged_in? %}
-          Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
-          {% if site.show_public_profiles? %}
-            <a href="{{ request.current_signup.profile_url }}">public profile</a>,{% include "nav" %}
+{% capture footer_premenu_extras %}
+  {% raw %}
+    {% if site.footer_content.size > 0 %}
+      <div class="footer-text">{{ site.footer_content }}</div>
+      <hr/>
+      {% endif %}
+      <div class="row margin-bottom-xs">
+        <div class="col-md-12">
+          {% if request.logged_in? %}
+            Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
+            {% if site.show_public_profiles? %}
+              <a href="{{ request.current_signup.profile_url }}">public profile</a>,{% include "nav" %}
+            {% endif %}
+            <a href="{{ request.current_signup.settings_url }}">account settings</a>, or
+            <a href="{{ request.current_signup.logout_url }}">sign out</a>.
+          {% else %}
+            Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
+                href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.
           {% endif %}
-          <a href="{{ request.current_signup.settings_url }}">account settings</a>, or
-          <a href="{{ request.current_signup.logout_url }}">sign out</a>.
-        {% else %}
-          Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
-              href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.
-        {% endif %}
+        </div>
       </div>
-    </div>
-{{content_for_footer}}
-{% endraw %}
+  {{content_for_footer}}
+  {% endraw %}
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
