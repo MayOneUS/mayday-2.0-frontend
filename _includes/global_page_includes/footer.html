@@ -1,6 +1,7 @@
 
 <footer class="site-footer">
   <div class="container">
+    {{ footer_premenu_extras }}
     <div class="row margin-bottom-sm">
       {% unless page.hideMenus %}
       <div class="col-md-12">
@@ -26,7 +27,7 @@
     </div>
     {% unless page.hideMenus %}
     <nav class="row margin-bottom-md expanded-menu">
-      {% include expanded_menu.html %}
+      {% include global_page_includes/expanded_menu.html %}
     </nav>
     {% endunless %}
     <div class="row">
