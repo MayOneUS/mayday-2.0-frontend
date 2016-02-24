@@ -1,12 +1,9 @@
 {% include head.html %}
 
 <body class="{{page.bodyClass}}">
+  {% include header.html %}
   <div class="page-content">
-    {% include header.html %}
-
-    <div class="wrapper">
-      {{ content }}
-    </div>
+    {{ content }}
   </div>
 
 {% include footer.html %}
