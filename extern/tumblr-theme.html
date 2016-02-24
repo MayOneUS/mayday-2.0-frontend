@@ -34,7 +34,7 @@ meta_content: |
   <meta name="text:Flickr Username" content=""/>
 ---
 
-{% capture tumblr_sidebar %}
+{% capture sidebar_extras_start %}
 <!--       {block:IfShowAboutWidget}
   <h2>Our Blog</h2>
   <div id="about" class="widget">
@@ -199,35 +199,7 @@ meta_content: |
             </div><!-- .pagination -->
           {/block:Pagination}
         </div><!-- #content-->
-        <div class="col-xs-12 col-sm-4">
-          {{tumblr_sidebar}}
-          <div class="row">
-            <div class="col-sm-12 hidden-xs">
-              <div class="panel panel-news">
-                <div class="panel-heading">
-                  <h2 class="as-if-h4"><a href="{{site.blog_root_url}}" target="_blank">Mayday Blog <small>More</small></a></h2>
-                </div>
-                <div class="panel-body">
-                  <ul id="tumblr-posts" class="list-unstyled">
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 hidden-xs">
-              <div class="panel panel-news">
-                <div class="panel-heading">
-                  <h2 class="as-if-h4"><a href="{{site.blog_root_url}}/tagged/press-release">Press Releases <small>More</small></a></h2>
-                </div>
-                <div class="panel-body">
-                  <ul id="tumblr-press-releases" class="list-unstyled">
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- end of sidebar -->
+          {% _includes/sidebar_news.html %}
       </div>
     </div><!-- #container -->
   </div>
@@ -255,10 +227,6 @@ meta_content: |
           }
           document.write('<script charset="utf-8" type="text/javascript" src="//disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
         })();
-        $(document).ready(function(){
-          md.newsFeeds.renderBlogFeed();
-          md.newsFeeds.renderPressReleasesFeed();
-        });
         //]]>;
       </script>
 
