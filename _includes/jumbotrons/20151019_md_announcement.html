@@ -85,15 +85,11 @@
 
 {% capture jumbotron_signup_js %}
 <script>
-  $('.js-jumbotron-signup').validate({
-    submitHandler: function(form) {
-      $form = $(form);
-      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-      $.post(services_url+'/actions', $form.serialize(), function(data){
-      }).done(function(){
-        location = '/elect-jamie-raskin/donate/'
-      });
-    }
+  $(document).ready(function(){
+    var signUpComplete = function(){
+      location = '/elect-jamie-raskin/donate/'
+    };
+    md.signUps.inititalizeBasic('.js-jumbotron-signup', signUpComplete);
   });
 </script>
 {% endcapture %}
