@@ -156,16 +156,16 @@ bodyClass: index-page
                   <div class="form-group">
                     <div class="btn-group btn-group-mayday btn-group-flexed" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
                       <label class="btn btn-mayday btn-mayday-clear short" for="donate-10">
-                        <input type="radio" id="donate-10" name="donation_amount[10]" value="10" /> $10
+                        <input type="radio" id="donate-10" name="donation_amount" value="10" /> $10
                       </label>
                       <label class="btn btn-mayday btn-mayday-clear short" for="donate-35">
-                        <input type="radio" id="donate-35" name="donation_amount[35]" value="35" /> $35
+                        <input type="radio" id="donate-35" name="donation_amount" value="35" /> $35
                       </label>
                       <label class="btn btn-mayday btn-mayday-clear short" for="donate-50">
-                        <input type="radio" id="donate-50" name="donation_amount[50]" value="50" /> $50
+                        <input type="radio" id="donate-50" name="donation_amount" value="50" /> $50
                       </label>
                       <label class="btn btn-mayday btn-mayday-clear short active" for="donate-100">
-                        <input type="radio" id="donate-100" name="donation_amount[100]" value="100" /> $100
+                        <input type="radio" id="donate-100" name="donation_amount" value="100" checked="checked"/> $100
                       </label>
                     </div>
                   </div>
@@ -187,6 +187,19 @@ bodyClass: index-page
 
 </div>
 {% endcapture %}
+
+{% capture page_specific_javascript %}
+<script>
+  $(document).ready(function(){
+    var signUpComplete = function(){
+      window.location = '/donate/';
+    };
+    md.signUps.inititalizeBasic('.js-signup', signUpComplete);
+    md.signUps.inititalizeDonateStart('.js-donate');
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
 
 {% include sub_layouts/default_layout.html %}
 

@@ -4,6 +4,7 @@
 //= require _includes/plugins.js
 //= require _includes/helpers.js
 //= require _includes/global.js
+//= require _includes/sign_ups.js
 //= require page_specific/legislator.js
 //= require page_specific/legislators.js
 //= require page_specific/news.js
