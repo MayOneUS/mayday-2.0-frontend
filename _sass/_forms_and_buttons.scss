@@ -60,6 +60,7 @@
   &.btn-mayday-blue{@include button-colors($mayday-blue-dark);}
   &.btn-mayday-blue-medium{@include button-colors($mayday-blue-medium);}
   &.btn-mayday-grey-light{@include button-colors($mayday-grey-light);}
+  &.btn-mayday-grey-medium{@include button-colors($mayday-grey-medium);}
   &.btn-mayday-white{
     background-color: #fff;
     color:$mayday-grey-dark;
