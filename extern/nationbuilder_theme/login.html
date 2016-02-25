@@ -1,4 +1,4 @@
-<div class="row form md-inputs">
+<div class="row form mayday-inputs">
 <div class="col-md-6 center-block">
   {% if request.sorta_logged_in? and request.current_signup.has_password? == true %}
   <h2>Please verify your password</h2>
@@ -11,7 +11,7 @@
 
   {% if request.sorta_logged_in? and request.current_signup.has_password? == true %}
 
-  {% form_for user_session autocomplete:off, class:'md-inputs' %}
+  {% form_for user_session autocomplete:off, class:'mayday-inputs' %}
 
   <div class="form-errors">{% error_messages_for user_session %}</div>
 
@@ -92,17 +92,17 @@
 
     <div class="padtopmore">
 
-      <div class="signin-with-facebook spacer-y-margin">
+      <div class="signin-with-facebook margin-y-sm">
         <a title="Sign in with Facebook" href="{{ request.facebook_connect_url }}"><img src="{{ "signin_with_facebook.png" | asset_path }}" alt="Sign in with Facebook"></a>
       </div>
-      <div class="signin-with-twitter spacer-y-margin">
+      <div class="signin-with-twitter margin-y-sm">
         <a title="Sign in with Twitter" href="{{ request.twitter_connect_url }}"><img src="{{ "signin_with_twitter.png" | asset_path }}" alt="Sign in with Twitter"></a>
       </div>
     </div>
 
   </div>
 
-  <div class="row-fluid spacer-y-margin-lg">
+  <div class="row-fluid margin-y-md">
     <h2 class="">Or sign in with your email address</h2>
     <div class="span11 offset1">
 
@@ -159,7 +159,7 @@
 
         </div>
 
-        <div class="span5 offset1 spacer-y-margin-lg">
+        <div class="span5 offset1 margin-y-md">
           <h2 class="">Create an account</h2>
           {% form_for account %}
             <div class="form-group">

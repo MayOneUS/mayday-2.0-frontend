@@ -1,22 +1,13 @@
 /* helper classes */
 
 /* DEPRRECATED */
-  .no-y-margin-md{
+  .margin-y-0-md{
     @include tablet-plus{margin-top:0 !important;margin-bottom:0 !important;}
   }
 
-  .no-padding{padding:0 !important;}
-  .no-y-margin{margin-top:0 !important;margin-bottom:0 !important;}
-  .spacer-y-margin-xs{margin-bottom:10px;margin-top:10px;}
-  .spacer-y-margin{margin-bottom:20px;margin-top:20px;}
-  .spacer-y-margin-lg{margin-bottom:40px;margin-top:40px;}
-  .spacer-y-margin-xl{margin-bottom:80px;margin-top:80px;}
-  .no-top-margin{margin-top:0 !important;}
   .top-spacer-btn, .top-spacer{margin-top:20px;}
   .margin-bottom-0, .top-spacer-btn .form-group{margin-bottom:0 !important;}
   .bottom-margin{margin-bottom:15px;}
-  .bottom-spacer-xs{margin-bottom:20px;}
-  .bottom-spacer-sm{margin-bottom:40px;}
   .bottom-spacer{margin-bottom:80px;}
 
 /* FUTURE USE */
