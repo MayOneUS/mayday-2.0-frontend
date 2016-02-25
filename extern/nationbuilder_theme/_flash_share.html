@@ -3,9 +3,9 @@
     <div class="panel-heading">
       <div class="panel-title"><h2 ckass="margin-y-0">{{ flash.message }}</h2></div>
     </div>
-    <div class="panel-body">
+    <div class="panel-body mayday-inputs">
       <h3 class="spacer-y-margin">Tell all your friends, they should join you! A link will be included.</h3>
-      <div class="form md-inputs">
+      <div class="form mayday-inputs">
         {% form_for face_tweet %}
         {% hidden_field_tag "face_tweet[page_id]", flash.page_id %}
         <div class="form-errors">{% error_messages_for face_tweet %}</div>
@@ -30,10 +30,10 @@
         <div class="row">
           <div class="col-md-8 center-block">
             <div class="col-md-6">
-              {% submit_tag "Post", class:"btn btn-md-md" %}
+              {% submit_tag "Post", class:"btn btn-mayday" %}
             </div>
             <div class="col-md-6" style="padding-top:6px;"><!--a bit of a hack -->
-              <a href="#" class="flash-close btn btn-md-md btn-md-gray">No Thanks</a></small>
+              <a href="#" class="flash-close btn btn-mayday btn-md-gray">No Thanks</a></small>
             </div>
           </div>
         </div>

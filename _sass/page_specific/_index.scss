@@ -1,275 +1,139 @@
+#index{
+  .campaign-actions{
 
-///////////////////////////////////////////////
-//  Jumbotron support
-
-.jumbotron{
-  margin-top: -45px;
-  padding:0;
-  position:relative;
-  overflow: hidden;
-  @include phone{
-    margin-top: 0px;
+    h3, .byline.small{color:$mayday-background}
+    .vertical-center{
+      border-radius: 2px;
+      height:250px;
+      @include tablet-minus{
+        height:220px;
+      }
+    }
+    .letter{
+      height:530px;
+      @include overlay-yellow-light(
+        "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
+        url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+      @include tablet{
+        height:470px;
+      }
+      @include phone{
+        margin-bottom:30px;
+      }
+    }
+    .events{
+      @include overlay-blue-light(
+        "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
+        url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+    }
+    .take-action{
+      @include overlay-green-light(
+        "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), \a
+        url('/images/20160212_handwritten_supporter_note.jpg') no-repeat center/cover");
+    }
+    .letter, .events, .take-action{
+      p:last-child{
+        margin-bottom:0;
+      }
+      @include phone{
+        height:auto;
+        padding-top:10px;
+      }
+    }
   }
-}
 
-///////////////////////////////////////////////
-//  Homepage ribbon
+  ///////////////////////////////////////////////
+  //  homepage panels
 
-.homepage-ribbon{
-  padding-top: 20px;
-  padding-bottom: 20px;
+  .homepage-panel{
+    position: relative;
+    overflow: hidden;
+    padding-top:50px;
+    padding-bottom:50px;
+    font-weight: 300;
 
-  >div .mini-panel{
-    padding-right:10px;
-  }
-  >div:last-child .mini-panel{
-    padding-right: 0
-  }
-
-
-  .mini-panel{
-    padding-left:110px;
-    background:transparent url('') 5px 0 no-repeat;
-    letter-spacing: .2px;
-    line-height: 22px;
-    font-size: 16px;
-    background-size:90px 90px;
-
-    @include tablet-minus{
-      margin-top: 8px;
-      font-size: 18px;
-      min-height:92px
+    .container{
+      padding-top:0;
+      padding-bottom:0;
     }
 
-    .call-box{
-      span{
-        padding-right:0;
-        padding-left:15px;
+    &.dark {
+      background: $color-navy-blue-light;
+      color: $mayday-background;
+
+      h2{
+        color:$mayday-background;
+      }
+    }
+    &.grey{
+      background-color: $mayday-grey-medium;
+    }
+
+    &.with-supporters{
+      background-image:
+        url('/images/20160203_supporter_photos_913x385.jpg'),
+        url('/images/20160203_supporter_photos_913x385.jpg');
+      background-position:
+        calc(50% + (912px * 1.5)) 0,
+        calc(50% + (912px / 2)) 0;
+      background-repeat: repeat-y;
+
+      @include tablet-minus{
+        background:$mayday-grey-medium;
+      }
+
+      .btn-group{
+        margin-top:calc(50% - 80px);
         @include tablet-minus{
-          &:last-child{
-            padding-left:0;
-          }
+          margin-top:20px;
         }
-        @include phone{
-          width: 400px;
-        }
-        @include large-desktop{
-          &:last-child{
-            padding-left:0;
-          }
-        }
-      }
-      .call-box-thin{
-        font-size: 15px;
-        font-weight: 300;
-        @include small-desktop{
-          font-size:17px;
-        }
-        @include phone{
-          font-size: 25px;
-        }
-      }
-      .call-box-thick{
-        font-size: 25px;
-        font-weight: 400;
-        line-height: 14px;
-        @include small-desktop{
-          line-height: 15px;
-          font-size: 20px;
-        }
-        @include phone{
-          font-size: 25px;
-        }
+
       }
     }
   }
 
-  .mini-panel-text{
-    background-image: url('/images/home_icon_star.svg');
-  }
-  .mini-panel-call{
-    background-image: url('/images/home_icon_person.png');
-  }
-  .mini-panel-state{
-    background-image: url('/images/home_icon_map.svg');
-  }
-}
+// }
 
-
-///////////////////////////////////////////////
-//  homepage panels
-
-.homepage-panel{
-  position: relative;
-  overflow: hidden;
-  padding-top:50px;
-  padding-bottom:50px;
-  font-weight: 300;
-
-  .container{
-    padding-top:0;
-    padding-bottom:0;
-  }
-
-  .homepage-panel-body{
-
-    h2 {
-      font-size: 37px;
-      margin-top:0;
+.closing-action-panel{
+    padding:60px 100px 100px;
+    @include small-desktop{
+      padding:40px 50px 50px;
     }
-
-    .panel-headline-small {
-      margin-top: 30px;
-      font-size: 32px;
+    @include tablet-minus{
+      padding:30px 40px 40px;
+      margin-bottom:20px;
     }
-
-    p {
-      margin-top: 30px;
-      font-weight: 300;
-      font-size: 20px;
-      line-height:30px;
+    h3{
+      color: $mayday-background;
+      span{
+        background-color: $mayday-background;
+        color:$mayday-yellow-light;
+        display: inline-block;
+        vertical-align:top;
+        width: 60px;
+        border-radius: 100px;
+        font-size: 50px;
+        text-align: center;
+        margin-right:15px;
+        @include tablet-minus{
+          width:40px;
+          font-size:30px;
+          margin-right:5px;
+        }
+      }
     }
-  }
-
-  &.dark {
-    background: $color-navy-blue-light;
-    color: #ffffff;
-
-    h2{
-      color:#fff
+    p{
+      color: $mayday-blue-black;
     }
-  }
-  &.grey{
-    background-color: $color-grey-background;
-  }
-  &.light {
-  }
-
-  .bg-star{
-    position: absolute;
-  }
-
-  &.ten-star {
-    .bg-star:first-of-type {
-      left: -400px;
-      top: -250px;
-      height: 650px;
-      opacity: .03;
-      @include star-rotation(-30deg);
+    &.donate{
+      background-color: $mayday-yellow-light;
     }
-    .bg-star:nth-of-type(2) {
-      left: -500px;
-      top: 80px;
-      height: 800px;
-      opacity: .03;
-      @include star-rotation(-50deg);
+    &.signup{
+      background-color: $mayday-blue-light;
+      h3 span{
+        color: $mayday-blue-light;
+        text-indent:-5px;
+      }
     }
-    .bg-star:nth-of-type(3) {
-      left: 10%;
-      top: -160px;
-      height: 265px;
-      opacity: .03;
-      @include star-rotation(-50deg);
-    }
-    .bg-star:nth-of-type(4) {
-      left: 1%;
-      top: -70px;
-      width: 600px;
-      opacity: .015;
-      @include star-rotation(35deg);
-    }
-    .bg-star:nth-of-type(5) {
-      left: 25%;
-      top: -200px;
-      height: 350px;
-      opacity: .03;
-      @include star-rotation(35deg);
-    }
-    .bg-star:nth-of-type(6) {
-      left: 25%;
-      top: 260px;
-      height: 350px;
-      opacity: .02;
-      @include star-rotation(35deg);
-    }
-    .bg-star:nth-of-type(7) {
-      left: 35%;
-      top: 100px;
-      height: 200px;
-      opacity: .02;
-      @include star-rotation(-50deg);
-    }
-    .bg-star:nth-of-type(8) {
-      left: 33%;
-      top: -180px;
-      height: 850px;
-      opacity: .03;
-      @include star-rotation(35deg);
-    }
-    .bg-star:nth-of-type(9) {
-      left: 76%;
-      top: -170px;
-      height: 600px;
-      opacity: .03;
-      @include star-rotation(40deg);
-    }
-    .bg-star:nth-of-type(10) {
-      left: 82%;
-      top: 275px;
-      height: 200px;
-      opacity: .04;
-      @include star-rotation(-15deg);
-    }
-  }
-
-  &.starless{
-  }
-
-  &.two-star {
-    .bg-star:first-of-type {
-      left: -35%;
-      top: -450px;
-      height: 1500px;
-      opacity: .04;
-      @include star-rotation(20deg);
-    }
-    .bg-star:nth-of-type(2) {
-      left: 35%;
-      top: -750px;
-      height: 1500px;
-      opacity: .04;
-      @include star-rotation(-10deg);
-    }
-  }
-
-  &.three-star {
-    .bg-star:first-of-type {
-      left: -35%;
-      top: -450px;
-      height: 1500px;
-      opacity: .04;
-      @include star-rotation(-10deg);
-      z-index: 0;
-    }
-    .bg-star:nth-of-type(2) {
-      left: 40%;
-      top: 200px;
-      height: 1000px;
-      opacity: .04;
-      @include star-rotation(-20deg);
-      z-index: 0;
-    }
-    .bg-star:nth-of-type(3) {
-      left: -40%;
-      top: 400px;
-      height: 1500px;
-      opacity: .04;
-      @include star-rotation(20deg);
-      z-index: 0;
-    }
-  }
-
-  &.capitol-building{
-    background: #fff url('/images/capitol_building.png') right bottom no-repeat;
   }
 }

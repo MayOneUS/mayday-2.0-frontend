@@ -1,0 +1,67 @@
+
+<footer class="site-footer">
+  <div class="container">
+    {{ footer_premenu_extras }}
+    <div class="row margin-bottom-sm">
+      {% unless page.hideMenus %}
+      <div class="col-md-12">
+        <hr class="margin-top-md margin-bottom-sm" />
+      </div>
+      <div class="col-md-6">
+        <h1><a href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday-logo-sheild.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></h1>
+      </div>
+      <div class="col-md-6">
+        <div class="btn-group pull-right">
+          <a class="btn" href="http://www.reddit.com/r/maydaypac"><i class="fa fa-reddit fa-2x"></i> <span class="sr-only">Reddit</span></a>
+          <a class="btn" href="https://www.youtube.com/channel/UCtb-WU36hLkBLNGRg9bPCGQ"><i class="fa fa-youtube fa-2x"></i> <span class="sr-only">Youtube</span></a>
+          <a class="btn" href="https://www.facebook.com/MAYDAYdotUS"><i class="fa fa-facebook fa-2x"></i> <span class="sr-only">Facebook</span></a>
+          <a class="btn" href="https://twitter.com/maydayus"><i class="fa fa-twitter fa-2x"></i> <span class="sr-only">Twitter</span></a>
+          <a class="btn" href="https://github.com/MayOneUS/"><i class="fa fa-github fa-2x"></i> <span class="sr-only">Github</span></a>
+        </div>
+      </div>
+      {% else %}
+        <div class="col-md-6 center-column">
+          <h1><a class="navbar-brand" href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday_logo_w_shadow.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></h1>
+        </div>
+      {% endunless %}
+    </div>
+    {% unless page.hideMenus %}
+    <nav class="row margin-bottom-md expanded-menu">
+      {% include global_page_includes/expanded_menu.html %}
+    </nav>
+    {% endunless %}
+    <div class="row">
+      <div class="col-md-10 center-block text-center">
+        <div class="disclaimer-box">Paid for by Mayday PAC. Not authorized by any candidate or candidate's committee. MAYDAY.US</div>
+        <div class="copyright"><i class="fa fa-creative-commons"></i> 2015 Mayday PAC. Some rights reserved. <a href="/privacy-policy/">Privacy Policy</a>. <a href="/attribution/">Attribution</a>.</div>
+        <div class="creative-commons"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="//i.creativecommons.org/l/by/3.0/80x15.png"/></a></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% if jekyll.environment == 'development' %}
+  {% capture asset_path_string %}{% asset_path development %}{% endcapture %}
+  <script type="text/javascript" src="{{ asset_path_string | js_cache_bust }}"></script>
+{% else %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-50367295-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+{% endif %}
+
+{% capture asset_path_string %}{% asset_path app %}{% endcapture %}
+<script type="text/javascript" src="{{ asset_path_string | js_cache_bust }}"></script>
+
+{{ footer_scripts }}

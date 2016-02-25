@@ -4,11 +4,11 @@ email: info@mayday.us
 description: 'MAYDAY PAC'
 url: "https://mayday.us" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
-development_services_url: //services.mayday.us
-# development_services_url: //localhost:3000
+# development_services_url: //services.mayday.us
+development_services_url: //localhost:3000
+# development_services_url: //b3cea761.ngrok.io
 blog_root_url: http://blog.mayday.us
-blog_post_feed_url: //services.mayday.us/blog_posts
-press_releases_feed_url: //services.mayday.us/blog_posts/press_releases
+blog_feed_url: //services.mayday.us/blog_posts
 pledge_url: '//pledge.mayday.us'
 github_username:  MayOneUS
 twitter_username: MAYDAYUS
@@ -18,6 +18,3 @@ markdown: kramdown
 
 assets:
   digest: false
-
-gems:
-- jekyll-assets

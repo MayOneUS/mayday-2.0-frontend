@@ -4,9 +4,18 @@
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-top: $top-spacing;
+  margin-bottom: $standard-margin;
 }
 
+html, body {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 400;
+  color: $mayday-text;
+  @include phone{
+    color: #333;
+  }
+}
 
 /**
  * Images
@@ -32,20 +41,112 @@ figcaption {
   font-size: $small-font-size;
 }
 
+hr{
+  border:none;
+  border-top:2px solid $mayday-grey-medium;
+}
+
 
 /**
  * Lists
  */
-ul, ol {
-  margin-left: $left-margin-spacing;
-  margin-bottom: 10px;
+.page-content{
+  ul, ol {
+    margin-left: $left-margin-spacing;
+    margin-bottom: 10px;
+  }
+
+  ul.list-unstyled, ol.list-unstyled{
+    margin-left:auto;
+    margin-bottom: auto;
+  }
+
+  li {
+    > ul,
+    > ol {
+      margin-bottom: 0;
+    }
+  }
+
+  ul.blog-listings{
+    margin:0;
+
+    li{
+      list-style-type:none;
+    }
+    time{
+      position:relative;
+      background-color:$mayday-background;
+      width:100%;
+      display:inline-block;
+      overflow:hidden;
+
+      span{
+        display:inline-block;
+        padding-right:10px;
+        background: $mayday-background;
+      }
+
+      &:after{
+        content:" ";
+        position:absolute;
+        width:100%;
+        top: calc(50% - 1px);
+        border-bottom:2px solid $mayday-blue-light;
+      }
+    }
+  }
+
+  /*** simple list */
+
+   ol.simple-list {
+      list-style-type: none;
+      margin: 1em 0 1em 3em;
+      padding: 0;
+      counter-reset: li-counter;
+
+    li{
+      position: relative;
+      margin-bottom: 20px;
+      padding-left: 0.5em;
+      min-height: 3em;
+      border-left: 2px solid #CCC;
+      font-size:18px;
+    }
+    li:before {
+      position: absolute;
+      top: 0;
+      left: -1em;
+      width: 0.8em;
+
+      font-size: 3em;
+      line-height: 1;
+      font-weight: bold;
+      text-align: left;
+      color: #464646;
+      content: counter(li-counter);
+      counter-increment: li-counter;
+    }
+    &.small-list li:before {
+      font-size: 2em;
+      left:-1.2em;
+    }
+    > li ul{
+      margin-bottom:1em;
+    }
+    li ul li{
+      list-style-type:square;
+    }
+  }
+
+}
+.md-modal-wrap ol.simple-list{
+  margin-left:10px;
 }
 
-li {
-  > ul,
-  > ol {
-    margin-bottom: 0;
-  }
+
+.small, small{
+  line-height: 1em;
 }
 
 
@@ -54,37 +155,54 @@ li {
  */
 
 h1, h2, h3, h4, h5, h6, legend {
-  font-weight: $header-weight;
-  color: $color-navy-blue-light;
-  margin-top:0;
-  margin-bottom:15px;
-}
-
-h1{
-  font-size: 40px;
-  margin-top: 0;
+  color: $mayday-text;
   margin-bottom:20px;
+  a:link:not(.btn), a:visited:not(.btn){
+    color: $mayday-text;
+  }
+  small{
+    font-weight: 500;
+    font-size: 75%;
+    color:$mayday-grey-dark-alpha;
+  }
 }
 
-.mayday-headline-smaller{
-  font-weight: 400;
-  font-size: 40px;
+h1, .as-if-h1{font-size: 60px; font-weight: 700; line-height: 60px; letter-spacing: 0;   text-transform: none}
+h2, .as-if-h2{font-size: 40px; font-weight: 400; line-height: 48px; letter-spacing: 0;   text-transform: none}
+h3, .as-if-h3{font-size: 32px; font-weight: 500; line-height: 38px; letter-spacing:+3px; text-transform: uppercase; }
+h4, .as-if-h4{font-size: 18px; font-weight: 500; line-height: 24px; letter-spacing:+2px; text-transform: uppercase; }
+h5, .as-if-h5{font-size: 21px; font-weight: 400; line-height: 30px; letter-spacing: 0;   text-transform: none}
+h6, .as-if-h6{font-size: 13px; font-weight: 400; line-height: 20px; letter-spacing: 0;   text-transform: uppercase}
+
+@include tablet-minus{
+  h1, .as-if-h1{font-size: 40px; line-height: 40px;}
 }
-.mayday-headline-smaller-inverse{
-  color: #fff;
-  font-weight: 400;
-  font-size: 40px;
-  @include tablet{
-    font-size: 30px;
-  }
+
+h3, .as-if-h3, h4, .as-if-h4{
+  &.narrow{letter-spacing:0;}
+}
+
+h1 a:hover:not(.btn) {
+  text-decoration: none;
+  .text-orange{color:$mayday-grey-dark}
 }
 
 legend{
   font-size: 24px;
-  margin: 0 0 20px;
+}
+
+@mixin generate-text-color($class-name, $color) {
+  .#{$class-name},
+  a:link:not(.btn).#{$class-name},
+  a:visited:not(.btn).#{$class-name}{color: $color}
 }
 
 .red-text{color: $color-dark-red}
+@include generate-text-color("text-orange", $mayday-orange-medium);
+@include generate-text-color("text-yellow", $mayday-yellow-light);
+@include generate-text-color("text-grey-light", $mayday-grey-medium);
+@include generate-text-color("text-blue-highlight", $mayday-blue-light);
+@include generate-text-color("text-grey-medium", $mayday-grey-dark);
 
 /**
  * Paragraph
@@ -98,13 +216,13 @@ p {
   }
 
   &.byline{
-    color: $color-navy-blue-light;
+    color: $mayday-grey-dark;
     font-weight: 700;
-    font-style: italic;
     font-size:21px;
     &.small{
       font-weight:400;
-      font-size:85%;
+      font-size:15px;
+      line-height: 22px;
       margin-top:0;
     }
   }
@@ -127,71 +245,48 @@ p {
 /* nots are UNFORTUNATELY needed for NB, or spend 10s of hours fixing nb dependencies */
 a:link:not(.btn), a:visited:not(.btn), a:active:not(.btn) {
   color: #007acf;
-}
-a:hover:not(.btn) {
-  color: $color-text;
+  position: relative;
 }
 
-/**
- * simple list
- */
+a:hover:not(.btn), a:focus:not(.btn) {
+  color: $mayday-text;
+  text-decoration: none;
+}
 
- ol.simple-list {
-    list-style-type: none;
-    margin: 1em 0 1em 3em;
-    padding: 0;
-    counter-reset: li-counter;
-
-  li{
-    position: relative;
-    margin-bottom: 20px;
-    padding-left: 0.5em;
-    min-height: 3em;
-    border-left: 2px solid #CCCCCC;
-    font-size:18px;
-  }
-  li:before {
+  /* animated underlines*/
+  a:after {
+    content: '';
     position: absolute;
-    top: 0;
-    left: -1em;
-    width: 0.8em;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    border-bottom: 2px solid $mayday-orange-medium;
+    transition: 0.5s ease;
+    h1 &, h2 &, h3 &, h4 &, h5 &, h6 &{
+      bottom: -2px;
+    }
 
-    font-size: 3em;
-    line-height: 1;
-    font-weight: bold;
-    text-align: right;
-    color: #464646;
-    content: counter(li-counter);
-    counter-increment: li-counter;
   }
-  &.small-list li:before {
-    font-size: 2em;
-    left:-1.2em;
-  }
-  > li ul{
-    margin-bottom:1em;
-  }
-  li ul li{
-    list-style-type:square;
-  }
-}
 
-.md-modal-wrap ol.simple-list{
-  margin-left:10px;
-}
+
+  a:hover:not(.btn):after {
+    width: 100%;
+  }
+
 
 /**
  * Blockquotes
  */
 blockquote {
-  color: $color-text;
+  color: $mayday-grey-dark;
   padding: 0.5em 1em;
   display:inline-block;
   margin-left:1em;
-  font-size: 18px;
-  line-height: 120%;
+  font-size: 21px;
+  line-height: 30px;
   letter-spacing: -0.01em;
-  background: #FAFAFA;
+  background: $mayday-grey-light;
+  border-left:5px solid $mayday-blue-light;
 
   > :first-child{
     margin-top:0;
@@ -212,9 +307,6 @@ code {
   border: 1px solid $color-grey-light;
   border-radius: 3px;
   background-color: #eef;
-}
-
-code {
   padding: 1px 5px;
 }
 
@@ -245,26 +337,6 @@ pre {
     }
   }
 }
-.icon-spacer{
-  padding-right:5px;
-}
-
-@font-face {
-    font-family: 'socicon';
-    src: url('/fonts/socicon/socicon-webfont.eot');
-    src: url('/fonts/socicon/socicon-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/socicon/socicon-webfont.woff') format('woff'),
-         url('/fonts/socicon/socicon-webfont.ttf') format('truetype'),
-         url('/fonts/socicon/socicon-webfont.svg#sociconregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    text-transform: initial;
-}
-
-.socicon {
-    font-family: 'socicon' !important;
-    -webkit-font-smoothing: antialiased;
-}
 
 /* flash messages */
 
@@ -288,4 +360,12 @@ pre {
     font-weight: 700;
     margin:0;
   }
+}
+
+
+@mixin input-placeholder {
+  ::-webkit-input-placeholder{@content}
+  :-moz-placeholder{@content}
+  ::-moz-placeholder{@content}
+  :-ms-input-placeholder{@content}
 }

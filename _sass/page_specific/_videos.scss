@@ -1,48 +1,7 @@
 /**
  * Mayday Content
  */
-.video-lead-title{
-  margin-bottom: 10px;
-  @include phone{
-    margin-bottom: 0;
-  }
-}
-.all-videos {
-  margin-bottom: 40px;
-  .video-group{
-    padding-bottom: 20px;
-    h2 {
-      font-size: 22px;
-      margin-bottom: 10px;
-      @include large-desktop {
-        &.two-line-height-on-lg {
-          min-height: 48px;
-        }
-      }
-    }
-  }
-}
-.btn-md-wide.video-font{
-  font-size: 18px;
-}
-.large-video-group{
-  margin-bottom: 15px;
-}
-.top-signup {
-  float: right;
-  @include tablet{
-    display: none;
-  }
-  @include phone{
-    display: none;
-  }
-}
-.bottom-signup{
-  display: none;
-  @include tablet{
-    display: inline-block;
-  }
-  @include phone{
-    display: inline-block;
-  }
-}
+
+ .has-tall-neighbor{
+  padding-bottom:1.2em;
+ }

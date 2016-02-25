@@ -11,7 +11,7 @@
     cropping: 'server',
     folder: 'p2p-donate-pages',
     button_caption: 'Upload a profile photo',
-    button_class: 'btn btn-md-md btn-md-lightblue',
+    button_class: 'btn btn-mayday btn-mayday-blue-medium',
     // theme: 'mininal',
     cropping_aspect_ratio: 1,
     field_name: 'donation_page[photo_url]',

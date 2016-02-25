@@ -53,7 +53,7 @@
       </div>
       <div class="col-lg-5 col-lg-offset-0 col-md-5 col-md-offset-0 col-sm-6">
         {% capture panel_body %}
-        <div class="panel-body">
+        <div class="panel-body mayday-inputs">
           <div class="col-md-12">
             <h2>Fight corruption in politics</h2>
             <p>Help us build a national grassroots network of activists to elect champions of democracy!</p>
@@ -77,10 +77,10 @@
 
               <div class="row">
                 <div class="form-group col-sm-6">
-                  <button type="submit" class="btn btn-md-md btn-md-red">I'm in</button>
+                  <button type="submit" class="btn btn-mayday btn-md-red">I'm in</button>
                 </div>
                 <div class="form-group col-sm-6">
-                  <a href="/the-plan/" title="" class="btn btn-md-md btn-md-gray">Learn More</a>
+                  <a href="/the-plan/" title="" class="btn btn-mayday btn-md-gray">Learn More</a>
 
                 </div>
               </div>
@@ -97,15 +97,11 @@
 
 {% capture jumbotron_signup_js %}
 <script>
-  $('.js-jumbotron-signup').validate({
-    submitHandler: function(form) {
-      $form = $(form);
-      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-      $.post(services_url+'/actions', $form.serialize(), function(data){
-      }).done(function(){
-        location = '/donate/'
-      });
-    }
+  $(document).ready(function(){
+    var signUpComplete = function(){
+      location = '/donate/'
+    };
+    md.signUps.inititalizeBasic('.js-jumbotron-signup', signUpComplete);
   });
 </script>
 {% endcapture %}

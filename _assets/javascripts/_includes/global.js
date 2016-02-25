@@ -1,7 +1,7 @@
 window.recycyledFormAttributes = ['email', 'first_name', 'last_name', 'phone', 'zip', 'city'];
 function manageDataFromParams(source_key, skipped_forms_selector){
   var url_param = getParameterByName(source_key);
-  if (url_param.length > 2){
+  if (url_param){
     Cookies.set(source_key, getParameterByName(source_key), { expires: 7 });
   }
   var current_cookie_value = Cookies.get(source_key);

@@ -1,9 +1,5 @@
-<div class="panel action-panel with-shield md-inputs">
-  <div class="panel-icon">
-    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
-    <div class="fade-line hidden-xs hidden-sm"></div>
-  </div>
-  <div class="panel-body">
+<div class="panel action-panel with-shield mayday-inputs">
+  <div class="panel-body mayday-inputs">
     <h2>{% if include.alt_title %}{{include.alt_title}}{% else %}Fight corruption in politics{% endif %}</h2>
     <p>{% if include.alt_title %}{{include.alt_body}}{% else %}Help send reformers to Congress to fight big money from special interests! Take back our Republic.{% endif %}</p>
     <form class="row {{include.form_class}} js-sign-up-form no-gutter">
@@ -21,12 +17,12 @@
         </div>
 
         <div class="row">
-          <div class="form-group col-md-8 no-bottom-margin">
+          <div class="form-group col-md-8 margin-bottom-0">
             <label class="control-label sr-only" for="person[email]">Email Address</label>
             <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
           </div>
 
-          <div class="form-group col-md-4 no-bottom-margin">
+          <div class="form-group col-md-4 margin-bottom-0">
             <label class="control-label sr-only" for="person[zip]">ZIP</label>
             <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
           </div>
@@ -51,10 +47,10 @@
 
         <div class="row top-spacer-btn">
           <div class="form-group col-md-6">
-            <button type="submit" class="btn btn-md-md btn-md-gray" value="donate">Donate</button>
+            <button type="submit" class="btn btn-mayday btn-md-gray" value="donate">Donate</button>
           </div>
           <div class="form-group col-md-6">
-            <button type="submit" class="btn btn-md-md btn-md-red" value="signup">I'm in</button>
+            <button type="submit" class="btn btn-mayday btn-md-red" value="signup">I'm in</button>
           </div>
         </div>
 
