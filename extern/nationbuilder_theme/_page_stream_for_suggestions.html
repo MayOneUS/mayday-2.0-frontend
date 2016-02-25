@@ -46,9 +46,9 @@
           <div class="form-errors">{% error_messages_for comment %}</div>
           {% text_area "content", class:"textarea autogrow", placeholder:"Add comment (optional)" %}
           {% if request.logged_in? %}
-          {% submit_tag "Post your reaction", class:"btn btn-md-md" %}
+          {% submit_tag "Post your reaction", class:"btn btn-mayday" %}
           {% else %}
-          {% submit_tag "Post your reaction", class:"btn btn-md-md hide" %}
+          {% submit_tag "Post your reaction", class:"btn btn-mayday hide" %}
           {% endif %}
 
           {% if request.logged_in? and site.has_rule_page? %}

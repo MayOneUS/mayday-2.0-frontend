@@ -19,7 +19,7 @@
 
   <p><label for="user_session_password">Password</label><br>{% password_field "password", class:"text" %}</p>
 
-  {% submit_tag "Sign in with password", class:"btn btn-md-wide" %}
+  {% submit_tag "Sign in with password", class:"btn btn-mayday" %}
   <div class="form-submit"></div>
 
   <div class="padtopmore">
@@ -74,7 +74,7 @@
   {% hidden_field_tag "account[email]", request.current_signup.email %}
 
   <div class="padtopmore">
-    {% submit_tag "Email account activation instructions" , class:"submit-button btn btn-md-wide" %}
+    {% submit_tag "Email account activation instructions" , class:"submit-button btn btn-mayday" %}
     <div class="form-submit"></div>
   </div>
 
@@ -144,7 +144,7 @@
 
           <div class="row-fluid">
 
-            <div class="col-md-12">{% submit_tag "Sign in with email", class:"submit-button btn btn-md-wide" %}
+            <div class="col-md-12">{% submit_tag "Sign in with email", class:"submit-button btn btn-mayday" %}
               <div class="form-submit"></div>
             </div>
 
@@ -167,7 +167,7 @@
               <label for="account_email">Email Address</label>{% email_field "email", class:"text" %}
             </div>
 
-            <div class="form-group">{% submit_tag "Send account activation", class:"submit-button btn btn-md-wide" %}
+            <div class="form-group">{% submit_tag "Send account activation", class:"submit-button btn btn-mayday" %}
               <div class="form-submit"></div>
             </div>
 
