@@ -68,7 +68,7 @@ hr{
     }
   }
 
-  ul.blog-listings{
+  .blog-listings{
     margin:0;
 
     li{
@@ -340,20 +340,27 @@ pre {
 /* flash messages */
 
 .flash-message {
+  font-size:15px;
+  color: $mayday-blue-black;
   z-index: 999;
   margin-bottom: 20px;
   padding:5px;
+  border: solid 4px #000;
   &.error {
-    border: solid 4px #900;
-    background-color: #FF6565;
+    border-color: $mayday-orange-medium;
+    background-color: rgba($mayday-blue-light, 0.3);
   }
   &.notice {
-    border: solid 4px #26722D;
-    background-color: #A4E7A0;
+    border-color: $mayday-blue-light;
+    background-color: rgba($mayday-blue-light, 0.3);
+  }
+  &.warning {
+    border-color: $mayday-yellow-light;
+    background-color: rgba($mayday-yellow-light, 0.3);
   }
   &.success {
-    border: solid 4px #5CB85C;
-    background-color: #D7F9C9;
+    border-color: $mayday-green-light;
+    background-color: rgba($mayday-green-light, 0.3);
   }
   h3{
     font-weight: 700;
@@ -361,6 +368,31 @@ pre {
   }
 }
 
+/* label-colors*/
+.label, a.label:link, a.label:visited, a.label:focus{
+  background-color: $mayday-grey-medium;
+  color: $mayday-grey-dark;
+  letter-spacing: +1px;
+  font-size:13px;
+  font-weight:500;
+  text-transform:uppercase;
+  padding:5px 10px;
+}
+a.label:hover{
+  color: $mayday-blue-light;
+  background-color: $mayday-orange-medium;
+  transition:0.5s ease;
+}
+
+a.label:after{
+  display:none;
+}
+.label-default{background-color:$mayday-grey-medium}
+.label-primary{background-color:$mayday-blue-medium}
+.label-success{background-color:$mayday-green-light}
+.label-info{background-color:$mayday-blue-light}
+.label-warning{background-color:$mayday-yellow-light}
+.label-danger{background-color:$mayday-orange-medium}
 
 @mixin input-placeholder {
   ::-webkit-input-placeholder{@content}
