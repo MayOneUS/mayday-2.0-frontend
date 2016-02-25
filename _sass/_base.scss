@@ -12,7 +12,6 @@ $bottom-spacing: 20px;
 $standard-margin: 20px;
 $left-margin-spacing: 1.3em;
 
-$header-weight: 400;
 
 $color-facebook: #3B5999;
 $color-twitter: #55ACEF;
@@ -78,32 +77,3 @@ $color-orientation: rgb(76, 43, 98);
 
   $mayday-text: $mayday-blue-black;
   $mayday-background: #fff;
-  $color-offwhite: $mayday-grey-light; /* TODO: delete later */
-
-
-
-
-
-// @mixin overlay-with-pixel($pixel_image, $background_declaration){
-//   background: url('/images/2016_image_overlay_pixels/#{$pixel_image}') repeat 0 0,
-//     #{$background_declaration};
-// }
-
-// @mixin overlay-blue-light($background_declaration){
-//   @include overlay-with-pixel($pixel_blue_light, $background_declaration);
-// }
-// @mixin overlay-green-light($background_declaration){
-//   @include overlay-with-pixel($pixel_green_light, $background_declaration);
-// }
-// @mixin overlay-grey-medium($background_declaration){
-//   @include overlay-with-pixel($pixel_grey_medium, $background_declaration);
-// }
-// @mixin overlay-orange-light($background_declaration){
-//   @include overlay-with-pixel($pixel_orange_light, $background_declaration);
-// }
-// @mixin overlay-orange-medium($background_declaration){
-//   @include overlay-with-pixel($pixel_orange_medium, $background_declaration);
-// }
-// @mixin overlay-yellow-light($background_declaration){
-//   @include overlay-with-pixel($pixel_yellow_light, $background_declaration);
-// }
