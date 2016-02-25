@@ -34,7 +34,7 @@ meta_content: |
   <meta name="text:Flickr Username" content=""/>
 ---
 
-{% capture sidebar_extras_start %}
+{% capture sidebar_extras_end %}
 <!--       {block:IfShowAboutWidget}
   <h2>Our Blog</h2>
   <div id="about" class="widget">
@@ -52,7 +52,7 @@ meta_content: |
     <div class="col-xs-12">
       <div class="panel panel-news">
         <div class="panel-heading">
-          <h2>Latest Tweets</h2>
+          <h2 class="as-if-h4">Latest Tweets</h2>
         </div>
         <div class="panel-body mayday-inputs">
           <div id="twitter" class="widget">
@@ -71,7 +71,7 @@ meta_content: |
     <div class="col-xs-12">
       <div class="panel panel-news">
         <div class="panel-heading">
-          <h3>People I follow</h3>
+          <h2 class="as-if-h4">People I follow</h2>
         </div>
         <div class="panel-body mayday-inputs">
          <div id="following_container" class="widget">
@@ -91,7 +91,7 @@ meta_content: |
 {% include jumbotrons/general-dark.html title="{Title}" %}
 <div class="container" id="extern-tumblr-theme">
   <div class="row">
-    <div class="col-xs-12 col-sm-8" id="container">
+    <div class="col-xs-12"id="container">
       {block:IndexPage}
       <div class="row">
         <div class="col-xs-12">
@@ -100,38 +100,15 @@ meta_content: |
       </div>
       {/block:IndexPage}
       <div class="row">
-        <div class="col-xs-12" id="content">
+        <div class="col-xs-12 col-sm-8 blog-listings" id="content">
           {block:Posts}
-            <article id="post-{PostID}" class="post {block:Text}post-type-text{/block:Text}{block:Photo}post-type-photo{/block:Photo}{block:Photoset}post-type-photoset{/block:Photoset}{block:Quote}post-type-quote{/block:Quote}{block:Link}post-type-link{/block:Link}{block:Chat}post-type-chat{/block:Chat}{block:Video}post-type-video{/block:Video}{block:Audio}post-type-audio{/block:Audio}">
-              <div class="post-content">
-                <div class="post-meta">
-                  <!--<div class="type">
-                    <a href="{Permalink}">
-                    {block:Text}<i class="fa fa-newspaper-o"></i>{/block:Text}
-                    {block:Photo}<i class="fa fa-camera"></i>{/block:Photo}
-                    {block:Photoset}Photoset{/block:Photoset}
-                    {block:Quote}<i class="fa fa-quote-left"></i>{/block:Quote}
-                    {block:Link}<i class="fa fa-link"></i>{/block:Link}
-                    {block:Chat}<i class="fa fa-wechat"></i>{/block:Chat}
-                    {block:Video}<i class="fa fa-video-camera"></i>{/block:Video}
-                    {block:Audio}<i class="fa fa-headphones"></i>{/block:Audio}</a>
-                  </div>type -->
-                  {block:Date}
-                    <div class="date">
-                    <strong>{Month} {DayOfMonthWithZero}, {Year}</strong>
-                    </div><!-- .date -->
-                  {/block:Date}
-                  {block:IfDisqusShortname}
-                    <div class="comments">
-                      <a href="{Permalink}#disqus_thread">0 comments</a>
-                    </div>
-                  {/block:IfDisqusShortname}
-                  {block:NoteCount}
-                    <div class="note-count">
-                      <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                    </div><!-- .note-count -->
-                  {/block:NoteCount}
-                </div><!-- .post-meta -->
+            <article id="post-{PostID}" class="post">
+              <div class="post-content {block:Text}post-type-text{/block:Text}{block:Photo}post-type-photo{/block:Photo}{block:Photoset}post-type-photoset{/block:Photoset}{block:Quote}post-type-quote{/block:Quote}{block:Link}post-type-link{/block:Link}{block:Chat}post-type-chat{/block:Chat}{block:Video}post-type-video{/block:Video}{block:Audio}post-type-audio{/block:Audio}">
+                {block:Date}
+                  <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" class="as-if-h6 text-blue-highlight">
+                    <span>{ShortMonth} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}</span>
+                  </time>
+                {/block:Date}
 
                 {block:Text}
                   {block:Title}<h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
@@ -173,16 +150,33 @@ meta_content: |
                   <div class="audio-wrap">{AudioPlayerGrey}</div>
                   {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
                 {/block:Audio}
-                <ul class="post_controls group">
-                  <li>{ReblogButton size="21"}</li>
-                  <li>{LikeButton size="21"}</li>
-                </ul>
-                {block:HasTags}
-                  <div class="tags">
-                    <p><i class="md-icon md-tags"></i> {block:Tags}<a href="{TagURL}" class="single-tag">{Tag}</a> {/block:Tags}</p>
-                  </div>
-                {/block:HasTags}
               </div><!-- post-content -->
+               <div class="post-meta">
+                  <!--<div class="type">
+                    <a href="{Permalink}">
+                    {block:Text}<i class="fa fa-newspaper-o"></i>{/block:Text}
+                    {block:Photo}<i class="fa fa-camera"></i>{/block:Photo}
+                    {block:Photoset}Photoset{/block:Photoset}
+                    {block:Quote}<i class="fa fa-quote-left"></i>{/block:Quote}
+                    {block:Link}<i class="fa fa-link"></i>{/block:Link}
+                    {block:Chat}<i class="fa fa-wechat"></i>{/block:Chat}
+                    {block:Video}<i class="fa fa-video-camera"></i>{/block:Video}
+                    {block:Audio}<i class="fa fa-headphones"></i>{/block:Audio}</a>
+                  </div>type -->
+                  <p class="pull-left">
+                    {block:HasTags} {block:Tags}
+                      <a href="{TagURL}" class="label label-default">{Tag}</a>
+                    {/block:Tags} {/block:HasTags} 
+                    {block:NoteCount}<a href="{Permalink}#notes">Notes</a> <span class="badge">{NoteCount}</span>{/block:NoteCount}
+                    <!-- We cannot seem to control where discus counts show up.  Janky solution is to use href in a span. -->
+                    {block:IfDisqusShortname}<a href="{Permalink}">Comments </a> <span href="{Permalink}#disqus_thread" class="badge">0</span>{/block:IfDisqusShortname}
+                  </p>
+
+                  <ul class="post_controls group">
+                    <li>{ReblogButton size="21"}</li>
+                    <li>{LikeButton size="21"}</li>
+                  </ul>
+              </div><!-- .post-meta -->
             </article><!-- .post -->
             <!-- dis {text:Disqus Shortname} -->
             {block:IfDisqusShortname}{block:Permalink}
@@ -199,7 +193,7 @@ meta_content: |
             </div><!-- .pagination -->
           {/block:Pagination}
         </div><!-- #content-->
-          {% include sidebar_news.html %}
+        {% include sidebar_news.html %}
       </div>
     </div><!-- #container -->
   </div>
@@ -218,7 +212,7 @@ meta_content: |
       <script type="text/javascript">
         //<![CDATA[
         (function() {
-          var links = document.getElementsByTagName('a');
+          var links = document.querySelectorAll('a,span');
           var query = '?';
           for(var i = 0; i < links.length; i++) {
             if(links[i].href.indexOf('#disqus_thread') >= 0) {
