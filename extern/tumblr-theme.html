@@ -187,10 +187,16 @@ meta_content: |
             {block:PostNotes}<div id="post-notes">{PostNotes}</div>{/block:PostNotes}
           {/block:Posts}
           {block:Pagination}
-            <div class="pagination">
-              {block:PreviousPage}<span class="previous-page"><a href="{PreviousPage}">&#171; Previous</a></span>{/block:PreviousPage}
-              {block:NextPage}<span class="next-page"><a href="{NextPage}">Next &#187;</a></span>{/block:NextPage}
-            </div><!-- .pagination -->
+            <nav>
+              <ul class="pagination">
+                {block:PreviousPage}
+                  <li><a href="{PreviousPage}" aria-label="Previous"><span aria-hidden="true">&laquo; Previous</span></a></li>
+                {/block:PreviousPage}
+                {block:NextPage}
+                  <li class="pull-right"><a href="{NextPage}" aria-label="Next"><span aria-hidden="true">Next &raquo;</span></a></li>
+                {/block:NextPage}
+              </ul>
+            </nav>
           {/block:Pagination}
         </div><!-- #content-->
         {% include sidebar_news.html %}
