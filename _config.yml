@@ -5,6 +5,7 @@ description: 'MAYDAY PAC'
 url: "https://mayday.us" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
 # development_services_url: //services.mayday.us
+# development_services_url: //services-staging.mayday.us
 development_services_url: //localhost:3000
 # development_services_url: //b3cea761.ngrok.io
 blog_root_url: 'http://blog.mayday.us'
