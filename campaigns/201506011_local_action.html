@@ -45,18 +45,18 @@ meta_content: |
 
   <div class="row">
     <div class="col-md-10 action-wrap center-block incomplete">
-      <form class="join js-form-in-district md-inputs">
+      <form class="join js-form-in-district mayday-inputs">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label sr-only" for="first_name">First Name</label>
-              <input type="text" class="no-bottom-margin" name="person[first_name]" placeholder="First Name" />
+              <input type="text" class="margin-bottom-0" name="person[first_name]" placeholder="First Name" />
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label sr-only" for="last_name">Last Name</label>
-              <input type="text" class="no-bottom-margin" name="person[last_name]" placeholder="Last Name" />
+              <input type="text" class="margin-bottom-0" name="person[last_name]" placeholder="Last Name" />
             </div>
           </div>
         </div>
@@ -64,27 +64,27 @@ meta_content: |
           <div class="col-md-12">
             <div class="form-group">
               <label class="control-label sr-only" for="email">Email Address</label>
-              <input type="email" class="no-bottom-margin" name="person[email]" placeholder="Email Address" required="required"/>
+              <input type="email" class="margin-bottom-0" name="person[email]" placeholder="Email Address" required="required"/>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-8">
-            <div class="form-group no-y-margin-md">
+            <div class="form-group margin-y-0">
               <label class="control-label sr-only" for="phone">Phone</label>
-              <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" phoneUs="phoneUs"/>
+              <input type="tel" class="margin-bottom-0" name="person[phone]" placeholder="Phone Number" phoneUs="phoneUs"/>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="form-group no-y-margin-md">
+            <div class="form-group margin-y-0">
               <label class="control-label sr-only" for="zip">ZIP</label>
-              <input class="no-bottom-margin" type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="ZIP" required="required" />
+              <input class="margin-bottom-0" type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="ZIP" required="required" />
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <p class="help-block" style="margin-bottom:10px">We respect your privacy. Your phone number will not be shared with any third party. Note: If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. Message &amp; data rates may apply.</p>
+            <p class="help-block">We respect your privacy. Your phone number will not be shared with any third party. Note: If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. Message &amp; data rates may apply.</p>
           </div>
         </div>
         <div class="row">
@@ -141,7 +141,7 @@ meta_content: |
           <div class="col-md-12">
             <div class="form-group">
               <label class="control-label" for="google_form_submission_data[congress_relationship]">If you have a relationship with a member of Congress, please let us know.</label>
-              <textarea name="congress_relationship" placeholder="Describe any congressional relationships"></textarea>
+              <textarea name="congress_relationship" placeholder="Describe any congressional relationships" rows="1"></textarea>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ meta_content: |
               <input type="hidden" name="google_form_data[field_mappings][volunteer_attend]" value="entry.395048103" />
               <input type="hidden" name="google_form_data[field_mappings][volunteer_call]" value="entry.1368866945" />
 
-              <button type="submit" class="btn btn-md-wide btn-md-red">I'm In</button>
+              <button type="submit" class="btn btn-mayday">I'm In</button>
               <input type="hidden" name="remote_fields[tags][]" value="20150611_district_meeting_signup">
               <input type="hidden" name="remote_fields[tags][]" value="textable">
             </div>

@@ -16,6 +16,7 @@ redirects:
   feed.xml: 'http://blog.mayday.us/rss'
   labs: https://mayday.us/take-action/
   sign-up: 'join'
+  legislators: 'leaders'
 
   # Pledge pages
   newpledge: 'donate'

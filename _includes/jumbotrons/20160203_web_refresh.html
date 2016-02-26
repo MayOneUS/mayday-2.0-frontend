@@ -1,0 +1,84 @@
+<style type="text/css" media="screen">
+.jumbotron{
+  background:transparent url('/images/campaigns/20160203_jumbotron_bg_2400x900.jpg') 0 0 no-repeat;
+  background-size:cover;
+  padding-bottom:0;
+}
+ .jumbotron .container{
+    background: transparent url('/images/20160203_money_in_dome.svg') center bottom no-repeat;
+    background-size:180px;
+    padding-bottom:180px
+  }
+
+@media (max-width: 1199px){
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+}
+
+@media (min-width: 768px){
+  .jumbotron{padding-top:180px;}
+}
+
+@media (max-width: 767px){
+  .form-group:last-child{margin-top:15px;}
+}
+@media (max-width: 540px){
+  .jumbotron .container{
+    background-image:none;
+    padding-bottom:10px;
+  }
+}
+@media (max-width: 420px){
+}
+</style>
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center"><span class="text-yellow">End money in politics.</span> <br/>Take back our democracy.</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 col-lg-8 center-block margin-bottom-sm">
+        <p class="text-center">MAYDAY<span orange-text>.US</span> is a cross-partisan campaign to fight big money<br class="hidden-sm hidden-xs"/> corruption in politics by electing reformers. <br class="visible-xs"/><a href="/the-plan/" title="">Learn More</a></p>
+      </div>
+    </div>
+    <div class="row margin-bottom-lg">
+      <div class="col-lg-6 col-md-6 center-block">
+        <form class="mayday-inputs black-background white-inputs single-row js-jumbotron-signup">
+          <input type="hidden" name="template_id" value="20160215_md_signup">
+          <input type="hidden" name="person[remote_fields][tags][]" value="20160215_md_signup">
+          <fieldset>
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label class="control-label sr-only" for="person[email]">Email Address</label>
+                <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
+              </div>
+              <div class="form-group col-sm-3">
+                <label class="control-label sr-only" for="person[zip]">ZIP</label>
+                <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
+              </div>
+              <div class="form-group col-sm-3">
+                <button type="submit" class="btn btn-mayday btn-mayday-md">I'm in</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% capture jumbotron_signup_js %}
+<script>
+  $(document).ready(function(){
+    var signUpComplete = function(){
+      window.location = '/donate/';
+    };
+    md.signUps.inititalizeBasic('.js-jumbotron-signup', signUpComplete);
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{jumbotron_signup_js}}{% endcapture %}

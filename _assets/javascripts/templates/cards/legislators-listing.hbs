@@ -1,16 +1,20 @@
-<div class="col-md-4 col-sm-6 col-xs-6 bottom-margin with-us-{{with_us}}  potential-{{targeted?}}">
-  <a href="/legislator/?bioguide_id={{bioguide_id}}" class="pull-left pulled-image">
-    <div class="background-square" style="background-image: {{leg_thumbnail}}"></div>
-  </a>
-    <h3 class="margin-y-0"> {{short_title}}<strong> {{ name }}</strong> </h3>
-    <h4 class="no-top-margin">{{leadership}} {{ party }}-{{ state_abbrev }} {{display_district}}</h4>
-    <a class="btn btn-targets story-grey" href="/legislator/?bioguide_id={{bioguide_id}}">
-      <i class="fa fa-check-square-o"></i>
-      <i class="fa fa-minus-circle"></i>
-      <i class="fa fa-question-circle"></i>
-      Read More
+<div class="col-md-4 col-sm-6 col-xs-6 margin-bottom-sm with-us-{{with_us}}  potential-{{targeted?}}">
+  <div class="legislator-wrap clearfix">
+    <a href="/legislator/?bioguide_id={{bioguide_id}}" class="pull-left pulled-image">
+      <div class="background-square" style="background-image: {{leg_thumbnail}}"></div>
     </a>
-  <div class="hidden">
-    {{state_name}}
+      <h3 class="as-if-h4 margin-y-0">
+        {{short_title}} <strong>{{ name }}</strong><br/>
+        <small>{{leadership}} {{ party }}-{{ state_abbrev }} {{display_district}}</small>
+      </h3>
+      <a class="" href="/legislator/?bioguide_id={{bioguide_id}}">
+        <i class="fa fa-check-square-o"></i>
+        <i class="fa fa-minus-circle"></i>
+        <i class="fa fa-question-circle"></i>
+        {{link_text}}
+      </a>
+    <div class="hidden">
+      {{state_name}}
+    </div>
   </div>
 </div>

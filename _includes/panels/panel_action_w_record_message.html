@@ -1,9 +1,5 @@
-<div class="panel action-panel with-shield md-inputs">
-  <div class="panel-icon">
-    <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
-    <div class="fade-line hidden-xs hidden-sm"></div>
-  </div>
-  <div class="panel-body">
+<div class="panel action-panel">
+  <div class="panel-body mayday-inputs">
     <h2>Record a message</h2>
     <div class="row">
       <div class="col-md-12">
@@ -16,18 +12,18 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <input type="email" class="no-bottom-margin" name="person[email]" placeholder="Email Address" required="required"/>
+                <input type="email" class="margin-bottom-0" name="person[email]" placeholder="Email Address" required="required"/>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-8">
               <div class="form-group">
-                <input type="tel" class="no-bottom-margin" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
+                <input type="tel" class="margin-bottom-0" name="person[phone]" placeholder="Phone Number" required="required" phoneUs="phoneUs"/>
               </div>
             </div>
             <div class="col-md-4">
-              <div class="form-group"><input class="no-bottom-margin" type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="ZIP" required="required" /></div>
+              <div class="form-group"><input class="margin-bottom-0" type="text" pattern="\d{5,5}(-\d{4,4})?" name="person[zip]" placeholder="ZIP" required="required" /></div>
             </div>
           </div>
           <div class="row">
@@ -38,7 +34,7 @@
           <div class="row">
             <div class="col-md-10 col-xs-12 center-block">
               <div class="col-md-12 top-spacer-btn">
-                <button type="submit" class="btn btn-md-wide btn-md-red">Record <span class="hidden-xs">Your</span> Message</button>
+                <button type="submit" class="btn btn-mayday">Record <span class="hidden-xs">Your</span> Message</button>
                 <input type="hidden" name="person[remote_fields][tags][]" value="20150609_record_message">
                 <input type="hidden" name="person[remote_fields][tags][]" class="billData googleEvent" value="20150611_HR20_recording">
                 <input type="hidden" name="person[remote_fields][tags][]" value="robocallable">

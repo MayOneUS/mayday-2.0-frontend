@@ -1,45 +1,26 @@
 ---
-layout: extern
+layout: default
 title: Tumblr Theme
-omit_title_suffix: true
-cssid: extern-tumblr-theme
 offSite: true
 meta_content: |
-  <meta name="google-site-verification" content="eotfmNVR-r4qTL0MAFLUR0XVumvKeC2i87xYg102u7I" />
-  <link rel="shortcut icon" href="//mayday.us/favicon.ico" />
-
-
   <link rel="alternate" type="application/rss+xml" href="{RSS}" />
   <meta property="og:type" content="blog" />
   <meta property="og:url" codntent="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}">
   <title>{block:IndexPage}{Title}{/block:IndexPage}{block:SearchPage}Search results for: {SearchQuery}{/block:SearchPage}{block:PostSummary}{PostSummary}{/block:PostSummary}</title>
-  <meta property="og:site_name" content="{Title}" />
-  {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
-  <!-- OPEN GRAPH INFO-->
-  {block:PermalinkPage}{block:Posts}
-    {block:Photo}<meta property="og:image" content="{PhotoURL-500}" /> {/block:Photo}
-    {block:Answer}<meta property="og:image" content="{AskerPortraitURL-500}"/> {/block:Answer}
-    {block:Text}
-      <meta property="og:image" content="{PortraitURL-128}" />
-      <meta property="og:image:url" content="{PortraitURL-128}" />
-    {/block:Text}
-    {block:Photoset}
-      {block:Photos}
-        <meta property="og:image" content="{PhotoURL-500}" />
-      {/block:Photos}
-    {/block:Photoset}
-    {block:Quote}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Quote}
-    {block:Link}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Link}
-    {block:Chat}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Chat}
-    {block:Video}<meta property="og:image" content="{PortraitURL-128}" /> {/block:Video}
-  {/block:Posts}{/block:PermalinkPage}
+  <meta property="og:site_name" content="{Title}"/>
+  {block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
 
-  {block:IndexPage}
-    <meta property="og:title" content="{block:Description}{MetaDescription}{/block:Description}" />
-    <meta property="og:image" content="{PortraitURL-128}" />
-  {/block:IndexPage}
-
+  <meta property="og:image" content="{PortraitURL-128}"/>
+  <meta property="og:image:url" content="{PortraitURL-128}"/>
   <link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+  {block:PermalinkPage}{block:Posts}
+    {block:Photoset} {block:Photos} <meta property="og:image" content="{PhotoURL-500}"/> {/block:Photos} {/block:Photoset}
+    {block:Answer}<meta property="og:image" content="{AskerPortraitURL-500}"/> {/block:Answer}
+    {block:Photo}<meta property="og:image" content="{PhotoURL-500}"/> {/block:Photo}
+  {/block:Posts}{/block:PermalinkPage}
+  {block:IndexPage}
+    <meta property="og:title" content="{block:Description}{MetaDescription}{/block:Description}"/>
+  {/block:IndexPage}
 
   <!-- DEFAULT VARIABLES -->
   <meta name="image:Header" content=""/>
@@ -48,69 +29,86 @@ meta_content: |
   <meta name="if:Show Latest Tweets Widget" content="1"/>
   <meta name="if:Show People I Follow Widget" content="1"/>
   <meta name="text:Number of Tweets" content="3"/>
-  <meta name="text:Disqus Shortname" content="maydaypacblog" />
-  <meta name="text:TwitterUsername" content="MAYDAYUS" />
+  <meta name="text:Disqus Shortname" content="maydaypacblog"/>
+  <meta name="text:TwitterUsername" content="MAYDAYUS"/>
   <meta name="text:Flickr Username" content=""/>
 ---
 
-{% capture custom_css %}
-<style type="text/css" media="screen">
-  {CustomCSS}
-</style>
+{% capture sidebar_extras_end %}
+<!--       {block:IfShowAboutWidget}
+  <h2>Our Blog</h2>
+  <div id="about" class="widget">
+    {block:Description}<div class="description"><p>{Description}</p></div>{/block:Description}
+  </div>
+{/block:IfShowAboutWidget} -->
+<!--{block:IndexPage}{block:IfShowStuffILikeWidget}{block:Likes}-->
+<!--    <h3><a href="http://www.tumblr.com/liked/by/{Name}">Stuff I like</a></h3>-->
+<!--    <div id="likes_container" class="widget">-->
+<!--      {Likes limit="5" summarize="100" width="279"}-->
+<!--    </div>-->
+<!--  {/block:Likes}{/block:IfShowStuffILikeWidget}{/block:IndexPage}-->
+  {block:IfShowLatestTweetsWidget}{block:Twitter}
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-news">
+        <div class="panel-heading">
+          <h2 class="as-if-h4">Latest Tweets</h2>
+        </div>
+        <div class="panel-body mayday-inputs">
+          <div id="twitter" class="widget">
+            <div id="tweets"></div>
+            <p><a href="http://twitter.com/{TwitterUsername}">Follow MAYDAY</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/block:Twitter}{/block:IfShowLatestTweetsWidget}
+
+  {block:IfShowPeopleIFollowWidget}{block:Following}
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-news">
+        <div class="panel-heading">
+          <h2 class="as-if-h4">People I follow</h2>
+        </div>
+        <div class="panel-body mayday-inputs">
+         <div id="following_container" class="widget">
+           <ul>
+             {block:Followed}
+               <li><a href="{FollowedURL}"><img src="{FollowedPortraitURL-30}" alt="{FollowedName}" /></a></li>
+             {/block:Followed}
+           </ul>
+         </div>
+      </div>
+    </div>
+  </div>
+  {/block:Following}{/block:IfShowPeopleIFollowWidget}
 {% endcapture %}
 
-
 {% capture content %}
-  <div class="rally full-width">
-    <div class="container">
+{% include jumbotrons/general-dark.html title="{Title}" %}
+<div class="container" id="extern-tumblr-theme">
+  <div class="row">
+    <div class="col-xs-12"id="container">
+      {block:IndexPage}
       <div class="row">
-        <div class="col-xs-12 col-md-8" id="container">
-          <div class="row">
-            <div class="col-xs-12">
-              <h1><a href="/" target="_parent"><i class="md-icon md-shield" style="width: 50px; height: 50px; margin-bottom: -11px"></i><strong>{Title}</strong></a></h1>
-            </div>
-          </div>
-          {block:IndexPage}
-          <div class="row">
-            <div class="col-xs-12">
-              <p class="lead">{Description}</p>
-            </div>
-          </div>
-          {/block:IndexPage}
-          <div class="row">
-            <div class="col-xs-12" id="container">
-              <div id="content">
-                {block:Posts}
-                  <article id="post-{PostID}" class="post {block:Text}post-type-text{/block:Text}{block:Photo}post-type-photo{/block:Photo}{block:Photoset}post-type-photoset{/block:Photoset}{block:Quote}post-type-quote{/block:Quote}{block:Link}post-type-link{/block:Link}{block:Chat}post-type-chat{/block:Chat}{block:Video}post-type-video{/block:Video}{block:Audio}post-type-audio{/block:Audio}">
-                    <div class="post-content">
-                    <div class="post-meta">
-                      <!--<div class="type">
-                        <a href="{Permalink}">
-                        {block:Text}<i class="fa fa-newspaper-o"></i>{/block:Text}
-                        {block:Photo}<i class="fa fa-camera"></i>{/block:Photo}
-                        {block:Photoset}Photoset{/block:Photoset}
-                        {block:Quote}<i class="fa fa-quote-left"></i>{/block:Quote}
-                        {block:Link}<i class="fa fa-link"></i>{/block:Link}
-                        {block:Chat}<i class="fa fa-wechat"></i>{/block:Chat}
-                        {block:Video}<i class="fa fa-video-camera"></i>{/block:Video}
-                        {block:Audio}<i class="fa fa-headphones"></i>{/block:Audio}</a>
-                      </div><!-- .type -->
-                    {block:Date}
-                      <div class="date">
-                      <strong>{Month} {DayOfMonthWithZero}, {Year}</strong>
-                      </div><!-- .date -->
-                    {/block:Date}
-                    {block:IfDisqusShortname}
-                      <div class="comments">
-                        <a href="{Permalink}#disqus_thread">0 comments</a>
-                      </div>
-                    {/block:IfDisqusShortname}
-                    {block:NoteCount}
-                      <div class="note-count">
-                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                      </div><!-- .note-count -->
-                    {/block:NoteCount}
-                  </div><!-- .post-meta -->
+        <div class="col-xs-12">
+          <p class="byline">{Description}</p>
+        </div>
+      </div>
+      {/block:IndexPage}
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 blog-listings" id="content">
+          {block:Posts}
+            <article id="post-{PostID}" class="post">
+              <div class="post-content {block:Text}post-type-text{/block:Text}{block:Photo}post-type-photo{/block:Photo}{block:Photoset}post-type-photoset{/block:Photoset}{block:Quote}post-type-quote{/block:Quote}{block:Link}post-type-link{/block:Link}{block:Chat}post-type-chat{/block:Chat}{block:Video}post-type-video{/block:Video}{block:Audio}post-type-audio{/block:Audio}">
+                {block:Date}
+                  <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" class="as-if-h6 text-blue-highlight">
+                    <span>{ShortMonth} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}</span>
+                  </time>
+                {/block:Date}
 
                 {block:Text}
                   {block:Title}<h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
@@ -152,47 +150,75 @@ meta_content: |
                   <div class="audio-wrap">{AudioPlayerGrey}</div>
                   {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
                 {/block:Audio}
-                <ul class="post_controls group">
-                  <li>{ReblogButton size="21"}</li>
-                  <li>{LikeButton size="21"}</li>
-                </ul>
-                {block:HasTags}
-                  <div class="tags">
-                    <p><i class="md-icon md-tags"></i> {block:Tags}<a href="{TagURL}" class="single-tag">{Tag}</a> {/block:Tags}</p>
-                  </div>
-                {/block:HasTags}
-                </div><!-- post-content -->
-              </article><!-- .post -->
-              <!-- dis {text:Disqus Shortname} -->
-              {block:IfDisqusShortname}{block:Permalink}
-                <div id="disqus_thread"></div>
-                <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
-                <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-              {/block:Permalink}{/block:IfDisqusShortname}
-              {block:PostNotes}<div id="post-notes">{PostNotes}</div>{/block:PostNotes}
-            {/block:Posts}
-            {block:Pagination}
-              <div class="pagination">
-                {block:PreviousPage}<span class="previous-page"><a href="{PreviousPage}">&#171; Previous</a></span>{/block:PreviousPage}
-                {block:NextPage}<span class="next-page"><a href="{NextPage}">Next &#187;</a></span>{/block:NextPage}
-              </div><!-- .pagination -->
-            {/block:Pagination}
-          </div><!-- #content -->
+              </div><!-- post-content -->
+               <div class="post-meta">
+                  <!--<div class="type">
+                    <a href="{Permalink}">
+                    {block:Text}<i class="fa fa-newspaper-o"></i>{/block:Text}
+                    {block:Photo}<i class="fa fa-camera"></i>{/block:Photo}
+                    {block:Photoset}Photoset{/block:Photoset}
+                    {block:Quote}<i class="fa fa-quote-left"></i>{/block:Quote}
+                    {block:Link}<i class="fa fa-link"></i>{/block:Link}
+                    {block:Chat}<i class="fa fa-wechat"></i>{/block:Chat}
+                    {block:Video}<i class="fa fa-video-camera"></i>{/block:Video}
+                    {block:Audio}<i class="fa fa-headphones"></i>{/block:Audio}</a>
+                  </div>type -->
+                  <p class="pull-left">
+                    {block:HasTags} {block:Tags}
+                      <a href="{TagURL}" class="label label-default">{Tag}</a>
+                    {/block:Tags} {/block:HasTags} 
+                    {block:NoteCount}<a href="{Permalink}#notes">Notes</a> <span class="badge">{NoteCount}</span>{/block:NoteCount}
+                    <!-- We cannot seem to control where discus counts show up.  Janky solution is to use href in a span. -->
+                    {block:IfDisqusShortname}<a href="{Permalink}">Comments </a> <span href="{Permalink}#disqus_thread" class="badge">0</span>{/block:IfDisqusShortname}
+                  </p>
 
-        </div><!-- col-xs-12 -->
+                  <ul class="post_controls group">
+                    <li>{ReblogButton size="21"}</li>
+                    <li>{LikeButton size="21"}</li>
+                  </ul>
+              </div><!-- .post-meta -->
+            </article><!-- .post -->
+            <!-- dis {text:Disqus Shortname} -->
+            {block:IfDisqusShortname}{block:Permalink}
+              <div id="disqus_thread"></div>
+              <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+              <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+            {/block:Permalink}{/block:IfDisqusShortname}
+            {block:PostNotes}<div id="post-notes">{PostNotes}</div>{/block:PostNotes}
+          {/block:Posts}
+          {block:Pagination}
+            <nav>
+              <ul class="pagination">
+                {block:PreviousPage}
+                  <li><a href="{PreviousPage}" aria-label="Previous"><span aria-hidden="true">&laquo; Previous</span></a></li>
+                {/block:PreviousPage}
+                {block:NextPage}
+                  <li class="pull-right"><a href="{NextPage}" aria-label="Next"><span aria-hidden="true">Next &raquo;</span></a></li>
+                {/block:NextPage}
+              </ul>
+            </nav>
+          {/block:Pagination}
+        </div><!-- #content-->
+        {% include sidebar_news.html %}
       </div>
     </div><!-- #container -->
+  </div>
+</div>
 
-    {% include sidebar_news.html %}
+{% endcapture %}
 
-    <!-- <p>{block:Twitter}<script type="text/javascript" src="/tweets.js"></script>{/block:Twitter} -->
+
+{% capture footer_scripts %}
+<script src="//mayday.us/assets/app.js"></script>
+ <!-- <p>{block:Twitter}<script type="text/javascript" src="/tweets.js"></script>{/block:Twitter} -->
+
 
     {block:IfDisqusShortname}
-    {% raw %}
+
       <script type="text/javascript">
         //<![CDATA[
         (function() {
-          var links = document.getElementsByTagName('a');
+          var links = document.querySelectorAll('a,span');
           var query = '?';
           for(var i = 0; i < links.length; i++) {
             if(links[i].href.indexOf('#disqus_thread') >= 0) {
@@ -203,99 +229,10 @@ meta_content: |
         })();
         //]]>;
       </script>
-    {% endraw %}
-    {/block:IfDisqusShortname}</script></p>
 
-        </div><!-- row -->
-
-      </div><!-- container -->
-    </div><!-- rally -->
+    {/block:IfDisqusShortname}
 {% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
 
-{% capture sidebar_extras_start %}
-  {block:PermalinkPage}{block:Posts}
-  <div class="row">
-      <div class="col-xs-12">
-        <div class="panel panel-news">
-          <div class="panel-heading">
-            <h2>{title}</h2>
-          </div>
-          <div class="panel-body">
-            <p>{Description}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  {/block:PermalinkPage}{/block:Posts}
-{% endcapture %}
 
-{% capture sidebar_extras_end %}
-
-  <!--       {block:IfShowAboutWidget}
-    <h2>Our Blog</h2>
-    <div id="about" class="widget">
-      {block:Description}<div class="description"><p>{Description}</p></div>{/block:Description}
-    </div>
-  {/block:IfShowAboutWidget} -->
-  <!--{block:IndexPage}{block:IfShowStuffILikeWidget}{block:Likes}-->
-  <!--    <h3><a href="http://www.tumblr.com/liked/by/{Name}">Stuff I like</a></h3>-->
-  <!--    <div id="likes_container" class="widget">-->
-  <!--      {Likes limit="5" summarize="100" width="279"}-->
-  <!--    </div>-->
-  <!--  {/block:Likes}{/block:IfShowStuffILikeWidget}{/block:IndexPage}-->
-  {block:IndexPage}{block:IfShowLatestTweetsWidget}{block:Twitter}
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="panel panel-news">
-        <div class="panel-heading">
-          <h2>Latest Tweets</h2>
-        </div>
-        <div class="panel-body">
-          <div id="twitter" class="widget">
-            <div id="tweets"></div>
-            <p><a href="http://twitter.com/{TwitterUsername}">Follow MAYDAY</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <script type="text/javascript">
-      function recent_tweets(data) {
-        for (i=0; i<data.length; i++) {
-          if (i<{text:Number of Tweets}) {
-            document.getElementById("tweets").innerHTML =
-              document.getElementById("tweets").innerHTML +
-              '<a href="//twitter.com/{TwitterUsername}/status/' +
-              data[i].id + '"><div class="content">' + data[i].text +
-              '</div></a>';
-          }
-        }
-        document.getElementById("twitter").style.display = 'block';
-      }
-    </script>
-  {/block:Twitter}{/block:IfShowLatestTweetsWidget}{/block:IndexPage}
-
-  {block:IfShowPeopleIFollowWidget}{block:Following}
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="panel panel-news">
-        <div class="panel-heading">
-          <h3>People I follow</h3>
-        </div>
-        <div class="panel-body">
-         <div id="following_container" class="widget">
-           <ul>
-             {block:Followed}
-               <li><a href="{FollowedURL}"><img src="{FollowedPortraitURL-30}" alt="{FollowedName}" /></a></li>
-             {/block:Followed}
-           </ul>
-         </div>
-      </div>
-    </div>
-  </div>
-  {/block:Following}{/block:IfShowPeopleIFollowWidget}
-
-{% endcapture %}
-
-{% include sub_layouts/external.html %}
+{% include sub_layouts/default_layout.html %}

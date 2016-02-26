@@ -1,63 +1,79 @@
 /**
- * Reset some basic bootstrap elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-  margin: 0;
-  padding: 0;
-}
-
-/**
  * Variables
  */
-$color-navy-blue: #16213f;
-$color-navy-blue-mid: rgb(30,46,80);
-$color-navy-blue-light: #0d3960;
-$color-dark-red: #b0010e;
-$color-grey-blue: rgb(118, 159, 189);
-$color-offwhite: rgb(228,228,228);
 
-$base-font-family: 'Lato';
+$base-font-family: 'Rubik', sans-serif;
 $base-font-size: 18px;
-$small-font-size: 8;
+$small-font-size: 8px;
 
-$color-background: #ffffff;
-$color-brand: #0d3960;
-$color-dark-grey: rgb(50,50,50);
-$color-grey: #808080;
-$color-grey-light: #cccccc;
-$color-grey-background: #f0f0f0;
-$color-grey-line: #b7b7b7;
-$color-text: #5C5C5C;
-$color-dossier-blue: #1c7bab;
-$color-dossier-red: #910216;
-$color-dossier-green: #426E2F;
-$color-dossier-orange: #D07F30;
-
-$spacing-unit: 1;
-$spacing-unit-half: 0.5em;
 $base-line-height: 1.0em;
 $page-content-line-height: 1.4em;
-$content-width: 1280;
-$bottom-spacing: 15px;
-$top-spacing: 15px;
+$bottom-spacing: 20px;
+$standard-margin: 20px;
 $left-margin-spacing: 1.3em;
 
-$header-weight: 400;
 
-$color-facebook: rgb(59, 89, 151);
-$color-twitter: rgb(64, 153, 255);
-$color-youtube: rgb(117, 117, 117);
-$color-reddit: rgb(31, 89, 111);
+$color-facebook: #3B5999;
+$color-twitter: #55ACEF;
+$color-youtube: #CE201F;
+$color-reddit: #EB4923;
 $color-join-mayday: rgb(19, 83, 145);
 $color-volunteer: rgb(80, 107, 134);
 $color-orientation: rgb(76, 43, 98);
 
-$bg-img-dir: '../images/action/';
-$orientation-bg-img: 'orientation-bg.jpg';
-$donor-strike-bg-img: 'donor-strike-bg.jpg';
-$reddit-bg-img: 'reddit-bg.jpg';
-$volunteer-bg-img: 'volunteer-bg.jpg';
-$share-bg-img: 'share-bg.jpg';
 
+/* 2015 MAYDAY COLORS */
+  $color-navy-blue: #16213f;
+  $color-navy-blue-mid: rgb(30,46,80);
+  $color-navy-blue-light: #0d3960;
+  $color-dark-red: #b0010e;
+  $color-grey-blue: rgb(118, 159, 189);
+  $color-brand: $color-navy-blue-light;
+  $color-dark-grey: rgb(50,50,50);
+  $color-grey: #808080;
+  $color-grey-light: #ccc;
+  $color-grey-background: #f0f0f0;
+  $color-grey-line: #b7b7b7;
+  $color-dossier-blue: #1c7bab;
+  $color-dossier-red: #910216;
+  $color-dossier-green: #426e2f;
+  $color-dossier-orange: #d07f30;
+  $color-background: #fff;
+/* 2015 button colors */
+  $color-button-blue: #094067;
+  $color-button-purple: #513c5f;
+  $color-button-lightblue: #5e8cac;
+  $color-button-green: #759c64;
+  $color-button-orange: #eaa663;
+  $color-button-lightred: #af010e;
+
+
+/* 2016 MAYDAY COLORS */
+  $mayday-blue-black:      #212230;
+  $mayday-blue-dark:       #00467e;
+  $mayday-blue-medium:     #0054b9;
+  $mayday-blue-light:      #2ac4ea;
+  $mayday-grey-dark-alpha: rgba(#7b8082,0.65);
+  $mayday-grey-dark:       #7b8082;
+  $mayday-grey-medium:     #dae4e7;
+  $mayday-grey-light:      #f4f4f4;
+  $mayday-orange-medium:   #ee3800;
+  $mayday-orange-light:    #f36433;
+  $mayday-green-light:     #0ad6b2;
+  $mayday-yellow-light:    #fdd63f;
+
+  /* 2016 image overlay pixels image names*/
+  $pixel_blue_black:    'overlay_blue_black_212230.png';
+  $pixel_blue_medium:   'overlay_blue_medium_0054b9.png';
+  $pixel_blue_dark:     'overlay_blue_dark_00467e.png';
+  $pixel_blue_light:    'overlay_blue_light_2ac4ea.png';
+  $pixel_grey_dark:     'overlay_grey_dark_7b8082.png';
+  $pixel_grey_medium:   'overlay_grey_medium_dae437.png';
+  $pixel_grey_light:    'overlay_grey_light_f4f4f4.png';
+  $pixel_orange_medium: 'overlay_orange_medium_ee3800.png';
+  $pixel_orange_light:  'overlay_orange_light_f36433.png';
+  $pixel_green_light:   'overlay_green_light_0ad6b2.png';
+  $pixel_yellow_light:  'overlay_yellow_light_fdd63f.png';
+
+  $mayday-text: $mayday-blue-black;
+  $mayday-background: #fff;

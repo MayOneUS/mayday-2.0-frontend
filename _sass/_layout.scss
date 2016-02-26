@@ -26,6 +26,13 @@ $large-desktop-min-width: 1200px;
   }
 }
 
+@mixin small-desktop-minus {
+  @media (max-width: #{$large-desktop-min-width - 1px}) {
+    @content;
+  }
+}
+
+
 @mixin small-desktop {
   @media (min-width: #{$small-desktop-min-width}) and (max-width: #{$large-desktop-min-width - 1px}) {
     @content;
@@ -38,34 +45,32 @@ $large-desktop-min-width: 1200px;
   }
 }
 
+/**
+ * Reset some basic bootstrap elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure, legend{
+  margin: 0;
+  padding: 0;
+  font-family: $base-font-family;
+}
 
 /**
  * Basic styling
  */
 html, body {
   height: auto;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  font-weight: 400;
-  color: $color-text;
   background-color: $color-background;
   -webkit-text-size-adjust: 100%;
   @include phone{
     overflow-x: hidden;
-    color: #333;
   }
 }
 
 html {
   position: relative;
   min-height: 100%;
-}
-body {
-  margin-bottom: 300px;
-  @include tablet-minus{
-    margin-bottom: 420px;
-  }
 }
 
 
@@ -79,17 +84,15 @@ body {
   letter-spacing: .1px;
   height: auto !important;
   height: 100%;
-  // margin: 0 auto -300px;
-  .footer-push {
-    height: 300px;
-    clear: both;
-    content: '';
-  }
   .index-page &{
     padding: 0;
   }
   @include phone{
     line-height: 1.7em;
+  }
+
+  strong{
+    font-weight:500;
   }
 }
 
@@ -167,44 +170,84 @@ form.no-gutter fieldset > [class*='col-'] {
  * Columns of same height styles
  */
 
-.row-full-height {
-  height: 100%;
-}
-.col-full-height {
-  height: 100%;
-  vertical-align: top;
+// .row-full-height {
+//   height: 100%;
+// }
+// .col-full-height {
+//   height: 100%;
+//   vertical-align: top;
 
-  .panel{
-    height: 100%;
-    display: inline-block;
-  }
-}
-.row-same-height {
-  display: table;
-  width: 100%;
-  /* fix overflow */
-  table-layout: fixed;
-}
-.col-xs-height {
-  display: table-cell;
-  float: none !important;
+//   .panel{
+//     height: 100%;
+//     display: inline-block;
+//   }
+// }
+// .row-same-height {
+//   display: table;
+//   width: 100%;
+//   /* fix overflow */
+//   table-layout: fixed;
+// }
+// .col-xs-height {
+//   display: table-cell;
+//   float: none !important;
+// }
+
+// @media (min-width: 768px) {
+//   .col-sm-height {
+//     display: table-cell;
+//     float: none !important;
+//   }
+// }
+// @media (min-width: 992px) {
+//   .col-md-height {
+//     display: table-cell;
+//     float: none !important;
+//   }
+// }
+// @media (min-width: 1200px) {
+//   .col-lg-height {
+//     display: table-cell;
+//     float: none !important;
+//   }
+// }
+
+@mixin star-rotation($rotation) {
+  -ms-transform: rotate($rotation);
+  -webkit-transform: rotate($rotation);
+  transform: rotate($rotation);
 }
 
-@media (min-width: 768px) {
-  .col-sm-height {
-    display: table-cell;
-    float: none !important;
-  }
+@mixin overlay-with-pixel($pixel_image, $background_declaration){
+  background: url('/images/2016_image_overlay_pixels/#{$pixel_image}') repeat 0 0,
+    #{$background_declaration};
 }
-@media (min-width: 992px) {
-  .col-md-height {
-    display: table-cell;
-    float: none !important;
-  }
+
+@mixin overlay-blue-light($background_declaration){
+  @include overlay-with-pixel($pixel_blue_light, $background_declaration);
 }
-@media (min-width: 1200px) {
-  .col-lg-height {
-    display: table-cell;
-    float: none !important;
-  }
+@mixin overlay-green-light($background_declaration){
+  @include overlay-with-pixel($pixel_green_light, $background_declaration);
+}
+@mixin overlay-grey-medium($background_declaration){
+  @include overlay-with-pixel($pixel_grey_medium, $background_declaration);
+}
+@mixin overlay-orange-light($background_declaration){
+  @include overlay-with-pixel($pixel_orange_light, $background_declaration);
+}
+@mixin overlay-orange-medium($background_declaration){
+  @include overlay-with-pixel($pixel_orange_medium, $background_declaration);
+}
+@mixin overlay-yellow-light($background_declaration){
+  @include overlay-with-pixel($pixel_yellow_light, $background_declaration);
+}
+
+@mixin flex{
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
 }

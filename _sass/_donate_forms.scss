@@ -1,250 +1,241 @@
 .donate-flavor-text {
-  h1 {
-    font-size: 48px;
-    font-weight: 400;
-    margin-top: 15px;
-  }
-  > p {
-    font-size: 20px;
-    font-weight: 300;
-    padding: 0;
-    &:first-of-type {
-      font-weight: 400;
-    }
-    &:last-of-type {
-      padding-bottom: 10px;
-    }
-  }
+  // h1 {
+  //   font-size: 48px;
+  //   font-weight: 400;
+  //   margin-top: 15px;
+  // }
+  // > p {
+  //   font-size: 20px;
+  //   font-weight: 300;
+  //   padding: 0;
+  //   &:first-of-type {
+  //     font-weight: 400;
+  //   }
+  //   &:last-of-type {
+  //     padding-bottom: 10px;
+  //   }
+  // }
 }
 
-.box-inner {
-  height: 100%;
-  position: relative;
-  &.donate-page-box{
-    border: 1px solid $color-navy-blue;
-    margin: 15px 0;
-  }
-}
+// .donate-page-box{
+//   .box-title {
+//     height: 18%;
+//     text-align: center;
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+//     color: #ffffff;
+//     background-color: $color-navy-blue;
+//     font-size: 27px;
+//     border-bottom: 10px solid $color-navy-blue-light;
+//     margin-top: 0;
+//   }
+//   form {
+//     margin: 25px 15px 0 15px;
+//     font-size: 22px;
+//     input, select {
+//       width: 100%;
+//       border: 2px solid $color-navy-blue;
+//       padding: 8px 0 8px 12px;
+//       border-radius: 4px;
+//       margin-bottom: 4px;
+//       font-size: 20px;
+//       font-weight: 300;
+//     }
+//   }
 
-.donate-page-box{
-  .box-title {
-    height: 18%;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #ffffff;
-    background-color: $color-navy-blue;
-    font-size: 27px;
-    border-bottom: 10px solid $color-navy-blue-light;
-    margin-top: 0;
-  }
-  form {
-    margin: 25px 15px 0 15px;
-    font-size: 22px;
-    input, select {
-      width: 100%;
-      border: 2px solid $color-navy-blue;
-      padding: 8px 0 8px 12px;
-      border-radius: 4px;
-      margin-bottom: 4px;
-      font-size: 20px;
-      font-weight: 300;
-    }
-  }
+//   .stepContainer{
+//     padding: 15px 10px 10px;
+//   }
 
-  .stepContainer{
-    padding: 15px 10px 10px;
-  }
+//   ul.steps{
+//     text-align: center;
+//     font-size: 0;
+//     margin:0;
+//     width:100%;
+//     padding:0;
+//   }
 
-  ul.steps{
-    text-align: center;
-    font-size: 0;
-    margin:0;
-    width:100%;
-    padding:0;
-  }
+//   li.step{
+//     display: inline-block;
+//     vertical-align: top;
+//     position: relative;
+//     margin: 0 14px;
+//     width: 74px;
+//     max-width: 120px;
+//     color: #b7b7b7;
+//     font-size: 14px;
+//     font-size: 1.1rem;
+//   }
 
-  li.step{
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    margin: 0 14px;
-    width: 74px;
-    max-width: 120px;
-    color: #b7b7b7;
-    font-size: 14px;
-    font-size: 1.1rem;
-  }
+//   li.step span{
+//     display: block;
+//     border: 3px solid #b7b7b7;
+//     background: #fff;
+//     margin: 7px auto 0;
+//     padding: 0 7px 7px;
+//     width: 60px;
+//     height: 60px;
+//     border-radius: 60px;
+//     color: #b7b7b7;
+//     font-size: 36px;
+//     line-height: 1.4;
+//     font-weight: 300;
+//   }
+//   li.step.active span{
+//     background: #27ae60;
+//     border-color: #27ae60;
+//     color: #fff;
+//   }
+//   li.step.active {
+//     color: #27ae60;
+//   }
 
-  li.step span{
-    display: block;
-    border: 3px solid #b7b7b7;
-    background: #fff;
-    margin: 7px auto 0;
-    padding: 0 7px 7px;
-    width: 60px;
-    height: 60px;
-    border-radius: 60px;
-    color: #b7b7b7;
-    font-size: 36px;
-    line-height: 1.4;
-    font-weight: 300;
-  }
-  li.step.active span{
-    background: #27ae60;
-    border-color: #27ae60;
-    color: #fff;
-  }
-  li.step.active {
-    color: #27ae60;
-  }
+//   .step-1-container{
+//     width: 100%;
+//     padding: 10px;
+//     text-align: center;
+//   }
+//   .step-2-container{
+//     margin: 0 auto;
+//     overflow: auto;
+//     padding: 0 20px 20px;
 
-  .step-1-container{
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-  }
-  .step-2-container{
-    margin: 0 auto;
-    overflow: auto;
-    padding: 0 20px 20px;
+//     .control-label {
+//       display: none;
+//     }
 
-    .control-label {
-      display: none;
-    }
+//     #donation-type {
+//       margin-top: 5px;
+//       margin-bottom: 0;
+//     }
 
-    #donation-type {
-      margin-top: 5px;
-      margin-bottom: 0;
-    }
+//     .checkbox {
+//       font-size: 16px;
+//       line-height: 1.3;
+//       font-weight: 300;
+//       color: $color-navy-blue-mid;
+//       margin-top: 0;
+//       input {
+//         width: auto;
+//       }
+//     }
 
-    .checkbox {
-      font-size: 16px;
-      line-height: 1.3;
-      font-weight: 300;
-      color: $color-navy-blue-mid;
-      margin-top: 0;
-      input {
-        width: auto;
-      }
-    }
+//     .form-group {
+//       padding-left: 5px;
+//       padding-right: 5px;
+//       margin-bottom: 7px;
+//     }
+//   }
 
-    .form-group {
-      padding-left: 5px;
-      padding-right: 5px;
-      margin-bottom: 7px;
-    }
-  }
+//   .select-amount-instructions, .or-instructions {
+//     font-style: italic;
+//     margin: 0 0 10px;
+//     font-weight: 300;
+//   }
 
-  .select-amount-instructions, .or-instructions {
-    font-style: italic;
-    margin: 0 0 10px;
-    font-weight: 300;
-  }
+//   .fancy-or-line {
+//     display: inline-block;
+//     height: 1px;
+//     width: 60px;
+//     background-color: #b7b7b7;
+//     vertical-align: middle;
+//     margin: 0 20px;
+//   }
 
-  .fancy-or-line {
-    display: inline-block;
-    height: 1px;
-    width: 60px;
-    background-color: #b7b7b7;
-    vertical-align: middle;
-    margin: 0 20px;
-  }
+//   .donate-with-bitcoin-button {
+//     background-color: #fff;
+//     color: $color-navy-blue-mid;
+//     border: 4px solid $color-navy-blue-mid;
+//     display: inline-block;
+//     font-size: 24px;
+//     font-weight: 400;
+//     width: 90%;
+//     max-width: 380px; /* width of three amount buttons */
+//     padding: 7px 10px;
+//     margin: 0 0 14px;
+//     text-align: center;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     border-radius: 4px;
 
-  .donate-with-bitcoin-button {
-    background-color: #fff;
-    color: $color-navy-blue-mid;
-    border: 4px solid $color-navy-blue-mid;
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 400;
-    width: 90%;
-    max-width: 380px; /* width of three amount buttons */
-    padding: 7px 10px;
-    margin: 0 0 14px;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    border-radius: 4px;
+//     &:hover {
+//       background-color: $color-navy-blue-mid;
+//       border-color: $color-navy-blue-mid;
+//       color: #fff;
+//       text-decoration: none;
+//       font-weight: 400;
+//     }
+//   }
 
-    &:hover {
-      background-color: $color-navy-blue-mid;
-      border-color: $color-navy-blue-mid;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 400;
-    }
-  }
+//   .amount-button{
+//     background-color: $color-navy-blue-mid;
+//     color: #fff;
+//     display: inline-block;
+//     font-size: 20px;
+//     font-weight: 400;
+//     width: 120px;
+//     height: 40px;
+//     padding: 5px 10px;
+//     margin: 6px 4px;
+//     text-align: center;
+//     vertical-align:middle;
+//     cursor: pointer;
+//     border-radius: 2px;
 
-  .amount-button{
-    background-color: $color-navy-blue-mid;
-    color: #fff;
-    display: inline-block;
-    font-size: 20px;
-    font-weight: 400;
-    width: 120px;
-    height: 40px;
-    padding: 5px 10px;
-    margin: 6px 4px;
-    text-align: center;
-    vertical-align:middle;
-    cursor: pointer;
-    border-radius: 2px;
+//     &:hover {
+//       background-color: $color-navy-blue-light;
+//     }
+//   }
 
-    &:hover {
-      background-color: $color-navy-blue-light;
-    }
-  }
+//   @include phone {
+//     .donate-submit-button {
+//       margin-top: 10px;
+//     }
+//   }
 
-  @include phone {
-    .donate-submit-button {
-      margin-top: 10px;
-    }
-  }
+//   .submit-button {
+//     background-color: $color-navy-blue-mid;
+//     color: #fff;
+//     border: 3px solid $color-navy-blue-mid;
+//     display: inline-block;
+//     font-size: 24px;
+//     font-weight: 300;
+//     width: 100%;
+//     text-align: center;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     border-radius: 6px;
+//     text-transform: uppercase;
+//     padding: 10px;
 
-  .submit-button {
-    background-color: $color-navy-blue-mid;
-    color: #fff;
-    border: 3px solid $color-navy-blue-mid;
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 300;
-    width: 100%;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    border-radius: 6px;
-    text-transform: uppercase;
-    padding: 10px;
+//     &:hover {
+//       background-color: $color-navy-blue-light;
+//       border-color: $color-navy-blue-light;
+//       color: #fff;
+//       text-decoration: none;
+//     }
 
-    &:hover {
-      background-color: $color-navy-blue-light;
-      border-color: $color-navy-blue-light;
-      color: #fff;
-      text-decoration: none;
-    }
+//     &#paypalButton {
+//       background-color: #fff;
+//       color: $color-navy-blue-mid;
+//       margin-top: 7px;
+//       &:hover {
+//         background-color: $color-navy-blue-light;
+//         border-color: $color-navy-blue-light;
+//         color: #fff;
+//         text-decoration: none;
+//       }
+//     }
+//   }
 
-    &#paypalButton {
-      background-color: #fff;
-      color: $color-navy-blue-mid;
-      margin-top: 7px;
-      &:hover {
-        background-color: $color-navy-blue-light;
-        border-color: $color-navy-blue-light;
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-  }
+//   #formError {
+//     clear: both;
+//   }
 
-  #formError {
-    clear: both;
-  }
-
-  .step-2-container {
-    display:none;
-  }
-}
+//   .step-2-container {
+//     display:none;
+//   }
+// }
 
 .contribution-rules, .gray-container-wrap {
   margin: 20px 0 0;
@@ -254,13 +245,10 @@
 }
 
 .contribution-rules {
-  h2 {
-    font-weight: 400;
-  }
+  h2 {font-weight: 400;}
 
   ul {
-  padding-left: 20px;
-
+    padding-left: 20px;
     li {
       list-style-type: disc;
     }
