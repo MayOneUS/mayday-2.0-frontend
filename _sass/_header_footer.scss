@@ -1,6 +1,7 @@
 header .navbar-fixed-top{
   top:20px;
   background-color:$mayday-background;
+  min-height: initial;
   @include phone{
     padding-left:10px;
   }
@@ -85,11 +86,13 @@ header .navbar-fixed-top{
   }
 
   .navbar-brand{
-    padding-left: 85px;
-    padding-top: 17px;
     position: relative;
+    padding-left: 85px;
+    padding-top: 15px;
+    height: auto;
+    font-size: 28px;
+    line-height: 15px;
     font-weight: 500;
-    font-size: 30px;
 
     &:hover{
       color: $mayday-text

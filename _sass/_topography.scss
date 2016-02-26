@@ -9,7 +9,6 @@ ul, ol, dl, figure,
 
 html, body {
   font-size: $base-font-size;
-  line-height: $base-line-height;
   font-weight: 400;
   color: $mayday-text;
   @include phone{
