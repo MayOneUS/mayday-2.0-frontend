@@ -2,7 +2,6 @@
  * Mayday News Panels
  **/
 
-
  .panel-news{
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -11,7 +10,6 @@
     border-bottom:2px solid $mayday-blue-light;
     padding:0;
     margin-bottom:30px;
-
 
     small{
       float: right;
@@ -36,5 +34,5 @@
       color:$mayday-blue-black;
     }
   }
- }
+}
 
