@@ -96,54 +96,9 @@ html {
   }
 }
 
-/**
- * responsive margins
-.container {
-  // padding-right: 15px;
-  // padding-left: 15px;
-  // margin-right: auto;
-  // margin-left: auto;
-  // margin-bottom: 80px;
-  @include phone {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-}
- */
-
-.sm-gutter > [class*='col-'] {
-  padding-right:5px;
-  padding-left:5px;
-}
 .no-gutter > [class*='col-'] {
   padding-right:0;
   padding-left:0;
-}
-.no-gutter-phone  > [class*='col-'] {
-  @include phone {
-    padding-right:0;
-    padding-left:0;
-  }
-}
-.gutter-justphone  > [class*='col-'] {
-  @include tablet {
-    padding-right:0;
-    padding-left:0;
-    margin-right: 0;
-    margin-left: 0;
-  }
-  @include small-desktop {
-    padding-right:0;
-    padding-left:0;
-    margin-right: 0;
-    margin-left: 0;
-  }
-  @include large-desktop {
-    padding-right:0;
-    padding-left:0;
-    margin-right: 0;
-    margin-left: 0;
-  }
 }
 .no-gutter > [class*='col-'] {
     padding-right:0;
@@ -153,64 +108,14 @@ form.no-gutter fieldset > [class*='col-'] {
     padding-right:5px;
     padding-left:5px;
 }
-.no-gutter-top > [class*='col-'] {
-    padding-top:0;
-    margin-top: 0;
-}
-.wide-gutter > [class*='col-'] {
-  padding-left:30px;
-  padding-right:30px;
-}
+
 .center-block{
   float: none;
 }
-
-
-/**
- * Columns of same height styles
- */
-
-// .row-full-height {
-//   height: 100%;
-// }
-// .col-full-height {
-//   height: 100%;
-//   vertical-align: top;
-
-//   .panel{
-//     height: 100%;
-//     display: inline-block;
-//   }
-// }
-// .row-same-height {
-//   display: table;
-//   width: 100%;
-//   /* fix overflow */
-//   table-layout: fixed;
-// }
-// .col-xs-height {
-//   display: table-cell;
-//   float: none !important;
-// }
-
-// @media (min-width: 768px) {
-//   .col-sm-height {
-//     display: table-cell;
-//     float: none !important;
-//   }
-// }
-// @media (min-width: 992px) {
-//   .col-md-height {
-//     display: table-cell;
-//     float: none !important;
-//   }
-// }
-// @media (min-width: 1200px) {
-//   .col-lg-height {
-//     display: table-cell;
-//     float: none !important;
-//   }
-// }
+/* for videos page */
+.has-tall-neighbor{
+  padding-bottom:1.2em;
+ }
 
 @mixin star-rotation($rotation) {
   -ms-transform: rotate($rotation);
