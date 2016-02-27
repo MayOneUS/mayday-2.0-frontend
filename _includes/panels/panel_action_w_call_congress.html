@@ -25,12 +25,12 @@
           </div>
           <div class="row">
             <div class="col-md-{% unless include.hide_instructions %}10{% else %}12{% endunless %} col-xs-12 center-block">
-              <div class="col-md-{% unless include.hide_instructions %}6{% else %}12{% endunless %} top-spacer-btn">
+              <div class="col-md-{% unless include.hide_instructions %}6{% else %}12{% endunless %} margin-top-sm">
                 <button type="submit" class="btn btn-mayday">Call Congress</button>
                 <input type="hidden" name="person[remote_fields][tags][]" value="20150501_call_congress">
               </div>
               {% unless include.hide_instructions %}
-              <div class="col-md-6 top-spacer-btn">
+              <div class="col-md-6 margin-top-sm">
                 <a class="btn btn-mayday btn-mayday-grey-medium" data-toggle="modal" data-target="#call-congress-modal">How it works</a>
               </div>
               {% endunless%}
