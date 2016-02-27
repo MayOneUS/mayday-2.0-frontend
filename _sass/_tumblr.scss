@@ -1,122 +1,61 @@
-.post-meta {
-  font-size: $small-font-size;
-  color: $color-grey;
-}
-
-#extern-tumblr-theme h1 a{
-  color: $color-navy-blue;
-  text-decoration: none;
-  &:hover{
-    color: $color-navy-blue-light;
-  }
-}
-
 /**
- * Posts
+ * Tumblr Posts
  */
 
-.post-header {
-  margin-bottom: 1; }
+article{
+  margin: 0 0 80px;
 
-.post-title {
-  font-size: 42px;
-  letter-spacing: -1px;
-  line-height: 1em; }
-
-  .post-title a {
-      color: #0d3860;
+  .post-content {
+    div:last-child, div:last-child p,
+    div:last-child ul, div:last-child ol,
+    div:last-child blockquote {margin-bottom: 0;}
+      img {margin-bottom: 20px;padding: 10px;}
+      &.post-type-text ol li {list-style-type: upper-latin;}
+        &.post-type-text ol ol li {list-style-type: lower-latin;}
+    &.post-type-photoset .html_photoset {background: #eee;margin-bottom: 20px;padding: 10px;}
+    &.post-type-link .link-wrap {margin-bottom: 20px;}
+    &.post-type-chat .label {color: #333;font-weight: bold;}
+    &.post-type-video .video-wrap {background: #f0f0f0;margin-bottom: 20px;padding: 10px;}
+    &.post-type-audio .caption {margin-top: 10px;}
   }
-
-  .post-title a:hover {
-      color: #0d3860;
-  }
-
-.post-content {
-  margin-bottom: 1; }
-  .post-content h2 {
-    font-size: 30px; }
-  .post-content h3 {
-    font-size: 26px; }
-  .post-content h4 {
-    font-size: 20px; }
-  .post-content p {
-    line-height: 1.5em; }
-
-.post-meta {color: #555;overflow: hidden;}
-        .post-meta .type a {font-size:20px;color:#000;padding: 0 0 10px;text-decoration: none;}
-      .post-meta .date, .post-meta .comments, .post-meta .note-count {float: left;padding: 0 10px;}
-      .post-meta .date {
-          padding: 0;
-      }
-    .post-content {padding: 30px 0 60px;}
-    .post-content div:last-child, .post-content div:last-child p,
-    .post-content div:last-child ul, .post-content div:last-child ol,
-    .post-content div:last-child blockquote {margin-bottom: 0;}
-      .post-content h2 {font-weight:400;}
-      .post-content h3 {margin-bottom: 0;padding-bottom:0.4em;}
-        .post-content h3 a, .post-content h3 a:visited {color: #003366;text-decoration: none;}
-        .post-content h3 a:focus, .post-content h3 a:hover, .post-content h3:active {color: #dd3333;}
-      .post-content img {margin-bottom: 20px;padding: 10px;}
-      .post-type-text .post-content ul {padding-left: 30px;font-size:16px;}
-        .post-type-text .post-content ul ul {margin-bottom: 0;}
-        .post-type-text .post-content ul li {list-style-type: disc;margin-bottom:3px;}
-          .post-type-text .post-content ul ul li {list-style-type: circle;}
-      .post-type-text .post-content ol {padding-left: 30px;}
-        .post-type-text .post-content ol ol {margin-bottom: 0;}
-        .post-type-text .post-content ol li {list-style-type: upper-latin;}
-          .post-type-text .post-content ol ol li {list-style-type: lower-latin;}
-      .post-type-photoset .post-content .html_photoset {background: #eee;margin-bottom: 20px;padding: 10px;}
-      .post-type-link .post-content .link-wrap {margin-bottom: 20px;}
-      .post-type-chat .post-content .label {color: #333;font-weight: bold;}
-      .post-type-video .post-content .video-wrap {background: #f0f0f0;margin-bottom: 20px;padding: 10px;}
-      .post-type-audio .post-content .caption {margin-top: 10px;}
-      .tags {font-size: 13px;}
-        .tags a {text-decoration: none; color: #9D9D9D;}
-          .tags a:after {content: ",";}
-          .tags a:last-child:after {content: "";}
-      .post-content ul.post_controls{border: 1px solid #e8e8e8; border-radius: 3px; float: right; list-style: none; padding:0; margin: 0; }
-          .post-content ul.post_controls li{list-style:none; padding:5px 5px 0;margin:0;display:inline-block;};
-              .post-content ul.post_controls li {list-style: none; padding: 5px 5px 0; margin: 0; display: inline-block;}
-    #disqus_thread {border-top: 1px solid #ccc;padding: 10px 30px 0;}
-      #disqus_thread h3 {color: #111;font: 18px Georgia,serif;margin: 20px 0 10px;}
-      #dsq-content .dsq-subscribe-menu {font-size: 12px;}
-    #post-notes {border-top: 1px solid #ccc;padding: 30px;}
-      #post-notes ol li {border-bottom: 1px dotted #ccc;padding: 10px 0;}
-        #post-notes ol li img {background: none;padding-right: 3px;vertical-align: middle;}
-    .pagination {border-top: 1px solid #ccc;overflow: hidden;padding: 20px 0;}
-      .pagination .previous-page {float: left;}
-      .pagination .next-page {float: right;margin-right: 30px;}
-        .pagination a {font: 20px Georgia,serif;text-decoration: none;}
-
-    .widget {color: #333;font-size: 18px;padding: 0 20px 20px 20px;}
-      .widget h3 {}
-        .widget h3 a, .widget h3 a:visited {text-decoration: none;}
-        .widget h3 a:focus, .widget h3 a:hover, .widget h3 a:active {}
-      .widget img {padding: 5px;max-width: 250px;}
-      .widget p:last-child, .widget ul:last-child, .widget ol:last-child, .widget blockquote:last-child {margin-bottom: 0;}
-    #about {overflow: hidden;}
-      #about img {background: #fff;border: 1px solid #ccc;float: left;margin: 0 10px 0 0;padding: 3px;}
-    .like_post {border-bottom: 1px dotted #ccc;margin-bottom: 20px;padding-bottom: 20px;}
-    .like_post:last-child {border: none;margin: 0;padding: 0;}
-      .like_post ul {padding-left: 20px;}
-        .like_post ul ul {margin-bottom: 0;}
-        .like_post ul li {list-style-type: disc;}
-          .like_post ul ul li {list-style-type: circle;}
-      .like_post ol {padding-left: 20px;}
-        .like_post ol ol {margin-bottom: 0;}
-        .like_post ol li {list-style-type: upper-latin;}
-          .like_post ol ol li {list-style-type: lower-latin;}
-      .like_post p:last-child, .like_post ul:last-child, .like_post ol:last-child, .like_post blockquote:last-child {margin-bottom: 0;}
-    #tweets {margin-bottom: 10px;}
-      #tweets .content {margin-bottom: 10px;}
-        #tweets a {text-decoration: none;}
-    #following_container {overflow: hidden;padding-bottom: 20px;}
-      #following_container li {display: inline;padding: 0;margin: 0;}
-
-.md-tags {
-  background-image: url('//frontend-staging.mayday.us/images/tag.svg');
-  background-size: 100% auto;
-  background-repeat: none;
-  background-position: bottom;
-  margin-bottom: -14px;
+  .post-meta {padding-top:5px;border-top:1px solid $mayday-grey-medium; overflow: hidden;}
+    .post-meta .type a {font-size:20px;padding: 0 0 10px;text-decoration: none;}
+    .post-meta .date, .post-meta .comments, .post-meta .note-count {float: left;padding: 0 10px 0 0;}
+    .post-meta .date {padding: 0;}
+    ul.post_controls{float: right; list-style: none; padding:0; margin: 0; }
+      ul.post_controls li{list-style:none; padding:5px 5px 0;margin:0;display:inline-block;}
 }
+#disqus_thread {border-top: 1px solid #ccc;padding: 10px 30px 0;}
+  // #disqus_thread h3 {color: #111;font: 18px Georgia,serif;margin: 20px 0 10px;}
+  #dsq-content .dsq-subscribe-menu {font-size: 12px;}
+#post-notes {border-top: 1px solid #ccc;padding: 30px;}
+  #post-notes ol li {border-bottom: 1px dotted #ccc;padding: 10px 0;}
+    #post-notes ol li img {background: none;padding-right: 3px;vertical-align: middle;}
+.pagination {border-top: 1px solid #ccc;overflow: hidden;padding: 20px 0;}
+  .pagination .previous-page {float: left;}
+  .pagination .next-page {float: right;margin-right: 30px;}
+    // .pagination a {font: 20px Georgia,serif;text-decoration: none;}
+
+.widget {color: #333;font-size: 18px;padding: 0 20px 20px 20px;}
+    .widget h3 a, .widget h3 a:visited {text-decoration: none;}
+    .widget h3 a:focus, .widget h3 a:hover, .widget h3 a:active {}
+  .widget img {padding: 5px;max-width: 250px;}
+  .widget p:last-child, .widget ul:last-child, .widget ol:last-child, .widget blockquote:last-child {margin-bottom: 0;}
+#about {overflow: hidden;}
+  #about img {background: #fff;border: 1px solid #ccc;float: left;margin: 0 10px 0 0;padding: 3px;}
+.like_post {border-bottom: 1px dotted #ccc;margin-bottom: 20px;padding-bottom: 20px;}
+.like_post:last-child {border: none;margin: 0;padding: 0;}
+  .like_post ul {padding-left: 20px;}
+    .like_post ul ul {margin-bottom: 0;}
+    .like_post ul li {list-style-type: disc;}
+      .like_post ul ul li {list-style-type: circle;}
+  .like_post ol {padding-left: 20px;}
+    .like_post ol ol {margin-bottom: 0;}
+    .like_post ol li {list-style-type: upper-latin;}
+      .like_post ol ol li {list-style-type: lower-latin;}
+  .like_post p:last-child, .like_post ul:last-child, .like_post ol:last-child, .like_post blockquote:last-child {margin-bottom: 0;}
+#tweets {margin-bottom: 10px;}
+  #tweets .content {margin-bottom: 10px;}
+    #tweets a {text-decoration: none;}
+#following_container {overflow: hidden;padding-bottom: 20px;}
+  #following_container li {display: inline;padding: 0;margin: 0;}
