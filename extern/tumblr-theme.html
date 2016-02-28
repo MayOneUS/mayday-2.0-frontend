@@ -34,6 +34,11 @@ meta_content: |
   <meta name="text:Flickr Username" content=""/>
 ---
 
+
+{% capture custom_css %}
+  <link rel="stylesheet" href="{{ root_path }}{{ '/css/tumblr.css' | sass_cache_bust  }}" />
+{% endcapture %}
+
 {% capture sidebar_extras_end %}
 <!--       {block:IfShowAboutWidget}
   <h2>Our Blog</h2>
