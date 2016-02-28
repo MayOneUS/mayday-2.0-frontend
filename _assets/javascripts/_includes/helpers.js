@@ -49,3 +49,7 @@ function slugify (text) {
     .replace(/^-+/, '')             // Trim - from start of text
     .replace(/-+$/, '');            // Trim - from end of text
 }
+
+function stripParagraphTags(dirtyString) {
+  return (dirtyString || '').replace(/(<p[^>]+?>|<p>|<\/p>)/img, " ");
+}

@@ -45,33 +45,7 @@ bodyClass: index-page
         <h2 class="as-if-h3 text-center margin-bottom-xs">Latest from our blog</h2>
         <p class="byline small text-center margin-bottom-md"><a href="http://blog.mayday.us/" title="" class="text-grey-medium">More from our Blog</a></p>
         <div class="row">
-          <ul class="blog-listings">
-            <li class="col-md-4">
-              <time datetime="2016-01-12" class="as-if-h6 text-blue-highlight"><span>Jan 28th, 2016</span></time>
-              <h3 class="as-if-h5"><a href="{{ url }}">Corporate Execs Moving from Buying Laws to Writing Them</a></h3>
-              <p class="byline small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-            </li>
-            <li class="col-md-4">
-              <time datetime="2016-01-12" class="as-if-h6 text-blue-highlight"><span>Jan 22nd, 2016</span></time>
-              <h3 class="as-if-h5"><a href="{{ url }}">Young Turks on Flint Water Crisis</a></h3>
-              <p class="byline small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqu
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur.</p>
-            </li>
-            <li class="col-md-4">
-              <time datetime="2016-01-12" class="as-if-h6 text-blue-highlight"><span>Jan 12th, 2016</span></time>
-              <h3 class="as-if-h5"><a href="{{ url }}">Senator Warren Gets It</a></h3>
-              <p class="byline small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-            </li>
+          <ul class="blog-listings" id="">
           </ul>
         </div>
       </div>
@@ -196,6 +170,7 @@ bodyClass: index-page
     };
     md.signUps.inititalizeBasic('.js-signup', signUpComplete);
     md.signUps.inititalizeDonateStart('.js-donate');
+    md.newsFeeds.renderHomepageBlogFeed('.blog-listings');
   });
 </script>
 {% endcapture %}
