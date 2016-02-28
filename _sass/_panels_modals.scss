@@ -126,10 +126,11 @@
       &.donation-recurring{
         .btn-mayday-white{
           flex-grow:1;
-          width:100%;
           margin-right:10px;
+          width:auto;
           &:last-child{
             margin-right:0;
+            width:100%;
           }
         }
       }
@@ -137,12 +138,15 @@
         .btn-mayday-white{
           width:100%;
           margin-right:10px;
+          padding: 10px 0 5px;
+          font-size:16px;
           &:last-child{
             margin-right:0;
           }
           .fa{
             display:block;
             width:100%;
+            padding:0 0 5px;
           }
         }
       }

@@ -31,7 +31,6 @@ function americanDateFormat(date_string){
   return(date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear());
 }
 
-
 function currencyFormat(number, decimalDigits){ //force decimal length to decimalDigits
   decimalDigits = typeof decimalDigits !== 'undefined' ? decimalDigits : 2;
   return parseFloat(number).toFixed(decimalDigits).replace(/(\d)(?=(\d{3})+\.?)/g, '$1,');
@@ -40,3 +39,8 @@ function currencyFormat(number, decimalDigits){ //force decimal length to decima
 function currencyFormatCents(number, decimalDigits){
   return currencyFormat(parseFloat(number)/100, decimalDigits);
 }
+
+function stripParagraphTags(dirtyString) {
+  return (dirtyString || '').replace(/(<p[^>]+?>|<p>|<\/p>)/img, " ");
+}
+

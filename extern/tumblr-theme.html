@@ -33,6 +33,17 @@ meta_content: |
   <meta name="text:TwitterUsername" content="MAYDAYUS"/>
   <meta name="text:Flickr Username" content=""/>
 ---
+{% capture custom_css %}
+  <!-- Liquid template cannot seem to receive main layout root_path -->
+  {% case jekyll.environment %}
+    {% when 'production' or 'development' %}
+      {% assign css_root_path = 'mayday.us' %}
+    {% else %}
+      {% assign css_root_path = jekyll.environment + '.mayday.us' %}
+  {% endcase %}
+
+  <link rel="stylesheet" href="//{{css_root_path}}{{ '/css/tumblr.css' | sass_cache_bust  }}" />
+{% endcapture %}
 
 {% capture sidebar_extras_end %}
 <!--       {block:IfShowAboutWidget}
@@ -166,13 +177,13 @@ meta_content: |
                   <p class="pull-left">
                     {block:HasTags} {block:Tags}
                       <a href="{TagURL}" class="label label-default">{Tag}</a>
-                    {/block:Tags} {/block:HasTags} 
+                    {/block:Tags} {/block:HasTags}
                     {block:NoteCount}<a href="{Permalink}#notes">Notes</a> <span class="badge">{NoteCount}</span>{/block:NoteCount}
                     <!-- We cannot seem to control where discus counts show up.  Janky solution is to use href in a span. -->
                     {block:IfDisqusShortname}<a href="{Permalink}">Comments </a> <span href="{Permalink}#disqus_thread" class="badge">0</span>{/block:IfDisqusShortname}
                   </p>
 
-                  <ul class="post_controls group">
+                  <ul class="post_controls list-unstyled group">
                     <li>{ReblogButton size="21"}</li>
                     <li>{LikeButton size="21"}</li>
                   </ul>
@@ -209,10 +220,6 @@ meta_content: |
 
 
 {% capture footer_scripts %}
-<script src="//mayday.us/assets/app.js"></script>
- <!-- <p>{block:Twitter}<script type="text/javascript" src="/tweets.js"></script>{/block:Twitter} -->
-
-
     {block:IfDisqusShortname}
 
       <script type="text/javascript">
@@ -228,6 +235,10 @@ meta_content: |
           document.write('<script charset="utf-8" type="text/javascript" src="//disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
         })();
         //]]>;
+        $(document).ready(function(){
+          md.newsFeeds.renderBlogFeed();
+          md.newsFeeds.renderPressReleasesFeed();
+        });
       </script>
 
     {/block:IfDisqusShortname}
