@@ -5,7 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="eotfmNVR-r4qTL0MAFLUR0XVumvKeC2i87xYg102u7I" />
 
-  {% if page.offSite %}{% assign root_path = site.url %}{% endif %}
+  {% if page.offSite %}
+    {% assign root_path = site.url %}
+    {% case jekyll.environment %}
+    {% when 'alpha' %}
+      {% assign root_path = root_path | replace: 'mayday', 'alpha.mayday' %}
+    {% when 'beta' %}
+      {% assign root_path = root_path | replace: 'mayday', 'beta.mayday' %}
+    {% endcase %}
+  {% endif %}
   {% assign page_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
   <link rel="shortcut icon" href="{{ root_path }}/favicon.ico"/>
   <meta content="summary_large_image" name="twitter:card"/>

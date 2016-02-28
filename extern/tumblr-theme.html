@@ -33,10 +33,16 @@ meta_content: |
   <meta name="text:TwitterUsername" content="MAYDAYUS"/>
   <meta name="text:Flickr Username" content=""/>
 ---
-
-
 {% capture custom_css %}
-  <link rel="stylesheet" href="{{ root_path }}{{ '/css/tumblr.css' | sass_cache_bust  }}" />
+  <!-- Liquid template cannot seem to receive main layout root_path -->
+  {% case jekyll.environment %}
+    {% when 'production' or 'development' %}
+      {% assign css_root_path = 'mayday.us' %}
+    {% else %}
+      {% assign css_root_path = jekyll.environment + '.mayday.us' %}
+  {% endcase %}
+
+  <link rel="stylesheet" href="//{{css_root_path}}{{ '/css/tumblr.css' | sass_cache_bust  }}" />
 {% endcapture %}
 
 {% capture sidebar_extras_end %}
