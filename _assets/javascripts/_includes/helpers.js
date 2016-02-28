@@ -30,3 +30,8 @@ function americanDateFormat(date_string){
   date = new Date(date_string);
   return(date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear());
 }
+
+function stripParagraphTags(dirtyString) {
+  return (dirtyString || '').replace(/(<p[^>]+?>|<p>|<\/p>)/img, " ");
+}
+
