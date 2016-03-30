@@ -12,14 +12,14 @@
   <![endif]-->
   <p class="select-amount-instructions">Select an amount:</p>
   <div class="amount-button" onclick="step2(10);">$10</div>
-  <div class="amount-button" onclick="step2(25);">$25</div>
+  <div class="amount-button" onclick="step2(20);">$20</div>
   <div class="amount-button" onclick="step2(50);">$50</div>
   {% if page.only-bitcoin %}
-  <div class="amount-button" onclick="step2(75);">$75</div>
-  <div class="amount-button" onclick="step2(100);">$100</div>
+  <div class="amount-button" onclick="step2(10);">$10</div>
+  <div class="amount-button" onclick="step2(50);">$50</div>
   {% else %}
-  <div class="amount-button" onclick="step2(250);">$250</div>
-  <div class="amount-button" onclick="step2(500);">$500</div>
+  <div class="amount-button" onclick="step2(100);">$100</div>
+  <div class="amount-button" onclick="step2(200);">$200</div>
   {% endif %}
   <div class="amount-button" onclick="step2(-1);">Other</div>
   <div style="clear:both;"></div>
