@@ -104,9 +104,9 @@
       margin-bottom:20px;
     }
     h3{
-      color: $mayday-background;
+      color: $mayday-blue-black;
       span{
-        background-color: $mayday-background;
+        background-color: $mayday-blue-black;
         color:$mayday-yellow-light;
         display: inline-block;
         vertical-align:top;
@@ -131,7 +131,7 @@
     &.signup{
       background-color: $mayday-blue-light;
       h3 span{
-        color: $mayday-blue-light;
+        color: $mayday-blue-black;
         text-indent:-5px;
       }
     }
