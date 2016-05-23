@@ -7,6 +7,30 @@ bodyClass: national-progress
 {% capture content %}
 {% include jumbotrons/general-dark.html title="National Progress" subtitle="Mapping Our Strategy" %}
 
+<style type="text/css">
+
+#map {
+	height:480px;
+	width:100%;
+	padding:0 0 1em;
+	cursor:auto;
+}
+
+.mapboxgl-canvas-container.mapboxgl-interactive, .mapboxgl-ctrl-nav-compass {
+	cursor:auto;
+}
+
+.mapboxgl-ctrl-attrib a {
+    color: rgba(0,0,0,0.34);
+}
+
+
+a.mapbox-improve-map {
+    display: none;
+}
+
+</style>
+
 <div class="page-panel light">
   <div class="container">
     <div class="row">
