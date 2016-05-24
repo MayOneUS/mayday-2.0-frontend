@@ -60,7 +60,8 @@
     <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" /> -->
   {% endif %}
   <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}" />
-  {% if  page.url == "" or page.url == "/the-plan" %}
+  {% comment %} leaving this here just in case - or page.url == "/the-plan" {% endcomment %}
+  {% if  page.slug == "national-progress" %}
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
     {% endif %}
