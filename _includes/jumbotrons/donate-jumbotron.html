@@ -26,6 +26,18 @@
 
 </style>
 
+<script src="../../js/iframeResizer.min.js"></script>
+
+<script>
+
+//var iframeDonate = document.getElementById("iframe");
+//var donateForm = document.getElementById("donate-form");
+//donateForm.innerHTML = iframeDonate.contentWindow.document.getElementById("donate").innerHTML;
+
+//var iframes = iFrameResize( /* [{options}], [css selector] || [iframe] */ );
+
+</script>
+
 <div class="jumbotron dark">
   <div class="container">
       <div class="row">
@@ -34,29 +46,11 @@
             <h5 style="color:white;">Help us reduce the influence of money in politics and elect a Congress committed to fundamental reform by 2016</h5>
             <h2>Donate In Two Minutes or Less</h2>
             <div id="donate-form"></div>
-			<iframe id="iframe" src="https://mayday.nationbuilder.com/dev" frameborder="0" style="overflow:hidden; display:block; height:100%; width:100%" height="100%" width="100%"></iframe>
+            <style>iframe{width:100%}</style>
+            <iframe src="https://mayday.nationbuilder.com/dev" scrolling="no"></iframe>
+            <script>iFrameResize({log:true, checkOrigin:false})</script>
         </div>
       </div>
   </div>
 </div>
 
-<script>
-
-//var iframeDonate = document.getElementById("iframe");
-//var donateForm = document.getElementById("donate-form");
-//donateForm.innerHTML = iframeDonate.contentWindow.document.getElementById("donate").innerHTML;
-
-function autoResize(id){
-    var newheight;
-    var newwidth;
-
-    if(document.getElementById){
-        newheight = document.getElementById(id).contentWindow.document .body.scrollHeight;
-        newwidth = document.getElementById(id).contentWindow.document .body.scrollWidth;
-    }
-
-    document.getElementById('donate-form').height = (newheight) + "px";
-    document.getElementById('donate-form').width = (newwidth) + "px";
-}
-
-</script>
