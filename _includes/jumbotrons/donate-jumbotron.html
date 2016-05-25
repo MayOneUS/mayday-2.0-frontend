@@ -5,22 +5,23 @@
 	background-size:cover;
 	background-position:center;
 	margin-bottom: 0;
-	padding-bottom:20px;
+	padding-bottom:70px;
+	padding-top:100px;
 }
 
 .jumbotron h1 {
 	font-size:40px;
-	text-align:center;
+	margin-bottom: 0;
 }
 
 .jumbotron h2 {
 	font-size: 30px;
-	text-align:center;
+	text-shadow: 3px 3px 2px #212230;
 }
 
 .contribution-rules, .gray-container-wrap {
 	margin-top:0;
-	padding-top:20px;
+	padding-top:80px;
 }
 
 </style>
@@ -30,9 +31,32 @@
       <div class="row">
             <div class="col-sm-10 col-md-8 col-lg-6">
             <h1>Help End Big Money Politics</h1>
+            <h5 style="color:white;">Help us reduce the influence of money in politics and elect a Congress committed to fundamental reform by 2016</h5>
             <h2>Donate In Two Minutes or Less</h2>
-            {% include form_donate.html facebook_tracking_id='6033848617290' %}
+            <div id="donate-form"></div>
+			<iframe id="iframe" src="https://mayday.nationbuilder.com/dev" frameborder="0" style="overflow:hidden; display:block; height:100%; width:100%" height="100%" width="100%"></iframe>
         </div>
       </div>
   </div>
 </div>
+
+<script>
+
+//var iframeDonate = document.getElementById("iframe");
+//var donateForm = document.getElementById("donate-form");
+//donateForm.innerHTML = iframeDonate.contentWindow.document.getElementById("donate").innerHTML;
+
+function autoResize(id){
+    var newheight;
+    var newwidth;
+
+    if(document.getElementById){
+        newheight = document.getElementById(id).contentWindow.document .body.scrollHeight;
+        newwidth = document.getElementById(id).contentWindow.document .body.scrollWidth;
+    }
+
+    document.getElementById('donate-form').height = (newheight) + "px";
+    document.getElementById('donate-form').width = (newwidth) + "px";
+}
+
+</script>
