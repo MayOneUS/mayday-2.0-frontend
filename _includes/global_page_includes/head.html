@@ -61,7 +61,7 @@
   {% endif %}
   <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}" />
   {% comment %} leaving this here just in case - or page.url == "/the-plan" {% endcomment %}
-  {% if  page.slug == "national-progress" %}
+  {% if  page.slug == 'national_progress' %}
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
     {% endif %}
