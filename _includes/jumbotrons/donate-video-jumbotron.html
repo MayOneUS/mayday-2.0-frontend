@@ -1,0 +1,69 @@
+<style>
+
+.jumbotron.dark{
+	background-image: url('/images/campaigns/jumbotron-donate.jpg');
+	background-size:cover;
+	background-position:center;
+	margin-bottom: 0;
+	padding-bottom:70px;
+	padding-top:100px;
+}
+
+.jumbotron h1 {
+	font-size:40px;
+	margin-bottom: 0;
+}
+
+.jumbotron h2 {
+	font-size: 30px;
+	text-shadow: 3px 3px 2px #212230;
+}
+
+#donate-form {
+	background:white;
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+    max-width: 960px;
+    margin: 0 auto 1em;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+</style>
+
+<script src="/js/iframeResizer.min.js"></script>
+
+<div class="jumbotron dark">
+  <div class="container">
+  		<div class="row text-center">
+        <h1><a class="navbar-brand" href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday-logo-sheild.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></h1>
+
+        </div>
+      <div class="row">
+        <div class="col-md-5">
+            <div class="videoWrapper">
+                <iframe src="https://www.youtube.com/embed/ltYRVRQ95dk?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-4">
+            <h1>Help End Big Money Politics</h1>
+            <h5 style="color:white;">Help us reduce the influence of money in politics and elect a Congress committed to fundamental reform by 2016</h5>
+            <a href="#donate-form">Pledge Now</a>
+        </div>
+      </div>
+  </div>
+</div>
+

@@ -1,7 +1,7 @@
 <style>
 
 .jumbotron.dark{
-	background-image: url('/images/campaigns/jumbotron-donate.jpg');
+	background-image: url('/images/campaigns/background-email-capture.jpg');
 	background-size:cover;
 	background-position:center;
 	margin-bottom: 0;
@@ -19,8 +19,13 @@
 	text-shadow: 3px 3px 2px #212230;
 }
 
-#donate-form {
+#join-form {
 	background:white;
+}
+
+.join-nav {
+	background:white;
+	
 }
 
 </style>
@@ -33,11 +38,20 @@
             <div class="col-sm-10 col-md-8 col-lg-6">
             <h1>Help End Big Money Politics</h1>
             <h5 style="color:white;">Help us reduce the influence of money in politics and elect a Congress committed to fundamental reform by 2016</h5>
-            <h2>Donate In Two Minutes or Less</h2>
-            <div id="donate-form">
+            <div id="join-form"></div>
             <style>iframe{width:100%}</style>
-            <iframe src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>
+            <iframe src="http://act.mayday.us/email_collect" scrolling="no" frameBorder="0"></iframe>
             <script>iFrameResize({log:true, checkOrigin:false})</script>
+        </div>
+        <div class="join-nav row">
+            <div class="col-md-4">
+            	<a href="donate">Contribute</a>
+            </div>
+            <div class="col-md-4 text-center">
+            	<h1><a class="navbar-brand" href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday-logo-sheild.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></h1>
+            </div>
+            <div class="col-md-4 text-right">
+            	<a href="/">Continue to Site &#8594;</a>
             </div>
         </div>
       </div>
