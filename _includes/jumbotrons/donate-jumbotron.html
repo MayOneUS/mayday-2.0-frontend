@@ -4,14 +4,29 @@
 	background-image: url('/images/campaigns/jumbotron-donate.jpg');
 	background-size:cover;
 	background-position:center;
+	margin-bottom: 0;
+}
+
+.jumbotron h1 {
+	font-size:40px;
+	text-align:center;
+}
+
+.jumbotron h2 {
+	font-size: 30px;
+	text-align:center;
+}
+
+.contribution-rules, .gray-container-wrap {
+	margin-top:0;
 }
 
 </style>
 
-<div class="jumbotron dark">
+<div class="jumbotron">
   <div class="container">
       <div class="row">
-            <div class="col-sm-8 col-md-6 col-lg-5">
+            <div class="col-sm-10 col-md-8 col-lg-6">
             <h2 class="text-center">Help End Big Money Politics</h2>
             {% include form_donate.html facebook_tracking_id='6033848617290' %}
         </div>
