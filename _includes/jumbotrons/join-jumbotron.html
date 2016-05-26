@@ -1,6 +1,6 @@
 <style>
 
-.jumbotron.dark{
+.jumbotron{
 	background-image: url('/images/campaigns/background-email-capture.jpg');
 	background-size:cover;
 	background-position:center;
@@ -11,12 +11,12 @@
 
 .jumbotron h1 {
 	font-size:40px;
-	margin-bottom: 0;
+	color:#00467e;
+	line-height:1;
 }
 
 .jumbotron h2 {
 	font-size: 30px;
-	text-shadow: 3px 3px 2px #212230;
 }
 
 #join-form {
@@ -26,17 +26,27 @@
 .join-nav {
 	background:white;
 	margin: 40px 0 0;
-	
 }
 
 .join-nav .btn.btn-mayday {
 	display:inline-block;
 	width:auto;
+    margin: 30px 0;
+    font-weight: 300;
 }
 
 .navbar-brand {
 	display:inline-block;
 	float:none;
+	font-weight: 500;
+}
+
+a.navbar-brand {
+	color:#00467e !important;
+}
+
+.navbar-brand:after {
+	content:none;
 }
 
 .navbar-brand img {
@@ -53,17 +63,37 @@ join-nav.row > div > div {
 	padding: 20px 0;
 }
 
+.jumbotron .panel {
+	padding: 40px 40px 20px;
+}
+a.navbar-brand:hover {
+	color:#0054b9 !important;
+}
+
+.continue {
+	display:inline-block;
+	margin:42px;
+}
+
+@media only screen and (max-width:992px) {
+	.text-left,.text-center,.text-right {
+		text-align:center !important;
+	}
+	.continue {
+		margin:20px 0 40px;
+	}
+}
 
 </style>
 
 <script src="/js/iframeResizer.min.js"></script>
 
-<div class="jumbotron dark">
+<div class="jumbotron">
       <div class="row">
           <div class="container">
-                <div class="col-sm-10 col-md-8 col-lg-6" style="text-shadow:2px 2px 2px rgba(0,0,0,.5);">
+                <div class="col-sm-10 col-md-8 col-lg-6 panel">
                     <h1>Help End Big Money Politics</h1>
-                    <h5 style="color:white;">Help us reduce the influence of money in politics and elect a Congress committed to fundamental reform by 2016</h5>
+                    <h5>Help us reduce the influence of money in politics and elect a Congress committed to fundamental reform by 2016</h5>
                     <div id="join-form"></div>
                     <style>iframe{width:100%}</style>
                         <iframe src="http://act.mayday.us/email_collect" scrolling="no" frameBorder="0"></iframe>
@@ -73,17 +103,16 @@ join-nav.row > div > div {
         </div>
         <div class="join-nav row">
         	<div class="container">
-                <div class="col-sm-12 col-md-4 col-lg-4 text-center">
-                    <a href="donate" class="btn btn-mayday">Contribute</a>
+                <div class="hidden-sm-down col-md-4 col-lg-4 text-left">
+                    <a href="/donate" class="btn btn-mayday">Contribute</a>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 text-center">
+                <div class="hidden-sm-down col-md-4 col-lg-4 text-center">
                     <p><a class="navbar-brand" href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday-logo-sheild.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></p>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 text-center">
-                    <a href="/">Continue to Site &#8594;</a>
+                <div class="col-md-4 col-lg-4 text-right">
+                    <a href="/" class="continue">Continue to Site &#8594;</a>
                 </div>
-            </div>
-        </div>
+        	</div>
       </div>
 </div>
 

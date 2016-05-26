@@ -1,6 +1,6 @@
 <style>
 
-.jumbotron.dark{
+.jumbotron{
 	background-image: url('/images/campaigns/jumbotron-donate.jpg');
 	background-size:cover;
 	background-position:center;
@@ -9,31 +9,30 @@
 	padding-top:100px;
 }
 
+.jumbotron .panel {
+	padding:40px;
+}
+
 .jumbotron h1 {
 	font-size:40px;
-	margin-bottom: 0;
+	color:#00467e;
+	line-height:1;
 }
-
 .jumbotron h2 {
 	font-size: 30px;
-	text-shadow: 3px 3px 2px #212230;
-}
-
-#donate-form {
-	background:white;
 }
 
 </style>
 
 <script src="/js/iframeResizer.min.js"></script>
 
-<div class="jumbotron dark">
+<div class="jumbotron">
   <div class="container">
       <div class="row">
-            <div class="col-sm-10 col-md-8 col-lg-6">
+            <div class="col-sm-10 col-md-8 col-lg-6 panel">
             <h1>Help End Big Money Politics</h1>
-            <h5 style="color:white;">Help us reduce the influence of money in politics and elect a Congress committed to fundamental reform by 2016</h5>
-            <h2>Donate In Two Minutes or Less</h2>
+            <h5>Help us reduce the influence of money in politics and elect a Congress committed to fundamental reform by 2016</h5>
+            <h2 class="text-orange">Donate In Two Minutes or Less</h2>
             <div id="donate-form">
 				<style>iframe{width:100%}</style>
                 <iframe src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>
