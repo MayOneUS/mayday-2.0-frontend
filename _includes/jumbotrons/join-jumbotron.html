@@ -6,7 +6,7 @@
 	background-position:center;
 	margin-bottom: 0;
 	padding-bottom:70px;
-	padding-top:100px;
+	padding-top:70px;
 }
 
 .jumbotron h1 {
@@ -25,8 +25,23 @@
 
 .join-nav {
 	background:white;
+	margin: 40px 0 0;
 	
 }
+
+.join-nav .btn.btn-mayday {
+	display:inline-block;
+	width:auto;
+}
+
+.navbar-brand {
+	display:inline-block;
+}
+
+.navbar-brand img {
+	max-width:50%;
+}
+
 
 </style>
 
@@ -35,7 +50,7 @@
 <div class="jumbotron dark">
       <div class="row">
           <div class="container">
-                <div class="col-sm-10 col-md-8 col-lg-6">
+                <div class="col-sm-10 col-md-8 col-lg-6" style="text-shadow:2px 2px 2px rgba(0,0,0,.5);">
                     <h1>Help End Big Money Politics</h1>
                     <h5 style="color:white;">Help us reduce the influence of money in politics and elect a Congress committed to fundamental reform by 2016</h5>
                     <div id="join-form"></div>
@@ -47,13 +62,13 @@
         </div>
         <div class="join-nav row">
         	<div class="container">
-                <div class="col-md-4">
-                    <a href="donate" class="btn btn-mayday btn-mayday-md">Contribute</a>
+                <div class="col-sm-12 col-md-4 col-lg-4 text-center">
+                    <a href="donate" class="btn btn-mayday">Contribute</a>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-sm-12 col-md-4 col-lg-4 text-center">
                     <p><a class="navbar-brand" href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday-logo-sheild.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></p>
                 </div>
-                <div class="col-md-4 text-right">
+                <div class="col-sm-12 col-md-4 col-lg-4 text-center">
                     <a href="/">Continue to Site &#8594;</a>
                 </div>
             </div>
