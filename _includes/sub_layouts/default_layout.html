@@ -1,7 +1,9 @@
 {% include global_page_includes/head.html %}
 
 <body class="{{page.bodyClass}}">
+  {% if splash != TRUE %}
   {% include global_page_includes/header.html %}
+  {% endif %}
   <div class="page-content">
     {{ content }}
   </div>
