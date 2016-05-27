@@ -13,6 +13,12 @@
 	padding:40px;
 }
 
+@media only screen and (max-width:400px) {
+	.jumbotron .panel {
+		padding:10px;
+	}
+}
+
 .jumbotron h1 {
 	font-size:40px;
 	color:#00467e;
@@ -24,8 +30,6 @@
 
 </style>
 
-<script src="/js/iframeResizer.min.js"></script>
-
 <div class="jumbotron">
   <div class="container">
       <div class="row">
@@ -35,8 +39,35 @@
             <h2 class="text-orange">Donate In Two Minutes or Less</h2>
             <div id="donate-form">
 				<style>iframe{width:100%}</style>
-                <iframe src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>
-                <script>iFrameResize({log:true, checkOrigin:false})</script>
+                {% comment %}<iframe id="donate-iframe" src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>{% endcomment %}
+               <script> 
+			   
+			   //check if hash tag exists in the URL
+			   
+			   var amount = 0;
+			   
+				if(window.location.hash) {
+				 
+				 //set the value as a variable, and remove the #
+				 var hash_value = window.location.hash.replace('#', '');
+				 
+				 //show the value with an alert pop-up
+				 amount = hash_value;
+				 
+				}
+				
+				
+				var n = amount.length;
+
+			   
+			   if ( n > 1 ) {
+			   	   document.write('<iframe src="https://mayday.nationbuilder.com/dev#' + amount + '" frameborder="0"></iframe>');
+               } else {
+				   document.write('<iframe src="https://mayday.nationbuilder.com/dev" frameborder="0"></iframe>');
+               };
+               
+               </script>
+                <script>iFrameResize({log:false, checkOrigin:false})</script>
             </div>
         </div>
       </div>

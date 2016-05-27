@@ -29,7 +29,7 @@
 }
 
 .join-nav .btn.btn-mayday {
-	display:inline-block;
+	display:inline-block !important;
 	width:auto;
     margin: 30px 0;
     font-weight: 300;
@@ -86,8 +86,6 @@ a.navbar-brand:hover {
 
 </style>
 
-<script src="/js/iframeResizer.min.js"></script>
-
 <div class="jumbotron">
       <div class="row">
           <div class="container">
@@ -97,7 +95,7 @@ a.navbar-brand:hover {
                     <div id="join-form"></div>
                     <style>iframe{width:100%}</style>
                         <iframe src="http://act.mayday.us/email_collect" scrolling="no" frameBorder="0"></iframe>
-                    <script>iFrameResize({log:true, checkOrigin:false})</script>
+                    <script>iFrameResize({log:false, checkOrigin:false})</script>
                 </div>
             </div>
         </div>

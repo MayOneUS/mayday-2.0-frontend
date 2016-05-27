@@ -4,11 +4,36 @@
   background-size:cover;
   padding-bottom:0;
   background-position:center;
+  margin-bottom:0;
+  position: relative;
+}
+
+.jumbotron .panel {
+	padding: 0 20px 10px;
+}
+
+.jumbotron:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00467e;
+    z-index: 0;
+    opacity: .5;
 }
  .jumbotron .container{
     /* background: transparent url('/images/20160203_money_in_dome.svg') center bottom no-repeat;
     background-size:180px;
     padding-bottom:180px */
+  }
+  
+  .jumbotron p {
+  	margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.33;
+    font-weight: 200;
   }
 
 @media (max-width: 1199px){
@@ -43,34 +68,24 @@
     </div>
     <div class="row">
       <div class="col-md-9 col-lg-8 center-block margin-bottom-sm">
-        <p class="text-center"><!--MAYDAY<span orange-text>.US</span>--> We are a grassroots movement fighting to fix our broken political system. Building teams at the local level, we hold status quo politicians accountable at the ballot box and elect true reformers committed to passing strong anti-corruption laws. Learn more.<!--<br class="visible-xs"/><a href="/the-plan/" title="">Learn More</a>--></p>
+        <p class="text-center"><!--MAYDAY<span orange-text>.US</span>--> We are a grassroots movement fighting to fix our broken political system. Building teams at the local level, we hold status quo politicians accountable at the ballot box and elect true reformers committed to passing strong anti-corruption laws. <a href="/the-plan" class="text-yellow">Learn more.</a><!--<br class="visible-xs"/><a href="/the-plan/" title="">Learn More</a>--></p>
       </div>
     </div>
     <div class="row margin-bottom-lg">
-      <div class="col-lg-6 col-md-6 center-block">
-        <form class="mayday-inputs black-background white-inputs single-row js-jumbotron-signup">
-          <input type="hidden" name="template_id" value="20160215_md_signup">
-          <input type="hidden" name="person[remote_fields][tags][]" value="20160215_md_signup">
-          <fieldset>
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label class="control-label sr-only" for="person[email]">Email Address</label>
-                <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
-              </div>
-              <div class="form-group col-sm-3">
-                <label class="control-label sr-only" for="person[zip]">ZIP</label>
-                <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
-              </div>
-              <div class="form-group col-sm-3">
-                <button type="submit" class="btn btn-mayday btn-mayday-md">Help Us</button>
-              </div>
-            </div>
-          </fieldset>
-        </form>
-        <div id="members" class="progress-meter"></div>
+      <div class="col-lg-6 col-md-6 center-block panel">
+        <style>iframe{width:100%}</style>
+        <iframe src="http://act.mayday.us/email_collect" scrolling="no" frameBorder="0"></iframe>
+        <script>iFrameResize({log:false, checkOrigin:false})</script>
+        
+       {% comment %}
+       
+       <div id="members" class="progress-meter"></div>
         <div id="petition" class="progress-meter"></div>
         <div id="" class="progress-meter"></div>
         <div id="" class="progress-meter"></div>
+        
+        {% endcomment %}
+        
       </div>
     </div>
   </div>

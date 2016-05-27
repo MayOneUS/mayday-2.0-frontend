@@ -50,6 +50,7 @@
       {% endcase %};
     window.blogFeedUrl = '{{site.blog_feed_url}}';
   </script>
+  <script src="/js/iframeResizer.min.js"></script>
   {% if jekyll.environment == 'development' %}
     <link rel="stylesheet" href="{{ root_path }}{{ '/css/development.css' }}" />
   {% else %}
@@ -60,10 +61,9 @@
     <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" /> -->
   {% endif %}
   <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}" />
-  {% comment %} leaving this here just in case - or page.url == "/the-plan" {% endcomment %}
   {% if page.title == 'National Progress' %}
-  <script src='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
-	<link href='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
+      <script src='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
     {% endif %}
   {{ custom_css }}
 </head>
