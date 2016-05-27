@@ -137,7 +137,7 @@
     }
   }
   .front-donate {
-	background:url('/images/campaigns/background-email-capture.jpg');
+	background:url('/images/campaigns/donate-background.jpg');
 	background-size:cover;
 	background-position:center;
 	padding-bottom:110px;
@@ -145,7 +145,7 @@
 	 &:before {
 		content:' ';
 	 	position:absolute;
-		background:rgba(255,255,255,.80);
+		background:rgba(255,255,255,.50);
 		height:100%;
 		width:100%;
 		top:0;
