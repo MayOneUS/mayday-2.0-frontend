@@ -1,0 +1,19 @@
+<script src="https://raw.githubusercontent.com/tumblr/tumblr.js/master/lib/tumblr.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+var tumblr = require('tumblr.js');
+var client = tumblr.createClient({
+  consumer_key: 'S5XrMLiTCPcZ2946aELRXAS4wFgTFd8BopNnYuMMn4UNNyGCGc',
+  consumer_secret: '8TW2OrJueImpw5sZeDu0qdxeQsBxEnsu8r5CtKKFn6l571vmZJ',
+  token: 'TVvx9PqtGsTMS7euZXXFI03qZIxmuaJvL62xW1mhXugaxdPADd',
+  token_secret: 'iBUNpCU4mz8UkTCIpmC3aDRq8CWoWstUtzCUmYLVqCNn6kubnW'
+});
+
+client.userInfo(function (err, data) {
+    data.blogs.forEach(function (blog) {
+        console.log(blog.name);
+    });
+});
+
+</script>

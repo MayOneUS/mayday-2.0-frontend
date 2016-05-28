@@ -1,45 +1,55 @@
 ---
 layout: default
 title: legislators
-permalink: /legislators/
+permalink: /leaders/
 ---
 {%capture content %}
+{% include jumbotrons/general-dark.html title="Potential Leaders for Reform" sub_title="in the 114th Congress"%}
 <div class="container legislators-potential">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="filter-title">Potential Leaders for fundamental reform</h1>
-        <form method="get" accept-charset="utf-8" class="md-inputs legislators-filter">
-          <input id="search" class="form-control" name="search" placeholder="Search by name or state" type="text" data-list=".js-legislators">
-          <div class="form-group">
-            <label class="radio-inline" for="filter-value"><strong>Filter:</strong></label>
-              <label class="radio-inline" for="leaders">
-                <input type="radio" name="filter-value" id="leaders" value="leaders" title="Leaders supporting fundamental reform">
-                <i class="fa fa-check-square-o"></i>
-                Leaders
-              </label>
-              <label class="radio-inline" for="potential">
-                <input type="radio" name="filter-value" id="potential" value="potential" checked="checked" title="Potential Leaders for fundamental reform">
-                <i class="fa fa-minus-circle"></i>
-                Potential Leaders
-              </label>
-              <label class="radio-inline" for="all">
-                <input type="radio" name="filter-value" id="all" value="all" title="All Legislators"> All Legislators
-              </label>
-          </div>
-        </form>
-      </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form method="get" accept-charset="utf-8" class="mayday-inputs legislators-filter">
+        <input id="search" class="form-control" name="search" placeholder="&#xf002; Search by name or state" type="text" data-list=".js-legislators">
+        <div class="form-group">
+          <label class="radio-inline" for="filter-value"><strong>Filter:</strong></label>
+            <label class="radio-inline" for="leaders">
+              <input type="radio" name="filter-value" id="leaders" value="leaders" title="Leaders supporting fundamental reform">
+              <i class="fa fa-check-square-o"></i>
+              Leaders
+            </label>
+            <label class="radio-inline" for="potential">
+              <input type="radio" name="filter-value" id="potential" value="potential" checked="checked" title="Potential Leaders for fundamental reform">
+              <i class="fa fa-minus-circle"></i>
+              Potential Leaders
+            </label>
+            <label class="radio-inline" for="all">
+              <input type="radio" name="filter-value" id="all" value="all" title="All Legislators"> All Legislators
+            </label>
+        </div>
+      </form>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <p class="show-potential no-bottom-margin">Potential leaders are the <span id="js-potential-count">47</span> nominations from our community that we agree are the key to unlocking the majority we need. <a href="/the-plan/">Learn more about our campaign.</a></p>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="show-potential margin-y-sm">Potential leaders are the <span id="js-potential-count">47</span> nominations from our community that we agree are the key to unlocking the majority we need. <a href="/the-plan/">Learn more about our campaign.</a></p>
     </div>
-    <div class="row no-gutter legislators-listing">
-      <div id="js-legislators" class="js-legislators text-center no-gutter">
-        <i class="fa fa-refresh fa-spin fa-4x"></i>
-      </div>
+  </div>
+  <div class="row no-gutter legislators-listing">
+    <div id="js-legislators" class="js-legislators text-center">
+      <i class="fa fa-refresh fa-spin fa-4x"></i>
     </div>
+  </div>
 </div>
 {% endcapture %}
+
+{% capture page_specific_javascript %}
+<script>
+  $(document).ready(function(){
+    md.leaders.initialize();
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
 
 {% include sub_layouts/default_layout.html %}

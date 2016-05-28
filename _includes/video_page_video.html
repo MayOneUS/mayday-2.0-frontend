@@ -1,0 +1,35 @@
+<div class="{%if include.col_class_override %}{{include.col_class_override}}{%else%}col-sm-6 col-xs-12 video-group{%endif%}">
+  <div class="row margin-bottom-xs">
+    <div class="col-xs-12">
+      <h3 class="narrow hidden-sm hidden-xs {%if include.has_tall_neighbor %}has-tall-neighbor{%endif%}">{{ include.title }}</h3>
+      <div class="video-box">
+        <div class="embed-responsive embed-responsive-16by9" data-youtubeId="{{ include.youtube_id}}">
+          <!-- <img src="http://img.youtube.com/vi/{{include.youtube_id}}/maxresdefault.jpg" alt="" > -->
+          <iframe  class="embed-responsive-item" src="https://www.youtube.com/embed/{{include.youtube_id}}?rel=0&showinfo=0?autoplay=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <a href="http://www.facebook.com/sharer.php?u=https://youtu.be/{{ include.youtube_id}}" target="_blank" class="btn btn-mayday btn-social btn-facebook">
+        <i class="fa fa-facebook fa-lg"></i>
+        <span class="visible-lg-inline-block"> Share on </span>
+        <span>Facebook</span>
+      </a>
+    </div>
+    <div class="col-xs-6">
+      <a class="btn btn-mayday btn-social btn-twitter" href="https://twitter.com/home?status=Check%20out%20the%20awesome%20new%20video%20from%20MAYDAY:%20https://www.youtube.com/watch?v={{ include.youtube_id}}%23t=173" target="_blank"
+    target="_blank">
+        <i class="fa fa-twitter fa-lg"></i>
+        <span class="visible-lg-inline-block"> Share on </span>
+        <span> Twitter</span>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="hidden-md hidden-lg">{{ include.title }}</h2>
+    </div>
+  </div>
+</div>

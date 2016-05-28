@@ -1,0 +1,35 @@
+---
+layout: default
+title: The Plan
+permalink: /redirect/
+bodyClass: the-plan
+---
+{% capture content %}
+<script>
+   
+//check if hash tag exists in the URL
+
+var redirect = 0;
+
+if(window.location.hash) {
+ 
+ //set the value as a variable, and remove the #
+ var hash_value = window.location.hash.replace('#', '');
+ 
+ //show the value with an alert pop-up
+ redirect = hash_value;
+ 
+}
+
+if ( redirect = "donate" ) {
+   window.top.location.href = "/donate";
+} else if ( redirect = "thanks" ) {
+   window.top.location.href = "/donate-thanks";
+} else {
+	window.top.location.href = "/";
+};
+               
+</script>
+{% endcapture %}
+
+{% include sub_layouts/redirect.html %}

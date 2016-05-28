@@ -1,134 +1,38 @@
 /**
- * Mayday News Icons
- */
-@mixin icon($img-url) {
-  background-image: url(#{$img-url});
-  background-size: 100% auto;
-  background-repeat: none;
-  background-position: left bottom;
-}
-
-.md-icon {
-  height: 40px;
-  width: 40px;
-  display: inline-block;
-  margin-bottom: -8px;
-  border-bottom-width: 15px;
-
-}
-
-.md-envelope {
-  @include icon('../images/envelope.svg');
-}
-
-.md-newspaper {
-  @include icon('../images/newspaper.svg');
-}
-
-.md-newspaper-large {
-  @include icon('../images/newspaper.svg');
-  background-position: -5px 3px;
-  width: 65px;
-  height: 65px;
-}
-
-.md-microphone {
-  @include icon('../images/microphone.svg');
-}
-
-.md-download {
-  @include icon('../images/download.svg');
-}
-
-.md-shield {
-  @include icon('../images/shield.svg');
-}
-
-/**
  * Mayday News Panels
  **/
 
-.panel-news {
+ .panel-news{
   -webkit-box-shadow: none;
   box-shadow: none;
-  position: relative;
-  padding-bottom:10px;
-
-  hr {
-    height: 1px;
-    background-color: $color-grey;
-  }
 
   .panel-heading{
-    margin-bottom:0;
-    h2, h2 a{
-      padding-bottom: 5px;
-      font-weight:400;
-      margin-top:0;
-      font-size: 28px;
-      line-height:30px;
-      color: $color-navy-blue;
-    }
-    h2{
-      border-bottom: 1px solid $color-navy-blue;
-    }
-  }
-
-  .panel-body {
-    padding-top: 0;
-    font-size: 18px;
-
-    li {
-      margin-bottom:10px;
-      font-size:16px;
-      line-height:normal;
-    }
-    .press-date {
-      font-weight: 400;
-    }
-    .press-link {
-      vertical-align: top;
-      width: 70%;
-    }
-    .more-link {
-      position: absolute;
-      bottom:0;
-      right:10px;
-      font-size: 14px;
-      font-weight: 400;
-      float: right;
-
-      &.btn-targets{
-        letter-spacing: 0;
-        bottom:6px;
-      }
-    }
-  }
-}
-
-.panel-news.with-border {
-  border: 2px solid $color-grey-light;
-  width:100%;
-}
-
-.news-content {
-  margin-bottom: 100px;
-
-  .list-inline>li{
+    border-bottom:2px solid $mayday-blue-light;
+    padding:0;
     margin-bottom:30px;
-  }
-}
-.contact-info{
-  h3{
-    margin-top: 1.5em;
-    margin-bottom: 0.75em;
-    font-weight: 400;
-}
-  p{
-    line-height: 1.5em;
-    margin-top: 0.18em;
-    margin-bottom: 0.18em;
-  }
-}
 
+    small{
+      float: right;
+      margin-top: 6px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+  }
+  .panel-body{
+    padding:0;
+  }
+  li{
+    border-bottom:1px solid $mayday-grey-medium;
+    margin-bottom:15px;
+
+    &:last-child{
+      margin-bottom:0;
+      border-bottom:none;
+    }
+
+    a:link, a:visited{
+      color:$mayday-blue-black;
+    }
+  }
+}
 

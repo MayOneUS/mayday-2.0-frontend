@@ -1,0 +1,37 @@
+---
+layout: default
+title: Join
+permalink: /email-join/
+---
+{% assign splash = TRUE %}
+{% capture content %}
+{% include jumbotrons/join-jumbotron.html title="join" %}
+
+{% comment %}
+
+<div class="join-page container">
+
+	
+
+  <div class="row">
+    <div class="col-md-6 col-lg-6 donate-flavor-text">
+
+     <p>MAYDAY.US is leading a modern day civil rights movement to bring true political equality back to our Republic. You may not be able to afford your own personal lobbyist, but you can band together with members of this community and support leaders who are on the right side of history.</p>
+
+     <p>Our innovative technologies and organizational strategies are inspiring a new generation of activism. To continue this work, we need your support. Every time you give, it’s a vote against political corruption, against legalized bribery, against crony capitalism. So, please, give what you can. Give with hope for our future, so that we can take back our democracy.</p>
+
+      <p><strong>Prefer to donate by check?</strong></p>
+      <p>Mayday PAC<br />
+      P.O. Box 75357<br />
+      Washington, DC 20013</p>
+    </div>
+
+
+  </div>
+</div><!-- END .donate-page.container -->
+
+{% endcomment %}
+
+{% endcapture %}
+
+{% include sub_layouts/splash.html %}

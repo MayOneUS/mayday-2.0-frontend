@@ -15,7 +15,7 @@ if ENV['JEKYLL_ENV'] == 'production'
   Jekyll::Hooks.register :site, :post_write do |post|
     require 'uglifier'
 
-    target_assets = Dir.glob('_site/assets/*').select {|f| File.file?(f)}
+    target_assets = Dir.glob('_site/assets/*.js').select {|f| File.file?(f)}
     target_assets .each do |file|
       minified_file = Uglifier.new.compile(File.read(file))
       minified_file_name = file.gsub!('.js','.min.js')

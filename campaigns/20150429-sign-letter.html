@@ -157,7 +157,7 @@ meta_content: |
 <div class="container">
   <div class="col-md-4 col-md-push-8">
 {% capture panel_body %}
-<div class="panel-body">
+<div class="panel-body mayday-inputs">
   <h2 style="line-height:34px;">Ask your member of Congress to <br class="hidden-xs hidden-sm"><strong>#Lead4Reform</strong></h2>
   <form class="row smaller-form no-gutter js-sign-letter-form">
 
@@ -197,7 +197,7 @@ meta_content: |
       <input type="hidden" name="template_id" value="sign-letter-form">
       <input type="hidden" name="person[remote_fields][tags][]" value="20150501_signed_letter">
       <!-- <input type="hidden" name="person[remote_fields][event_id]" value="25">sets auto-repsonder -->
-      <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+      <button type="submit" class="btn btn-mayday">I'm in</button>
     </div>
 
     </fieldset>
@@ -211,18 +211,18 @@ meta_content: |
 
     <div class="row">
       <div class="col-md-4">
-        <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/sign-the-letter/" target="_blank" class="btn btn-md-wide btn-share-center facebook">
+        <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/sign-the-letter/" target="_blank" class="btn btn-mayday btn-share-center facebook">
           <span class="text"><i class="fa fa-facebook"></i></span>
         </a>
       </div>
       <div class="col-md-4">
         <a href="https://twitter.com/intent/tweet?text=Help+%40MAYDAYUS+recruit+70+more+congressional+leaders+committed+to+fight+political+corruption.+%23Lead4Reform+http%3A%2F%2Fgoo.gl%2FRqP4kG" target="_blank"
-            target="_blank" class="btn btn-md-wide btn-share-center twitter">
+            target="_blank" class="btn btn-mayday btn-share-center twitter">
           <span class="text"><i class="fa fa-twitter"></i></span>
         </a>
       </div>
       <div class="col-md-4">
-        <a href="mailto:?subject=Help%20me%20end%20corruption%20in%20our%20government&body=I%20am%20writing%20to%20you%20to%20tell%20you%20about%20Mayday%20PAC.%20With%20my%20help%2C%20this%20organization%20is%20fighting%20political%20corruption%20in%20politics.%20Join%20me%20in%20recruiting%20congressional%20leaders%20who%20are%20committed%20to%20fundamental%20reform%20in%20the%20way%20campaigns%20are%20funded.%0A%0AIf%20you%20think%20we%20should%20get%20big%20money%20out%20of%20politics%2C%20add%20your%20name%20to%20this%20letter%20to%20Congress%20from%20Mayday%20PAC%20leaders%20Lawrence%20Lessig%20and%20Mark%20McKinnon%20to%20let%20congress%20know%20we%E2%80%99ll%20be%20calling%3A%20http%3A%2F%2Fmayday.us%2Fsign-the-letter%2F%0A%0ATogether%2C%20we%20can%20defeat%20political%20corruption%20in%20our%20country%21" class="btn btn-md-wide btn-share-center youtube">
+        <a href="mailto:?subject=Help%20me%20end%20corruption%20in%20our%20government&body=I%20am%20writing%20to%20you%20to%20tell%20you%20about%20Mayday%20PAC.%20With%20my%20help%2C%20this%20organization%20is%20fighting%20political%20corruption%20in%20politics.%20Join%20me%20in%20recruiting%20congressional%20leaders%20who%20are%20committed%20to%20fundamental%20reform%20in%20the%20way%20campaigns%20are%20funded.%0A%0AIf%20you%20think%20we%20should%20get%20big%20money%20out%20of%20politics%2C%20add%20your%20name%20to%20this%20letter%20to%20Congress%20from%20Mayday%20PAC%20leaders%20Lawrence%20Lessig%20and%20Mark%20McKinnon%20to%20let%20congress%20know%20we%E2%80%99ll%20be%20calling%3A%20http%3A%2F%2Fmayday.us%2Fsign-the-letter%2F%0A%0ATogether%2C%20we%20can%20defeat%20political%20corruption%20in%20our%20country%21" class="btn btn-mayday btn-share-center youtube">
           <span class="text"><i class="fa fa-envelope-o"></i></span>
         </a>
       </div>
@@ -291,18 +291,11 @@ $(document).ready(function(){
     $('#read-more-letter').slideDown();
   })
 
-  $('.js-sign-letter-form').validate({
-    submitHandler: function(form) {
-      $form = $(form);
-      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-      $.post(services_url+'/actions', $(e.target).serialize(), function(data){
-      }).done(function(){
-        $form.parents('.panel-body').hide();
-        $form.parents('.panel-body').next().show()
-      });
-    }
-  });
-
+  var signLetterComplete = function(){
+    $form.parents('.panel-body').hide();
+    $form.parents('.panel-body').next().show()
+  };
+  md.signUps.inititalizeBasic('.js-sign-letter-form', signLetterComplete);
 });
 </script>
 

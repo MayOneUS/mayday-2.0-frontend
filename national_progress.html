@@ -1,0 +1,466 @@
+---
+layout: default
+title: National Progress
+permalink: /national-progress/
+bodyClass: national-progress
+---
+{% capture content %}
+{% include jumbotrons/general-dark.html title="National Progress" subtitle="Mapping Our Strategy" %}
+
+<style type="text/css">
+
+#map {
+	height:480px;
+	width:100%;
+	padding:0 0 1em;
+	cursor:auto;
+}
+
+.mapboxgl-canvas-container.mapboxgl-interactive, .mapboxgl-ctrl-nav-compass {
+	cursor:auto;
+}
+
+.mapboxgl-ctrl-attrib a {
+    color: rgba(0,0,0,0.34);
+}
+
+
+a.mapbox-improve-map {
+    display: none;
+}
+
+</style>
+
+<div class="page-panel light">
+  <div class="container">
+    <div class="row">
+    	<div class="col-lg-10 col-sm-9 content-section">
+    		<div id='map'></div>
+        </div>
+	</div>
+    <div class="row">
+        <div class="col-lg-10 col-sm-9 content-section">
+            <h3>Support in <span style="color:#00467e;"id="state-name">Click on a state above!</span></h3>
+            <h4>Leading Organizations</h4>
+            <p><span id="state-orgs">NA</span></p>
+            <h4>Endorsements</h4>
+            <p><span id="state-endorsements">NA</span></p>
+        </div>
+        {% comment %}
+        <div class="col-md-6">
+            <h3>Program Details</h3>
+            <h4>Funded Elections</h4>
+            <p><span id="state-funded">NA</span></p>
+            <h4>Program Type</h4>
+            <p><span id="state-type">NA</span></p>
+        </div>
+        {% endcomment %}
+	</div>        
+  </div>
+</div>
+<div class="page-panel light">
+  <div class="container">
+    <div id="critical-mass" class="col-lg-10 col-sm-9 content-section">
+      <p>We’re building local teams across the country, fighting to save our democracy. See where your neighbors are engaging and join the fight! <a href="/the-plan">Read more about our plan to save democracy</a> or <a href="/donate">click here to get involved immediately.</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-panel light">
+  <div class="container">
+    <div class="col-md-8 center-block panel-wrapper">
+      {% include panels/panel_action_w_signup.html hide_next=true %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture page_specific_javascript %}
+
+<script>
+
+
+// style variables
+
+var red 		= '#ee3800';
+var orange 		= '#f36433';
+var yellow 		= '#fdd63f';
+var cyan		= '#2ac4ea';
+var lightBlue	= '#0054b9';
+var blue		= '#00467e';
+var gray		= '#dae4e7';
+var darkGray	= '#7b8082';
+var white		= '#f4f4f4';
+var black		= '#212230';
+
+/* - - - Load Google Sheet into JSON - - - */
+
+//function getGoogleData() {
+
+// Google API Credentials
+
+/* window.onload = function() { init() };
+
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1xn3g-pFBht9DgDb0WwO-E4Y6Zn0LeT5ixwmO1IIAx00/pubhtml';
+
+function init() {
+Tabletop.init( { key: public_spreadsheet_url,
+				 callback: showInfo,
+				 debug: true,
+				 simpleSheet: true } )
+}
+
+function showInfo(data, tabletop) {
+	// alert("Successfully processed!")
+	console.log(data);
+} */
+
+/* - - - MAPBOX - - - */
+
+// API Credentials
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicmVpbG51dWQiLCJhIjoiWVJmcnlLTSJ9.ekYm1LH3Dg39byEqJMXd7A';
+
+// initiate map
+
+var map = new mapboxgl.Map({
+  container: 'map',
+  zoom: 3.15,
+  center: [-95,38],
+  style: 'mapbox://styles/reilnuud/ciohwdjbi0013arng981vq7fp',
+  zoomControl: false
+});
+
+// reilnuud.8e8fo53q
+
+// add layers on map load
+
+map.on('load', function () {
+	
+	map.addSource('states', {
+		type:'vector',
+		url:'mapbox://reilnuud.8e8fo53q'
+	});
+
+	map.addSource('mayday-states', {
+		type:'vector',
+		url:'mapbox://reilnuud.8jecmr0v'
+	});
+	
+	map.addSource('water', {
+		type:'vector',
+		url:'mapbox://mapbox.mapbox-streets-v7'
+	});
+	
+	map.addLayer ({
+		'id': 'states-fill',
+		'type': 'fill',
+		'source': 'states',
+		'source-layer': 'tl_2015_us_state',
+		'layout': {
+			'visibility': 'visible',
+		},
+		'paint': {
+			/*'fill-color': red
+			'fill-color': orange
+			'fill-color': yellow
+			'fill-color': cyan
+			'fill-color': blue
+			'fill-color': gray */
+			'fill-color': gray
+		}
+	});
+	
+	map.addLayer ({
+		'id': 'mayday-states-fill-inactive',
+		'type': 'fill',
+		'source': 'mayday-states',
+		'source-layer': 'mayday-states',
+		'layout': {
+			'visibility': 'visible',
+		},
+		'paint': {
+			'fill-color': darkGray
+		},
+		'filter':['==', 'democracy', '']
+	});
+	
+	var level0 = (0).toString();
+	var	level1 = (0.25).toString();
+	var level2 = (0.5).toString();
+	var level3 = (0.75).toString();
+	var level4 = (1).toString();
+	
+	map.addLayer ({
+		'id': 'mayday-states-fill-0',
+		'type': 'fill',
+		'source': 'mayday-states',
+		'source-layer': 'mayday-states',
+		'layout': {
+			'visibility': 'visible',
+		},
+		'paint': {
+			'fill-color': red
+		},
+		'filter':['==', 'democracy', level0]
+	});
+	
+	map.addLayer ({
+		'id': 'mayday-states-fill-1',
+		'type': 'fill',
+		'source': 'mayday-states',
+		'source-layer': 'mayday-states',
+		'layout': {
+			'visibility': 'visible',
+		},
+		'paint': {
+			'fill-color': orange
+		},
+		'filter':['==', 'democracy', level1]
+	});
+	
+	map.addLayer ({
+		'id': 'mayday-states-fill-2',
+		'type': 'fill',
+		'source': 'mayday-states',
+		'source-layer': 'mayday-states',
+		'layout': {
+			'visibility': 'visible',
+		},
+		'paint': {
+			'fill-color': yellow
+		},
+		'filter':['==', 'democracy', level2]
+	});
+	
+	map.addLayer ({
+		'id': 'mayday-states-fill-3',
+		'type': 'fill',
+		'source': 'mayday-states',
+		'source-layer': 'mayday-states',
+		'layout': {
+			'visibility': 'visible',
+		},
+		'paint': {
+			'fill-color': cyan
+		},
+		'filter':['==', 'democracy', level3]
+	});
+	
+	map.addLayer ({
+		'id': 'mayday-states-fill-4',
+		'type': 'fill',
+		'source': 'mayday-states',
+		'source-layer': 'mayday-states',
+		'layout': {
+			'visibility': 'visible',
+		},
+		'paint': {
+			'fill-color': blue
+		},
+		'filter':['==', 'democracy', level4]
+	});
+	
+	map.addLayer ({
+		'id': 'states-hover',
+		'type': 'fill',
+		'source': 'states',
+		'source-layer': 'tl_2015_us_state',
+		'layout': {
+			'visibility': 'visible',
+		},
+		'paint': {
+			'fill-color': white,
+			'fill-opacity':.25
+		},
+        'filter': ['==', 'GEOID', '']
+	});
+	
+	map.addLayer({
+		'id': 'states-lines',
+		'type': 'line',
+		'source': 'states',
+		'source-layer': 'tl_2015_us_state',
+		'layout': {
+			'visibility': 'visible',
+			'line-join': 'round',
+			'line-cap': 'round'
+		},
+		'paint': {
+			'line-color': 'white',
+			'line-width': 1
+		}
+    });
+
+	map.addLayer({
+		'id': 'water-fill',
+		'type': 'fill',
+		'source': 'water',
+		'source-layer': 'water',
+		'layout': {
+			'visibility': 'visible',
+		},
+		'paint': {
+			'fill-color': 'white'
+		}
+    });
+	
+	map.addLayer({
+		'id': 'water-lines',
+		'type': 'line',
+		'source': 'water',
+		'source-layer': 'water',
+		'layout': {
+			'visibility': 'none',
+			'line-join': 'round',
+			'line-cap': 'round'
+		},
+		'paint': {
+			'line-color': '#212320',
+			'line-width': 2
+		}
+    });
+	
+	// disable map rotation using right click + drag
+	map.dragRotate.disable();
+	
+	// disable map rotation using touch rotation gesture
+	map.touchZoomRotate.disableRotation();
+	
+	map.scrollZoom.disable();
+	map.dragPan.disable();	
+	
+	map.doubleClickZoom.disable();
+	
+});
+
+map.on('mousemove', function(e) {
+	var features = map.queryRenderedFeatures(e.point, { layers: ['states-fill','mayday-states-fill-inactive', 'mayday-states-fill-0', 'mayday-states-fill-1', 'mayday-states-fill-2', 'mayday-states-fill-3', 'mayday-states-fill-4'] });
+	if (features.length) {
+		map.setFilter('states-hover', ['==', 'GEOID', features[0].properties.GEOID]);
+		console.log(features[0].properties.GEOID);
+	} else {
+		map.setFilter('states-hover', ['==', 'GEOID', '']);
+	}
+});
+
+map.on('click', function (e) {
+	var features = map.queryRenderedFeatures(e.point, { layers: ['states-fill','mayday-states-fill-inactive', 'mayday-states-fill-0', 'mayday-states-fill-1', 'mayday-states-fill-2', 'mayday-states-fill-3', 'mayday-states-fill-4'] });
+	if (!features.length) {
+		return;
+	}
+	
+	if (features.length) {
+		map.setFilter('states-hover', ['==', 'GEOID', features[0].properties.GEOID]);
+	} else {
+		map.setFilter('states-hover', ['==', 'GEOID', '']);
+	}
+	
+	var feature = features[0];
+	var leadOrgan = 'Lead organ';
+	var typeOfProgram = 'Type of pr';
+	var typeOfElection = 'Type of of'
+
+   /* var popup = new mapboxgl.Popup()
+	.setLngLat(map.unproject(e.point))
+	.setHTML(feature.properties.NAME)
+	.addTo(map); */
+	
+	 
+	document.getElementById("state-name").innerHTML = feature.properties.NAME;
+	
+	// endorsements
+	
+	if(feature.properties.ENDORSEMEN == '') {
+	
+		document.getElementById("state-endorsements").innerHTML = 'NA';
+		
+	 } else { 
+	 
+		document.getElementById("state-endorsements").innerHTML = feature.properties.ENDORSEMEN;
+	
+	};
+	
+	// orgs
+	/*
+	
+	if(feature.properties.NAME == '') {
+	
+		document.getElementById("state-orgs").innerHTML = 'NA';
+		
+	 } else { 
+	 
+		document.getElementById("state-orgs").innerHTML = feature.properties.;
+	
+	};
+	
+	//funded
+	
+	if(feature.properties.NAME == '') {
+	
+		document.getElementById("state-name").innerHTML = 'NA';
+		
+	 } else { 
+	 
+		document.getElementById("state-name").innerHTML = feature.properties.NAME;
+	
+	};
+	
+	//type
+	
+	if(feature.properties.NAME == '') {
+	
+		document.getElementById("state-type").innerHTML = 'NA';
+		
+	 } else { 
+	 
+		document.getElementById("state-name").innerHTML = feature.properties.NAME;
+	
+	};
+	*/
+	//rating
+	
+	if(feature.properties.democracy == '') {
+	
+		document.getElementById("state-rating").innerHTML = 'NA';
+		
+	 } else { 
+	 
+		document.getElementById("state-rating").innerHTML = feature.properties.democracy;
+	
+	};
+	
+	//qualitative
+	
+	if(feature.properties.qualitativ == '') {
+	
+		document.getElementById("state-qualitiative").innerHTML = 'NA';
+		
+	 } else { 
+	 
+		document.getElementById("state-qualitative").innerHTML = feature.properties.qualitativ;
+	
+	};
+	
+	//document.getElementById("state-orgs").innerHTML = feature.properties.Leadorgan;
+		
+	//document.getElementById("state-funded").innerHTML = feature.properties.typeOfElection;
+	//document.getElementById("state-type").innerHTML = feature.properties.typeofProgram;
+	
+	
+});	
+
+map.on('mousemove', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['states-fill','mayday-states-fill-inactive', 'mayday-states-fill-0', 'mayday-states-fill-1', 'mayday-states-fill-2', 'mayday-states-fill-3', 'mayday-states-fill-4'] });
+    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+});
+
+</script>
+
+{% endcapture %}
+
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
+
+{% include sub_layouts/default_layout.html %}

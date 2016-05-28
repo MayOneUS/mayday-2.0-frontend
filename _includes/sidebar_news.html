@@ -1,17 +1,14 @@
 <div class="col-xs-12 col-sm-4">
   {{ sidebar_extras_start }}
-  <div class="row">
+  <div class="row margin-bottom-md">
     <div class="col-xs-12">
       <div class="panel panel-news">
         <div class="panel-heading">
-          <h2>
-            <a href="{{site.blog_root_url}}/tagged/press-release"><i class="md-icon md-microphone"></i>Press Releases</a>
-          </h2>
+          <h2 class="as-if-h4"><a href="{{site.blog_root_url}}/tagged/press-release">Press Releases <small>More</small></a></h2>
         </div>
         <div class="panel-body">
-          <ul id="tumblr-press-releases">
+          <ul id="tumblr-press-releases" class="list-unstyled">
           </ul>
-          <a class="more-link" href="{{site.blog_root_url}}/tagged/press-release">&gt; View our Press Release Library</a>
         </div>
       </div>
     </div>
@@ -20,14 +17,11 @@
     <div class="col-xs-12">
       <div class="panel panel-news">
         <div class="panel-heading">
-            <h2>
-              <a href="{{ site.blog_root_url }}"><i class="md-icon md-shield"></i> The Mayday Blog</a>
-            </h2>
+          <h2 class="as-if-h4"><a href="{{site.blog_root_url}}" target="_blank">Mayday Blog <small>More</small></a></h2>
         </div>
         <div class="panel-body">
-          <ul id="tumblr-posts">
+          <ul id="tumblr-posts" class="list-unstyled">
           </ul>
-          <a class="more-link" href="{{ site.blog_root_url }}" target="_blank">&gt; The Mayday Blog</a>
         </div>
       </div>
     </div>
@@ -38,8 +32,8 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-  render_blog_feed();
-  render_press_releases_feed();
+  md.newsFeeds.renderBlogFeed();
+  md.newsFeeds.renderPressReleasesFeed();
 });
 
 </script>

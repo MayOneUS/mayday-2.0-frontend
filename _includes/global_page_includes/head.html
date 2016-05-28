@@ -1,0 +1,69 @@
+<head>
+  {% if page.optimizely && jekyll.environment != 'development' %}<script src="//cdn.optimizely.com/js/210578001.js"></script>{% endif %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="eotfmNVR-r4qTL0MAFLUR0XVumvKeC2i87xYg102u7I" />
+
+  {% if page.offSite %}
+    {% assign root_path = site.url %}
+    {% case jekyll.environment %}
+    {% when 'alpha' %}
+      {% assign root_path = root_path | replace: 'mayday', 'alpha.mayday' %}
+    {% when 'beta' %}
+      {% assign root_path = root_path | replace: 'mayday', 'beta.mayday' %}
+    {% endcase %}
+  {% endif %}
+  {% assign page_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
+  <link rel="shortcut icon" href="{{ root_path }}/favicon.ico"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content='@maydayus' name="twitter:site"/>
+  <meta content="{{ root_path }}/images/2016_mayday-logo-sheild.svg" name="twitter:image:src"/>
+  <link rel="alternate" type="application/rss+xml" title="Official Blog: MAYDAY.US" href="http://blog.mayday.us/rss" />
+
+  {% assign meta_content_size = page.meta_content | size %}
+  {% if meta_content_size < 2 %}
+    <meta property="og:url" content="{{ page_url }}"/>
+    <meta property="og:image" content="{{ site.url }}/images/2016_mayday-logo-sheild.svg"/>
+    <meta property="og:title" content="MAYDAY: Democracy needs an upgrade. Act now."/>
+    <meta property="og:description" content="Money has corrupted politics. We&rsquo;re a Crowdfunded SuperPAC to end all SuperPACs -- Join us!"/>
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <link rel="canonical" href="{{page_url}}" />
+  {% else %}
+    {{ page.meta_content }}
+  {% endif %}
+
+  <script>
+    var md = md || {};
+
+    window.services_url = {% case jekyll.environment %}
+      {% when 'production' %}
+        '//services.mayday.us'
+      {% when 'alpha' %}
+        '//services-staging.mayday.us'
+      {% when 'development' %}
+        '{{site.development_services_url}}'
+      {% else %}
+        '//services.mayday.us'
+      {% endcase %};
+    window.blogFeedUrl = '{{site.blog_feed_url}}';
+  </script>
+  <script src="/js/iframeResizer.min.js"></script>
+  {% if jekyll.environment == 'development' %}
+    <link rel="stylesheet" href="{{ root_path }}{{ '/css/development.css' }}" />
+  {% else %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Rubik:400,400italic,700,500|Permanent+Marker" type="text/css" />
+    <script src="//c.shpg.org/220/sp.js"></script>
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" /> -->
+  {% endif %}
+  <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}" />
+  {% if page.title == 'National Progress' %}
+      <script src='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
+    {% endif %}
+  {{ custom_css }}
+</head>

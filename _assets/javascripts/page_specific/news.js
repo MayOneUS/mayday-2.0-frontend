@@ -1,25 +1,34 @@
-function render_blog_feed(){
-  $.getJSON(blog_post_feed_url, function (data) {
-    var posts = data.posts;
-    var $posts = $('#tumblr-posts');
-
+md.newsFeeds = {};
+(function(newsFeeds) {
+  newsFeeds.renderResults = function (posts, templateName, container, resultLength) {
+    resultLength = resultLength || 10;  
     posts.forEach(function(post, index) {
-      var rendered_html = HandlebarsTemplates['cards/blog-post'](post);
-      $posts.append(rendered_html);
+      if(post['type'] == 'regular' && index < resultLength){
+        post['date'] = maydayDateFormat(post['date']);
+        post['regular-title'] = (post['regular-title'] || '').replace('PRESS RELEASE - ','')
+        post['regular-body'] = stripParagraphTags($.truncate(post['regular-body'] || '', {length: 300, words: true }));
+        var rendered_html = HandlebarsTemplates[templateName](post);
+        container.append( rendered_html );
+      }
     });
-  });
-} // end render_blog_feed
+  }
 
-function render_press_releases_feed(){
-  $.getJSON(press_releases_feed_url, function (data) {
-    var releasePosts = data.posts;
-    var $releasesContainer = $('#tumblr-press-releases');
-
-    releasePosts.forEach(function(post, index) {
-      post['date'] = americanDateFormat(post['date']);
-      post['regular-title'] = post['regular-title'].replace('PRESS RELEASE - ','')
-      var rendered_html = HandlebarsTemplates['cards/press-release'](post);
-      $releasesContainer.append( rendered_html );
+  newsFeeds.renderBlogFeed = function(){
+    $.getJSON(blogFeedUrl, function (data) {
+      newsFeeds.renderResults(data.posts, 'cards/blog-post', $('#tumblr-posts'))
     });
-  });
-} // end render_press_releases_feed
+  }
+
+  newsFeeds.renderPressReleasesFeed = function(){
+    var pressReleasesFeedUrl= blogFeedUrl +'/press_releases';
+    $.getJSON(pressReleasesFeedUrl, function (data) {
+      newsFeeds.renderResults(data.posts, 'cards/blog-post', $('#tumblr-press-releases'))
+    });
+  }
+
+  newsFeeds.renderHomepageBlogFeed = function(container_selector) {
+    $.getJSON(blogFeedUrl, function (data) {
+      newsFeeds.renderResults(data.posts, 'cards/homepage-blog-post', $(container_selector), 3)
+    });
+  }
+})(md.newsFeeds);

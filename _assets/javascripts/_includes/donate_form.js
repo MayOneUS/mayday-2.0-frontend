@@ -1,330 +1,124 @@
-/*
+md.donateForm = {};
+(function(donateForm) {
+  var donationCompleteCallback,
+  stripeHandler;
 
-Copyright 2014 Mayday PAC
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-*/
-
-
-// Part of this function modified from here:
-// http://stackoverflow.com/a/2880929/1569632
-//
-// NOTE: This could be made more efficient by caching the result (and then
-// killing the cache on URL changes, but we only call it once, so meh.
-
-
-// ******************************************************************************
-//  BE CAREFUL WITH THIS FILE. IT IS INCLUDED IN teams and this repo. Not clear why.
-//  It's also fairly date part of MAYDAY's infrastructure.  At the time of this writting (20150723)
-//  It is also hosted in https://github.com/MayOneUS/mayday-2.0-frontend/, I cannot seem to expire
-//  google app engine caching.
-// ******************************************************************************
-
-var getUrlParams = function() {
-  var match,
-  pl     = /\+/g,  // Regex for replacing addition symbol with a space
-  search = /([^&=]+)=?([^&]*)/g,
-  decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-  query  = window.location.search.substring(1);
-
-  urlParams = {};
-  while (match = search.exec(query))
-    urlParams[decode(match[1])] = decode(match[2]);
-
-  return urlParams;
-};
-
-var readCookie = function(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0;i < ca.length;i++) {
-    var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-  }
-  return null;
-};
-
-var validateEmail = function(email) {
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-};
-
-var paymentConfig = null;
-var stripeHandler = null;
-
-var getAmountCents = function() {
-  return Math.floor($('#amount_input').val() * 100);
-};
-
-var validateForm = function() {
-  var email = $('#email_input').val() || null;
-  var occ = $('#occupation_input').val() || null;
-  var emp = $('#employer_input').val() || null;
-  var amount = $('#amount_input').val() || null;
-
-
-  if (!email) {
-    showError( "Please enter email");
-    return false;
-  } else if (!validateEmail(email)) {
-    showError("Please enter a valid email");
-    return false;
-  } else if (!occ) {
-    showError( "Please enter occupation");
-    return false;
-  } else if (!emp) {
-    showError( "Please enter employer");
-    return false;
-  } else if (!amount) {
-    showError( "Please enter an amount");
-    return false;
-  } else if (amount < 1) {
-    showError( "Please enter an amount of $1 or more");
-    return false;
-  }
-  return true;
-};
-
-var validateBitcoinForm = function() {
-  var amount = $('#amount_input').val() || null;
-  var firstName = $('#first_name_input').val() || null;
-  var lastName = $('#last_name_input').val() || null;
-  var address = $('#address_input').val() || null;
-  var city = $('#city_input').val() || null;
-  var state = $('#state_input').val() || null;
-  var zip = $('#zip_input').val() || null;
-
-  if (amount > 100) {
-    showError( "Thank you for your generosity, but we are only able to accept Bitcoin donations of $100 or less");
-    return false;
-  } else if ($("#requiredConfirmation").is(':checked') == false ) {
-    showError( "We are only able to accept donations from US citizens or green card holders, and you may only donate your own bitcoin.");
-    return false;
-  } else if (!firstName) {
-    showError( "Please enter your first name");
-    return false;
-  } else if (!lastName) {
-    showError( "Please enter your last name");
-    return false;
-  } else if (!address) {
-    showError( "Please enter your address");
-    return false;
-  } else if (!city) {
-    showError( "Please enter your address");
-    return false;
-  } else if (!state) {
-    showError( "Please enter your state");
-    return false;
-  } else if (!zip) {
-    showError( "Please enter your zip code");
-    return false;
-  } else {
-    return true;
-  }
-}
-
-var bitcoinPledge = function() {
-  if (validateForm() && validateBitcoinForm()) {
-    var amount = $('#amount_input').val() || null;
-
-    setLoading(true);
-    createPledge("Bitcoin", { BITCOIN: {} });
-  }
-  return false;
-};
-
-var paypalPledge = function() {
-  if (validateForm()) {
-    setLoading(true);
-    createPledge("Paypal", { PAYPAL: { step : 'start' } });
-  }
-  return false;
-};
-var pledge = function() {
-  if (validateForm()) {
-    var cents = getAmountCents();
-    stripeHandler.open({
-      email: $('#email_input').val(),
-      amount: cents
-    });
-  }
-};
-
-var showError = function(errorText) {
-  $('#formError').text(errorText);
-  $('#formError').show();
-}
-
-var setLoading = function(loading) {
-  if (loading) {
-    $('#pledgeButton .pledgeText').hide();
-    $('#pledgeButton').off('click');
-    $('#pledgeButton .spinner').show();
-    $('#paypalButton').hide();
-  } else {
-    $('#pledgeButton .pledgeText').show();
-    $('#pledgeButton').on('click', pledge);
-    $('#pledgeButton .spinner').hide();
-    $('#paypalButton').show();
-  }
-}
-
-var onTokenRecv = function(token, args) {
-  setLoading(true);
-  createPledge(args.billing_name, { STRIPE: { token: token.id } });
-};
-
-var createPledge = function(name, payment) {
-  var urlParams = getUrlParams();
-  var pledgeType = null;
-  var request_url = null;
-
-  if ('STRIPE' in payment) {
-    request_url = PLEDGE_URL + '/r/pledge';
-  }
-
-  if ('PAYPAL' in payment) {
-    request_url = PLEDGE_URL + '/r/paypal_start';
-  }
-
-  if ('BITCOIN' in payment) {
-    request_url = PLEDGE_URL + '/r/bitcoin_start';
-  }
-  // ALL PAYPAL PAYMENTS AND BITCOIN PAYMENTS ARE DONATIONS
-  if($("#directDonate_input").is(':checked') || ('PAYPAL' in payment) || ('BITCOIN' in payment) ) {
-    pledgeType = 'DONATION';
-  } else {
-    pledgeType = 'CONDITIONAL';
-  }
-
-  var firstName = $('#first_name_input').val() || null;
-  var lastName = $('#last_name_input').val() || null;
-  var address = $('#address_input').val() || null;
-  var city = $('#city_input').val() || null;
-  var state = $('#state_input').val() || null;
-  var zip = $('#zip_input').val() || null;
-
-  if (($("#requiredConfirmation").is(':checked') == false ) && ('BITCOIN' in payment) ) {
-    console.log('Trying to pay with BITCOIN without a confirmation')
-    return;
-  }
-
-  var data = {
-    email: $('#email_input').val(),
-    phone: $('#phone_input').val(),
-    name: name,
-    occupation: $('#occupation_input').val(),
-    employer: $('#employer_input').val(),
-    target: $('#targeting_input').val(),
-    subscribe: $('#emailSignupInput').is(':checked') ? true : false,
-    // anonymous: $scope.ctrl.form.anonymous,
-    amountCents: getAmountCents(),
-    pledgeType: pledgeType,
-    team: urlParams['team'] || readCookie("last_team_key") || '',
-    payment: payment
+  var tokenReceivedCallback = function(token){
+    var employmentInfo = employmentBasedOnRetirement();
+    $.extend(donateForm.formData.person, {
+      address: token.card.address_line1,
+      city: token.card.address_city,
+      state_abbrev: token.card.address_state,
+      zip: token.card.address_zip,
+    }, employmentInfo);
+    $.extend(donateForm.formData, {
+      stripe_token: token.id,
+      amount_in_cents: donateForm.formData.donation_amount*100
+    }, employmentInfo); // employmentInfo here should deprecate in backend.
+    $.post(services_url+'/donations', donateForm.formData, donationCompleteCallback);
   };
 
-  if ($("#requiredConfirmation").is(':checked')) {
-    data['bitcoinConfirm'] = true;
-  }
+  stripeConfigurationOptions = {
+    key: 'pk_test_g7UBToGvPpJ1xJa8OVsfV7zf',
+    image: '/images/2016_mayday-logo-sheild.svg',
+    name: 'MAYDAY.US',
+    locale: 'auto',
+    panelLabel: 'Donate',
+    billingAddress: true,
+    token: tokenReceivedCallback, //NOTE: function must be defined prior
+    bitcoin: true
+  };
 
-  if (firstName) {
-    data['firstName'] = firstName;
-  }
+  var employmentBasedOnRetirement = function(){
+    if($('#person\\[is_retired\\]').is(':checked')){
+      var employmentInfo = {employer: 'retired', occupation: 'retired'};
+    }else{
+      var employmentInfo = {
+        employer: donateForm.formData.person.remote_fields.employer,
+        occupation: donateForm.formData.person.remote_fields.occupation
+      };
+    }
+    return employmentInfo;
+  };
 
-  if (lastName) {
-    data['lastName'] = lastName;
-  }
-
-  if (address) {
-    data['address'] = address;
-  }
-
-  if (zip) {
-    data['zip'] = zip;
-  }
-
-  if (city) {
-    data['city'] = city;
-  }
-
-  if (state) {
-    data['state'] = state;
-  }
-
-  $.ajax({
-    type: 'POST',
-    url: request_url,
-    data: JSON.stringify(data),
-    contentType: "application/json",
-    dataType: 'json',
-    success: function(data) {
-      utm_data = $('#pledgeForm').serialize();
-      $.post(services_url+'/actions', utm_data, function(){
-        if (typeof FACEBOOK_TRACKING_ID != 'undefined'){
-          window._fbq = window._fbq || [];
-          _fbq.push(['track',FACEBOOK_TRACKING_ID,{'value': $('#amount_input').val(),'currency':'USD'}]);
-        }
-        if ('paypal_url' in data) {
-          location.href = data.paypal_url;
-        } else if ('bitpay_url' in data) {
-          location.href = data.bitpay_url;
-        } else if (typeof REDIRECT_URL == 'undefined'){
-          location.href = '/donate-thanks/';
-        } else {
-          location.href = REDIRECT_URL;
-        }
-      });
-    },
-    error: function(data) {
-      setLoading(false);
-      if ('paymentError' in data) {
-        showError("We're having trouble charging your card: " + data.paymentError);
-      } else {
-        $('#formError').text('Oops, something went wrong. Try again in a few minutes');
-        $('#formError').show();
-      }
-    },
-  });
-};
-
-$(document).ready(function() {
-  var urlParams = getUrlParams();
-  var passedEmail = urlParams['email'] || '';
-  var header = urlParams['header'] || '';
-
-  $('#email_input').val(passedEmail);
-
-  $('#pledgeButton').on('click', pledge);
-
-  $('#paypalButton').on('click', paypalPledge);
-
-  $('#bitcoinButton').on('click', bitcoinPledge);
-
-  $.get(PLEDGE_URL + '/r/payment_config', {}, function(){}, "json").done(function(pConf) {
-    paymentConfig = pConf;
-    stripeConfig = {
-      key: paymentConfig.stripePublicKey,
+  var stripePaymentProcess = function(){
+    stripeHandler = StripeCheckout.configure(stripeConfigurationOptions);
+    stripeHandler.open({
       name: 'MAYDAY.US',
-      panelLabel: 'Pledge',
-      billingAddress: true,
-      image: PLEDGE_URL + '/static/flag.jpg',
-      token: function(token, args) {
-        onTokenRecv(token, args);
+      // description: '2 widgets',
+      amount: donateForm.formData.donation_amount,
+      email: donateForm.formData.person.email
+    });
+  };
+
+  var revealNextStep = function() {
+    $('.progress-meter .active').removeClass('active').addClass('complete')
+        .next().next().addClass('active');
+    var $activeFieldset = donateForm.$form.find('fieldset.active'),
+      $nextFieldset = $activeFieldset.next();
+    $activeFieldset.addClass('hidden').removeClass('active');
+    $nextFieldset.addClass('active').removeClass('hidden');
+    donateForm.formData = donateForm.$form.serializeObject();
+    $('html, body').animate({
+      scrollTop: $nextFieldset.offset().top-200
+    }, 200);
+    if($nextFieldset.is('fieldset:last')){
+      if(donateForm.formData.payment_method == 'paypal'){
+        alert('paypal is not implemented')
+        // links for fornt-end paypal integration are below.  Their JS API integration is less than ideal, but ok.
+        // https://developer.paypal.com/docs/classic/express-checkout/in-context/integration/
+        // http://plnkr.co/edit/RifUli3hDIq6kQJI0Ujc?p=preview
+      }else{
+        stripePaymentProcess();
       }
-    };
-    stripeHandler = StripeCheckout.configure(stripeConfig);
-  });
-});
+    }
+  };
+
+  var fetchDonationAmountFromParam = function (){
+    var targetDonationAmount = getParameterByName('donation_amount');
+    if(targetDonationAmount){
+      var targetDonationId = '#donate-'+targetDonationAmount,
+        $targetInput = $(targetDonationId),
+        $btnGroup = $('.donation-amounts');
+      $btnGroup.find('input').prop('checked', false);
+      $btnGroup.find('label').removeClass('active');
+      $targetInput.prop('checked', true).parent().addClass('active');
+    }
+  }
+
+  var initializeOtherAmountInput = function(){
+    donateForm.$form.find('#donate-other').on('change', function(){
+     var  $self = $(this)
+      if($self.prop('checked') == true){
+        $self.siblings().prop('disabled', false).focus();
+      }
+    });
+  };
+
+  var intializeRetiredCheckbox = function () {
+    donateForm.$form.find('#person\\[is_retired\\]').on('change', function(){
+      $('#person\\[remote_fields\\]\\[employer\\], #person\\[remote_fields\\]\\[occupation\\]').prop('disabled', function(i, v) { return !v; });
+    })
+  }
+
+  var initializeNextSteps = function() {
+    donateForm.$form.find('.btn-mayday-blue-medium').on('click', function(e){
+      e.preventDefault();
+      if(donateForm.$form.valid()){
+        revealNextStep();
+      }
+    })
+  }
+
+  donateForm.initialize = function(form_selector, completionCallback){
+    donationCompleteCallback = completionCallback;
+    donateForm.$form = $(form_selector);
+    donateForm.$form.validate();
+    initializeOtherAmountInput();
+    intializeRetiredCheckbox();
+    initializeNextSteps();
+    fetchDonationAmountFromParam();
+  }
+
+
+})(md.donateForm);
