@@ -13,7 +13,6 @@
   padding:0;
   background:#fff;
   margin-bottom: 0;
-  // overflow:hidden;
 
   .center-block{
     float:none;
@@ -51,12 +50,6 @@
         left:50%;
         margin-left:-20px;
         z-index:100;
-        @include phone{
-          // top:22px;
-        }
-        @include tablet{
-          // top:22px;
-        }
       }
       .fade-line{
         position: absolute;

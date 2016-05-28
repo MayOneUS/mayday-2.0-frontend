@@ -61,8 +61,3 @@ $reddit-bg-img: 'reddit-bg.jpg';
 $volunteer-bg-img: 'volunteer-bg.jpg';
 $share-bg-img: 'share-bg.jpg';
 
-@mixin star-rotation($rotation) {
-  -ms-transform: rotate($rotation);
-  -webkit-transform: rotate($rotation);
-  transform: rotate($rotation);
-}
