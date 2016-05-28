@@ -40,7 +40,7 @@
     <div class="row">
       <div class="col-md-offset-6 col-md-6 col-sm-6 col-sm-offset-6">
         {% capture panel_body %}
-        <div class="panel-body">
+        <div class="panel-body mayday-inputs">
           <h2>Join the movement</h2>
           <p class="hidden-xs">A well-connected few are spending billions to hijack your government. Let’s take back our Republic. </p>
           <p class="visible-xs-block">A well-connected few are hijacking your government. Join new CEO Zephyr Teachout to take back our Republic.</p>
@@ -60,12 +60,12 @@
                 </div>
               </div>
 
-              <div class="row no-gutter top-spacer-btn">
+              <div class="row no-gutter margin-top-sm">
                 <div class="form-group col-md-12">
                   <label class="control-label sr-only" for="singlebutton">Submit</label>
                   <input type="hidden" name="template_id" value="20150727_accouncement_signup">
                   <input type="hidden" name="person[remote_fields][tags][]" value="20150727_accouncement_signup">
-                  <button type="submit" class="btn btn-md-wide btn-md-red">I'm in</button>
+                  <button type="submit" class="btn btn-mayday">I'm in</button>
                 </div>
               </div>
 
@@ -81,15 +81,11 @@
 
 {% capture jumbotron_signup_js %}
 <script>
-  $('.js-jumbotron-signup').validate({
-    submitHandler: function(form) {
-      $form = $(form);
-      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
-      $.post(services_url+'/actions', $form.serialize(), function(data){
-      }).done(function(){
-        location = '/fight-corruption/'
-      });
-    }
+  $(document).ready(function(){
+    var signUpComplete = function(){
+      window.location = '/fight-corruption/'
+    };
+    md.signUps.inititalizeBasic('.js-jumbotron-signup', signUpComplete);
   });
 </script>
 {% endcapture %}

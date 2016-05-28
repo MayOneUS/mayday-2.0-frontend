@@ -64,7 +64,7 @@ meta_content: |
           <div id="question-4-dem"></div>
         </div>
         <div class="col-md-6">
-          <div id="question-4-gop" class="bottom-spacer-sm"></div>
+          <div id="question-4-gop" class="margin-bottom-sm"></div>
         </div>
       </div>
 
@@ -95,8 +95,8 @@ meta_content: |
       <li class="action-wrap incomplete js-spread-the-news">
         {% include take_action_section_header.html iconClass="spread-the-word" title="Spread the news" increment="2" %}
         {% capture panel_body %}
-        <div class="panel-body">
-          <h2 class="bottom-spacer-xs">Spread the News</h2>
+        <div class="panel-body mayday-inputs">
+          <h2 class="margin-bottom-sm">Spread the News</h2>
           <div class="row">
             <div class="col-md-6">
               <img src="/images/campaigns/20150929_poll_share_graphics_570x570_v04.png" alt="">
@@ -104,18 +104,18 @@ meta_content: |
             <div class="col-md-6">
               <p>Show your friends which candidates&rsquo; supporters care the most about fighting corrupt big money in politics!</p>
               <div class="">
-                <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/presidential-poll/" target="_blank" class="btn btn-md-wide btn-share-center facebook">
+                <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/presidential-poll/" target="_blank" class="btn btn-mayday btn-share-center facebook">
                   <span class="text"><i class="fa fa-facebook"></i></span>
                 </a>
               </div>
               <div class="">
                 <a href="https://twitter.com/home?status=NEW%20Presidential%20poll%20on%20fighting%20big%20money%20in%20politics.%20Who%20cares%20most%20about%20reform%3F%20%23GOPDebate%20https%3A%2F%2Fgoo.gl%2FLVzEK7%20%40maydayus" target="_blank"
-                    target="_blank" class="btn btn-md-wide btn-share-center twitter">
+                    target="_blank" class="btn btn-mayday btn-share-center twitter">
                   <span class="text"><i class="fa fa-twitter"></i></span>
                 </a>
               </div>
               <div class="">
-                <a href="mailto:?subject=NEW%20Presidential%20poll%20on%20fighting%20big%20money%20in%20politics&body=Check%20out%20this%20new%20presidential%20poll%20showing%20which%20candidates%E2%80%99%20supporters%20care%20most%20about%20reforming%20the%20corrupt%20way%20elections%20are%20funded.%0A%0ACheck%20out%20their%20page%20here%20to%20see%20the%20results%20and%20the%20different%20ways%20you%20can%20get%20involved%3A%20https%3A%2F%2Fmayday.us%2Fpresidential-poll.%0A%0AGreat%20Stuff%21%0A" class="btn btn-md-wide btn-share-center youtube">
+                <a href="mailto:?subject=NEW%20Presidential%20poll%20on%20fighting%20big%20money%20in%20politics&body=Check%20out%20this%20new%20presidential%20poll%20showing%20which%20candidates%E2%80%99%20supporters%20care%20most%20about%20reforming%20the%20corrupt%20way%20elections%20are%20funded.%0A%0ACheck%20out%20their%20page%20here%20to%20see%20the%20results%20and%20the%20different%20ways%20you%20can%20get%20involved%3A%20https%3A%2F%2Fmayday.us%2Fpresidential-poll.%0A%0AGreat%20Stuff%21%0A" class="btn btn-mayday btn-share-center youtube">
                   <span class="text"><i class="fa fa-envelope-o"></i></span>
                 </a>
               </div>
@@ -140,12 +140,13 @@ meta_content: |
 </div><!-- END .donate-page.container -->
 
 {% endcapture %}
-
+</script>
 {% capture poll_page_js %}
 {% javascript vendor/highcharts.js %}
 
 <script>
   $(document).ready(function() {
+    md.takeAction.initialize();
     var highChartsCommonOptions = {
       chart: {
         type: 'bar'
@@ -228,9 +229,6 @@ meta_content: |
   });
 </script>
 {% endcapture %}
-
-
-<!-- following line combines page scripts into footer scripts, below loaded libraries -->
 {% capture footer_scripts %}{{footer_scripts}}{{poll_page_js}}{% endcapture %}
 
 {% include sub_layouts/default_layout.html %}

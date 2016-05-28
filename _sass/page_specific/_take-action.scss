@@ -9,6 +9,7 @@
 
 .action-tree{
   float:none;
+  margin-left:auto;
   margin-bottom:40px;
 
   >li{
@@ -26,7 +27,7 @@
 
   .thanks-message{display:none}
 
-  >.btn-md-wide{
+  >.btn-mayday{
     margin:0;
     text-align:left;
     @include phone {
@@ -34,12 +35,12 @@
     }
   }
 
-  &:nth-child(1) > .btn-md-wide{background:$color-button-blue} 
-  &:nth-child(2) > .btn-md-wide{background:$color-button-purple} 
-  &:nth-child(3) > .btn-md-wide{background:$color-button-lightblue} 
-  &:nth-child(4) > .btn-md-wide{background:$color-button-green} 
-  &:nth-child(5) > .btn-md-wide{background:$color-button-orange} 
-  &:nth-child(6) > .btn-md-wide{background:$color-button-lightred} 
+  &:nth-child(1) > .btn-mayday{background:$color-button-blue} 
+  &:nth-child(2) > .btn-mayday{background:$color-button-purple} 
+  &:nth-child(3) > .btn-mayday{background:$color-button-lightblue} 
+  &:nth-child(4) > .btn-mayday{background:$color-button-green} 
+  &:nth-child(5) > .btn-mayday{background:$color-button-orange} 
+  &:nth-child(6) > .btn-mayday{background:$color-button-lightred} 
 
   >small{
     position:absolute;
@@ -59,7 +60,6 @@
       width: .01px; //hidden on phone
     }
   }
-
 
   &.active{
     >.btn{display:none}
@@ -85,7 +85,7 @@
     .show-complete{display:initial;}
     .show-incomplete, .skip-next{display:none;}
     .panel{background:#eee;}
-    >.btn-md-wide{background:$color-grey;}
+    >.btn-mayday{background:$color-grey;}
     &.active.thanked{
       .panel-body{display:none;}
       .panel-body:last-child{display: initial}

@@ -1,299 +1,164 @@
-<div class="stepContainer">
-  <ul class="steps">
-    <li id="step-1" class="step active">Amount<span>1</span></li>
-    <li id="step-2" class="step">Info<span>2</span></li>
-    <li id="step-3" class="step">Payment<span>3</span></li>
-  </ul>
+<div class="panel action-panel donate">
+  <div class="panel-title">
+    <div class="col-md-12  progress-meter">
+      <ul class="list-unstyled col-md-6 center-block">
+        <li class="active"><span class="step-count">1</span> <i class="fa fa-check"></i></li>
+        <li><i class="fa fa-arrow-right"></i></li>
+        <li id="donate-step-2"><span class="step-count">2</span> <i class="fa fa-check"></i></li>
+        <li><i class="fa fa-arrow-right"></i></li>
+        <li id="donate-step-3"><span class="step-count">3</span> <i class="fa fa-check"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel-body mayday-inputs">
+    <form class="row margin-top-md" id="js-donate-form">
+      <fieldset class="col-md-12 active">
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <div class="btn-group btn-group-mayday btn-group-flexed donation-amounts" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-10">
+                <input type="radio" id="donate-10" name="donation_amount" value="10" /> $10
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-35">
+                <input type="radio" id="donate-35" name="donation_amount" value="35" /> $35
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-50">
+                <input type="radio" id="donate-50" name="donation_amount" value="50" /> $50
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short active" for="donate-100">
+                <input type="radio" id="donate-100" name="donation_amount" value="100" checked="checked" /> $100
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-250">
+                <input type="radio" id="donate-250" name="donation_amount" value="250" /> $250
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-500">
+                <input type="radio" id="donate-500" name="donation_amount" value="500" /> $500
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-1000">
+                <input type="radio" id="donate-1000" name="donation_amount" value="1000" /> $1000
+              </label>
+              <label class="btn btn-mayday btn-mayday-clear short" for="donate-other">
+                $<input type="radio" id="donate-other" name="donation_amount" value="other" /> <input type="number" name="donation_amount" placeholder="Other" disabled="disabled">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row margin-bottom-sm margin-top-xs">
+          <div class="col-md-12 form-group">
+            <div class="btn-group btn-group-mayday btn-group-flexed donation-recurring" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
+              <label class="btn btn-mayday btn-mayday-white short active " for="recurring-no">
+                <input type="radio" id="recurring-no" name="recurring" value="false" checked="checked" /> No
+              </label>
+              <label class="btn btn-mayday btn-mayday-white short" for="recurring-no">
+                <input type="radio" id="recurring-no" name="recurring" value="true" /> Yes
+                <small>donate this amount every month</small>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <a href="" title="" class="btn btn-mayday btn-mayday-blue-medium">Continue</a>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="col-md-12 hidden">
+
+        <h3>Donor Information</h3>
+
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label class="control-label sr-only" for="person[first_name]">First Name</label>
+            <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name" required="required">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+            <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name" required="required">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-8">
+            <label class="control-label sr-only" for="person[email]">Email Address</label>
+            <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required">
+          </div>
+
+          <div class="form-group col-md-4 {% if include.hide_volunteer %}margin-bottom-0{% endif %}">
+            <label class="control-label sr-only" for="person[zip]">ZIP</label>
+            <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="required">
+          </div>
+        </div>
+
+        <h3>Employment Information</h3>
+        <p>Federal law requires us to collect your employer and occupation information.</p>
+
+        <div class="row">
+          <div class="form-group col-md-12 text-left">
+            <label class="checkbox-inline" for="person[is_retired]">
+              <input type="checkbox" name="person[is_retired]" id="person[is_retired]" value="true"> Check here if you are retired or not employed.
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="control-label sr-only" for="person[remote_fields][occupation]">Occupation</label>
+            <input id="person[remote_fields][occupation]" name="person[remote_fields][occupation]" type="text" placeholder="Occupation" required="required">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="control-label sr-only" for="person[remote_fields][employer]">Employer</label>
+            <input id="person[remote_fields][employer]" name="person[remote_fields][employer]" type="text" placeholder="Employer" required="required">
+          </div>
+        </div>
+
+        <h3>Payment Method</h3>
+        <div class="row margin-bottom-sm">
+          <div class="form-group col-md-12">
+            <div class="btn-group btn-group-mayday btn-group-flexed payment-method" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
+              <label class="btn btn-mayday btn-mayday-white" for="paypal">
+                <input type="radio" id="paypal" name="payment_method" value="paypal" /> <i class="fa fa-paypal"></i> Paypal
+              </label>
+              <label class="btn btn-mayday btn-mayday-white active" for="credit-card">
+                <input type="radio" id="credit-card" name="payment_method" value="credit" /> <i class="fa fa-credit-card-alt"></i> Card
+              </label>
+              <label class="btn btn-mayday btn-mayday-white" for="bitcoin">
+                <input type="radio" id="bitcoin" name="payment_method" value="bitcoin" /> <i class="fa fa-bitcoin"></i> BitCoin
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <a href="" title="" class="btn btn-mayday btn-mayday-blue-medium">Continue</a>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="col-md-12 hidden text-center">
+        <h2>Loading third party payment provider</h2>
+        <p><i class="fa fa-refresh fa-4x fa-spin text-orange"></i></p>
+      </fieldset>
+    </form>
+  </div>
 </div>
 
-<div class="step-1-container">
-  <!--[if lte IE 9]>
-  <div class="form-group col-sm-12">It looks like you're using an older IE browser! <a href="https://pledge.mayday.us/"> Follow this link </a> to use our simplified page! <a href="http://browsehappy.com/">Alternatively, follow this link</a> to upgrade and make a donation!</div>
-  <![endif]-->
-  <p class="select-amount-instructions">Select an amount:</p>
-  <div class="amount-button" onclick="step2(10);">$10</div>
-  <div class="amount-button" onclick="step2(25);">$25</div>
-  <div class="amount-button" onclick="step2(50);">$50</div>
-  {% if page.only-bitcoin %}
-  <div class="amount-button" onclick="step2(75);">$75</div>
-  <div class="amount-button" onclick="step2(100);">$100</div>
-  {% else %}
-  <div class="amount-button" onclick="step2(250);">$250</div>
-  <div class="amount-button" onclick="step2(500);">$500</div>
-  <div class="amount-button" onclick="step2(1000);">$1000</div>
-  <div class="amount-button" onclick="step2(2500);">$2500</div>
-  {% endif %}
-  <div class="amount-button" onclick="step2(-1);">Other</div>
-  <div style="clear:both;"></div>
-  {% if page.only-bitcoin == null %}
-  <p class="or-instructions"><span class="fancy-or-line"></span>or<span class="fancy-or-line"></span></p>
-  <a class="donate-with-bitcoin-button" href="/bitcoin/">Donate with Bitcoin</a>
-  {% endif %}
-</div>
-
-<div class="step-2-container">
-  <form id="pledgeForm" role="form" method="POST" onsubmit="step3();" action="javascript:;">
-    <input type="hidden" name="targeting_input" id="targeting_input" value="Whatever Helps">
-    <input type="hidden" name="target" id="target" value="Whatever Helps">
-    <input type="hidden" name="template_id" value="{% if include.action_template_id %}{{ include.action_template_id }}{% else %}donation{% endif %}">
-
-    {% if page.only-bitcoin %}
-    <div class="row">
-      <div class="form-group col-sm-6"><label class="control-label">First Name</label><input type="text" name="person[first_name]" required placeholder="First Name" class="form-control input-lg" id="first_name_input" /></div>
-      <div class="form-group col-sm-6"><label class="control-label">Last Name</label><input type="text" name="person[last_name]" required placeholder="Last Name" class="form-control input-lg" id="last_name_input" /></div>
-    </div>
-
-    <div class="row">
-      <div class="form-group col-sm-12"><label class="control-label">Address</label><input type="text" required placeholder="Address" class="form-control input-lg" id="address_input" /></div>
-    </div>
-
-    <div class="row">
-      <div class="form-group col-sm-4"><label class="control-label">City</label><input type="text" required placeholder="City" class="form-control input-lg" id="city_input" /></div>
-      <div class="form-group col-sm-4">
-        <label class="control-label">State</label>
-        <select required class="form-control input-lg" id="state_input">
-            <option value="" disabled selected>State</option>
-            <option value="AL">Alabama</option>
-            <option value="AK">Alaska</option>
-            <option value="AZ">Arizona</option>
-            <option value="AR">Arkansas</option>
-            <option value="CA">California</option>
-            <option value="CO">Colorado</option>
-            <option value="CT">Connecticut</option>
-            <option value="DE">Delaware</option>
-            <option value="DC">District Of Columbia</option>
-            <option value="FL">Florida</option>
-            <option value="GA">Georgia</option>
-            <option value="HI">Hawaii</option>
-            <option value="ID">Idaho</option>
-            <option value="IL">Illinois</option>
-            <option value="IN">Indiana</option>
-            <option value="IA">Iowa</option>
-            <option value="KS">Kansas</option>
-            <option value="KY">Kentucky</option>
-            <option value="LA">Louisiana</option>
-            <option value="ME">Maine</option>
-            <option value="MD">Maryland</option>
-            <option value="MA">Massachusetts</option>
-            <option value="MI">Michigan</option>
-            <option value="MN">Minnesota</option>
-            <option value="MS">Mississippi</option>
-            <option value="MO">Missouri</option>
-            <option value="MT">Montana</option>
-            <option value="NE">Nebraska</option>
-            <option value="NV">Nevada</option>
-            <option value="NH">New Hampshire</option>
-            <option value="NJ">New Jersey</option>
-            <option value="NM">New Mexico</option>
-            <option value="NY">New York</option>
-            <option value="NC">North Carolina</option>
-            <option value="ND">North Dakota</option>
-            <option value="OH">Ohio</option>
-            <option value="OK">Oklahoma</option>
-            <option value="OR">Oregon</option>
-            <option value="PA">Pennsylvania</option>
-            <option value="RI">Rhode Island</option>
-            <option value="SC">South Carolina</option>
-            <option value="SD">South Dakota</option>
-            <option value="TN">Tennessee</option>
-            <option value="TX">Texas</option>
-            <option value="UT">Utah</option>
-            <option value="VT">Vermont</option>
-            <option value="VA">Virginia</option>
-            <option value="WA">Washington</option>
-            <option value="WV">West Virginia</option>
-            <option value="WI">Wisconsin</option>
-            <option value="WY">Wyoming</option>
-            <option disabled>_________</option>
-            <option value="AS">American Samoa</option>
-            <option value="GU">Guam</option>
-            <option value="MP">Northern Mariana Islands</option>
-            <option value="PR">Puerto Rico</option>
-            <option value="UM">United States Minor Outlying Islands</option>
-            <option value="VI">Virgin Islands</option>
-            <option disabled>_________</option>
-            <option value="AA">Armed Forces Americas</option>
-            <option value="AP">Armed Forces Pacific</option>
-            <option value="AE">Armed Forces Others</option>
-        </select>
-      </div>
-      <div class="form-group col-sm-4"><label class="control-label">ZIP</label><input type="text" required placeholder="ZIP" class="form-control input-lg" id="zip_input" /></div>
-    </div>
-    {% endif %}
-
-    <div class="row">
-      <div class="form-group col-sm-12">
-        <label class="control-label">Email</label>
-        <input type="email" required placeholder="Email" name="person[email]" class="form-control input-lg" id="email_input" />
-      </div>
-    </div>
-    <input type="hidden" name="redirect" value="https://mayday.us/" />
-
-    <div class="row">
-      <div class="form-group col-sm-6">
-        <label class="control-label">Occupation</label>
-        <input type="text" required placeholder="Occupation"  class="form-control input-lg" id="occupation_input"/>
-      </div>
-      <div class="form-group col-sm-6">
-        <label class="control-label">Employer</label>
-        <input type="text" required placeholder="Employer" class="form-control input-lg" id="employer_input" />
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="form-group col-sm-6">
-        <label class="control-label">Phone Number <span class="label label-default">Optional</span></label>
-        <input type="tel" placeholder="Phone number" name="person[phone]" class="form-control input-lg" id="phone_input" />
-      </div>
-      <div class="form-group col-sm-6" style="display:none;">
-        <label class="control-label">Who to Fund?</label>
-        <select required class="form-control input-lg" id="targeting_input">
-          <option value="" disabled >Who to fund?</option>
-          <option selected>Whatever Helps</option>
-          <option>Democrats Only</option>
-          <option>Republicans Only</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="form-group col-sm-12">
-        <label class="control-label">How Much to Donate ($)?</label>
-        <input type="number" required min="1" placeholder="How Much to Donate ($)?" class="form-control input-lg" id="amount_input">
-      </div>
-    </div>
-    <div class="row">
-      <div id="donation-type" class="form-group col-sm-12">
-        <div class="checkbox text-left"><label><input type="checkbox" id="emailSignupInput" checked> Want to know how we're using the money? <br />Sign up for emails from us.</label></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div id="recurring" class="form-group col-sm-12">
-        <div class="checkbox text-left"><label><input type="checkbox" id="recurring_input"> <strong>Donate this amount every month.</strong></input></label></div>
-      </div>
-    </div>
-    <input type="hidden" id="recurrence_period_input" value="monthly">
-
-    {% if page.only-bitcoin %}
-    <div class="row">
-      <div class="form-group col-sm-12">
-        <div class="checkbox text-left"><label><input type="checkbox" id="requiredConfirmation" >I confirm that: (1) I am a U.S. citizen or permanent resident; and (2) the Bitcoin I am donating are solely owned by me.</label></div>
-      </div>
-    </div>
-    {% endif %}
-
-    <div class="row">
-      <div id="formError" class="alert alert-danger col-sm-12" style="display:none">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="donate-submit-button form-group col-sm-12">
-        {% if page.only-bitcoin %}
-        <button id="bitcoinButton" class="btn submit-button">
-        {% else %}
-        <button id="pledgeButton" class="btn submit-button">
-        {% endif %}
-        <div style="display:none" class="spinner"><i class="fa fa-refresh fa-spin"></i> Processing...</div>
-        <span class='pledgeText'>Donate Now</span>
-       </button>
-     </div>
-    </div>
-
-    {% if page.only-bitcoin == null %}
-    <div class="row">
-      <div class="form-group col-sm-12">
-          <a href="javascript:;" id='paypalButton' class="btn submit-button">Donate with PayPal</a>
-      </div>
-    </div>
-    {% endif %}
-  </form>
-</div>
-
-{% capture donation_javascript %}
-
-<script src="//fgnass.github.io/spin.js/spin.min.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+{% capture page_specific_javascript %}
 <script src="https://checkout.stripe.com/checkout.js"></script>
-{% assign pledge_url = site.pledge_url or '//pledge.mayday.us' %}
-<script>
-/*
-
-Copyright 2015 Mayday PAC
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-*/
-
-  PLEDGE_URL = "{{ pledge_url }}";
-  REDIRECT_URL = {% if include.redirect_url %}'{{include.redirect_url}}'{% else %}'/donate-thanks/'{%endif%};
-  {% if include.facebook_tracking_id %}FACEBOOK_TRACKING_ID = '{{include.facebook_tracking_id}}';{%endif%}
-
-  function step2(amount){
-    $(".step-1-container").hide("slow");
-    $("#step-1").removeClass("active");
-    $("#step-2").addClass("active");
-    //$("#pledgeBox").animate({height: "auto"}, 500);
-    if( amount > 0 ) {
-      $("#amount_input").val(amount);
-      $("#amount_input").parent().hide();
-    }
-    $(".step-2-container").show("slow");
-  }
-
-  function step3(){
-    $("#step-2").removeClass("active");
-    $("#step-3").addClass("active");
-  }
-
-  var ALREADY_BANKED = 1000000;
-  var GOAL_DOLLARS = 5000000;
-
-  $(function() {
-    var date = new Date();
-    date.setTime(date.getTime()+(24*60*60*1000));
-    document.cookie = ("last_team_key={{team.key()}};" +
-                       "expires=" + date.toGMTString() +
-                       ";domain=.mayday.us;path=/");
-
-   if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-     var verStr = $.browser.version;
-     var ffVersion = verStr.split('.')[0];
-     // console.log("detected version: " + ffVersion);
-     if (ffVersion < 17) {
-       $('#pledgeBox .info').after('<div class="alert-danger row">Sorry, we are not supporting older Firefox versions at the moment. Please try another browser for now.</div>');
-     } else {
-       // console.log('Firefox version was OK: ' + ffVersion);
-     }
-   }
-  });
-
-  //async load facebook tracking library
-  (function() {
-    var _fbq = window._fbq || (window._fbq = []);
-    if (!_fbq.loaded) {
-    var fbds = document.createElement('script');
-    fbds.async = true;
-    fbds.src = '//connect.facebook.net/en_US/fbds.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(fbds, s);
-    _fbq.loaded = true;
-    }
-  })();
-</script>
 {% javascript _includes/donate_form.js %}
-
+<script>
+  $(document).ready(function(){
+    md.donateForm.initialize('#js-donate-form', function(){
+      // action for when donation is complete.
+      //window.location = '/some-redirect/';
+    });
+  });
+</script>
 {% endcapture %}
-
-{% capture footer_scripts %}{{footer_scripts}}{{donation_javascript}}{% endcapture %}
+<!-- following line combines page scripts into footer scripts, below loaded libraries -->
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
