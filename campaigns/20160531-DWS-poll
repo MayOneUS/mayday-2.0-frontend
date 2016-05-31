@@ -150,75 +150,19 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
               <div class="radio">
                 <label for="candidate-radio-14">
                   <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-14" value="Hillary Clinton">
-                  Hillary Clinton
+                  Take her down!
                 </label>
               </div>
               <div class="radio">
                 <label for="candidate-radio-0">
                   <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-0" value="Bernie Sanders">
-                  Bernie Sanders
+                  Leave her alone.
                 </label>
               </div>
               <div class="row">
                 <hr class="col-md-6"/>
               </div>
-              <div class="radio">
-                <label for="candidate-radio-2">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-2" value="Jeb Bush">
-                  Jeb Bush
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-4">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-4" value="Ben Carson">
-                  Ben Carson
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-5">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-5" value="Chris Christie">
-                  Chris Christie
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-6">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-6" value="Ted Cruz">
-                  Ted Cruz
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-7">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-7" value="Carly Fiorina">
-                  Carly Fiorina
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-9">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-9" value="John Kasich">
-                  John Kasich
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-10">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-10" value="Marco Rubio">
-                  Marco Rubio
-                </label>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-12">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-12" value="Donald Trump">
-                  Donald Trump
-                </label>
-              </div>
-              <div class="row">
-                <hr class="col-md-6"/>
-              </div>
-              <div class="radio">
-                <label for="candidate-radio-13">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-13" value="Gary Johnson">
-                  Gary Johnson
-                </label>
-              </div>
+              
             </div>
 
 
