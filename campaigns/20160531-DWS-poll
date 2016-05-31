@@ -110,7 +110,7 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
               <div class="form-group text-left">
                 <label class="control-label sr-only" for="google_form_submission_data[is_volunteer]">Volunteer</label>
                 <label class="checkbox-inline" for="google_form_submission_data[is_volunteer]-0">
-                  <input type="checkbox" name="google_form_submission_data[is_volunteer]" id="google_form_submission_data[is_volunteer]-0" value="true"> <strong>Are you ready to volunteer?</strong>
+                  <input type="checkbox" name="google_form_submission_data[is_volunteer]" id="google_form_submission_data[is_volunteer]-0" value="true"> <strong>I am ready to volunteer!</strong>
                 </label>
               </div>
             </div>
