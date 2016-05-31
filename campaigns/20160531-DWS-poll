@@ -1,16 +1,16 @@
 ---
 layout: default
-title: MAYDAY.US - Make your voice heard. Should MAYDAY.US take down "Corporatist Tool" Debbie Wasserman Schultz?
+title: Poll: Should MAYDAY.US take on DNC Chair Debbie Wasserman Schultz?
 permalink: /dws/
 meta_content: |
   <meta property="og:url" content="https://mayday.us/dws/"/>
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
   <meta property="og:title" content="Who do you support?"/>
-  <meta property="og:description" content="Should MAYDAY.US take down Debbie Wasserman Schultz?"/>
+  <meta property="og:description" content="Should MAYDAY.US take on DNC Chair Debbie Wasserman Schultz?"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
   <meta content='@mayday' name="twitter:site"/>
-  <title>Should Debbie Wasserman Schultz keep her job? - MAYDAY.US</title>
+  <title>Should MAYDAY.US take on DNC Chair Debbie Wasserman Schultz?</title>
   <link rel="canonical" href="https://mayday.us/dws/">
   <!-- <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'> -->
 ---
@@ -35,8 +35,7 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
     <br />
     <br />
     <br />
-      <h1><strong>Should MAYDAY.US take down Debbie Wasserman Schultz?</strong></h1>
-      <h2><strong>The "Corporatist Tool"</strong></h2>
+      <h1><strong>Should MAYDAY.US take on DNC Chair Debbie Wasserman Schultz?</strong></h1>
     </div>
   </div>
 
