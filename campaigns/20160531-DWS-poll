@@ -146,16 +146,16 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
             </div> -->
 
             <div class="form-group col-md-6">
-              <label class="control-label" for="volunteer_tasks">Which candidate are you supporting to fight big money corruption?</label>
+              <label class="control-label" for="volunteer_tasks">Should MAYDAY.US unseat Debbie Wasserman Schultz?</label>
               <div class="radio">
                 <label for="candidate-radio-14">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-14" value="Hillary Clinton">
+                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-14" value="DWS-Yes">
                   Take her down!
                 </label>
               </div>
               <div class="radio">
                 <label for="candidate-radio-0">
-                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-0" value="Bernie Sanders">
+                  <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-0" value="DWS-No">
                   Leave her alone.
                 </label>
               </div>
