@@ -57,10 +57,7 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
               <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text"  required="required" placeholder="ZIP" />
             </div>
           </div>
-
           <div class="row">
-
-
             <div class="form-group col-md-6">
               <label class="control-label" for="volunteer_tasks">Should MAYDAY.US unseat Debbie Wasserman Schultz?</label>
               <div class="radio">
@@ -78,10 +75,7 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
               <div class="row">
                 <hr class="col-md-6"/>
               </div>
-              
             </div>
-
-
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label" for="volunteer_tasks">I most often vote for...</label>
