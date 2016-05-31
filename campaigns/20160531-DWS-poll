@@ -22,7 +22,7 @@ h2 {font-weight: 400;}
 form.mayday-inputs .letter input, form.mayday-inputs .letter textarea{border-color: rgba(0,0,0,0.05);margin-bottom:0}
 form.mayday-inputs .letter p.help-block{font-size:14px;}
 form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
-.container .row ul > ul{margin-top:0;}
+.container .row ul > ul{margin-top:100;}
 
 </style>
 {% endcapture %}
@@ -120,7 +120,6 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
               <label class="control-label sr-only" for="singlebutton">Submit</label>
               <input type="hidden" name="template_id" value="20160127_identification_form">
               <input type="hidden" name="person[remote_fields][tags][]" value="20160127_identification_form">
-
               <input type="hidden" name="google_form_metadata[form_id]" value="1ZgBJfnUJEJy5q2JwhvZW-8j1xOhN-7Tk44cVJFIFu5w" />
               <input type="hidden" name="google_form_metadata[field_mappings][email]" value="entry_414834134"/>
               <input type="hidden" name="google_form_metadata[field_mappings][zip]" value="entry_530283736"/>
