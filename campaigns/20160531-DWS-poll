@@ -57,13 +57,13 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
               <div class="radio">
                 <label for="candidate-radio-14">
                   <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-14" value="DWS-Yes">
-                  Take her down!
+                  Yes
                 </label>
               </div>
               <div class="radio">
                 <label for="candidate-radio-0">
                   <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-0" value="DWS-No">
-                  Leave her alone.
+                  No
                 </label>
               </div>
               <div class="row">
