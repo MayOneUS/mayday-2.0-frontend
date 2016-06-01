@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Should MAYDAY.US take on DNC Chair Debbie Wasserman Schultz?
+title: Should MAYDAY.US oppose DNC Chair Debbie Wasserman Schultz?
 permalink: /dws/
 meta_content: |
   <meta property="og:url" content="https://mayday.us/dws/"/>
   <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
   <meta property="og:title" content="Who do you support?"/>
-  <meta property="og:description" content="Should MAYDAY.US take on DNC Chair Debbie Wasserman Schultz?"/>
+  <meta property="og:description" content="Should MAYDAY.US oppose DNC Chair Debbie Wasserman Schultz?"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
   <meta content='@mayday' name="twitter:site"/>
-  <title>Should MAYDAY.US take on DNC Chair Debbie Wasserman Schultz?</title>
+  <title>Should MAYDAY.US oppose DNC Chair Debbie Wasserman Schultz?</title>
   <link rel="canonical" href="https://mayday.us/dws/">
   <!-- <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'> -->
 ---
@@ -30,14 +30,14 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
 <div class="container">
   <div class="row">
 <div class="col-md-12 text-center" style="padding-top:120px;">
-      <h1><strong>Should MAYDAY.US take on DNC Chair Debbie Wasserman Schultz?</strong></h1>
+      <h1><strong>Should MAYDAY.US oppose DNC Chair Debbie Wasserman Schultz?</strong></h1>
     </div>
   </div>
 
   <div class="row js-step-one">
     <div class="col-md-10 col-lg-8 col-lg-offset-2 action-wrap center-block incomplete">
-      <p>Debbie Wasserman Schultz is part of a corrupt political system.  As chair of the DNC she has helped enable big money interests to take over our public policy. Should she have a leadership role in American politics?</p>
-      <p>MAYDAY.US's national small donor network can take Debbie Wasserman Schultz down in her primary fight. We want to hear from YOU: Should we take her down by organizing our grassroots network in her district?</p>
+      <p>Debbie Wasserman Schultz is part of a corrupt political system.  As chair of the DNC she helped big money interests control public policy.</p>
+      <p>MAYDAY.US's national small donor network can challenge Debbie Wasserman Schultz in her primary fight. We want to hear from YOU now: Should we oppose Debbie Wasserman Schultz?</p>
       <form class="join js-tech-volunteer mayday-inputs">
         <fieldset>
 
@@ -53,7 +53,7 @@ form.mayday-inputs .letter p.help-block.text-right{text-align:right;}
           </div>
           <div class="row">
             <div class="form-group col-md-6">
-              <label class="control-label" for="volunteer_tasks">Should MAYDAY.US take on DNC Chair Debbie Wasserman Schultz?</label>
+              <label class="control-label" for="volunteer_tasks">Should MAYDAY.US oppose DNC Chair Debbie Wasserman Schultz?</label>
               <div class="radio">
                 <label for="candidate-radio-14">
                   <input type="radio" name="google_form_submission_data[candidate_info]" id="candidate-radio-14" value="DWS-Yes">
