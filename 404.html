@@ -1,23 +1,24 @@
 ---
 layout: default
-title: MAYDAY.US - Not Found
+title: MAYDAY.US - Page Not Found
 permalink: /404/
 ---
 {% capture content %}
+{% include jumbotrons/general-dark.html title="Page Note Found" %}
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <h1>Not found <span>:(</span></h1>
-
       <h2>Our republic is broken. And so is this web address.</h2>
       <p>It looks like this was the result of either:</p>
       <ul>
         <li>a mistyped address</li>
         <li>an out-of-date link</li>
       </ul>
-    </div>
-    <div class="col-md-4 panel-wrapper">
-      {% include panels/panel_action_w_signup.html hide_next=true form_class="smaller-form" %}
+  </div>
+</div>
+<div class="page-panel light">
+  <div class="container">
+    <div class="col-md-8 center-block panel-wrapper">
+      {% include panels/panel_action_w_signup.html hide_next=true %}
     </div>
   </div>
 </div>

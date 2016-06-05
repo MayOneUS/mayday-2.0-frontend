@@ -18,15 +18,15 @@
   <link rel="shortcut icon" href="{{ root_path }}/favicon.ico"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content='@maydayus' name="twitter:site"/>
-  <meta content="{{ root_path }}/images/2016_mayday-logo-sheild.svg" name="twitter:image:src"/>
+  <meta content="{{ root_path }}/images/2016_mayday-logo-shield.png" name="twitter:image:src"/>
   <link rel="alternate" type="application/rss+xml" title="Official Blog: MAYDAY.US" href="http://blog.mayday.us/rss" />
 
   {% assign meta_content_size = page.meta_content | size %}
   {% if meta_content_size < 2 %}
     <meta property="og:url" content="{{ page_url }}"/>
-    <meta property="og:image" content="{{ site.url }}/images/2016_mayday-logo-sheild.svg"/>
-    <meta property="og:title" content="MAYDAY: Democracy needs an upgrade. Act now."/>
-    <meta property="og:description" content="Money has corrupted politics. We&rsquo;re a Crowdfunded SuperPAC to end all SuperPACs -- Join us!"/>
+    <meta property="og:image" content="{{ site.url }}/images/2016_mayday-logo-shield_square.png"/>
+    <meta property="og:title" content="MAYDAY: End Big Money Politics"/>
+    <meta property="og:description" content="We are a grassroots movement fighting to fix our broken political system. Building teams at the local level, we hold status quo politicians accountable at the ballot box. Help us elect candidates committed to fundamental reform!"/>
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />

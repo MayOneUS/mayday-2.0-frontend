@@ -16,14 +16,13 @@ if(window.location.hash) {
  //set the value as a variable, and remove the #
  var hash_value = window.location.hash.replace('#', '');
  
- //show the value with an alert pop-up
- redirect = hash_value;
+redirect = hash_value;
  
 }
 
-if ( redirect = "donate" ) {
+if ( redirect === "donate" ) {
    window.top.location.href = "/donate";
-} else if ( redirect = "thanks" ) {
+} else if ( redirect === "thanks" ) {
    window.top.location.href = "/donate-thanks";
 } else {
 	window.top.location.href = "/";
