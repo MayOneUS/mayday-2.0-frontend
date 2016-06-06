@@ -11,7 +11,7 @@ This site is built with the Ruby library [Jekyll](http://jekyllrb.com) - it's a 
 1. Install ruby. Any 2.1+ version should be fine.
 1. Install bundler if it isn't already installed with `gem install bundler`
 1. Run `bundle install` to install dependent gems, including the Jekyll library (which is a gem)
-1. Run `jekyll server` to get the server up and running.
+1. Run `jekyll server --watch` to get the server up and running.
 1. Check out http://localhost:4000/ to see the site up and running.  Any update you make to the source files should be reflected in localhost virtually immediately.
 
 If you run into execjs error `'autodetect': Could not find a JavaScript runtime.` You can confirm the following gems are installed or installing NodeJS will install a compatiable javascript runtime. 
