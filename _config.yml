@@ -5,7 +5,6 @@ description: 'MAYDAY.US'
 url: 'https://mayday.us' # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
 blog_root_url: 'http://blog.mayday.us'
-blog_feed_url: '//services.mayday.us/blog_posts'
 pledge_url: '//pledge.mayday.us'
 github_username:  'MayOneUS'
 twitter_username: 'MAYDAYUS'
