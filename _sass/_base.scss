@@ -239,13 +239,14 @@ body {
 a.btn.btn-mayday.paypal {
     display: inline;
     width: auto;
-    padding: 5px;
+    padding: 5px 10px;
     font-size: 14px;
-    background: rgba($mayday-blue-medium,.5);
+    background: rgba($mayday-blue-medium,1);
 	font-weight:400;
+	margin-left:5px;
 	
 	&:hover {
-		background:$mayday-blue-medium;
+		background:rgba($mayday-blue-medium,.5);
 	}
 }
 
