@@ -16,7 +16,7 @@
 	padding: 40px;
 }
 
-@media only screen and (max-width:992px) {
+@media only screen and (max-width:625px) {
 	.candidate-info {
 		background-image: url('/images/campaigns/candidates/shultz.jpg');
 		background-size:cover;
@@ -30,7 +30,7 @@
 }
 
 .jumbotron .panel {
-	padding:40px;
+	padding:20px;
 }
 
 @media only screen and (max-width:400px) {
@@ -84,17 +84,19 @@
 <div class="jumbotron">
   <div class="container">
       <div class="row">
-            <div class="col-md-6 candidate-info">
+            <div class="col-md-7 candidate-info">
                 <h2 class="text-yellow" style="font-size: 44px;">{{include.title}}</h2>
                 <p>As Chair of the DNC and a Congresswoman, Debbie Wasserman Schultz enabled big money interests to corrupt our political system.</p>
+                <div class="hidden-xs"> 
                 <p>She:</p>
                 <ul>
                     <li>Lifted the DNC’s seven year ban on donations from lobbyists and PACs;</li>
                     <li>Blocked the SEC requiring corporations to disclose political spending to shareholders</li>
                     <li>Voted against curbing corporations’ ability to form “nonprofits” that conceal their political spending.</li>
                 </ul>
+                </div>
             </div>
-            <div class="col-md-6 panel">
+            <div class="col-md-5 panel">
             	<h3 class="text-orange text-center we-need-your-help"><span>We Need Your Help</span></h3>
             	<h4 class="text-center">Donate In Two Minutes or Less</h4>
                 {% include form_donate.html %}
