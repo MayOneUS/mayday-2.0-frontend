@@ -66,13 +66,38 @@ hr{
       margin-bottom: 0;
     }
   }
+  
+	#blog-listings {
+		h3 {
+			a {
+			color: $mayday-blue-medium;
+			
+				&:hover {
+				color: $mayday-blue-dark;
+				}
+			}
+		}
+	}
 
   .blog-listings{
     margin:0;
-
+	
     li{
       list-style-type:none;
+	  font-size: 16px;
+      line-height: 24px;
     }
+	
+	h3 {
+	  margin-bottom:10px;
+	}
+	
+	p {
+	  margin: 0 0 5px;
+	  line-height:24px;
+	  font-size:16px;
+	}
+	
     time{
       position:relative;
       background-color:$mayday-background;
@@ -86,13 +111,13 @@ hr{
         background: $mayday-background;
       }
 
-      &:after{
+     /* &:after{
         content:" ";
         position:absolute;
         width:100%;
         top: calc(50% - 1px);
         border-bottom:2px solid $mayday-blue-light;
-      }
+      }*/
     }
   }
 
@@ -171,7 +196,7 @@ h2, .as-if-h2{font-size: 40px; font-weight: 400; line-height: 48px; letter-spaci
 h3, .as-if-h3{font-size: 32px; font-weight: 500; line-height: 38px; letter-spacing:+3px; text-transform: uppercase; }
 h4, .as-if-h4{font-size: 18px; font-weight: 500; line-height: 24px; letter-spacing:+2px; text-transform: uppercase; }
 h5, .as-if-h5{font-size: 21px; font-weight: 400; line-height: 30px; letter-spacing: 0;   text-transform: none}
-h6, .as-if-h6{font-size: 13px; font-weight: 400; line-height: 20px; letter-spacing: 0;   text-transform: uppercase}
+h6, .as-if-h6{font-size: 13px; font-weight: 500; line-height: 20px; letter-spacing: 0;   text-transform: uppercase}
 
 @include tablet-minus{
   h1, .as-if-h1{font-size: 40px; line-height: 40px;}
