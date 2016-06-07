@@ -98,12 +98,23 @@ hr{
 	  font-size:16px;
 	}
 	
+	a.btn.btn-mayday.btn-share-center.facebook, a.btn.btn-mayday.btn-share-center.twitter {
+		height: auto;
+		padding: 3px 7px 2px 3px;
+		width: auto;
+		font-size: 10px;
+		display: inline-block;
+		float: right;
+		margin-left:5px;
+	  }
+	
     time{
       position:relative;
       background-color:$mayday-background;
-      width:100%;
       display:inline-block;
       overflow:hidden;
+	  vertical-align:middle;	  
+	  margin-bottom:5px;
 
       span{
         display:inline-block;
