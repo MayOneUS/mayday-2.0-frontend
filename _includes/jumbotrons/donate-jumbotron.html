@@ -37,38 +37,7 @@
             <h1>Help End Big Money Politics</h1>
             <h5>Help us elect candidates committed to fundamental reform in 2016</h5>
             <h2 class="text-orange">Donate In Two Minutes or Less</h2>
-            <div id="donate-form">
-				<style>iframe{width:100%}</style>
-                {% comment %}<iframe id="donate-iframe" src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>{% endcomment %}
-               <script> 
-			   
-			   //check if hash tag exists in the URL
-			   
-			   var amount = 0;
-			   
-				if(window.location.hash) {
-				 
-				 //set the value as a variable, and remove the #
-				 var hash_value = window.location.hash.replace('#', '');
-				 
-				 //show the value with an alert pop-up
-				 amount = hash_value;
-				 
-				}
-				
-				
-				var n = amount.length;
-
-			   
-			   if ( n > 1 ) {
-			   	   document.write('<iframe src="https://mayday.nationbuilder.com/dev#' + amount + '" frameborder="0"></iframe>');
-               } else {
-				   document.write('<iframe src="https://mayday.nationbuilder.com/dev" frameborder="0"></iframe>');
-               };
-               
-               </script>
-                <script>iFrameResize({log:false, checkOrigin:false})</script>
-            </div>
+            {% include form_donate.html %}
         </div>
       </div>
   </div>
