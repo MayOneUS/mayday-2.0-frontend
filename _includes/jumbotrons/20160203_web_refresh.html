@@ -68,6 +68,7 @@
     </div>
     <div class="row">
       <div class="col-lg-6 col-md-6 center-block panel">
+      <div id="join-form">
         <style>iframe{width:100%}</style>
         <iframe src="https://mayday.nationbuilder.com/email_collect_https" scrolling="no" frameBorder="0"></iframe>
         <script>iFrameResize({log:false, checkOrigin:false})</script>
@@ -76,11 +77,12 @@
        
        <div id="members" class="progress-meter"></div>
         <div id="petition" class="progress-meter"></div>
-        <div id="" class="progress-meter"></div>
-        <div id="" class="progress-meter"></div>
+        <div id="donations" class="progress-meter"></div>
+        <div id="volunteers" class="progress-meter"></div>
         
         {% endcomment %}
         
+      </div>
       </div>
     </div>
     <div class="row margin-bottom-lg">
@@ -90,15 +92,3 @@
     </div>
   </div>
 </div>
-
-{% capture jumbotron_signup_js %}
-<script>
-  $(document).ready(function(){
-    var signUpComplete = function(){
-      window.location = '/donate/';
-    };
-    md.signUps.inititalizeBasic('.js-jumbotron-signup', signUpComplete);
-  });
-</script>
-{% endcapture %}
-{% capture footer_scripts %}{{footer_scripts}}{{jumbotron_signup_js}}{% endcapture %}

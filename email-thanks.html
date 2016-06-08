@@ -1,0 +1,20 @@
+---
+layout: default
+title: Thank You
+permalink: /email-thanks/
+---
+{% capture content %}
+{% include jumbotrons/email-thanks-jumbotron.html %}
+
+<div id="rules" class="container-fluid grey" style="padding-top:40px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+      {% include donate_rules.html %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/splash-candidate.html %}
