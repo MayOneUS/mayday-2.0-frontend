@@ -58,15 +58,6 @@
 @media (max-width: 420px){
 }
 </style>
-
-<div class="carousel slide" id="front-page-slider"  data-ride="carousel">
-
-	    <ol class="carousel-indicators text-center center-block">
-    <li data-target="#front-page-slide" data-slide-to="0" class="active"></li>
-    <li data-target="#front-page-slide" data-slide-to="1"></li>
-	  </ol>
-
-    <div class="carousel-inner" role="listbox">
     
     	<div class="jumbotron item active" style="padding:;background-image:url('/images/campaigns/candidates/shultz.jpg');background-position:bottom center;">
           <div class="container">
@@ -85,6 +76,8 @@
             </div>           
           </div>
         </div>
+        
+        {% comment %}
     
         <div class="jumbotron item">
           <div class="container">
@@ -114,7 +107,6 @@
     
 </div>
 
-  {% comment %}
            
            <div id="members" class="progress-meter"></div>
             <div id="petition" class="progress-meter"></div>
