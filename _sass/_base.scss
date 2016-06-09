@@ -164,6 +164,10 @@ $color-orientation: rgb(76, 43, 98);
 	color:$mayday-grey-dark;
 }
 
+.text-grey-light {
+	color:$mayday-grey-light;
+}
+
 .box {
 	padding:20px;
 	border-radius:2px;
@@ -299,4 +303,19 @@ a.btn.btn-mayday.paypal {
 		-ms-transform: skew(0deg, -3deg) ;
 	}
 	
+}
+
+.carousel-indicators {
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+	margin-left: 0;
+    margin-right: 0;
+}
+
+/* TEMPORARY FIX */
+
+iframe#rufous-sandbox {
+    display: none;
 }
