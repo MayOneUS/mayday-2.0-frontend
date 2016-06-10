@@ -8,6 +8,14 @@
   position: relative;
 }
 
+.jumbotron h1 {
+	font-size:50px;
+}
+
+.jumbotron h2 {
+	font-size:35px;
+}
+
 .jumbotron .panel {
 	padding: 0 20px 10px;
 }
@@ -43,7 +51,7 @@
 }
 
 @media (min-width: 768px){
-  /* .jumbotron{padding-top:180px;} */
+  .jumbotron{padding-top:80px;}
 }
 
 @media (max-width: 767px){
@@ -54,21 +62,35 @@
     background-image:none;
     padding-bottom:10px;
   }
+  
+  .jumbotron h1 {
+	  line-height:1;
+	  font-size:40px;
+  }
+  
+  .jumbotron h2 {
+  	font-size:30px;
+	line-height:1;
+  }
+  
+  .jumbotron p.as-if-h5 {
+  	font-size:18px
+  }
+  
 }
 @media (max-width: 420px){
 }
 </style>
     
-    	<div class="jumbotron item active" style="padding:;background-image:url('/images/campaigns/candidates/shultz.jpg');background-position:bottom center;">
+    	<div class="jumbotron" style="background-image:url('/images/campaigns/candidates/shultz.jpg');background-position:bottom center;">
           <div class="container">
             <div class="row">
-              <div class="col-md-12 text-center margin-top-md margin-bottom-lg">
-                <h1><span class="text-yellow">We're Ending Big Money in Politics</span></h1>
-                <h2 class="text-grey-light">Help us defeat Debbie Wasserman Schultz</h2>
+              <div class="col-md-12 margin-top-md margin-bottom-lg">
+                <h1 class="text-center"><span class="text-yellow">We're Ending Big Money in Politics</span></h1>
+                <h2 class="text-center text-grey-light">Help us defeat Debbie Wasserman Schultz</h2>
                <div class="col-sm-10 col-md-7 center-block">
-                    <p class="as-if-h5"><strong>Instead of fighting corruption, the head of the Democratic Party has only enabled lobbyists and big money.</strong></p>
-                    <p class="as-if-h5"><strong>Debbie Wasserman Schultz is part of the problem. Defeating her is part of the solution, but we need your help.</strong></p>
-                    <div class="col-xs-8 center-block margin-bottom-md margin-top-md">
+                    <p class="as-if-h5"><strong>Debbie has only enabled lobbyists and big money while running the Democratic Party. She is part of the problem. Defeating her is part of the solution, but we need your help.</strong></p>
+                    <div class="col-xs-6 center-block margin-bottom-md margin-top-md">
                         <a href="http://act.mayday.us/schultz" class="btn-mayday btn">Help Us</a>
                     </div>
                 </div>
