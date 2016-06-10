@@ -1,7 +1,8 @@
 md.newsFeeds = {};
 (function(newsFeeds) {
+  var blogFeedUrl = services_url + '/blog_posts'
   newsFeeds.renderResults = function (posts, templateName, container, resultLength) {
-    resultLength = resultLength || 10;  
+    resultLength = resultLength || 10;
     posts.forEach(function(post, index) {
       if(post['type'] == 'regular' && index < resultLength){
         post['date'] = maydayDateFormat(post['date']);
@@ -20,7 +21,7 @@ md.newsFeeds = {};
   }
 
   newsFeeds.renderPressReleasesFeed = function(){
-    var pressReleasesFeedUrl= blogFeedUrl +'/press_releases';
+    var pressReleasesFeedUrl = blogFeedUrl + '/press_releases';
     $.getJSON(pressReleasesFeedUrl, function (data) {
       newsFeeds.renderResults(data.posts, 'cards/blog-post', $('#tumblr-press-releases'))
     });
