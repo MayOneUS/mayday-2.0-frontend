@@ -1,0 +1,107 @@
+<style>
+
+.jumbotron{
+	background:#033258;
+	background-image: url('/images/campaigns/candidates/shultz.jpg');
+	background-size:cover;
+	background-position: bottom center;
+	margin-bottom: 0;
+	padding-bottom:100px;
+	padding-top:100px;
+	overflow:hidden;
+	position:relative;
+}
+
+.candidate-info {
+	padding: 40px;
+}
+
+@media only screen and (max-width:625px) {
+	.candidate-info {
+		background-image: url('/images/campaigns/candidates/shultz.jpg');
+		background-size:cover;
+		background-position: bottom center;
+		padding: 0 40px 40px;
+	}
+	
+	.jumbotron {
+		background:#033258;
+	}
+}
+
+.jumbotron .panel {
+	padding:20px;
+}
+
+@media only screen and (max-width:400px) {
+	.jumbotron .panel {
+		padding:10px;
+	}
+}
+
+.jumbotron h1 {
+	font-size:40px;
+	line-height:1;
+}
+.jumbotron h2 {
+	font-size: 30px;
+}
+.jumbotron h5 {
+	font-size:40px;
+	line-height:1;
+}
+
+.jumbotron:after, .jumbotron:before {
+	content:'';
+	display:block;
+	position:absolute;
+	height:30px;
+	background:white;
+	width:100%;
+	height:40px;
+	bottom:-40px;
+	left:0;
+}
+
+.jumbotron:before {
+	transform: skew(0deg, 2deg) ;
+	-webkit-transform: skew(0deg, 2deg) ;
+	-moz-transform: skew(0deg, 2deg) ;
+	-o-transform: skew(0deg, 2deg) ;
+	-ms-transform: skew(0deg, 2deg) ;
+}
+
+.jumbotron:after {
+	transform: skew(0deg, -2deg) ;
+	-webkit-transform: skew(0deg, -2deg) ;
+	-moz-transform: skew(0deg, -2deg) ;
+	-o-transform: skew(0deg, -2deg) ;
+	-ms-transform: skew(0deg, -2deg) ;
+}
+
+</style>
+
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+            <div class="col-md-7 candidate-info">
+                <h2 class="text-yellow" style="font-size: 44px;">{{include.title}}</h2>
+                <p>As Chair of the DNC and a Congresswoman, Debbie Wasserman Schultz enabled big money interests to corrupt our political system.</p>
+                <div class="hidden-xs"> 
+                <p>She:</p>
+                <ul>
+                    <li>Lifted the DNC’s seven year ban on donations from lobbyists and PACs;</li>
+                    <li>Blocked the SEC requiring corporations to disclose political spending to shareholders</li>
+                    <li>Voted against curbing corporations’ ability to form “nonprofits” that conceal their political spending.</li>
+                </ul>
+                </div>
+            </div>
+            <div class="col-md-5 panel">
+            	<h3 class="text-orange text-center we-need-your-help"><span>We Need Your Help</span></h3>
+            	<h4 class="text-center">Donate In Two Minutes or Less</h4>
+                {% include form_donate.html %}
+            </div>
+      </div>
+  </div>
+</div>
+

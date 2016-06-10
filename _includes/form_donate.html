@@ -1,164 +1,33 @@
-<div class="panel action-panel donate">
-  <div class="panel-title">
-    <div class="col-md-12  progress-meter">
-      <ul class="list-unstyled col-md-6 center-block">
-        <li class="active"><span class="step-count">1</span> <i class="fa fa-check"></i></li>
-        <li><i class="fa fa-arrow-right"></i></li>
-        <li id="donate-step-2"><span class="step-count">2</span> <i class="fa fa-check"></i></li>
-        <li><i class="fa fa-arrow-right"></i></li>
-        <li id="donate-step-3"><span class="step-count">3</span> <i class="fa fa-check"></i></li>
-      </ul>
-    </div>
-  </div>
-  <div class="panel-body mayday-inputs">
-    <form class="row margin-top-md" id="js-donate-form">
-      <fieldset class="col-md-12 active">
-        <div class="row">
-          <div class="col-md-12 form-group">
-            <div class="btn-group btn-group-mayday btn-group-flexed donation-amounts" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
-              <label class="btn btn-mayday btn-mayday-clear short" for="donate-10">
-                <input type="radio" id="donate-10" name="donation_amount" value="10" /> $10
-              </label>
-              <label class="btn btn-mayday btn-mayday-clear short" for="donate-35">
-                <input type="radio" id="donate-35" name="donation_amount" value="35" /> $35
-              </label>
-              <label class="btn btn-mayday btn-mayday-clear short" for="donate-50">
-                <input type="radio" id="donate-50" name="donation_amount" value="50" /> $50
-              </label>
-              <label class="btn btn-mayday btn-mayday-clear short active" for="donate-100">
-                <input type="radio" id="donate-100" name="donation_amount" value="100" checked="checked" /> $100
-              </label>
-              <label class="btn btn-mayday btn-mayday-clear short" for="donate-250">
-                <input type="radio" id="donate-250" name="donation_amount" value="250" /> $250
-              </label>
-              <label class="btn btn-mayday btn-mayday-clear short" for="donate-500">
-                <input type="radio" id="donate-500" name="donation_amount" value="500" /> $500
-              </label>
-              <label class="btn btn-mayday btn-mayday-clear short" for="donate-1000">
-                <input type="radio" id="donate-1000" name="donation_amount" value="1000" /> $1000
-              </label>
-              <label class="btn btn-mayday btn-mayday-clear short" for="donate-other">
-                $<input type="radio" id="donate-other" name="donation_amount" value="other" /> <input type="number" name="donation_amount" placeholder="Other" disabled="disabled">
-              </label>
-            </div>
-          </div>
-        </div>
+<div id="donate-form">
+	<style>iframe{width:100%}</style>
+    {% comment %}<iframe id="donate-iframe" src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>{% endcomment %}
+   <script> 
+   
+   //check if hash tag exists in the URL
+   
+   var amount = 0;
+   
+    if(window.location.hash) {
+     
+     //set the value as a variable, and remove the #
+     var hash_value = window.location.hash.replace('#', '');
+     
+     //show the value with an alert pop-up
+     amount = hash_value;
+     
+    }
+    
+    
+    var n = amount.length;
 
-        <div class="row margin-bottom-sm margin-top-xs">
-          <div class="col-md-12 form-group">
-            <div class="btn-group btn-group-mayday btn-group-flexed donation-recurring" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
-              <label class="btn btn-mayday btn-mayday-white short active " for="recurring-no">
-                <input type="radio" id="recurring-no" name="recurring" value="false" checked="checked" /> No
-              </label>
-              <label class="btn btn-mayday btn-mayday-white short" for="recurring-no">
-                <input type="radio" id="recurring-no" name="recurring" value="true" /> Yes
-                <small>donate this amount every month</small>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 form-group">
-            <a href="" title="" class="btn btn-mayday btn-mayday-blue-medium">Continue</a>
-          </div>
-        </div>
-      </fieldset>
-      <fieldset class="col-md-12 hidden">
-
-        <h3>Donor Information</h3>
-
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label class="control-label sr-only" for="person[first_name]">First Name</label>
-            <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name" required="required">
-          </div>
-
-          <div class="form-group col-md-6">
-            <label class="control-label sr-only" for="person[last_name]">Last Name</label>
-            <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name" required="required">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="form-group col-md-8">
-            <label class="control-label sr-only" for="person[email]">Email Address</label>
-            <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="required">
-          </div>
-
-          <div class="form-group col-md-4 {% if include.hide_volunteer %}margin-bottom-0{% endif %}">
-            <label class="control-label sr-only" for="person[zip]">ZIP</label>
-            <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="required">
-          </div>
-        </div>
-
-        <h3>Employment Information</h3>
-        <p>Federal law requires us to collect your employer and occupation information.</p>
-
-        <div class="row">
-          <div class="form-group col-md-12 text-left">
-            <label class="checkbox-inline" for="person[is_retired]">
-              <input type="checkbox" name="person[is_retired]" id="person[is_retired]" value="true"> Check here if you are retired or not employed.
-            </label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="form-group col-md-12">
-            <label class="control-label sr-only" for="person[remote_fields][occupation]">Occupation</label>
-            <input id="person[remote_fields][occupation]" name="person[remote_fields][occupation]" type="text" placeholder="Occupation" required="required">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="form-group col-md-12">
-            <label class="control-label sr-only" for="person[remote_fields][employer]">Employer</label>
-            <input id="person[remote_fields][employer]" name="person[remote_fields][employer]" type="text" placeholder="Employer" required="required">
-          </div>
-        </div>
-
-        <h3>Payment Method</h3>
-        <div class="row margin-bottom-sm">
-          <div class="form-group col-md-12">
-            <div class="btn-group btn-group-mayday btn-group-flexed payment-method" data-toggle="buttons" role="group" aria-label="Pick your donation amount">
-              <label class="btn btn-mayday btn-mayday-white" for="paypal">
-                <input type="radio" id="paypal" name="payment_method" value="paypal" /> <i class="fa fa-paypal"></i> Paypal
-              </label>
-              <label class="btn btn-mayday btn-mayday-white active" for="credit-card">
-                <input type="radio" id="credit-card" name="payment_method" value="credit" /> <i class="fa fa-credit-card-alt"></i> Card
-              </label>
-              <label class="btn btn-mayday btn-mayday-white" for="bitcoin">
-                <input type="radio" id="bitcoin" name="payment_method" value="bitcoin" /> <i class="fa fa-bitcoin"></i> BitCoin
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 form-group">
-            <a href="" title="" class="btn btn-mayday btn-mayday-blue-medium">Continue</a>
-          </div>
-        </div>
-      </fieldset>
-      <fieldset class="col-md-12 hidden text-center">
-        <h2>Loading third party payment provider</h2>
-        <p><i class="fa fa-refresh fa-4x fa-spin text-orange"></i></p>
-      </fieldset>
-    </form>
-  </div>
+   
+   if ( n > 1 ) {
+       document.write('<iframe src="https://mayday.nationbuilder.com/dev#' + amount + '" frameborder="0"></iframe>');
+   } else {
+       document.write('<iframe src="https://mayday.nationbuilder.com/dev" frameborder="0"></iframe>');
+   };
+   
+   </script>
+    <script>iFrameResize({log:false, checkOrigin:false})</script>
+    <p style="margin:0;text-transform:uppercase;font-size:14px;" class="text-grey-dark">or donate with <a href="https://mayday.nationbuilder.com/donate_paypal" class="btn btn-mayday paypal"><img src="/images/paypal-trans.png" height="16"/></a></p>
 </div>
-
-{% capture page_specific_javascript %}
-<script src="https://checkout.stripe.com/checkout.js"></script>
-{% javascript _includes/donate_form.js %}
-<script>
-  $(document).ready(function(){
-    md.donateForm.initialize('#js-donate-form', function(){
-      // action for when donation is complete.
-      //window.location = '/some-redirect/';
-    });
-  });
-</script>
-{% endcapture %}
-<!-- following line combines page scripts into footer scripts, below loaded libraries -->
-{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}

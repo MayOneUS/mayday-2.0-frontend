@@ -154,49 +154,17 @@
 	 }
 
   }
-  #donate-front-form {
-  	margin-top:-140px;
-	padding-top:50px;
-	text-align:center;
-	
-	h3 {
-		color:white;
-		margin-bottom:10px;
-		padding-bottom:10px;
-		border-bottom: 2px solid $mayday-grey-medium;
-		display:inline-block;
-	}
-	
-	.container {
-		margin:0 auto;
-	}
-	
-	.btn-group.btn-group-mayday {
-		width: 100%;
-		text-align: center;
-
-	}
-	
-	.btn {
-		background:$mayday-blue-dark;
-		color:white;
-		display:inline-block;
-		float:none;
-		margin:0 0 20px;
-		
-		&.green {
-			background:$mayday-green-light;
-		}
-		
-		&:hover {
-			background:$mayday-blue-light;
-		}
-	}
-	
-  }
   
   #blog-snippets {
   	padding-top:50px;
+  }
+  
+  #pre-donate-form {
+	margin-top:-140px;
+	padding-top:50px;
+  	&:after {
+	display:none;
+	}
   }
 
 }
