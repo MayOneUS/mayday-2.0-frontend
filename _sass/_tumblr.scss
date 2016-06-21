@@ -9,13 +9,30 @@ article{
     div:last-child, div:last-child p,
     div:last-child ul, div:last-child ol,
     div:last-child blockquote {margin-bottom: 0;}
-      img {margin-bottom: 20px;padding: 10px;}
-      &.post-type-text ol li {
-		  list-style-type: decimal;
-			padding-left: 10px;
-			margin: 10px;
-		  }
-        &.post-type-text ol ol li {list-style-type: lower-latin;}
+	
+    img {margin-bottom: 20px;padding: 10px;}
+	
+    &.post-type-text ol li {
+		list-style-type: decimal;
+		padding-left: 10px;
+		margin: 10px;
+	}
+	
+	&:post-type-text ul li {
+		font-size: 16px;
+		line-height: 24px;
+		margin: 15px 20px;
+		
+		&:before {
+			display:inline-block;
+			content:'\2022';
+			color:$mayday-orange-medium;
+			text-indent: -20px;
+			font-size:20px
+		}
+	}
+	
+    &.post-type-text ol ol li {list-style-type: lower-latin;}
     &.post-type-photoset .html_photoset {background: #eee;margin-bottom: 20px;padding: 10px;}
     &.post-type-link .link-wrap {margin-bottom: 20px;}
     &.post-type-chat .label {color: #333;font-weight: bold;}
