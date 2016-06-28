@@ -88,28 +88,29 @@
       <div class="col-md-11 center-block">
       
         <div class="col-md-8 text-yellow">
-          <h1 class="text-yellow margin-bottom-xs">Help End Big Money Politics</h1>
-          <h4 class="text-grey-light">Be part of the new American Revolution</h4>
-          <a class="button btn btn-mayday margin-bottom-sm" style="display:inline-block;width:auto;" href="https://mayday.nationbuilder.com/contribute4th">Donate Today &#8594;</a>
+          <h1 class="text-yellow margin-bottom-sm">Help us reduce the influence of money in politics.</h1>
+          <a class="button btn btn-mayday margin-bottom-sm" style="display:inline-block;width:auto;" href="/donate">Pledge Now &#8594;</a>
         </div>
              
         <div class="col-md-4 text-white">
           <div>
-            <h1 class="margin-bottom-0">123</h1>
+            <h1 class="margin-bottom-0">755</h1>
             <h4 class="text-grey-light margin-bottom-sm">donors</h4>
           </div>
           <div>
-            <h1 class="margin-bottom-0 text-yellow">$1234</h1>
+            <h1 class="margin-bottom-0 text-yellow">$39,093</h1>
             <h4 class="text-grey-light margin-bottom-sm">raised of our $50,000 goal</h4>
           </div>
+          
           <div>
-          {% assign deadline = '2016-06-30 00:00:01 -0800' | date: '%s' %}
+          {% assign deadline = '2016-06-30 00:00:01 0000' | date: '%s' %}
           {% assign today = 'now' | date: '%s' %}
             <h1 class="margin-bottom-0">
               {{ deadline | minus: today | date: '%d' | uri_encode | round}}
             </h1>
             <h4 class="text-grey-light margin-bottom-sm">Days left</h4>
           </div>
+          
         </div>
         
       </div>
