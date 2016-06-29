@@ -57,12 +57,13 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-50367295-1', 'auto', {allowLinker: true});
-  ga('send', 'pageview');
   
   // cross domain tracking
   
   ga('require', 'linker');
-  ga('linker:autoLink', ['mayday.nationbuilder.com', 'act.mayday.us', 'mayday.us']);
+  ga('linker:autoLink', ['mayday.nationbuilder.com', 'act.mayday.us', 'mayday.us'], false, true);
+  
+  ga('send', 'pageview');
 
   </script>
   
