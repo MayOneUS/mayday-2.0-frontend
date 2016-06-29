@@ -1,16 +1,23 @@
 <style>
 
 .jumbotron{
-	background-image: url('/images/campaigns/jumbotron-donate.jpg');
+	background:#033258;
+	background-image: url('/images/campaigns/Mayday-Header-4th-of-July-1844x771v1.jpg');
 	background-size:cover;
-	background-position:center;
+	background-position: bottom center;
 	margin-bottom: 0;
-	padding-bottom:70px;
+	padding-bottom:100px;
 	padding-top:100px;
+	overflow:hidden;
+	position:relative;
+}
+
+.candidate-info {
+	padding: 20px 60px;
 }
 
 .jumbotron .panel {
-	padding:40px;
+	padding:20px;
 }
 
 @media only screen and (max-width:400px) {
@@ -21,11 +28,42 @@
 
 .jumbotron h1 {
 	font-size:40px;
-	color:#00467e;
 	line-height:1;
 }
 .jumbotron h2 {
 	font-size: 30px;
+}
+.jumbotron h5 {
+	font-size:40px;
+	line-height:1;
+}
+
+.jumbotron:after, .jumbotron:before {
+	content:'';
+	display:block;
+	position:absolute;
+	height:30px;
+	background:white;
+	width:100%;
+	height:40px;
+	bottom:-40px;
+	left:0;
+}
+
+.jumbotron:before {
+	transform: skew(0deg, 2deg) ;
+	-webkit-transform: skew(0deg, 2deg) ;
+	-moz-transform: skew(0deg, 2deg) ;
+	-o-transform: skew(0deg, 2deg) ;
+	-ms-transform: skew(0deg, 2deg) ;
+}
+
+.jumbotron:after {
+	transform: skew(0deg, -2deg) ;
+	-webkit-transform: skew(0deg, -2deg) ;
+	-moz-transform: skew(0deg, -2deg) ;
+	-o-transform: skew(0deg, -2deg) ;
+	-ms-transform: skew(0deg, -2deg) ;
 }
 
 </style>
@@ -33,13 +71,20 @@
 <div class="jumbotron">
   <div class="container">
       <div class="row">
-            <div class="col-sm-10 col-md-8 col-lg-6 panel">
-            <h1>Help Us Meet Our Goal</h1>
-            <h5>Contribute directly to hiring organizers on the ground and run digital ads to support the reformers needed to change dysfunctional politics and reclaim our democracy from big money</h5>
-            <h2 class="text-orange">Donate In Two Minutes or Less</h2>
-            {% include form_donate.html %}
-        </div>
+            
+            <div class="col-md-5 panel margin-top-md">
+            	<h3 class="text-orange text-center we-need-your-help"><span>Help Us Meet Our Goal</span></h3>
+            	<h4 class="text-center">Donate In Two Minutes or Less</h4>
+                {% include form_donate.html %}
+            </div>
+            
+            <div class="col-md-7 candidate-info">
+                <h2 class="text-yellow" style="font-size: 44px;">A new American Revolution!</h2>
+                <h4 class="text-grey-light">Help raise $50,000 by June 30th!</h4>
+                <p><strong>Contribute </strong><em>directly</em> <strong>to hiring organizers on the ground to support the superhero reformers we need to change the course of history and reclaim our democracy for the people. </strong></p>
+                <p>Be part of the movement to launch a new American Revolution! </p>
+            </div>
+            
       </div>
   </div>
 </div>
-
