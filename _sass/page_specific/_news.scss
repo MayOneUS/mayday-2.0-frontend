@@ -22,8 +22,11 @@
     padding:0;
   }
   li{
-    border-bottom:1px solid $mayday-grey-medium;
     margin-bottom:15px;
+    
+    p {
+      margin:0;
+    }
 
     &:last-child{
       margin-bottom:0;
