@@ -90,23 +90,24 @@
         <div class="col-md-8 text-yellow">
           <h1 class="text-yellow margin-bottom-sm">Help us reduce the influence of money in politics.</h1>
           <a class="button btn btn-mayday margin-bottom-sm" style="display:inline-block;width:auto;" href="/donate">Pledge Now &#8594;</a>
+          <h4 class="text-grey-light">We reached our $50k June goal. Now help us reach our July 4th Stretch Goal</h4>
         </div>
              
         <div class="col-md-4 text-white">
           <div>
-            <h1 class="margin-bottom-0">1,111</h1>
+            <h1 class="margin-bottom-0">1,229</h1>
             <h4 class="text-grey-light margin-bottom-sm">donors</h4>
           </div>
           <div>
-            <h1 class="margin-bottom-0 text-yellow">$52,241</h1>
-            <h4 class="text-grey-light margin-bottom-sm">raised of our $50,000 goal</h4>
+            <h1 class="margin-bottom-0 text-yellow">$56,046</h1>
+            <h4 class="text-grey-light margin-bottom-sm">raised of our $65,000 July 4th Stretch Goal</h4>
           </div>
           
           <div>
-          {% assign deadline = '2016-06-30 00:00:01 0000' | date: '%s' %}
+          {% assign deadline = '2016-07-04 00:00:01 0000' | date: '%s' %}
           {% assign today = 'now' | date: '%s' %}
             <h1 class="margin-bottom-0">
-              0
+              {{ deadline | minus: today | date: '%d' | uri_encode | round}}
             </h1>
             <h4 class="text-grey-light margin-bottom-sm">Days left</h4>
           </div>
