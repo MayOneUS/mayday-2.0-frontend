@@ -104,12 +104,12 @@
           </div>
           
           <div>
-          {% assign deadline = '2016-07-04 00:00:01 0000' | date: '%s' %}
+          {% assign deadline = '2016-07-04 00:00:01' | date: '%s' %}
           {% assign today = 'now' | date: '%s' %}
             <h1 class="margin-bottom-0">
-              {{ deadline | minus: today | date: '%d' | uri_encode | round}}
+              {{ deadline | minus: today | times: 0.00027 | uri_encode | round}}
             </h1>
-            <h4 class="text-grey-light margin-bottom-sm">Days left</h4>
+            <h4 class="text-grey-light margin-bottom-sm">Hours remaining</h4>
           </div>
           
         </div>
