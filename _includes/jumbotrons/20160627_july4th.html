@@ -95,11 +95,11 @@
              
         <div class="col-md-4 text-white">
           <div>
-            <h1 class="margin-bottom-0">1,314</h1>
+            <h1 class="margin-bottom-0">1,377</h1>
             <h4 class="text-grey-light margin-bottom-sm">donors</h4>
           </div>
           <div>
-            <h1 class="margin-bottom-0 text-yellow">$58,940</h1>
+            <h1 class="margin-bottom-0 text-yellow">$61,944</h1>
             <h4 class="text-grey-light margin-bottom-sm">raised of our $65,000 July 4th Stretch Goal</h4>
           </div>
           
@@ -107,7 +107,7 @@
           {% assign deadline = '2016-07-05 00:00:01' | date: '%s' %}
           {% assign today = 'now' | date: '%s' %}
             <h1 class="margin-bottom-0">
-              {{ deadline | minus: today | times: 0.00027 | uri_encode | round}}
+              0<!--{{ deadline | minus: today | times: 0.00027 | uri_encode | round}}-->
             </h1>
             <h4 class="text-grey-light margin-bottom-sm">Hours remaining</h4>
           </div>
