@@ -1,0 +1,33 @@
+<div id="donate-form">
+	<style>iframe{width:100%}</style>
+    {% comment %}<iframe id="donate-iframe" src="https://mayday.nationbuilder.com/dev-recurring" scrolling="no" frameBorder="0"></iframe>{% endcomment %}
+   <script> 
+   
+   //check if hash tag exists in the URL
+   
+   var amount = 0;
+   
+    if(window.location.hash) {
+     
+     //set the value as a variable, and remove the #
+     var hash_value = window.location.hash.replace('#', '');
+     
+     //show the value with an alert pop-up
+     amount = hash_value;
+     
+    }
+    
+    
+    var n = amount.length;
+
+   
+   if ( n > 1 ) {
+       document.write('<iframe src="https://mayday.nationbuilder.com/dev-recurring#' + amount + '" frameborder="0"></iframe>');
+   } else {
+       document.write('<iframe src="https://mayday.nationbuilder.com/dev-recurring" frameborder="0"></iframe>');
+   };
+   
+   </script>
+    <script>iFrameResize({log:false, checkOrigin:false})</script>
+    <p style="margin:0;text-transform:uppercase;font-size:14px;" class="text-grey-dark">or donate with <a href="https://mayday.nationbuilder.com/donate_paypal" class="btn btn-mayday paypal"><img src="/images/paypal-trans.png" height="16"/></a></p>
+</div>
