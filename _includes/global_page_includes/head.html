@@ -17,23 +17,20 @@
   {% assign page_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
   <link rel="shortcut icon" href="{{ root_path }}/favicon.ico"/>
   <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="{{ root_path }}/images/mayday_og.jpg" name="twitter:image:src"/>
   <meta content='@maydayus' name="twitter:site"/>
+  <meta content="{{ root_path }}/images/2016_mayday-logo-shield.png" name="twitter:image:src"/>
+  <link rel="alternate" type="application/rss+xml" title="Official Blog: MAYDAY.US" href="http://blog.mayday.us/rss" />
 
   {% assign meta_content_size = page.meta_content | size %}
   {% if meta_content_size < 2 %}
     <meta property="og:url" content="{{ page_url }}"/>
-    <meta property="og:image" content="{{ site.url }}/images/M_shield_callout_box.svg"/>
-    <meta property="og:title" content="MAYDAY: Democracy needs an upgrade. Act now."/>
-    <meta property="og:description" content="Money has corrupted politics. We&rsquo;re a Crowdfunded SuperPAC to end all SuperPACs -- Join us!"/>
-    <meta content="summary_large_image" name="twitter:card"/>
-    <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
-    <meta content='@mayday' name="twitter:site"/>
+    <meta property="og:image" content="{{ site.url }}/images/2016_mayday-logo-shield_square.png"/>
+    <meta property="og:title" content="MAYDAY: End Big Money Politics"/>
+    <meta property="og:description" content="We are a grassroots movement fighting to fix our broken political system. Building teams at the local level, we hold status quo politicians accountable at the ballot box. Help us elect candidates committed to fundamental reform!"/>
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
     <link rel="canonical" href="{{page_url}}" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   {% else %}
     {{ page.meta_content }}
   {% endif %}
@@ -51,8 +48,8 @@
       {% else %}
         '//services.mayday.us'
       {% endcase %};
-    window.blogFeedUrl = '{{site.blog_feed_url}}';
   </script>
+  <script src="/js/iframeResizer.min.js"></script>
   {% if jekyll.environment == 'development' %}
     <link rel="stylesheet" href="{{ root_path }}{{ '/css/development.css' }}" />
   {% else %}
@@ -63,5 +60,9 @@
     <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" /> -->
   {% endif %}
   <link rel="stylesheet" href="{{ root_path }}{{ '/css/main.css' | sass_cache_bust  }}" />
+  {% if page.title == 'National Progress' %}
+      <script src='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
+    {% endif %}
   {{ custom_css }}
 </head>

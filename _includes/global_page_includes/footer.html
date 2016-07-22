@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col-md-10 center-block text-center">
         <div class="disclaimer-box">Paid for by Mayday PAC. Not authorized by any candidate or candidate's committee. MAYDAY.US</div>
-        <div class="copyright"><i class="fa fa-creative-commons"></i> 2015 Mayday PAC. Some rights reserved. <a href="/privacy-policy/">Privacy Policy</a>. <a href="/attribution/">Attribution</a>.</div>
+        <div class="copyright"><i class="fa fa-creative-commons"></i> {{ 'now' | date: "%Y" }} Mayday PAC. Some rights reserved. <a href="/privacy-policy/">Privacy Policy</a>. <a href="/attribution/">Attribution</a>.</div>
         <div class="creative-commons"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="//i.creativecommons.org/l/by/3.0/80x15.png"/></a></div>
       </div>
     </div>
@@ -59,9 +59,27 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
+  
+  	<!-- Google Code for Website Visitors - New Site -->
+    <!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 968755289;
+    var google_conversion_label = "0wvsCI3CgmcQ2ZD4zQM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/968755289/?value=1.00&amp;currency_code=USD&amp;label=0wvsCI3CgmcQ2ZD4zQM&amp;guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
+  
 {% endif %}
 
 {% capture asset_path_string %}{% asset_path app %}{% endcapture %}
 <script type="text/javascript" src="{{root_path }}{{ asset_path_string | js_cache_bust }}"></script>
-
 {{ footer_scripts }}

@@ -1,0 +1,77 @@
+<style>
+
+.jumbotron{
+	background-image: url('/images/campaigns/jumbotron-donate.jpg');
+	background-size:cover;
+	background-position:center;
+	margin-bottom: 0;
+	padding-bottom:70px;
+	padding-top:100px;
+}
+
+.jumbotron .panel {
+	padding:40px;
+}
+
+@media only screen and (max-width:400px) {
+	.jumbotron .panel {
+		padding:10px;
+	}
+}
+
+.jumbotron h1 {
+	font-size:40px;
+	color:#00467e;
+	line-height:1;
+}
+.jumbotron h2 {
+	font-size: 30px;
+}
+
+</style>
+
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+            <div class="col-sm-10 col-md-8 col-lg-6 panel">
+            <h1>Thank you!</h1>
+            <h3>Now let's do this.</h3>
+            <h5>Pitch in $27 toward a political revolution the likes of which this country has <u>never</u> seen!</h5>
+            <h2 class="text-orange">It Takes Two Minutes or Less</h2>
+            <div id="donate-form">
+				<style>iframe{width:100%}</style>
+                {% comment %}<iframe id="donate-iframe" src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>{% endcomment %}
+               <script> 
+			   
+			   //check if hash tag exists in the URL
+			   
+			   var amount = 0;
+			   
+				if(window.location.hash) {
+				 
+				 //set the value as a variable, and remove the #
+				 var hash_value = window.location.hash.replace('#', '');
+				 
+				 //show the value with an alert pop-up
+				 amount = hash_value;
+				 
+				}
+				
+				
+				var n = amount.length;
+
+			   
+			   if ( n > 1 ) {
+			   	   document.write('<iframe src="https://mayday.nationbuilder.com/dev#' + amount + '" frameborder="0"></iframe>');
+               } else {
+				   document.write('<iframe src="https://mayday.nationbuilder.com/dev" frameborder="0"></iframe>');
+               };
+               
+               </script>
+                <script>iFrameResize({log:false, checkOrigin:false})</script>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+

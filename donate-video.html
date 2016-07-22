@@ -1,0 +1,37 @@
+---
+layout: default
+title: Donate
+permalink: /donate-video/
+---
+{% capture content %}
+{% include jumbotrons/donate-video-jumbotron.html title="Donate" %}
+
+
+<div class="donate-page container">
+<h3 class="text-orange text-center">Donate In Two Minutes or Less</h3>
+  <div class="row" style="padding:0 40px;">
+  	<div class="col-sm-1 col-md-2 col-lg-3"></div>
+    <div class="col-sm-10 col-md-6 col-lg-6">
+        <div id="donate-form">
+			<style>iframe{width:100%}</style>
+            <iframe src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>
+            <script>iFrameResize({log:false, checkOrigin:false})</script>
+        </div>
+    </div>
+    <div class="col-sm-1 col-md-2 col-lg-3"></div>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="container-fluid page-panel grey">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+      {% include donate_rules.html %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endcapture %}
+
+{% include sub_layouts/splash.html %}

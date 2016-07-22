@@ -3,45 +3,41 @@ layout: default
 title: Thank You
 permalink: /donate-thanks/
 ---
-{% capture content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 center-block">
-      <h1 class="mayday-headline-smaller text-center margin-bottom-sm">Thank you for your donation!</h1>
 
-      <div class="panel action-panel with-shield mayday-inputs">
-        <div class="panel-icon">
-          <img src="/images/M_shield_callout_box.svg" class="img-responsive" alt="">
-          <div class="fade-line hidden-xs hidden-sm"></div>
+{% capture content %}
+{% include jumbotrons/donate-thanks-jumbotron.html title="Donate" %}
+
+{% comment %}
+
+<div class="donate-page container">
+<h3 class="text-orange text-center">Donate In Two Minutes or Less</h3>
+  <div class="row" style="padding:0 40px;">
+  	<div class="col-sm-1 col-md-2 col-lg-3"></div>
+    <div class="col-sm-10 col-md-6 col-lg-6">
+        <div id="donate-form">
+			<style>iframe{width:100%}</style>
+            <iframe src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>
+            <script>iFrameResize({log:true, checkOrigin:false})</script>
         </div>
-        <div class="panel-body mayday-inputs">
-          <h2>Now, Invite your friends</h2>
-          <div class="row">
-            <div class="col-md-4 col-sm-4">
-              <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/join-fight/" target="_blank" class="btn btn-mayday btn-share-center facebook">
-                <span class="text"><i class="fa fa-facebook"></i></span>
-              </a>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <a href="https://twitter.com/home?status=Ready%20to%20fight%20corruption%20with%20new%20%40MAYDAYUS%20CEO%20%40ZephyrTeachout%3F%20Donate%20today%20for%20political%20equality%3A%20https%3A%2F%2Fmayday.us%2Fjoin-fight%2F" target="_blank" class="btn btn-mayday btn-share-center twitter">
-                <span class="text"><i class="fa fa-twitter"></i></span>
-              </a>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <a href="mailto:?Subject=Zephyr%20Teachout%20and%20Team%20MAYDAY%20need%20our%20help.&body=Hi!%0A%0AI%E2%80%99m%20ready%20to%20help%20fight%20campaign%20corruption%2C%20and%20I%20hope%20you%20are%20too.%20%0AZephyr%20Teachout%20just%20became%20Team%20MAYDAY%E2%80%99s%20new%20CEO%2C%20and%20she%E2%80%99s%20ready%20to%20lead%20the%20charge%20to%20empower%20Americans%20like%20you%20and%20me.%20I%20just%20donated%20to%20the%20movement%20to%20make%20sure%20Congress%20hears%20our%20voices%20loud%20and%20clear%20and%20to%20fundamentally%20change%20the%20way%20campaigns%20are%20financed.%20%20%0A%0ATell%20Zephyr%20and%20the%20team%20that%20you%E2%80%99re%20committed%20to%20political%20equality.%20Only%20together%20can%20fight%20the%20biggest%20civil%20rights%20battle%20of%20our%20time%20-%20giving%20Americans%20clean%20elections.%20Thanks%20in%20advance!%20https%3A%2F%2Fmayday.us%2Fjoin-fight%2F%0A%0A%0A%0A" class="btn btn-mayday btn-share-center">
-                <span class="text"><i class="fa fa-envelope-o"></i></span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div><!--  close panel -->
+    </div>
+    <div class="col-sm-1 col-md-2 col-lg-3"></div>
+  </div>
+</div><!-- END .donate-page.container -->
+
+<div id="rules" class="container-fluid page-panel grey">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+      {% include donate_rules.html %}
+      </div>
     </div>
   </div>
 </div>
+
+{% endcomment %}
+
 {% endcapture %}
 
-{% include sub_layouts/default_layout.html %}
-
-
+{% include sub_layouts/splash.html %}
 
 

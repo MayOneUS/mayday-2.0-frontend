@@ -8,7 +8,8 @@ bodyClass: index-page
 {% capture content %}
 <div id="index">
   {% include jumbotrons/20160203_web_refresh.html %}
-  <div class="container">
+  {% comment %}
+
     <div class="row campaign-actions margin-bottom-xl text-center">
       <h2 class="sr-only">Take Action</h2>
       <div class="col-sm-4">
@@ -45,12 +46,129 @@ bodyClass: index-page
         <h2 class="as-if-h3 text-center margin-bottom-xs">Latest from our blog</h2>
         <p class="byline small text-center margin-bottom-md"><a href="http://blog.mayday.us/" title="" class="text-grey-medium">More from our Blog</a></p>
         <div class="row">
-          <ul class="blog-listings" id="">
+          <ul class="blog-listings" id="#blog-listings">
           </ul>
         </div>
       </div>
     </div>
   </div>
+
+  {% endcomment %}
+
+	{% comment %} SECTION 2 - Video + Social Media + Plan Link {% endcomment %}
+
+  <div class="homepage-panel">
+  	<div class="container">
+      <div class="row">
+      <h2 class="text-center text-blue-dark">We have a plan to get democracy back on track</h2>
+      	<div class="col-md-2"></div>
+      	<div class="col-md-8">
+        	<div class="videoWrapper">
+        		<iframe src="https://www.youtube.com/embed/a6x_TDog85k?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        	</div>
+            <div class="page-panel grey" style="padding:20px;">
+            <h4>Ending Big Money Politics</h4>
+            <p>The Mayday Political Action Committee is <a href="/donate">crowdsourcing the money it needs</a> to elect candidates committed to fundamental reform by 2016.</p>
+            <p><a href="/the-plan">This is our first essential step.</a></p>
+            </div>
+            <div class="row" style="margin:20px 0;">
+                <div class="col-md-6 col-sm-6">
+                  <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/" target="_blank" class="btn btn-mayday btn-share-center facebook">
+                    <span class="text"><i class="fa fa-facebook"></i></span>
+                  </a>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <a href="https://twitter.com/home?status=Ready%20to%20fight%20corruption%20with%20me%3F%20Donate%20today%20for%20political%20equality%3A%20https%3A%2F%2Fmayday.us%2F" target="_blank" class="btn btn-mayday btn-md-wide btn-share-center twitter">
+                    <span class="text"><i class="fa fa-twitter"></i></span>
+                  </a>
+                </div>
+          	</div>
+            <div class="row" style="margin:20px 0;">
+            	<a class="btn btn-mayday" href="/the-plan">See Our Plan</a>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+  	</div>
+  </div>
+
+  {% comment %} SECTION 3 - Fundraise Secion {% endcomment %}
+
+    <div class="homepage-panel front-donate grey">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-2"></div>
+            <div class="col-md-8">
+
+                <h2 class="text-center text-blue-dark">We are a crowdfunded Super PAC that wants to end all Super PACs</h2>
+
+                <p class="text-center"><strong><span class="text-orange">Ironic?</span><span class="text-blue-medium"> Yes. Embrace the irony.</span></strong></p>
+
+                <p class="text-center">We’ve helped one reformer win his primary already this year, and are in the process of announcing our 2016 strategy and goals. Stay tuned, but <strong>we still need your help now:</strong></p>
+            </div>
+        <div class="col-md-2"></div>
+
+
+       </div>
+  	</div>
+  </div>
+
+
+  {% comment %} SECTION 3.5 - Front Page Donate Form {% endcomment %}
+
+  <div id="donate-front-form">
+  <div class="container row">
+  	<div class="col-xs-1 col-sm-2 col-md-2"></div>
+        <div class="col-xs-10 col-sm-8 col-md-8 box box-blue-medium">
+        	<h3 class="text-center">Donate to our Campaign</h3>
+            <form class="mayday-inputs js-donate">
+                <fieldset>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                      	<div class="col-xs-6 col-sm-6 col-md-2">
+                          <a class="btn btn-mayday" href="/donate#10">$10</a>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-2">
+                          <a class="btn btn-mayday" href="/donate#35">$35</a>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-2">
+                          <a class="btn btn-mayday" href="/donate#50">$50</a>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-2">
+                         	<a class="btn btn-mayday" href="/donate#100">$100</a>
+                         </div>
+                         <div class="col-xs-12 col-sm-12 col-md-4">
+                          	<a class="btn btn-mayday green" href="/donate">Donate</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+          <div class="col-xs-1 col-sm-2 col-md-2"></div>
+      </div>
+  </div>
+
+  {% comment %} SECTION 4 - Our Blog {% endcomment %}
+
+  <div id="blog-snippets" class="homepage-panel">
+    <div class="container">
+      <div class="row">
+      	<h2 class="as-if-h3 text-center margin-bottom-xs">Latest from our blog</h2>
+        <p class="byline small text-center margin-bottom-md"><a href="http://blog.mayday.us/" title="" class="text-grey-medium">More from our Blog</a></p>
+        <div class="row">
+          <ul class="blog-listings" id="blog-listings">
+          </ul>
+        </div>
+      </div>
+  	</div>
+  </div>
+
+  {% comment %} SECTION 5 - In The News + Social Media Again {% endcomment %}
+
   <div class="homepage-panel grey with-supporters">
     <div class="container">
       <div class="row">
@@ -58,7 +176,7 @@ bodyClass: index-page
           <h2 class="as-if-h4 text-center text-grey-medium">In the news <i class="fa fa-caret-right"></i></h2>
           <div class="row">
             <div class="col-md-12">
-              <img class="center-block margin-bottom-xs" alt="Matt Miller, Washington Post Opinions" src="/images/news-logos/logo-forbes-73x19.png">
+              <img class="center-block margin-bottom-xs" alt="Matt Miller, Washington Post Opinions" src="/images/news-logos/logo-washington-post-164x25.png">
               <p class="byline small">&ldquo;It&rsquo;s an ingenious plan to make the drive for small-dollar publicly funded elections a central issue in 2016. With a little luck... idea could help save the republic.&rdquo;</p>
             </div>
           </div>
@@ -70,7 +188,7 @@ bodyClass: index-page
           </div>
           <div class="row">
             <div class="col-md-12">
-              <img class="center-block margin-bottom-xs" alt="Ralph Benko, Forbes Opinion" src="/images/news-logos/logo-washington-post-164x25.png">
+              <img class="center-block margin-bottom-xs" alt="Ralph Benko, Forbes Opinion" src="/images/news-logos/logo-forbes-73x19.png">
               <p class="byline small">&ldquo;The mortal struggle at hand today is not between the right and the left. It is not between Republicans and Democrats. It is not between the Congress and the president. It is between us (currently outsiders to our own government) voters and the Washington Insiders.&rdquo;</p>
             </div>
           </div>
@@ -86,12 +204,21 @@ bodyClass: index-page
       </div>
     </div>
   </div>
+
+  {% comment %}
+
   <div class="container">
     <h3 class="margin-top-xl margin-bottom-lg text-center">What can you do right now?</h3>
     <div class="row">
       <div class="col-md-6">
         <div class="col-md-12 closing-action-panel signup">
+
           <h3 class="as-if-h1"><span>1</span> Sign Up</h3>
+
+          <style>iframe{width:100%}</style>
+                        <iframe src="http://act.mayday.us/email_collect" scrolling="no" frameBorder="0"></iframe>
+                    <script>iFrameResize({log:true, checkOrigin:false})</script>
+
           <p class="byline small">Be part of the movement to take our democracy back.<br class="hidden-xs hidden-sm"/><br  class="hidden-xs hidden-sm"/></p>
           <form class="mayday-inputs white-inputs js-signup">
             <input type="hidden" name="template_id" value="20160215_homepage_signup">
@@ -116,13 +243,15 @@ bodyClass: index-page
               </div>
             </fieldset>
           </form>
+
         </div>
       </div>
 
       <div class="col-md-6">
         <div class="md-col-12 closing-action-panel donate">
           <h3 class="as-if-h1"><span>2</span> Donate</h3>
-          <p class="byline small">We are driven by passion and unfortunately, your dollars. We're funded 100% by folks like you and need resources to keep up the fight.</p>
+          <p class="byline small">Help us elect candidate committed to fundamental reform in 2016.</p>
+
           <form class="mayday-inputs js-donate">
             <fieldset>
               <div class="row">
@@ -154,23 +283,24 @@ bodyClass: index-page
               </div>
             </fieldset>
           </form>
+
         </div>
-      </div>
     </div>
   </div>
 
 </div>
+{% endcomment %}
 {% endcapture %}
 
 {% capture page_specific_javascript %}
 <script>
   $(document).ready(function(){
-    var signUpComplete = function(){
+    /*var signUpComplete = function(){
       window.location = '/donate/';
     };
     md.signUps.inititalizeBasic('.js-signup', signUpComplete);
-    md.signUps.inititalizeDonateStart('.js-donate');
-    md.newsFeeds.renderHomepageBlogFeed('.blog-listings');
+    md.signUps.inititalizeDonateStart('.js-donate'); */
+    md.newsFeeds.renderHomepageBlogFeed('#blog-listings');
   });
 </script>
 {% endcapture %}

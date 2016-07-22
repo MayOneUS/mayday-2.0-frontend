@@ -1,12 +1,30 @@
 ---
 layout: default
-title: some title
+title: NationBulder Template
 offSite: true
-body_attrs: '{{ page.page_class_name }}'
+meta_content: |
+  <meta property="og:image" content="https://mayday.us/images/2016_mayday-logo-sheild.svg"/>
+  <meta property="og:title" content="{{page.title}}"/>
+  <title>{{page.title}}</title>
+
+  <meta property="og:description" content="{{page.excerpt}}"/>
+  <meta name="description" content="{{page.excerpt}}" />
+  <meta property="og:url" content="{{page.full_url}}"/>
+  <link rel="canonical" href="{{page.full_url}}" />
 ---
 
 {% capture custom_css %}
-  <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css" media="screen and (min-width: 768px)">
+  <!-- Liquid template cannot seem to receive main layout root_path -->
+  {% case jekyll.environment %}
+    {% when 'production' or 'development' %}
+      {% assign css_root_path = 'mayday.us' %}
+    {% else %}
+      {% assign css_root_path = jekyll.environment + '.mayday.us' %}
+  {% endcase %}
+
+  <link rel="stylesheet" href="//{{css_root_path}}{{ '/css/nation-builder.css' | sass_cache_bust  }}" />
+  <link href="theme.scss" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css" media="screen and (min-width: 768px)"> -->
   {% raw %}
     {{ content_for_header }}
      <script type="text/javascript">

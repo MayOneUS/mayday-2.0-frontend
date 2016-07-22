@@ -77,3 +77,111 @@ $color-orientation: rgb(76, 43, 98);
 
   $mayday-text: $mayday-blue-black;
   $mayday-background: #fff;
+
+/* common elements */
+
+
+/* iframe loading animation */
+
+iframe {
+	background:white;
+	/* background-image:; */
+	width:100%;
+	height:128px;
+	position:relative;
+	
+	&:before {
+		content:'establishing secure connection';
+		position:absolute;
+		z-index:-1;
+		width:100%;
+		height:100%;
+		background-image:url('/images/loading-md.gif');
+		backgorund-position:center;
+		background-size:30px;
+		backroung-repeat:no-repeat;
+		
+	}
+	
+}
+
+/* videos */
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+	max-width: 960px;
+	margin: 0 auto 1em;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* contribution rules */
+
+.contribution-rules {
+	background: transparent !important;
+	padding:0 !important;
+	margin-top: 0 !important;
+	
+	h4 {
+		color:$mayday-grey-dark;
+		margin-bottom:10px;
+	}
+	p, li {
+		color:$mayday-grey-dark;
+		font-size:15px;
+		line-height:22px;
+	}
+	p {
+		margin-bottom:10px;
+	}
+}
+
+.btn-mayday.facebook {
+	background-color:$mayday-blue-medium;
+}
+
+.btn-mayday.twitter {
+	background-color:$mayday-blue-light;
+}
+
+.text-blue-medium {
+	color:$mayday-blue-medium;	
+}
+
+.text-blue-dark {
+	color:$mayday-blue-dark;
+}
+
+.box {
+	padding:20px;
+	border-radius:2px;
+	background:white;
+}
+
+.box-grey-light {
+	background:$mayday-grey-light;
+}
+
+.box-blue-medium {
+	background:$mayday-blue-medium;
+}
+
+.green {
+	background:$mayday-green-light;
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+	font-feature-settings: "kern" 1;
+	font-kerning: normal;
+}

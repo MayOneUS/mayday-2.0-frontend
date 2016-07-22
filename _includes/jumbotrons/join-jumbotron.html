@@ -1,0 +1,117 @@
+<style>
+
+.jumbotron{
+	background-image: url('/images/campaigns/demo-spring-stylized.jpg');
+	background-size:cover;
+	background-position:center;
+	margin-bottom: 0;
+	padding-bottom:70px;
+	padding-top:70px;
+}
+
+.jumbotron h1 {
+	font-size:40px;
+	color:#00467e;
+	line-height:1;
+}
+
+.jumbotron h2 {
+	font-size: 30px;
+}
+
+#join-form {
+	background:white;
+}
+
+.join-nav {
+	background:white;
+	margin: 40px 0 0;
+}
+
+.join-nav .btn.btn-mayday {
+	display:inline-block !important;
+	width:auto;
+    margin: 30px 0;
+    font-weight: 300;
+}
+
+.navbar-brand {
+	display:inline-block !important;
+	float:none;
+	font-weight: 500;
+}
+
+a.navbar-brand {
+	color:#00467e !important;
+}
+
+.navbar-brand:after {
+	content:none;
+}
+
+.navbar-brand img {
+	max-width:50%;
+	display:inline-block;
+}
+
+join-nav.row div {
+	display: flex;
+  align-items: center;
+}
+
+join-nav.row > div > div {
+	padding: 20px 0;
+}
+
+.jumbotron .panel {
+	padding: 40px 40px 20px;
+}
+a.navbar-brand:hover {
+	color:#0054b9 !important;
+}
+
+.continue {
+	display:inline-block;
+	margin:42px;
+}
+
+@media only screen and (max-width:992px) {
+	.text-left,.text-center,.text-right {
+		text-align:center !important;
+	}
+	.continue {
+		margin:20px 0 40px;
+	}
+}
+
+</style>
+
+<div class="jumbotron">
+      <div class="row">
+          <div class="container">
+                <div class="col-sm-10 col-md-8 col-lg-6 panel">
+                    <h1>Help End Big Money Politics</h1>
+                    <h5>Help us elect candidates committed to fundamental reform in 2016</h5>
+                    <div id="join-form">
+						<style>iframe{width:100%}</style>
+                        <iframe src="https://mayday.nationbuilder.com/email_collect_https" scrolling="no" frameBorder="0"></iframe>
+                        <script>iFrameResize({log:false, checkOrigin:false})</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="join-nav row">
+        	<div class="container">
+                <div class="hidden-sm-down col-md-4 col-lg-4 text-left">
+                    <a href="/donate" class="btn btn-mayday">Contribute</a>
+                </div>
+                <div class="hidden-sm-down col-md-4 col-lg-4 text-center">
+                    <p><a class="navbar-brand" href="{{ root_path }}/"><img src="{{ root_path }}/images/2016_mayday-logo-sheild.svg" alt=""> MAYDAY<span class="text-orange">.US</span></a></p>
+                </div>
+                <div class="col-md-4 col-lg-4 text-right">
+                    <a href="/" class="continue">Continue to Site &#8594;</a>
+                </div>
+        	</div>
+      </div>
+</div>
+
