@@ -1,0 +1,12 @@
+<div class="jumbotron dark" style="background-image:url('/images/crowd.jpg');">
+  <div class="container">
+    <h1 class="text-center margin-bottom-xs">{{include.title}}</h1>
+    <div class="col-md-8 center-block text-center">
+      <h4 class="asi-if-h4 visible-xs text-center text-grey-light margin-bottom-xs">Tap on a state for information on progress, or</h4>
+      <h4 class="hidden-xs text-center text-grey-light margin-bottom-sm">Hover over a state for information on progress, click for more information on local efforts, or</h4>
+      <a class="btn btn-mayday" href="#get-involved" style="display:inline-block;position:relative;z-index:100;width:auto;">Get Involved</a>
+    </div>
+    {% if include.sub_title %}<h2 class="text-center">{{include.sub_title}}</h2>{% endif %}
+    <div id="map" class="margin-top-sm"></div>
+  </div>
+</div>

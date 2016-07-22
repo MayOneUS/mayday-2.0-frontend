@@ -5,64 +5,127 @@ permalink: /national-progress/
 bodyClass: national-progress
 ---
 {% capture content %}
-{% include jumbotrons/general-dark.html title="National Progress" subtitle="Mapping Our Strategy" %}
 
 <style type="text/css">
 
+<style>
+
+body {
+  background-image:url('crowd.jpg');
+  background-size:cover;
+  background-position:center;
+}
+
+.jumbotron {
+  overflow:hidden;
+}
+
 #map {
-	height:480px;
-	width:100%;
-	padding:0 0 1em;
-	cursor:auto;
+  height: 450px;
+  font-family:"Rubik", sans-serif;
+  color:#212230;
+  position:relative;
+  cursor:initial;
 }
 
-.mapboxgl-canvas-container.mapboxgl-interactive, .mapboxgl-ctrl-nav-compass {
-	cursor:auto;
+@media only screen and (max-width:800px) {
+  #map {
+    height:300px;
+  }
 }
 
-.mapboxgl-ctrl-attrib a {
-    color: rgba(0,0,0,0.34);
+@media only screen and (max-width:400px) {
+  #map {
+    height:200px;
+  }
 }
 
+.leaflet-container {
+  background:transparent;
+  overflow:visible;
+  clear:both;
+  font: 12px/1 "Rubik", sans-serif;
+  color:#212230;
+}
 
-a.mapbox-improve-map {
-    display: none;
+.leaflet-control-container {
+  max-width: 33%;
+}
+
+.legend {
+  line-height: 18px;
+  color: #555;
+}
+
+.legend span {
+  display:block;
+  margin: 4px;
+}
+
+.legend i {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+  display:inline-block;
+  margin-right: 3px;
+  opacity: 0.7;
+}
+
+.legend i:before {
+  content:' ';
+  width: 100%;
+  display:block;
+}
+
+.info {
+  padding: 6px 8px 4px;
+  background: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  line-height: 1.5;
+}
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #777;
+}
+
+.leaflet-rrose-content-wrapper {
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,.15);
+  border-radius: 2px;
+  text-align:left;
+  z-index:999;
+}
+
+.leaflet-rrose-content {
+  margin: 10px;
+}
+
+.leaflet-rrose-content h4 {
+  line-height:1;
+  margin:0;
+}
+
+.leaflet-rrose-content p {
+  line-height:1.15;
+  margin: 0 0 5px;
+  font-size:12px;
 }
 
 </style>
 
+{% include jumbotrons/20160721_national-progress-jumbo.html title="National Progress" subtitle="Mapping Our Strategy" %}
+
 <div class="page-panel light">
   <div class="container">
-    <div class="row">
-    	<div class="col-lg-10 col-sm-9 content-section">
-    		<div id='map'></div>
-        </div>
-	</div>
-    <div class="row">
-        <div class="col-lg-10 col-sm-9 content-section">
-            <h3>Support in <span style="color:#00467e;"id="state-name">Click on a state above!</span></h3>
-            <h4>Leading Organizations</h4>
-            <p><span id="state-orgs">NA</span></p>
-            <h4>Endorsements</h4>
-            <p><span id="state-endorsements">NA</span></p>
-        </div>
-        {% comment %}
-        <div class="col-md-6">
-            <h3>Program Details</h3>
-            <h4>Funded Elections</h4>
-            <p><span id="state-funded">NA</span></p>
-            <h4>Program Type</h4>
-            <p><span id="state-type">NA</span></p>
-        </div>
-        {% endcomment %}
-	</div>        
-  </div>
-</div>
-<div class="page-panel light">
-  <div class="container">
-    <div id="critical-mass" class="col-lg-10 col-sm-9 content-section">
-      <p>We’re building local teams across the country, fighting to save our democracy. See where your neighbors are engaging and join the fight! <a href="/the-plan">Read more about our plan to save democracy</a> or <a href="/donate">click here to get involved immediately.</a></p>
-      </div>
+    <div id="get-involved" class="col-lg-10 center-block col-sm-9 content-section text-center">
+      <h2>Volunteer</h2>
+      <h4 class="margin-bottom-sm">Join a Google Group</h4>
+      <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Activism</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Welcoming</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Press</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Video</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Tech</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Social</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Media</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Fundraising</a>
+      <h6 class="margin-bottom-xs">Or</h6>
+      <a href="http://mayday-slack.herokuapp.com/" target="_blank" class="btn btn-mayday" style="display:inline-block; width:auto;">Join Our Slack Team</a>
+      <h6 class="text-grey-medium margin-top-xs">Chat in real time with other MAYDAY.US volunteers and staff.</h6>
     </div>
   </div>
 </div>
@@ -79,380 +142,188 @@ a.mapbox-improve-map {
 
 <script>
 
+jQuery( document ).ready(function() {
 
-// style variables
+  jQuery.getJSON( "/geojson/mayday-map.geojson", function(json){ // load geojson and create map if successful
+    
+      statesData = json; // store result in variable
+  
+      var map = L.map('map',{
+         zoomControl:false,
+         attributionControl: false
+      }).setView([37, -96], 4.25); // create map centered on USA
+      
+      var usaCornerA  = L.latLng(37,-125),
+          usaCornerB  = L.latLng(38,-65),
+          usaBounds   = L.latLngBounds(usaCornerA, usaCornerB);
+            
+      map.dragging.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.scrollWheelZoom.disable();
+      map.fitBounds(usaBounds);
+      
+      // color ramp: grey, red orange, yellow, blue
+     
+      function getColor(d) {
+      return d > .75 ?  '#0054b9' :
+             d > .5  ?  '#2ac4ea' :
+             d > .25 ?  '#0ad6b2' :
+             d > 0   ?  '#fdd63f' :
+             d == 0  ?  '#f36433' :
+                        '#dae4e7' ;
+      }
+      
+      // add style to states
+      
+      function style(feature) {
+        return {
+          fillColor: getColor(feature.properties.demoIndexB),
+          weight: 1,
+          opacity: 1,
+          color: '#212230',
+          joinline: 'round',
+          fillOpacity: 0.6
+        };
+      }
+      
+      // add style to map
+      
+      L.geoJson(statesData, {style: style}).addTo(map);
+      
+      // highlight function
+     
+      
+      var geojson;
+      // ... our listeners
+      //geojson = L.geoJson();
+      
+      function zoomToFeature(e) {
+          map.fitBounds(e.target.getBounds());
+      }
+      
+      function stateMouseOver(e) {
+        var layer = e.target;
+        var hover_bubble = new L.layer.Rrose({ offset: new L.Point(0,-10), closeButton: false, autoPan: false }).setContent(feature.properties.stateName).setLatLng(e.latlng).openOn(map);
+      }
+      
+      function stateMouseOut(e) {
+        var layer = e.target;
+        geojson.resetStyle(layer);
+        map.closePopup();
+      }
+      
+      function onEachFeature(feature, layer) {
+          layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight//,
+            //click: zoomToFeature
+          });
+        }
+        
+        geojson = L.geoJson(statesData, {
+          
+          style: style,
+          
+          onEachFeature: function(feature,layer){
+            
+            // hover events
+            
+            layer.on('mouseover mousemove', function(e){
+              
+              function getStateInfo(props) {   
+                if (props) {
+                  var stateInfo = "<h4 class='margin-bottom-0'>" + props.stateName + "</h4>";
+                  
+                  if (feature.properties.demoIndexB > .75) {
+                    stateInfo +="<h6 class='margin-bottom-0' style='color:#0054b9'>Statewide Public Financing System</h6>"
+                  } else if (props.demoIndexB > .5) {
+                    stateInfo +="<h6 class='margin-bottom-0' style='color:#2ac4ea'>Needs State Improvement</h6>"
+                  } else if (props.demoIndexB > .25) {
+                    stateInfo +="<h6 class='margin-bottom-0' style='color:#0ad6b2'>Some Local Public Financing</h6>"
+                  } else if (props.demoIndexB > 0) {
+                    stateInfo +="<h6 class='margin-bottom-0' style='color:#fdd63f'>Needs Local Improvement</h6>"
+                  } else if (props.demoIndexB == 0) {
+                    stateInfo +="<h6 class='margin-bottom-0' style='color:#f36433'>No Public financing</h6>"
+                  } else {
+                    stateInfo +="<h6 class='margin-bottom-0' style='color:#7b8082'>No Activity</h6>"
+                  }
+                  
+                  if (props.programTyp) { stateInfo +="<p'><strong>Program Type: </strong>" + props.programTyp + "</p>"};
+                  if (props.offices) { stateInfo +="<p><strong>Offices: </strong>" + props.offices + "</p>"};
+                  if (props.Why) { stateInfo +="<p class='text-grey-dark'>" + props.Why + "</p>"};
+                  return stateInfo;
+                } else {
+                  return 'Click on a state for a breakdown of our progress.';
+                };
+              };
+              
+              // tooltip using rrose
+                            
+              var hover_bubble = new L.Rrose({ offset: new L.Point(0,-10), closeButton: false, autoPan: false})
+                .setContent(getStateInfo(feature.properties))
+                .setLatLng(e.latlng)
+                .openOn(map);
+                
+              // highlight style
+                
+              layer.setStyle({
+                color: '#ffffff',
+                fillOpacity: 1
+              });
+              
+              // make sure layer is on top
+              
+              if (!L.Browser.ie && !L.Browser.opera) {
+                  layer.bringToFront();
+              }
 
-var red 		= '#ee3800';
-var orange 		= '#f36433';
-var yellow 		= '#fdd63f';
-var cyan		= '#2ac4ea';
-var lightBlue	= '#0054b9';
-var blue		= '#00467e';
-var gray		= '#dae4e7';
-var darkGray	= '#7b8082';
-var white		= '#f4f4f4';
-var black		= '#212230';
+            });
+            
+            // remove pop-up and styles
+            
+            layer.on('mouseout', function(e){
+              map.closePopup();
+              geojson.resetStyle(layer);
+            });
+            
+            // open more information box
+            /*
+            layer.on('click', function(e){
+              layer.setStyle({
+                weight: 3
+              });
+              info.update(layer.feature.properties);
+            });
+            */
+          }
+          
+        }).addTo(map);
+        
+        // legend
+        
+        var legend = L.control({position: 'bottomleft'});
+        
+        legend.onAdd = function (map) {
+        
+            var div = L.DomUtil.create('div', 'info legend hidden-xs'),
+                grades = [ null, 0, .25, .5, .75, 1],
+                labels = [ 'No Activity', 'No Public Financing', 'Needs Local Improvement', 'Some Local Programs', 'Needs State Improvement', 'Statewide Public Financing System'];
+        
+            // loop through our density intervals and generate a label with a colored square for each interval
+            for (var i = 0; i < grades.length; i++) {
+                div.innerHTML +=
+                    '<span><i style="background:' + getColor(grades[i]) + '"></i> ' +
+                    labels[i];
+            }
+        
+            return div;
+        };
+        
+        legend.addTo(map);
+       
+  });
 
-/* - - - Load Google Sheet into JSON - - - */
-
-//function getGoogleData() {
-
-// Google API Credentials
-
-/* window.onload = function() { init() };
-
-var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1xn3g-pFBht9DgDb0WwO-E4Y6Zn0LeT5ixwmO1IIAx00/pubhtml';
-
-function init() {
-Tabletop.init( { key: public_spreadsheet_url,
-				 callback: showInfo,
-				 debug: true,
-				 simpleSheet: true } )
-}
-
-function showInfo(data, tabletop) {
-	// alert("Successfully processed!")
-	console.log(data);
-} */
-
-/* - - - MAPBOX - - - */
-
-// API Credentials
-
-mapboxgl.accessToken = 'pk.eyJ1IjoicmVpbG51dWQiLCJhIjoiWVJmcnlLTSJ9.ekYm1LH3Dg39byEqJMXd7A';
-
-// initiate map
-
-var map = new mapboxgl.Map({
-  container: 'map',
-  zoom: 3.15,
-  center: [-95,38],
-  style: 'mapbox://styles/reilnuud/ciohwdjbi0013arng981vq7fp',
-  zoomControl: false
-});
-
-// reilnuud.8e8fo53q
-
-// add layers on map load
-
-map.on('load', function () {
-	
-	map.addSource('states', {
-		type:'vector',
-		url:'mapbox://reilnuud.8e8fo53q'
-	});
-
-	map.addSource('mayday-states', {
-		type:'vector',
-		url:'mapbox://reilnuud.8jecmr0v'
-	});
-	
-	map.addSource('water', {
-		type:'vector',
-		url:'mapbox://mapbox.mapbox-streets-v7'
-	});
-	
-	map.addLayer ({
-		'id': 'states-fill',
-		'type': 'fill',
-		'source': 'states',
-		'source-layer': 'tl_2015_us_state',
-		'layout': {
-			'visibility': 'visible',
-		},
-		'paint': {
-			/*'fill-color': red
-			'fill-color': orange
-			'fill-color': yellow
-			'fill-color': cyan
-			'fill-color': blue
-			'fill-color': gray */
-			'fill-color': gray
-		}
-	});
-	
-	map.addLayer ({
-		'id': 'mayday-states-fill-inactive',
-		'type': 'fill',
-		'source': 'mayday-states',
-		'source-layer': 'mayday-states',
-		'layout': {
-			'visibility': 'visible',
-		},
-		'paint': {
-			'fill-color': darkGray
-		},
-		'filter':['==', 'democracy', '']
-	});
-	
-	var level0 = (0).toString();
-	var	level1 = (0.25).toString();
-	var level2 = (0.5).toString();
-	var level3 = (0.75).toString();
-	var level4 = (1).toString();
-	
-	map.addLayer ({
-		'id': 'mayday-states-fill-0',
-		'type': 'fill',
-		'source': 'mayday-states',
-		'source-layer': 'mayday-states',
-		'layout': {
-			'visibility': 'visible',
-		},
-		'paint': {
-			'fill-color': red
-		},
-		'filter':['==', 'democracy', level0]
-	});
-	
-	map.addLayer ({
-		'id': 'mayday-states-fill-1',
-		'type': 'fill',
-		'source': 'mayday-states',
-		'source-layer': 'mayday-states',
-		'layout': {
-			'visibility': 'visible',
-		},
-		'paint': {
-			'fill-color': orange
-		},
-		'filter':['==', 'democracy', level1]
-	});
-	
-	map.addLayer ({
-		'id': 'mayday-states-fill-2',
-		'type': 'fill',
-		'source': 'mayday-states',
-		'source-layer': 'mayday-states',
-		'layout': {
-			'visibility': 'visible',
-		},
-		'paint': {
-			'fill-color': yellow
-		},
-		'filter':['==', 'democracy', level2]
-	});
-	
-	map.addLayer ({
-		'id': 'mayday-states-fill-3',
-		'type': 'fill',
-		'source': 'mayday-states',
-		'source-layer': 'mayday-states',
-		'layout': {
-			'visibility': 'visible',
-		},
-		'paint': {
-			'fill-color': cyan
-		},
-		'filter':['==', 'democracy', level3]
-	});
-	
-	map.addLayer ({
-		'id': 'mayday-states-fill-4',
-		'type': 'fill',
-		'source': 'mayday-states',
-		'source-layer': 'mayday-states',
-		'layout': {
-			'visibility': 'visible',
-		},
-		'paint': {
-			'fill-color': blue
-		},
-		'filter':['==', 'democracy', level4]
-	});
-	
-	map.addLayer ({
-		'id': 'states-hover',
-		'type': 'fill',
-		'source': 'states',
-		'source-layer': 'tl_2015_us_state',
-		'layout': {
-			'visibility': 'visible',
-		},
-		'paint': {
-			'fill-color': white,
-			'fill-opacity':.25
-		},
-        'filter': ['==', 'GEOID', '']
-	});
-	
-	map.addLayer({
-		'id': 'states-lines',
-		'type': 'line',
-		'source': 'states',
-		'source-layer': 'tl_2015_us_state',
-		'layout': {
-			'visibility': 'visible',
-			'line-join': 'round',
-			'line-cap': 'round'
-		},
-		'paint': {
-			'line-color': 'white',
-			'line-width': 1
-		}
-    });
-
-	map.addLayer({
-		'id': 'water-fill',
-		'type': 'fill',
-		'source': 'water',
-		'source-layer': 'water',
-		'layout': {
-			'visibility': 'visible',
-		},
-		'paint': {
-			'fill-color': 'white'
-		}
-    });
-	
-	map.addLayer({
-		'id': 'water-lines',
-		'type': 'line',
-		'source': 'water',
-		'source-layer': 'water',
-		'layout': {
-			'visibility': 'none',
-			'line-join': 'round',
-			'line-cap': 'round'
-		},
-		'paint': {
-			'line-color': '#212320',
-			'line-width': 2
-		}
-    });
-	
-	// disable map rotation using right click + drag
-	map.dragRotate.disable();
-	
-	// disable map rotation using touch rotation gesture
-	map.touchZoomRotate.disableRotation();
-	
-	map.scrollZoom.disable();
-	map.dragPan.disable();	
-	
-	map.doubleClickZoom.disable();
-	
-});
-
-map.on('mousemove', function(e) {
-	var features = map.queryRenderedFeatures(e.point, { layers: ['states-fill','mayday-states-fill-inactive', 'mayday-states-fill-0', 'mayday-states-fill-1', 'mayday-states-fill-2', 'mayday-states-fill-3', 'mayday-states-fill-4'] });
-	if (features.length) {
-		map.setFilter('states-hover', ['==', 'GEOID', features[0].properties.GEOID]);
-		console.log(features[0].properties.GEOID);
-	} else {
-		map.setFilter('states-hover', ['==', 'GEOID', '']);
-	}
-});
-
-map.on('click', function (e) {
-	var features = map.queryRenderedFeatures(e.point, { layers: ['states-fill','mayday-states-fill-inactive', 'mayday-states-fill-0', 'mayday-states-fill-1', 'mayday-states-fill-2', 'mayday-states-fill-3', 'mayday-states-fill-4'] });
-	if (!features.length) {
-		return;
-	}
-	
-	if (features.length) {
-		map.setFilter('states-hover', ['==', 'GEOID', features[0].properties.GEOID]);
-	} else {
-		map.setFilter('states-hover', ['==', 'GEOID', '']);
-	}
-	
-	var feature = features[0];
-	var leadOrgan = 'Lead organ';
-	var typeOfProgram = 'Type of pr';
-	var typeOfElection = 'Type of of'
-
-   /* var popup = new mapboxgl.Popup()
-	.setLngLat(map.unproject(e.point))
-	.setHTML(feature.properties.NAME)
-	.addTo(map); */
-	
-	 
-	document.getElementById("state-name").innerHTML = feature.properties.NAME;
-	
-	// endorsements
-	
-	if(feature.properties.ENDORSEMEN == '') {
-	
-		document.getElementById("state-endorsements").innerHTML = 'NA';
-		
-	 } else { 
-	 
-		document.getElementById("state-endorsements").innerHTML = feature.properties.ENDORSEMEN;
-	
-	};
-	
-	// orgs
-	/*
-	
-	if(feature.properties.NAME == '') {
-	
-		document.getElementById("state-orgs").innerHTML = 'NA';
-		
-	 } else { 
-	 
-		document.getElementById("state-orgs").innerHTML = feature.properties.;
-	
-	};
-	
-	//funded
-	
-	if(feature.properties.NAME == '') {
-	
-		document.getElementById("state-name").innerHTML = 'NA';
-		
-	 } else { 
-	 
-		document.getElementById("state-name").innerHTML = feature.properties.NAME;
-	
-	};
-	
-	//type
-	
-	if(feature.properties.NAME == '') {
-	
-		document.getElementById("state-type").innerHTML = 'NA';
-		
-	 } else { 
-	 
-		document.getElementById("state-name").innerHTML = feature.properties.NAME;
-	
-	};
-	*/
-	//rating
-	
-	if(feature.properties.democracy == '') {
-	
-		document.getElementById("state-rating").innerHTML = 'NA';
-		
-	 } else { 
-	 
-		document.getElementById("state-rating").innerHTML = feature.properties.democracy;
-	
-	};
-	
-	//qualitative
-	
-	if(feature.properties.qualitativ == '') {
-	
-		document.getElementById("state-qualitiative").innerHTML = 'NA';
-		
-	 } else { 
-	 
-		document.getElementById("state-qualitative").innerHTML = feature.properties.qualitativ;
-	
-	};
-	
-	//document.getElementById("state-orgs").innerHTML = feature.properties.Leadorgan;
-		
-	//document.getElementById("state-funded").innerHTML = feature.properties.typeOfElection;
-	//document.getElementById("state-type").innerHTML = feature.properties.typeofProgram;
-	
-	
-});	
-
-map.on('mousemove', function (e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: ['states-fill','mayday-states-fill-inactive', 'mayday-states-fill-0', 'mayday-states-fill-1', 'mayday-states-fill-2', 'mayday-states-fill-3', 'mayday-states-fill-4'] });
-    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 });
 
 </script>
