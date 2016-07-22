@@ -83,26 +83,21 @@ $color-orientation: rgb(76, 43, 98);
 
 /* iframe loading animation */
 
-iframe {
-	background:white;
-	/* background-image:; */
-	width:100%;
-	height:128px;
-	position:relative;
-	
-	&:before {
-		content:'establishing secure connection';
-		position:absolute;
-		z-index:-1;
-		width:100%;
-		height:100%;
+#email-join, #donate-form {
+	iframe {
+		background:white;
 		background-image:url('/images/loading-md.gif');
-		backgorund-position:center;
-		background-size:30px;
-		backroung-repeat:no-repeat;
-		
+		background-position:center;
+		background-repeat:no-repeat;
+		width:100%;
+		height:128px;
+		position:relative;
+		background-size:20px;
+		transition: height 50ms ease-out;
+		-webkit-transition: height 50ms ease-out;
+		-moz-transition: height 50ms ease-out;
+		-o-transition: height 50ms ease-out;
 	}
-	
 }
 
 /* videos */
@@ -161,6 +156,18 @@ iframe {
 	color:$mayday-blue-dark;
 }
 
+.text-grey-medium {
+	color:$mayday-grey-medium;	
+}
+
+.text-grey-dark {
+	color:$mayday-grey-dark;
+}
+
+.text-grey-light {
+	color:$mayday-grey-light;
+}
+
 .box {
 	padding:20px;
 	border-radius:2px;
@@ -175,6 +182,10 @@ iframe {
 	background:$mayday-blue-medium;
 }
 
+.box-blue-dark {
+	background:$mayday-blue-dark;
+}
+
 .green {
 	background:$mayday-green-light;
 }
@@ -184,4 +195,131 @@ body {
 	text-rendering: geometricPrecision;
 	font-feature-settings: "kern" 1;
 	font-kerning: normal;
+}
+
+#pre-donate-form {
+	text-align:center;
+	position:relative;
+	
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 80px;
+		background: $mayday-grey-light;
+		margin-top: -80px;
+	}
+	
+	h3 {
+		color:white;
+		margin-bottom:10px;
+		padding-bottom:10px;
+		border-bottom: 2px solid $mayday-grey-medium;
+		display:inline-block;
+	}
+	
+	.container {
+		margin:0 auto;
+	}
+	
+	.btn-group.btn-group-mayday {
+		width: 100%;
+		text-align: center;
+	
+	}
+	
+	.btn {
+		background:$mayday-blue-dark;
+		color:white;
+		display:inline-block;
+		float:none;
+		margin:0 0 20px;
+		
+		&.green {
+			background:$mayday-green-light;
+		}
+		
+		&:hover {
+			background:$mayday-blue-light;
+		}
+	}
+
+}
+
+a.btn.btn-mayday.paypal {
+    display: inline;
+    width: auto;
+    padding: 5px 10px;
+    font-size: 14px;
+    background: rgba($mayday-blue-medium,1);
+	font-weight:400;
+	margin-left:5px;
+	
+	&:hover {
+		background:rgba($mayday-blue-medium,.5);
+	}
+}
+
+.we-need-your-help {
+    color: white !important;
+    background: $mayday-orange-light;
+    padding: 20px 20px 0px;
+    margin: -42px -40px 40px;
+	position:relative;
+	font-weight:400;
+	
+	span {
+		position:relative;
+		z-index:1;
+	}
+	
+	&:before {
+		content:' ';
+		display:block;
+		position:absolute;
+		width:50%;
+		background:$mayday-orange-light;
+		height:40px;
+		left:0;
+		bottom:-20px;
+		z-index:0;
+		transform: skew(0deg, 2deg) ;
+		-webkit-transform: skew(0deg, 3deg) ;
+		-moz-transform: skew(0deg, 3deg) ;
+		-o-transform: skew(0deg, 3deg) ;
+		-ms-transform: skew(0deg, 3deg) ;
+	}
+	
+	&:after {
+		content:' ';
+		display:block;
+		position:absolute;
+		width:50%;
+		background:$mayday-orange-light;
+		height:40px;
+		right:0;
+		bottom:-20px;
+		z-index:0;
+		transform: skew(0deg, -3deg) ;
+		-webkit-transform: skew(0deg, -3deg) ;
+		-moz-transform: skew(0deg, -3deg) ;
+		-o-transform: skew(0deg, -3deg) ;
+		-ms-transform: skew(0deg, -3deg) ;
+	}
+	
+}
+
+.carousel-indicators {
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+	margin-left: 0;
+    margin-right: 0;
+}
+
+/* TEMPORARY FIX */
+
+iframe#rufous-sandbox {
+    display: none;
 }

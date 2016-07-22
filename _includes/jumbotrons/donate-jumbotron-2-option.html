@@ -1,0 +1,229 @@
+<style>
+
+.jumbotron{
+	background:#033258;
+	background-image: url('/images/campaigns/Mayday-Header-4th-of-July-1844x771v1.jpg');
+	background-size:cover;
+	background-position: bottom center;
+	margin-bottom: 0;
+	padding-bottom:100px;
+	padding-top:100px;
+	overflow:hidden;
+	position:relative;
+}
+
+.candidate-info {
+	padding: 20px 60px;
+}
+
+.jumbotron .panel {
+	padding:20px;
+}
+
+@media only screen and (max-width:400px) {
+	.jumbotron .panel {
+		padding:10px;
+	}
+}
+
+.jumbotron h1 {
+	font-size:40px;
+	line-height:1;
+}
+.jumbotron h2 {
+	font-size: 30px;
+}
+.jumbotron h5 {
+	font-size:40px;
+	line-height:1;
+}
+
+.jumbotron:after, .jumbotron:before {
+	content:'';
+	display:block;
+	position:absolute;
+	height:30px;
+	background:white;
+	width:100%;
+	height:40px;
+	bottom:-40px;
+	left:0;
+}
+
+.jumbotron:before {
+	transform: skew(0deg, 2deg) ;
+	-webkit-transform: skew(0deg, 2deg) ;
+	-moz-transform: skew(0deg, 2deg) ;
+	-o-transform: skew(0deg, 2deg) ;
+	-ms-transform: skew(0deg, 2deg) ;
+}
+
+.jumbotron:after {
+	transform: skew(0deg, -2deg) ;
+	-webkit-transform: skew(0deg, -2deg) ;
+	-moz-transform: skew(0deg, -2deg) ;
+	-o-transform: skew(0deg, -2deg) ;
+	-ms-transform: skew(0deg, -2deg) ;
+}
+
+.radio-inline span {
+  display:inline-block;
+  width:100%;
+}
+
+.radio-inline input[type="radio"] {
+    display: none;
+}
+
+.radio-inline label {
+  background:#0054b9;
+  color:white;
+  border:2px solid #0054b9;
+  text-align:center;
+  font-weight:400;
+  width:100%;
+  padding:10px 0;
+  border-radius:2px;
+}
+
+.radio-inline input[type="radio"]:checked + label {
+    background:white;
+    color:#0054b9;
+}
+
+</style>
+
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+      
+            <div class="col-md-5 panel margin-top-md">
+            	<h3 class="text-orange text-center we-need-your-help"><span>Help End Big Money Politics</span></h3>
+            	<h4 class="text-center">Donate In Two Minutes or Less</h4>
+                <style>
+                  
+                  .radio-inline {
+                    padding:0 10px;
+                  }
+                  
+                  @media only screen and (max-width: 400px) {
+                    span.other {
+                      width:100%;
+                      margin-bottom:10px;
+                    }
+                  }
+                </style>
+                                
+                <form>
+                  
+                  <h4 class="text-center margin-bottom-xs text-blue-dark">I want to contribute...</h4>
+                  
+                  <div class="radio-inline clearfix">
+                    <div class="col-sm-4 col-xs-6">
+                      <span>
+                        <input id="amount_10" type="radio" name="donation[amount_option]" class="amount_option" value="10">
+                        <label class="radio" for="amount_10">$10</label>
+                      </span>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                      <span>
+                        <input id="amount_27" type="radio" name="donation[amount_option]" class="amount_option" value="27">
+                        <label class="radio" for="amount_27">$27</label>
+                      </span>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                      <span>
+                        <input id="amount_50" type="radio" name="donation[amount_option]" class="amount_option" value="50">
+                        <label class="radio" for="amount_50">$50</label>
+                      </span>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                      <span>
+                        <input id="amount_100" type="radio" name="donation[amount_option]" class="amount_option" value="100">
+                        <label class="radio" for="amount_100">$100</label>
+                      </span>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                      <span>
+                        <input id="amount_250" type="radio" name="donation[amount_option]" class="amount_option" value="250">
+                        <label class="radio" for="amount_250">$250</label>
+                      </span>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                      <span>
+                        <input id="amount_500" type="radio" name="donation[amount_option]" class="amount_option" value="500">
+                        <label class="radio" for="amount_500">$500</label>
+                      </span>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                      <span>
+                        <input id="amount_1000" type="radio" name="donation[amount_option]" class="amount_option" value="1000">
+                        <label class="radio" for="amount_1000">$1,000</label>
+                      </span>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                      <span>
+                        <input id="amount_2500" type="radio" name="donation[amount_option]" class="amount_option" value="2500">
+                        <label class="radio" for="amount_2500">$2,500</label>
+                      </span>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                      <span class="other">
+                        <input id="amount_other" type="radio" name="donation[amount_option]" class="amount_option" value="other">
+                        <label class="radio" for="amount_other">Other</label>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="frequency" style="display:none;">
+                  
+                    <h4 class="text-center margin-top-xs">Make your donation</h4>
+                    
+                    <div class="col-sm-6 margin-bottom-sm">
+                      <a class="btn btn-mayday" id="donateMonthly" href="donate_once#">Monthly</a>
+                    </div>
+                    
+                    <div class="col-sm-6 margin-bottom-sm">
+                      <a class="btn btn-mayday" id="donateOneTime" href="donate_monthly#">One-time</a>
+                    </div>
+                  
+                  </div>
+                    
+                </form>
+                
+            </div>
+            
+            <div class="col-md-7 candidate-info">
+                <h2 class="text-yellow" style="font-size: 44px;">Support a New American Political Revolution</h2>
+                <h4 class="text-grey-light">Fixing our broken system won’t happen overnight so we need your ongoing support.  </h4>
+                <p>You can make a one-time or recurring donation today. Monthly, sustaining contributions are the cornerstone of our funding. These monthly memberships are critical for keeping organizers in key districts, supporting volunteers, and complementary digital advertising.</p>
+                <div id="recent" class="text-yellow"></div>
+            </div>
+            
+      </div>
+  </div>
+</div>
+
+{% capture footer_scripts %}
+
+<script>
+
+$( "#recent" ).load( "https://mayday.nationbuilder.com/snippets #recent", function() {});
+  
+$(document).ready(function() {
+  
+  $('.amount_option').click( function(){
+    
+    var value = $(this).val();
+        
+    $('.frequency').css('display','block');
+    $('#donateOneTime').attr("href", "https://mayday.nationbuilder.com/donate_once#" + value);
+    $('#donateMonthly').attr("href", "https://mayday.nationbuilder.com/donate_monthly#" + value);
+    
+  });
+    
+});
+  
+</script>
+
+{% endcapture %}

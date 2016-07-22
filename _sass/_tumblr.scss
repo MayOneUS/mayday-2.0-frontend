@@ -1,29 +1,54 @@
 /**
  * Tumblr Posts
  */
-
-article{
-  margin: 0 0 80px;
-
-  .post-content {
-    div:last-child, div:last-child p,
-    div:last-child ul, div:last-child ol,
-    div:last-child blockquote {margin-bottom: 0;}
+ 
+.blog-listings {
+  
+  article {
+    margin: 0 0 80px;
+  
+    .post-content {
+      div:last-child, div:last-child p,
+      div:last-child ul, div:last-child ol,
+      div:last-child blockquote {margin-bottom: 0;}
+    
       img {margin-bottom: 20px;padding: 10px;}
-      &.post-type-text ol li {list-style-type: upper-latin;}
-        &.post-type-text ol ol li {list-style-type: lower-latin;}
-    &.post-type-photoset .html_photoset {background: #eee;margin-bottom: 20px;padding: 10px;}
-    &.post-type-link .link-wrap {margin-bottom: 20px;}
-    &.post-type-chat .label {color: #333;font-weight: bold;}
-    &.post-type-video .video-wrap {background: #f0f0f0;margin-bottom: 20px;padding: 10px;}
-    &.post-type-audio .caption {margin-top: 10px;}
+    
+      &.post-type-text ol li {
+        list-style-type: decimal;
+        padding-left: 10px;
+        margin: 10px;
+      }
+    
+    &.post-type-text ul li {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 15px 0;
+      padding: 0 20px;
+      
+      &:before {
+        display:inline-block;
+        content:'\2022';
+        color:$mayday-orange-medium;
+        text-indent: -20px;
+        font-size:20px
+      }
+    }
+    
+      &.post-type-text ol ol li {list-style-type: lower-latin;}
+      &.post-type-photoset .html_photoset {background: #eee;margin-bottom: 20px;padding: 10px;}
+      &.post-type-link .link-wrap {margin-bottom: 20px;}
+      &.post-type-chat .label {color: #333;font-weight: bold;}
+      &.post-type-video .video-wrap {background: #f0f0f0;margin-bottom: 20px;padding: 10px;}
+      &.post-type-audio .caption {margin-top: 10px;}
+    }
+    .post-meta {padding-top:5px;border-top:1px solid $mayday-grey-medium; overflow: hidden;}
+      .post-meta .type a {font-size:20px;padding: 0 0 10px;text-decoration: none;}
+      .post-meta .date, .post-meta .comments, .post-meta .note-count {float: left;padding: 0 10px 0 0;}
+      .post-meta .date {padding: 0;}
+      ul.post_controls{float: right; width:70px; padding:0; margin: 0; }
+        ul.post_controls li{padding:5px 5px 0;margin:0;display:inline-block;float:right;}
   }
-  .post-meta {padding-top:5px;border-top:1px solid $mayday-grey-medium; overflow: hidden;}
-    .post-meta .type a {font-size:20px;padding: 0 0 10px;text-decoration: none;}
-    .post-meta .date, .post-meta .comments, .post-meta .note-count {float: left;padding: 0 10px 0 0;}
-    .post-meta .date {padding: 0;}
-    ul.post_controls{float: right; width:70px; padding:0; margin: 0; }
-      ul.post_controls li{padding:5px 5px 0;margin:0;display:inline-block;float:right;}
 }
 
 #disqus_thread {border-top: 1px solid #ccc;padding: 10px 30px 0;}

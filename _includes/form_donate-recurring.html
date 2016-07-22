@@ -1,6 +1,6 @@
 <div id="donate-form">
 	<style>iframe{width:100%}</style>
-    {% comment %}<iframe id="donate-iframe" src="https://mayday.nationbuilder.com/dev" scrolling="no" frameBorder="0"></iframe>{% endcomment %}
+    {% comment %}<iframe id="donate-iframe" src="https://mayday.nationbuilder.com/dev-recurring" scrolling="no" frameBorder="0"></iframe>{% endcomment %}
    <script> 
    
    //check if hash tag exists in the URL
@@ -22,9 +22,9 @@
 
    
    if ( n > 1 ) {
-       document.write('<iframe src="https://mayday.nationbuilder.com/dev#' + amount + '" frameborder="0"></iframe>');
+       document.write('<iframe src="https://mayday.nationbuilder.com/dev-recurring#' + amount + '" frameborder="0"></iframe>');
    } else {
-       document.write('<iframe src="https://mayday.nationbuilder.com/dev" frameborder="0"></iframe>');
+       document.write('<iframe src="https://mayday.nationbuilder.com/dev-recurring" frameborder="0"></iframe>');
    };
    
    </script>
