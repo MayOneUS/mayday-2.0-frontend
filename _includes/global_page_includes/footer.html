@@ -34,7 +34,7 @@
       <div class="col-md-10 center-block text-center">
         <div class="disclaimer-box">Paid for by Mayday PAC. Not authorized by any candidate or candidate's committee. MAYDAY.US</div>
         <div class="copyright"><i class="fa fa-creative-commons"></i> {{ 'now' | date: "%Y" }} Mayday PAC. Some rights reserved. <a href="/privacy-policy/">Privacy Policy</a>. <a href="/attribution/">Attribution</a>.</div>
-        <div class="creative-commons"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="//i.creativecommons.org/l/by/3.0/80x15.png"/></a></div>
+        <div class="creative-commons"><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="//licensebuttons.net/l/by/3.0/80x15.png"/></a></div>
       </div>
     </div>
   </div>
@@ -48,19 +48,27 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-50367295-1']);
-    _gaq.push(['_trackPageview']);
+  
+  <script>
+  
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+  ga('create', 'UA-50367295-1', 'auto', {allowLinker: true});
+  
+  // cross domain tracking
+  
+  ga('require', 'linker');
+  ga('linker:autoLink', ['mayday.nationbuilder.com', 'act.mayday.us', 'mayday.us'], false, true);
+  
+  ga('send', 'pageview');
+
   </script>
   
   	<!-- Google Code for Website Visitors - New Site -->
+    
     <!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
     <script type="text/javascript">
     /* <![CDATA[ */
@@ -69,9 +77,11 @@
     var google_custom_params = window.google_tag_params;
     var google_remarketing_only = true;
     /* ]]> */
+	
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
     </script>
+    
     <noscript>
     <div style="display:inline;">
     <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/968755289/?value=1.00&amp;currency_code=USD&amp;label=0wvsCI3CgmcQ2ZD4zQM&amp;guid=ON&amp;script=0"/>
