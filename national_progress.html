@@ -1,20 +1,273 @@
 ---
 layout: default
-title: Endorsements
-permalink: /endorsements/
-bodyClass: endorsements
+title: National Progress
+permalink: /national-progress/
+bodyClass: national-progress
 ---
 {% capture content %}
-{% include jumbotrons/general-dark.html title="Endorsements" subtitle="Mapping Our Strategy" %}
 
-<div class="light">
-  <div class="container text-center">
-    <a href="http://act.mayday.us/take_action" class="margin-bottom btn" style="display:block;margin-top:-30px; padding:0;">
-    	<img src="/images/20161025_endorsements.jpg">
-    </a>
-    <p><a href="http://act.mayday.us/take_action" class="btn btn-mayday">Join us and elect candidates dedicated to fundamental election reform.</a></p>
+<style type="text/css">
+
+body {
+  background-image:url('crowd.jpg');
+  background-size:cover;
+  background-position:center;
+}
+
+.legend-color {
+  height:20px;
+  width:20px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #212230;
+  border-radius:1px;
+}
+
+.jumbotron {
+  overflow:hidden;
+}
+
+.bubbles circle {
+  fill: url(#shield) !important;
+  stroke-width: 0 !important;
+  fill-opacity:1 !important;
+}
+
+.hoverinfo {
+  max-width: 400px;
+  line-height: 1.15;
+}
+
+.labels text {
+  fill:white !important;
+  text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+  font-weight:600;
+  font-family:"Rubik", sans-serif;
+}
+
+#map {
+  height: 450px;
+  font-family:"Rubik", sans-serif;
+  color:#212230;
+  position:relative;
+  cursor:initial;
+  margin-top:-50px;
+}
+
+#map p, #map h1, #map h2, #map h3, #map h4, #map h5, #map h6 {
+ margin:0;
+ line-height: 1.25;
+}
+
+@media only screen and (max-width:800px) {
+  #map {
+    height:300px;
+  }
+}
+
+@media only screen and (max-width:400px) {
+  #map {
+    height:200px;
+  }
+}
+
+.leaflet-container {
+  background:transparent;
+  overflow:visible;
+  clear:both;
+  font: 12px/1 "Rubik", sans-serif;
+  color:#212230;
+}
+
+.leaflet-control-container {
+  max-width: 33%;
+}
+
+.legend {
+  line-height: 18px;
+  color: #555;
+}
+
+.legend span {
+  display:block;
+  margin: 4px;
+}
+
+.legend i {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+  display:inline-block;
+  margin-right: 3px;
+  opacity: 0.7;
+}
+
+.legend i:before {
+  content:' ';
+  width: 100%;
+  display:block;
+}
+
+.info {
+  padding: 6px 8px 4px;
+  background: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  line-height: 1.5;
+}
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #777;
+}
+
+.leaflet-rrose-content-wrapper {
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,.15);
+  border-radius: 2px;
+  text-align:left;
+  z-index:999;
+}
+
+.leaflet-rrose-content {
+  margin: 10px;
+}
+
+.leaflet-rrose-content h4 {
+  line-height:1;
+  margin:0;
+}
+
+.leaflet-rrose-content p {
+  line-height:1.15;
+  margin: 0 0 5px;
+  font-size:12px;
+}
+
+</style>
+
+{% include jumbotrons/20160721_national-progress-jumbo.html title="National Progress" subtitle="Mapping Our Strategy" %}
+
+<div class="page-panel light">
+  <div class="container">
+    <div id="get-involved" class="col-lg-10 center-block col-sm-9 content-section text-center">
+      <h2>Volunteer</h2>
+      <h4 class="margin-bottom-sm">Join a Google Group</h4>
+      <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Activism</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Welcoming</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Press</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Video</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Tech</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Social</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Media</a>  <a href="" target="_blank" class="btn btn-mayday btn-small margin-bottom-xs" style="display:inline-block;width:auto; padding:5px 10px; font-size:14px;">Fundraising</a>
+      <h6 class="margin-bottom-xs">Or</h6>
+      <a href="http://mayday-slack.herokuapp.com/" target="_blank" class="btn btn-mayday" style="display:inline-block; width:auto;">Join Our Slack Team</a>
+      <h6 class="text-grey-medium margin-top-xs">Chat in real time with other MAYDAY.US volunteers and staff.</h6>
+      <a href="http://act.mayday.us/take_action?_ga=1.263049804.1354464967.1464806714" class="margin-bottom btn" style="display:block; padding:0;">
+        <img src="/images/20161025_endorsements.jpg">
+      </a>
+    </div>
   </div>
 </div>
+<div class="page-panel light">
+  <div class="container">
+    <div class="col-md-8 center-block panel-wrapper">
+      {% include panels/panel_action_w_signup.html hide_next=true %}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture page_specific_javascript %}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="/mapdata/datamaps.usa.min.js"></script>
+
+<script>
+
+jQuery( document ).ready(function() {
+
+  jQuery.getJSON('https://spreadsheets.google.com/feeds/list/1xn3g-pFBht9DgDb0WwO-E4Y6Zn0LeT5ixwmO1IIAx00/1/public/values?alt=json', function(data) {
+
+    var entry = data.feed.entry;
+
+    var stateData = {};
+
+    $(entry).each( function() {
+
+      var stateAbv = this.gsx$id.$t;
+      var fillKey = this.gsx$demoindexbackendonly.$t;
+      var stateStatus = this.gsx$status.$t;
+      var stateWhy = this.gsx$why.$t;
+
+      if (stateAbv.length == 2 ) {
+
+        stateData[stateAbv]= {fillKey: fillKey, stateStatus: stateStatus, stateWhy: stateWhy};
+
+      }
+
+    });
+
+    var endorsements = [];
+
+    $(entry).each( function() {
+
+      var stateAbv = this.gsx$id.$t;
+      var endorsement = this.gsx$candidateendorsements.$t;
+
+      if (stateAbv.length == 2 && endorsement.length > 2) {
+        shield = {
+          fillKey: null,
+          radius: 15,
+          centered: stateAbv,
+          name: endorsement
+        };
+        endorsements.push(shield);
+      }
+
+    });
+
+    var map = new Datamap({
+      scope: 'usa',
+      element: document.getElementById('map'),
+      responsive: true,
+      data: stateData,
+      fills: {
+        '0.00' : '#f36433',
+        '0.25' : '#fdd63f',
+        '0.50' : '#0ad6b2',
+        '0.75' : '#2ac4ea',
+        '1.00' : '#0054b9',
+        defaultFill: '#dae4e7'
+      },
+      geographyConfig: {
+        borderWidth: 1,
+        borderOpacity: 1,
+        borderColor: '#212230',
+        highlightBorderColor: '#f4f4f4',
+        highlightBorderWidth: 1,
+        highlightFillColor:'#00467e',
+        animate: true,
+        popupTemplate: function(geography, data) {
+          return '<div class="hoverinfo">' +
+          '<h4>' + geography.properties.name + '</h4>' +
+          '<h6>' + data.stateStatus + '</h6>' +
+          data.stateWhy + ' '}
+      },
+      bubblesConfig: {
+        animate: true,
+        highlightOnHover: false
+      }
+     });
+    //map.labels();
+    map.bubbles(endorsements);
+
+    var pattern = "<defs><pattern id\='shield' x\='0' y\='0' patternTransform\='translate(10,10)'' width\='100%' height\='100%'><image style\='display:block; margin:0 auto;' width\='20' height\='20' xlink:href\='/images/2016_mayday-logo-shield.svg'/></pattern></defs>";
+    d3.select("#map svg").insert("defs").html(pattern);
+
+  });
+
+  //jQuery("#map>svg").prepend("<defs><pattern id='shield' x='0' y='0' width='1' height='1'><image width='20' height='20' xlink:href='/images/2016_mayday-logo-shield.svg'/></pattern></defs>");
+
+});
+
+</script>
+
 {% endcapture %}
 
 <!-- following line combines page scripts into footer scripts, below loaded libraries -->
