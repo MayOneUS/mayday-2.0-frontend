@@ -9,7 +9,6 @@ bodyClass: national-progress
 <style type="text/css">
 
 body {
-  background-image:url('crowd.jpg');
   background-size:cover;
   background-position:center;
 }
@@ -257,7 +256,7 @@ jQuery( document ).ready(function() {
     //map.labels();
     map.bubbles(endorsements);
 
-    var pattern = "<defs><pattern id\='shield' x\='0' y\='0' patternTransform\='translate(10,10)'' width\='100%' height\='100%'><image style\='display:block; margin:0 auto;' width\='20' height\='20' xlink:href\='/images/2016_mayday-logo-shield.svg'/></pattern></defs>";
+    var pattern = "<defs><pattern id\='shield' x\='0' y\='0' patternTransform\='translate(10,10)'' width\='100%' height\='100%'><image style\='display:block; margin:0 auto;' width\='18' height\='18' xlink:href\='/images/2016_mayday-logo-shield.svg'/></pattern></defs>";
     d3.select("#map svg").insert("defs").html(pattern);
 
   });
