@@ -2,13 +2,17 @@
 layout: default
 title: MAYDAY.US - Our Donors
 permalink: /our-donors/
+copy: "In the interest of transparency, MAYDAY.US publishes the names of all of our donors"
 ---
 {% capture content %}
 {% include jumbotrons/general-dark.html title="Donors" %}
 <div class="container smaller-layout">
   <div class="row">
     <div class="col-xs-12">
-      {% include donor-table.html %}
+      {{ page.copy }}
+      <div style="margin-top:2em;">
+        {% include donor-table.html %}
+      </div>
     </div>
     <div class="col-xs-12" style="margin-top:5em;">
       <p>MAYDAY.US is a national grassroots movement to fight corruption by electing reformers on all levels of our democracy.</p>
