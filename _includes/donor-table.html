@@ -1,1 +1,12 @@
-table
+{% assign mayday_donors = site.data.mayday-donors | sort: 'lname', 'last'  %}
+{% capture donors %}
+ {% for object in mayday_donors %}{{ object.fname | capitalize }} {{ object.lname | capitalize }},{% endfor %}
+ {% endcapture %}
+{% assign donors = donors | join: ',' | strip | split: ',' | uniq %}
+<div style="display:flex;flex-wrap: wrap;">
+  {% for donor in donors %}
+    <div style="font-size:.75em;width:20%;float:left;border-bottom:1px solid #ddd;padding:.375em;">
+      {{ donor }}
+    </div>
+  {% endfor %}
+</div>
