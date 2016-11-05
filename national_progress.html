@@ -27,7 +27,6 @@ body {
 }
 
 .bubbles circle {
-  fill: url(#shield) !important;
   stroke-width: 0 !important;
   fill-opacity:1 !important;
 }
@@ -56,30 +55,6 @@ body {
 #map p, #map h1, #map h2, #map h3, #map h4, #map h5, #map h6 {
  margin:0;
  line-height: 1.25;
-}
-
-@media only screen and (max-width:800px) {
-  #map {
-    height:300px;
-  }
-}
-
-@media only screen and (max-width:400px) {
-  #map {
-    height:200px;
-  }
-}
-
-.leaflet-container {
-  background:transparent;
-  overflow:visible;
-  clear:both;
-  font: 12px/1 "Rubik", sans-serif;
-  color:#212230;
-}
-
-.leaflet-control-container {
-  max-width: 33%;
 }
 
 .legend {
@@ -118,29 +93,6 @@ body {
 .info h4 {
   margin: 0 0 5px;
   color: #777;
-}
-
-.leaflet-rrose-content-wrapper {
-  background: #fff;
-  box-shadow: 0 0 6px rgba(0,0,0,.15);
-  border-radius: 2px;
-  text-align:left;
-  z-index:999;
-}
-
-.leaflet-rrose-content {
-  margin: 10px;
-}
-
-.leaflet-rrose-content h4 {
-  line-height:1;
-  margin:0;
-}
-
-.leaflet-rrose-content p {
-  line-height:1.15;
-  margin: 0 0 5px;
-  font-size:12px;
 }
 
 </style>
@@ -211,10 +163,29 @@ jQuery( document ).ready(function() {
 
       if (stateAbv.length == 2 && endorsement.length > 2) {
         shield = {
-          fillKey: null,
-          radius: 15,
+          fillKey: 'shield',
+          radius: 12,
           centered: stateAbv,
-          name: endorsement
+          name: endorsement,
+          type: 'candidate'
+        };
+        endorsements.push(shield);
+      }
+
+    });
+
+    $(entry).each( function() {
+
+      var stateAbv = this.gsx$id.$t;
+      var endorsement = this.gsx$endorsedballotmeasures.$t;
+
+      if (stateAbv.length == 2 && endorsement.length > 2) {
+        shield = {
+          fillKey: 'shield-blue',
+          radius: 12,
+          centered: stateAbv,
+          name: endorsement,
+          type: 'measure'
         };
         endorsements.push(shield);
       }
@@ -232,6 +203,8 @@ jQuery( document ).ready(function() {
         '0.50' : '#0ad6b2',
         '0.75' : '#2ac4ea',
         '1.00' : '#0054b9',
+        'shield' : 'url(#shield)',
+        'shield-blue' : 'url(#shield-blue)',
         defaultFill: '#dae4e7'
       },
       geographyConfig: {
@@ -256,8 +229,20 @@ jQuery( document ).ready(function() {
     //map.labels();
     map.bubbles(endorsements);
 
-    var pattern = "<defs><pattern id\='shield' x\='0' y\='0' patternTransform\='translate(10,10)'' width\='100%' height\='100%'><image style\='display:block; margin:0 auto;' width\='18' height\='18' xlink:href\='/images/2016_mayday-logo-shield.svg'/></pattern></defs>";
+    var pattern = "<defs><pattern id\='shield' x\='0' y\='0' patternTransform\='translate(3,3)'' width\='100%' height\='100%'><image style\='display:block; margin:0 auto;' width\='18' height\='18' xlink:href\='/images/2016_mayday-logo-shield.svg'/></pattern><pattern id\='shield-blue' x\='0' y\='0' patternTransform\='translate(3,3)'' width\='100%' height\='100%'><image style\='display:block; margin:0 auto;' width\='18' height\='18' xlink:href\='/images/2016_mayday-logo-shield_blue.svg'/></pattern></defs>";
     d3.select("#map svg").insert("defs").html(pattern);
+    
+    /*$(".datamaps-bubble[data-info]").filter(function() {
+      return JSON.parse($(this).attr("data-info")).type == "candidate";
+    }).css("transform", "translate3d(-6px,-6px,0)");*/
+
+    $(".datamaps-bubble").filter(function() {
+      return $(this).data("info").type == "candidate";
+    }).css("transform", "translate3d(-6px,-6px,0)");
+
+    $(".datamaps-bubble").filter(function() {
+      return $(this).data("info").type == "measure";
+    }).css("transform", "translate3d(6px,6px,0)");
 
   });
 
