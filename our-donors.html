@@ -1,0 +1,33 @@
+---
+layout: default
+title: MAYDAY.US - Our Donors
+permalink: /our-donors/
+copy: "<p>In the interest of transparency, MAYDAY.US publishes the names of all of our donors.</p>"
+---
+{% capture content %}
+{% include jumbotrons/general-dark.html title="Donors" %}
+<div class="container smaller-layout">
+  <div class="row">
+    <div class="col-xs-12">
+      {{ page.copy }}
+      <div style="margin-top:2em;">
+        {% include donor-table.html %}
+      </div>
+    </div>
+    <div class="col-xs-12" style="margin-top:5em;">
+      <p>MAYDAY.US is a national grassroots movement to fight corruption by electing reformers on all levels of our democracy.</p>
+      <p>We have teams of dedicated volunteers across the country, organizing on behalf of candidates that will fundamentally reform our campaign finance system.</p>
+      <p>Read more about <a href="/the-plan/#problem">the problem</a>, <a href="/the-plan/#critical-mass">the plan</a> to fix it, or <a href="/the-plan/#strategy">our strategy</a>. You can also find more details about <a href="/team-and-board/">our team</a> or feel free to <a href="/contact-us/">reach out</a>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-md-8 center-block panel-wrapper">
+    {% include panels/panel_action_w_signup.html hide_next=true %}
+  </div>
+</div>
+
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
