@@ -1,7 +1,7 @@
 language: ruby
 sudo: false
 rvm:
-- 2.2.0
+- 2.2.6
 env:
   global:
   - secure: HqoGZSlTHg6omIR0NFAbV52HGs867MuupS4OOtC6f5w8BJejIJwUchCjPH2itmYby1bCm82gw/BWV7rQxXS/rGSWVOUsTe/IwxiojksGo8BxQ0iCO29DKKHugWAzL0qS6kBcfbo+kjophvRPc+Z0z0qUD4Vrf/xh76JyOvBywEY=
