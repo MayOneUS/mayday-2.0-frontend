@@ -14,7 +14,13 @@ permalink: /news/
           <h2 class="as-if-h4"><a href="{{site.blog_root_url}}" target="_blank">Mayday Blog <small>More</small></a></h2>
         </div>
         <div class="panel-body">
-          <ul id="tumblr-posts" class="list-unstyled">
+         <ul class="list-unstyled">
+          {% for article in site.data.press_articles limit:5 %}
+            <li>
+              <!-- <time datetime="{{date}}" class="as-if-h6 text-blue-highlight">{{date}}</time> -->
+              <p><a href="/in-the-news/#{{article.link | slugify}}">{{ article.title | truncatewords: 20}}</a></p>
+            </li>
+          {% endfor %}
           </ul>
         </div>
       </div>
