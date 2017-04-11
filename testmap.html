@@ -5,6 +5,9 @@ permalink: /testmap/
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 ---
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
 {% capture content %}
 
 {% include jumbotrons/general-dark.html title="Test Map" %}
@@ -25,7 +28,7 @@ permalink: /testmap/
 	L.marker([51.5, -0.09]).addTo(mymap)
 		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
-<script>
+</script>
 
 {% endcapture %}
 
