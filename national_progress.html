@@ -122,12 +122,10 @@ jQuery( document ).ready(function() {
     $(entry).each( function() {
       var stateAbv = this.gsx$id.$t;
       var fillKey = this.gsx$demoindexbackendonly.$t;
-      var stateWhy = this.gsx$status.$t;
-      var statePublicFinancingStatus = this.gsx$publicfinancingstatus.$t;
-      var stateDisclosure = this.gsx$disclosure.$t;
-      var stateDiscStatus = this.gsx$discstatus.$t;
+      var stateStatus = this.gsx$status.$t;
+      var stateWhy = this.gsx$why.$t;
       if (stateAbv.length == 2 ) {
-        stateData[stateAbv]= {fillKey: fillKey, stateWhy: stateWhy, statePublicFinancingStatus: statePublicFinancingStatus, stateDisclosure: stateDisclosure, stateDiscStatus: stateDiscStatus};
+        stateData[stateAbv]= {fillKey: fillKey, stateStatus: stateStatus, stateWhy: stateWhy};
       }
     });
     var endorsements = [];
@@ -185,9 +183,9 @@ jQuery( document ).ready(function() {
         popupTemplate: function(geography, data) {
           return '<div class="hoverinfo">' +
           '<h4>' + geography.properties.name + '</h4>' +
-          '<h6>' + data.statePublicFinancingStatus + '</h6>' +
-          data.stateWhy + ' ' +
-          '<h6>' + data.stateDiscStatus + '</h6>'}
+          '<h6>' + data.stateStatus + '</h6>' +
+          data.stateWhy + '</h6>' +
+          data.stateWhy + ' '}
       },
       bubblesConfig: {
         animate: true,
