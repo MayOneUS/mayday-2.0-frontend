@@ -125,8 +125,9 @@ jQuery( document ).ready(function() {
       var stateStatus = this.gsx$status.$t;
       var stateWhy = this.gsx$why.$t;
       var stateDisclosure = this.gsx$disclosure.$t;
+      var stateDiscStatus = this.gsx$discstatus.$t;
       if (stateAbv.length == 2 ) {
-        stateData[stateAbv]= {fillKey: fillKey, stateStatus: stateStatus, stateWhy: stateWhy, stateDisclosure: stateDisclosure};
+        stateData[stateAbv]= {fillKey: fillKey, stateStatus: stateStatus, stateWhy: stateWhy, stateDisclosure: stateDisclosure, stateDiscStatus: stateDiscStatus};
       }
     });
     var endorsements = [];
@@ -186,7 +187,7 @@ jQuery( document ).ready(function() {
           '<h4>' + geography.properties.name + '</h4>' +
           '<h6>' + data.stateStatus + '</h6>' +
           data.stateWhy + '</h6>' +
-          data.stateDisclosure + ' '}
+          data.stateDiscStatus + ' '}
       },
       bubblesConfig: {
         animate: true,
