@@ -220,8 +220,7 @@ jQuery( document ).ready(function() {
           return '<div class="hoverinfo">' +
           '<h4>' + geography.properties.name + '</h4>' +
           '<h6>' + data.stateStatus + '</h6>' +
-          data.stateWhy + '</h6>' +
-          data.stateDisclosure + ' '}
+          data.stateWhy + '</h6>' + ' ' + '<h4>' + data.stateDisclosureStatus +'</h4> + ' ' + data.stateDisclosure + ' '}
       },
       bubblesConfig: {
         animate: true,
