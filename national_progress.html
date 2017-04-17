@@ -7,12 +7,10 @@ bodyClass: national-progress
 {% capture content %}
 
 <style type="text/css">
-
 body {
   background-size:cover;
   background-position:center;
 }
-
 .legend-color {
   height:20px;
   width:20px;
@@ -21,28 +19,23 @@ body {
   border: 1px solid #212230;
   border-radius:1px;
 }
-
 .jumbotron {
   overflow:hidden;
 }
-
 .bubbles circle {
   stroke-width: 0 !important;
   fill-opacity:1 !important;
 }
-
 .hoverinfo {
   max-width: 400px;
   line-height: 1.15;
 }
-
 .labels text {
   fill:white !important;
   text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
   font-weight:600;
   font-family:"Rubik", sans-serif;
 }
-
 #map {
   height: 450px;
   font-family:"Rubik", sans-serif;
@@ -51,22 +44,18 @@ body {
   cursor:initial;
   margin-top:-50px;
 }
-
 #map p, #map h1, #map h2, #map h3, #map h4, #map h5, #map h6 {
  margin:0;
  line-height: 1.25;
 }
-
 .legend {
   line-height: 18px;
   color: #555;
 }
-
 .legend span {
   display:block;
   margin: 4px;
 }
-
 .legend i {
   width: 16px;
   height: 16px;
@@ -75,13 +64,11 @@ body {
   margin-right: 3px;
   opacity: 0.7;
 }
-
 .legend i:before {
   content:' ';
   width: 100%;
   display:block;
 }
-
 .info {
   padding: 6px 8px 4px;
   background: white;
@@ -89,12 +76,10 @@ body {
   border-radius: 2px;
   line-height: 1.5;
 }
-
 .info h4 {
   margin: 0 0 5px;
   color: #777;
 }
-
 </style>
 
 {% include jumbotrons/20160721_national-progress-jumbo.html title="National Progress" subtitle="Mapping Our Strategy" %}
@@ -130,39 +115,24 @@ body {
 <script src="/mapdata/datamaps.usa.min.js"></script>
 
 <script>
-
 jQuery( document ).ready(function() {
-
   jQuery.getJSON('https://spreadsheets.google.com/feeds/list/1xn3g-pFBht9DgDb0WwO-E4Y6Zn0LeT5ixwmO1IIAx00/1/public/values?alt=json', function(data) {
-
     var entry = data.feed.entry;
-
     var stateData = {};
-
     $(entry).each( function() {
-
       var stateAbv = this.gsx$id.$t;
       var fillKey = this.gsx$demoindexbackendonly.$t;
       var stateStatus = this.gsx$status.$t;
       var stateWhy = this.gsx$why.$t;
       var stateDisclosure = this.gsx$disclosure.$t;
-      var stateDisclosureStatus = this.gsx$disclosurestatus.$t;
-
       if (stateAbv.length == 2 ) {
-
-        stateData[stateAbv]= {fillKey: fillKey, stateStatus: stateStatus, stateWhy: stateWhy, stateDisclosure: stateDisclosure, stateDisclosureStatus: stateDisclosureStatus};
-
+        stateData[stateAbv]= {fillKey: fillKey, stateStatus: stateStatus, stateWhy: stateWhy, stateDisclosure: stateDisclosure};
       }
-
     });
-
     var endorsements = [];
-
     $(entry).each( function() {
-
       var stateAbv = this.gsx$id.$t;
       var endorsement = this.gsx$candidateendorsements.$t;
-
       if (stateAbv.length == 2 && endorsement.length > 2) {
         shield = {
           fillKey: 'shield',
@@ -173,14 +143,10 @@ jQuery( document ).ready(function() {
         };
         endorsements.push(shield);
       }
-
     });
-
     $(entry).each( function() {
-
       var stateAbv = this.gsx$id.$t;
       var endorsement = this.gsx$endorsedballotmeasures.$t;
-
       if (stateAbv.length == 2 && endorsement.length > 2) {
         shield = {
           fillKey: 'shield-blue',
@@ -191,9 +157,7 @@ jQuery( document ).ready(function() {
         };
         endorsements.push(shield);
       }
-
     });
-
     var map = new Datamap({
       scope: 'usa',
       element: document.getElementById('map'),
@@ -222,7 +186,7 @@ jQuery( document ).ready(function() {
           '<h4>' + geography.properties.name + '</h4>' +
           '<h6>' + data.stateStatus + '</h6>' +
           data.stateWhy + '</h6>' +
-          '<h6>' + data.stateDisclosureStatus + ' '}
+          data.stateDisclosure + ' '}
       },
       bubblesConfig: {
         animate: true,
@@ -231,28 +195,21 @@ jQuery( document ).ready(function() {
      });
     //map.labels();
     map.bubbles(endorsements);
-
     var pattern = "<defs><pattern id\='shield' x\='0' y\='0' patternTransform\='translate(3,3)'' width\='100%' height\='100%'><image style\='display:block; margin:0 auto;' width\='18' height\='18' xlink:href\='/images/2016_mayday-logo-shield.svg'/></pattern><pattern id\='shield-blue' x\='0' y\='0' patternTransform\='translate(3,3)'' width\='100%' height\='100%'><image style\='display:block; margin:0 auto;' width\='18' height\='18' xlink:href\='/images/2016_mayday-logo-shield_blue.svg'/></pattern></defs>";
     d3.select("#map svg").insert("defs").html(pattern);
     
     /*$(".datamaps-bubble[data-info]").filter(function() {
       return JSON.parse($(this).attr("data-info")).type == "candidate";
     }).css("transform", "translate3d(-6px,-6px,0)");*/
-
     $(".datamaps-bubble").filter(function() {
       return $(this).data("info").type == "candidate";
     }).css("transform", "translate3d(-6px,-6px,0)");
-
     $(".datamaps-bubble").filter(function() {
       return $(this).data("info").type == "measure";
     }).css("transform", "translate3d(6px,6px,0)");
-
   });
-
   //jQuery("#map>svg").prepend("<defs><pattern id='shield' x='0' y='0' width='1' height='1'><image width='20' height='20' xlink:href='/images/2016_mayday-logo-shield.svg'/></pattern></defs>");
-
 });
-
 </script>
 
 {% endcapture %}
