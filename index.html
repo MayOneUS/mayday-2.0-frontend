@@ -96,7 +96,9 @@ bodyClass: index-page
  <div class="col-md-6">
   <a class="twitter-timeline" data-width="600" data-height="490" data-theme="light" href="https://twitter.com/MAYDAYUS">Tweets by MAYDAYUS</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
- <div class="col-md-6">Test Column</div>
+ <div class="col-md-6">
+	<div class="fb-page" data-href="https://www.facebook.com/MAYDAYUS/" data-tabs="timeline" data-width="500" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MAYDAYUS/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MAYDAYUS/">MAYDAY.US</a></blockquote></div>
+	</div>
  </div>
 </div>
 	
@@ -150,6 +152,19 @@ bodyClass: index-page
     md.newsFeeds.renderHomepageBlogFeed('#blog-listings');
   });
 </script>
+
+	
+{% capture page_specific_javascript_facebook %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	
+
 {% endcapture %}
 {% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
 
