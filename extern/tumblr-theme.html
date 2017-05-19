@@ -77,25 +77,6 @@ meta_content: |
 
   {/block:Twitter}{/block:IfShowLatestTweetsWidget}
 
-  {block:IfShowPeopleIFollowWidget}{block:Following}
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="panel panel-news">
-        <div class="panel-heading">
-          <h2 class="as-if-h4">People I follow</h2>
-        </div>
-        <div class="panel-body mayday-inputs">
-         <div id="following_container" class="widget">
-           <ul>
-             {block:Followed}
-               <li><a href="{FollowedURL}"><img src="{FollowedPortraitURL-30}" alt="{FollowedName}" /></a></li>
-             {/block:Followed}
-           </ul>
-         </div>
-      </div>
-    </div>
-  </div>
-  {/block:Following}{/block:IfShowPeopleIFollowWidget}
 {% endcapture %}
 
 {% capture content %}
