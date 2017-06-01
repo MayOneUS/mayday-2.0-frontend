@@ -1,0 +1,36 @@
+---
+layout: default
+title: MAYDAY.US - Blog
+hideFromNav: true
+hideHeaderSignUp: true
+---
+
+{% capture content %}
+
+  <div id="blog-snippets" class="homepage-panel">
+    <div class="container">
+      <div class="row">
+      	<h2 class="as-if-h3 text-center margin-bottom-md">Latest from our blog</h2>
+        <div class="row">
+          <ul class="blog-listings" id="blog-listings">
+          </ul>
+        </div>
+        <p class="byline small text-center as-if-h6 margin-top-sm margin-bottom-xs"><a href="http://blog.mayday.us/" title="" class="text-grey-medium">More from our Blog</a></p>
+      </div>
+  	</div>
+  </div>
+
+
+{% endcapture %}
+
+{% capture page_specific_javascript %}
+<script>
+  $(document).ready(function(){
+    /*var signUpComplete = function(){
+      window.location = '/donate/';
+    };
+    md.signUps.inititalizeBasic('.js-signup', signUpComplete);
+    md.signUps.inititalizeDonateStart('.js-donate'); */
+    md.newsFeeds.renderHomepageBlogFeed('#blog-listings');
+  });
+</script>
