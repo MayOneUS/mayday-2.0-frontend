@@ -34,3 +34,8 @@ hideHeaderSignUp: true
     md.newsFeeds.renderHomepageBlogFeed('#blog-listings');
   });
 </script>
+
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
