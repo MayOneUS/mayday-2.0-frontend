@@ -1,0 +1,111 @@
+<div class="panel action-panel">
+  <div class="panel-body mayday-inputs">
+    <h2 id="panel-title">{% if include.alt_title %}{{include.alt_title}}{% else %}Sign up for Updates{% endif %}</h2>
+    <p id="panel-body-p">{% if include.alt_body %}{{include.alt_body}}{% else %}Be part of the movement to repair our republic.{% endif %}</p>
+    <form class="row {{include.form_class}} js-sign-up-form no-gutter">
+
+      <fieldset class="col-md-12 no-gutter">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label class="control-label sr-only" for="person[first_name]">First Name</label>
+            <input id="person[first_name]" name="person[first_name]" type="text" placeholder="First Name">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label class="control-label sr-only" for="person[last_name]">Last Name</label>
+            <input id="person[last_name]" name="person[last_name]" type="text" placeholder="Last Name">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="control-label sr-only" for="person[email]">Email Address</label>
+            <input id="person[email]" name="person[email]" type="email" placeholder="Email Address" required="">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-8 margin-bottom-0">
+            <label class="control-label sr-only" for="person[phone]">Phone</label>
+            <input id="person[phone]" name="person[phone]" type="tel" placeholder="Phone" required="">
+          </div>
+
+          <div class="form-group col-md-4 margin-bottom-0">
+            <label class="control-label sr-only" for="person[zip]">ZIP</label>
+            <input id="person[zip]" name="person[zip]" pattern="\d{5,5}(-\d{4,4})?" type="text" placeholder="ZIP" required="">
+          </div>
+        </div>
+
+        {% unless include.hide_volunteer %}
+        <div class="row">
+          <div class="form-group col-md-12 text-left">
+            <label class="control-label sr-only" for="person[is_volunteer]">Volunteer</label>
+              <label class="checkbox-inline" for="person[is_volunteer]-0">
+                <input type="checkbox" name="person[is_volunteer]" id="person[is_volunteer]-0" value="true"> Are you ready to volunteer?
+              </label>
+          </div>
+        </div>
+        {% endunless %}
+
+        {{include.custom_form_inputs}}
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="control-label sr-only" for="singlebutton">Submit</label>
+            <input type="hidden" name="template_id" value="{% if include.template_id %}{{include.template_id}}{% else %}signup-form{% endif %}">
+            <input type="hidden" name="person[remote_fields][tags][]" value="{% if include.logged_tag %}{{include.logged_tag}}{% else %}20150501_signup{% endif %}">
+            <input type="hidden" name="person[remote_fields][tags][]" value="web_signup_simple">
+            <button type="submit" class="btn btn-mayday">I'm in</button>
+            <p class="help-block">We respect your privacy. Your phone number will not be shared with outside parties. Note:  If submitting your cell number, you are certifying that this cell phone number belongs to you and granting Mayday PAC and its contracted phone vendors permission to call you at this cell phone number during legal calling hours. Message &amp; data rates may apply.</p>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+    {% unless include.hide_next %}
+    <div class="row skip-next">
+      <small class="not-ready-link"><a href="{% if include.alt_next_link %}{{include.alt_next_link}}{% else %}Skip to Next Step{% endif %}" class="next">{% if include.alt_next_copy %}{{include.alt_next_copy}}{% else %}Skip to Next Step{% endif %}</a></small>
+    </div>
+    {% endunless %}
+  </div>
+</div>
+{% capture panel_signup_js %}
+
+<script>
+  (function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+  })();
+  $('.js-sign-up-form').validate({
+    submitHandler: function(form) {
+      $form = $(form);
+      $form.find('button.btn').html('<i class="fa fa-refresh fa-spin"></i> Loading...');
+      $.post(services_url+'/actions', $form.serialize(), function(data){
+      }).done(function(){
+        window['optimizely'] = window['optimizely'] || [];
+        window.optimizely.push(["trackEvent", "JoinSignup"]);
+        {% if include.facebook_pixel_id %}
+        window._fbq = window._fbq || [];
+        _fbq.push(['track',{{include.facebook_pixel_id}},{'value':'0.00','currency':'USD'}]);
+        {% endif %}
+        if(location.pathname == '/take-action/'){
+          $next = $form.parents('li').next();
+          $parent = $form.parents('li');
+          setAsComplete($parent);
+          makeActive($next);
+        }else{
+          window.location = {% if include.redirect %}{{include.redirect}}{% else %}'/take-action/#record-message'{% endif %};
+        }
+      });
+    }
+  });
+</script>
+{% endcapture %}
+{% capture footer_scripts %}{{footer_scripts}}{{panel_signup_js}}{% endcapture %}
