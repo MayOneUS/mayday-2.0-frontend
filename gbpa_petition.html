@@ -1,0 +1,23 @@
+---
+layout: default
+title: Government By the People Act - MAYDAY.us
+permalink: /gbpa_petition/
+---
+
+{% capture hidden_fields %}
+  <input type="hidden" name="person[remote_fields][tags][]" value="2017.06.08_gbpa_petition_test">
+{% endcapture %}
+{% capture content %}
+<div id="js-legislator"><i class="fa fa-refresh fa-spin fa-5 margin-y-md"></i></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 center-block">
+      {% include panels/panel_action_w_signup_phone.html hide_next=true alt_title="Reclaim your Voice" hidden_fields=hidden_fields %}
+    </div>
+  </div>
+</div>
+
+<p class="text-center"><a href="/legislators" title="">View all Leaders for Fundamental Reform</a></p>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
