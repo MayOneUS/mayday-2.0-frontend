@@ -16,11 +16,13 @@
   );*/
 }
 .jumbotron-carl2 h1 {
+	position: absolute;
 	font-size:40px;
   color:#ffffff;
   line-height:1;
 }
 .jumbotron-carl2 h2 {
+	position: absolute;
 	font-size:50px;
   color:#ffffff;
 }
@@ -29,7 +31,7 @@
 }
 .jumbotron-carl2:before {
     content: '';
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -61,7 +63,10 @@
 </style>
 
 <div class="jumbotron-carl2">
-	<h1><center>Test Text</center></h1>
+ <img src="https://pbs.twimg.com/media/DGFF1ugXUAEJyL3.jpg"/>
+   <div class="row">
+    <h2><center>Text you want to display over the image</center></h2>
+   </div>
 </div>
 
 {% capture footer_scripts %}
