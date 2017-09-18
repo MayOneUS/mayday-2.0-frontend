@@ -5,77 +5,180 @@ hideFromNav: true
 hideHeaderSignUp: true
 permalink: /index_old/
 ---
+<style>
+.carl-panel {  
+   position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:url('/images/carl/Website_Frontpage_Washout.jpg') no-repeat center #FFF;
+    /*-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;*/
+    opacity: 100%;
+}
+.carl-panel h2 { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+	/* Old Carousel Control
+.carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  }*/
+	
+.carousel-control {
+position: absolute;
+top: 50%; /* pushes the icon in the middle of the height */
+z-index: 20;
+display: inline-block;
+}
+	
+	
+}
+  
+  .carousel-caption {
+      background-color: transparent;
+      position: absolute;
+      text-align: Left;
+  }
+  .carousel-caption h2{
+    color: #FFF
+    line-height: 1.25;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  }
+	
+	
+</style>
+
 {% capture content %}
 <div id="index">
- 
-   {% include jumbotrons/front-page.html %}
+
+	{% comment %} SECTION 1.0 - Front Page Blue Jumbotron {% endcomment %}
+  {% include jumbotrons/front-page-update.html %}
+{% comment %} SECTION 1.5 - Front Page Carl Jumbotron {% endcomment %}
+	
+	<!---{% include jumbotrons/carl-banner3.html %}--->
+	
+ <!-- <div class="homepage-panel front-donate grey">
+  <div class="container">
+  
+    <div class="row margin-top-md margin-bottom-md">
+      
+      <div class="col-md-4">
+        <img src="/images/carl/CC-Sticker4.png" class="img-responsive img-bottom" alt="Responsive image">
+      </div>
+      <div class="col-md-8 center-block text-center">
+      
+        <h1 class="text-yellow margin-bottom-xs">Join our newest campaign against systemic corruption:</h1>
+        <h2 class="text-yellow margin-bottom-xs">Corruption Carl</h2> 
+          <div class="row margin-top-sm margin-bottom-xs">
+            <div class="col-md-10 center-block">
+              <div class="col-sm-4 center-block"><a class="button btn btn-mayday margin-bottom-sm" href="https://secure.actblue.com/contribute/page/monthly_members?amount=27&recurring=true"> Meet Carl!</a></div>
+            </div>
+          </div>
+      </div>
+    
+    </div>
+    
+  </div>
+</div> -->
 
 	{% comment %} SECTION 2 - Video + Social Media + Plan Link {% endcomment %}
-<!------
-  <div class="homepage-panel">
-  	<div class="container">
-      <div class="row">
-      <h2 class="text-center text-blue-dark">We have a plan to get democracy back on track</h2>
-      	<div class="col-md-2"></div>
-      	<div class="col-md-8">
-        	<div class="videoWrapper">
-        		<iframe src="https://www.youtube.com/embed/a6x_TDog85k?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-        	</div>
-            <div class="page-panel grey" style="padding:20px;">
-            <h4>Ending Big Money Politics</h4>
-            <p>MAYDAY America is <a href="/donate">crowdsourcing the money it needs</a> to elect candidates in cities and states around the country committed to fundamental reform in 2017.</p>
-            <p><a href="/the-plan">This is our first essential step.</a></p>
-            </div>
-            <div class="row" style="margin:20px 0;">
-                <div class="col-md-6 col-sm-6">
-                  <a href="http://www.facebook.com/sharer.php?u=https://mayday.us/" target="_blank" class="btn btn-mayday btn-share-center facebook">
-                    <span class="text"><i class="fa fa-facebook"></i></span>
-                  </a>
+<!---
+<div class="carl-panel">  
+		<h1><center>Fighting toxic corruption. Cleaning up political inequality.</center></h1>
+</div>
+--->
+<div class="container">
+	<h1><center><span style="font-size: 20px" class="">What we're doing:</center></h1>
+</div>
+<div class="container">
+    <div class="span8">
+        <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active" contenteditable="false"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="2" class="" contenteditable="false"></li>
+                <li data-target="#myCarousel" data-slide-to="3" class="" contenteditable="false"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://cleanupcarl.com/wp-content/uploads/IMAG2313.jpg" alt="responsive"
+                    class="">
+                    <div class="carousel-caption">
+                         <h2 style="text-align:left;" class=""><span style="background-color: rgba(14, 77, 194, 1)" class="">Fighting for the voices of all Americans.</span></h2>
+                        <p style="text-align:left;" class=""><span style="background-color: rgba(14, 77, 194, 1)" class="">MAYDAY's joined Fight for $15, the national fight against the fast food
+                            industry and their lobbyists, to provide an equal voice and living wage
+                          to low-income workers.</span>
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                  <a href="https://twitter.com/home?status=Ready%20to%20fight%20corruption%20with%20me%3F%20Donate%20today%20for%20political%20equality%3A%20https%3A%2F%2Fmayday.us%2F" target="_blank" class="btn btn-mayday btn-md-wide btn-share-center twitter">
-                    <span class="text"><i class="fa fa-twitter"></i></span>
-                  </a>
+                <div class="item">
+                    <img src="http://cleanupcarl.com/wp-content/uploads/DSC00229-Resized-1.jpeg"
+                    href="http://cleanupcarl.com/" alt="responsive" class="" contenteditable="false">
+                    <div class="carousel-caption">
+                      <h2 style="text-align:left;" class=""><span style="background-color: rgba(240, 252, 12, 1)" class=""><span style="color: #000000" class="">Join Cleanup Carl's National Cleanup Tour!</span></span></h2>
+                        <p style="text-align:left;" class=""><span style="background-color: rgba(240, 252, 12, 1)" class=""><span style="color: #000000" class="">Follow our newest campaign tool, Cleanup Carl, as he travels around the
+                          country cleaning up toxic threats to our democracy.</span></span>
+                        </p>
+                      <a class="button btn btn-mayday margin-bottom-sm" href="https://cleanupcarl.com">Check out our work at CleanupCarl.com</a>
+                    </div>
                 </div>
-          	</div>
-            <div class="row" style="margin:20px 0;">
-            	<a class="btn btn-mayday" href="/the-plan">See Our Plan</a>
-            </div>
+                <div class="item">
+                    <img src="/images/carl/NH_VoteFree.JPG" href="http://cleanupcarl.com/"
+                    alt="responsive" class="">
+                    <div class="carousel-caption">
+                         <h2 style="text-align:left;" class=""><span style="background-color: #f44141" class="">Defending Voting Rights</span></h2>
+                        <p style="text-align:left;" class=""><span style="background-color: #f44141" class="">We traveled to New Hampshire to tell Kris Kobach's sham voter "fraud" commission
+                          to keep their hands off our vote!</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://cleanupcarl.com/wp-content/uploads/IMAG2236.jpg" href="http://cleanupcarl.com/"
+                    alt="responsive" class="">
+                    <div class="carousel-caption">
+                         <h2 style="text-align:left;" class=""><span style="background-color: #ff4100" class="">Fighting For Dignity and Democracy</span></h2>
+                        <p style="text-align:left;" class=""><span style="background-color: #ff4100" class="">We've joined Restaurant Opportunity Centers United's campaign to fight
+                            for One Fair Wage and end the corruptive power of the National Restaurant
+                          Association.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>	<a class="left carousel-control" href="#myCarousel" data-slide="prev"
+            contenteditable="false">‹</a>
+ <a class="right carousel-control" href="#myCarousel"
+            data-slide="next" contenteditable="false">›</a>
         </div>
-        <div class="col-md-2"></div>
-      </div>
-  	</div>
-  </div>
------>
+    </div>
+</div>
   {% comment %} SECTION 3 - Fundraise Secion {% endcomment %}
-
     <div class="homepage-panel front-donate grey">
     <div class="container">
       <div class="row">
-
         <div class="col-md-2"></div>
             <div class="col-md-8">
-
                 
-
                 
-
                 
             </div>
         <div class="col-md-2"></div>
-
-
        </div>
   	</div>
   </div>
-
-
   {% comment %} SECTION 3.5 - Front Page Donate Form {% endcomment %}
   
   {% include pre-donate.html %}
   
   {% comment %} SECTION 4 - Our Blog {% endcomment %}
-
   <div id="blog-snippets" class="homepage-panel">
     <div class="container">
       <div class="row">
@@ -173,4 +276,3 @@ permalink: /index_old/
 {% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
 
 {% include sub_layouts/default_layout.html %}
-
