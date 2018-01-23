@@ -4,7 +4,17 @@ title: Take Action
 permalink: /take-action/
 ---
 {% capture content %}
-{% include jumbotrons/general-dark.html title="Take Action" %}
+
+<script type='text/javascript' src='https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js' crossorigin='anonymous'></script>
+ <div class="ngp-form"
+     data-form-url="https://actions.everyaction.com/v1/Forms/OqSYVGBzakq5ngnA7rhDDg2"
+     data-fastaction-endpoint="https://fastaction.ngpvan.com"
+     data-inline-errors="true"
+     data-fastaction-nologin="true"
+     data-databag="everybody">
+</div>
+
+<!--{% include jumbotrons/general-dark.html title="Take Action" %}
 <div class="container">
   <div class="row">
   <div class="col-md-10 center-block col-sm-12">
@@ -21,7 +31,7 @@ permalink: /take-action/
       {% include take_action_section_header.html iconClass="get-educated" title="Get Educated" increment="2" %}
       {% include panels/panel_action_w_get_educated.html %}
     </li> -->
-    <li class="action-wrap incomplete js-invite-your-friends">
+  <!--     <li class="action-wrap incomplete js-invite-your-friends">
       {% include take_action_section_header.html iconClass="spread-the-word" title="Invite Your Friends" increment="3" %}
       {% include panels/panel_action_w_spread_the_word.html %}
     </li>
@@ -35,7 +45,7 @@ permalink: /take-action/
     </li>
   </ul>
   </div>
-</div>
+</div>       -->
 {% endcapture %}
 
 
