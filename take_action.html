@@ -51,12 +51,12 @@ permalink: /take-action/
 {% endcapture %}
 
 {% capture page_specific_javascript %}
-<script>
+<!---<script>
   $(document).ready(function(){
     md.takeAction.initialize();
   });
-</script>
+</script> -->
 {% endcapture %}
-{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}
+<!---{% capture footer_scripts %}{{footer_scripts}}{{page_specific_javascript}}{% endcapture %}--->
 
 {% include sub_layouts/default_layout.html %}
